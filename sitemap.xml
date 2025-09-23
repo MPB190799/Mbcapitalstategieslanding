@@ -17,21 +17,45 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blogartikel (Beispiele – bitte erweitern) -->
+  <!-- Blogartikel -->
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
+    <loc>https://mbcapitalstrategies.com/oneok.html</loc>
     <lastmod>2025-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/pembina.html</loc>
+    <loc>https://mbcapitalstrategies.com/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/tcenergy.html</loc>
+    <loc>https://mbcapitalstrategies.com/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/rohstoff-superzyklus-2025.html</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/bdc-duell-2025-crescent-vs-blue-owl.html</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/bdc-dividendenaktien-2025-newtek-vs-hercules.html</loc>
     <lastmod>2025-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
