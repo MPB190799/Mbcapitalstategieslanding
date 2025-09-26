@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- ONEOK Analyse -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/xS2QIVORDc0/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>ONEOK Aktie Analyse 2025 | 5% Dividende & Midstream-Gigant</video:title>
+      <video:description>Analyse von ONEOK – einem der größten Midstream-Konzerne Nordamerikas. Fokus auf Dividende & Cashflows.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/xS2QIVORDc0</video:player_loc>
+      <video:publication_date>2025-09-18</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Pembina Analyse -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pembina.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MGLzYH-t1uY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Pembina Pipeline Analyse 2025 | 5,5% Dividende & Nachkaufzonen</video:title>
+      <video:description>Analyse des kanadischen Pipeline-Betreibers Pembina – Dividenden, Cashflow & Bewertung.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MGLzYH-t1uY</video:player_loc>
+      <video:publication_date>2025-08-31</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- TC Energy Analyse -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/tc-energy.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/QsHrUMLIHUQ/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>TC Energy Aktie Analyse 2025 | 5,5% Dividende & Schuldenrisiko</video:title>
+      <video:description>Analyse des Pipeline-Riesen TC Energy – Chancen, Risiken & Dividendenstrategie.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/QsHrUMLIHUQ</video:player_loc>
+      <video:publication_date>2025-09-02</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Enbridge Analyse -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/enbridge.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/sqfu-WgCAHs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Enbridge im Dividenden-Check: 5% Rendite & Cashflow-Stabilität</video:title>
+      <video:description>Pipeline-Aristokrat Enbridge mit 22 Jahren Dividendensteigerungen – Chancen & Risiken 2025.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/sqfu-WgCAHs</video:player_loc>
+      <video:publication_date>2025-09-26</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Rohstoff-Superzyklus -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/rohstoff-superzyklus.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/boad7pz1xrk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Rohstoff-SUPERZYKLUS startet jetzt? | Analyse 2025</video:title>
+      <video:description>Unterinvestition & Nachfrageboom – Analyse zu Kupfer, Uran, Öl & Energie im kommenden Superzyklus.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/boad7pz1xrk</video:player_loc>
+      <video:publication_date>2025-09-19</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- BDC Duell: Crescent vs Blue Owl -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/bdc-crescent-blueowl.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/TXpAB2XFMmA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>BDC Duell 2025 | Crescent Capital vs Blue Owl – 12% Dividende im Check</video:title>
+      <video:description>BDC-Vergleich: Crescent Capital vs Blue Owl – Renditen, Risiken und meine persönliche Einschätzung.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/TXpAB2XFMmA</video:player_loc>
+      <video:publication_date>2025-08-24</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- BDC Duell: Newtek vs Hercules -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/bdc-newtek-hercules.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/tAF48D530LU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>BDC Duell 2025 | Newtek vs Hercules Capital – Hohe Rendite oder Stabilität?</video:title>
+      <video:description>BDC-Duell: Newtek vs Hercules Capital – zwei unterschiedliche Ansätze, Chancen & Risiken im Fokus.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/tAF48D530LU</video:player_loc>
+      <video:publication_date>2025-08-19</video:publication_date>
+    </video:video>
+  </url>
+
+</urlset>
