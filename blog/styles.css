@@ -1,0 +1,112 @@
+/* ===== Global Basics ===== */
+body {
+  background: #0f1115;
+  color: #f5f6fa;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #FFD700;
+  margin-top: 25px;
+}
+
+a {
+  color: #FFD700;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== Video Embed ===== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin: 30px 0;
+  background: #1a1d23;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Highlight Box ===== */
+.highlight {
+  background: #1a1d23;
+  border-left: 4px solid #FFD700;
+  padding: 12px 16px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+/* ===== Disclaimer Box ===== */
+.disclaimer {
+  background: #1a1d23;
+  padding: 15px;
+  margin-top: 40px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* ===== CTA Box ===== */
+.cta-box {
+  background: #1a1d23;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  text-align: center;
+}
+.cta-box a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: #FFD700;
+  color: #0f1115;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.cta-box a:hover {
+  background: #e6c200;
+}
+
+/* ===== Sources Box ===== */
+.sources-box {
+  background: #1a1d23;
+  border-left: 4px solid #FFD700;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  color: #cfd6e6;
+}
+.sources-box a {
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* ===== Lists ===== */
+ul {
+  margin: 10px 0 20px 20px;
+}
+ul li {
+  margin-bottom: 6px;
+}
