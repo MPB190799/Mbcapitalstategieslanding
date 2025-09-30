@@ -4,7 +4,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://mbcapitalstrategies.com/</loc>
-    <lastmod>2025-09-23</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Blog Index -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/index.html</loc>
-    <lastmod>2025-09-23</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -32,13 +32,19 @@
   </url>
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -60,8 +66,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Shipping Artikel -->
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html</loc>
+    <loc>https://mbcapitalstrategies.com/blog/shipping-tanker-mixedfleet-2025.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/hidden-champions-shipping-2025.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/shipping-6-aktien-depot-2025.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-10prozent-2025.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-lng-tanker-2025.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Dividenden Artikel -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/dividendenaktien-5-stabil-2025.html</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/dividendenaktien-10prozent-2025.html</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
