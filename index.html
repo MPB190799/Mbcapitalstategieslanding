@@ -12,6 +12,26 @@
   <style>
     body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat', sans-serif; margin:0; }
 
+    /* Header Navigation */
+    header {
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      padding:15px 10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header a {
+      color:#d4af37;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    header a:hover {
+      text-decoration:underline;
+    }
+
     /* Hero */
     .hero {
       background: url('background.jpg') no-repeat center center/cover;
@@ -84,6 +104,13 @@
 </head>
 <body>
 
+  <!-- ✅ Neue Header-Navigation -->
+  <header>
+    <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
+    <a href="https://mbcapitalstrategies.com/blog/index.html">📰 Blog</a>
+    <a href="https://mbcapitalstrategies.com/#tools">🧰 Toolbox</a>
+  </header>
+
   <!-- Hero -->
   <section class="hero">
     <img src="https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png" alt="MB Capital Strategies Logo" class="hero-logo">
@@ -139,7 +166,6 @@
          Werde Teil der Community 🚀</p>
       <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" class="btn">Zum Kanal →</a>
     </div>
-    <!-- Neue Kachel -->
     <div class="card">
       <h3>📖 Analysen & Beiträge</h3>
       <p>Meine aktuellen Aktienanalysen, Thesen & Strategien.  
@@ -170,7 +196,7 @@
     </p>
   </section>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer>
     © 2025 MB Capital Strategies · 
     <a href="/impressum.html">Impressum</a> · 
@@ -183,9 +209,5 @@
     </p>
   </footer>
 
-
 </body>
 </html>
-
-
-
