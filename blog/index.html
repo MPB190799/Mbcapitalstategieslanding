@@ -5,126 +5,200 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MB Capital Strategies – Analysen & Beiträge</title>
   <meta name="description" content="Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies.">
+
   <style>
     body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat', sans-serif; margin:0; }
-    header { text-align:center; padding:60px 20px; }
-    header h1 { color:#d4af37; font-size:2.5em; }
-    .posts { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:25px; padding:40px; }
-    .post { background:#1a1f2b; padding:20px; border-radius:12px; border:1px solid rgba(212,175,55,.3); transition:0.3s; }
+
+    /* Header Navigation */
+    header.navbar {
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      padding:15px 10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header.navbar a {
+      color:#d4af37;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    header.navbar a:hover { text-decoration:underline; }
+
+    /* Page Header */
+    .page-header { text-align:center; padding:60px 20px; }
+    .page-header h1 { color:#d4af37; font-size:2.5em; text-shadow:0 0 10px rgba(212,175,55,0.6); }
+    .page-header p { color:#cfd6e6; }
+
+    /* Posts Grid */
+    .posts {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:25px;
+      padding:40px;
+    }
+    .post {
+      background:#1a1f2b;
+      padding:20px;
+      border-radius:12px;
+      border:1px solid rgba(212,175,55,.3);
+      transition:0.3s;
+    }
     .post:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,.35); }
-    .post h2 { color:#d4af37; font-size:1.4em; margin-bottom:10px; }
+    .post h2 {
+      color:#d4af37;
+      font-size:1.4em;
+      margin-bottom:10px;
+      text-shadow:0 0 8px rgba(212,175,55,0.5);
+    }
     .post p { font-size:0.95em; color:#cfd6e6; }
-    .btn { display:inline-block; margin-top:10px; padding:10px 20px; background:#d4af37; color:#0f1115; border-radius:6px; text-decoration:none; font-weight:bold; }
-    .btn:hover { background:#e0bd55; }
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#9aa6c0; margin-top:40px; }
+    .btn {
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 20px;
+      background:#d4af37;
+      color:#0f1115;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .btn:hover {
+      background:#e0bd55;
+      box-shadow:0 0 15px rgba(212,175,55,0.6);
+    }
+
+    /* Footer */
+    footer {
+      text-align:center;
+      padding:25px;
+      font-size:0.9em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.05);
+      margin-top:40px;
+    }
+    footer a { color:#d4af37; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>📖 Analysen & Beiträge</h1>
-  <p>Aktuelle Aktienanalysen, Thesen & Strategien von MB Capital Strategies</p>
-</header>
+  <!-- ✅ Navigation -->
+  <header class="navbar">
+    <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
+    <a href="https://mbcapitalstrategies.com/blog/index.html">📰 Blog</a>
+    <a href="https://mbcapitalstrategies.com/#tools">🧰 Toolbox</a>
+  </header>
 
-<section class="posts">
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>📖 Analysen & Beiträge</h1>
+    <p>Aktuelle Aktienanalysen, Thesen & Strategien von MB Capital Strategies</p>
+  </section>
 
-  <!-- Neueste Artikel zuerst -->
+  <!-- Posts -->
+  <section class="posts">
 
-  <div class="post">
-    <h2>5 stabile Dividendenaktien 2025</h2>
-    <p>Telekom, Konsumgüter & Logistik – 5 defensive Titel für planbaren Cashflow auch in Krisenzeiten.</p>
-    <a href="dividendenaktien-5-stabil-2025.html" class="btn" title="5 stabile Dividendenaktien 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>5 stabile Dividendenaktien 2025</h2>
+      <p>Telekom, Konsumgüter & Logistik – 5 defensive Titel für planbaren Cashflow auch in Krisenzeiten.</p>
+      <a href="dividendenaktien-5-stabil-2025.html" class="btn" title="5 stabile Dividendenaktien 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>3 Aktien mit über 10 % Dividende 2025</h2>
-    <p>Flex LNG, BW LPG & International Seaways – dreifache Cashflow-Power auf See mit zweistelligen Renditen.</p>
-    <a href="shipping-3-aktien-lng-tanker-2025.html" class="btn" title="3 LNG & Tanker Aktien mit über 10 % Dividende lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>3 Aktien mit über 10 % Dividende 2025</h2>
+      <p>Flex LNG, BW LPG & International Seaways – dreifache Cashflow-Power auf See mit zweistelligen Renditen.</p>
+      <a href="shipping-3-aktien-lng-tanker-2025.html" class="btn" title="3 LNG & Tanker Aktien mit über 10 % Dividende lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>10 Dividendenaktien mit über 10 % Rendite 2025</h2>
-    <p>Mein Depot bringt über 5.500 € Dividenden im Jahr – echte High-Yield-Titel im Überblick.</p>
-    <a href="dividendenaktien-10prozent-2025.html" class="btn" title="10 High-Yield Dividendenaktien 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>10 Dividendenaktien mit über 10 % Rendite 2025</h2>
+      <p>Mein Depot bringt über 5.500 € Dividenden im Jahr – echte High-Yield-Titel im Überblick.</p>
+      <a href="dividendenaktien-10prozent-2025.html" class="btn" title="10 High-Yield Dividendenaktien 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>3 Schifffahrtsaktien mit über 10 % Dividende 2025</h2>
-    <p>Dorian LPG, Torm & Frontline – LNG & Tanker mit zweistelligen Renditen im Fokus.</p>
-    <a href="shipping-3-aktien-10prozent-2025.html" class="btn" title="3 Shipping-Aktien mit über 10 % Dividende lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>3 Schifffahrtsaktien mit über 10 % Dividende 2025</h2>
+      <p>Dorian LPG, Torm & Frontline – LNG & Tanker mit zweistelligen Renditen im Fokus.</p>
+      <a href="shipping-3-aktien-10prozent-2025.html" class="btn" title="3 Shipping-Aktien mit über 10 % Dividende lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>6 Schifffahrtsaktien im Depot 2025</h2>
-    <p>Bulk- & Container-Reedereien im Vergleich – die stärksten Dividendenzahler aus meinem Depot.</p>
-    <a href="shipping-6-aktien-depot-2025.html" class="btn" title="6 Schifffahrtsaktien im Depot 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>6 Schifffahrtsaktien im Depot 2025</h2>
+      <p>Bulk- & Container-Reedereien im Vergleich – die stärksten Dividendenzahler aus meinem Depot.</p>
+      <a href="shipping-6-aktien-depot-2025.html" class="btn" title="6 Schifffahrtsaktien im Depot 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Hidden Champions im Shipping 2025</h2>
-    <p>3 Spezial-Reedereien mit starker Dividende – Wallenius, Höegh & ZIM im Dividenden-Check.</p>
-    <a href="hidden-champions-shipping-2025.html" class="btn" title="Hidden Champions im Shipping 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Hidden Champions im Shipping 2025</h2>
+      <p>3 Spezial-Reedereien mit starker Dividende – Wallenius, Höegh & ZIM im Dividenden-Check.</p>
+      <a href="hidden-champions-shipping-2025.html" class="btn" title="Hidden Champions im Shipping 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Tanker & Mixed Fleet 2025</h2>
-    <p>4 Dividendenmaschinen im Shipping – Hafnia, Ardmore, DHT & SFL im Überblick.</p>
-    <a href="shipping-tanker-mixedfleet-2025.html" class="btn" title="Tanker & Mixed Fleet 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Tanker & Mixed Fleet 2025</h2>
+      <p>4 Dividendenmaschinen im Shipping – Hafnia, Ardmore, DHT & SFL im Überblick.</p>
+      <a href="shipping-tanker-mixedfleet-2025.html" class="btn" title="Tanker & Mixed Fleet 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Pipeline Serie Finale 2025</h2>
-    <p>Vergleich der 5 größten Pipeline-Aktien: Pembina, TC Energy, Enbridge, ONEOK & Kinder Morgan.</p>
-    <a href="pipeline-serie-finale-vergleich-2025.html" class="btn" title="Pipeline Serie Finale 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Pipeline Serie Finale 2025</h2>
+      <p>Vergleich der 5 größten Pipeline-Aktien: Pembina, TC Energy, Enbridge, ONEOK & Kinder Morgan.</p>
+      <a href="pipeline-serie-finale-vergleich-2025.html" class="btn" title="Pipeline Serie Finale 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>BDC Dividendenaktien 2025</h2>
-    <p>Newtek One vs. Hercules Capital – Stabilität oder High-Yield? Detaillierter Vergleich.</p>
-    <a href="bdc-dividendenaktien-2025-newtek-vs-hercules.html" class="btn" title="BDC Dividendenaktien 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>BDC Dividendenaktien 2025</h2>
+      <p>Newtek One vs. Hercules Capital – Stabilität oder High-Yield? Detaillierter Vergleich.</p>
+      <a href="bdc-dividendenaktien-2025-newtek-vs-hercules.html" class="btn" title="BDC Dividendenaktien 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>BDC Duell 2025</h2>
-    <p>Crescent Capital vs. Blue Owl – zwei BDCs im direkten Dividendenvergleich (11–12 % Rendite).</p>
-    <a href="bdc-duell-2025-crescent-vs-blue-owl.html" class="btn" title="BDC Duell 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>BDC Duell 2025</h2>
+      <p>Crescent Capital vs. Blue Owl – zwei BDCs im direkten Dividendenvergleich (11–12 % Rendite).</p>
+      <a href="bdc-duell-2025-crescent-vs-blue-owl.html" class="btn" title="BDC Duell 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Rohstoff-Superzyklus 2025</h2>
-    <p>Kupfer, Uran, Öl, Gas & Lithium – warum ein neuer Rohstoff-Boom bevorsteht.</p>
-    <a href="rohstoff-superzyklus-2025.html" class="btn" title="Rohstoff-Superzyklus 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Rohstoff-Superzyklus 2025</h2>
+      <p>Kupfer, Uran, Öl, Gas & Lithium – warum ein neuer Rohstoff-Boom bevorsteht.</p>
+      <a href="rohstoff-superzyklus-2025.html" class="btn" title="Rohstoff-Superzyklus 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Enbridge Analyse 2025</h2>
-    <p>Teil 3 der Pipeline-Serie: Enbridge – größter Pipeline-Betreiber Nordamerikas & Dividenden-Aristokrat.</p>
-    <a href="pipeline-serie-teil3-enbridge-analyse-2025.html" class="btn" title="Enbridge Analyse 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Enbridge Analyse 2025</h2>
+      <p>Teil 3 der Pipeline-Serie: Enbridge – größter Pipeline-Betreiber Nordamerikas & Dividenden-Aristokrat.</p>
+      <a href="pipeline-serie-teil3-enbridge-analyse-2025.html" class="btn" title="Enbridge Analyse 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>TC Energy Analyse 2025</h2>
-    <p>Teil 2 der Pipeline-Serie: TC Energy – 5 % Dividende & Schuldenrisiko.</p>
-    <a href="pipeline-serie-teil2-tc-energy-analyse-2025.html" class="btn" title="TC Energy Analyse 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>TC Energy Analyse 2025</h2>
+      <p>Teil 2 der Pipeline-Serie: TC Energy – 5 % Dividende & Schuldenrisiko.</p>
+      <a href="pipeline-serie-teil2-tc-energy-analyse-2025.html" class="btn" title="TC Energy Analyse 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>Pembina Pipeline Analyse 2025</h2>
-    <p>Teil 1 der Pipeline-Serie: Pembina Pipeline – kanadischer Midstream-Cashflow-Anker.</p>
-    <a href="pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" class="btn" title="Pembina Pipeline Analyse 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>Pembina Pipeline Analyse 2025</h2>
+      <p>Teil 1 der Pipeline-Serie: Pembina Pipeline – kanadischer Midstream-Cashflow-Anker.</p>
+      <a href="pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" class="btn" title="Pembina Pipeline Analyse 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-  <div class="post">
-    <h2>ONEOK Aktie Analyse 2025</h2>
-    <p>ONEOK (OKE) – US-Midstream-Gigant mit 5 % Dividende & stabilen Cashflows.</p>
-    <a href="oneok.html" class="btn" title="ONEOK Analyse 2025 lesen">Beitrag lesen →</a>
-  </div>
+    <div class="post">
+      <h2>ONEOK Aktie Analyse 2025</h2>
+      <p>ONEOK (OKE) – US-Midstream-Gigant mit 5 % Dividende & stabilen Cashflows.</p>
+      <a href="oneok.html" class="btn" title="ONEOK Analyse 2025 lesen">Beitrag lesen →</a>
+    </div>
 
-</section>
+  </section>
 
-<footer>
-  © 2025 MB Capital Strategies
-</footer>
+  <!-- Footer -->
+  <footer>
+    © 2025 MB Capital Strategies · 
+    <a href="/impressum.html">Impressum</a> · 
+    <a href="/datenschutz.html">Datenschutzerklärung</a>
+  </footer>
 
 </body>
 </html>
