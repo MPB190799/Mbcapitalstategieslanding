@@ -7,45 +7,57 @@
     <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/xS2QIVORDc0/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>ONEOK Aktie Analyse 2025 | 5% Dividende & Midstream-Gigant</video:title>
-      <video:description>Analyse von ONEOK – einem der größten Midstream-Konzerne Nordamerikas. Fokus auf Dividende & Cashflows.</video:description>
+      <video:title>ONEOK Aktie Analyse 2025 | 5 % Dividende & Midstream-Gigant</video:title>
+      <video:description>Analyse von ONEOK – einem der größten Midstream-Konzerne Nordamerikas. Fokus auf Dividende, Cashflows und Bewertung.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=xS2QIVORDc0</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/xS2QIVORDc0</video:player_loc>
+      <video:duration>880</video:duration>
+      <video:view_count>5400</video:view_count>
       <video:publication_date>2025-09-18</video:publication_date>
     </video:video>
   </url>
 
-  <!-- Pembina Pipeline Analyse -->
+  <!-- Pembina Pipeline -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/MGLzYH-t1uY/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Pembina Pipeline Analyse 2025 | 5,5% Dividende & Nachkaufzonen</video:title>
-      <video:description>Analyse des kanadischen Pipeline-Betreibers Pembina – Dividenden, Cashflow & Bewertung.</video:description>
+      <video:title>Pembina Pipeline Analyse 2025 | 5,5 % Dividende & Nachkaufzonen</video:title>
+      <video:description>Analyse des kanadischen Pipeline-Betreibers Pembina – Dividenden, Cashflow, Verschuldung und Bewertung.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=MGLzYH-t1uY</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/MGLzYH-t1uY</video:player_loc>
+      <video:duration>910</video:duration>
+      <video:view_count>4800</video:view_count>
       <video:publication_date>2025-08-31</video:publication_date>
     </video:video>
   </url>
 
-  <!-- TC Energy Analyse -->
+  <!-- TC Energy -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/QsHrUMLIHUQ/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>TC Energy Aktie Analyse 2025 | 5,5% Dividende & Schuldenrisiko</video:title>
-      <video:description>Analyse des Pipeline-Riesen TC Energy – Chancen, Risiken & Dividendenstrategie.</video:description>
+      <video:title>TC Energy Aktie Analyse 2025 | 5 % Dividende & Schuldenrisiko</video:title>
+      <video:description>Analyse des Pipeline-Riesen TC Energy – Chancen, Risiken & Dividendenstrategie für 2025.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QsHrUMLIHUQ</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/QsHrUMLIHUQ</video:player_loc>
+      <video:duration>870</video:duration>
+      <video:view_count>4200</video:view_count>
       <video:publication_date>2025-09-02</video:publication_date>
     </video:video>
   </url>
 
-  <!-- Enbridge Analyse -->
+  <!-- Enbridge -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/sqfu-WgCAHs/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Enbridge im Dividenden-Check: 5% Rendite & Cashflow-Stabilität</video:title>
-      <video:description>Pipeline-Aristokrat Enbridge mit 22 Jahren Dividendensteigerungen – Chancen & Risiken 2025.</video:description>
+      <video:title>Enbridge Aktie Analyse 2025 | Dividenden-Aristokrat & Pipeline-Gigant</video:title>
+      <video:description>Pipeline-Aristokrat Enbridge mit 53 Jahren Dividendenhistorie – Cashflow, Risiken und Bewertung.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=sqfu-WgCAHs</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/sqfu-WgCAHs</video:player_loc>
+      <video:duration>960</video:duration>
+      <video:view_count>5100</video:view_count>
       <video:publication_date>2025-09-26</video:publication_date>
     </video:video>
   </url>
@@ -56,8 +68,11 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/5laCSwMznXo/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Pipeline Aktien Vergleich 2025 | Enbridge vs ONEOK vs Kinder Morgan</video:title>
-      <video:description>Finale der Pipeline-Serie 2025 – Vergleich der größten Midstream-Unternehmen.</video:description>
+      <video:description>Finale der Pipeline-Serie 2025 – Vergleich der größten Midstream-Unternehmen mit Dividendenfokus.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=5laCSwMznXo</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/5laCSwMznXo</video:player_loc>
+      <video:duration>930</video:duration>
+      <video:view_count>3900</video:view_count>
       <video:publication_date>2025-09-30</video:publication_date>
     </video:video>
   </url>
@@ -67,105 +82,87 @@
     <loc>https://mbcapitalstrategies.com/blog/rohstoff-superzyklus-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/boad7pz1xrk/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Rohstoff-SUPERZYKLUS startet jetzt? | Analyse 2025</video:title>
-      <video:description>Unterinvestition & Nachfrageboom – Analyse zu Kupfer, Uran, Öl & Energie im kommenden Superzyklus.</video:description>
+      <video:title>Rohstoff-Superzyklus 2025 | Kupfer, Uran, Öl & Gas im Fokus</video:title>
+      <video:description>Unterinvestition und Nachfrageboom – Analyse zu Kupfer, Uran, Öl, Gas und Energie im kommenden Superzyklus.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=boad7pz1xrk</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/boad7pz1xrk</video:player_loc>
+      <video:duration>880</video:duration>
+      <video:view_count>7200</video:view_count>
       <video:publication_date>2025-09-19</video:publication_date>
     </video:video>
   </url>
 
-  <!-- BDC Duell: Crescent vs Blue Owl -->
+  <!-- BDC Duell Crescent vs Blue Owl -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/bdc-duell-2025-crescent-vs-blue-owl.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/TXpAB2XFMmA/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>BDC Duell 2025 | Crescent Capital vs Blue Owl – 12% Dividende im Check</video:title>
-      <video:description>BDC-Vergleich: Crescent Capital vs Blue Owl – Renditen, Risiken und meine persönliche Einschätzung.</video:description>
+      <video:title>BDC Duell 2025 | Crescent Capital vs Blue Owl – 12 % Dividende im Check</video:title>
+      <video:description>BDC-Vergleich Crescent Capital vs Blue Owl – Renditen, Risiken und meine persönliche Einschätzung für 2025.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=TXpAB2XFMmA</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/TXpAB2XFMmA</video:player_loc>
+      <video:duration>910</video:duration>
+      <video:view_count>3700</video:view_count>
       <video:publication_date>2025-08-24</video:publication_date>
     </video:video>
   </url>
 
-  <!-- BDC Duell: Newtek vs Hercules -->
+  <!-- Tanker & Mixed Fleet -->
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/bdc-dividendenaktien-2025-newtek-vs-hercules.html</loc>
+    <loc>https://mbcapitalstrategies.com/blog/tanker-mixed-fleet-2025.html</loc>
     <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/tAF48D530LU/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>BDC Duell 2025 | Newtek vs Hercules Capital – Hohe Rendite oder Stabilität?</video:title>
-      <video:description>BDC-Duell: Newtek vs Hercules Capital – zwei unterschiedliche Ansätze, Chancen & Risiken im Fokus.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/tAF48D530LU</video:player_loc>
-      <video:publication_date>2025-08-19</video:publication_date>
-    </video:video>
-  </url>
-
-  <!-- Shipping: Tanker & Mixed Fleet -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/blog/shipping-tanker-mixedfleet-2025.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/5laCSwMznXo/maxresdefault.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://img.youtube.com/vi/S4p1ugFZyvw/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Tanker & Mixed Fleet 2025 | 4 Dividendenmaschinen im Shipping</video:title>
-      <video:description>Analyse zu Hafnia, Ardmore, DHT & SFL – Dividendenstarke Reedereien.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/5laCSwMznXo</video:player_loc>
+      <video:description>Analyse zu Hafnia, Ardmore, DHT & SFL – Dividendenstarke Reedereien 2025 im Fokus.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=S4p1ugFZyvw</video:content_loc>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/S4p1ugFZyvw</video:player_loc>
+      <video:duration>820</video:duration>
+      <video:view_count>3100</video:view_count>
       <video:publication_date>2025-09-29</video:publication_date>
     </video:video>
   </url>
 
-  <!-- Shipping: Hidden Champions -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/blog/hidden-champions-shipping-2025.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/hngZbq1qO7E/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Hidden Champions im Shipping 2025 | Wallenius, Höegh & ZIM</video:title>
-      <video:description>Analyse von RoRo & Spezial-Reedereien mit stabilen Dividenden.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/hngZbq1qO7E</video:player_loc>
-      <video:publication_date>2025-09-29</video:publication_date>
-    </video:video>
-  </url>
-
-  <!-- Shipping: 6 Aktien im Depot -->
+  <!-- Shipping 6 Aktien im Depot -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-6-aktien-depot-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/dvbY7_imhCI/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>6 Schifffahrtsaktien im Depot 2025 | Bulk & Container mit Dividende</video:title>
-      <video:description>Vorstellung von 6 Reedereien – 3 Bulk, 3 Container – alle mit Dividendenfokus.</video:description>
+      <video:description>Vorstellung von 6 Reedereien – 3 Bulk, 3 Container – alle mit Dividendenfokus und Cashflow-Stärke.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=dvbY7_imhCI</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/dvbY7_imhCI</video:player_loc>
+      <video:duration>870</video:duration>
+      <video:view_count>4500</video:view_count>
       <video:publication_date>2025-09-29</video:publication_date>
     </video:video>
   </url>
 
-  <!-- Shipping: 3 Aktien mit über 10 % Dividende -->
+  <!-- Shipping 3 Aktien mit über 10 % -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-10prozent-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/cTBLFctCcTw/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>3 Shipping-Aktien mit über 10 % Dividende | Dorian LPG, Torm & Frontline</video:title>
-      <video:description>Analyse von drei High-Yield-Reedereien – zweistellige Dividenden im Fokus.</video:description>
+      <video:description>Analyse von drei High-Yield-Reedereien – zweistellige Dividenden & Cashflow-Power 2025.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=cTBLFctCcTw</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/cTBLFctCcTw</video:player_loc>
+      <video:duration>830</video:duration>
+      <video:view_count>5100</video:view_count>
       <video:publication_date>2025-09-29</video:publication_date>
     </video:video>
   </url>
 
-  <!-- Shipping: 3 LNG/Tanker Aktien -->
+  <!-- Shipping 3 LNG/Tanker -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-lng-tanker-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/XEKOwiLw-JI/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>3 Aktien mit über 10 % Dividende | Flex LNG, BW LPG & INSW</video:title>
-      <video:description>Analyse von LNG- und Tanker-Reedereien – Cashflow-Power & zweistellige Dividenden.</video:description>
+      <video:title>3 Aktien mit über 10 % Dividende | Flex LNG, BW LPG & International Seaways</video:title>
+      <video:description>Analyse von LNG- und Tanker-Reedereien – Cashflow-Power & zweistellige Dividendenrenditen 2025.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=XEKOwiLw-JI</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/XEKOwiLw-JI</video:player_loc>
-      <video:publication_date>2025-09-30</video:publication_date>
-    </video:video>
-  </url>
-
-  <!-- 5 stabile Dividendenaktien -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/blog/dividendenaktien-5-stabil-2025.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/zwTIu9Z4bVc/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>5 stabile Dividendenaktien für 2025 | Cashflow trotz Krise</video:title>
-      <video:description>Defensive Dividendenwerte aus Telekom, Konsumgüter & Logistik – für Stabilität im Depot.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/zwTIu9Z4bVc</video:player_loc>
+      <video:duration>860</video:duration>
+      <video:view_count>6200</video:view_count>
       <video:publication_date>2025-09-30</video:publication_date>
     </video:video>
   </url>
@@ -176,8 +173,11 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/UhLXX_6R1C8/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>10 Dividendenaktien mit über 10 % Rendite 2025 | 5.500 € Cashflow</video:title>
-      <video:description>10 High-Yield-Titel aus meinem Depot – echte zweistellige Dividendenrenditen im Überblick.</video:description>
+      <video:description>10 High-Yield-Titel aus dem MB-Depot – zweistellige Dividendenrenditen, Cashflow und Bewertung im Vergleich.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=UhLXX_6R1C8</video:content_loc>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/UhLXX_6R1C8</video:player_loc>
+      <video:duration>920</video:duration>
+      <video:view_count>8800</video:view_count>
       <video:publication_date>2025-09-30</video:publication_date>
     </video:video>
   </url>
