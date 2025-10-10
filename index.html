@@ -93,16 +93,14 @@
   }
   </script>
 
+  <!-- ✅ Styling -->
   <style>
     body {
-      background: #0f1115;
-      color: #f5f6fa;
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:'Montserrat', sans-serif;
+      margin:0;
     }
-  </style>
-</head>
-
 
     /* Header Navigation */
     header {
@@ -124,20 +122,20 @@
 
     /* Hero */
     .hero {
-      background: url('background.jpg') no-repeat center center/cover;
+      background:url('background.jpg') no-repeat center center/cover;
       text-align:center;
       padding:120px 20px;
     }
     .hero-logo {
       width:200px;
       margin-bottom:25px;
-      filter: drop-shadow(0 0 15px rgba(212,175,55,0.8));
+      filter:drop-shadow(0 0 15px rgba(212,175,55,0.8));
     }
     .hero h2 {
       font-size:2.8em;
       color:#d4af37;
       margin-bottom:20px;
-      text-shadow:0 0 15px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.5);
+      text-shadow:0 0 15px rgba(212,175,55,0.8),0 0 30px rgba(212,175,55,0.5);
     }
     .hero p {
       font-size:1.2em;
@@ -162,32 +160,78 @@
     }
     .btn:hover {
       background:#e0bd55;
-      box-shadow:0 0 15px rgba(212,175,55,0.8), 0 0 30px rgba(212,175,55,0.6);
+      box-shadow:0 0 15px rgba(212,175,55,0.8),0 0 30px rgba(212,175,55,0.6);
     }
 
     /* Tools Grid */
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; padding:40px; }
-    .card { background:#1a1f2b; border:1px solid rgba(212,175,55,.3); padding:25px; border-radius:16px; text-align:center; transition:0.3s; }
-    .card:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,.35); }
-    .card h3 { color:#d4af37; margin-bottom:10px; text-shadow:0 0 10px rgba(212,175,55,0.6); }
-    .card p { color:#cfd6e6; font-size:0.95em; line-height:1.5; }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      padding:40px;
+    }
+    .card {
+      background:#1a1f2b;
+      border:1px solid rgba(212,175,55,.3);
+      padding:25px;
+      border-radius:16px;
+      text-align:center;
+      transition:0.3s;
+    }
+    .card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 8px 24px rgba(0,0,0,.35);
+    }
+    .card h3 {
+      color:#d4af37;
+      margin-bottom:10px;
+      text-shadow:0 0 10px rgba(212,175,55,0.6);
+    }
+    .card p {
+      color:#cfd6e6;
+      font-size:0.95em;
+      line-height:1.5;
+    }
 
     /* Warum-Section */
-    .why { padding:60px 20px; background:#151821; text-align:center; }
+    .why {
+      padding:60px 20px;
+      background:#151821;
+      text-align:center;
+    }
     .why h2 {
       font-size:2em;
       color:#d4af37;
       margin-bottom:20px;
       text-shadow:0 0 12px rgba(212,175,55,0.7);
     }
-    .why p { max-width:800px; margin:0 auto; font-size:1.05em; line-height:1.7; color:#cfd6e6; }
+    .why p {
+      max-width:800px;
+      margin:0 auto;
+      font-size:1.05em;
+      line-height:1.7;
+      color:#cfd6e6;
+    }
 
     /* Footer */
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#9aa6c0; border-top:1px solid rgba(255,255,255,.05); margin-top:40px; }
-    footer a { color:#d4af37; text-decoration:none; }
-    footer a:hover { text-decoration:underline; }
+    footer {
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.05);
+      margin-top:40px;
+    }
+    footer a {
+      color:#d4af37;
+      text-decoration:none;
+    }
+    footer a:hover {
+      text-decoration:underline;
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -278,4 +322,3 @@
 
 </body>
 </html>
-
