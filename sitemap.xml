@@ -4,7 +4,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://mbcapitalstrategies.com/</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,54 +12,71 @@
   <!-- Blog Index -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/index.html</loc>
-    <lastmod>2025-09-30</lastmod>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blogartikel -->
+  <!-- 🪙 Mining-Serie -->
   <url>
-    <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
-    <lastmod>2025-09-20</lastmod>
+    <loc>https://mbcapitalstrategies.com/blog/thungela-resources-analyse-2025.html</loc>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/whitehaven-coal-analyse-2025.html</loc>
+    <lastmod>2025-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pipeline-Serie -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
     <lastmod>2025-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Rohstoffe -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/rohstoff-superzyklus-2025.html</loc>
     <lastmod>2025-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- BDCs -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/bdc-duell-2025-crescent-vs-blue-owl.html</loc>
     <lastmod>2025-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/bdc-dividendenaktien-2025-newtek-vs-hercules.html</loc>
     <lastmod>2025-09-15</lastmod>
@@ -67,31 +84,35 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Shipping Artikel -->
+  <!-- Shipping -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-tanker-mixedfleet-2025.html</loc>
     <lastmod>2025-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/hidden-champions-shipping-2025.html</loc>
     <lastmod>2025-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-6-aktien-depot-2025.html</loc>
     <lastmod>2025-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-10prozent-2025.html</loc>
     <lastmod>2025-09-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/shipping-3-aktien-lng-tanker-2025.html</loc>
     <lastmod>2025-09-30</lastmod>
@@ -99,13 +120,14 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Dividenden Artikel -->
+  <!-- Dividenden -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/dividendenaktien-5-stabil-2025.html</loc>
     <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://mbcapitalstrategies.com/blog/dividendenaktien-10prozent-2025.html</loc>
     <lastmod>2025-09-30</lastmod>
@@ -113,7 +135,15 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Impressum -->
+  <!-- ONEOK -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Rechtliches -->
   <url>
     <loc>https://mbcapitalstrategies.com/impressum.html</loc>
     <lastmod>2025-09-23</lastmod>
@@ -121,7 +151,6 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Datenschutz -->
   <url>
     <loc>https://mbcapitalstrategies.com/datenschutz.html</loc>
     <lastmod>2025-09-23</lastmod>
