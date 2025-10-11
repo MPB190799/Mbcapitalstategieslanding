@@ -2,6 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
+  <!-- 🪙 Thungela Resources -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/thungela-resources-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/s8RIRPjZafs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Minen-Aktien 2025 #1 &#124; Thungela Resources – 15 % Dividende! Mega-Chance oder Risiko?</video:title>
+      <video:description>Thungela Resources Analyse 2025 – High-Yield-Kohleproduzent mit 15 % Dividendenrendite. Chancen, Risiken &amp; Fundamentaldaten im Überblick.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=s8RIRPjZafs</video:content_loc>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/s8RIRPjZafs</video:player_loc>
+      <video:duration>840</video:duration>
+      <video:publication_date>2025-09-25</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- ⛏️ Whitehaven Coal -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/whitehaven-coal-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/2D7y2KlpYsk/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Minen-Aktien 2025 #2 &#124; Whitehaven Coal – 50 % Upside-Potenzial im Rohstoff-Superzyklus?</video:title>
+      <video:description>Whitehaven Coal Analyse 2025 – Australiens Kohle-Champion mit hoher Dividende, stabiler Bilanz &amp; klarer Upside im Rohstoff-Superzyklus. Teil 2 der MB Mining Serie.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=2D7y2KlpYsk</video:content_loc>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/2D7y2KlpYsk</video:player_loc>
+      <video:duration>960</video:duration>
+      <video:publication_date>2025-09-27</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- ✅ ONEOK -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/oneok.html</loc>
     <video:video>
@@ -15,6 +44,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Pipeline Serie Teil 1 -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html</loc>
     <video:video>
@@ -28,6 +58,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Pipeline Serie Teil 2 -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
     <video:video>
@@ -41,6 +72,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Pipeline Serie Teil 3 -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
     <video:video>
@@ -54,6 +86,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Pipeline Finale -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html</loc>
     <video:video>
@@ -67,6 +100,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Rohstoff-Superzyklus -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/rohstoff-superzyklus-2025.html</loc>
     <video:video>
@@ -80,6 +114,7 @@
     </video:video>
   </url>
 
+  <!-- ✅ Tanker & Mixed Fleet -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/tanker-mixed-fleet-2025.html</loc>
     <video:video>
