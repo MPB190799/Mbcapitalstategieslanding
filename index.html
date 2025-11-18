@@ -1,14 +1,17 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <!-- Google AdSense -->
+
+  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MB Capital Strategies Toolbox – Die besten Broker & Tools für Dividendeninvestoren</title>
   <meta name="description" content="Meine Toolbox für Dividendeninvestoren: Die besten Broker, Analyse-Tools & Ressourcen, die ich selbst nutze. Perfekt für Cashflow, Hard Assets & langfristigen Vermögensaufbau.">
 
-  <!-- Google Search Console -->
+  <!-- Search Console -->
   <meta name="google-site-verification" content="2zR4Jz8vCKzuF-MwcEYNZwUUeiNEofR8AJTDqNNEv1s" />
 
   <!-- Open Graph -->
@@ -20,9 +23,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@mbcapitalstrategies">
 
-  <!-- Schema.org Person + Organization -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,153 +53,88 @@
         "logo": "https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png",
         "founder": { "@id": "https://mbcapitalstrategies.com/#marcobozem" },
         "foundingDate": "2025",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Laufach",
-            "addressCountry": "DE"
-          }
-        },
         "description": "Unabhängige Finanz- & Investmentplattform mit Fokus auf Dividendenstrategien, Cashflow & Hard-Asset-Investments."
       }
     ]
   }
   </script>
 
-  <!-- Styling -->
   <style>
-    body {
-      background:#0f1115;
-      color:#f5f6fa;
-      font-family:'Montserrat',sans-serif;
-      margin:0;
-    }
+    body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; margin:0; }
+
     header {
       background:#151821;
       border-bottom:1px solid rgba(212,175,55,0.3);
       padding:15px 10px;
       text-align:center;
-      position:sticky;
-      top:0;
-      z-index:10;
+      position:sticky; top:0; z-index:10;
     }
     header a {
-      color:#d4af37;
-      margin:0 15px;
-      text-decoration:none;
-      font-weight:600;
+      color:#d4af37; margin:0 15px; text-decoration:none; font-weight:600;
     }
     header a:hover { text-decoration:underline; }
 
     .hero {
       background:url('background.jpg') no-repeat center center/cover;
-      text-align:center;
-      padding:120px 20px;
+      text-align:center; padding:120px 20px;
     }
     .hero-logo {
-      width:200px;
-      margin-bottom:25px;
+      width:200px; margin-bottom:25px;
       filter:drop-shadow(0 0 15px rgba(212,175,55,0.8));
     }
     .hero h2 {
-      font-size:2.8em;
-      color:#d4af37;
-      margin-bottom:20px;
-      text-shadow:0 0 15px rgba(212,175,55,0.8),0 0 30px rgba(212,175,55,0.5);
+      font-size:2.8em; color:#d4af37; margin-bottom:20px;
+      text-shadow:0 0 15px rgba(212,175,55,0.8);
     }
     .hero p {
-      font-size:1.2em;
-      color:#f5f6fa;
-      margin-bottom:30px;
-      text-shadow:0 0 10px rgba(0,0,0,0.7);
+      font-size:1.2em; color:#f5f6fa; margin-bottom:30px;
     }
 
     .btn {
-      display:inline-block;
-      margin-top:15px;
-      padding:14px 28px;
-      background:#d4af37;
-      color:#0f1115;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:1.1em;
+      display:inline-block; padding:14px 28px;
+      background:#d4af37; color:#0f1115;
+      border-radius:8px; text-decoration:none;
+      font-weight:bold; font-size:1.1em;
       transition:0.3s;
       box-shadow:0 0 10px rgba(212,175,55,0.4);
     }
     .btn:hover {
       background:#e0bd55;
-      box-shadow:0 0 15px rgba(212,175,55,0.8),0 0 30px rgba(212,175,55,0.6);
+      box-shadow:0 0 15px rgba(212,175,55,0.8);
     }
 
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-      padding:40px;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px; padding:40px;
     }
     .card {
-      background:#1a1f2b;
-      border:1px solid rgba(212,175,55,.3);
-      padding:25px;
-      border-radius:16px;
-      text-align:center;
+      background:#1a1f2b; border:1px solid rgba(212,175,55,.3);
+      padding:25px; border-radius:16px; text-align:center;
       transition:0.3s;
     }
-    .card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 8px 24px rgba(0,0,0,.35);
-    }
-    .card h3 {
-      color:#d4af37;
-      margin-bottom:10px;
-      text-shadow:0 0 10px rgba(212,175,55,0.6);
-    }
-    .card p {
-      color:#cfd6e6;
-      font-size:0.95em;
-      line-height:1.5;
-    }
+    .card:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,.35); }
+    .card h3 { color:#d4af37; margin-bottom:10px; }
 
     .why {
-      padding:60px 20px;
-      background:#151821;
-      text-align:center;
+      padding:60px 20px; background:#151821; text-align:center;
     }
-    .why h2 {
-      font-size:2em;
-      color:#d4af37;
-      margin-bottom:20px;
-      text-shadow:0 0 12px rgba(212,175,55,0.7);
-    }
-    .why p {
-      max-width:800px;
-      margin:0 auto;
-      font-size:1.05em;
-      line-height:1.7;
-      color:#cfd6e6;
-    }
+    .why h2 { font-size:2em; color:#d4af37; margin-bottom:20px; }
 
     footer {
-      text-align:center;
-      padding:20px;
-      font-size:0.9em;
-      color:#9aa6c0;
+      text-align:center; padding:20px;
+      font-size:0.9em; color:#9aa6c0;
       border-top:1px solid rgba(255,255,255,.05);
       margin-top:40px;
     }
-    footer a {
-      color:#d4af37;
-      text-decoration:none;
-    }
+    footer a { color:#d4af37; text-decoration:none; }
     footer a:hover { text-decoration:underline; }
   </style>
+
 </head>
 <body>
-  
+
 <header>
-  <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
+  <a href="/">🏠 Startseite</a>
   <a href="/depot-strategie/">📊 Depot-Strategie</a>
   <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
   <a href="/blog/index.html">📰 Blog</a>
@@ -205,37 +142,29 @@
 </header>
 
 <section class="hero">
-  <img src="https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png" 
-       alt="MB Capital Strategies Logo" 
-       class="hero-logo">
+  <img src="https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png" alt="MB Capital Strategies Logo" class="hero-logo">
   <h2>Meine Toolbox für Investoren</h2>
-  <p>
-    Alle Broker, Tools & Ressourcen, die ich selbst nutze – gebündelt an einem Ort.<br>
-    Perfekt für Dividenden-Strategien, Hard Assets & smarte Investments.
-  </p>
+  <p>Alle Broker, Tools & Ressourcen, die ich selbst nutze – perfekt für Dividenden, Cashflow & Hard Assets.</p>
   <a href="#tools" class="btn">Jetzt entdecken →</a>
 </section>
 
 <section id="tools" class="grid">
-
   <!-- Scalable Capital -->
   <div class="card">
     <h3>📈 Broker: Scalable Capital</h3>
-    <p>Mein Hauptbroker für ETFs, Aktien und Dividendenstrategie. Ideal für langfristigen Vermögensaufbau.</p>
+    <p>Mein Hauptbroker für ETFs, Aktien und Dividendenstrategie.</p>
     <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
        Zu Scalable Capital →
     </a>
-    <p style="font-size:0.85em;color:#888;">
-      ⚠️ Investitionen bergen Risiken. Es kann zu Verlusten des eingesetzten Kapitals kommen.
-    </p>
+    <p style="font-size:0.85em;color:#888;">⚠️ Investitionen bergen Risiken.</p>
   </div>
 
   <!-- Trade Republic -->
   <div class="card">
     <h3>📊 Broker: Trade Republic</h3>
-    <p>Einfache Bedienung & kostenloses Depot. Nutze ich für schnelle Käufe und mein Zweitdepot.</p>
-    <a href="https://refnocode.trade.re/79z763g7" 
+    <p>Einfache Bedienung & kostenloses Depot – mein Zweitbroker.</p>
+    <a href="https://refnocode.trade.re/79z763g7"
        class="btn" target="_blank" rel="noopener noreferrer">
        Zu Trade Republic →
     </a>
@@ -244,40 +173,29 @@
   <!-- InvestingPro -->
   <div class="card">
     <h3>📊 InvestingPro – Mein Analyse-Tool Nr. 1</h3>
-    <p>
-      Nutze ich täglich für Fundamentalanalysen, Fair-Value-Modelle, Cashflow-Bewertungen,
-      Aktien-Screening und Earnings-Daten.  
-      Für mich das stärkste Research-Tool, um unterbewertete Dividenden- und Hard-Asset-Aktien zu finden.
-    </p>
+    <p>Täglicher Einsatz: Fair-Value, Cashflow-Modelle, Screening & Earnings.</p>
     <a href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=mbcapitalstrategies&sub1=Toolbox%20Website"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
-       InvestingPro mit 15 % Rabatt nutzen →
+       InvestingPro mit 15 % Rabatt →
     </a>
-    <p style="font-size:0.85em;color:#888;">
-      Über meinen Link erhältst du <strong>15 % Rabatt</strong> auf InvestingPro.
-    </p>
+    <p style="font-size:0.85em;color:#888;">💰 Du erhältst 15 % Rabatt.</p>
   </div>
 
   <!-- Parqet -->
   <div class="card">
     <h3>📊 Parqet – Depot- & Dividenden-Tracking</h3>
-    <p>
-      Nutze ich täglich, um mein Dividendendepot, meinen Cashflow und die Prognose für das nächste Jahr im Blick zu behalten.  
-      Perfekt für Ausschüttungen, Branchenanalyse & Währungsdiversifikation.
-    </p>
+    <p>Nutze ich für Dividendenkalender, Cashflow & Branchenanalyse.</p>
     <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
-       Parqet mit 15 % Rabatt nutzen →
+       Parqet mit 15 % Rabatt →
     </a>
-    <p style="font-size:0.85em;color:#888;">
-      <strong>15 % Rabatt</strong> auf Parqet Plus oder Investor im ersten Jahr.
-    </p>
+    <p style="font-size:0.85em;color:#888;">🎁 15 % Rabatt im ersten Jahr.</p>
   </div>
 
   <!-- Binance -->
   <div class="card">
     <h3>📈 Binance</h3>
-    <p>Meine erste Wahl für Krypto-Trading & Staking. Große Auswahl an Coins und sehr niedrige Gebühren.</p>
+    <p>Meine Wahl für Krypto-Trading & Staking.</p>
     <a href="https://binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9&utm_medium=web_share_copy"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
        Zu Binance →
@@ -287,7 +205,7 @@
   <!-- Coinbase -->
   <div class="card">
     <h3>📈 Coinbase</h3>
-    <p>Bekannte Krypto-Plattform mit einfacher Bedienung & hoher Sicherheit.</p>
+    <p>Einfache Bedienung & hohe Sicherheit.</p>
     <a href="https://coinbase.com/join/EN8NVAV?src=referral-link"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
        Zu Coinbase →
@@ -297,7 +215,7 @@
   <!-- Wise -->
   <div class="card">
     <h3>💸 Wise</h3>
-    <p>Mein Tool für günstige Auslandsüberweisungen, Reisen & Multi-Währungskonten.</p>
+    <p>Nutze ich für Reisen, Multi-Währungskonten & günstige Überweisungen.</p>
     <a href="https://wise.com/invite/dic/marcopeterb2"
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
        Zu Wise →
@@ -307,24 +225,18 @@
   <!-- Airalo -->
   <div class="card">
     <h3>📱 Airalo – eSIM für Reisen</h3>
-    <p>
-      Nutze ich auf Reisen (z. B. Vietnam):  
-      sofort online, keine SIM-Shops, volle Kontrolle über Datenpakete.
-    </p>
+    <p>Direkt online nach der Landung – ideal für Vietnam & Asien-Reisen.</p>
     <a href="https://www.airalo.com" 
        class="btn" target="_blank" rel="nofollow sponsored noopener noreferrer">
        Zu Airalo →
     </a>
-    <p style="font-size:0.85em;color:#888;">
-      Empfehlungscode: <strong>BAND1T8990</strong> – 3 € Guthaben für dich.
-    </p>
+    <p style="font-size:0.85em;color:#888;">Code: <strong>BAND1T8990</strong> – 3 € Guthaben.</p>
   </div>
 
   <!-- YouTube -->
   <div class="card">
     <h3>▶ YouTube: MB Capital Strategies</h3>
-    <p>Portfolio-Updates, Analysen & Dividenden-Strategien.  
-       Deine Hard-Asset-Community wartet 🚀</p>
+    <p>Analysen, Depot-Updates & Hard-Asset-Strategien.</p>
     <a href="https://www.youtube.com/@mbcapitalstrategies"
        class="btn" target="_blank" rel="noopener noreferrer">
        Zum Kanal →
@@ -334,82 +246,57 @@
   <!-- Odysee -->
   <div class="card">
     <h3>🌐 Odysee: MB Capital Strategies</h3>
-    <p>
-      Dezentrale Alternative zu YouTube – unabhängig, werbefrei, Creator-freundlich.
-    </p>
+    <p>Dezentrale Alternative zu YouTube – unabhängig & creator-friendly.</p>
     <a href="https://odysee.com/@mbcapitalstrategies:5?r=AMfqEhDex3qSoQYyLJcFdqAQAiN334AX"
        class="btn" target="_blank" rel="noopener noreferrer nofollow sponsored">
-       Jetzt auf Odysee ansehen →
+       Auf Odysee ansehen →
     </a>
   </div>
 
   <!-- Blog -->
   <div class="card">
     <h3>📖 Analysen & Beiträge</h3>
-    <p>Meine Aktienanalysen, Marktthesen & Hard-Asset-Strategien.</p>
-    <a href="/blog/index.html" class="btn">
-      Zu den Analysen →
-    </a>
+    <p>Aktienanalysen & Hard-Asset-Reports.</p>
+    <a href="/blog/index.html" class="btn">Zu den Analysen →</a>
   </div>
 
 </section>
+
+
+<!-- Warum diese Tools -->
 <section class="why">
   <h2>🚀 Warum genau diese Tools?</h2>
-  <p>
-    Ich setze ausschließlich Tools ein, die mich beim Aufbau von 
-    <strong>Cashflow, Dividendenwachstum</strong> und einer nachhaltigen 
-    <strong>Investmentstrategie</strong> unterstützen.  
-    Alle Tools auf dieser Seite nutze ich selbst – keine bezahlte Werbung, 
-    sondern echte Erfahrungen aus der Praxis.
-  </p>
-
-  <br>
-
-  <p style="text-align:left; max-width:750px; margin:30px auto; line-height:1.8;">
-
-    📊 <strong>Scalable Capital</strong> & <strong>Trade Republic</strong> –  
-    moderne Broker für langfristige Dividenden- & ETF-Strategien.<br><br>
-
-    📊 <strong>Parqet</strong> – mein Depot- und Dividenden-Tracker:  
-    Performance, Kalender, Cashflow-Prognose, Branchen- & Länder-Übersicht.<br><br>
-
-    📈 <strong>InvestingPro</strong> – Fundamentaldaten, Fair-Value-Modelle,  
-    Cashflow-Analysen & Screening.  
-    Mein stärkstes Tool, um unterbewertete Hard-Asset- & Dividendenaktien zu finden.<br><br>
-
-    💰 <strong>Binance</strong> & <strong>Coinbase</strong> – Plattformen für den Krypto-Anteil  
-    meines Portfolios inkl. Staking für zusätzlichen Cashflow.<br><br>
-
-    💸 <strong>Wise</strong> – perfekte Lösung für Multi-Währungskonten, Reisen und  
-    internationale Transfers.<br><br>
-
-    📱 <strong>Airalo</strong> – eSIMs für meine Reisen (z. B. Vietnam).  
-    Sofort online, keine Wartezeiten, volle Kostenkontrolle.<br><br>
-
-    ▶ <strong>YouTube</strong> – meine Basis für Analysen, Depot-Updates und Community-Wachstum.<br><br>
-
-    🌐 <strong>Odysee</strong> – dezentrale, unabhängige Plattform für langfristige Creator-Freiheit.
-  </p>
-
-  <br>
-
-  <p>
-    👉 <em>Transparenz-Hinweis:</em> Einige Links sind Affiliate-Links.  
-    Wenn du darüber etwas abschließt, unterstützt du meinen Kanal – ohne Mehrkosten.  
+  <p style="max-width:800px;margin:0 auto;line-height:1.6;">
+    Ich nutze jedes Tool persönlich für meine Cashflow- & Hard-Asset-Strategie.
+    Keine bezahlte Werbung – nur echte Praxiserfahrung.
     <br><br>
-    📉 <strong>Investitionen bergen Risiken. Keine Anlageberatung.</strong>
+    ✔ Scalable & Trade Republic → perfekte Broker für Dividenden & ETFs  
+    ✔ InvestingPro → mein Fundamentaldaten- & Fair-Value-Tool  
+    ✔ Parqet → Depot-Tracking, Dividendenkalender & Cashflow-Planung  
+    ✔ Binance & Coinbase → Krypto-Staking & langfristige Positionen  
+    ✔ Wise → Multi-Währungskonten & Auslandsüberweisungen  
+    ✔ Airalo → eSIMs für Reisen  
+    ✔ YouTube & Odysee → Community & Content Hub  
+  </p>
+
+  <br>
+  <p style="max-width:800px;margin:20px auto;color:#c3c3c3;font-size:0.9em;">
+    👉 Einige Links sind Affiliate-Links.  
+    Für dich entstehen keine Mehrkosten – manchmal gibt es sogar Boni oder Rabatte.  
+    <br><br>
+    📉 Investitionen bergen Risiken. Keine Anlageberatung.
   </p>
 </section>
 
+
 <footer>
-  © 2025 MB Capital Strategies · 
-  <a href="/impressum.html">Impressum</a> · 
-  <a href="/datenschutz.html">Datenschutzerklärung</a>
+  © 2025 MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a>
   <br><br>
   <p style="font-size:0.8em;color:#888;max-width:800px;margin:0 auto;">
-    ⚠️ Diese Seite enthält Affiliate-Links. Wenn du über diese Links etwas abschließt, 
-    unterstützt du meinen Kanal ohne Mehrkosten.  
-    Investitionen bergen Risiken. Es kann zu Verlusten des eingesetzten Kapitals kommen.
+    Diese Seite enthält Affiliate-Links.  
+    Wenn du über diese Links etwas abschließt, unterstützt du meinen Kanal ohne Mehrkosten für dich.
   </p>
 </footer>
 
