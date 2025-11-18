@@ -1,318 +1,551 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meine Depot-Strategie – Hard Assets &amp; High Yield | MB Capital Strategies</title>
-  <meta name="description" content="Meine persönliche Depot-Strategie: Hard Assets, High-Yield-Dividenden, 80/20-Aufteilung und Zyklen-Ansatz. Inklusive Parqet-Depot und Depot-Update-Übersicht.">
+  <meta name="description" content="Meine persönliche Depot-Strategie: Hard Assets, High-Yield-Dividenden, 80/20-Aufteilung, Zyklen-Ansatz & Krypto als Steuerjoker – inklusive Parqet-Depot & Depot-Update-Playlist.">
 
   <link rel="canonical" href="https://mbcapitalstrategies.com/depot-strategie/">
-  <meta property="og:type" content="article">
   <meta property="og:title" content="Meine Depot-Strategie – Hard Assets &amp; High Yield">
-  <meta property="og:description" content="So baue ich mit Hard Assets &amp; High-Yield-Dividenden einen wachsenden Cashflow auf.">
+  <meta property="og:description" content="So baue ich mit Hard Assets & High-Yield-Dividenden einen wachsenden Cashflow auf – mit echter Transparenz über mein Depot.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/depot-strategie/">
+  <meta property="og:image" content="https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png">
   <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="../blog/styles.css">
   <style>
-    .page-container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.5rem;
+    body {
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:'Montserrat',sans-serif;
+      margin:0;
     }
+    header {
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      padding:15px 10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header a {
+      color:#d4af37;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    header a:hover { text-decoration:underline; }
+
+    .page {
+      max-width:960px;
+      margin:0 auto;
+      padding:20px;
+    }
+
     .hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      margin-bottom: 2rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      align-items:center;
+      margin:20px 0 30px;
     }
     .hero-text {
-      flex: 1 1 260px;
+      flex:1 1 260px;
     }
-    .hero-img {
-      flex: 0 0 220px;
-      text-align: center;
+    .hero-text h1 {
+      font-size:2.1em;
+      margin:0 0 10px;
+      color:#d4af37;
+      text-shadow:0 0 12px rgba(212,175,55,0.7);
     }
-    .hero-img img {
-      max-width: 220px;
-      border-radius: 999px;
-      display: block;
-      margin: 0 auto;
+    .hero-text p {
+      margin:6px 0;
+      color:#cfd6e6;
+      line-height:1.6;
     }
-    .muted {
-      opacity: 0.85;
-      font-size: 0.9rem;
+    .hero-badge {
+      font-size:0.85em;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:#9aa6c0;
     }
     .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0;
-      margin: 0.75rem 0 1.25rem;
-      list-style: none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      padding:0;
+      margin:12px 0 16px;
+      list-style:none;
     }
     .pill-list li {
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.15);
-      font-size: 0.9rem;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      margin-bottom: 0.4rem;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 1rem;
-    }
-    .card {
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .list-clean {
-      padding-left: 1.1rem;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.4);
+      font-size:0.85em;
+      color:#f5f6fa;
     }
     .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:5px;
     }
-    .btn-link {
-      display: inline-block;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      font-weight: 600;
-      font-size: 0.95rem;
+    .btn {
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:#d4af37;
+      color:#0f1115;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95em;
+      box-shadow:0 0 10px rgba(212,175,55,0.4);
+      transition:0.3s;
+    }
+    .btn-outline {
+      background:transparent;
+      color:#d4af37;
+      border:1px solid rgba(212,175,55,.6);
+      box-shadow:none;
+    }
+    .btn:hover {
+      background:#e0bd55;
+      box-shadow:0 0 18px rgba(212,175,55,0.8);
+      color:#0f1115;
+    }
+    .btn-outline:hover {
+      background:#d4af37;
+      color:#0f1115;
+    }
+    .hero-img {
+      flex:0 0 220px;
+      text-align:center;
+    }
+    .hero-img img {
+      max-width:200px;
+      border-radius:999px;
+      display:block;
+      margin:0 auto 10px;
+      box-shadow:0 0 20px rgba(0,0,0,0.7);
+    }
+    .hero-img p {
+      font-size:0.85em;
+      color:#9aa6c0;
+      margin:0;
+    }
+
+    h2 {
+      font-size:1.6em;
+      color:#d4af37;
+      margin:24px 0 6px;
+    }
+    h3 {
+      color:#d4af37;
+      margin-top:0;
+    }
+    p { color:#cfd6e6; line-height:1.7; }
+    .muted { color:#9aa6c0; font-size:0.9em; }
+
+    .section {
+      margin-bottom:26px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.06);
+      padding:18px 16px;
+      background:#151821;
+    }
+    .grid-2 {
+      display:grid;
+      grid-template-columns:minmax(0,1.6fr) minmax(0,1.1fr);
+      gap:16px;
+    }
+    .card {
+      background:#1a1f2b;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.35);
+      padding:14px 14px 12px;
+      font-size:0.95em;
+    }
+    ul {
+      padding-left:18px;
+      margin:6px 0 10px;
+    }
+    li { margin-bottom:4px; }
+
+    .tools-list li { margin-bottom:6px; }
+
+    .parqet-wrapper {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:16px;
+    }
+    .parqet-card {
+      background:#1a1f2b;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.35);
+      padding:10px;
+    }
+    .parqet-iframe {
+      width:100%;
+      min-height:420px;
+      border:none;
+      border-radius:12px;
+      background:#0f1115;
+    }
+
+    .video-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+      gap:16px;
+    }
+    .video-iframe {
+      width:100%;
+      min-height:260px;
+      border:none;
+      border-radius:12px;
+      background:#000;
     }
     .updates-list li {
-      margin-bottom: 0.4rem;
+      margin-bottom:6px;
     }
-    @media (max-width: 720px) {
-      .grid-2 {
-        grid-template-columns: minmax(0,1fr);
-      }
+
+    @media (max-width:760px){
+      .hero{flex-direction:column-reverse;align-items:flex-start;}
+      .hero-img{text-align:left;}
+      .hero-img img{max-width:160px;}
+      .grid-2{grid-template-columns:1fr;}
+      .section{padding:14px 12px;}
+      .page{padding:14px;}
+      .parqet-wrapper{grid-template-columns:1fr;}
+      .parqet-iframe{min-height:360px;}
+      .video-grid{grid-template-columns:1fr;}
+      .video-iframe{min-height:220px;}
     }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.05);
+      margin-top:30px;
+    }
+    footer a {
+      color:#d4af37;
+      text-decoration:none;
+    }
+    footer a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
-  <main class="page-container">
-    <header class="hero">
-      <div class="hero-text">
-        <p class="muted">MB Capital Strategies · Meine Depot-Strategie</p>
-        <h1>Meine Depot-Strategie – Hard Assets &amp; High Yield</h1>
+
+<header>
+  <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
+  <a href="https://mbcapitalstrategies.com/blog/index.html">📰 Blog</a>
+  <a href="https://mbcapitalstrategies.com/toolbox.html">🧰 Toolbox</a>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">MB Capital Strategies · Meine Depot-Strategie</div>
+      <h1>Meine Depot-Strategie – Hard Assets &amp; High Yield</h1>
+      <p>
+        Mein Ziel ist klar: Einen stetig wachsenden <strong>Dividendencashflow</strong> aufbauen – 
+        mit einem Fokus auf <strong>Hard Assets</strong> und <strong>hoch ausschüttende Qualitätswerte</strong>.
+        Hier zeige ich dir kompakt, wie mein Ansatz aufgebaut ist und wie mein Depot in Echtzeit aussieht.
+      </p>
+      <ul class="pill-list">
+        <li>Hard-Asset-Fokus</li>
+        <li>High-Yield-Dividenden</li>
+        <li>80&nbsp;% Dividenden / 20&nbsp;% Bonds</li>
+        <li>Zyklen &amp; Makro</li>
+        <li>Krypto als Steuerjoker</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="/hard-asset-guide/">Zum Hard-Asset-Guide →</a>
+        <a class="btn btn-outline" href="/blog/index.html">Zu meinen Depot-Analysen →</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
+      <p>Transparenter Hard-Asset-Investor mit Fokus auf Dividenden &amp; Cashflow.</p>
+    </div>
+  </section>
+
+  <!-- Grundprinzipien -->
+  <section class="section" id="prinzipien">
+    <h2>1. Grundprinzipien meiner Strategie</h2>
+    <div class="grid-2">
+      <div>
         <p>
-          Mein Ziel ist klar: Einen stetig wachsenden <strong>Dividendencashflow</strong> aufbauen – 
-          mit einem Fokus auf <strong>Hard Assets</strong> und <strong>hoch ausschüttende Qualitätswerte</strong>.
-          Hier zeige ich dir kompakt, wie mein Ansatz aufgebaut ist.
+          Ich investiere vor allem in <strong>substanzstarke Geschäftsmodelle</strong> mit klaren,
+          nachvollziehbaren Cashflows. Kurse können schwanken – aber echte Cashflows lassen sich
+          nicht wegdiskutieren.
         </p>
-        <ul class="pill-list">
-          <li>Hard Assets</li>
-          <li>High-Yield-Dividenden</li>
-          <li>80&nbsp;% Dividenden / 20&nbsp;% Bonds</li>
-          <li>Zyklen &amp; Makro</li>
-          <li>Krypto als Steuerjoker</li>
+        <ul>
+          <li><strong>Hard Assets</strong>: Energie, Shipping, Rohstoffe, Pipelines, Infrastruktur</li>
+          <li><strong>High Yield</strong> mit Fokus auf Nachhaltigkeit der Ausschüttung</li>
+          <li><strong>Cashflow vor Kursfantasie</strong> – Dividende zuerst, Kursgewinn als Bonus</li>
+          <li><strong>Qualität vor Breite</strong> – lieber weniger Positionen, dafür tief verstanden</li>
         </ul>
-        <div class="cta-row">
-          <a class="btn-link" href="/hard-asset-guide/">Zum Hard-Asset-Guide</a>
-          <a class="btn-link" href="/blogindex.html">Zu den Depot-Analysen</a>
-        </div>
       </div>
-      <div class="hero-img">
-        <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
-        <p class="muted">Transparenter Hard-Asset-Investor mit Fokus auf Cashflow.</p>
-      </div>
-    </header>
-
-    <!-- Grundprinzipien -->
-    <section class="section" id="prinzipien">
-      <h2>1. Grundprinzipien meiner Strategie</h2>
-      <div class="grid-2">
-        <div>
-          <p>
-            Ich investiere vor allem in <strong>substanzstarke Geschäftsmodelle</strong> mit klaren,
-            nachvollziehbaren Cashflows. Kurse können schwanken – aber echte Cashflows lassen sich
-            nicht wegdiskutieren.
-          </p>
-          <ul class="list-clean">
-            <li><strong>Hard Assets</strong>: Energie, Shipping, Rohstoffe, Pipelines, Infrastruktur</li>
-            <li><strong>High Yield</strong> mit Fokus auf Nachhaltigkeit der Ausschüttung</li>
-            <li><strong>Cashflow vor Kursfantasie</strong> – Dividende zuerst, Kursgewinn als Bonus</li>
-            <li><strong>Qualität vor Breite</strong> – lieber weniger Positionen, dafür tief verstanden</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Was ich vermeide</h3>
-          <ul class="list-clean">
-            <li>reine Story-Aktien ohne Cashflows</li>
-            <li>blinden Hype &amp; Trendhinterherlaufen</li>
-            <li>überhebelte Zockerpositionen</li>
-          </ul>
-          <p class="muted">
-            Mein Fokus liegt auf einem Portfolio, das auch in schwächeren Marktphasen 
-            <strong>relevanten Cashflow ins Depot bringt</strong>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 80/20 Allocation -->
-    <section class="section" id="allocation">
-      <h2>2. Portfolio-Aufteilung – 80&nbsp;% Dividenden / 20&nbsp;% Bonds</h2>
-      <div class="grid-2">
-        <div>
-          <p>
-            Grob strukturiere ich mein Depot nach einem <strong>80/20-Ansatz</strong>:
-          </p>
-          <ul class="list-clean">
-            <li><strong>80&nbsp;% Dividendenwerte</strong>: Hard Assets, BDCs, REITs, Infrastruktur</li>
-            <li><strong>20&nbsp;% taktische Ultra-Short-Bonds</strong>: zur Kasseparker- &amp; 
-              Opportunitätsfunktion für neue Chancen</li>
-          </ul>
-          <p>
-            Die Bond-Komponente ist für mich wie eine <strong>taktische Munition</strong>, 
-            die ich je nach Marktphase in unterbewertete High-Yield-Chancen umschichten kann.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Ziele der 80/20-Strategie</h3>
-          <ul class="list-clean">
-            <li>stabile Basis an Dividendenzahlern</li>
-            <li>Flexibilität für Zyklen &amp; Rücksetzer</li>
-            <li>kontrolliertes Risiko statt All-in-Mentalität</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Zyklen-Strategie -->
-    <section class="section" id="zyklen">
-      <h2>3. Zyklen &amp; Timing – Makro, Sektoren &amp; Technik</h2>
-      <p>
-        Hard Assets sind in vielen Fällen <strong>zyklische Sektoren</strong>. 
-        Ich kombiniere <strong>Makrotrends</strong> (z. B. Unterinvestition in Rohstoffe, 
-        geopolitische Spannungen, Energiepolitik) mit <strong>Zyklusanalyse</strong>
-        und ergänzend <strong>Fibonacci-Retracements</strong> und <strong>Elliott-Wellen</strong>
-        für bessere Einstiegszonen.
-      </p>
-      <ul class="list-clean">
-        <li>Käufe lieber in Schwächephasen des Zyklus als im Hype</li>
-        <li>Positionsaufbau in Stufen statt auf einen Schlag</li>
-        <li>Dividenden kontinuierlich reinvestieren in Underperformer mit intakter Story</li>
-      </ul>
-      <p>
-        Timing ist für mich kein perfekter Einstieg auf den Cent genau, 
-        sondern das Nutzen von <strong>Übertreibungen der Masse</strong>.
-      </p>
-    </section>
-
-    <!-- Krypto -->
-    <section class="section" id="krypto">
-      <h2>4. Krypto als steuerlicher Turbo (&quot;Steuerjoker&quot;)</h2>
-      <p>
-        Krypto setze ich bewusst nur als <strong>spekulative Beimischung</strong> ein – mit 
-        klarem Plan und <strong>steuerlichem Vorteil</strong>: Nach Ablauf der Haltefrist 
-        können Gewinne in vielen Fällen steuerfrei realisiert und anschließend 
-        in <strong>Cashflow-Werte</strong> umgeschichtet werden.
-      </p>
-      <ul class="list-clean">
-        <li>klare Positionsgröße, kein All-in</li>
-        <li>Exit-Plan vor Einstieg definiert</li>
-        <li>Gewinne möglichst in Hard Assets &amp; Dividendenwerte umschichten</li>
-      </ul>
-      <p class="muted">
-        Keine Anlageberatung, sondern Einblick in meinen persönlichen Ansatz.
-      </p>
-    </section>
-
-    <!-- Parqet Widget -->
-    <section class="section" id="parqet">
-      <h2>5. Mein Depot live – Parqet-Übersicht</h2>
-      <p>
-        Transparenz ist mir wichtig. Deshalb dokumentiere ich mein Depot und die
-        Entwicklung meines Dividendencashflows über <strong>Parqet</strong>.
-      </p>
-      <p class="muted">
-        Unten kannst du dein öffentliches Parqet-Widget einbinden. Ersetze einfach 
-        den <code>src</code>-Wert im iframe mit deinem Parqet-Embed-Link.
-      </p>
-
       <div class="card">
-        <!-- TODO: Ersetze DEIN_PARQET_EMBED_LINK mit deinem echten Embed-Link -->
-        <iframe 
-          src="DEIN_PARQET_EMBED_LINK"
-          style="width: 100%; min-height: 420px; border: none;"
-          loading="lazy"
-          title="Parqet Depot von MB Capital Strategies">
-        </iframe>
+        <h3>Was ich vermeide</h3>
+        <ul>
+          <li>reine Story-Aktien ohne Cashflows</li>
+          <li>blinden Hype &amp; Trendhinterherlaufen</li>
+          <li>überhebelte Zockerpositionen</li>
+        </ul>
+        <p class="muted">
+          Mein Fokus liegt auf einem Portfolio, das auch in schwächeren Marktphasen 
+          <strong>relevanten Cashflow ins Depot bringt</strong>.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <p class="muted">
-        Wenn du Parqet selbst nutzen willst: 
-        <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8">hier geht es zu meinem Parqet-Empfehlungslink</a>.
-      </p>
-    </section>
+  <!-- 80/20 Allocation -->
+  <section class="section" id="allocation">
+    <h2>2. Portfolio-Aufteilung – 80&nbsp;% Dividenden / 20&nbsp;% Bonds</h2>
+    <div class="grid-2">
+      <div>
+        <p>
+          Grob strukturiere ich mein Depot nach einem <strong>80/20-Ansatz</strong>:
+        </p>
+        <ul>
+          <li><strong>80&nbsp;% Dividendenwerte</strong>: Hard Assets, BDCs, REITs, Infrastruktur</li>
+          <li><strong>20&nbsp;% taktische Ultra-Short-Bonds</strong>: Kasseparker &amp; Opportunitätskapital</li>
+        </ul>
+        <p>
+          Die Bond-Komponente ist für mich wie eine <strong>taktische Munition</strong>, 
+          die ich je nach Marktphase in unterbewertete High-Yield-Chancen umschichten kann.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Ziele der 80/20-Strategie</h3>
+        <ul>
+          <li>stabile Basis an Dividendenzahlern</li>
+          <li>Flexibilität für Zyklen &amp; Rücksetzer</li>
+          <li>kontrolliertes Risiko statt All-in-Mentalität</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Depot-Updates -->
-    <section class="section" id="depot-updates">
-      <h2>6. Meine Depot-Updates</h2>
-      <p>
-        Jeden Monat halte ich in meinen <strong>Depot-Update-Videos</strong> fest, 
-        wie sich mein Portfolio entwickelt, welche Positionen zu- oder abgebaut wurden 
-        und wie hoch der aktuelle Dividendencashflow ist.
-      </p>
+  <!-- Zyklen-Strategie -->
+  <section class="section" id="zyklen">
+    <h2>3. Zyklen &amp; Timing – Makro, Sektoren &amp; Technik</h2>
+    <p>
+      Hard Assets sind in vielen Fällen <strong>zyklische Sektoren</strong>. 
+      Ich kombiniere <strong>Makrotrends</strong> (z. B. Unterinvestition in Rohstoffe, 
+      geopolitische Spannungen, Energiepolitik) mit <strong>Zyklusanalyse</strong>
+      und ergänzend <strong>Fibonacci-Retracements</strong> und <strong>Elliott-Wellen</strong>
+      für bessere Einstiegszonen.
+    </p>
+    <ul>
+      <li>Käufe lieber in Schwächephasen des Zyklus als im Hype</li>
+      <li>Positionsaufbau in Stufen statt auf einen Schlag</li>
+      <li>Dividenden kontinuierlich reinvestieren in Underperformer mit intakter Story</li>
+    </ul>
+    <p>
+      Timing ist für mich kein perfekter Einstieg auf den Cent genau, 
+      sondern das Nutzen von <strong>Übertreibungen der Masse</strong>.
+    </p>
+  </section>
 
-      <h3>Aktuelle Depot-Updates (Auswahl)</h3>
-      <ul class="updates-list">
-        <!-- Beispiele – hier kannst du konkrete YouTube-Links setzen -->
-        <li>📹 <strong>Depot-Update September 2025</strong> – Top-Zahler, Zukäufe &amp; Dividendenvorschau  
-          <!-- <a href="DEIN_YT_LINK">auf YouTube ansehen</a> -->
-        </li>
-        <li>📹 <strong>Depot-Update August 2025</strong> – Shipping-Gewichtung &amp; neue Hard-Asset-Ideen  
-          <!-- <a href="DEIN_YT_LINK">auf YouTube ansehen</a> -->
-        </li>
-      </ul>
+  <!-- Krypto -->
+  <section class="section" id="krypto">
+    <h2>4. Krypto als steuerlicher Turbo („Steuerjoker“)</h2>
+    <p>
+      Krypto setze ich bewusst nur als <strong>spekulative Beimischung</strong> ein – mit 
+      klarem Plan und <strong>steuerlichem Vorteil</strong>: Nach Ablauf der Haltefrist 
+      können Gewinne in vielen Fällen steuerfrei realisiert und anschließend 
+      in <strong>Cashflow-Werte</strong> umgeschichtet werden.
+    </p>
+    <ul>
+      <li>klare Positionsgröße, kein All-in</li>
+      <li>Exit-Plan vor Einstieg definiert</li>
+      <li>Gewinne möglichst in Hard Assets &amp; Dividendenwerte umschichten</li>
+    </ul>
+    <p class="muted">
+      Keine Anlageberatung, sondern Einblick in meinen persönlichen Ansatz.
+    </p>
+  </section>
 
-      <p class="muted">
-        Tipp: Ergänze hier nach und nach alle Depot-Updates chronologisch mit YouTube-Links – 
-        diese Seite wird damit zu einer starken „History“-Übersicht für Stammzuschauer &amp; neue Leser.
-      </p>
-    </section>
+  <!-- Parqet-Depots -->
+  <section class="section" id="parqet">
+    <h2>5. Mein Depot live – Parqet-Übersicht</h2>
+    <p>
+      Transparenz ist mir wichtig. Deshalb dokumentiere ich mein Depot und die
+      Entwicklung meines Dividendencashflows über <strong>Parqet</strong>. 
+      Hier siehst du meine Hauptdepots:
+    </p>
 
-    <!-- Tools -->
-    <section class="section" id="tools">
-      <h2>7. Tools &amp; Broker, die ich für meine Strategie nutze</h2>
-      <p>
-        Für Analyse, Tracking und Umsetzung meiner Strategie nutze ich einige wenige, 
-        ausgewählte Tools und Broker:
-      </p>
-      <ul class="list-clean">
-        <li>🧰 <a href="/">MB Capital Strategies Toolbox</a> – Übersicht über alle von mir genutzten Tools &amp; Broker</li>
-        <li>📈 <a href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=Website&sub1=DepotStrategie">Fundamentaldaten &amp; Bewertungs-Screener mit InvestingPro</a></li>
-        <li>📊 <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8">Parqet – Depot-, Performance- &amp; Dividenden-Tracking</a></li>
-        <!-- hier kannst du deine Broker-Affiliate-Links ergänzen -->
-      </ul>
-    </section>
+    <div class="parqet-wrapper">
+      <div class="parqet-card">
+        <h3>Scalable Capital Depot</h3>
+        <iframe 
+          class="parqet-iframe"
+          src="https://app.parqet.com/p/684bfcdc153874c6847481c2/embed"
+          loading="lazy"
+          title="Parqet – Scalable Depot">
+        </iframe>
+        <p class="muted">
+          Direkt in Parqet ansehen:
+          <a href="https://app.parqet.com/p/684bfcdc153874c6847481c2" target="_blank" rel="noopener noreferrer">Scalable Depot auf Parqet öffnen →</a>
+        </p>
+      </div>
+      <div class="parqet-card">
+        <h3>Trade Republic Depot</h3>
+        <iframe 
+          class="parqet-iframe"
+          src="https://app.parqet.com/p/6824832384201a4508f5d693/embed"
+          loading="lazy"
+          title="Parqet – Trade Republic Depot">
+        </iframe>
+        <p class="muted">
+          Direkt in Parqet ansehen:
+          <a href="https://app.parqet.com/p/6824832384201a4508f5d693" target="_blank" rel="noopener noreferrer">TR Depot auf Parqet öffnen →</a>
+        </p>
+      </div>
+    </div>
 
-    <!-- Abschluss -->
-    <section class="section" id="abschluss">
-      <h2>8. Nächste Schritte</h2>
-      <p>
-        Wenn du tiefer in die einzelnen Sektoren einsteigen willst, schau dir meinen 
-        <a href="/hard-asset-guide/">Hard-Asset-Guide</a> an oder stöbere durch meine 
-        <a href="/blogindex.html">aktuellen Analysen im Blog</a>.
-      </p>
-      <p>
-        Über die Zeit werde ich diese Seite mit weiteren Beispielen, Updates und Detailauswertungen
-        meines Dividendencashflows erweitern.
-      </p>
-    </section>
-  </main>
+    <p class="muted" style="margin-top:10px;">
+      Wenn du Parqet selbst nutzen willst:
+      <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow sponsored noopener noreferrer">
+        hier geht es zu meinem Parqet-Empfehlungslink mit 15 % Rabatt im ersten Jahr →
+      </a>
+    </p>
+  </section>
+
+  <!-- Depot-Updates -->
+  <section class="section" id="depot-updates">
+    <h2>6. Meine Depot-Updates &amp; echte Einblicke</h2>
+    <p>
+      In meinen <strong>Depot-Update-Videos</strong> dokumentiere ich jeden Monat, 
+      wie sich mein Portfolio entwickelt, welche Positionen zu- oder abgebaut wurden 
+      und wie hoch der aktuelle Dividendencashflow ist.
+    </p>
+
+    <div class="video-grid">
+      <div>
+        <h3>📊 Depot-Update 2025 – Playlist</h3>
+        <iframe
+          class="video-iframe"
+          src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9de2z6a0MqXsEdm8Erda1Zwp"
+          title="YouTube Playlist – Depot-Update 2025"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="muted">
+          Komplette Playlist:
+          <a href="https://www.youtube.com/playlist?list=PLb7T0VuyV9de2z6a0MqXsEdm8Erda1Zwp" target="_blank" rel="noopener noreferrer">
+            📊 Depot-Update 2025 – Dividenden, Cashflow &amp; High-Yield-Aktien →
+          </a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>Ausgewählte Depot-Updates</h3>
+        <ul class="updates-list">
+          <li>📹 <strong>Depot-Update September 2025</strong><br>
+            <a href="https://youtu.be/UtzSP36Bdao" target="_blank" rel="noopener noreferrer">Video auf YouTube ansehen →</a>
+          </li>
+          <li>📹 <strong>Depot-Update August 2025</strong><br>
+            <a href="https://youtu.be/oD7rsYcIi3s" target="_blank" rel="noopener noreferrer">Video auf YouTube ansehen →</a>
+          </li>
+          <li>📹 <strong>Depot-Update Juli 2025</strong><br>
+            <a href="https://youtu.be/BQJNEbVQpi4" target="_blank" rel="noopener noreferrer">Video auf YouTube ansehen →</a>
+          </li>
+          <li>📹 <strong>Depot-Update Juni 2025</strong><br>
+            <a href="https://youtu.be/WQqJJoLqhNs" target="_blank" rel="noopener noreferrer">Video auf YouTube ansehen →</a>
+          </li>
+          <li>📹 <strong>Depot-Update Mai 2025</strong><br>
+            <a href="https://youtu.be/LAsiFBXiims" target="_blank" rel="noopener noreferrer">Video auf YouTube ansehen →</a>
+          </li>
+        </ul>
+        <p class="muted">
+          Über die Zeit kann diese Liste um weitere Monate ergänzt werden – so entsteht eine klare Historie deiner Depotentwicklung für neue &amp; bestehende Zuschauer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section" id="tools">
+    <h2>7. Tools &amp; Broker für meine Strategie</h2>
+    <p>
+      Für Analyse, Tracking und Umsetzung meiner Strategie nutze ich einige wenige, 
+      ausgewählte Tools und Broker:
+    </p>
+    <ul class="tools-list">
+      <li>📈 <strong>Scalable Capital</strong> – mein Hauptbroker für ETFs, Aktien &amp; Dividendenstrategie.<br>
+        <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Scalable Capital →</a>
+      </li>
+      <li>📊 <strong>Trade Republic</strong> – Zweitdepot &amp; einfache Bedienung für schnelle Käufe.<br>
+        <a href="https://refnocode.trade.re/79z763g7" target="_blank" rel="noopener noreferrer">Zu Trade Republic →</a>
+      </li>
+      <li>📊 <strong>Parqet</strong> – Depot-, Performance- &amp; Dividenden-Tracking.<br>
+        <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow sponsored noopener noreferrer">Parqet mit 15 % Rabatt nutzen →</a>
+      </li>
+      <li>📈 <strong>InvestingPro</strong> – zentrales Analyse-Tool für Fundamentaldaten, faire Bewertungen &amp; Screening.<br>
+        <a href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=mbcapitalstrategies&sub1=Toolbox%20Website" target="_blank" rel="nofollow sponsored noopener noreferrer">InvestingPro mit 15 % Rabatt nutzen →</a>
+      </li>
+      <li>💰 <strong>Binance</strong> &amp; <strong>Coinbase</strong> – etablierte Plattformen für den Krypto-Anteil.<br>
+        <a href="https://binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9&utm_medium=web_share_copy" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Binance →</a><br>
+        <a href="https://coinbase.com/join/EN8NVAV?src=referral-link" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Coinbase →</a>
+      </li>
+      <li>💸 <strong>Wise</strong> – für Multi-Währungskonten &amp; günstige Auslandsüberweisungen.<br>
+        <a href="https://wise.com/invite/dic/marcopeterb2" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Wise →</a>
+      </li>
+      <li>📱 <strong>Airalo</strong> – eSIM auf Reisen, z. B. Vietnam, direkt nach Landung online.<br>
+        <a href="https://www.airalo.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Airalo →</a> |
+        Empfehlungscode: <strong>BAND1T8990</strong>
+      </li>
+      <li>▶ <strong>YouTube: MB Capital Strategies</strong> – Depot-Updates, Analysen &amp; Strategien.<br>
+        <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener noreferrer">Zum Kanal →</a>
+      </li>
+      <li>🌐 <strong>Odysee</strong> – dezentrale Alternative zu YouTube.<br>
+        <a href="https://odysee.com/@mbcapitalstrategies:5?r=AMfqEhDex3qSoQYyLJcFdqAQAiN334AX" target="_blank" rel="noopener noreferrer nofollow sponsored">Zu Odysee →</a>
+      </li>
+    </ul>
+    <p class="muted">
+      Transparenz-Hinweis: Einige Links sind Affiliate-Links. Wenn du darüber etwas abschließt, unterstützt du meinen Kanal ohne Mehrkosten für dich. Investitionen bergen Risiken.
+    </p>
+  </section>
+
+  <!-- Abschluss -->
+  <section class="section" id="abschluss">
+    <h2>8. Nächste Schritte</h2>
+    <p>
+      Wenn du tiefer in die einzelnen Sektoren einsteigen willst, schau dir meinen
+      <a href="/hard-asset-guide/">Hard-Asset-Guide</a> an – dort findest du Energie, Shipping, Rohstoffe,
+      Pipelines &amp; BDCs im Überblick.
+    </p>
+    <p>
+      Für weitere Aktienanalysen, High-Yield-Ideen &amp; Marktkommentare geht es hier weiter:
+      <a href="/blog/index.html">Zu meinen aktuellen Blogbeiträgen →</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2025 MB Capital Strategies · 
+  <a href="/impressum.html">Impressum</a> · 
+  <a href="/datenschutz.html">Datenschutzerklärung</a>
+  <br><br>
+  <span style="font-size:0.8em;color:#888;">
+    Diese Seite enthält Affiliate-Links. Wenn du über diese Links etwas abschließt, unterstützt du meinen Kanal, ohne dass dir Mehrkosten entstehen.
+    Investitionen bergen Risiken. Es kann zu Verlusten des eingesetzten Kapitals kommen.
+  </span>
+</footer>
+
 </body>
 </html>
+
