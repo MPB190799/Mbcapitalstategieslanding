@@ -1,341 +1,484 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hard Assets – Der Cashflow-Guide | MB Capital Strategies</title>
   <meta name="description" content="Hard Assets einfach erklärt: Energie, Shipping, Rohstoffe, Pipelines, BDCs & High-Yield-Dividenden. So baue ich mit Hard Assets einen nachhaltigen Cashflow auf.">
 
   <link rel="canonical" href="https://mbcapitalstrategies.com/hard-asset-guide/">
-  <meta property="og:type" content="article">
   <meta property="og:title" content="Hard Assets – Der Cashflow-Guide">
   <meta property="og:description" content="Hard Assets als Fundament für Dividenden & Cashflow: Energie, Shipping, Rohstoffe, Pipelines, BDCs.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/hard-asset-guide/">
+  <meta property="og:image" content="https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png">
   <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- falls du das Blog-CSS nutzen willst -->
-  <link rel="stylesheet" href="../blog/styles.css">
   <style>
-    /* leichte Extras, falls dein CSS nichts überschreibt */
-    .page-container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1.5rem;
+    body {
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:'Montserrat',sans-serif;
+      margin:0;
     }
+    header {
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      padding:15px 10px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    header a {
+      color:#d4af37;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    header a:hover { text-decoration:underline; }
+
+    .page {
+      max-width:960px;
+      margin:0 auto;
+      padding:20px;
+    }
+
     .hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      margin-bottom: 2rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      align-items:center;
+      margin:20px 0 30px;
     }
     .hero-text {
-      flex: 1 1 260px;
+      flex:1 1 260px;
     }
-    .hero-img {
-      flex: 0 0 220px;
-      text-align: center;
+    .hero-text h1 {
+      font-size:2.1em;
+      margin:0 0 10px;
+      color:#d4af37;
+      text-shadow:0 0 12px rgba(212,175,55,0.7);
     }
-    .hero-img img {
-      max-width: 220px;
-      border-radius: 999px;
-      display: block;
-      margin: 0 auto;
+    .hero-text p {
+      margin:6px 0;
+      color:#cfd6e6;
+      line-height:1.6;
+    }
+    .hero-badge {
+      font-size:0.85em;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:#9aa6c0;
     }
     .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.75rem 0 1.25rem;
-      padding: 0;
-      list-style: none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      padding:0;
+      margin:12px 0 16px;
+      list-style:none;
     }
     .pill-list li {
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.15);
-      font-size: 0.9rem;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.4);
+      font-size:0.85em;
+      color:#f5f6fa;
     }
     .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:5px;
     }
-    .btn-link {
-      display: inline-block;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      font-weight: 600;
-      font-size: 0.95rem;
+    .btn {
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:#d4af37;
+      color:#0f1115;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95em;
+      box-shadow:0 0 10px rgba(212,175,55,0.4);
+      transition:0.3s;
     }
+    .btn-outline {
+      background:transparent;
+      color:#d4af37;
+      border:1px solid rgba(212,175,55,.6);
+      box-shadow:none;
+    }
+    .btn:hover {
+      background:#e0bd55;
+      box-shadow:0 0 18px rgba(212,175,55,0.8);
+      color:#0f1115;
+    }
+    .btn-outline:hover {
+      background:#d4af37;
+      color:#0f1115;
+    }
+    .hero-img {
+      flex:0 0 220px;
+      text-align:center;
+    }
+    .hero-img img {
+      max-width:200px;
+      border-radius:999px;
+      display:block;
+      margin:0 auto 10px;
+      box-shadow:0 0 20px rgba(0,0,0,0.7);
+    }
+    .hero-img p {
+      font-size:0.85em;
+      color:#9aa6c0;
+      margin:0;
+    }
+
+    h2 {
+      font-size:1.6em;
+      color:#d4af37;
+      margin:24px 0 6px;
+    }
+    h3 {
+      color:#d4af37;
+      margin-top:0;
+    }
+    p { color:#cfd6e6; line-height:1.7; }
+    .muted { color:#9aa6c0; font-size:0.9em; }
+
     .section {
-      margin-bottom: 2rem;
+      margin-bottom:26px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.06);
+      padding:18px 16px;
+      background:#151821;
     }
-    .section h2 {
-      margin-bottom: 0.4rem;
-    }
-    .tagline {
-      font-style: italic;
-      opacity: 0.9;
-      margin-bottom: 0.6rem;
+    .section .tagline {
+      font-style:italic;
+      color:#cfd6e6;
+      margin-bottom:10px;
     }
     .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 1rem;
+      display:grid;
+      grid-template-columns:minmax(0,1.6fr) minmax(0,1.1fr);
+      gap:16px;
     }
     .card {
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(255,255,255,0.12);
+      background:#1a1f2b;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.35);
+      padding:14px 14px 12px;
+      font-size:0.95em;
     }
-    .card h3 {
-      margin-top: 0;
+    ul {
+      padding-left:18px;
+      margin:6px 0 10px;
     }
-    .list-clean {
-      padding-left: 1.1rem;
-    }
+    li { margin-bottom:4px; }
+
     .resources-list li {
-      margin-bottom: 0.3rem;
+      margin-bottom:5px;
     }
-    .muted {
-      opacity: 0.85;
-      font-size: 0.9rem;
+
+    .tools-list li {
+      margin-bottom:6px;
     }
-    @media (max-width: 720px) {
-      .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
-      }
+
+    @media (max-width:760px){
+      .hero{flex-direction:column-reverse;align-items:flex-start;}
+      .hero-img{text-align:left;}
+      .hero-img img{max-width:160px;}
+      .grid-2{grid-template-columns:1fr;}
+      .section{padding:14px 12px;}
+      .page{padding:14px;}
     }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.05);
+      margin-top:30px;
+    }
+    footer a {
+      color:#d4af37;
+      text-decoration:none;
+    }
+    footer a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
-  <main class="page-container">
-    <header class="hero">
-      <div class="hero-text">
-        <p class="muted">MB Capital Strategies · Hard-Asset-Guide</p>
-        <h1>Hard Assets – Der Cashflow-Guide</h1>
-        <p>
-          Ich investiere bewusst in <strong>Hard Assets</strong> – also reale, produktive Werte – um mir
-          einen stetig steigenden <strong>Dividendencashflow</strong> aufzubauen. Auf dieser Seite findest du
-          meinen kompakten Überblick über die wichtigsten Hard-Asset-Sektoren, die ich im Depot spiele.
-        </p>
-        <ul class="pill-list">
-          <li>Energie</li>
-          <li>Shipping</li>
-          <li>Rohstoffe &amp; Mining</li>
-          <li>Pipelines &amp; Midstream</li>
-          <li>BDCs &amp; High Yield</li>
-        </ul>
-        <div class="cta-row">
-          <a class="btn-link" href="/depot-strategie/">Zu meiner Depot-Strategie</a>
-          <a class="btn-link" href="/blogindex.html">Zu den aktuellen Analysen</a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
-        <p class="muted">Marco Bozem – Hard-Asset-Investor &amp; Dividendenfokus.</p>
-      </div>
-    </header>
 
-    <!-- Energie -->
-    <section class="section" id="energie">
-      <h2>Energie – Öl, Gas, LNG &amp; integrierte Konzerne</h2>
-      <p class="tagline">Cashflows aus Öl &amp; Gas sind oft deutlich stabiler als die Kursschwankungen vermuten lassen.</p>
-      <div class="grid-2">
-        <div>
-          <p>
-            Im Energiesektor schaue ich vor allem auf <strong>qualitative Reserven</strong>, 
-            <strong>Break-even-Kosten</strong> und eine disziplinierte Kapitalallokation. 
-            Entscheidend ist, dass die Unternehmen in verschiedensten Preisphasen weiter
-            solide <strong>Dividenden ausschütten</strong> können.
-          </p>
-          <ul class="list-clean">
-            <li>Upstream (Förderung), Midstream (Transport) &amp; Downstream (Verarbeitung)</li>
-            <li>Reservenqualität &amp; Kostenstruktur statt nur KGV</li>
-            <li>klare Kapitalrückgabepolitik (Dividenden + Buybacks)</li>
-          </ul>
-          <p>
-            Hard Assets im Energiesektor profitieren langfristig von <strong>Unterinvestition</strong> 
-            und gleichzeitig stabilem oder steigendem Bedarf – ideal für Dividendeninvestoren
-            mit Cashflow-Fokus.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Mehr zum Thema Energie</h3>
-          <ul class="resources-list">
-            <li><a href="/blog/rohstoff-superzyklus-2025.html">📊 Rohstoff-Superzyklus 2025 – Megatrends &amp; Unterinvestition</a></li>
-            <!-- weitere Energie-Analysen kannst du hier ergänzen -->
-          </ul>
-          <p class="muted">
-            Passende Glossar-Begriffe (bald verfügbar): Barrel, OPEC+, Break-even-Kosten, Reserven, Hedging.
-          </p>
-        </div>
-      </div>
-    </section>
+<header>
+  <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
+  <a href="https://mbcapitalstrategies.com/blog/index.html">📰 Blog</a>
+  <a href="https://mbcapitalstrategies.com/toolbox.html">🧰 Toolbox</a>
+</header>
 
-    <!-- Shipping -->
-    <section class="section" id="shipping">
-      <h2>Shipping – Tanker, LNG &amp; Bulker als Dividendenmaschinen</h2>
-      <p class="tagline">Volatile Kurse, aber oft extreme Ausschüttungen über den Zyklus.</p>
-      <div class="grid-2">
-        <div>
-          <p>
-            Im <strong>Shipping</strong>-Bereich fokussiere ich mich auf Geschäftsmodelle mit klar nachvollziehbarem 
-            <strong>Cashflow pro Schiff</strong>, moderner Flotte und einem intelligenten Mix aus
-            <strong>Spot-Exposure</strong> und <strong>Time Charters</strong>.
-          </p>
-          <ul class="list-clean">
-            <li>Fokus auf LNG-/LPG-Tanker &amp; Crude/Produkt-Tanker</li>
-            <li>Flottenalter, Orderbuch &amp; Verschuldung sind zentrale Kennzahlen</li>
-            <li>Ziel: hohe Ausschüttungen über den gesamten <strong>Tanker Cycle</strong></li>
-          </ul>
-          <p>
-            Shipping ist ein klassischer <strong>Zyklussektor</strong>: Ich nutze Schwächephasen für Käufe
-            und lasse in Hochphasen die Dividenden für mich arbeiten.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Shipping-Analysen &amp; Beispiele</h3>
-          <ul class="resources-list">
-            <li><a href="/blog/shipping-tanker-mixedfleet-2025.html">🚢 Tanker &amp; Mixed Fleet 2025 – 4 Dividendenmaschinen im Check</a></li>
-            <!-- hier kannst du weitere Shipping-Artikel verlinken -->
-          </ul>
-          <p class="muted">
-            Passende Glossar-Begriffe: Dayrates, TCE, Spot vs. Time Charter, VLCC/Suezmax/Aframax, Orderbook.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Rohstoffe & Mining -->
-    <section class="section" id="rohstoffe">
-      <h2>Rohstoffe &amp; Mining – vom Kohle- bis Kupferproduzenten</h2>
-      <p class="tagline">Ohne Rohstoffe gibt es keine Energie, keine Infrastruktur und keine Digitalisierung.</p>
-      <div class="grid-2">
-        <div>
-          <p>
-            Im Rohstoff- und Mining-Bereich sind <strong>AISC</strong> (All-in Sustaining Costs),
-            <strong>Erzgehalt</strong> und <strong>Life of Mine</strong> zentrale Kennzahlen. 
-            Unternehmen mit robusten Margen über den Zyklus sind für mich interessant – besonders,
-            wenn sie einen Teil der Gewinne als <strong>Dividende</strong> oder <strong>Sonderdividende</strong> ausschütten.
-          </p>
-          <ul class="list-clean">
-            <li>Fokus auf Produzenten mit positivem Free Cash Flow</li>
-            <li>solide Bilanz &amp; disziplinierte Investitionspolitik</li>
-            <li>idealerweise Beteiligung am <strong>Rohstoff-Superzyklus</strong> 2025–2030</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Rohstoff-Deep-Dive</h3>
-          <ul class="resources-list">
-            <li><a href="/blog/rohstoff-superzyklus-2025.html">📊 Rohstoff-Superzyklus 2025 – Megatrends, Unterinvestition &amp; Chancen</a></li>
-            <!-- hier weitere Mining-Analysen ergänzen -->
-          </ul>
-          <p class="muted">
-            Passende Glossar-Begriffe: AISC, Life of Mine, Ore Grade, Royalty/Streaming, Stripping Ratio.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pipelines & Midstream -->
-    <section class="section" id="pipelines">
-      <h2>Pipelines &amp; Midstream – Cashflow bei Seitwärtskursen</h2>
-      <p class="tagline">Midstream-Unternehmen leben von Durchleitungsvolumen – nicht vom Ölpreis selbst.</p>
-      <div class="grid-2">
-        <div>
-          <p>
-            <strong>Midstream- und Pipeline-Unternehmen</strong> sind für mich klassische
-            <strong>Cashflow-Werte</strong>: Einnahmen stammen häufig aus langlaufenden 
-            <strong>Take-or-Pay</strong>-Verträgen, in denen Volumen &amp; Tarife vertraglich fixiert sind.
-          </p>
-          <ul class="list-clean">
-            <li>stabile, oft inflationsindexierte Tarife</li>
-            <li>hohe Visibilität der Cashflows über viele Jahre</li>
-            <li>attraktive Dividendenrenditen, teilweise mit jährlichem Wachstum</li>
-          </ul>
-          <p>
-            Kursseitwärtsphasen stören mich hier wenig – solange der <strong>Cashflow stimmt</strong>
-            und die Dividende nachhaltig finanziert ist.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Pipeline-Serie &amp; Analysen</h3>
-          <ul class="resources-list">
-            <li><a href="/blog/pipeline-serie-finale-vergleich-2025.html">🛢 Pipeline Serie Finale 2025 – Vergleich der 5 größten Pipeline-Aktien</a></li>
-          </ul>
-          <p class="muted">
-            Passende Glossar-Begriffe: MLP, Take-or-Pay, Throughput Volumes, NGLs, Legacy Assets.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BDCs & High-Yield -->
-    <section class="section" id="bdc-highyield">
-      <h2>BDCs &amp; High-Yield-Dividenden – Einkommensmaschine fürs Depot</h2>
-      <p class="tagline">Hohe laufende Ausschüttungen – dafür ist Qualität und Risiko-Management entscheidend.</p>
-      <div class="grid-2">
-        <div>
-          <p>
-            <strong>Business Development Companies (BDCs)</strong> und andere High-Yield-Werte
-            nutze ich gezielt als <strong>Einkommensbausteine</strong>. Entscheidende Kennzahlen sind hier:
-          </p>
-          <ul class="list-clean">
-            <li>Portfolioqualität &amp; Ausfallraten</li>
-            <li>Finanzierungsstruktur (Fix vs. Floating)</li>
-            <li>Nachhaltigkeit der Dividende</li>
-          </ul>
-          <p>
-            Mein Fokus liegt auf Werten, die auch in schwierigeren Phasen <strong>Dividenden halten oder steigern</strong>
-            können – nicht auf maximalem kurzfristigen Yield um jeden Preis.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Income-Fokus</h3>
-          <p>
-            Im BDC- und High-Yield-Bereich vergleiche ich regelmäßig Kennzahlen wie
-            <strong>Net Investment Income</strong>, Ausschüttungsquote und Verschuldungsgrad,
-            um überzogene Risiken zu vermeiden.
-          </p>
-          <p class="muted">
-            Hier passen später deine BDC-Artikel (z. B. Blue Owl vs. Crescent vs. Newtek) perfekt rein.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tools & Ressourcen -->
-    <section class="section" id="tools">
-      <h2>Tools &amp; Ressourcen, die ich selbst nutze</h2>
+<main class="page">
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">MB Capital Strategies · Hard-Asset-Guide</div>
+      <h1>Hard Assets – Der Cashflow-Guide</h1>
       <p>
-        Ohne gute Daten &amp; Struktur bringt die beste Strategie nichts. 
-        Das sind die Tools, die ich für Analyse, Depot-Tracking und Screening nutze:
+        Ich investiere bewusst in <strong>Hard Assets</strong> – also reale, produktive Werte – um mir einen stetig steigenden
+        <strong>Dividendencashflow</strong> aufzubauen. Auf dieser Seite findest du meinen kompakten Überblick über die wichtigsten
+        Hard-Asset-Sektoren, die ich im Depot spiele – inklusive Analysen &amp; Videos.
       </p>
-      <ul class="resources-list">
-        <li>🧰 <a href="/">MB Capital Strategies Toolbox</a> – meine Übersicht über Broker, Tools &amp; Ressourcen</li>
-        <li>📈 <a href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=Website&sub1=HardAssetGuide">Fundamentaldaten &amp; Bewertungs-Screener mit InvestingPro</a></li>
-        <li>📊 <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8">Parqet – Depot- &amp; Dividenden-Tracking mit Cashflow-Übersicht</a></li>
-        <!-- hier kannst du deine Broker-Affiliate-Links ergänzen -->
+      <ul class="pill-list">
+        <li>Energie</li>
+        <li>Shipping</li>
+        <li>Rohstoffe &amp; Mining</li>
+        <li>Pipelines &amp; Midstream</li>
+        <li>BDCs &amp; High Yield</li>
       </ul>
-    </section>
+      <div class="cta-row">
+        <a class="btn" href="/depot-strategie/">Zu meiner Depot-Strategie →</a>
+        <a class="btn btn-outline" href="/blog/index.html">Zu den aktuellen Analysen →</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
+      <p>Marco Bozem – Hard-Asset-Investor mit Fokus auf Dividenden &amp; Cashflow.</p>
+    </div>
+  </section>
 
-    <!-- Nächste Schritte -->
-    <section class="section" id="next-steps">
-      <h2>Wie es weitergeht</h2>
-      <p>
-        Wenn du meine Strategie im Detail sehen willst – inklusive Portfolioaufbau, 
-        Cashflow-Fokus und Zyklentiming – schau dir unbedingt meine Seite
-        <a href="/depot-strategie/">„Meine Depot-Strategie“</a> an.
-      </p>
-      <p>
-        Dort findest du auch <strong>mein öffentliches Parqet-Depot</strong> sowie 
-        eine Übersicht über alle aktuellen Depot-Update-Videos.
-      </p>
-    </section>
-  </main>
+  <!-- Energie -->
+  <section class="section" id="energie">
+    <h2>Energie – Öl, Gas, LNG &amp; integrierte Konzerne</h2>
+    <p class="tagline">Ohne Energie läuft nichts – hier entstehen dauerhafte Cashflows auf Basis realer Nachfrage.</p>
+    <div class="grid-2">
+      <div>
+        <p>
+          Im Energiesektor schaue ich vor allem auf <strong>qualitative Reserven</strong>, 
+          <strong>Break-even-Kosten</strong> und eine disziplinierte Kapitalallokation. 
+          Entscheidend ist, dass die Unternehmen in verschiedensten Preisphasen weiterhin
+          solide <strong>Dividenden ausschütten</strong> können.
+        </p>
+        <ul>
+          <li>Upstream (Förderung), Midstream (Transport) &amp; Downstream (Verarbeitung)</li>
+          <li>Reservenqualität &amp; Kostenstruktur statt nur KGV</li>
+          <li>klare Kapitalrückgabepolitik (Dividenden + Buybacks)</li>
+        </ul>
+        <p>
+          Hard Assets im Energiesektor profitieren langfristig von <strong>Unterinvestition</strong> 
+          und gleichzeitig stabilem oder steigendem Bedarf – ideal für Dividendeninvestoren
+          mit Cashflow-Fokus.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Rohstoff-Superzyklus &amp; Energie-Megatrends</h3>
+        <ul class="resources-list">
+          <li><a href="/blog/rohstoff-superzyklus-2025.html">📊 Rohstoff-Superzyklus 2025 – Megatrends, Unterinvestition &amp; Chancen</a></li>
+        </ul>
+        <p class="muted">
+          Passende Glossar-Begriffe: Barrel, OPEC+, Break-even-Kosten, Reserven, Hedging (folgt im Glossar).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shipping -->
+  <section class="section" id="shipping">
+    <h2>Shipping – Tanker, LNG &amp; Mixed Fleets als Dividendenmaschinen</h2>
+    <p class="tagline">Volatile Kurse, aber oft extreme Ausschüttungen über den gesamten Tanker-Zyklus.</p>
+    <div class="grid-2">
+      <div>
+        <p>
+          Im <strong>Shipping</strong>-Bereich fokussiere ich mich auf Geschäftsmodelle mit klar nachvollziehbarem 
+          <strong>Cashflow pro Schiff</strong>, moderner Flotte und einem intelligenten Mix aus
+          <strong>Spot-Exposure</strong> und <strong>Time Charters</strong>.
+        </p>
+        <ul>
+          <li>Fokus auf LNG-/LPG-Tanker &amp; Crude/Produkt-Tanker</li>
+          <li>Flottenalter, Orderbuch &amp; Verschuldung sind zentrale Kennzahlen</li>
+          <li>Ziel: hohe Ausschüttungen über den gesamten <strong>Tanker Cycle</strong></li>
+        </ul>
+        <p>
+          Shipping ist ein klassischer <strong>Zyklussektor</strong>: Ich nutze Schwächephasen für Käufe
+          und lasse in Hochphasen die Dividenden für mich arbeiten.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Shipping-Analysen &amp; Video</h3>
+        <ul class="resources-list">
+          <li><a href="/blog/shipping-tanker-mixedfleet-2025.html">🚢 Tanker &amp; Mixed Fleet 2025 – 4 Dividendenmaschinen im Check</a></li>
+        </ul>
+        <p class="muted">
+          Glossar (bald): Dayrates, TCE, Spot vs. Time Charter, VLCC/Suezmax/Aframax, Orderbook, Bunkerkosten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rohstoffe & Mining -->
+  <section class="section" id="rohstoffe">
+    <h2>Rohstoffe &amp; Mining – Produzenten im Rohstoff-Superzyklus</h2>
+    <p class="tagline">Ob Kohle, Kupfer oder Uran – ohne Rohstoffe gibt es keine Energie, keine Infrastruktur &amp; keine Digitalisierung.</p>
+    <div class="grid-2">
+      <div>
+        <p>
+          Im Rohstoff- und Mining-Bereich sind <strong>AISC</strong> (All-in Sustaining Costs),
+          <strong>Erzgehalt</strong> und <strong>Life of Mine</strong> zentrale Kennzahlen. 
+          Unternehmen mit robusten Margen über den Zyklus sind für mich interessant – besonders,
+          wenn sie einen Teil der Gewinne als <strong>Dividende</strong> oder <strong>Sonderdividende</strong> ausschütten.
+        </p>
+        <ul>
+          <li>Fokus auf Produzenten mit positivem Free Cash Flow</li>
+          <li>solide Bilanz &amp; disziplinierte Investitionspolitik</li>
+          <li>idealerweise Beteiligung am <strong>Rohstoff-Superzyklus</strong> 2025–2030</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Deep-Dive: Rohstoff-Superzyklus 2025</h3>
+        <ul class="resources-list">
+          <li><a href="/blog/rohstoff-superzyklus-2025.html">📊 Rohstoff-Superzyklus 2025 – Megatrends, Unterinvestition &amp; Chancen</a></li>
+        </ul>
+        <p class="muted">
+          Glossar (bald): AISC, Life of Mine, Ore Grade, Stripping Ratio, Royalty/Streaming.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pipelines & Midstream -->
+  <section class="section" id="pipelines">
+    <h2>Pipelines &amp; Midstream – Cashflow bei Seitwärtskursen</h2>
+    <p class="tagline">Midstream-Unternehmen leben von Durchleitungsvolumen – nicht vom Ölpreis selbst.</p>
+    <div class="grid-2">
+      <div>
+        <p>
+          <strong>Midstream- und Pipeline-Unternehmen</strong> sind für mich klassische
+          <strong>Cashflow-Werte</strong>: Einnahmen stammen häufig aus langlaufenden 
+          <strong>Take-or-Pay</strong>-Verträgen, in denen Volumen &amp; Tarife vertraglich fixiert sind.
+        </p>
+        <ul>
+          <li>stabile, oft inflationsindexierte Tarife</li>
+          <li>hohe Visibilität der Cashflows über viele Jahre</li>
+          <li>attraktive Dividendenrenditen, teilweise mit jährlichem Wachstum</li>
+        </ul>
+        <p>
+          Kursseitwärtsphasen stören mich hier wenig – solange der <strong>Cashflow stimmt</strong>
+          und die Dividende nachhaltig finanziert ist.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Pipeline-Serie &amp; Vergleich 2025</h3>
+        <ul class="resources-list">
+          <li><a href="/blog/pipeline-serie-finale-vergleich-2025.html">🛢 Pipeline Serie Finale 2025 – Vergleich der 5 größten Pipeline-Aktien</a></li>
+        </ul>
+        <p class="muted">
+          Glossar (bald): MLP, Take-or-Pay, Throughput Volumes, NGLs, Legacy Assets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BDCs & High-Yield -->
+  <section class="section" id="bdc-highyield">
+    <h2>BDCs &amp; High-Yield-Dividenden – Einkommensmaschine im Depot</h2>
+    <p class="tagline">Hohe laufende Ausschüttungen – Qualität &amp; Risikomanagement sind entscheidend.</p>
+    <div class="grid-2">
+      <div>
+        <p>
+          <strong>Business Development Companies (BDCs)</strong> und andere High-Yield-Werte
+          nutze ich gezielt als <strong>Einkommensbausteine</strong>. Wichtige Kennzahlen sind:
+        </p>
+        <ul>
+          <li>Portfolioqualität &amp; Ausfallraten</li>
+          <li>Finanzierungsstruktur (Fix vs. Floating)</li>
+          <li>Nachhaltigkeit der Dividende &amp; Ausschüttungsquote</li>
+        </ul>
+        <p>
+          Mein Fokus liegt auf Werten, die auch in schwierigeren Phasen <strong>Dividenden halten oder steigern</strong>
+          können – nicht auf maximalem kurzfristigen Yield um jeden Preis.
+        </p>
+      </div>
+      <div class="card">
+        <h3>High-Yield als Cashflow-Baustein</h3>
+        <p>
+          In Kombination mit Hard Assets sehe ich High-Yield-Werte als <strong>Cashflow-Turbo</strong>.
+          Wichtig ist dabei immer, das Risiko zum restlichen Portfolio im Blick zu behalten und nicht
+          nur der höchsten Prozentzahl hinterherzulaufen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Ressourcen -->
+  <section class="section" id="tools">
+    <h2>Tools &amp; Broker, die ich selbst nutze</h2>
+    <p>
+      Ohne gute Daten &amp; Struktur bringt die beste Strategie nichts. Das sind die Tools &amp; Broker,
+      die ich persönlich für Analyse, Depot-Tracking, Krypto &amp; Reisen nutze:
+    </p>
+    <ul class="tools-list">
+      <li>📈 <strong>Scalable Capital</strong> – mein Hauptbroker für ETFs, Aktien &amp; Dividendenstrategie.<br>
+        <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Scalable Capital →</a>
+      </li>
+      <li>📊 <strong>Trade Republic</strong> – Zweitdepot &amp; einfache Bedienung für schnelle Käufe.<br>
+        <a href="https://refnocode.trade.re/79z763g7" target="_blank" rel="noopener noreferrer">Zu Trade Republic →</a>
+      </li>
+      <li>📊 <strong>Parqet</strong> – Depot- &amp; Dividenden-Tracking mit Cashflow-Übersicht.<br>
+        <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow sponsored noopener noreferrer">Parqet mit 15 % Rabatt nutzen →</a>
+      </li>
+      <li>📈 <strong>InvestingPro</strong> – mein Analyse-Tool Nr. 1 für Fundamentaldaten, Fair-Value-Modelle &amp; Screening.<br>
+        <a href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=mbcapitalstrategies&sub1=Toolbox%20Website" target="_blank" rel="nofollow sponsored noopener noreferrer">InvestingPro mit 15 % Rabatt nutzen →</a>
+      </li>
+      <li>💰 <strong>Binance</strong> &amp; <strong>Coinbase</strong> – für den Krypto-Anteil im Portfolio.<br>
+        <a href="https://binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9&utm_medium=web_share_copy" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Binance →</a><br>
+        <a href="https://coinbase.com/join/EN8NVAV?src=referral-link" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Coinbase →</a>
+      </li>
+      <li>💸 <strong>Wise</strong> – Multi-Währungskonten &amp; günstige Auslandsüberweisungen.<br>
+        <a href="https://wise.com/invite/dic/marcopeterb2" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Wise →</a>
+      </li>
+      <li>📱 <strong>Airalo</strong> – eSIM auf Reisen (z. B. Vietnam), direkt nach Landung online.<br>
+        <a href="https://www.airalo.com" target="_blank" rel="nofollow sponsored noopener noreferrer">Zu Airalo →</a> |
+        Empfehlungscode: <strong>BAND1T8990</strong>
+      </li>
+      <li>▶ <strong>YouTube: MB Capital Strategies</strong> – Depot-Updates, Analysen &amp; Strategien.<br>
+        <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener noreferrer">Zum Kanal →</a>
+      </li>
+      <li>🌐 <strong>Odysee</strong> – dezentrale Alternative zu YouTube.<br>
+        <a href="https://odysee.com/@mbcapitalstrategies:5?r=AMfqEhDex3qSoQYyLJcFdqAQAiN334AX" target="_blank" rel="noopener noreferrer nofollow sponsored">Zu Odysee →</a>
+      </li>
+    </ul>
+    <p class="muted">
+      Transparenz-Hinweis: Einige Links sind Affiliate-Links. Wenn du darüber etwas abschließt, unterstützt du meinen Kanal ohne Mehrkosten für dich. Investitionen bergen Risiken.
+    </p>
+  </section>
+
+  <!-- Nächste Schritte -->
+  <section class="section" id="next">
+    <h2>Nächste Schritte</h2>
+    <p>
+      Wenn du meine persönliche Umsetzung dieser Hard-Asset-Strategie sehen willst – inklusive Portfolioaufbau,
+      Cashflow-Fokus und Zyklen-Timing – schau dir unbedingt
+      <a href="/depot-strategie/">meine Depot-Strategie</a> an.
+    </p>
+    <p>
+      Dort findest du auch mein öffentliches Parqet-Depot sowie eine Übersicht über alle aktuellen Depot-Update-Videos.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2025 MB Capital Strategies · 
+  <a href="/impressum.html">Impressum</a> · 
+  <a href="/datenschutz.html">Datenschutzerklärung</a>
+  <br><br>
+  <span style="font-size:0.8em;color:#888;">
+    Diese Seite enthält Affiliate-Links. Wenn du über diese Links etwas abschließt, unterstützt du meinen Kanal, ohne dass dir Mehrkosten entstehen.
+    Investitionen bergen Risiken. Es kann zu Verlusten des eingesetzten Kapitals kommen.
+  </span>
+</footer>
+
 </body>
 </html>
