@@ -91,14 +91,29 @@
       text-align:center;
       padding:80px 20px;
     }
-    .hero img {
-      width:160px;
-      height:160px;
+
+    .hero-flex {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+      margin-bottom:25px;
+    }
+
+    .hero-img {
+      width:180px;
+      height:180px;
       border-radius:50%;
       object-fit:cover;
-      margin-bottom:20px;
       box-shadow:0 0 25px rgba(212,175,55,0.4);
     }
+
+    .hero-logo {
+      width:170px;
+      filter:drop-shadow(0 0 18px rgba(212,175,55,0.75));
+    }
+
     .hero h1 {
       font-size:2.6em;
       margin-bottom:10px;
@@ -218,12 +233,9 @@
 <!-- HERO -->
 <section class="hero">
 
-  <div style="display:flex; justify-content:center; align-items:center; gap:30px; flex-wrap:wrap; margin-bottom:25px;">
-    <img src="/marco.jpg" alt="Marco Bozem" 
-         style="width:160px; height:160px; border-radius:50%; object-fit:cover; box-shadow:0 0 25px rgba(212,175,55,0.4);">
-
-    <img src="/Logo.png" alt="MB Capital Strategies Logo" 
-         style="width:140px; filter:drop-shadow(0 0 12px rgba(212,175,55,0.65));">
+  <div class="hero-flex">
+    <img src="/marco.jpg" alt="Marco Bozem" class="hero-img">
+    <img src="/Logo.png" alt="MB Capital Strategies Logo" class="hero-logo">
   </div>
 
   <h1>MB Capital Strategies</h1>
@@ -233,7 +245,7 @@
   <a href="/depot-strategie/" class="btn">📊 Meine Depot-Strategie</a>
   <a href="/toolbox.html" class="btn">🧰 Meine Toolbox</a>
   <a href="/blog/index.html" class="btn">📰 Blog & Analysen</a>
-  <a href="https://www.linkedin.com/in/marco-bozem/" target="_blank" class="btn">🔗 LinkedIn</a>
+  <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" class="btn">🔗 LinkedIn</a>
   <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" class="btn">▶ YouTube</a>
 
 </section>
