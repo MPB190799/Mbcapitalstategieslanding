@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
@@ -8,30 +9,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MB Capital Strategies – Hard Assets, Cashflow & Dividenden</title>
-  <meta name="description" content="Hard Assets, Cashflow, Dividenden & echte Transparenz. Depot-Strategie, Blog, Toolbox & monatliche Depot-Updates von MB Capital Strategies.">
+  <meta name="description" content="Hard Assets, Cashflow, Dividenden & echte Transparenz – MB Capital Strategies. Depot-Strategie, Toolbox, Blog & monatliche Updates.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="MB Capital Strategies – Hard Assets & Cashflow">
-  <meta property="og:description" content="Cashflow, Dividenden & Hard Assets – klare Strategie, echte Praxis.">
+  <meta property="og:description" content="Cashflow, Dividenden & Hard Assets – klare Strategie, echte Praxis, reale Einblicke.">
   <meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mbcapitalstrategies.com/">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist die MB Capital Strategies Investment-Philosophie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fokus auf Hard Assets, Cashflow, High-Yield-Dividenden und antizyklisches Investieren – mit klarer Datenbasis und realer Transparenz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Assets stehen im Mittelpunkt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energie, Shipping, Rohstoffe, BDCs, Infrastruktur und ausgewählte REITs – Werte mit echten Cashflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie bekomme ich Einblicke in Marcos Depot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Über die Depot-Strategie-Seite, Parqet-Links und monatliche Depot-Updates auf YouTube."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Tools nutzt Marco selbst?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scalable Capital, Trade Republic, InvestingPro, Parqet, Wise, Airalo und weitere – vollständig gelistet in seiner Toolbox."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     body {
       background:#0f1115;
       color:#f5f6fa;
-      font-family:'Montserrat',sans-serif;
       margin:0;
+      font-family:'Montserrat',sans-serif;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       background:#151821;
-      border-bottom:1px solid rgba(212,175,55,0.25);
+      border-bottom:1px solid rgba(212,175,55,.25);
       padding:15px 10px;
       text-align:center;
-      position:sticky; top:0; z-index:20;
+      position:sticky;
+      top:0;
+      z-index:20;
     }
     header a {
       color:#d4af37;
@@ -43,32 +88,32 @@
 
     /* HERO */
     .hero {
-      padding:80px 20px;
       text-align:center;
+      padding:80px 20px;
     }
     .hero img {
       width:160px;
       height:160px;
       border-radius:50%;
       object-fit:cover;
-      box-shadow:0 0 25px rgba(212,175,55,0.4);
       margin-bottom:20px;
+      box-shadow:0 0 25px rgba(212,175,55,0.4);
     }
     .hero h1 {
-      font-size:2.4em;
-      color:#d4af37;
+      font-size:2.6em;
       margin-bottom:10px;
-      text-shadow:0 0 12px rgba(212,175,55,0.6);
+      color:#d4af37;
+      text-shadow:0 0 14px rgba(212,175,55,.7);
     }
     .hero p {
-      font-size:1.2em;
       max-width:700px;
-      margin:0 auto 20px;
+      margin:0 auto 25px;
+      font-size:1.2em;
       color:#cfd6e6;
       line-height:1.6;
     }
 
-    /* CTA Buttons */
+    /* BUTTONS */
     .btn {
       display:inline-block;
       padding:12px 22px;
@@ -77,30 +122,29 @@
       color:#0f1115;
       text-decoration:none;
       font-weight:600;
-      font-size:1em;
-      transition:0.3s;
-      box-shadow:0 0 14px rgba(212,175,55,0.5);
+      font-size:1.05em;
       margin:5px;
+      box-shadow:0 0 14px rgba(212,175,55,0.6);
+      transition:0.3s;
     }
     .btn:hover {
       background:#e0bd55;
-      box-shadow:0 0 18px rgba(212,175,55,0.8);
+      box-shadow:0 0 18px rgba(212,175,55,0.9);
     }
 
-    /* Sections */
+    /* SECTIONS */
     .section {
       max-width:950px;
       margin:40px auto;
-      padding:20px;
+      padding:10px 20px;
     }
     h2 {
       color:#d4af37;
-      margin-bottom:12px;
       font-size:1.8em;
+      margin-bottom:12px;
     }
-    p { color:#cfd6e6; }
 
-    /* Grid */
+    /* GRID */
     .grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -109,7 +153,7 @@
     }
     .card {
       background:#151821;
-      border:1px solid rgba(212,175,55,0.25);
+      border:1px solid rgba(212,175,55,.25);
       border-radius:16px;
       padding:18px;
       text-align:center;
@@ -117,26 +161,42 @@
     }
     .card:hover {
       transform:translateY(-4px);
-      box-shadow:0 6px 20px rgba(0,0,0,0.4);
+      box-shadow:0 6px 20px rgba(0,0,0,.4);
     }
     .card h3 {
       color:#d4af37;
-      margin-bottom:8px;
       font-size:1.15em;
+      margin-bottom:8px;
     }
     .card p {
+      color:#cfd6e6;
       font-size:0.95em;
-      color:#bfc7d9;
       line-height:1.5;
     }
 
+    /* FAQ */
+    details {
+      background:#151821;
+      border:1px solid rgba(255,255,255,.07);
+      padding:14px 16px;
+      border-radius:12px;
+      margin-bottom:12px;
+      cursor:pointer;
+    }
+    summary {
+      color:#d4af37;
+      font-weight:600;
+      font-size:1em;
+    }
+
+    /* FOOTER */
     footer {
       text-align:center;
       padding:20px;
-      color:#9aa6c0;
       font-size:0.85em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.08);
       margin-top:40px;
-      border-top:1px solid rgba(255,255,255,0.08);
     }
     footer a {
       color:#d4af37;
@@ -160,18 +220,20 @@
   <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
 
   <h1>MB Capital Strategies</h1>
-  <p>Hard Assets. High Yield. Cashflow.  
+  <p>Hard Assets. Cashflow. Dividenden.  
      Klare Strategie, echte Transparenz & Fokus auf Rendite, die jeden Monat ankommt.</p>
 
   <a href="/depot-strategie/" class="btn">📊 Meine Depot-Strategie</a>
   <a href="/toolbox.html" class="btn">🧰 Meine Toolbox</a>
   <a href="/blog/index.html" class="btn">📰 Blog & Analysen</a>
+  <a href="https://www.linkedin.com/in/marco-bozem/" target="_blank" class="btn">🔗 LinkedIn</a>
+  <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" class="btn">▶ YouTube</a>
 </section>
 
 <!-- WAS ICH MACHE -->
 <section class="section">
   <h2>🔶 Was du hier findest</h2>
-  <p>Ich investiere in Hard Assets, Energy, Shipping, Rohstoffe, Infrastruktur & High-Yield-Werte – immer mit Fokus auf Cashflow und antizyklisches Investieren.</p>
+  <p>Ich investiere in Hard Assets, Energie, Shipping, Rohstoffe, BDCs, Infrastruktur & High-Yield-Werte – immer mit Fokus auf Cashflow und antizyklische Chancen.</p>
 
   <div class="grid">
     <div class="card">
@@ -181,12 +243,12 @@
 
     <div class="card">
       <h3>🧰 Toolbox</h3>
-      <p>Die Tools, Broker & Ressourcen, die ich täglich nutze – inkl. Vorteile für dich.</p>
+      <p>Alle Tools, Broker & Ressourcen, die ich selbst nutze – inkl. Vorteile & Rabatte.</p>
     </div>
 
     <div class="card">
       <h3>📰 Blog</h3>
-      <p>Aktienanalysen, Marktlogik, Zyklen & Hard-Asset-Reports.</p>
+      <p>Aktienanalysen, Marktlogik, Shipping-Zyklen & Hard-Asset-Reports.</p>
     </div>
   </div>
 </section>
@@ -198,19 +260,19 @@
   <div class="grid">
     <div class="card">
       <h3>Scalable Capital</h3>
-      <p>Mein Hauptbroker für Cashflow, Dividenden & Hard Assets.</p>
-      <a class="btn" href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank">Jetzt starten →</a>
+      <p>Mein Hauptbroker für Dividenden & Hard Assets.</p>
+      <a class="btn" href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921" target="_blank">Jetzt starten →</a>
     </div>
 
     <div class="card">
       <h3>InvestingPro</h3>
-      <p>Mein Nummer-1-Tool für Bewertung, Fair Value & Cashflow-Analysen.</p>
-      <a class="btn" href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&source_id=mbcapitalstrategies" target="_blank">15 % Rabatt sichern →</a>
+      <p>Mein Tool für Bewertung, Fair Value & Cashflow-Analysen.</p>
+      <a class="btn" href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704" target="_blank">15 % Rabatt sichern →</a>
     </div>
 
     <div class="card">
       <h3>Parqet</h3>
-      <p>Dividendenkalender, Cashflow-Tracking & Performance-Analyse.</p>
+      <p>Dividendenkalender, Cashflow-Tracking & Performance.</p>
       <a class="btn" href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Jetzt nutzen →</a>
     </div>
   </div>
@@ -218,6 +280,26 @@
   <p style="margin-top:15px; font-size:0.9em; color:#9aa6c0;">
     👉 Alle Tools findest du vollständig in meiner <a href="/toolbox.html" style="color:#d4af37;">Toolbox</a>.
   </p>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2>🔶 Häufige Fragen</h2>
+
+  <details>
+    <summary>Was ist deine Investment-Philosophie?</summary>
+    <p>Hard Assets, High Yield, Cashflow & antizyklisches Investieren – Fokus auf reale Werte.</p>
+  </details>
+
+  <details>
+    <summary>Wie bekomme ich Einblick in dein Depot?</summary>
+    <p>Über meine Depot-Strategie-Seite, Parqet-Links & monatliche YouTube-Updates.</p>
+  </details>
+
+  <details>
+    <summary>Welche Tools nutzt du wirklich selbst?</summary>
+    <p>Scalable, TR, InvestingPro, Parqet, Wise, Airalo – alles in meiner Toolbox.</p>
+  </details>
 </section>
 
 <!-- FOOTER -->
