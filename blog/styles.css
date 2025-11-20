@@ -110,3 +110,16 @@ ul {
 ul li {
   margin-bottom: 6px;
 }
+.glossar-link {
+    color: #d4af37;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dotted #d4af37;
+    transition: 0.2s;
+}
+
+.glossar-link:hover {
+    color: #e0bd55;
+    border-bottom-color: #e0bd55;
+}
+
