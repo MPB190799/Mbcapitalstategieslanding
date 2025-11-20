@@ -122,4 +122,97 @@ ul li {
     color: #e0bd55;
     border-bottom-color: #e0bd55;
 }
+/* HEADER base */
+header.header {
+  background:#151821;
+  padding:14px 20px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  border-bottom:1px solid rgba(212,175,55,.25);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+header.header a{
+  color:#d4af37;
+  text-decoration:none;
+  font-weight:600;
+}
+
+header.header a:hover{
+  text-decoration:underline;
+}
+
+/* Dropdown Wrapper */
+.dropdown {
+  position:relative;
+  display:inline-block;
+}
+
+/* Button */
+.dropdown-btn {
+  background:none;
+  border:none;
+  color:#d4af37;
+  font-weight:600;
+  cursor:pointer;
+  padding:6px 10px;
+  font-size:1em;
+}
+
+.dropdown-btn:hover {
+  text-decoration:underline;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display:none;
+  position:absolute;
+  background:#0f1115;
+  min-width:210px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:10px;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+  padding:8px 0;
+  z-index:2000;
+}
+
+.dropdown-content a{
+  display:block;
+  padding:10px 14px;
+  color:#f5f6fa;
+  text-decoration:none;
+  font-size:0.95em;
+}
+
+.dropdown-content a:hover{
+  background:#1a1f2b;
+  color:#d4af37;
+}
+
+/* Hover for Desktop */
+@media (min-width: 700px){
+  .dropdown:hover .dropdown-content{
+    display:block;
+  }
+}
+
+/* Mobile: Klick */
+@media (max-width: 699px){
+  .dropdown.open .dropdown-content{
+    display:block;
+  }
+}
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  const btn = document.querySelector(".dropdown-btn");
+
+  btn.addEventListener("click", function(e){
+    if (window.innerWidth < 700) {
+      dropdown.classList.toggle("open");
+    }
+  });
+</script>
 
