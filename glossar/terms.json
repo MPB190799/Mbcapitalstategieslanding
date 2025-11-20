@@ -1,0 +1,23 @@
+{
+  "Dividende": "dividende",
+  "Dividendenrendite": "dividendenrendite",
+  "Yield on Cost": "yield-on-cost",
+  "Ausschüttungsquote": "payout-ratio",
+  "Cashflow": "cashflow",
+  "Free Cashflow": "free-cashflow",
+  "BDC": "bdc",
+  "Hard Assets": "hard-assets",
+  "LNG": "lng",
+  "Midstream": "midstream",
+  "Pipeline": "midstream",
+  "NAV": "nav",
+  "REIT": "reit",
+  "REITs": "reit",
+  "Margin of Safety": "margin-of-safety",
+  "Rohstoffzyklus": "rohstoffzyklus",
+  "Shipping-Zyklus": "shipping-zyklus",
+  "Value Trap": "value-trap",
+  "Withholding Tax": "withholding-tax",
+  "Quellensteuer": "withholding-tax",
+  "Toolbox": "toolbox"
+}
