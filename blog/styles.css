@@ -110,18 +110,19 @@ ul {
 ul li {
   margin-bottom: 6px;
 }
+
 .glossar-link {
-    color: #d4af37;
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px dotted #d4af37;
-    transition: 0.2s;
+  color: #d4af37;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted #d4af37;
+  transition: 0.2s;
+}
+.glossar-link:hover {
+  color: #e0bd55;
+  border-bottom-color: #e0bd55;
 }
 
-.glossar-link:hover {
-    color: #e0bd55;
-    border-bottom-color: #e0bd55;
-}
 /* HEADER base */
 header.header {
   background:#151821;
@@ -205,14 +206,5 @@ header.header a:hover{
     display:block;
   }
 }
-<script>
-  const dropdown = document.querySelector(".dropdown");
-  const btn = document.querySelector(".dropdown-btn");
 
-  btn.addEventListener("click", function(e){
-    if (window.innerWidth < 700) {
-      dropdown.classList.toggle("open");
-    }
-  });
-</script>
 
