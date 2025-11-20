@@ -1,33 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    // 🔥 1. Begriffe aus deinem Glossar
-    const terms = {
-        "Dividende": "dividende",
-        "Dividendenrendite": "dividendenrendite",
-        "Yield on Cost": "yield-on-cost",
-        "Ausschüttungsquote": "payout-ratio",
-        "BDC": "bdc",
-        "Cashflow": "cashflow",
-        "Free Cashflow": "free-cashflow",
-        "Diversifikation": "diversifikation",
-        "Ex-Dividenden-Tag": "ex-dividenden-tag",
-        "Hard Assets": "hard-assets",
-        "LNG": "lng",
-        "Midstream": "midstream",
-        "Pipeline": "midstream",
-        "NAV": "nav",
-        "REIT": "reit",
-        "Margin of Safety": "margin-of-safety",
-        "Rohstoffzyklus": "rohstoffzyklus",
-        "Shipping-Zyklus": "shipping-zyklus",
-        "Value Trap": "value-trap",
-        "Withholding Tax": "withholding-tax",
-        "Quellensteuer": "withholding-tax",
-        "Toolbox": "toolbox"
-    };
+    // 1) JSON laden
+    let glossary = {};
+    try {
+        const res = await fetch("/glossar/terms.json");
+        glossary = await res.json();
+    } catch (e) {
+        console.error("Glossar konnte nicht geladen werden:", e);
+        return;
+    }
 
-    // 🔥 2. Wo soll verlinkt werden?
-    const contentSelectors = [
+    // 2) Zielbereich suchen
+    const selectors = [
         ".blog-content",
         ".article-content",
         "main",
@@ -35,28 +19,35 @@ document.addEventListener("DOMContentLoaded", () => {
         ".content"
     ];
 
-    let targetElement = null;
+    let target = null;
+    for (const s of selectors) {
+        const el = document.querySelector(s);
+        if (el) { target = el; break; }
+    }
+    if (!target) return;
 
-    for (const sel of contentSelectors) {
-        const el = document.querySelector(sel);
-        if (el) {
-            targetElement = el;
-            break;
-        }
+    let html = target.innerHTML;
+
+    // Bereits existierende Links schützen
+    html = html.replace(/<a\b[^>]*>.*?<\/a>/gi, m =>
+        m.replace(/</g, "§§LT§§").replace(/>/g, "§§GT§§")
+    );
+
+    // 3) Glossar-Begriffe verlinken
+    for (const [term, anchor] of Object.entries(glossary)) {
+        const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+        const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
+
+        html = html.replace(regex,
+            `<a href="/glossar/#${anchor}" class="glossar-link">$1</a>`
+        );
     }
 
-    if (!targetElement) return;
+    // Maskierung zurücksetzen
+    html = html.replace(/§§LT§§/g, "<").replace(/§§GT§§/g, ">");
 
-    let html = targetElement.innerHTML;
-
-    // 🔥 3. Begriffe einmal verlinken
-    for (const [word, anchor] of Object.entries(terms)) {
-
-        const regex = new RegExp(`\\b(${word})\\b`, "i");
-
-        html = html.replace(regex, `<a href="/glossar/#${anchor}" class="glossar-link">$1</a>`);
-    }
-
-    targetElement.innerHTML = html;
+    // 4) Ausgabe
+    target.innerHTML = html;
 
 });
+
