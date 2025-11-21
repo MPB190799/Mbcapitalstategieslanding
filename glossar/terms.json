@@ -98,6 +98,7 @@
   "Yield on Cost": "yield-on-cost",
   "Zinszyklus": "zinszyklus",
 
+  /* --- SHIPPING Erweiterungen --- */
   "LPG": "lpg",
   "RoRo": "roro",
   "Auto-Carrier": "auto-carrier",
