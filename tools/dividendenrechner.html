@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dividendenrechner – MB Capital Strategies</title>
+<meta name="description" content="Berechne deine Dividenden, Yield on Cost, monatlichen Cashflow und Gesamtjahresrendite. Der perfekte Hard-Asset & Cashflow Rechner.">
+
+<style>
+body {
+  background:#0f1115;
+  color:#f5f6fa;
+  font-family:'Montserrat',sans-serif;
+  padding:20px;
+}
+
+.container {
+  max-width:600px;
+  margin:0 auto;
+}
+
+h1 {
+  color:#d4af37;
+  text-align:center;
+}
+
+.card {
+  background:#151821;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:12px;
+  padding:20px;
+  margin-top:20px;
+}
+
+label {
+  display:block;
+  margin:10px 0 5px;
+}
+
+input {
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+  font-size:1em;
+}
+
+button {
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:8px;
+  background:#d4af37;
+  color:#0f1115;
+  font-size:1.1em;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover {
+  background:#e0bd55;
+}
+
+.result {
+  margin-top:20px;
+  padding:15px;
+  background:#1a1f2b;
+  border-left:4px solid #d4af37;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💰 Dividendenrechner</h1>
+
+  <div class="card">
+    <label>Investitionssumme (€)</label>
+    <input type="number" id="investment" placeholder="z. B. 5.000">
+
+    <label>Dividendenrendite (%)</label>
+    <input type="number" id="yield" placeholder="z. B. 8">
+
+    <button onclick="calculate()">Berechnen</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+function calculate() {
+  let inv = parseFloat(document.getElementById("investment").value);
+  let y = parseFloat(document.getElementById("yield").value);
+
+  if (!inv || !y) return;
+
+  let yearly = inv * (y/100);
+  let monthly = yearly / 12;
+  let quarterly = yearly / 4;
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = `
+    <strong>📈 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
+    <strong>📆 Monatlicher Cashflow:</strong> ${monthly.toFixed(2)} €<br>
+    <strong>🗓️ Quartalsdividende:</strong> ${quarterly.toFixed(2)} €
+  `;
+}
+</script>
+
+</body>
+</html>
