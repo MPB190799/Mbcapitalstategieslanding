@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dividenden-Wachstumsrechner – MB Capital Strategies</title>
+<meta name="description" content="Berechne, wie sich deine Dividenden durch jährliches Wachstum entwickeln. Dividendenwachstum, zukünftiger Cashflow und Gesamtrendite.">
+
+<style>
+body{
+  background:#0f1115;
+  color:#f5f6fa;
+  font-family:'Montserrat',sans-serif;
+  margin:0;
+  padding:20px;
+}
+.container{max-width:650px;margin:0 auto;}
+h1{color:#d4af37;text-align:center;}
+.card{
+  background:#151821;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,.3);
+  padding:20px;
+  margin-top:20px;
+}
+label{display:block;margin:10px 0 5px;}
+input{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+}
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:8px;
+  background:#d4af37;
+  color:#0f1115;
+  font-size:1.05em;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{background:#e0bd55;}
+.result{
+  margin-top:20px;
+  padding:15px;
+  background:#1a1f2b;
+  border-left:4px solid #d4af37;
+  border-radius:8px;
+}
+small{color:#9aa6c0;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📈 Dividenden-Wachstumsrechner</h1>
+
+  <div class="card">
+    <p><small>Berechnet, wie sich deine Jahresdividende entwickelt, wenn die Dividende jedes Jahr wächst.</small></p>
+
+    <label>Aktuelle Jahresdividende (€)</label>
+    <input type="number" id="dividend" placeholder="z. B. 400">
+
+    <label>Jährliches Dividendenwachstum (%)</label>
+    <input type="number" id="growth" placeholder="z. B. 5">
+
+    <label>Anlagehorizont (Jahre)</label>
+    <input type="number" id="years" placeholder="z. B. 10">
+
+    <button onclick="calcGrowth()">Berechnen</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+function calcGrowth(){
+  const d0 = parseFloat(document.getElementById("dividend").value);
+  const g  = parseFloat(document.getElementById("growth").value)/100;
+  const n  = parseFloat(document.getElementById("years").value);
+  if(!d0 || !g || !n) return;
+
+  // zukünftige Jahresdividende
+  const dN = d0 * Math.pow(1+g, n);
+
+  // Summe aller Dividenden über Zeitraum (geometrische Reihe)
+  let sum = 0;
+  for(let t=0;t<n;t++){
+    sum += d0 * Math.pow(1+g,t);
+  }
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = `
+    <strong>Dividende heute:</strong> ${d0.toFixed(2)} € pro Jahr<br>
+    <strong>Dividende in ${n} Jahren:</strong> ${dN.toFixed(2)} € pro Jahr<br>
+    <strong>Summe aller Dividenden in ${n} Jahren:</strong> ${sum.toFixed(2)} €<br><br>
+    <small>Annahme: konstantes Dividendenwachstum, keine Reinvestments.</small>
+  `;
+}
+</script>
+
+</body>
+</html>
