@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dividenden-Reinvest-Rechner (DRIP) – MB Capital Strategies</title>
+<meta name="description" content="Simuliere, wie sich dein Depot entwickelt, wenn du alle Dividenden wieder anlegst (DRIP).">
+
+<style>
+body{
+  background:#0f1115;
+  color:#f5f6fa;
+  font-family:'Montserrat',sans-serif;
+  margin:0;
+  padding:20px;
+}
+.container{max-width:650px;margin:0 auto;}
+h1{color:#d4af37;text-align:center;}
+.card{
+  background:#151821;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,.3);
+  padding:20px;
+  margin-top:20px;
+}
+label{display:block;margin:10px 0 5px;}
+input{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+}
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:8px;
+  background:#d4af37;
+  color:#0f1115;
+  font-size:1.05em;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{background:#e0bd55;}
+.result{
+  margin-top:20px;
+  padding:15px;
+  background:#1a1f2b;
+  border-left:4px solid #d4af37;
+  border-radius:8px;
+}
+small{color:#9aa6c0;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🔁 Dividenden-Reinvest-Rechner (DRIP)</h1>
+
+  <div class="card">
+    <p><small>Alle Dividenden werden automatisch wieder angelegt. Einfaches Modell mit konstanter Dividendenrendite.</small></p>
+
+    <label>Startkapital (€)</label>
+    <input type="number" id="start" placeholder="z. B. 10.000">
+
+    <label>Dividendenrendite (% p.a.)</label>
+    <input type="number" id="yield" placeholder="z. B. 8">
+
+    <label>Anlagehorizont (Jahre)</label>
+    <input type="number" id="years" placeholder="z. B. 15">
+
+    <button onclick="calcDRIP()">Berechnen</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+function calcDRIP(){
+  const start = parseFloat(document.getElementById("start").value);
+  const y     = parseFloat(document.getElementById("yield").value)/100;
+  const n     = parseFloat(document.getElementById("years").value);
+  if(!start || !y || !n) return;
+
+  // klassisches Zinseszins-Modell
+  const endVal = start * Math.pow(1+y, n);
+
+  // Summe der ausgeschütteten und reinvestierten Dividenden
+  let dividendsTotal = 0;
+  let capital = start;
+  for(let t=0; t<n; t++){
+    const div = capital * y;
+    dividendsTotal += div;
+    capital += div; // Reinvest
+  }
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = `
+    <strong>Startkapital:</strong> ${start.toFixed(2)} €<br>
+    <strong>Depotwert nach ${n} Jahren (mit Reinvest):</strong> ${endVal.toFixed(2)} €<br>
+    <strong>Summe reinvestierter Dividenden:</strong> ${dividendsTotal.toFixed(2)} €<br><br>
+    <small>Vereinfachtes Modell: konstante Rendite, jährliche Ausschüttung & Wiederanlage.</small>
+  `;
+}
+</script>
+
+</body>
+</html>
