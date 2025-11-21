@@ -96,35 +96,27 @@
   "Withholding Tax": "withholding-tax",
   "Yield": "yield",
   "Yield on Cost": "yield-on-cost",
-  "Zinszyklus": "zinszyklus"
-  {
+  "Zinszyklus": "zinszyklus",
+
+  /* --- SHIPPING Erweiterungen --- */
   "LPG": "lpg",
   "RoRo": "roro",
   "Auto-Carrier": "auto-carrier",
   "Charterraten": "charter-rates",
   "Chartermarkt": "charter-market",
-  "Spotmarkt": "spotmarkt",
   "Clarksons Index": "clarksons-index",
   "Drewry Index": "drewry-index",
   "Baltic Dry Index": "baltic-dry-index",
   "BDI": "baltic-dry-index",
   "Bulk-Carrier": "bulk-carrier",
-  "Dry Bulk": "dry-bulk",
   "Handysize": "handysize",
   "Handymax": "handymax",
   "Panamax": "panamax",
   "Kamsarmax": "kamsarmax",
-  "Capesize": "capesize",
-  "MR Tanker": "mr-tanker",
-  "Aframax": "aframax",
-  "LR2": "lr2",
-  "Suezmax": "suezmax",
-  "VLCC": "vlcc",
   "ULCC": "ulcc",
-  "TCE": "tce",
-  "Dayrate": "dayrate",
-  "Charter-Spezialist": "charter-spezialist",
+  "MR Tanker": "mr-tanker",
   "Produktentanker": "product-tanker",
-  "Crude Tanker": "crude-tanker"
+  "Crude Tanker": "crude-tanker",
+  "Dayrate": "dayrate",
+  "Charter-Spezialist": "charter-spezialist"
 }
-
