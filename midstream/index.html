@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pipelines & Midstream Aktien – 5–7 % Dividende & Cashflow | MB Capital Strategies</title>
+  <meta name="description" content="Pipelines & Midstream Aktien mit stabilen Cashflows, 5–7 % Dividende und inflationsindexierten Verträgen. Analysen zu Pembina, TC Energy, Enbridge, ONEOK & mehr.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pipelines & Midstream Aktien – Cashflow & Dividenden">
+  <meta property="og:description" content="Midstream-Aktien mit stabilen Cashflows, Take-or-Pay-Verträgen und starken Dividenden – kompakt erklärt mit Analysen & Videos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/midstream/">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+
+  <style>
+    body{
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:'Montserrat',sans-serif;
+      margin:0;
+      line-height:1.6;
+    }
+
+    /* ===== Header mit Themen-Dropdown ===== */
+    header.header{
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,.25);
+      padding:14px 20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:center;
+      justify-content:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    header.header a{
+      color:#d4af37;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    header.header a:hover{
+      text-decoration:underline;
+    }
+
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+    .dropdown-btn{
+      background:none;
+      border:none;
+      color:#d4af37;
+      font-weight:600;
+      cursor:pointer;
+      padding:6px 10px;
+      font-size:0.95rem;
+    }
+    .dropdown-btn:hover{
+      text-decoration:underline;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:#0f1115;
+      min-width:220px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:10px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:8px 0;
+      z-index:2000;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:9px 14px;
+      color:#f5f6fa;
+      text-decoration:none;
+      font-size:0.9rem;
+      white-space:nowrap;
+    }
+    .dropdown-content a:hover{
+      background:#1a1f2b;
+      color:#d4af37;
+    }
+    @media(min-width:700px){
+      .dropdown:hover .dropdown-content{display:block;}
+    }
+    @media(max-width:699px){
+      .dropdown.open .dropdown-content{display:block;}
+    }
+
+    /* ===== Layout / Sections ===== */
+    .page{
+      max-width:1080px;
+      margin:0 auto;
+      padding:25px 16px 40px;
+    }
+    .section-title{
+      font-size:1.7rem;
+      color:#d4af37;
+      margin:28px 0 10px;
+    }
+    .section-sub{
+      color:#cfd6e6;
+      margin-bottom:14px;
+      font-size:0.98rem;
+    }
+
+    /* Hero */
+    .hero{
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .hero h1{
+      font-size:2.1rem;
+      color:#d4af37;
+      text-shadow:0 0 12px rgba(212,175,55,.7);
+      margin-bottom:8px;
+    }
+    .hero p{
+      max-width:720px;
+      margin:0 auto;
+      color:#cfd6e6;
+    }
+    .hero-tags{
+      margin-top:12px;
+      font-size:0.9rem;
+      color:#9aa6c0;
+    }
+
+    /* Cards & Grids */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:10px;
+    }
+    .card{
+      background:#151821;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,.28);
+      padding:14px 16px;
+      box-shadow:0 4px 16px rgba(0,0,0,.35);
+      font-size:0.95rem;
+      position:relative;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:1.05rem;
+      color:#d4af37;
+    }
+    .card p{
+      margin:0;
+      color:#cfd6e6;
+    }
+    .badge{
+      display:inline-block;
+      font-size:0.78rem;
+      padding:3px 8px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.7);
+      color:#d4af37;
+      margin-bottom:4px;
+    }
+    .card a.more{
+      display:inline-block;
+      margin-top:8px;
+      font-size:0.88rem;
+      color:#ffd666;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .card a.more:hover{text-decoration:underline;}
+
+    /* Glossar-Tags */
+    .tag-row{
+      margin-top:8px;
+    }
+    .glossar-tag{
+      display:inline-block;
+      font-size:0.8rem;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.6);
+      color:#f5f6fa;
+      margin:3px 4px 0 0;
+      background:rgba(15,17,21,.8);
+      text-decoration:none;
+    }
+    .glossar-tag:hover{
+      background:#d4af37;
+      color:#0f1115;
+    }
+
+    /* Video-Section */
+    .video-wrapper{
+      background:#151821;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.3);
+      padding:16px;
+      box-shadow:0 6px 20px rgba(0,0,0,.45);
+    }
+    .video-wrapper h3{
+      margin-top:0;
+      color:#d4af37;
+    }
+    .video-flex{
+      display:grid;
+      grid-template-columns:minmax(0,2fr) minmax(0,1.3fr);
+      gap:18px;
+      align-items:flex-start;
+    }
+    .video-embed{
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      overflow:hidden;
+      border-radius:12px;
+      background:#000;
+    }
+    .video-embed iframe{
+      position:absolute;
+      top:0;left:0;
+      width:100%;height:100%;
+      border:0;
+    }
+    .video-list a{
+      display:block;
+      font-size:0.9rem;
+      color:#cfd6e6;
+      margin-bottom:6px;
+      text-decoration:none;
+    }
+    .video-list a span{
+      color:#d4af37;
+      font-weight:600;
+    }
+    .video-list a:hover{
+      text-decoration:underline;
+    }
+
+    /* Affiliate-Box */
+    .cta-box{
+      background:#151821;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.3);
+      padding:18px 16px 20px;
+      margin-top:22px;
+    }
+    .cta-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:14px;
+      margin-top:10px;
+    }
+    .cta-item h3{
+      margin:0 0 4px;
+      color:#d4af37;
+      font-size:1.02rem;
+    }
+    .cta-item p{
+      margin:0 0 8px;
+      font-size:0.9rem;
+      color:#cfd6e6;
+    }
+    .btn{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#d4af37;
+      color:#0f1115;
+      font-weight:600;
+      font-size:0.9rem;
+      text-decoration:none;
+      box-shadow:0 0 14px rgba(212,175,55,.55);
+    }
+    .btn:hover{
+      background:#e0bd55;
+    }
+
+    footer{
+      text-align:center;
+      padding:22px;
+      font-size:0.85rem;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:35px;
+    }
+    footer a{
+      color:#d4af37;
+      text-decoration:none;
+    }
+    footer a:hover{text-decoration:underline;}
+
+    @media(max-width:720px){
+      .video-flex{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/">🏠 Startseite</a>
+  <a href="/depot-strategie/">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">📘 Themen ▾</button>
+    <div class="dropdown-content">
+      <a href="/shipping/">🚢 Shipping</a>
+      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/energie/">⚡ Energie</a>
+      <a href="/rohstoffe/">⛏️ Rohstoffe / Mining</a>
+      <a href="/high-yield/">💰 High Yield Dividenden</a>
+    </div>
+  </div>
+
+  <a href="/blog/index.html">📰 Blog</a>
+  <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/glossar/">📗 Glossar</a>
+</header>
+
+<main class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Pipelines &amp; Midstream – Cashflow-Aktien mit 5–7&nbsp;% Dividende</h1>
+    <p>
+      Midstream-Unternehmen sind für mich <strong>Cashflow-Anker im Depot</strong>:
+      regulierte Transporttarife, langfristige Take-or-Pay-Verträge und inflationsindexierte Erlöse.
+      Hier findest du meine Analysen zu den wichtigsten Pipeline-Aktien und die passenden Videos dazu.
+    </p>
+    <p class="hero-tags">
+      Fokus: Kanada &amp; USA · Öl &amp; Gas Pipelines · NGL &amp; Gasverarbeitung · Terminals &amp; Speicher
+    </p>
+  </section>
+
+  <!-- SEGMENTE -->
+  <section>
+    <h2 class="section-title">Midstream-Segmente im Überblick</h2>
+    <p class="section-sub">
+      Im Midstream-Bereich geht es weniger um Ölpreis-Wetten, sondern um <strong>Transportvolumen &amp; Verträge</strong>.
+      Die wichtigsten Bereiche, in denen ich investiere:
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="badge">Pipelines &amp; Transport</span>
+        <h3>Pipeline-Netzwerke &amp; Transporttarife</h3>
+        <p>
+          Weit verzweigte Netze für Öl, Gas und NGLs, oft mit <strong>Take-or-Pay</strong>-Struktur.
+          Beispiele: <strong>Pembina Pipeline</strong>, <strong>TC Energy</strong>, <strong>Enbridge</strong>, <strong>ONEOK</strong>.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="badge">NGL &amp; Verarbeitung</span>
+        <h3>NGL, Fractionation &amp; Gasverarbeitung</h3>
+        <p>
+          Verarbeitung von <strong>NGL</strong> (Natural Gas Liquids), Fractionation-Anlagen und Gas-Pipelines.
+          Zusätzliche Margen, aber auch zyklischer – wichtig für die <strong>Free-Cashflow-Qualität</strong>.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="badge">Terminals &amp; Speicher</span>
+        <h3>Terminals, Speicher &amp; LNG-Projekte</h3>
+        <p>
+          Export-Terminals, Speicher und LNG-Infrastruktur mit lang laufenden Verträgen,
+          oft inflationsindexiert und mit hoher <strong>Planbarkeit des Cashflows</strong>.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ANALYSEN -->
+  <section>
+    <h2 class="section-title">Pipeline-Aktien &amp; Analysen</h2>
+    <p class="section-sub">
+      Alle vorgestellten Titel liegen in meinem eigenen Depot oder Beobachtungsradar – inklusive
+      klarer Einschätzung zu <strong>Dividende</strong>, <strong>Verschuldung</strong> und <strong>Cashflow-Risiken</strong>.
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="badge">Pipeline Serie · Teil 1</span>
+        <h3>Pembina Pipeline – 5,5&nbsp;% Dividende &amp; Cashflow-Anker</h3>
+        <p>
+          Kanadischer Midstream-Konzern mit breitem Netz, inflationsindexierten Verträgen
+          und über 20 Jahren stabiler Dividende ohne Kürzung.
+        </p>
+        <a class="more" href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html">Zur Analyse Pembina →</a>
+      </article>
+
+      <article class="card">
+        <span class="badge">Pipeline Serie · Teil 2</span>
+        <h3>TC Energy – 5&nbsp;% Dividende &amp; Schuldenfokus</h3>
+        <p>
+          Netz aus Pipelines, Speichern &amp; Energieprojekten in Kanada, USA &amp; Mexiko.
+          Spannend, aber mit hoher Verschuldung und Refinanzierungsrisiken.
+        </p>
+        <a class="more" href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html">Zur Analyse TC Energy →</a>
+      </article>
+
+      <article class="card">
+        <span class="badge">Pipeline Serie · Teil 3</span>
+        <h3>Enbridge – Dividenden-Aristokrat &amp; Infrastruktur-Gigant</h3>
+        <p>
+          Einer der größten Pipeline-Betreiber Nordamerikas mit breiter Diversifikation
+          über Öl, Gas, Gasverteilung und erneuerbare Projekte.
+        </p>
+        <a class="more" href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html">Zur Analyse Enbridge →</a>
+      </article>
+
+      <article class="card">
+        <span class="badge">Pipeline Serie · Finale</span>
+        <h3>Pipeline-Vergleich – Pembina, TC, Enbridge, ONEOK &amp; Kinder Morgan</h3>
+        <p>
+          Direktvergleich der großen Midstream-Werte: Dividendenrendite, Payout Ratio,
+          Verschuldung (<strong>Net Debt / EBITDA</strong>) und Cashflow-Stabilität.
+        </p>
+        <a class="more" href="https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html">Zum Serien-Finale →</a>
+      </article>
+
+      <article class="card">
+        <span class="badge">US Midstream</span>
+        <h3>ONEOK – NGL-Spezialist mit solider Dividende</h3>
+        <p>
+          Starker Player im NGL-Segment mit attraktiver Ausschüttung und wachsender Export-Story.
+          Fokus auf <strong>Free Cashflow</strong> und Schuldenabbau.
+        </p>
+        <a class="more" href="https://mbcapitalstrategies.com/blog/oneok.html">Zur ONEOK-Analyse →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Kennzahlen / Glossar -->
+  <section>
+    <h2 class="section-title">Wichtige Kennzahlen &amp; Vertragsstrukturen</h2>
+    <p class="section-sub">
+      Bei Midstream-Titeln liegt mein Fokus weniger auf dem KGV, sondern auf <strong>Cashflow-Qualität</strong>
+      und der Struktur der Verträge:
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Verträge &amp; Erlöslogik</h3>
+        <p>
+          • <strong>Take-or-Pay</strong>-Verträge sichern Mindestumsätze, selbst bei geringerer Auslastung.<br>
+          • <strong>Throughput</strong>-basierte Modelle profitieren direkt von steigendem Volumen.<br>
+          • Viele Tarife sind an <strong>Inflation</strong> gekoppelt.
+        </p>
+        <div class="tag-row">
+          <a href="/glossar/" class="glossar-tag">Take-or-Pay</a>
+          <a href="/glossar/" class="glossar-tag">Throughput</a>
+          <a href="/glossar/" class="glossar-tag">Midstream</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Verschuldung &amp; Sicherheit</h3>
+        <p>
+          Zentral sind Kennzahlen wie <strong>Net Debt / EBITDA</strong> und
+          <strong>Interest Coverage</strong>. In meinen Analysen gehe ich immer darauf ein,
+          wie viel Spielraum bei Refinanzierungen bleibt.
+        </p>
+        <div class="tag-row">
+          <a href="/glossar/" class="glossar-tag">Net Debt / EBITDA</a>
+          <a href="/glossar/" class="glossar-tag">Free Cashflow</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Dividende &amp; Cashflow</h3>
+        <p>
+          Wichtig sind eine <strong>nachhaltige Payout Ratio</strong> und
+          ein stabil wachsender <strong>Free Cashflow</strong>.
+          Ziel: 5–7&nbsp;% Ausschüttung, die über Jahre getragen werden kann.
+        </p>
+        <div class="tag-row">
+          <a href="/glossar/" class="glossar-tag">Dividendenrendite</a>
+          <a href="/glossar/" class="glossar-tag">Payout Ratio</a>
+          <a href="/glossar/" class="glossar-tag">Free Cashflow</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section>
+    <h2 class="section-title">Videoanalysen – Pipelines im Bewegtbild</h2>
+    <p class="section-sub">
+      In der Pipeline-Playlist gehe ich die Unternehmen Schritt für Schritt durch – inklusive
+      Bilanzcheck, Cashflow-Betrachtung und persönlicher Einschätzung.
+    </p>
+
+    <div class="video-wrapper">
+      <div class="video-flex">
+        <div class="video-embed">
+          <!-- Playlist-Embed -->
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9dfOg9__9v5uGOysW6QVWvDV"
+                  title="Pipeline &amp; Midstream Playlist"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="video-list">
+          <h3>Videos in der Serie</h3>
+          <a href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html">
+            <span>Teil 1:</span> Pembina Pipeline – solider Cashflow-Anker
+          </a>
+          <a href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html">
+            <span>Teil 2:</span> TC Energy – Schulden &amp; Chancen im Check
+          </a>
+          <a href="https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html">
+            <span>Teil 3:</span> Enbridge – Dividenden-Aristokrat
+          </a>
+          <a href="https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html">
+            <span>Finale:</span> Pipeline-Vergleich &amp; Favoriten
+          </a>
+          <a href="https://mbcapitalstrategies.com/blog/oneok.html">
+            <span>US Bonus:</span> ONEOK – NGL-Spezialist
+          </a>
+          <a href="https://www.youtube.com/playlist?list=PLb7T0VuyV9dfOg9__9v5uGOysW6QVWvDV" target="_blank">
+            👉 Zur kompletten Playlist auf YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossar-Tags -->
+  <section>
+    <h2 class="section-title">Wichtige Midstream-Begriffe im Glossar</h2>
+    <p class="section-sub">
+      Wenn dir in den Analysen ein Begriff zu technisch wird, kannst du ihn jederzeit im
+      <a href="/glossar/" style="color:#d4af37;">Glossar</a> nachschlagen – ohne den Lesefluss zu verlieren.
+    </p>
+
+    <div class="card">
+      <div class="tag-row">
+        <a href="/glossar/" class="glossar-tag">Midstream</a>
+        <a href="/glossar/" class="glossar-tag">Pipeline Capacity</a>
+        <a href="/glossar/" class="glossar-tag">Take-or-Pay</a>
+        <a href="/glossar/" class="glossar-tag">Throughput</a>
+        <a href="/glossar/" class="glossar-tag">Free Cashflow</a>
+        <a href="/glossar/" class="glossar-tag">Payout Ratio</a>
+        <a href="/glossar/" class="glossar-tag">Net Debt / EBITDA</a>
+        <a href="/glossar/" class="glossar-tag">Rohstoffzyklus</a>
+        <a href="/glossar/" class="glossar-tag">Zinszyklus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools / Affiliates -->
+  <section>
+    <h2 class="section-title">Tools &amp; Broker für Pipeline-Investoren</h2>
+    <p class="section-sub">
+      Wenn du Midstream-Aktien gezielt analysieren und im eigenen Depot umsetzen willst,
+      nutze ich selbst folgende Kombination aus Broker &amp; Analyse-Tools:
+    </p>
+
+    <div class="cta-box">
+      <div class="cta-grid">
+        <div class="cta-item">
+          <h3>Scalable Capital</h3>
+          <p>Mein Hauptbroker für Dividenden- &amp; Hard-Asset-Positionen – inkl. Sparplänen auf Pipeline-Aktien.</p>
+          <a class="btn" href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921" target="_blank">Scalable öffnen →</a>
+        </div>
+
+        <div class="cta-item">
+          <h3>InvestingPro</h3>
+          <p>Für Fair-Value-Berechnung, FCF-Checks und Vergleich von Payout Ratios &amp; Verschuldung nutze ich InvestingPro.</p>
+          <a class="btn" href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704" target="_blank">InvestingPro testen →</a>
+        </div>
+
+        <div class="cta-item">
+          <h3>Parqet</h3>
+          <p>Dividendenkalender, Cashflow-Tracking und Übersicht, wie stark Midstream zum Depot-Cashflow beiträgt.</p>
+          <a class="btn" href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Parqet ansehen →</a>
+        </div>
+      </div>
+      <p style="margin-top:10px;font-size:0.8rem;color:#9aa6c0;">
+        Hinweis: Einige Links sind Affiliate-Links. Für dich entstehen keine Mehrkosten.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a> ·
+  <a href="/glossar/">Glossar</a>
+</footer>
+
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  const btn = document.querySelector(".dropdown-btn");
+
+  if (dropdown && btn) {
+    btn.addEventListener("click", function(e){
+      if (window.innerWidth < 700) {
+        dropdown.classList.toggle("open");
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
