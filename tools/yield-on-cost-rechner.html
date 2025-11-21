@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yield-on-Cost Rechner – MB Capital Strategies</title>
+<meta name="description" content="Berechne deine persönliche Yield on Cost im Vergleich zur aktuellen Dividendenrendite.">
+
+<style>
+body{
+  background:#0f1115;
+  color:#f5f6fa;
+  font-family:'Montserrat',sans-serif;
+  margin:0;
+  padding:20px;
+}
+.container{max-width:650px;margin:0 auto;}
+h1{color:#d4af37;text-align:center;}
+.card{
+  background:#151821;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,.3);
+  padding:20px;
+  margin-top:20px;
+}
+label{display:block;margin:10px 0 5px;}
+input{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+}
+button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  border-radius:8px;
+  background:#d4af37;
+  color:#0f1115;
+  font-size:1.05em;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{background:#e0bd55;}
+.result{
+  margin-top:20px;
+  padding:15px;
+  background:#1a1f2b;
+  border-left:4px solid #d4af37;
+  border-radius:8px;
+}
+small{color:#9aa6c0;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>📊 Yield-on-Cost Rechner</h1>
+
+  <div class="card">
+    <p><small>Vergleicht deine ursprüngliche Rendite auf den Kaufpreis mit der aktuellen Dividendenrendite.</small></p>
+
+    <label>Kaufkurs je Aktie (€)</label>
+    <input type="number" id="buyPrice" placeholder="z. B. 25">
+
+    <label>Aktueller Kurs je Aktie (€)</label>
+    <input type="number" id="currentPrice" placeholder="z. B. 32">
+
+    <label>Aktuelle Jahresdividende je Aktie (€)</label>
+    <input type="number" id="divPS" placeholder="z. B. 2.00">
+
+    <label>Stückzahl</label>
+    <input type="number" id="shares" placeholder="z. B. 200">
+
+    <button onclick="calcYOC()">Berechnen</button>
+
+    <div id="output" class="result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+function calcYOC(){
+  const buy = parseFloat(document.getElementById("buyPrice").value);
+  const cur = parseFloat(document.getElementById("currentPrice").value);
+  const div = parseFloat(document.getElementById("divPS").value);
+  const sh  = parseFloat(document.getElementById("shares").value);
+  if(!buy || !cur || !div || !sh) return;
+
+  const yearlyDiv  = div * sh;
+  const costBasis  = buy * sh;
+  const marketVal  = cur * sh;
+  const yoc        = (yearlyDiv / costBasis) * 100;
+  const curYield   = (yearlyDiv / marketVal) * 100;
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = `
+    <strong>Jahresdividende gesamt:</strong> ${yearlyDiv.toFixed(2)} €<br>
+    <strong>Yield on Cost:</strong> ${yoc.toFixed(2)} %<br>
+    <strong>Aktuelle Dividendenrendite:</strong> ${curYield.toFixed(2)} %<br><br>
+    <small>Cost-Basis: ${costBasis.toFixed(2)} €, aktueller Depotwert: ${marketVal.toFixed(2)} €.</small>
+  `;
+}
+</script>
+
+</body>
+</html>
