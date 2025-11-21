@@ -85,168 +85,89 @@
     header.header a:hover { text-decoration:underline; }
 
     /* DROPDOWN MENU */
-    .dropdown {
-      position:relative;
-      display:inline-block;
-    }
-
+    .dropdown { position:relative; display:inline-block; }
     .dropdown-btn {
-      background:none;
-      border:none;
-      color:#d4af37;
-      font-weight:600;
-      cursor:pointer;
-      padding:6px 10px;
-      font-size:1em;
+      background:none; border:none; color:#d4af37;
+      font-weight:600; cursor:pointer; padding:6px 10px; font-size:1em;
     }
     .dropdown-btn:hover { text-decoration:underline; }
-
     .dropdown-content {
-      display:none;
-      position:absolute;
-      background:#0f1115;
-      min-width:220px;
-      border:1px solid rgba(212,175,55,.25);
-      border-radius:12px;
-      box-shadow:0 8px 22px rgba(0,0,0,.45);
-      padding:8px 0;
-      z-index:2000;
+      display:none; position:absolute; background:#0f1115;
+      min-width:220px; border:1px solid rgba(212,175,55,.25);
+      border-radius:12px; box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:8px 0; z-index:2000;
     }
-
     .dropdown-content a {
-      display:block;
-      padding:10px 14px;
-      color:#f5f6fa;
-      text-decoration:none;
-      font-size:0.95em;
+      display:block; padding:10px 14px; color:#f5f6fa;
+      text-decoration:none; font-size:0.95em;
     }
-    .dropdown-content a:hover {
-      background:#1a1f2b;
-      color:#d4af37;
-    }
+    .dropdown-content a:hover { background:#1a1f2b; color:#d4af37; }
 
-    /* Desktop Hover */
-    @media(min-width:700px){
-      .dropdown:hover .dropdown-content { display:block; }
-    }
-
-    /* Mobile Click */
-    @media(max-width:699px){
-      .dropdown.open .dropdown-content { display:block; }
-    }
+    @media(min-width:700px){ .dropdown:hover .dropdown-content { display:block; } }
+    @media(max-width:699px){ .dropdown.open .dropdown-content { display:block; } }
 
     /* HERO */
     .hero { text-align:center; padding:80px 20px; }
-
-    .hero-flex {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:50px;
-      flex-wrap:wrap;
-      margin-bottom:25px;
-    }
-
+    .hero-flex { display:flex; justify-content:center; align-items:center; gap:50px; flex-wrap:wrap; margin-bottom:25px; }
     .hero-img {
-      width:180px; height:180px;
-      border-radius:50%;
-      object-fit:cover;
+      width:180px; height:180px; border-radius:50%; object-fit:cover;
       box-shadow:0 0 25px rgba(212,175,55,0.4);
     }
+    .hero-logo { width:170px; filter:drop-shadow(0 0 18px rgba(212,175,55,0.75)); }
 
-    .hero-logo {
-      width:170px;
-      filter:drop-shadow(0 0 18px rgba(212,175,55,0.75));
-    }
-
-    .hero h1 {
-      font-size:2.6em;
-      margin-bottom:10px;
-      color:#d4af37;
-      text-shadow:0 0 14px rgba(212,175,55,.7);
-    }
-
-    .hero p {
-      max-width:700px;
-      margin:0 auto 25px;
-      font-size:1.2em;
-      color:#cfd6e6;
-      line-height:1.6;
-    }
+    .hero h1 { font-size:2.6em; margin-bottom:10px; color:#d4af37; text-shadow:0 0 14px rgba(212,175,55,.7); }
+    .hero p { max-width:700px; margin:0 auto 25px; font-size:1.2em; color:#cfd6e6; line-height:1.6; }
 
     /* BUTTONS */
     .btn {
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:999px;
-      background:#d4af37;
-      color:#0f1115;
-      text-decoration:none;
-      font-weight:600;
-      margin:5px;
-      font-size:1.05em;
-      box-shadow:0 0 14px rgba(212,175,55,0.6);
+      display:inline-block; padding:12px 22px; border-radius:999px;
+      background:#d4af37; color:#0f1115; text-decoration:none; font-weight:600;
+      margin:5px; font-size:1.05em; box-shadow:0 0 14px rgba(212,175,55,0.6);
       transition:0.3s;
     }
-    .btn:hover {
-      background:#e0bd55;
-      box-shadow:0 0 18px rgba(212,175,55,0.9);
-    }
+    .btn:hover { background:#e0bd55; box-shadow:0 0 18px rgba(212,175,55,0.9); }
 
-    /* SECTIONS / GRID */
+    /* SECTIONS */
     .section { max-width:950px; margin:40px auto; padding:10px 20px; }
     h2 { color:#d4af37; font-size:1.8em; margin-bottom:12px; }
 
     .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-      margin-top:20px;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px; margin-top:20px;
     }
 
     .card {
-      background:#151821;
-      border:1px solid rgba(212,175,55,.25);
-      border-radius:16px;
-      padding:18px;
-      text-align:center;
+      background:#151821; border:1px solid rgba(212,175,55,.25);
+      border-radius:16px; padding:18px; text-align:center;
       transition:0.25s;
     }
-    .card:hover {
-      transform:translateY(-4px);
-      box-shadow:0 6px 20px rgba(0,0,0,.4);
-    }
+    .card:hover { transform:translateY(-4px); box-shadow:0 6px 20px rgba(0,0,0,.4); }
 
     /* FAQ */
     details {
-      background:#151821;
-      border:1px solid rgba(255,255,255,.07);
-      padding:14px 16px;
-      border-radius:12px;
-      margin-bottom:12px;
-      cursor:pointer;
+      background:#151821; border:1px solid rgba(255,255,255,.07);
+      padding:14px 16px; border-radius:12px; margin-bottom:12px; cursor:pointer;
     }
-    summary {
-      color:#d4af37;
-      font-weight:600;
-      font-size:1em;
+    summary { color:#d4af37; font-weight:600; font-size:1em; }
+
+    /* FOOTER BESTENLISTEN */
+    .footer-best {
+      max-width:900px; margin:50px auto 20px; padding:20px;
+      background:#151821; border-radius:16px;
+      border:1px solid rgba(212,175,55,.25); text-align:center;
     }
+    .footer-best h3 { color:#d4af37; margin-bottom:15px; }
+    .footer-best ul { list-style:none; padding:0; margin:0; }
+    .footer-best ul li { margin:8px 0; }
+    .footer-best a { color:#d4af37; text-decoration:none; }
+    .footer-best a:hover { text-decoration:underline; }
 
-<!-- ===== Footer – Bestenlisten ===== -->
-<div class="footer-best">
-  <h3>⭐ Beliebte Bestenlisten 2025</h3>
-
-  <ul>
-    <li><a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a></li>
-    <li><a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a></li>
-    <!-- Tanker erst einfügen, wenn Video online -->
-    <!-- <li><a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a></li> -->
-  </ul>
-</div>
-
-<footer>
-  ©2025 MB Capital Strategies – <a href="/impressum.html">Impressum</a> • <a href="/datenschutz.html">Datenschutz</a>
-</footer>
+    /* FOOTER */
+    footer {
+      text-align:center; padding:20px; font-size:0.85em; color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.08); margin-top:25px;
+    }
+    footer a { color:#d4af37; text-decoration:none; }
 
   </style>
 </head>
@@ -260,10 +181,7 @@
 
   <div class="dropdown">
     <button class="dropdown-btn">📘 Themen ▾</button>
-
     <div class="dropdown-content">
-
-      <!-- Kategorien -->
       <a href="/shipping/">🚢 Shipping</a>
       <a href="/midstream/">🛢️ Pipelines / Midstream</a>
       <a href="/energie/">⚡ Energie</a>
@@ -271,14 +189,9 @@
       <a href="/high-yield/">💰 High Yield Dividenden</a>
 
       <hr>
-
-      <!-- Bestenlisten -->
       <div class="dropdown-section-title">⭐ Bestenlisten</div>
       <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a>
       <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a>
-      <!-- Tanker kommt später -->
-      <!-- <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a> -->
-
     </div>
   </div>
 
@@ -287,25 +200,21 @@
   <a href="/glossar/">📗 Glossar</a>
 </header>
 
-
 <!-- HERO -->
 <section class="hero">
-
   <div class="hero-flex">
     <img src="/marco.jpg" alt="Marco Bozem" class="hero-img">
     <img src="/Logo.png" alt="MB Capital Strategies Logo" class="hero-logo">
   </div>
 
   <h1>MB Capital Strategies</h1>
-  <p>Hard Assets. Cashflow. Dividenden.<br>
-     Klare Strategie, echte Transparenz & Rendite jeden Monat.</p>
+  <p>Hard Assets. Cashflow. Dividenden.<br> Klare Strategie, echte Transparenz & Rendite jeden Monat.</p>
 
   <a href="/depot-strategie/" class="btn">📊 Depot-Strategie</a>
   <a href="/toolbox.html" class="btn">🧰 Toolbox</a>
   <a href="/blog/index.html" class="btn">📰 Blog</a>
   <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" class="btn">🔗 LinkedIn</a>
   <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" class="btn">▶ YouTube</a>
-
 </section>
 
 <!-- WAS ICH MACHE -->
@@ -314,20 +223,9 @@
   <p>Ich investiere in Hard Assets, Energie, Shipping, Rohstoffe, BDCs, Infrastruktur & High-Yield-Werte.</p>
 
   <div class="grid">
-    <div class="card">
-      <h3>📈 Depot-Strategie</h3>
-      <p>80/20, Zyklen, Cashflow, Timing – komplett transparent.</p>
-    </div>
-
-    <div class="card">
-      <h3>🧰 Toolbox</h3>
-      <p>Alle Tools, Broker & Ressourcen, die ich wirklich nutze.</p>
-    </div>
-
-    <div class="card">
-      <h3>📰 Blog</h3>
-      <p>Analysen, Marktlogik, Shipping-Zyklen & Hard-Asset-Reports.</p>
-    </div>
+    <div class="card"><h3>📈 Depot-Strategie</h3><p>80/20, Zyklen, Cashflow, Timing – komplett transparent.</p></div>
+    <div class="card"><h3>🧰 Toolbox</h3><p>Alle Tools, Broker & Ressourcen, die ich wirklich nutze.</p></div>
+    <div class="card"><h3>📰 Blog</h3><p>Analysen, Marktlogik, Shipping-Zyklen & Hard-Asset-Reports.</p></div>
   </div>
 </section>
 
@@ -354,29 +252,26 @@
       <a class="btn" href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Jetzt nutzen →</a>
     </div>
   </div>
-
 </section>
 
 <!-- FAQ -->
 <section class="section">
   <h2>🔶 Häufige Fragen</h2>
 
-  <details>
-    <summary>Was ist deine Investment-Philosophie?</summary>
-    <p>Hard Assets, High Yield, Cashflow & antizyklische Chancen.</p>
-  </details>
-
-  <details>
-    <summary>Wie bekomme ich Einblick in dein Depot?</summary>
-    <p>Über die Depot-Strategie und YouTube.</p>
-  </details>
-
-  <details>
-    <summary>Welche Tools nutzt du selbst?</summary>
-    <p>Scalable, TR, InvestingPro, Parqet, Wise, Airalo.</p>
-  </details>
+  <details><summary>Was ist deine Investment-Philosophie?</summary><p>Hard Assets, High Yield, Cashflow & antizyklische Chancen.</p></details>
+  <details><summary>Wie bekomme ich Einblick in dein Depot?</summary><p>Über die Depot-Strategie und YouTube.</p></details>
+  <details><summary>Welche Tools nutzt du selbst?</summary><p>Scalable, TR, InvestingPro, Parqet, Wise, Airalo.</p></details>
 
 </section>
+
+<!-- FOOTER BESTENLISTEN -->
+<div class="footer-best">
+  <h3>⭐ Beliebte Bestenlisten 2025</h3>
+  <ul>
+    <li><a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a></li>
+    <li><a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a></li>
+  </ul>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -388,19 +283,14 @@
   Einige Links sind Affiliate-Links.
 </footer>
 
-<!-- =================== JS =================== -->
+<!-- JS -->
 <script>
   const dropdown = document.querySelector(".dropdown");
   const btn = document.querySelector(".dropdown-btn");
-
   btn.addEventListener("click", function(){
-    if (window.innerWidth < 700) {
-      dropdown.classList.toggle("open");
-    }
+    if (window.innerWidth < 700) dropdown.classList.toggle("open");
   });
 </script>
 
 </body>
 </html>
-
-
