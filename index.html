@@ -84,7 +84,7 @@
     }
     header.header a:hover { text-decoration:underline; }
 
-    /* DROPDOWN MENU */
+    /* DROPDOWN */
     .dropdown { position:relative; display:inline-block; }
     .dropdown-btn {
       background:none; border:none; color:#d4af37;
@@ -143,31 +143,60 @@
     }
     .card:hover { transform:translateY(-4px); box-shadow:0 6px 20px rgba(0,0,0,.4); }
 
-    /* FAQ */
-    details {
-      background:#151821; border:1px solid rgba(255,255,255,.07);
-      padding:14px 16px; border-radius:12px; margin-bottom:12px; cursor:pointer;
+    /* === Promo Kachel Styles === */
+    .promo-card{
+      background:#1a1f2b;
+      border:1px solid rgba(212,175,55,.45);
+      padding:28px;
+      margin:40px auto;
+      border-radius:16px;
+      box-shadow:0 0 25px rgba(212,175,55,.28);
+      animation: fadeInPromo 0.6s ease-out;
+      max-width:950px;
     }
-    summary { color:#d4af37; font-weight:600; font-size:1em; }
 
-    /* FOOTER BESTENLISTEN */
-    .footer-best {
-      max-width:900px; margin:50px auto 20px; padding:20px;
-      background:#151821; border-radius:16px;
-      border:1px solid rgba(212,175,55,.25); text-align:center;
+    @keyframes fadeInPromo {
+      from { opacity:0; transform:translateY(6px); }
+      to { opacity:1; transform:translateY(0); }
     }
-    .footer-best h3 { color:#d4af37; margin-bottom:15px; }
-    .footer-best ul { list-style:none; padding:0; margin:0; }
-    .footer-best ul li { margin:8px 0; }
-    .footer-best a { color:#d4af37; text-decoration:none; }
-    .footer-best a:hover { text-decoration:underline; }
 
-    /* FOOTER */
-    footer {
-      text-align:center; padding:20px; font-size:0.85em; color:#9aa6c0;
-      border-top:1px solid rgba(255,255,255,.08); margin-top:25px;
+    .promo-card .promo-badge{
+      background:var(--gold);
+      color:#000;
+      padding:6px 14px;
+      border-radius:12px;
+      font-weight:700;
+      display:inline-block;
+      margin-bottom:12px;
     }
-    footer a { color:#d4af37; text-decoration:none; }
+
+    .promo-card .promo-btn{
+      display:inline-block;
+      background:var(--gold);
+      color:#000;
+      padding:14px 24px;
+      border-radius:14px;
+      margin-top:16px;
+      font-weight:700;
+      text-decoration:none;
+      font-size:1.05rem;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow:0 0 12px rgba(212,175,55,.35);
+    }
+
+    .promo-card .promo-btn:hover{
+      transform:scale(1.025);
+      box-shadow:0 0 18px rgba(212,175,55,.55);
+    }
+
+    .promo-trust{
+      font-size:0.85rem;
+      color:#9aa6c0;
+      margin-top:10px;
+      line-height:1.35;
+    }
+
+    .hidden{ display:none !important; }
 
   </style>
 </head>
@@ -251,8 +280,6 @@
   <small>Gültig bis 3. Dezember, 18:00 Uhr</small>
 </div>
 <!-- === Ende Promo Kachel === -->
-
-
 <!-- TOP TOOLS -->
 <section class="section">
   <h2>🔶 Top Tools, die ich nutze</h2>
@@ -278,7 +305,7 @@
   </div>
 </section>
 
-  <!-- ================= FINANZRECHNER – BLOCK ================= -->
+<!-- ================= FINANZRECHNER – BLOCK ================= -->
 <section class="section">
   <h2>🔶 Kostenlose Finanzrechner für Dividenden & Cashflow</h2>
   <p>Mit diesen Tools kannst du deine Dividenden, Yield-on-Cost und Reinvest-Effekte sofort berechnen.</p>
@@ -347,9 +374,9 @@
   <br><br>
   Einige Links sind Affiliate-Links.
 </footer>
-
 <!-- JS -->
 <script>
+  // === Dropdown-Menü für Mobile ===
   const dropdown = document.querySelector(".dropdown");
   const btn = document.querySelector(".dropdown-btn");
   btn.addEventListener("click", function(){
@@ -357,9 +384,26 @@
   });
 </script>
 
+<script>
+  // === Promo-Automatik für Black Week ===
+  // Zeitraum:
+  // 26. November ab 13:00
+  // bis 3. Dezember 18:00
+
+  const promoStart = new Date("2025-11-26T13:00:00+01:00");
+  const promoEnd   = new Date("2025-12-03T18:00:00+01:00");
+  const now = new Date();
+
+  const promoCard = document.querySelector('.promo-card');
+
+  if (promoCard) {
+    if (now >= promoStart && now <= promoEnd) {
+        promoCard.classList.remove('hidden');  // anzeigen
+    } else {
+        promoCard.classList.add('hidden');     // verstecken
+    }
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
