@@ -55,17 +55,23 @@
   <!-- ======================= CSS ======================= -->
   <style>
 
-    /* === FIX: Gold-Variablen & Text definiert === */
     :root{
       --gold:#d4af37;
       --text-2:#9aa6c0;
     }
 
-    body {
+    body{
       background:#0f1115;
       color:#f5f6fa;
       margin:0;
       font-family:'Montserrat',sans-serif;
+    }
+
+    /* Global Wrapper */
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 15px;
     }
 
     /* HEADER */
@@ -125,7 +131,7 @@
     .hero h1 { font-size:2.6em; margin-bottom:10px; color:var(--gold); text-shadow:0 0 14px rgba(212,175,55,.7); }
     .hero p { max-width:700px; margin:0 auto 25px; font-size:1.2em; color:#cfd6e6; line-height:1.6; }
 
-    /* BUTTONS */
+    /* BUTTON */
     .btn {
       display:inline-block; padding:12px 22px; border-radius:999px;
       background:var(--gold); color:#0f1115; text-decoration:none; font-weight:600;
@@ -150,7 +156,7 @@
     }
     .card:hover { transform:translateY(-4px); box-shadow:0 6px 20px rgba(0,0,0,.4); }
 
-    /* === Promo Kachel (FIXED & READY) === */
+    /* PROMO CARD */
     .promo-card{
       background:#1a1f2b;
       border:1px solid rgba(212,175,55,.45);
@@ -162,7 +168,6 @@
       max-width:950px;
       display:block;
     }
-
     @keyframes fadeInPromo {
       from { opacity:0; transform:translateY(6px); }
       to { opacity:1; transform:translateY(0); }
@@ -207,38 +212,12 @@
     .hidden{ display:none !important; }
 
   </style>
+
 </head>
 
 <body>
-
-<header class="header">
-  <a href="/">🏠 Startseite</a>
-  <a href="/depot-strategie/">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-
-  <div class="dropdown">
-    <button class="dropdown-btn">📘 Themen ▾</button>
-    <div class="dropdown-content">
-      <a href="/shipping/">🚢 Shipping</a>
-      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
-      <a href="/energie/">⚡ Energie</a>
-      <a href="/rohstoffe/">⛏️ Rohstoffe / Mining</a>
-      <a href="/high-yield/">💰 High Yield Dividenden</a>
-
-      <hr>
-      <div class="dropdown-section-title">⭐ Bestenlisten</div>
-      <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a>
-      <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a>
-      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a>
-    </div>
-  </div>
-
-  <a href="/blog/index.html">📰 Blog</a>
-  <a href="/toolbox.html">🧰 Toolbox</a>
-  <a href="/glossar/">📗 Glossar</a>
-</header>
-
-<!-- HERO -->
+<div class="page-wrapper">
+  <!-- HERO -->
 <section class="hero">
   <div class="hero-flex">
     <img src="/marco.jpg" alt="Marco Bozem" class="hero-img">
@@ -261,9 +240,20 @@
   <p>Ich investiere in Hard Assets, Energie, Shipping, Rohstoffe, BDCs, Infrastruktur & High-Yield-Werte.</p>
 
   <div class="grid">
-    <div class="card"><h3>📈 Depot-Strategie</h3><p>80/20, Zyklen, Cashflow, Timing – komplett transparent.</p></div>
-    <div class="card"><h3>🧰 Toolbox</h3><p>Alle Tools, Broker & Ressourcen, die ich wirklich nutze.</p></div>
-    <div class="card"><h3>📰 Blog</h3><p>Analysen, Marktlogik, Shipping-Zyklen & Hard-Asset-Reports.</p></div>
+    <div class="card">
+      <h3>📈 Depot-Strategie</h3>
+      <p>80/20, Zyklen, Cashflow, Timing – komplett transparent.</p>
+    </div>
+
+    <div class="card">
+      <h3>🧰 Toolbox</h3>
+      <p>Alle Tools, Broker & Ressourcen, die ich wirklich nutze.</p>
+    </div>
+
+    <div class="card">
+      <h3>📰 Blog</h3>
+      <p>Analysen, Marktlogik, Shipping-Zyklen & Hard-Asset-Reports.</p>
+    </div>
   </div>
 </section>
 
@@ -273,26 +263,28 @@
   <h2>InvestingPro – 60 % + 15 % Extra</h2>
   <p>Fair Value • ProPicks KI • Cashflows • Research Reports • Qualitätscheck</p>
 
-  <a class="promo-btn" 
+  <a class="promo-btn"
      href="https://www.investing.com/pro/pricing/partners?oid=3&affid=704&utm_source=704&utm_medium=affiliates&sm_channel=&source_id=mbcapitalstrategies&sub1=Toolbox%20Website"
      target="_blank">
      –75 % Rabatt aktivieren →
   </a>
 
   <div class="promo-trust">
-    ✔ Offizieller InvestingPro-Partner  
-    ✔ +15 % Community-Bonus  
+    ✔ Offizieller InvestingPro-Partner<br>
+    ✔ +15 % Community-Bonus<br>
     ✔ Keine versteckten Kosten
   </div>
 
   <small>Gültig bis 3. Dezember, 18:00 Uhr</small>
 </div>
 <!-- === Ende Promo Kachel === -->
+
 <!-- TOP TOOLS -->
 <section class="section">
   <h2>🔶 Top Tools, die ich nutze</h2>
 
   <div class="grid">
+
     <div class="card">
       <h3>Scalable Capital</h3>
       <p>Mein Hauptbroker für Dividenden.</p>
@@ -310,6 +302,7 @@
       <p>Dividendenkalender & Tracking.</p>
       <a class="btn" href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Jetzt nutzen →</a>
     </div>
+
   </div>
 </section>
 
@@ -347,11 +340,10 @@
   </div>
 
   <p style="margin-top:10px; text-align:center;">
-    👉 Alle Rechner gesammelt findest du hier:  
+    👉 Alle Rechner gesammelt findest du hier:<br>
     <a href="/rechner/" class="glossar-link">Alle Finanzrechner anzeigen</a>
   </p>
 </section>
-<!-- ========================================================== -->
 
 <!-- FAQ -->
 <section class="section">
@@ -408,12 +400,14 @@
 
   if (promoCard) {
     if (now >= promoStart && now <= promoEnd) {
-      promoCard.classList.remove("hidden");   // zeigen
+      promoCard.classList.remove("hidden");   // anzeigen
     } else {
       promoCard.classList.add("hidden");      // verstecken
     }
   }
 </script>
 
+</div> <!-- page-wrapper -->
 </body>
 </html>
+
