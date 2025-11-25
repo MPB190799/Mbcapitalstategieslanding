@@ -440,31 +440,86 @@
 
   </div>
 
-  <p style="margin-top:14px; text-align:center;">
-    👉 Alle Rechner findest du hier:<br>
-    <a href="/rechner/" class="glossar-link">Alle Finanzrechner anzeigen</a>
-  </p>
-</section>
+<!-- ======================================= -->
+<!-- PREMIUM CTA: Alle Finanzrechner anzeigen -->
+<!-- ======================================= -->
 
-<!-- FAQ -->
+<div style="
+  text-align:center;
+  margin:50px auto 40px;
+  padding:22px 24px;
+  max-width:460px;
+  background:#151821;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:16px;
+  box-shadow:0 0 22px rgba(212,175,55,.18);
+">
+  <div style="color:#d4af37; font-weight:700; font-size:1.1rem; margin-bottom:8px;">
+    💡 Alle Finanzrechner auf einen Blick
+  </div>
+
+  <a href="/rechner/" 
+     style="
+       display:inline-block;
+       margin-top:8px;
+       padding:12px 24px;
+       background:#d4af37;
+       color:#0f1115;
+       font-weight:700;
+       border-radius:12px;
+       text-decoration:none;
+       font-size:1.05rem;
+       box-shadow:0 0 14px rgba(212,175,55,.35);
+       transition:.2s;
+     "
+     onmouseover="this.style.boxShadow='0 0 20px rgba(212,175,55,.55)'"
+     onmouseout="this.style.boxShadow='0 0 14px rgba(212,175,55,.35)'"
+  >
+    ➜ Alle Finanzrechner anzeigen
+  </a>
+</div>
+
+
+<!-- ============================ -->
+<!-- FAQ – Neu & Premium Version -->
+<!-- ============================ -->
+
 <section class="section">
   <h2>🔶 Häufige Fragen</h2>
 
-  <details><summary>Was ist deine Investment-Philosophie?</summary>
-    <p>Hard Assets, High Yield, Cashflow & antizyklische Chancen.</p>
+  <details style="margin-bottom:12px;">
+    <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
+      Was ist deine Investment-Philosophie?
+    </summary>
+    <p style="color:#cfd6e6; margin-top:10px;">
+      Fokus auf Hard Assets, High Yield, Cashflow & antizyklische Chancen.
+    </p>
   </details>
 
-  <details><summary>Wie bekomme ich Einblick in dein Depot?</summary>
-    <p>Über die Depot-Strategie und YouTube-Updates.</p>
+  <details style="margin-bottom:12px;">
+    <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
+      Wie bekomme ich Einblick in dein Depot?
+    </summary>
+    <p style="color:#cfd6e6; margin-top:10px;">
+      Über Depot-Strategie, Parqet & monatliche YouTube-Updates.
+    </p>
   </details>
 
-  <details><summary>Welche Tools nutzt du?</summary>
-    <p>Scalable, TR, InvestingPro, Parqet, Wise, Airalo.</p>
+  <details style="margin-bottom:12px;">
+    <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
+      Welche Tools nutzt du?
+    </summary>
+    <p style="color:#cfd6e6; margin-top:10px;">
+      Scalable, Trade Republic, InvestingPro, Parqet, Airalo, Wise.
+    </p>
   </details>
-
 </section>
 
-<!-- BESTENLISTEN -->
+
+<!-- ================= -->
+<!-- Bestenlisten (fix) -->
+<!-- ================= -->
+
 <div class="footer-best">
   <h3>⭐ Beliebte Bestenlisten 2025</h3>
   <ul>
@@ -474,48 +529,17 @@
   </ul>
 </div>
 
-<!-- FOOTER -->
+
+<!-- =========== -->
+<!-- FOOTER FIX -->
+<!-- =========== -->
+
 <footer>
   © 2025 MB Capital Strategies · 
   <a href="/impressum.html">Impressum</a> · 
-  <a href="/datenschutz.html">Datenschutz</a> ·
+  <a href="/datenschutz.html">Datenschutz</a> · 
   <a href="/glossar/">Glossar</a>
   <br><br>
   Einige Links sind Affiliate-Links.
 </footer>
-<!-- JS: Dropdown-Menü für Mobile -->
-<script>
-  const dropdown = document.querySelector(".dropdown");
-  const btn = document.querySelector(".dropdown-btn");
 
-  btn.addEventListener("click", function () {
-    if (window.innerWidth < 700) {
-      dropdown.classList.toggle("open");
-    }
-  });
-</script>
-
-<!-- JS: Promo-Automatik für Black Week -->
-<script>
-  // Promo-Zeitraum:
-  // Start: 26. November 13:00 Uhr
-  // Ende: 3. Dezember 18:00 Uhr
-
-  const promoStart = new Date("2025-11-26T13:00:00+01:00");
-  const promoEnd = new Date("2025-12-03T18:00:00+01:00");
-  const now = new Date();
-
-  const promoCard = document.querySelector(".promo-card");
-
-  if (promoCard) {
-    if (now >= promoStart && now <= promoEnd) {
-      promoCard.classList.remove("hidden"); // anzeigen
-    } else {
-      promoCard.classList.add("hidden"); // verstecken
-    }
-  }
-</script>
-
-</div> <!-- page-wrapper -->
-</body>
-</html>
