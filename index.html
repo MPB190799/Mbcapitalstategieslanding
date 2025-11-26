@@ -341,7 +341,6 @@ h2{
     </div>
   </div>
 </section>
-
 <!-- === Promo Kachel: Black Week === -->
 <div class="promo-card hidden">
   <div class="promo-badge">🔥 Black Week Deal</div>
@@ -350,7 +349,9 @@ h2{
 
   <a class="promo-btn"
      href="https://www.investing-referral.com/mbcapital3/"
-     target="_blank">–75 % Rabatt aktivieren →</a>
+     target="_blank">
+     –75 % Rabatt aktivieren →
+  </a>
 
   <div class="promo-trust">
     ✔ Offizieller InvestingPro-Partner<br>
@@ -361,6 +362,11 @@ h2{
   <small>Gültig bis 3. Dezember, 18:00 Uhr</small>
 </div>
 <!-- === Ende Promo Kachel === -->
+
+
+<!-- ============================= -->
+<!-- TOP TOOLS =================== -->
+<!-- ============================= -->
 
 <section class="section">
   <h2>🔶 Top Tools, die ich nutze</h2>
@@ -385,6 +391,11 @@ h2{
     </div>
   </div>
 </section>
+
+
+<!-- ============================= -->
+<!-- KOSTENLOSE RECHNER -->
+<!-- ============================= -->
 
 <section class="section">
   <h2>🔶 Kostenlose Finanzrechner</h2>
@@ -419,6 +430,11 @@ h2{
   </div>
 </section>
 
+
+<!-- ============================= -->
+<!-- FAQ -->
+<!-- ============================= -->
+
 <section class="section" style="text-align:center; margin-top:70px;">
   <h2 style="margin-bottom:25px;">🔶 Häufige Fragen</h2>
 
@@ -442,6 +458,11 @@ h2{
   </div>
 </section>
 
+
+<!-- ============================= -->
+<!-- BESTENLISTEN -->
+<!-- ============================= -->
+
 <div class="footer-best" style="
   max-width:700px;
   margin:60px auto 40px;
@@ -459,6 +480,11 @@ h2{
   </ul>
 </div>
 
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+
 <footer style="margin-top:40px; text-align:center; padding:30px 10px; color:#9aa6c0; font-size:0.9rem;">
   © 2025 MB Capital Strategies · 
   <a href="/impressum.html" style="color:#d4af37;">Impressum</a> · 
@@ -468,17 +494,35 @@ h2{
   Einige Links sind Affiliate-Links.
 </footer>
 
-</div>
 
+<!-- ============================= -->
+<!-- BLACK WEEK SCRIPT -->
+<!-- ============================= -->
+
+<script>
+  const promo = document.querySelector(".promo-card");
+
+  const start = new Date("2025-11-26T13:00:00+01:00");
+  const end   = new Date("2025-12-03T18:00:00+01:00");
+  const now   = new Date();
+
+  if (promo && now >= start && now <= end) {
+    promo.classList.remove("hidden");
+  }
+</script>
+
+
+<!-- DROPDOWN -->
 <script>
   const dropdown = document.querySelector(".dropdown");
   const btn = document.querySelector(".dropdown-btn");
-  btn.addEventListener("click", () => {
-    if (window.innerWidth < 700) {
-      dropdown.classList.toggle("open");
-    }
-  });
+
+  if (dropdown && btn) {
+    btn.addEventListener("click", () => {
+      if (window.innerWidth < 700) {
+        dropdown.classList.toggle("open");
+      }
+    });
+  }
 </script>
 
-</body>
-</html>
