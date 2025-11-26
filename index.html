@@ -51,6 +51,7 @@
     ]
   }
   </script>
+
 <!-- ======================= CSS ======================= -->
 <style>
 
@@ -70,7 +71,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: var(--text);
 
-  /* Dein Gold/Black Hintergrund */
   background: #0f1115 url('/background.jpg') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
@@ -83,223 +83,198 @@ body {
   padding:0 16px 60px;
 }
 
+/* HEADER */
+header.header {
+  background:var(--bg-soft);
+  border-bottom:1px solid rgba(212,175,55,.28);
+  padding:16px 12px;
+  position:sticky;
+  top:0;
+  z-index:30;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:22px;
+}
+header.header a {
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:600;
+  font-size:1em;
+}
+header.header a:hover { text-decoration:underline; }
+
+/* DROPDOWN */
+.dropdown { position:relative; }
+.dropdown-btn {
+  background:none;
+  border:none;
+  color:var(--gold);
+  font-weight:600;
+  cursor:pointer;
+  padding:6px 10px;
+  font-size:1em;
+}
+.dropdown-content {
+  display:none;
+  position:absolute;
+  background:var(--bg);
+  min-width:230px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+  padding:10px 0;
+  top:36px;
+  left:0;
+  z-index:1000;
+}
+.dropdown-content a {
+  display:block;
+  padding:10px 16px;
+  color:var(--text);
+  text-decoration:none;
+}
+.dropdown-content a:hover{
+  background:#1d2330;
+  color:var(--gold);
+}
+@media(min-width:700px){
+  .dropdown:hover .dropdown-content { display:block; }
+}
+@media(max-width:699px){
+  .dropdown.open .dropdown-content { display:block; }
+}
+
+/* HERO */
+.hero { 
+  text-align:center;
+  padding:90px 20px 60px;
+}
+.hero-flex{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+.hero-img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 22px rgba(212,175,55,.45);
+}
+.hero-logo{
+  width:170px;
+  filter:drop-shadow(0 0 20px rgba(212,175,55,.7));
+}
+.hero h1{
+  font-size:2.6em;
+  margin-bottom:10px;
+  color:var(--gold);
+}
+.hero p{
+  max-width:700px;
+  margin:0 auto 25px;
+  font-size:1.2em;
+  color:#cfd6e6;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+  margin:6px;
+  font-size:1.05em;
+  box-shadow:0 0 14px rgba(212,175,55,0.6);
+  transition:0.25s;
+}
+.btn:hover{
+  background:var(--gold-strong);
+  box-shadow:0 0 18px rgba(212,175,55,0.9);
+  transform:translateY(-2px);
+}
+
+/* SECTION */
+.section{
+  margin:50px auto;
+  padding:0 10px;
+  max-width:950px;
+}
+h2{
+  color:var(--gold);
+  font-size:1.8em;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+/* CARDS */
+.card{
+  background:var(--bg-soft);
+  border:1px solid rgba(212,175,55,.22);
+  border-radius:16px;
+  padding:20px;
+  text-align:center;
+  transition:0.25s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+
+/* PROMO KACHEL */
+.promo-card{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,.45);
+  padding:30px;
+  margin:50px auto;
+  border-radius:18px;
+  box-shadow:0 0 28px rgba(212,175,55,.32);
+  max-width:960px;
+}
+.promo-badge{
+  background:var(--gold);
+  color:#000;
+  padding:7px 16px;
+  border-radius:12px;
+  font-weight:700;
+  display:inline-block;
+  margin-bottom:14px;
+}
+.promo-btn{
+  display:inline-block;
+  background:var(--gold);
+  padding:14px 26px;
+  border-radius:14px;
+  margin-top:20px;
+  font-weight:700;
+  color:#000;
+  text-decoration:none;
+  font-size:1.05rem;
+}
+.promo-btn:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px rgba(212,175,55,.6);
+}
+.promo-trust{
+  font-size:0.85rem;
+  color:var(--text-2);
+  margin-top:14px;
+}
+.hidden{ display:none !important; }
+
 </style>
-
-
-
-    /* HEADER */
-    header.header {
-      background:var(--bg-soft);
-      border-bottom:1px solid rgba(212,175,55,.28);
-      padding:16px 12px;
-      position:sticky;
-      top:0;
-      z-index:30;
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:22px;
-    }
-
-    header.header a {
-      color:var(--gold);
-      text-decoration:none;
-      font-weight:600;
-      font-size:1em;
-    }
-    header.header a:hover {
-      text-decoration:underline;
-    }
-
-    /* DROPDOWN */
-    .dropdown {
-      position:relative;
-    }
-    .dropdown-btn {
-      background:none;
-      border:none;
-      color:var(--gold);
-      font-weight:600;
-      cursor:pointer;
-      padding:6px 10px;
-      font-size:1em;
-    }
-    .dropdown-content {
-      display:none;
-      position:absolute;
-      background:var(--bg);
-      min-width:230px;
-      border:1px solid rgba(212,175,55,.25);
-      border-radius:14px;
-      box-shadow:0 8px 22px rgba(0,0,0,.45);
-      padding:10px 0;
-      top:36px;
-      left:0;
-      z-index:1000;
-    }
-    .dropdown-content a {
-      display:block;
-      padding:10px 16px;
-      text-decoration:none;
-      color:var(--text);
-      font-size:0.95em;
-    }
-    .dropdown-content a:hover {
-      background:#1d2330;
-      color:var(--gold);
-    }
-
-    @media(min-width:700px){
-      .dropdown:hover .dropdown-content { display:block; }
-    }
-    @media(max-width:699px){
-      .dropdown.open .dropdown-content { display:block; }
-    }
-
-    /* HERO */
-    .hero { 
-      text-align:center;
-      padding:90px 20px 60px;
-    }
-    .hero-flex {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:50px;
-      flex-wrap:wrap;
-      margin-bottom:25px;
-    }
-    .hero-img {
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      object-fit:cover;
-      box-shadow:0 0 22px rgba(212,175,55,.45);
-    }
-    .hero-logo {
-      width:170px;
-      filter:drop-shadow(0 0 20px rgba(212,175,55,.7));
-    }
-    .hero h1 {
-      font-size:2.6em;
-      margin-bottom:10px;
-      color:var(--gold);
-      text-shadow:0 0 18px rgba(212,175,55,.65);
-    }
-    .hero p {
-      max-width:700px;
-      margin:0 auto 25px;
-      font-size:1.2em;
-      color:#cfd6e6;
-      line-height:1.6;
-    }
-
-    /* BUTTON */
-    .btn{
-      display:inline-block;
-      padding:12px 24px;
-      border-radius:999px;
-      background:var(--gold);
-      color:#000;
-      font-weight:600;
-      text-decoration:none;
-      margin:6px;
-      font-size:1.05em;
-      box-shadow:0 0 14px rgba(212,175,55,0.6);
-      transition:0.25s;
-    }
-    .btn:hover{
-      background:var(--gold-strong);
-      box-shadow:0 0 18px rgba(212,175,55,0.9);
-      transform:translateY(-2px);
-    }
-
-    /* SECTION */
-    .section{
-      margin:50px auto;
-      padding:0 10px;
-      max-width:950px;
-    }
-    h2{
-      color:var(--gold);
-      font-size:1.8em;
-    }
-
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
-      margin-top:22px;
-    }
-
-    .card{
-      background:var(--bg-soft);
-      border:1px solid rgba(212,175,55,.22);
-      border-radius:16px;
-      padding:20px;
-      text-align:center;
-      transition:0.25s;
-    }
-    .card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 6px 20px rgba(0,0,0,.35);
-    }
-
-    /* PROMO CARD */
-    .promo-card{
-      background:var(--bg-card);
-      border:1px solid rgba(212,175,55,.45);
-      padding:30px;
-      margin:50px auto;
-      border-radius:18px;
-      box-shadow:0 0 28px rgba(212,175,55,.32);
-      animation:fadeInPromo .6s ease-out;
-      max-width:960px;
-    }
-    @keyframes fadeInPromo{
-      from { opacity:0; transform:translateY(10px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-
-    .promo-badge{
-      background:var(--gold);
-      color:#000;
-      padding:7px 16px;
-      border-radius:12px;
-      font-weight:700;
-      display:inline-block;
-      margin-bottom:14px;
-    }
-
-    .promo-btn{
-      display:inline-block;
-      background:var(--gold);
-      padding:14px 26px;
-      border-radius:14px;
-      margin-top:20px;
-      font-weight:700;
-      color:#000;
-      text-decoration:none;
-      font-size:1.05rem;
-      box-shadow:0 0 12px rgba(212,175,55,.35);
-      transition:0.2s;
-    }
-    .promo-btn:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 20px rgba(212,175,55,.6);
-    }
-
-    .promo-trust{
-      font-size:0.85rem;
-      color:var(--text-2);
-      margin-top:14px;
-      line-height:1.4;
-    }
-
-    .hidden{ display:none !important; }
-
-  </style>
 </head>
 
 <body>
@@ -330,7 +305,7 @@ body {
 </header>
 
 <div class="page-wrapper">
-<!-- HERO -->
+
 <section class="hero">
   <div class="hero-flex">
     <img src="/marco.jpg" alt="Marco Bozem" class="hero-img">
@@ -347,7 +322,6 @@ body {
   <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" class="btn">▶ YouTube</a>
 </section>
 
-<!-- WAS ICH MACHE -->
 <section class="section">
   <h2>🔶 Was du hier findest</h2>
   <p>Ich investiere in Hard Assets, Energie, Shipping, Rohstoffe, BDCs, Infrastruktur & High-Yield-Werte – mit Fokus auf Cashflow & Rendite.</p>
@@ -357,12 +331,10 @@ body {
       <h3>📈 Depot-Strategie</h3>
       <p>80/20 Mix, Zyklen, Timing, Cashflow – komplett transparent.</p>
     </div>
-
     <div class="card">
       <h3>🧰 Toolbox</h3>
       <p>Alle Tools und Broker, die ich wirklich nutze.</p>
     </div>
-
     <div class="card">
       <h3>📰 Blog</h3>
       <p>Analysen, Shipping-Zyklen, Marktlogik & Hard-Asset Reports.</p>
@@ -377,7 +349,7 @@ body {
   <p>Fair Value • ProPicks KI • Cashflows • Research Reports • Qualitätscheck</p>
 
   <a class="promo-btn"
-     href="https://www.investing-referral.com/mbcapital3/
+     href="https://www.investing-referral.com/mbcapital3/"
      target="_blank">–75 % Rabatt aktivieren →</a>
 
   <div class="promo-trust">
@@ -390,7 +362,6 @@ body {
 </div>
 <!-- === Ende Promo Kachel === -->
 
-<!-- TOP TOOLS -->
 <section class="section">
   <h2>🔶 Top Tools, die ich nutze</h2>
 
@@ -415,7 +386,6 @@ body {
   </div>
 </section>
 
-<!-- FINANZRECHNER -->
 <section class="section">
   <h2>🔶 Kostenlose Finanzrechner</h2>
   <p>Berechne Dividenden, YOC, Wachstum und Reinvest-Effekte – in Sekunden.</p>
@@ -447,50 +417,7 @@ body {
     </div>
 
   </div>
-
-<!-- ======================================= -->
-<!-- PREMIUM CTA: Alle Finanzrechner anzeigen -->
-<!-- ======================================= -->
-
-<div style="
-  text-align:center;
-  margin:50px auto 40px;
-  padding:22px 24px;
-  max-width:460px;
-  background:#151821;
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:16px;
-  box-shadow:0 0 22px rgba(212,175,55,.18);
-">
-  <div style="color:#d4af37; font-weight:700; font-size:1.1rem; margin-bottom:8px;">
-    💡 Alle Finanzrechner auf einen Blick
-  </div>
-
-  <a href="/rechner/" 
-     style="
-       display:inline-block;
-       margin-top:8px;
-       padding:12px 24px;
-       background:#d4af37;
-       color:#0f1115;
-       font-weight:700;
-       border-radius:12px;
-       text-decoration:none;
-       font-size:1.05rem;
-       box-shadow:0 0 14px rgba(212,175,55,.35);
-       transition:.2s;
-     "
-     onmouseover="this.style.boxShadow='0 0 20px rgba(212,175,55,.55)'"
-     onmouseout="this.style.boxShadow='0 0 14px rgba(212,175,55,.35)'"
-  >
-    ➜ Alle Finanzrechner anzeigen
-  </a>
-</div>
-
-
-<!-- ============================ -->
-<!-- FAQ – Zentral & Premium Style -->
-<!-- ============================ -->
+</section>
 
 <section class="section" style="text-align:center; margin-top:70px;">
   <h2 style="margin-bottom:25px;">🔶 Häufige Fragen</h2>
@@ -498,39 +425,22 @@ body {
   <div style="max-width:700px; margin:0 auto; text-align:left;">
 
     <details style="margin-bottom:16px;">
-      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
-        Was ist deine Investment-Philosophie?
-      </summary>
-      <p style="color:#cfd6e6; margin-top:10px;">
-        Fokus auf Hard Assets, High Yield, Cashflow & antizyklische Chancen.
-      </p>
+      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">Was ist deine Investment-Philosophie?</summary>
+      <p style="color:#cfd6e6; margin-top:10px;">Fokus auf Hard Assets, High Yield, Cashflow & antizyklische Chancen.</p>
     </details>
 
     <details style="margin-bottom:16px;">
-      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
-        Wie bekomme ich Einblick in dein Depot?
-      </summary>
-      <p style="color:#cfd6e6; margin-top:10px;">
-        Über die Depot-Strategie, Parqet & monatliche YouTube-Updates.
-      </p>
+      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">Wie bekomme ich Einblick in dein Depot?</summary>
+      <p style="color:#cfd6e6; margin-top:10px;">Über die Depot-Strategie, Parqet & monatliche YouTube-Updates.</p>
     </details>
 
     <details style="margin-bottom:16px;">
-      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">
-        Welche Tools nutzt du?
-      </summary>
-      <p style="color:#cfd6e6; margin-top:10px;">
-        Scalable, Trade Republic, InvestingPro, Parqet, Airalo, Wise.
-      </p>
+      <summary style="color:#d4af37; font-weight:600; cursor:pointer;">Welche Tools nutzt du?</summary>
+      <p style="color:#cfd6e6; margin-top:10px;">Scalable, Trade Republic, InvestingPro, Parqet, Airalo, Wise.</p>
     </details>
 
   </div>
 </section>
-
-
-<!-- ============================= -->
-<!-- Beliebte Bestenlisten Premium -->
-<!-- ============================= -->
 
 <div class="footer-best" style="
   max-width:700px;
@@ -539,43 +449,17 @@ body {
   background:#151821;
   border:1px solid rgba(212,175,55,.28);
   border-radius:16px;
-  text-align:center;
-">
-  <h3 style="color:#d4af37; font-size:1.3rem; margin-bottom:15px;">
-    ⭐ Beliebte Bestenlisten 2025
-  </h3>
+  text-align:center;">
+  <h3 style="color:#d4af37; font-size:1.3rem; margin-bottom:15px;">⭐ Beliebte Bestenlisten 2025</h3>
 
   <ul style="list-style:none; padding:0; margin:0; font-size:1rem; line-height:1.7;">
-    <li>
-      <a href="/bestenlisten/beste-lng-aktien-2025.html" style="color:#d4af37; text-decoration:none;">
-        🔥 Beste LNG-Aktien 2025
-      </a>
-    </li>
-    <li>
-      <a href="/bestenlisten/beste-tanker-aktien-2025.html" style="color:#d4af37; text-decoration:none;">
-        🚢 Beste Tanker-Aktien 2025
-      </a>
-    </li>
-    <li>
-      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html" style="color:#d4af37; text-decoration:none;">
-        💸 Top 5 High-Yield Aktien 2025
-      </a>
-    </li>
+    <li><a href="/bestenlisten/beste-lng-aktien-2025.html" style="color:#d4af37; text-decoration:none;">🔥 Beste LNG-Aktien 2025</a></li>
+    <li><a href="/bestenlisten/beste-tanker-aktien-2025.html" style="color:#d4af37; text-decoration:none;">🚢 Beste Tanker-Aktien 2025</a></li>
+    <li><a href="/bestenlisten/top-5-high-yield-aktien-2025.html" style="color:#d4af37; text-decoration:none;">💸 Top 5 High-Yield Aktien 2025</a></li>
   </ul>
 </div>
 
-
-<!-- =========== -->
-<!-- FOOTER FIX -->
-<!-- =========== -->
-
-<footer style="
-  margin-top:40px;
-  text-align:center;
-  padding:30px 10px;
-  color:#9aa6c0;
-  font-size:0.9rem;
-">
+<footer style="margin-top:40px; text-align:center; padding:30px 10px; color:#9aa6c0; font-size:0.9rem;">
   © 2025 MB Capital Strategies · 
   <a href="/impressum.html" style="color:#d4af37;">Impressum</a> · 
   <a href="/datenschutz.html" style="color:#d4af37;">Datenschutz</a> · 
@@ -584,7 +468,17 @@ body {
   Einige Links sind Affiliate-Links.
 </footer>
 
+</div>
 
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  const btn = document.querySelector(".dropdown-btn");
+  btn.addEventListener("click", () => {
+    if (window.innerWidth < 700) {
+      dropdown.classList.toggle("open");
+    }
+  });
+</script>
 
-
-
+</body>
+</html>
