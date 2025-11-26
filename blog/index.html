@@ -1,168 +1,129 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MB Capital Strategies – Analysen & Beiträge</title>
   <meta name="description" content="Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies – erstellt von Marco Bozem.">
-  <meta name="author" content="Marco Bozem">
-  <meta name="google-site-verification" content="2zR4Jz8vCKzuF-MwcEYNZwUUeiNEofR8AJTDqNNEv1s" />
 
-  <!-- ✅ Strukturierte Daten -->
+  <!-- OG Tags -->
+  <meta property="og:title" content="MB Capital Strategies – Analysen & Beiträge">
+  <meta property="og:description" content="Aktuelle Aktienanalysen, Strategien & Hard-Asset-Beiträge.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://mbcapitalstrategies.com/#marcobozem",
-        "name": "Marco Bozem",
-        "jobTitle": "Founder & Investor",
-        "description": "Gründer von MB Capital Strategies – Fokus auf Dividenden, Hard Assets & Cashflow.",
-        "url": "https://mbcapitalstrategies.com/",
-        "image": "https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/in/marco-bozem/",
-          "https://www.youtube.com/@mbcapitalstrategies",
-          "https://www.investing.com/members/321536369",
-          "https://mbcapitalstrategies.com/"
-        ]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://mbcapitalstrategies.com/#organization",
-        "name": "MB Capital Strategies",
-        "url": "https://mbcapitalstrategies.com/",
-        "logo": "https://mpb190799.github.io/Mbcapitalstategieslanding/Logo.png",
-        "foundingDate": "2025",
-        "description": "Unabhängige Finanz- und Investmentplattform mit Fokus auf Dividendenstrategien, Cashflow-Analysen und High-Yield-Sektoren."
-      },
-      {
-        "@type": "Blog",
-        "@id": "https://mbcapitalstrategies.com/blog/index.html#blog",
-        "name": "MB Capital Strategies Blog",
-        "url": "https://mbcapitalstrategies.com/blog/index.html",
-        "inLanguage": "de"
-      }
-    ]
+    "@type": "Blog",
+    "name": "MB Capital Strategies Blog",
+    "url": "https://mbcapitalstrategies.com/blog/index.html",
+    "description": "Aktienanalysen, Rohstoffe, Shipping, Dividenden & Hard Assets."
   }
   </script>
 
-<!-- ======================= CSS ======================= -->
-<style>
-  :root{
-    --gold:#d4af37;
-    --gold-strong:#e0bd55;
-    --bg:#0f1115;
-    --bg-soft:#151821;
-    --bg-card:#1a1f2b;
-    --text:#f5f6fa;
-    --text-2:#9aa6c0;
-  }
+  <!-- ======================= CSS ======================= -->
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-strong:#e0bd55;
+      --bg:#0f1115;
+      --bg-soft:#151821;
+      --bg-card:#1a1f2b;
+      --text:#f5f6fa;
+      --text-2:#9aa6c0;
+    }
 
-  /* BODY mit deinem Hintergrund */
-  body{
-    background:#0f1115 url('/background.jpg') no-repeat center top;
-    background-size:cover;
-    color:var(--text);
-    margin:0;
-    font-family:'Montserrat',sans-serif;
-  }
+    body{
+      margin:0;
+      background:#0f1115 url('/background.jpg') no-repeat center top;
+      background-size:cover;
+      background-attachment:fixed;
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+    }
 
-  /* Wrapper */
-  .page-wrapper{
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 16px 50px;
-  }
-</style>
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px 60px;
+    }
 
-
-    /* HEADER – wie Startseite */
+    /* HEADER */
     header.header{
       background:var(--bg-soft);
       border-bottom:1px solid rgba(212,175,55,.28);
       padding:16px 12px;
       position:sticky;
       top:0;
-      z-index:30;
+      z-index:999;
       display:flex;
       justify-content:center;
       flex-wrap:wrap;
       gap:22px;
     }
-
     header.header a{
       color:var(--gold);
       text-decoration:none;
       font-weight:600;
-      font-size:1em;
     }
     header.header a:hover{
       text-decoration:underline;
     }
 
-    /* DROPDOWN */
-    .dropdown{
-      position:relative;
-    }
+    /* Dropdown */
+    .dropdown{ position:relative; }
     .dropdown-btn{
       background:none;
       border:none;
       color:var(--gold);
       font-weight:600;
       cursor:pointer;
-      padding:6px 10px;
-      font-size:1em;
     }
     .dropdown-content{
       display:none;
       position:absolute;
       background:var(--bg);
-      min-width:230px;
+      min-width:220px;
       border:1px solid rgba(212,175,55,.25);
-      border-radius:14px;
+      border-radius:12px;
       box-shadow:0 8px 22px rgba(0,0,0,.45);
-      padding:10px 0;
-      top:36px;
+      top:34px;
       left:0;
-      z-index:1000;
+      padding:10px 0;
     }
     .dropdown-content a{
       display:block;
       padding:10px 16px;
-      text-decoration:none;
       color:var(--text);
-      font-size:0.95em;
+      text-decoration:none;
     }
     .dropdown-content a:hover{
       background:#1d2330;
       color:var(--gold);
     }
-
-    @media(min-width:700px){
-      .dropdown:hover .dropdown-content{ display:block; }
-    }
-    @media(max-width:699px){
-      .dropdown.open .dropdown-content{ display:block; }
+    .dropdown.open .dropdown-content{
+      display:block;
     }
 
     /* PAGE HEADER */
     .page-header{
       text-align:center;
-      padding:60px 20px 30px;
+      padding:70px 20px 40px;
     }
     .page-header h1{
-      color:var(--gold);
       font-size:2.4em;
+      color:var(--gold);
       text-shadow:0 0 10px rgba(212,175,55,0.6);
-      margin-bottom:10px;
+      margin-bottom:12px;
     }
     .page-header p{
-      color:#cfd6e6;
+      color:var(--text-2);
       max-width:650px;
       margin:0 auto;
     }
@@ -171,60 +132,52 @@
     .posts{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:24px;
-      margin:0 auto 30px;
+      gap:30px;
     }
-
     .post{
       background:var(--bg-card);
-      padding:20px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,.28);
+      padding:24px;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.25);
       transition:.25s;
+      box-shadow:0 0 14px rgba(0,0,0,.25);
     }
     .post:hover{
       transform:translateY(-4px);
-      box-shadow:0 8px 24px rgba(0,0,0,.35);
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
     }
     .post h2{
       color:var(--gold);
-      font-size:1.25em;
       margin-bottom:10px;
-      text-shadow:0 0 8px rgba(212,175,55,0.4);
+      font-size:1.25em;
     }
     .post p{
-      font-size:0.95em;
       color:#cfd6e6;
-      margin-bottom:12px;
+      font-size:0.95em;
+      margin-bottom:15px;
     }
-
     .btn{
       display:inline-block;
-      margin-top:4px;
-      padding:10px 20px;
       background:var(--gold);
       color:#0f1115;
+      padding:10px 20px;
       border-radius:999px;
-      text-decoration:none;
       font-weight:700;
-      font-size:0.95em;
-      transition:.25s;
+      text-decoration:none;
       box-shadow:0 0 14px rgba(212,175,55,0.45);
     }
     .btn:hover{
       background:var(--gold-strong);
-      box-shadow:0 0 18px rgba(212,175,55,0.75);
       transform:translateY(-1px);
     }
 
     /* FOOTER */
     footer{
       text-align:center;
-      padding:25px 10px 30px;
-      font-size:.9em;
+      padding:35px 10px;
       color:var(--text-2);
-      border-top:1px solid rgba(255,255,255,.06);
-      margin-top:20px;
+      margin-top:50px;
+      font-size:.9em;
     }
     footer a{
       color:var(--gold);
@@ -233,8 +186,8 @@
     footer a:hover{
       text-decoration:underline;
     }
-
   </style>
+
 </head>
 
 <body>
@@ -248,10 +201,10 @@
     <button class="dropdown-btn">📘 Themen ▾</button>
     <div class="dropdown-content">
       <a href="/shipping/">🚢 Shipping</a>
-      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/midstream/">🛢️ Midstream</a>
       <a href="/energie/">⚡ Energie</a>
-      <a href="/rohstoffe/">⛏️ Rohstoffe / Mining</a>
-      <a href="/high-yield/">💰 High Yield Dividenden</a>
+      <a href="/rohstoffe/">⛏️ Rohstoffe</a>
+      <a href="/high-yield/">💰 High Yield</a>
     </div>
   </div>
 
@@ -267,123 +220,123 @@
     <p>Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies.</p>
   </section>
 
+  <!-- ============= POSTS GRID ============= -->
   <section class="posts">
 
-    <!-- 🪙 Mining Serie -->
+    <!-- Mining -->
     <div class="post">
       <h2>Minen-Aktien 2025 #1 | Thungela Resources</h2>
-      <p>15 % Dividende, schuldenfrei & stark im Cashflow – Teil 1 der MB Mining Serie über Südafrikas Kohleproduzenten.</p>
+      <p>15 % Dividende, schuldenfrei & starker Cashflow – Teil 1 der Mining-Serie.</p>
       <a href="thungela-resources-analyse-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Whitehaven Coal Analyse 2025 | Mining Serie #2</h2>
-      <p>Australiens Kohle-Champion mit stabiler Bilanz & 50 % Upside – Teil 2 der MB Mining Serie im Rohstoff-Superzyklus 2026–2028.</p>
+      <h2>Whitehaven Coal Analyse 2025 | Serie #2</h2>
+      <p>Australiens Cashflow-Champion mit 50 % Upside – Teil 2.</p>
       <a href="whitehaven-coal-analyse-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
-    <!-- ⛽ Pipeline Serie -->
+    <!-- Pipeline -->
     <div class="post">
-      <h2>Pembina Pipeline Analyse 2025 | Pipeline Serie Teil 1</h2>
-      <p>Kanadischer Midstream-Anker mit stabiler Dividende und starkem Cashflow – Teil 1 der Pipeline Serie.</p>
+      <h2>Pembina Pipeline Analyse 2025</h2>
+      <p>Kanadas Midstream-Anker mit stabiler Dividende.</p>
       <a href="pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>TC Energy Analyse 2025 | Pipeline Serie Teil 2</h2>
-      <p>5 % Dividende & Schuldenrisiko – Teil 2 der Pipeline Serie über Kanadas Energie-Giganten.</p>
+      <h2>TC Energy Analyse 2025</h2>
+      <p>5 % Dividende & Schuldenrisiko – Teil 2.</p>
       <a href="pipeline-serie-teil2-tc-energy-analyse-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Enbridge Analyse 2025 | Pipeline Serie Teil 3</h2>
-      <p>Größter Pipeline-Betreiber Nordamerikas & Dividenden-Aristokrat – Teil 3 der MB Pipeline Serie.</p>
+      <h2>Enbridge Analyse 2025</h2>
+      <p>Nordamerikas größter Pipeline-Betreiber – Teil 3.</p>
       <a href="pipeline-serie-teil3-enbridge-analyse-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Pipeline Serie Finale 2025</h2>
-      <p>Vergleich der 5 größten Pipeline-Aktien: Pembina, TC Energy, Enbridge, ONEOK & Kinder Morgan.</p>
+      <h2>Pipeline Serie Finale</h2>
+      <p>Vergleich: Pembina, TC Energy, Enbridge, ONEOK & Co.</p>
       <a href="pipeline-serie-finale-vergleich-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
-    <!-- 🚢 Shipping Serie -->
+    <!-- Shipping -->
     <div class="post">
-      <h2>3 Schifffahrtsaktien mit über 10 % Dividende 2025</h2>
-      <p>Dorian LPG, Torm & Frontline – starke Tanker-Titel mit zweistelligen Renditen.</p>
+      <h2>3 Schifffahrtsaktien 2025</h2>
+      <p>Dorian LPG, Torm & Frontline – High Yield auf See.</p>
       <a href="shipping-3-aktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>3 LNG- & Tanker-Aktien 2025</h2>
-      <p>Flex LNG, BW LPG & International Seaways – Cashflow-Power auf hoher See mit Top-Dividenden.</p>
+      <h2>3 LNG- & Tanker-Aktien</h2>
+      <p>Flex LNG, BW LPG & INSW – Top Cashflow.</p>
       <a href="shipping-3-aktien-lng-tanker-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>6 Schifffahrtsaktien im Depot 2025</h2>
-      <p>Bulk- & Container-Reedereien im Vergleich – die stärksten Dividendenzahler aus meinem Depot.</p>
+      <h2>6 Shipping-Aktien im Depot</h2>
+      <p>Bulk & Container – Dividendenmaschinen.</p>
       <a href="shipping-6-aktien-depot-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Tanker & Mixed Fleet 2025</h2>
-      <p>4 Dividendenmaschinen im Shipping – Hafnia, Ardmore, DHT & SFL im Überblick.</p>
+      <h2>Tanker & Mixed Fleet</h2>
+      <p>Hafnia, Ardmore, DHT, SFL – starke Flotten.</p>
       <a href="shipping-tanker-mixedfleet-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Hidden Champions im Shipping 2025</h2>
-      <p>3 Spezial-Reedereien mit starker Dividende – Wallenius, Höegh & ZIM im Dividenden-Check.</p>
+      <h2>Hidden Champions Shipping</h2>
+      <p>Wallenius, Höegh, ZIM – Spezialisten.</p>
       <a href="hidden-champions-shipping-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
-    <!-- 💼 BDC Serie -->
+    <!-- BDC -->
     <div class="post">
-      <h2>BDC Dividendenaktien 2025 | Newtek vs Hercules</h2>
-      <p>Stabilität oder High-Yield? Vergleich zwischen Newtek One und Hercules Capital.</p>
+      <h2>BDC Duell: Newtek vs Hercules</h2>
+      <p>Zwei High-Yield BDCs im Vergleich.</p>
       <a href="bdc-dividendenaktien-2025-newtek-vs-hercules.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>BDC Duell 2025 | Crescent vs Blue Owl</h2>
-      <p>Zwei starke BDCs im direkten Dividendenvergleich mit 11–12 % Rendite.</p>
+      <h2>Crescent vs Blue Owl</h2>
+      <p>BDC Vergleich mit 11–12 % Dividende.</p>
       <a href="bdc-duell-2025-crescent-vs-blue-owl.html" class="btn">Beitrag lesen →</a>
     </div>
 
-    <!-- 💰 Dividenden & Rohstoffe -->
+    <!-- Rohstoffe -->
     <div class="post">
-      <h2>10 Dividendenaktien mit über 10 % Rendite 2025</h2>
-      <p>Mein Depot bringt über 5.500 € Dividenden jährlich – echte High-Yield-Titel im Überblick.</p>
+      <h2>10 High-Yield Dividendenaktien</h2>
+      <p>5.500 € Cashflow – echte Einkommensaktien.</p>
       <a href="dividendenaktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>5 stabile Dividendenaktien 2025</h2>
-      <p>Telekom, Konsumgüter & Logistik – defensive Titel für planbaren Cashflow in jeder Marktphase.</p>
+      <h2>5 Stabile Dividendenaktien</h2>
+      <p>Defensiver Cashflow in jeder Marktphase.</p>
       <a href="dividendenaktien-5-stabil-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>Rohstoff-Superzyklus 2025</h2>
-      <p>Kupfer, Uran, Öl, Gas & Lithium – warum der nächste Rohstoff-Boom längst begonnen hat.</p>
+      <h2>Rohstoff-Superzyklus</h2>
+      <p>Öl, Gas, Uran, Kupfer, Lithium – 2025 Trend.</p>
       <a href="rohstoff-superzyklus-2025.html" class="btn">Beitrag lesen →</a>
     </div>
 
     <div class="post">
-      <h2>ONEOK Aktie Analyse 2025</h2>
-      <p>US-Midstream-Gigant mit 5 % Dividende & soliden Cashflows – Pipeline-Gewinner im Fokus.</p>
+      <h2>ONEOK Analyse</h2>
+      <p>US-Midstream-Gigant mit 5 % Dividende.</p>
       <a href="oneok.html" class="btn">Beitrag lesen →</a>
     </div>
 
   </section>
-
-</div><!-- /page-wrapper -->
+</div>
 
 <footer>
   © 2025 MB Capital Strategies ·
   <a href="/impressum.html">Impressum</a> ·
-  <a href="/datenschutz.html">Datenschutzerklärung</a> ·
+  <a href="/datenschutz.html">Datenschutz</a> ·
   <a href="/glossar/">Glossar</a>
 </footer>
 
@@ -391,9 +344,9 @@
   const dropdown = document.querySelector(".dropdown");
   const btn = document.querySelector(".dropdown-btn");
 
-  if (btn && dropdown){
-    btn.addEventListener("click", function(){
-      if (window.innerWidth < 700) {
+  if(btn && dropdown){
+    btn.addEventListener("click", () => {
+      if(window.innerWidth < 700){
         dropdown.classList.toggle("open");
       }
     });
