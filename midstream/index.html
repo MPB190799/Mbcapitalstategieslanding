@@ -26,7 +26,7 @@
       line-height:1.6;
     }
 
-    /* ===== Header mit Themen-Dropdown ===== */
+    /* ===== Header ===== */
     header.header{
       background:#151821;
       border-bottom:1px solid rgba(212,175,55,.25);
@@ -52,7 +52,6 @@
 
     .dropdown{
       position:relative;
-      display:inline-block;
     }
     .dropdown-btn{
       background:none;
@@ -83,7 +82,6 @@
       color:#f5f6fa;
       text-decoration:none;
       font-size:0.9rem;
-      white-space:nowrap;
     }
     .dropdown-content a:hover{
       background:#1a1f2b;
@@ -96,7 +94,7 @@
       .dropdown.open .dropdown-content{display:block;}
     }
 
-    /* ===== Layout / Sections ===== */
+    /* ===== Layout ===== */
     .page{
       max-width:1080px;
       margin:0 auto;
@@ -134,26 +132,6 @@
       font-size:0.9rem;
       color:#9aa6c0;
     }
-    <!-- AUTHOR CARD – MB Midstream Expertise -->
-<section class="block" style="margin-top:10px;">
-  <div class="card" style="display:flex; gap:16px; align-items:center;">
-    
-    <!-- Bild -->
-    <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies" 
-         style="width:75px; height:75px; border-radius:50%; object-fit:cover; border:2px solid #d4af37;">
-    
-    <!-- Text -->
-    <div>
-      <h3 style="margin:0; color:#d4af37;">Dein Analyst für Midstream & Dividenden-Cashflow</h3>
-      <p style="margin:4px 0 0; font-size:0.88em; color:#cfd6e6;">
-        Ich analysiere seit Jahren <strong>Pipeline-Unternehmen, Midstream-MLPs, LNG-Export & Infrastruktur</strong> – 
-        mit Fokus auf <strong>stabile Ausschüttungen, Fee-Based Revenues & langfristigen Cashflow</strong>.  
-        Ziel: die verlässlichsten Dividendenzahler im Energiesektor finden.
-      </p>
-    </div>
-
-  </div>
-</section>
 
     /* Cards & Grids */
     .grid{
@@ -169,16 +147,11 @@
       padding:14px 16px;
       box-shadow:0 4px 16px rgba(0,0,0,.35);
       font-size:0.95rem;
-      position:relative;
     }
     .card h3{
       margin:0 0 6px;
       font-size:1.05rem;
       color:#d4af37;
-    }
-    .card p{
-      margin:0;
-      color:#cfd6e6;
     }
     .badge{
       display:inline-block;
@@ -189,15 +162,6 @@
       color:#d4af37;
       margin-bottom:4px;
     }
-    .card a.more{
-      display:inline-block;
-      margin-top:8px;
-      font-size:0.88rem;
-      color:#ffd666;
-      text-decoration:none;
-      font-weight:600;
-    }
-    .card a.more:hover{text-decoration:underline;}
 
     /* Glossar-Tags */
     .tag-row{
@@ -219,7 +183,7 @@
       color:#0f1115;
     }
 
-    /* Video-Section */
+    /* Videos */
     .video-wrapper{
       background:#151821;
       border-radius:16px;
@@ -227,15 +191,10 @@
       padding:16px;
       box-shadow:0 6px 20px rgba(0,0,0,.45);
     }
-    .video-wrapper h3{
-      margin-top:0;
-      color:#d4af37;
-    }
     .video-flex{
       display:grid;
       grid-template-columns:minmax(0,2fr) minmax(0,1.3fr);
       gap:18px;
-      align-items:flex-start;
     }
     .video-embed{
       position:relative;
@@ -251,44 +210,19 @@
       width:100%;height:100%;
       border:0;
     }
-    .video-list a{
-      display:block;
-      font-size:0.9rem;
-      color:#cfd6e6;
-      margin-bottom:6px;
-      text-decoration:none;
-    }
-    .video-list a span{
-      color:#d4af37;
-      font-weight:600;
-    }
-    .video-list a:hover{
-      text-decoration:underline;
-    }
 
-    /* Affiliate-Box */
+    /* Affiliate */
     .cta-box{
       background:#151821;
       border-radius:16px;
       border:1px solid rgba(212,175,55,.3);
-      padding:18px 16px 20px;
+      padding:18px 16px;
       margin-top:22px;
     }
     .cta-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
       gap:14px;
-      margin-top:10px;
-    }
-    .cta-item h3{
-      margin:0 0 4px;
-      color:#d4af37;
-      font-size:1.02rem;
-    }
-    .cta-item p{
-      margin:0 0 8px;
-      font-size:0.9rem;
-      color:#cfd6e6;
     }
     .btn{
       display:inline-block;
@@ -301,9 +235,6 @@
       text-decoration:none;
       box-shadow:0 0 14px rgba(212,175,55,.55);
     }
-    .btn:hover{
-      background:#e0bd55;
-    }
 
     footer{
       text-align:center;
@@ -313,19 +244,9 @@
       border-top:1px solid rgba(255,255,255,.08);
       margin-top:35px;
     }
-    footer a{
-      color:#d4af37;
-      text-decoration:none;
-    }
-    footer a:hover{text-decoration:underline;}
-
-    @media(max-width:720px){
-      .video-flex{
-        grid-template-columns:1fr;
-      }
-    }
   </style>
 </head>
+
 <body>
 
 <header class="header">
@@ -362,6 +283,25 @@
     <p class="hero-tags">
       Fokus: Kanada &amp; USA · Öl &amp; Gas Pipelines · NGL &amp; Gasverarbeitung · Terminals &amp; Speicher
     </p>
+  </section>
+
+  <!-- AUTHOR CARD -->
+  <section class="block" style="margin-top:10px;">
+    <div class="card" style="display:flex; gap:16px; align-items:center;">
+      
+      <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies" 
+          style="width:75px; height:75px; border-radius:50%; object-fit:cover; border:2px solid #d4af37;">
+      
+      <div>
+        <h3 style="margin:0; color:#d4af37;">Dein Analyst für Midstream & Dividenden-Cashflow</h3>
+        <p style="margin:4px 0 0; font-size:0.88em; color:#cfd6e6;">
+          Ich analysiere seit Jahren <strong>Pipeline-Unternehmen, Midstream-MLPs, LNG-Export & Infrastruktur</strong> – 
+          mit Fokus auf <strong>stabile Ausschüttungen, Fee-Based Revenues & langfristigen Cashflow</strong>.  
+          Ziel: die verlässlichsten Dividendenzahler im Energiesektor finden.
+        </p>
+      </div>
+
+    </div>
   </section>
 
   <!-- SEGMENTE -->
