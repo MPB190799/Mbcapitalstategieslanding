@@ -45,8 +45,8 @@
       font-size: 1.7rem;
       margin: 0 0 6px;
       color: var(--accent);
-      letter-spacing: 0.03em;
       text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
     .ff-sub {
       font-size: 0.9rem;
@@ -105,7 +105,6 @@
       width: 100%;
       padding: 12px;
       border-radius: 10px;
-      border: none;
       background: var(--accent);
       color: #000;
       font-weight: 700;
@@ -114,11 +113,11 @@
       margin: 10px 0 18px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      border: none;
     }
     .ff-btn:hover {
       filter: brightness(1.05);
     }
-
     .ff-results {
       background: #101010;
       border-radius: 12px;
@@ -149,16 +148,10 @@
 
       <header class="ff-header">
         <h1 class="ff-title">Finanzielle Freiheit Rechner</h1>
-        <p class="ff-sub">Rechne aus, wann deine Dividenden deine gewünschten monatlichen Ausgaben decken können.</p>
+        <p class="ff-sub">
+          Rechne aus, wann deine Dividenden deine gewünschten monatlichen Ausgaben decken können.
+        </p>
       </header>
-
-      <!-- AdSense Anzeige -->
-      <ins class="adsbygoogle"
-        style="display:block; text-align:center; margin: 10px 0 20px;"
-        data-ad-client="ca-pub-7097302643579933"
-        data-ad-slot="3284129817"
-        data-ad-format="fluid"
-        data-ad-layout="in-article"></ins>
 
       <div class="ff-grid">
         <div class="ff-field">
@@ -217,15 +210,13 @@
     </section>
   </main>
 
-  <!-- Rechner Script (wird IMMER ausgeführt, unabhängig von AdSense) -->
   <script>
     (function() {
       const $ = (id) => document.getElementById(id);
 
-      function parseNum(input, fallback = 0) {
-        const raw = (input.value || "").toString().replace(',', '.');
-        const val = Number(raw);
-        return isFinite(val) ? val : fallback;
+      function parseNum(input) {
+        const n = Number(input.value.replace(",", "."));
+        return isFinite(n) ? n : 0;
       }
 
       function formatCurrency(v) {
@@ -237,9 +228,7 @@
       }
 
       function formatNumber(v, digits = 1) {
-        return v.toLocaleString("de-DE", {
-          maximumFractionDigits: digits
-        });
+        return v.toLocaleString("de-DE", { maximumFractionDigits: digits });
       }
 
       function calcFreedom() {
@@ -290,19 +279,26 @@
         const p4 = document.createElement("p");
 
         if (!reached) {
-          p1.innerHTML = `Mit diesen Annahmen erreichst du dein Ziel innerhalb von <span class="ff-highlight">60 Jahren</span> nicht.`;
+          p1.innerHTML =
+            `Mit diesen Annahmen erreichst du dein Ziel innerhalb von <span class="ff-highlight">60 Jahren</span> nicht.`;
           resultsEl.append(title, p1);
           return;
         }
 
         const netDivMonthFinal = netDivYear / 12;
 
-        p1.innerHTML = `Du erreichst dein Ziel von <span class="ff-highlight">${formatCurrency(targetIncome)}</span> netto pro Monat im Jahr <span class="ff-highlight">${year}</span>.`;
-        p2.innerHTML = `Geschätztes Depotvolumen: <span class="ff-highlight">${formatCurrency(wealth)}</span>.`;
-        p3.innerHTML = `Nettodividende pro Jahr: <span class="ff-highlight">${formatCurrency(netDivYear)}</span> (${formatCurrency(netDivMonthFinal)} pro Monat).`;
+        p1.innerHTML =
+          `Du erreichst dein Ziel von <span class="ff-highlight">${formatCurrency(targetIncome)}</span> netto pro Monat im Jahr <span class="ff-highlight">${year}</span>.`;
+
+        p2.innerHTML =
+          `Geschätztes Depotvolumen: <span class="ff-highlight">${formatCurrency(wealth)}</span>.`;
+
+        p3.innerHTML =
+          `Nettodividende pro Jahr: <span class="ff-highlight">${formatCurrency(netDivYear)}</span> (${formatCurrency(netDivMonthFinal)} pro Monat).`;
 
         const effYield = netDivYear / wealth * 100;
-        p4.innerHTML = `Effektive Netto-Rendite: <span class="ff-highlight">${formatNumber(effYield, 2)} %</span>.`;
+        p4.innerHTML =
+          `Effektive Netto-Rendite: <span class="ff-highlight">${formatNumber(effYield, 2)} %</span>.`;
 
         resultsEl.append(title, p1, p2, p3, p4);
       }
@@ -313,15 +309,6 @@
     })();
   </script>
 
-  <!-- AdSense (SAFE LOAD, niemals blockiert dein JS) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933"
-    crossorigin="anonymous"></script>
-
-  <script>
-    try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch(e) {}
-  </script>
-
 </body>
 </html>
+
