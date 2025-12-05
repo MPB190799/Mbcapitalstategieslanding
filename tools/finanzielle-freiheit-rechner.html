@@ -6,10 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rechne aus, wann du von Dividenden leben kannst: Finanzielle Freiheit Rechner von MB Capital Strategies.">
 
-  <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933"
-    crossorigin="anonymous"></script>
-
   <style>
     :root {
       --bg: #0b0b0b;
@@ -156,14 +152,13 @@
         <p class="ff-sub">Rechne aus, wann deine Dividenden deine gewünschten monatlichen Ausgaben decken können.</p>
       </header>
 
-      <!-- AdSense in-article -->
+      <!-- AdSense Anzeige -->
       <ins class="adsbygoogle"
         style="display:block; text-align:center; margin: 10px 0 20px;"
         data-ad-client="ca-pub-7097302643579933"
         data-ad-slot="3284129817"
         data-ad-format="fluid"
         data-ad-layout="in-article"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
       <div class="ff-grid">
         <div class="ff-field">
@@ -222,6 +217,7 @@
     </section>
   </main>
 
+  <!-- Rechner Script (wird IMMER ausgeführt, unabhängig von AdSense) -->
   <script>
     (function() {
       const $ = (id) => document.getElementById(id);
@@ -315,6 +311,16 @@
         $("#ffCalcBtn").addEventListener("click", calcFreedom);
       });
     })();
+  </script>
+
+  <!-- AdSense (SAFE LOAD, niemals blockiert dein JS) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933"
+    crossorigin="anonymous"></script>
+
+  <script>
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch(e) {}
   </script>
 
 </body>
