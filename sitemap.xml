@@ -202,5 +202,56 @@
     <priority>0.85</priority>
   </url>
 
+    <!-- Finanzrechner Übersicht -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/alle-finanzrechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Tools: Dividenden & Cashflow Rechner -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/dividendenrechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/dividenden-reinvest-rechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/dividenden-snowball-rechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 
 </urlset>
