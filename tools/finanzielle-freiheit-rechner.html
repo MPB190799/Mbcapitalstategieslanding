@@ -33,8 +33,6 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 0 16px 40px;
-      position: relative;
-      z-index: 1;
     }
     .ff-card {
       background: var(--card);
@@ -42,8 +40,6 @@
       border-radius: 16px;
       padding: 24px 20px 28px;
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      position: relative;
-      z-index: 10;
     }
     .ff-header {
       text-align: center;
@@ -65,8 +61,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px 20px;
       margin-bottom: 18px;
-      position: relative;
-      z-index: 10;
     }
     @media (max-width: 700px) {
       .ff-grid {
@@ -124,8 +118,6 @@
       margin: 10px 0 18px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      position: relative;
-      z-index: 9999; /* Button fix */
     }
     .ff-btn:hover {
       filter: brightness(1.05);
@@ -137,8 +129,6 @@
       border: 1px solid var(--border);
       padding: 14px 14px 10px;
       font-size: 0.9rem;
-      position: relative;
-      z-index: 5;
     }
     .ff-results h2 {
       margin: 0 0 8px;
@@ -153,11 +143,6 @@
       margin-top: 10px;
       font-size: 0.8rem;
       color: var(--muted);
-    }
-
-    /* Ensures no global element overlays the button */
-    body * {
-      pointer-events: auto !important;
     }
   </style>
 </head>
@@ -242,8 +227,9 @@
       const $ = (id) => document.getElementById(id);
 
       function parseNum(input, fallback = 0) {
-        const n = Number(input.value.replace(',', '.'));
-        return isFinite(n) ? n : fallback;
+        const raw = (input.value || "").toString().replace(',', '.');
+        const val = Number(raw);
+        return isFinite(val) ? val : fallback;
       }
 
       function formatCurrency(v) {
@@ -330,5 +316,6 @@
       });
     })();
   </script>
+
 </body>
 </html>
