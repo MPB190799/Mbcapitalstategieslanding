@@ -1,68 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Finanzielle Freiheit Rechner – MB Capital Strategies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rechne aus, wann deine Dividenden deine gewünschten monatlichen Ausgaben decken können.">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #151515;
+      --accent: #d4af37;
+      --text: #f5f5f5;
+      --muted: #aaaaaa;
+      --border: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .ff-wrapper { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+    .ff-card {
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    }
+    h1 { text-align: center; color: var(--accent); }
+    .ff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width:700px){ .ff-grid { grid-template-columns: 1fr; } }
+    label { font-weight: 600; }
+    input {
+      width: 100%; padding: 10px; border-radius: 8px;
+      background: #111; border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .ff-btn {
+      margin-top: 20px; width: 100%; padding: 12px;
+      border: none; border-radius: 10px;
+      background: var(--accent); color: #000;
+      font-size: 1rem; font-weight: 700;
+      cursor: pointer;
+    }
+    .ff-btn:hover { filter: brightness(1.1); }
+    .ff-results {
+      margin-top: 20px; padding: 16px;
+      background: #101010;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .ff-highlight { color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+
+<body>
+  <main class="ff-wrapper">
+    <section class="ff-card">
+
+      <h1>Finanzielle Freiheit Rechner</h1>
+
+      <div class="ff-grid">
+        <div>
+          <label>Startkapital (€)</label>
+          <input id="input_start" type="number" value="25000">
+        </div>
+
+        <div>
+          <label>Monatliche Sparrate (€)</label>
+          <input id="input_save" type="number" value="500">
+        </div>
+
+        <div>
+          <label>Ziel-Nettoeinkommen (€ / Monat)</label>
+          <input id="input_target" type="number" value="2000">
+        </div>
+
+        <div>
+          <label>Dividendenrendite (% p.a.)</label>
+          <input id="input_yield" type="number" value="7">
+        </div>
+
+        <div>
+          <label>Dividendenwachstum (% p.a.)</label>
+          <input id="input_growth" type="number" value="3">
+        </div>
+
+        <div>
+          <label>Steuer auf Dividenden (%)</label>
+          <input id="input_tax" type="number" value="26.4">
+        </div>
+      </div>
+
+      <div style="margin-top:10px;">
+        <input type="checkbox" id="input_reinvest" checked> Dividenden reinvestieren
+      </div>
+
+      <button class="ff-btn" onclick="calcFreedom()">Finanzielle Freiheit berechnen</button>
+
+      <div class="ff-results" id="results"></div>
+
+    </section>
+  </main>
+
 <script>
 function calcFreedom() {
 
-  // IDs sauber abrufen
-  const elStart = document.getElementById("startCapital");
-  const elSave  = document.getElementById("monthlySave");
-  const elTarget = document.getElementById("targetIncome");
-  const elYield = document.getElementById("yield");
-  const elGrowth = document.getElementById("growth");
-  const elTax = document.getElementById("taxRate");
+  const start = parseFloat(document.getElementById("input_start").value) || 0;
+  const save = parseFloat(document.getElementById("input_save").value) || 0;
+  const target = parseFloat(document.getElementById("input_target").value) || 0;
 
-  // Werte extrahieren (NEUE sichere Variablen)
-  const start = parseFloat(elStart.value) || 0;
-  const save = parseFloat(elSave.value) || 0;
-  const target = parseFloat(elTarget.value) || 0;
-  let yieldPct = (parseFloat(elYield.value) || 0) / 100;
-  const growthPct = (parseFloat(elGrowth.value) || 0) / 100;
-  const tax = (parseFloat(elTax.value) || 0) / 100;
-  const reinvest = document.getElementById("reinvest").checked;
+  let yieldPct = (parseFloat(document.getElementById("input_yield").value) || 0) / 100;
+  const growthPct = (parseFloat(document.getElementById("input_growth").value) || 0) / 100;
+  const tax = (parseFloat(document.getElementById("input_tax").value) || 0) / 100;
 
-  const resultsEl = document.getElementById("ffResults");
-  resultsEl.innerHTML = "";
+  const reinvest = document.getElementById("input_reinvest").checked;
 
-  if (target <= 0 || (yieldPct <= 0 && save <= 0)) {
-    resultsEl.innerHTML = "<h2>Ergebnis</h2><p>Bitte Eingaben prüfen.</p>";
+  const box = document.getElementById("results");
+  box.innerHTML = "";
+
+  if (target <= 0) {
+    box.innerHTML = "<p>Bitte Ziel-Einkommen eingeben.</p>";
     return;
   }
 
   let wealth = start;
-  let netDivYear = 0;
-  let reached = false;
+  let netDiv = 0;
+  let achieved = false;
   let year = new Date().getFullYear();
 
   for (let i = 1; i <= 60; i++) {
     wealth += save * 12;
 
-    const grossDiv = wealth * yieldPct;
-    netDivYear = grossDiv * (1 - tax);
+    const gross = wealth * yieldPct;
+    netDiv = gross * (1 - tax);
 
-    if (reinvest) wealth += grossDiv;
+    if (reinvest) wealth += gross;
 
     yieldPct *= (1 + growthPct);
 
-    if (netDivYear / 12 >= target) {
+    if (netDiv / 12 >= target) {
       year = new Date().getFullYear() + i;
-      reached = true;
+      achieved = true;
       break;
     }
   }
 
-  const title = "<h2>Ergebnis</h2>";
-
-  if (!reached) {
-    resultsEl.innerHTML = title + `<p>Ziel wird in 60 Jahren nicht erreicht.</p>`;
+  if (!achieved) {
+    box.innerHTML = "<p>Ziel wird in 60 Jahren nicht erreicht.</p>";
     return;
   }
 
-  const netMonth = netDivYear / 12;
-
-  resultsEl.innerHTML = `
-    ${title}
-    <p>Jahr der finanziellen Freiheit: <span class="ff-highlight">${year}</span></p>
+  box.innerHTML = `
+    <p>Jahr der Freiheit: <span class="ff-highlight">${year}</span></p>
     <p>Depotvolumen: <span class="ff-highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-    <p>Nettodividende pro Jahr: <span class="ff-highlight">${netDivYear.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-    <p>Pro Monat: <span class="ff-highlight">${netMonth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
+    <p>Nettodividende/Jahr: <span class="ff-highlight">${netDiv.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
+    <p>Pro Monat: <span class="ff-highlight">${(netDiv/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
   `;
 }
 </script>
+
+</body>
+</html>
