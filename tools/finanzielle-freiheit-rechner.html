@@ -1,166 +1,47 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Finanzielle Freiheit Rechner – MB Capital Strategies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rechne aus, wann du von Dividenden leben kannst: Finanzielle Freiheit Rechner von MB Capital Strategies.">
-
-  <style>
-    :root {
-      --bg: #0b0b0b;
-      --card: #151515;
-      --accent: #d4af37;
-      --text: #f5f5f5;
-      --muted: #aaaaaa;
-      --border: #2a2a2a;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-    .ff-wrapper { max-width: 900px; margin: 40px auto; padding: 0 16px 40px; }
-    .ff-card {
-      background: var(--card);
-      border: 1px solid var(--accent);
-      border-radius: 16px;
-      padding: 24px 20px 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-    }
-    .ff-header { text-align: center; margin-bottom: 18px; }
-    .ff-title {
-      font-size: 1.7rem; margin: 0 0 6px; color: var(--accent);
-      text-transform: uppercase; letter-spacing: 0.03em;
-    }
-    .ff-sub { font-size: .9rem; color: var(--muted); }
-    .ff-grid {
-      display: grid; grid-template-columns: repeat(2,1fr);
-      gap: 14px 20px; margin-bottom: 18px;
-    }
-    @media(max-width:700px){ .ff-grid{grid-template-columns:1fr;} }
-    .ff-field { display:flex; flex-direction:column; gap:4px; font-size:.9rem; }
-    .ff-field small { font-size:.75rem; color:var(--muted); }
-    .ff-input {
-      padding: 9px 10px; border-radius:8px; border:1px solid var(--border);
-      background:#111; color:var(--text); font-size:.9rem;
-    }
-    .ff-input:focus { border-color: var(--accent); }
-    .ff-inline { display:flex; align-items:center; gap:8px; font-size:.85rem; color:var(--muted); margin-bottom:12px; }
-    .ff-btn {
-      width:100%; padding:12px; border-radius:10px;
-      background:var(--accent); color:#000; font-weight:700;
-      cursor:pointer; margin:10px 0 18px; text-transform:uppercase;
-    }
-    .ff-btn:hover { filter:brightness(1.05); }
-    .ff-results {
-      background:#101010; border-radius:12px; border:1px solid var(--border);
-      padding:14px; font-size:.9rem;
-    }
-    .ff-results h2 { margin:0 0 8px; color:var(--accent); }
-    .ff-highlight { color:var(--accent); font-weight:600; }
-    .ff-warning { margin-top:10px; font-size:.8rem; color:var(--muted); }
-  </style>
-</head>
-
-<body>
-  <main class="ff-wrapper">
-    <section class="ff-card">
-
-      <header class="ff-header">
-        <h1 class="ff-title">Finanzielle Freiheit Rechner</h1>
-        <p class="ff-sub">Rechne aus, wann deine Dividenden deine gewünschten monatlichen Ausgaben decken können.</p>
-      </header>
-
-      <div class="ff-grid">
-        <div class="ff-field">
-          <label for="startCapital">Startkapital (€)</label>
-          <input id="startCapital" class="ff-input" type="number" value="25000">
-          <small>Aktueller Depotwert</small>
-        </div>
-
-        <div class="ff-field">
-          <label for="monthlySave">Monatliche Sparrate (€)</label>
-          <input id="monthlySave" class="ff-input" type="number" value="500">
-          <small>Was du jeden Monat investierst</small>
-        </div>
-
-        <div class="ff-field">
-          <label for="targetIncome">Ziel-Einkommen (netto €/Monat)</label>
-          <input id="targetIncome" class="ff-input" type="number" value="2000">
-        </div>
-
-        <div class="ff-field">
-          <label for="yield">Dividendenrendite (% p.a.)</label>
-          <input id="yield" class="ff-input" type="number" value="7" step="0.1">
-        </div>
-
-        <div class="ff-field">
-          <label for="growth">Wachstum (%)</label>
-          <input id="growth" class="ff-input" type="number" value="3" step="0.5">
-        </div>
-
-        <div class="ff-field">
-          <label for="taxRate">Steuer (%)</label>
-          <input id="taxRate" class="ff-input" type="number" value="26.4" step="0.1">
-        </div>
-      </div>
-
-      <div class="ff-inline">
-        <input id="reinvest" type="checkbox" checked>
-        <label for="reinvest">Dividenden reinvestieren</label>
-      </div>
-
-      <!-- FIX: onclick statt addEventListener -->
-      <button class="ff-btn" onclick="calcFreedom()">Finanzielle Freiheit berechnen</button>
-
-      <section class="ff-results" id="ffResults">
-        <h2>Ergebnis</h2>
-        <p>Noch keine Berechnung durchgeführt.</p>
-      </section>
-
-      <p class="ff-warning">Vereinfachtes Modell – konstante Rendite & Wachstum.</p>
-
-    </section>
-  </main>
-
 <script>
 function calcFreedom() {
-  const startCapital = parseFloat(startCapital.value) || 0;
-  const monthlySave = parseFloat(monthlySave.value) || 0;
-  const targetIncome = parseFloat(targetIncome.value) || 0;
-  let yieldPct = (parseFloat(yield.value) || 0) / 100;
-  const growthPct = (parseFloat(growth.value) || 0) / 100;
-  const taxRate = (parseFloat(taxRate.value) || 0) / 100;
+
+  // IDs sauber abrufen
+  const elStart = document.getElementById("startCapital");
+  const elSave  = document.getElementById("monthlySave");
+  const elTarget = document.getElementById("targetIncome");
+  const elYield = document.getElementById("yield");
+  const elGrowth = document.getElementById("growth");
+  const elTax = document.getElementById("taxRate");
+
+  // Werte extrahieren (NEUE sichere Variablen)
+  const start = parseFloat(elStart.value) || 0;
+  const save = parseFloat(elSave.value) || 0;
+  const target = parseFloat(elTarget.value) || 0;
+  let yieldPct = (parseFloat(elYield.value) || 0) / 100;
+  const growthPct = (parseFloat(elGrowth.value) || 0) / 100;
+  const tax = (parseFloat(elTax.value) || 0) / 100;
   const reinvest = document.getElementById("reinvest").checked;
 
   const resultsEl = document.getElementById("ffResults");
   resultsEl.innerHTML = "";
 
-  if (targetIncome <= 0 || (yieldPct <= 0 && monthlySave <= 0)) {
+  if (target <= 0 || (yieldPct <= 0 && save <= 0)) {
     resultsEl.innerHTML = "<h2>Ergebnis</h2><p>Bitte Eingaben prüfen.</p>";
     return;
   }
 
-  let year = new Date().getFullYear();
-  let wealth = startCapital;
+  let wealth = start;
   let netDivYear = 0;
   let reached = false;
+  let year = new Date().getFullYear();
 
   for (let i = 1; i <= 60; i++) {
-    wealth += monthlySave * 12;
+    wealth += save * 12;
 
     const grossDiv = wealth * yieldPct;
-    netDivYear = grossDiv * (1 - taxRate);
+    netDivYear = grossDiv * (1 - tax);
 
     if (reinvest) wealth += grossDiv;
 
     yieldPct *= (1 + growthPct);
 
-    if (netDivYear / 12 >= targetIncome) {
+    if (netDivYear / 12 >= target) {
       year = new Date().getFullYear() + i;
       reached = true;
       break;
@@ -185,6 +66,3 @@ function calcFreedom() {
   `;
 }
 </script>
-
-</body>
-</html>
