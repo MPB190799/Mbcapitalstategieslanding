@@ -127,10 +127,8 @@ function calcGrowth(){
   const n  = parseFloat(document.getElementById("years").value);
   if(!d0 || !g || !n) return;
 
-  // zukünftige Jahresdividende
   const dN = d0 * Math.pow(1+g, n);
 
-  // Summe aller Dividenden über Zeitraum
   let sum = 0;
   for(let t=0;t<n;t++){
     sum += d0 * Math.pow(1+g,t);
@@ -143,6 +141,101 @@ function calcGrowth(){
     <strong>Summe aller Dividenden in ${n} Jahren:</strong> ${sum.toFixed(2)} €<br><br>
     <small>Annahme: konstantes Dividendenwachstum, keine Reinvestments.</small>
   `;
+}
+</script>
+
+<!-- =================================================== -->
+<!-- 🔥 SEO-Erklärung + Vorteile                         -->
+<!-- =================================================== -->
+<section style="margin-top:40px; padding:24px; background:#151821; border:1px solid #2a2a2a; border-radius:12px; color:#f5f5f5;">
+  <h2 style="color:#d4af37;">Was macht der Dividenden-Wachstumsrechner?</h2>
+  <p>
+    Der Dividenden-Wachstumsrechner zeigt dir, wie sich deine jährlichen Dividenden entwickeln,
+    wenn deine Unternehmen ihre Ausschüttungen regelmäßig erhöhen.
+  </p>
+  <p>
+    Damit erkennst du früh, wie stark deine Cashflows in 5, 10 oder 20 Jahren aussehen können –
+    ideal für Dividendeninvestoren, FIRE-Planung und langfristigen Vermögensaufbau.
+  </p>
+
+  <h3 style="color:#d4af37;">Warum ist Dividendenwachstum so mächtig?</h3>
+  <ul>
+    <li>Dividendenerhöhungen sorgen für steigende Einnahmen – ohne neues Kapital.</li>
+    <li>Selbst kleine Wachstumsraten (3–7 %) haben enorme Langzeiteffekte.</li>
+    <li>Dividendenwachstum schützt langfristig gegen Inflation.</li>
+    <li>Unternehmen mit starkem Wachstum performen oft auch bei Kursen besser.</li>
+  </ul>
+
+  <h3 style="color:#d4af37;">Für wen ist der Rechner ideal?</h3>
+  <ul>
+    <li>Dividendeninvestoren</li>
+    <li>ETF-Anleger</li>
+    <li>High-Yield-Investoren (Shipping, Midstream, BDCs)</li>
+    <li>FIRE-Community</li>
+    <li>Alle, die langfristigen Cashflow planen</li>
+  </ul>
+</section>
+
+<!-- =================================================== -->
+<!-- 🔥 SEO FAQ-BEREICH                                  -->
+<!-- =================================================== -->
+<section style="margin-top:40px; padding:24px; background:#111; border:1px solid #2a2a2a; border-radius:12px; color:#f5f5f5;">
+  <h2 style="color:#d4af37;">Häufige Fragen zum Dividendenwachstum</h2>
+
+  <h3 style="color:#d4af37;">Was ist eine typische Dividendenwachstumsrate?</h3>
+  <p>Viele Unternehmen erhöhen ihre Dividende jährlich um 3–8 %. High-Growth Firmen auch 10 % oder mehr.</p>
+
+  <h3 style="color:#d4af37;">Warum ist Dividendenwachstum wichtig?</h3>
+  <p>Weil es deinen Cashflow schützt, dein Einkommen steigert und den Zinseszinseffekt verstärkt.</p>
+
+  <h3 style="color:#d4af37;">Sind hohe Dividendenwachstumsraten realistisch?</h3>
+  <p>Ja – vor allem bei Qualitätsunternehmen mit stabilen Cashflows (Tech, Infrastruktur, Midstream etc.).</p>
+
+  <h3 style="color:#d4af37;">Was passiert ohne Reinvest?</h3>
+  <p>Die Dividende wächst trotzdem – nur der Depotwert bleibt unverändert. Der Rechner zeigt das reine Wachstum.</p>
+</section>
+
+<!-- =================================================== -->
+<!-- 🔥 FAQ JSON-LD (GOOGLE BOOST)                        -->
+<!-- =================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist eine typische Dividendenwachstumsrate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Viele Unternehmen erhöhen ihre Dividenden um 3 bis 8 Prozent pro Jahr, abhängig von Cashflow und Wachstum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist Dividendenwachstum so wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividendenwachstum steigert langfristig deinen Cashflow, schützt gegen Inflation und verstärkt den Zinseszinseffekt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind hohe Dividendenwachstumsraten realistisch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, vor allem bei Qualitätsunternehmen mit stabilen Cashflows – etwa Tech, Infrastruktur, Midstream oder Energie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert ohne Reinvest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ohne Wiederanlage wächst nur die Dividende selbst, nicht der Depotwert. Der Rechner zeigt diesen reinen Wachstumsverlauf."
+      }
+    }
+  ]
 }
 </script>
 
