@@ -1,0 +1,19 @@
+{
+  "name": "MB Capital Strategies",
+  "short_name": "MB Capital",
+  "icons": [
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0f1115",
+  "background_color": "#0f1115",
+  "display": "standalone"
+}
