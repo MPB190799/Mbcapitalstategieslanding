@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies</title>
+  <meta name="description" content="Berechne Cashflows von Tankern & Bulkern: TCE, OPEX, Gewinn, FCF pro Aktie & Dividendenpotenzial. Perfekt für Shipping-Investoren: TORM, Hafnia, Dorian LPG & mehr.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- STYLE -->
+  <style>
+    body{
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:'Montserrat',sans-serif;
+      margin:0;
+      padding:20px;
+    }
+    .container{max-width:700px;margin:0 auto;}
+    h1{text-align:center;color:#d4af37;margin-bottom:10px;}
+
+    .card{
+      background:#151821;
+      border-radius:12px;
+      border:1px solid rgba(212,175,55,.3);
+      padding:20px;
+      margin-top:20px;
+    }
+
+    label{display:block;margin:10px 0 5px;font-weight:600;}
+    input{
+      width:100%;padding:12px;border-radius:8px;
+      border:1px solid #444;background:#0f1115;color:#fff;
+      font-size:1em;
+    }
+
+    button{
+      width:100%;padding:14px;margin-top:20px;
+      background:#d4af37;color:#0f1115;
+      border:none;border-radius:8px;
+      font-size:1.1em;font-weight:700;
+      cursor:pointer;transition:.25s;
+    }
+    button:hover{background:#e0bd55;}
+
+    .result{
+      margin-top:20px;padding:18px;
+      background:#1a1f2b;border-left:4px solid #d4af37;
+      border-radius:8px;line-height:1.7;
+    }
+
+    .ads-box{
+      margin-top:20px;
+      padding:12px;
+      background:#1a1f2b;
+      border-radius:10px;
+      text-align:center;
+      border:1px solid rgba(212,175,55,.2);
+    }
+  </style>
+
+  <!-- Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🚢 Shipping Cashflow Rechner</h1>
+
+  <div class="card">
+
+    <p><small>Berechne Cashflow, FCF & Dividendenpotenzial deiner Lieblings-Shipping-Aktien wie TORM, Hafnia, Dorian LPG & mehr.</small></p>
+
+    <label>TCE / Tagesrate (USD)</label>
+    <input type="number" id="tce" placeholder="z. B. 35.000">
+
+    <label>OPEX pro Tag (USD)</label>
+    <input type="number" id="opex" placeholder="z. B. 8.000">
+
+    <label>Anzahl Schiffe</label>
+    <input type="number" id="ships" placeholder="z. B. 15">
+
+    <label>Auslastung (%)</label>
+    <input type="number" id="util" placeholder="z. B. 92">
+
+    <label>Payout Ratio (%)</label>
+    <input type="number" id="payout" placeholder="z. B. 70">
+
+    <label>Shares Outstanding (optional)</label>
+    <input type="number" id="shares" placeholder="z. B. 85.000.000">
+
+    <button onclick="calcCashflow()">Berechnen</button>
+
+    <!-- ADS -->
+    <div class="ads-box">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7097302643579933"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div id="output" class="result" style="display:none;"></div>
+
+  </div>
+</div>
+
+<script>
+function calcCashflow(){
+  const tce = parseFloat(document.getElementById("tce").value);
+  const opex = parseFloat(document.getElementById("opex").value);
+  const ships = parseFloat(document.getElementById("ships").value);
+  const util = (parseFloat(document.getElementById("util").value) || 0) / 100;
+  const payout = (parseFloat(document.getElementById("payout").value) || 0) / 100;
+  const shares = parseFloat(document.getElementById("shares").value);
+
+  if(!tce || !opex || !ships){
+    alert("Bitte TCE, OPEX und Schiffe eingeben.");
+    return;
+  }
+
+  const breakeven = opex;
+  const profitDay = (tce - opex) * ships * util;
+  const profitYear = profitDay * 365;
+
+  let fcfPerShare = null;
+  let divPotential = null;
+
+  if(shares){
+    fcfPerShare = profitYear / shares;
+    divPotential = fcfPerShare * payout;
+  }
+
+  let html = `
+    <strong>⚓ Break-even TCE:</strong> ${breakeven.toLocaleString()} USD<br>
+    <strong>🟢 Gewinn pro Tag (Flotte):</strong> ${profitDay.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
+    <strong>💵 Gewinn pro Jahr:</strong> ${profitYear.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
+  `;
+
+  if(fcfPerShare){
+    html += `
+      <br><strong>📈 FCF je Aktie:</strong> ${fcfPerShare.toFixed(2)} USD<br>
+      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${divPotential.toFixed(2)} USD<br>
+    `;
+  }
+
+  document.getElementById("output").style.display = "block";
+  document.getElementById("output").innerHTML = html;
+}
+</script>
+
+</body>
+</html>
