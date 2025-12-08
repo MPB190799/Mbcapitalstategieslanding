@@ -22,7 +22,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/2D7y2KlpYsk/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Minen-Aktien 2025 #2 | Whitehaven Coal – 50 % Upside-Potenzial?</video:title>
-      <video:description>Whitehaven Coal Analyse 2025 – Australiens Kohle-Champion mit hoher Dividende.</video:description>
+      <video:description>Whitehaven Coal Analyse 2025 – Australiens Kohle-Champion mit hoher Dividende, starker Bilanz und klarer Upside im Rohstoff-Superzyklus.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/2D7y2KlpYsk</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=2D7y2KlpYsk</video:content_loc>
       <video:duration>960</video:duration>
@@ -44,8 +44,61 @@
     </video:video>
   </url>
 
-  <!-- Pipeline 1–3 + Finale (alle validiert) -->
-  <!-- ⚠️ Alles korrekt – nichts geändert -->
+  <!-- Pipeline Serie – Teil 1 -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MGLzYH-t1uY/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Pembina Pipeline Analyse 2025 | 5,5 % Dividende</video:title>
+      <video:description>Analyse des Pipeline-Betreibers Pembina – Dividenden, Cashflow, Verschuldung &amp; Bewertung.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/MGLzYH-t1uY</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=MGLzYH-t1uY</video:content_loc>
+      <video:duration>910</video:duration>
+      <video:publication_date>2025-08-31</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Pipeline Serie – Teil 2 -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/QsHrUMLIHUQ/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>TC Energy Analyse 2025 | 5 % Dividende &amp; Schuldenrisiko</video:title>
+      <video:description>Analyse des Pipeline-Riesen TC Energy – Chancen, Risiken &amp; Dividendenstrategie.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/QsHrUMLIHUQ</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=QsHrUMLIHUQ</video:content_loc>
+      <video:duration>870</video:duration>
+      <video:publication_date>2025-09-02</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Pipeline Serie – Teil 3 -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-teil3-enbridge-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/sqfu-WgCAHs/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Enbridge Analyse 2025 | 53 Jahre Dividenden in Folge</video:title>
+      <video:description>Enbridge – Pipeline-Gigant &amp; Dividenden-Aristokrat. Cashflows, Risiken &amp; Bewertung.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/sqfu-WgCAHs</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=sqfu-WgCAHs</video:content_loc>
+      <video:duration>960</video:duration>
+      <video:publication_date>2025-09-26</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Pipeline Finale -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/pipeline-serie-finale-vergleich-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/5laCSwMznXo/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Pipeline Aktien Vergleich 2025 | Enbridge vs ONEOK vs Kinder Morgan</video:title>
+      <video:description>Finale der Pipeline-Serie – Vergleich der größten Pipeline- &amp; Midstream-Unternehmen.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/5laCSwMznXo</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=5laCSwMznXo</video:content_loc>
+      <video:duration>930</video:duration>
+      <video:publication_date>2025-09-30</video:publication_date>
+    </video:video>
+  </url>
 
   <!-- Rohstoff-Superzyklus -->
   <url>
@@ -53,7 +106,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/boad7pz1xrk/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Rohstoff-Superzyklus 2025 | Kupfer, Uran, Öl &amp; Gas</video:title>
-      <video:description>Unterinvestition, globale Nachfrage, Energie – der große Superzyklus.</video:description>
+      <video:description>Unterinvestition, globale Nachfrage, Energie – der große Rohstoff-Superzyklus.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/boad7pz1xrk</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=boad7pz1xrk</video:content_loc>
       <video:duration>880</video:duration>
@@ -75,16 +128,69 @@
     </video:video>
   </url>
 
-  <!-- Rio Tinto, Vale, BHP, Fortescue -->
-  <!-- ⚠️ Alle 4 Blöcke korrekt – übernommen -->
+  <!-- Rio Tinto -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/rio-tinto-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/fLp1KfokpbE/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Rio Tinto Analyse 2025 | 6 % Dividende &amp; Kupfer-Boom</video:title>
+      <video:description>Rio Tinto Analyse 2025 – Eisenerz, Kupfer, Dividende & langfristige Cashflows.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/fLp1KfokpbE</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=fLp1KfokpbE</video:content_loc>
+      <video:duration>900</video:duration>
+      <video:publication_date>2025-11-28</video:publication_date>
+    </video:video>
+  </url>
 
-  <!-- Hidden Champions -->
+  <!-- Vale -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/vale-analyse-2025.html</loc> 
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Jj12hrKpoHc/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Vale Analyse 2025 | Base Metals, Dividende &amp; 10 % Quellensteuer</video:title>
+      <video:description>Vale Analyse 2025 – Eisenerz, Base Metals, neue Quellensteuer & Dividendenstrategie.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/Jj12hrKpoHc</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=Jj12hrKpoHc</video:content_loc>
+      <video:duration>880</video:duration>
+      <video:publication_date>2025-11-30</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- BHP -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/bhp-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/jhJB7qIfN3k/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>BHP Analyse 2025 | Kupfer, Potash &amp; Dividendenstabilität</video:title>
+      <video:description>BHP Analyse 2025 – Cashflows, Kupfer-Boom, Potash-Expansion & langfristige Strategie.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/jhJB7qIfN3k</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=jhJB7qIfN3k</video:content_loc>
+      <video:duration>920</video:duration>
+      <video:publication_date>2025-12-01</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Fortescue -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/fortescue-analyse-2025.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/3_Dq0qHiFeU/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Fortescue Analyse 2025 | High-Grade Eisenerz &amp; Cashflow</video:title>
+      <video:description>Fortescue Metals Analyse 2025 – Qualität, Margen, Cashflows & China-Risiko.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/3_Dq0qHiFeU</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=3_Dq0qHiFeU</video:content_loc>
+      <video:duration>870</video:duration>
+      <video:publication_date>2025-12-02</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Hidden Champions Shipping -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/hidden-champions-shipping-2025.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/nmDAy_rR3T8/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Hidden Champions Shipping 2025 | Wallenius, Höegh, ZIM</video:title>
-      <video:description>Nischen-Player mit extrem starkem Cashflow.</video:description>
+      <video:description>Spezialisierte Shipping-Unternehmen mit starken Nischen & Cashflow.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/nmDAy_rR3T8</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=nmDAy_rR3T8</video:content_loc>
       <video:duration>780</video:duration>
@@ -92,13 +198,13 @@
     </video:video>
   </url>
 
-  <!-- Green Shipping -->
+  <!-- Green Shipping 2026 -->
   <url>
     <loc>https://mbcapitalstrategies.com/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/zHp1Yn4QBiA/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Green Shipping 2026 | Größte Transformation seit 50 Jahren</video:title>
-      <video:description>ETS, CII, FuelEU Maritime – alles, was du wissen musst.</video:description>
+      <video:description>ETS, CII, FuelEU Maritime, Retrofit-Boom und CO₂-Kostenexplosion erklärt.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/zHp1Yn4QBiA</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=zHp1Yn4QBiA</video:content_loc>
       <video:duration>950</video:duration>
