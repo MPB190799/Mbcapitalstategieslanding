@@ -6,31 +6,31 @@ async function loadGlossarTerms() {
   const raw = await res.text();
 
   const clean = raw
-    .replace(/\/\*[\s\S]*?\*\//g, "") // Kommentare entfernen
-    .replace(/,\s*}/g, "}");          // letztes Komma vor } entfernen
+    .replace(/\/\*[\s\S]*?\*\//g, "")  // Kommentare entfernen
+    .replace(/,\s*}/g, "}");           // trailing commas entfernen
 
   return JSON.parse(clean);
 }
 
 // URL-Parameter auslesen
 const params = new URLSearchParams(window.location.search);
-const slug = params.get("begriff");
+const slug = params.get("begriff")?.toLowerCase();
 
 // ---------- 1) Auto-Open + Scroll ----------
 (function autoOpenGlossarTerm() {
   if (!slug) return;
-  const el = document.getElementById(slug.toLowerCase());
+
+  const el = document.getElementById(slug);
   if (!el) return;
 
-  // Akkordeon öffnen
-  el.setAttribute("open", "open");
+  el.open = true;
 
-  // Sanft hinscrollen
+  // sanfter Scroll
   setTimeout(() => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 200);
+  }, 180);
 
-  // kleines Highlight
+  // kleines visuelles Highlight
   el.style.boxShadow = "0 0 18px rgba(212,175,55,.75)";
   setTimeout(() => { el.style.boxShadow = ""; }, 1800);
 })();
@@ -41,28 +41,26 @@ const slug = params.get("begriff");
 
   const terms = await loadGlossarTerms();
 
-  let matchedName = null;
-  for (const [name, key] of Object.entries(terms)) {
-    if (String(key).toLowerCase() === slug.toLowerCase()) {
-      matchedName = name;
-      break;
-    }
-  }
+  // Reverse Lookup: slug → name
+  const matchedName = Object.keys(terms).find(
+    (name) => String(terms[name]).toLowerCase() === slug
+  );
+
   if (!matchedName) return;
 
-  // Title dynamisch setzen
+  // 2a: Title setzen
   document.title = `${matchedName} – Glossar | MB Capital Strategies`;
 
-  // Meta Description anpassen oder neu anlegen
+  // 2b: Meta Description setzen
   let meta = document.querySelector('meta[name="description"]');
   if (!meta) {
     meta = document.createElement("meta");
     meta.name = "description";
     document.head.appendChild(meta);
   }
-  meta.content = `${matchedName} einfach erklärt – Glossar für Hard-Asset- & Cashflow-Investoren.`;
+  meta.content = `${matchedName} – Bedeutung, Definition und Anwendung im Hard-Asset- & Cashflow-Investing.`;
 
-  // DefinedTerm Schema.org einfügen
+  // 2c: JSON-LD DefinedTerm einfügen
   const ld = {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
@@ -76,4 +74,3 @@ const slug = params.get("begriff");
   script.textContent = JSON.stringify(ld);
   document.head.appendChild(script);
 })();
-
