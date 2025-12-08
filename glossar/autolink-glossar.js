@@ -92,3 +92,24 @@
   `;
   document.head.appendChild(style);
 })();
+// ===== Glossar Link Tracking =====
+document.addEventListener("click", function (e) {
+  const link = e.target.closest("a.glossar-link");
+  if (!link) return;
+
+  const slug = new URL(link.href).searchParams.get("begriff");
+  const from = window.location.pathname;
+
+  // Optional: Google Analytics (gtag)
+  if (window.gtag) {
+    gtag("event", "glossar_click", {
+      event_category: "Glossar",
+      event_label: slug,
+      value: 1,
+      page_from: from
+    });
+  }
+
+  // Optional: Log in Console (Debug)
+  console.log(`Glossar Click → ${slug} (from ${from})`);
+});
