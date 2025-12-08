@@ -1,52 +1,68 @@
-// --- Auto-Open + Scroll ---
-const url = new URLSearchParams(window.location.search);
-const openId = url.get("begriff");
+// ===== MB Glossar – Auto-Open + Dynamic SEO =====
 
-if (openId) {
-  const el = document.getElementById(openId.toLowerCase());
-  if (el) {
-    el.setAttribute("open", "open");
+// Helper: terms.json laden (mit Support für /* Kommentare */)
+async function loadGlossarTerms() {
+  const res = await fetch("/glossar/terms.json");
+  const raw = await res.text();
 
-    setTimeout(() => {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 200);
+  const clean = raw
+    .replace(/\/\*[\s\S]*?\*\//g, "") // Kommentare entfernen
+    .replace(/,\s*}/g, "}");          // letztes Komma vor } entfernen
 
-    // Highlight-Effekt
-    el.style.boxShadow = "0 0 18px rgba(212,175,55,.75)";
-    setTimeout(() => { el.style.boxShadow = ""; }, 1800);
-  }
+  return JSON.parse(clean);
 }
 
-// --- Dynamic SEO ---
-(async () => {
-  const slug = openId;
+// URL-Parameter auslesen
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("begriff");
+
+// ---------- 1) Auto-Open + Scroll ----------
+(function autoOpenGlossarTerm() {
+  if (!slug) return;
+  const el = document.getElementById(slug.toLowerCase());
+  if (!el) return;
+
+  // Akkordeon öffnen
+  el.setAttribute("open", "open");
+
+  // Sanft hinscrollen
+  setTimeout(() => {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 200);
+
+  // kleines Highlight
+  el.style.boxShadow = "0 0 18px rgba(212,175,55,.75)";
+  setTimeout(() => { el.style.boxShadow = ""; }, 1800);
+})();
+
+// ---------- 2) Dynamic SEO (Title + Description + Schema.org) ----------
+(async function dynamicSeoForGlossar() {
   if (!slug) return;
 
-  const res = await fetch("/glossar/terms.json");
-  const terms = await res.json();
+  const terms = await loadGlossarTerms();
 
   let matchedName = null;
   for (const [name, key] of Object.entries(terms)) {
-    if (key.toLowerCase() === slug.toLowerCase()) {
+    if (String(key).toLowerCase() === slug.toLowerCase()) {
       matchedName = name;
       break;
     }
   }
   if (!matchedName) return;
 
-  // Title
+  // Title dynamisch setzen
   document.title = `${matchedName} – Glossar | MB Capital Strategies`;
 
-  // Meta-Description
+  // Meta Description anpassen oder neu anlegen
   let meta = document.querySelector('meta[name="description"]');
   if (!meta) {
     meta = document.createElement("meta");
     meta.name = "description";
     document.head.appendChild(meta);
   }
-  meta.content = `${matchedName} erklärt – Glossar für Hard Asset & Cashflow Investoren.`;
+  meta.content = `${matchedName} einfach erklärt – Glossar für Hard-Asset- & Cashflow-Investoren.`;
 
-  // JSON-LD Schema
+  // DefinedTerm Schema.org einfügen
   const ld = {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
@@ -60,3 +76,4 @@ if (openId) {
   script.textContent = JSON.stringify(ld);
   document.head.appendChild(script);
 })();
+
