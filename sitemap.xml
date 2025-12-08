@@ -267,4 +267,54 @@
   <priority>0.90</priority>
 </url>
 
+    <!-- Mining: Rio Tinto -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/rio-tinto-analyse-2025.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- Mining: Vale -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/vale-analyse-2025.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- Mining: BHP -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/bhp-analyse-2025.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- Mining: Fortescue -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/fortescue-analyse-2025.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- Green Shipping 2026 -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- Travel / Wise & Airalo -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/wise-airalo-vietnam-erfahrungen.html</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
 </urlset>
+
+
