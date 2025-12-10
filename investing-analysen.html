@@ -1,251 +1,852 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Investing.com Analysen & Veröffentlichungen | MB Capital Strategies</title>
+  <title>Investing.com Analysen – MB Capital Strategies</title>
+  <meta name="description"
+        content="Offizielle Veröffentlichungen von Marco Bozem (MB Capital Strategies) auf Investing.com – Hard Assets, Mining, Shipping, Midstream & Dividendenstrategien." />
 
-  <meta name="description" content="Offizielle Veröffentlichungen von MB Capital Strategies auf Investing.com. Analysen zu Rohstoffen, Mining, Schifffahrt, Pipelines, Midstream, BDCs, Dividendenstrategien und Cashflow-Investing.">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/investing-analysen.html" />
 
-  <meta name="robots" content="index, follow">
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title"
+        content="MB Capital Strategies – Veröffentlichungen auf Investing.com" />
+  <meta property="og:description"
+        content="Hard Assets • Mining • Shipping • Midstream • Dividenden. Offizielle Analysen & Research von Marco Bozem auf Investing.com." />
+  <meta property="og:image"
+        content="https://mbcapitalstrategies.com/assets/BannermitMarco.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url"
+        content="https://mbcapitalstrategies.com/investing-analysen.html" />
+  <meta property="og:type" content="website" />
 
-  <link rel="stylesheet" href="/style.css">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+        content="MB Capital Strategies – Veröffentlichungen auf Investing.com" />
+  <meta name="twitter:description"
+        content="Hard-Asset & Cashflow Research von Marco Bozem, veröffentlicht auf Investing.com." />
+  <meta name="twitter:image"
+        content="https://mbcapitalstrategies.com/assets/BannermitMarco.png" />
 
+  <!-- Simple Styles – an dein globales CSS anpassbar -->
   <style>
-    body {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-      font-family: system-ui, sans-serif;
+    :root {
+      --bg: #050608;
+      --bg-soft: #111318;
+      --text: #f5f5f5;
+      --muted: #b5b5b5;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.14);
+      --border-soft: #262932;
     }
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: .5rem;
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .invest-banner {
+      width: 100%;
+      text-align: center;
+      margin: 1rem 0 2rem;
+    }
+    .invest-banner img {
+      max-width: 980px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .invest-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .invest-header h1 {
+      font-size: 2.35rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
     .subtitle {
-      opacity: .85;
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      max-width: 700px;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
 
     .cta {
       display: inline-block;
-      padding: .8rem 1.6rem;
-      background: rgba(212,175,55,0.1);
-      border: 1px solid #d4af37;
+      padding: 0.7rem 1.6rem;
       border-radius: 999px;
-      color: #d4af37;
+      background: var(--accent);
+      color: #000;
       font-weight: 600;
-      margin: 1rem 0 2rem;
+      font-size: 0.98rem;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
+    }
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(212, 175, 55, 0.55);
     }
 
-    section {
-      margin-top: 3rem;
+    .tagline {
+      text-align: center;
+      margin-bottom: 2.25rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .tagline span {
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: linear-gradient(
+        to right,
+        rgba(212, 175, 55, 0.05),
+        transparent
+      );
     }
 
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: .75rem;
-      color: #d4af37;
+    .section-title {
+      font-size: 1.4rem;
+      margin: 2.2rem 0 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .section-sub {
+      margin-bottom: 1.3rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .invest-card {
+      background: var(--bg-soft);
+      border-radius: 14px;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .invest-card h3 {
+      font-size: 1.02rem;
+      margin: 0 0 0.1rem;
+    }
+
+    .invest-card p {
       margin: 0;
-    }
-    li {
-      margin-bottom: .6rem;
-    }
-    a.article-link {
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(212,175,55,.7);
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .tag {
-      opacity: .6;
-      font-size: .85rem;
-      margin-left: .4rem;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
     }
 
-    /* Author Box */
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.12rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      color: var(--muted);
+    }
+
+    .pill--cat {
+      border-color: rgba(212, 175, 55, 0.5);
+      color: var(--accent);
+    }
+
     .author-box {
+      margin-top: 2.75rem;
+      padding: 1.4rem 1.3rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top left, #1b1510 0, #050608 55%);
       display: flex;
       gap: 1rem;
-      padding: 1rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(212,175,55,0.3);
-      border-radius: 10px;
-      margin-top: 3rem;
+      align-items: center;
     }
+
     .author-box img {
-      width: 72px;
-      height: 72px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
-    }
-    .author-box a {
-      color: #d4af37;
-      text-decoration: none;
+      border: 2px solid var(--accent);
     }
 
-    /* Social Proof */
-    .social-proof {
-      margin-top: 2.5rem;
+    .author-box strong {
+      font-size: 1.02rem;
     }
-    .social-proof ul {
-      list-style: none;
-      padding: 0;
+
+    .author-box small {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.88rem;
     }
-    .social-proof a {
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(212,175,55,.7);
+
+    .author-links {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .author-links a {
+      margin-right: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 1rem;
+      }
+      .invest-header h1 {
+        font-size: 1.85rem;
+      }
+      .subtitle {
+        font-size: 0.95rem;
+      }
+      .author-box {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .author-box img {
+        width: 68px;
+        height: 68px;
+      }
     }
   </style>
-</head>
 
+  <!-- JSON-LD: Person / E-E-A-T -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "url": "https://mbcapitalstrategies.com/",
+    "image": "https://mbcapitalstrategies.com/img/marco.jpg",
+    "jobTitle": "Investment Analyst Hard Assets & Cashflow Strategien",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com/"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295/",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://de.investing.com/members/contributors/268748043/opinion"
+    ],
+    "knowsAbout": [
+      "Hard Assets", "Mining", "Energieinfrastruktur", "Midstream",
+      "Shipping", "Dividendenstrategie", "Cashflow Investing"
+    ]
+  }
+  </script>
+</head>
 <body>
 
-  <header>
+<main>
+
+  <!-- Banner mit deinem OG-Bild -->
+  <section class="invest-banner">
+    <!-- Pfad ggf. anpassen, falls Dateiname anders geschrieben -->
+    <img src="/assets/BannermitMarco.png"
+         alt="MB Capital Strategies – Veröffentlichungen auf Investing.com" />
+  </section>
+
+  <!-- Header / Intro -->
+  <header class="invest-header">
     <h1>Veröffentlichungen auf Investing.com</h1>
     <p class="subtitle">
-      Als Analyst für Hard Assets, Mining, Rohstoffe, Pipeline-Infrastruktur, Shipping & Cashflow-Investing veröffentliche ich regelmäßig Fachartikel auf Investing.com – einer der größten Finanzplattformen weltweit.
-      Hier findest du eine vollständige Übersicht meiner Research-Beiträge.
+      Als Analyst für Hard Assets, Mining, Energieinfrastruktur, Shipping
+      und Cashflow-orientierte Dividendenstrategien veröffentliche ich regelmäßig
+      Fachartikel auf <strong>Investing.com</strong> – einer der größten
+      internationalen Finanzplattformen.
+      Hier findest du eine Übersicht meiner wichtigsten Research-Beiträge.
     </p>
 
-    <a class="cta" 
+    <a class="cta"
        href="https://de.investing.com/members/contributors/268748043/opinion"
        target="_blank" rel="noopener">
       👉 Zum offiziellen Autorenprofil auf Investing.com
     </a>
   </header>
 
+  <p class="tagline">
+    <span>Hard Assets · Mining · Shipping · Midstream · Dividenden · Cashflow</span>
+  </p>
 
-  <!-- ===== ROHSTOFFE & MAKRO ===== -->
+  <!-- Rohstoff-Superzyklus / Makro -->
   <section>
-    <h2>Rohstoff-Superzyklus & Makro</h2>
-    <ul>
-      <li>
-        <a class="article-link" href="https://de.investing.com/analysis/unterinvestition--nachfrageboom-steht-ein-neuer-rohstoffsuperzyklus-bevor-200502020" target="_blank">
-          Unterinvestition & Nachfrageboom – steht ein neuer Rohstoffsuperzyklus bevor?
-        </a>
-        <span class="tag">Makro, Rohstoffe</span>
-      </li>
-    </ul>
-  </section>
+    <h2 class="section-title">Rohstoff-Superzyklus & Makro</h2>
+    <p class="section-sub">
+      Fundamentale Makroanalysen zu Rohstoffnachfrage, Angebotsengpässen und
+      möglichen Superzyklen – die Basis für jede Hard-Asset-Strategie.
+    </p>
 
-
-  <!-- ===== PIPELINES & MIDSTREAM ===== -->
-  <section>
-    <h2>Pipelines & Midstream</h2>
-    <ul>
-      <li><a class="article-link" href="https://de.investing.com/analysis/oneok-aktie-analyse-2025-5-dividende--midstreamgigant-200501999" target="_blank">ONEOK Analyse 2025 – 5% Dividende & Midstream-Gigant</a><span class="tag">Midstream</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/kinder-morgan-aktie-analyse-2025--4--dividende--gaspipelineriese-200502107" target="_blank">Kinder Morgan Analyse 2025 – Dividende & Pipeline-Riese</a><span class="tag">Midstream</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/enbridge-im-dividendencheck-22-jahre-steigerung--stabile-cashflows-200502219" target="_blank">Enbridge Dividendencheck – 22 Jahre Steigerungen</a><span class="tag">Midstream</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/pipeline-aktien-vergleich-2025--enbridge-vs-oneok-vs-kinder-morgan-200502351" target="_blank">Pipeline-Aktien Vergleich 2025 – ENB vs OKE vs KMI</a><span class="tag">Vergleich</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/pembina-pipeline-2025-stabile-6--dividende--verlassliche-cashflows-200502373" target="_blank">Pembina Pipeline – stabile 6% Dividende</a><span class="tag">Midstream</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/tc-energy-2025-6--dividende--gaspipelinegigant-aus-kanada-200502374" target="_blank">TC Energy Analyse 2025 – Pipeline-Gigant aus Kanada</a><span class="tag">Midstream</span></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== SHIPPING & GREEN SHIPPING ===== -->
-  <section>
-    <h2>Shipping, Tanker & Green Shipping</h2>
-    <ul>
-      <li><a class="article-link" href="https://de.investing.com/analysis/hidden-champions-im-shipping-3-spezialreedereien-mit-stabiler-dividende-200502029" target="_blank">Hidden Champions im Shipping – 3 Spezialreedereien</a><span class="tag">Shipping</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/hidden-champions-im-shipping-2025-3-spezialreedereien-mit-stabiler-dividende-200502375" target="_blank">Hidden Champions 2025 – Spezialreedereien</a><span class="tag">Shipping</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/3-schifffahrtsaktien-mit-uber-10--dividende--lng--tanker-chancen-2025-200502378" target="_blank">3 Schifffahrtsaktien mit über 10% Dividende – LNG & Tanker</a><span class="tag">Shipping</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/tanker--mixed-fleet-2025-4-dividendenmaschinen-im-uberblick-200502379" target="_blank">Mixed Fleet 2025 – 4 Dividendenmaschinen</a><span class="tag">Shipping</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/6-schifffahrtsaktien-2025-mein-depotcheck-mit-tankern-lng--spezialflotten-200502380" target="_blank">6 Schifffahrtsaktien 2025 – Depotcheck</a><span class="tag">Shipping</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/green-shipping-2026-die-groste-chance-im-schifffahrtsmarkt-seit-20-jahren-200504153" target="_blank">Green Shipping 2026 – größte Chance seit 20 Jahren</a><span class="tag">Green Shipping</span></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== BDC ===== -->
-  <section>
-    <h2>BDC-Vergleiche & High-Yield Strategien</h2>
-    <ul>
-      <li><a class="article-link" href="https://de.investing.com/analysis/bdc-duell-2025-crescent-capital-vs-blue-owl--12--rendite-im-check-200502376" target="_blank">BDC Duell 2025 – Crescent Capital vs Blue Owl</a><span class="tag">BDC</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/bdc-vergleich-2025-newtek-vs-hercules-capital--high-yield-oder-stabilitat-200502377" target="_blank">BDC Vergleich 2025 – Newtek vs Hercules Capital</a><span class="tag">BDC</span></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== MINING ===== -->
-  <section>
-    <h2>Mining & Kohle</h2>
-    <ul>
-      <li><a class="article-link" href="https://de.investing.com/analysis/minenaktien-2025-1--thungela-resources--15--dividende-megachance-oder-risiko-200502421" target="_blank">Thungela Analyse 2025 – 15% Dividende</a><span class="tag">Mining</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/whitehaven-coal-analyse-2025--mb-capital-strategies--mining-serie-2-200502554" target="_blank">Whitehaven Coal Analyse 2025</a><span class="tag">Mining</span>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/yancoal-australia-analyse-2025--11--dividende--80--upside-200502723" target="_blank">Yancoal Analyse 2025 – 11% Dividende</a><span class="tag">Mining</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/fortescue-metals-analyse-2025-5-dividende--megamargen-mb-mining-serie-4-200503966" target="_blank">Fortescue Metals Analyse – Mining-Serie #4</a><span class="tag">Mining</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/bhp-mining-analyse-2025--cashflowriese-dividenden--jansengamechanger-200504000" target="_blank">BHP Analyse – Cashflow-Riese</a><span class="tag">Mining</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/vale-analyse-2025--67-dividende-basemetalboom--38-upside-200504191" target="_blank">VALE Analyse – Basemetal Upside</a><span class="tag">Mining</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/rio-tinto-analyse-2025--6-dividende--kupferboom-megaumbau-im-check-200504271" target="_blank">Rio Tinto Analyse – Kupfer-Boom</a><span class="tag">Mining</span></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== DEPOT / KRYPTOS ===== -->
-  <section>
-    <h2>Depot-Updates, Krypto & Lifestyle</h2>
-    <ul>
-      <li><a class="article-link" href="https://de.investing.com/analysis/depotupdate-september-2025--650--dividenden-prognose-vs-realitat-200503762" target="_blank">Depotupdate September 2025 – 650€ Dividenden</a><span class="tag">Depot</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/depotupdate-oktober-2025-160--dividenden--hardasset-performance--forecast-200503912" target="_blank">Depotupdate Oktober 2025</a><span class="tag">Depot</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/ich-leake-mein-kryptodepot--btc-158--xrp-199--bnb-129-200503913" target="_blank">Mein Kryptodepot – BTC, XRP, BNB</a><span class="tag">Krypto</span></li>
-
-      <li><a class="article-link" href="https://de.investing.com/analysis/so-spare-ich-auf-reisen-und-an-der-borse--mein-geheimtipp-200504060" target="_blank">Reise-Sparen & Börse – Geheimtipp</a><span class="tag">Lifestyle</span></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== SOCIAL PROOF / LINKEDIN ===== -->
-  <section class="social-proof">
-    <h2>Weitere professionelle Profile</h2>
-    <ul>
-      <li>👉 <a href="https://www.linkedin.com/in/marco-bozem-182173295/" target="_blank">LinkedIn – Marco Bozem (privates Profil)</a></li>
-      <li>👉 <a href="https://www.linkedin.com/company/mb-capital-strategies/posts/" target="_blank">LinkedIn – MB Capital Strategies Unternehmensseite</a></li>
-    </ul>
-  </section>
-
-
-  <!-- ===== AUTHOR BOX ===== -->
-  <div class="author-box">
-    <img src="/img/marco-bozem.jpg" alt="Marco Bozem">
-    <div>
-      <strong>Marco Bozem</strong><br>
-      Gründer von MB Capital Strategies · Analyst für Hard Assets, Rohstoffe, Shipping & Dividendenstrategien.<br>
-      Veröffentlichungen auf: <a href="/investing-analysen.html">Investing.com</a><br>
-      LinkedIn: 
-      <a href="https://www.linkedin.com/in/marco-bozem-182173295/" target="_blank">Privatprofil</a> · 
-      <a href="https://www.linkedin.com/company/mb-capital-strategies/posts/" target="_blank">Unternehmensseite</a>
+    <div class="cards">
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/unterinvestition--nachfrageboom-steht-ein-neuer-rohstoffsuperzyklus-bevor-200502020"
+             target="_blank" rel="noopener">
+            Unterinvestition & Nachfrageboom – Steht ein neuer Rohstoff-Superzyklus bevor?
+          </a>
+        </h3>
+        <p>
+          Warum fehlende Investitionen, steigende Nachfrage und geopolitische Risiken
+          den nächsten Rohstoff-Superzyklus auslösen könnten – inklusive Chancen
+          für Hard-Asset-Investoren.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Makro · Rohstoffe</span>
+          <span class="pill">Superzyklus</span>
+          <span class="pill">Zyklus-Analyse</span>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
+
+  <!-- Pipelines & Midstream -->
+  <section>
+    <h2 class="section-title">Pipelines & Midstream</h2>
+    <p class="section-sub">
+      Analysen zu Pipeline-Betreibern, Midstream-Giganten und Cashflow-Maschinen –
+      inklusive Dividendenstabilität, Vertragsstruktur und Bewertungsniveau.
+    </p>
+
+    <div class="cards">
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/oneok-aktie-analyse-2025-5-dividende--midstreamgigant-200501999"
+             target="_blank" rel="noopener">
+            ONEOK Analyse 2025 – 5&nbsp;% Dividende & Midstream-Gigant
+          </a>
+        </h3>
+        <p>
+          US-Midstream-Champion mit starker Dividende, NGL-Fokus und robustem Cashflow.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">USA</span>
+          <span class="pill">Dividende</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/kinder-morgan-aktie-analyse-2025--4--dividende--gaspipelineriese-200502107"
+             target="_blank" rel="noopener">
+            Kinder Morgan Analyse 2025 – 4&nbsp;% Dividende & Gaspipelineriese
+          </a>
+        </h3>
+        <p>
+          Gaspipeline-Netzwerk, Kontraktstruktur und Cashflow-Qualität im Detail.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">Gas</span>
+          <span class="pill">Quality Income</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/enbridge-im-dividendencheck-22-jahre-steigerung--stabile-cashflows-200502219"
+             target="_blank" rel="noopener">
+            Enbridge im Dividendencheck – 22 Jahre Steigerung & stabile Cashflows
+          </a>
+        </h3>
+        <p>
+          Kanadischer Pipeline-Gigant mit Dividenden-Historie und Regulierungsrisiken im Fokus.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">Kanada</span>
+          <span class="pill">Dividendenwachstum</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/pembina-pipeline-2025-stabile-6--dividende--verlassliche-cashflows-200502373"
+             target="_blank" rel="noopener">
+            Pembina Pipeline 2025 – stabile 6&nbsp;% Dividende & verlässliche Cashflows
+          </a>
+        </h3>
+        <p>
+          Wie Pembina stabilen Cashflow mit soliden Wachstumsperspektiven kombiniert.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">Dividende</span>
+          <span class="pill">Kanada</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/tc-energy-2025-6--dividende--gaspipelinegigant-aus-kanada-200502374"
+             target="_blank" rel="noopener">
+            TC Energy 2025 – 6&nbsp;% Dividende & Gaspipeline-Gigant aus Kanada
+          </a>
+        </h3>
+        <p>
+          Bewertung, Schuldenstruktur und Projektpipeline (u.a. Coastal GasLink) im Check.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">Gas</span>
+          <span class="pill">Turnaround-Case</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/pipeline-aktien-vergleich-2025--enbridge-vs-oneok-vs-kinder-morgan-200502351"
+             target="_blank" rel="noopener">
+            Pipeline-Aktien Vergleich 2025 – Enbridge vs. ONEOK vs. Kinder Morgan
+          </a>
+        </h3>
+        <p>
+          Direktvergleich von drei Pipeline-Schwergewichten: Cashflows, Verschuldung, Bewertung.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Midstream</span>
+          <span class="pill">Vergleich</span>
+          <span class="pill">Dividendenstrategie</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Shipping & Tanker -->
+  <section>
+    <h2 class="section-title">Shipping & Tanker</h2>
+    <p class="section-sub">
+      Spezialreedereien, LNG-Carrier, Tankerflotten & Green-Shipping – zyklische Chancen
+      mit zweistelligen Dividendenrenditen.
+    </p>
+
+    <div class="cards">
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/hidden-champions-im-shipping-3-spezialreedereien-mit-stabiler-dividende-200502029"
+             target="_blank" rel="noopener">
+            Hidden Champions im Shipping – 3 Spezialreedereien mit stabiler Dividende
+          </a>
+        </h3>
+        <p>
+          Nischenspieler im Schifffahrtssektor mit starken Bilanzen und verlässlicher Ausschüttung.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">Spezialreedereien</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/hidden-champions-im-shipping-2025-3-spezialreedereien-mit-stabiler-dividende-200502375"
+             target="_blank" rel="noopener">
+            Hidden Champions im Shipping 2025 – Update & neue Chancen
+          </a>
+        </h3>
+        <p>
+          Update der Spezialreedereien – Flottenstruktur, Charterraten & Bewertung 2025.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">Update</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/3-schifffahrtsaktien-mit-uber-10--dividende--lng--tanker-chancen-2025-200502378"
+             target="_blank" rel="noopener">
+            3 Schifffahrtsaktien mit über 10&nbsp;% Dividende – LNG & Tanker Chancen 2025
+          </a>
+        </h3>
+        <p>
+          High-Yield-Kandidaten im Tanker- und LNG-Bereich – Chancen & Risiken.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">High Yield</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/tanker--mixed-fleet-2025-4-dividendenmaschinen-im-uberblick-200502379"
+             target="_blank" rel="noopener">
+            Tanker & Mixed Fleet 2025 – 4 Dividendenmaschinen im Überblick
+          </a>
+        </h3>
+        <p>
+          Gemischte Flotten, flexible Kontraktstrukturen und Ausschüttungspolitik im Fokus.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">Mixed Fleet</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/6-schifffahrtsaktien-2025-mein-depotcheck-mit-tankern-lng--spezialflotten-200502380"
+             target="_blank" rel="noopener">
+            6 Schifffahrtsaktien 2025 – Depotcheck mit Tankern, LNG & Spezialflotten
+          </a>
+        </h3>
+        <p>
+          Wie ein diversifiziertes Shipping-Depot aussehen kann – inkl. Risikostreuung.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">Depotcheck</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/green-shipping-2026-die-groste-chance-im-schifffahrtsmarkt-seit-20-jahren-200504153"
+             target="_blank" rel="noopener">
+            Green Shipping 2026 – Die größte Chance im Schifffahrtsmarkt seit 20 Jahren
+          </a>
+        </h3>
+        <p>
+          Wie Dekarbonisierung, ETS Maritime & Zero-Emission-Fuels die Gewinner im Shipping bestimmen.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Shipping</span>
+          <span class="pill">Dekarbonisierung</span>
+          <span class="pill">ETS Maritime</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Mining & Kohle -->
+  <section>
+    <h2 class="section-title">Mining & Kohle</h2>
+    <p class="section-sub">
+      Hochprofitable Minenwerte, Kohle-Cashmaschinen und Basismetalle – inklusive
+      Dividendenstärke und Zyklusrisiken.
+    </p>
+
+    <div class="cards">
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/minenaktien-2025-1--thungela-resources--15--dividende-megachance-oder-risiko-200502421"
+             target="_blank" rel="noopener">
+            Minenaktien 2025 #1 – Thungela Resources: 15&nbsp;% Dividende – Megachance oder Risiko?
+          </a>
+        </h3>
+        <p>
+          Südafrikanischer Kohleplayer mit extremer Ausschüttung – aber zyklischem Risiko.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Kohle</span>
+          <span class="pill">High Yield</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/whitehaven-coal-analyse-2025--mb-capital-strategies--mining-serie-2-200502554"
+             target="_blank" rel="noopener">
+            Whitehaven Coal Analyse 2025 – Mining Serie #2
+          </a>
+        </h3>
+        <p>
+          Australischer Kohleproduzent zwischen Politikrisiko und massiven Free-Cashflows.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Australien</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/yancoal-australia-analyse-2025--11--dividende--80--upside-200502723"
+             target="_blank" rel="noopener">
+            Yancoal Australia Analyse 2025 – 11&nbsp;% Dividende & 80&nbsp;% Upside?
+          </a>
+        </h3>
+        <p>
+          Bewertung, Bilanz und Dividendenpotenzial eines weiteren Kohle-Schwergewichts.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Kohle</span>
+          <span class="pill">Value</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/fortescue-metals-analyse-2025-5-dividende--megamargen-mb-mining-serie-4-200503966"
+             target="_blank" rel="noopener">
+            Fortescue Metals Analyse 2025 – 5&nbsp;% Dividende & Megamargen
+          </a>
+        </h3>
+        <p>
+          Eisenerz-Gigant mit enormer Profitabilität und Wasserstoff-Fantasie.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Eisenerz</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/bhp-mining-analyse-2025--cashflowriese-dividenden--jansengamechanger-200504000"
+             target="_blank" rel="noopener">
+            BHP Analyse 2025 – Cashflow-Riese & Jansen-Gamechanger
+          </a>
+        </h3>
+        <p>
+          Diversifizierter Rohstoffriese mit Potash-Projekt und stabiler Ausschüttungspolitik.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Diversifiziert</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/vale-analyse-2025--67-dividende-basemetalboom--38-upside-200504191"
+             target="_blank" rel="noopener">
+            Vale Analyse 2025 – 6–7&nbsp;% Dividende & Basemetal-Boom
+          </a>
+        </h3>
+        <p>
+          Brasiliens Rohstoffchampion zwischen Eisen, Nickel & Kupfer – inkl. Upside-Potenzial.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Basismetalle</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/rio-tinto-analyse-2025--6-dividende--kupferboom-megaumbau-im-check-200504271"
+             target="_blank" rel="noopener">
+            Rio Tinto Analyse 2025 – 6&nbsp;% Dividende & Kupferboom
+          </a>
+        </h3>
+        <p>
+          Dividendenpolitik, Kupfer-Pipeline und Großprojekte – der Umbau im Check.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Mining</span>
+          <span class="pill">Kupfer</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BDCs -->
+  <section>
+    <h2 class="section-title">BDC-Strategien & High-Yield-Cashflow</h2>
+    <p class="section-sub">
+      Business Development Companies (BDCs) als Cashflow-Baustein im Dividendendepot.
+    </p>
+
+    <div class="cards">
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/bdc-duell-2025-crescent-capital-vs-blue-owl--12--rendite-im-check-200502376"
+             target="_blank" rel="noopener">
+            BDC-Duell 2025 – Crescent Capital vs. Blue Owl: 12&nbsp;% Rendite im Check
+          </a>
+        </h3>
+        <p>
+          Zwei High-Yield-BDCs im Direktvergleich – Qualität der Portfolios und Nachhaltigkeit der Ausschüttung.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">BDC</span>
+          <span class="pill">High Yield</span>
+          <span class="pill">Vergleich</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/bdc-vergleich-2025-newtek-vs-hercules-capital--high-yield-oder-stabilitat-200502377"
+             target="_blank" rel="noopener">
+            BDC Vergleich 2025 – Newtek vs. Hercules Capital: High Yield oder Stabilität?
+          </a>
+        </h3>
+        <p>
+          Trade-off zwischen maximaler Ausschüttung und Bilanzqualität bei zwei bekannten BDCs.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">BDC</span>
+          <span class="pill">Qualität vs. Yield</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Depot-Updates / Kryptodepot / Sparen -->
+  <section>
+    <h2 class="section-title">Depot-Updates, Kryptodepot & Cashflow-Lifestyle</h2>
+    <p class="section-sub">
+      Transparente Einblicke in mein persönliches Hard-Asset-Depot, Kryptopositionen
+      und meinen Umgang mit Sparen & Reisen.
+    </p>
+
+    <div class="cards">
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/depotupdate-september-2025--650--dividenden-prognose-vs-realitat-200503762"
+             target="_blank" rel="noopener">
+            Depot-Update September 2025 – 650&nbsp;€ Dividenden: Prognose vs. Realität
+          </a>
+        </h3>
+        <p>
+          Wie sich mein Dividendencashflow entwickelt und welche Positionen positiv überraschen.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Depotupdate</span>
+          <span class="pill">Dividenden</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/depotupdate-oktober-2025-160--dividenden--hardasset-performance--forecast-200503912"
+             target="_blank" rel="noopener">
+            Depot-Update Oktober 2025 – 160&nbsp;€ Dividenden & Hard-Asset-Performance
+          </a>
+        </h3>
+        <p>
+          Fokus auf Rohstoff- und Shipping-Werte – welche Titel liefern, welche schwächeln.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Depotupdate</span>
+          <span class="pill">Hard Assets</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/ich-leake-mein-kryptodepot--btc-158--xrp-199--bnb-129-200503913"
+             target="_blank" rel="noopener">
+            Ich leake mein Kryptodepot – BTC 158&nbsp;%, XRP 199&nbsp;%, BNB 129&nbsp;%
+          </a>
+        </h3>
+        <p>
+          Transparenter Blick auf mein Kryptodepot – Chancen, Risiken und Exit-Strategie.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Krypto</span>
+          <span class="pill">Spekulativ</span>
+        </div>
+      </article>
+
+      <article class="invest-card">
+        <h3>
+          <a href="https://de.investing.com/analysis/so-spare-ich-auf-reisen-und-an-der-borse--mein-geheimtipp-200504060"
+             target="_blank" rel="noopener">
+            So spare ich auf Reisen und an der Börse – Mein Geheimtipp
+          </a>
+        </h3>
+        <p>
+          Wie sich Lifestyle, Reisen und langfristiger Vermögensaufbau kombinieren lassen.
+        </p>
+        <div class="pill-row">
+          <span class="pill pill--cat">Lifestyle</span>
+          <span class="pill">Sparen</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Author Box -->
+  <section class="author-box">
+    <img src="/img/marco.jpg" alt="Marco Bozem" />
+    <div>
+      <strong>Marco Bozem</strong>
+      <small>
+        Gründer von MB Capital Strategies · Analyst für Hard Assets, Rohstoffe,
+        Shipping & Cashflow-orientierte Dividendenstrategien.
+      </small>
+
+      <div class="author-links">
+        Veröffentlichungen auf
+        <a href="https://de.investing.com/members/contributors/268748043/opinion"
+           target="_blank" rel="noopener">Investing.com</a><br />
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/marco-bozem-182173295/"
+           target="_blank" rel="noopener">Privatprofil</a> ·
+        <a href="https://www.linkedin.com/company/mb-capital-strategies/posts/"
+           target="_blank" rel="noopener">Unternehmensseite</a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 </body>
 </html>
