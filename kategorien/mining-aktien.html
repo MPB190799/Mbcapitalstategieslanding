@@ -1,184 +1,334 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mining Aktien 2025–2030 – Kupfer, Eisenerz, Kohle & Dividenden | MB Capital Strategies</title>
-  <meta name="description"
-        content="Mining Aktien im Rohstoff-Superzyklus 2025–2030: Analysen zu Thungela, Whitehaven, Rio Tinto, Vale, BHP, Fortescue & mehr. Cashflow, Dividenden und Hard-Asset-Strategie." />
+<!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-  <link rel="canonical" href="https://mbcapitalstrategies.com/kategorien/mining-aktien.html" />
+<meta name="theme-color" content="#0f1115">
+
+<!-- Ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mining Aktien 2025–2030 – Kupfer, Eisenerz, Kohle & Dividenden | MB Capital Strategies</title>
+<meta name="description"
+      content="Mining Aktien im Rohstoff-Superzyklus 2025–2030: Analysen zu Thungela, Whitehaven, Rio Tinto, Vale, BHP, Fortescue & Co. Fokus auf Cashflow, Dividenden & harte Fakten.">
+
+<link rel="canonical" href="https://mbcapitalstrategies.com/kategorien/mining-aktien.html">
+
+<!-- Social Preview -->
+<meta property="og:title" content="Mining Aktien 2025–2030 – Kupfer, Eisenerz, Kohle & Dividenden">
+<meta property="og:description" content="Alle Mining-Analysen an einem Ort: Kupfer, Eisenerz, Kohle, Base Metals, Dividenden & Cashflow.">
+<meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-strong:#e0bd55;
+  --bg:#0f1115;
+  --bg-soft:#151821;
+  --bg-card:#1a1f2b;
+  --text:#f5f6fa;
+  --text-2:#9aa6c0;
+}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  color:var(--text);
+  background:#0f1115 url('/background.jpg') no-repeat center top;
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+/* HEADER */
+header.header{
+  background:var(--bg-soft);
+  border-bottom:1px solid rgba(212,175,55,.28);
+  padding:16px 12px;
+  position:sticky;
+  top:0; z-index:30;
+  display:flex; justify-content:center;
+  flex-wrap:wrap; gap:22px;
+}
+header.header a{
+  color:var(--gold); text-decoration:none;
+  font-weight:600; font-size:1em;
+}
+header.header a:hover{ text-decoration:underline; }
+
+/* DROPDOWN */
+.dropdown{ position:relative; }
+.dropdown-btn{
+  background:none; border:none;
+  color:var(--gold);
+  font-weight:600; cursor:pointer;
+  padding:6px 10px; font-size:1em;
+}
+.dropdown-content{
+  display:none; position:absolute;
+  background:var(--bg);
+  min-width:230px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+  padding:10px 0;
+  top:36px; left:0;
+  z-index:2000;
+}
+.dropdown-content a{
+  display:block; padding:10px 16px;
+  color:var(--text); text-decoration:none;
+}
+.dropdown-content a:hover{
+  background:#1d2330; color:var(--gold);
+}
+@media(min-width:700px){
+  .dropdown:hover .dropdown-content{ display:block; }
+}
+@media(max-width:699px){
+  .dropdown.open .dropdown-content{ display:block; }
+}
+
+/* WRAPPER */
+.page-wrapper{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px 60px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px 50px;
+}
+.hero h1{
+  font-size:2.5em;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.hero p{
+  max-width:760px;
+  margin:0 auto;
+  font-size:1.2em;
+  color:#cfd6e6;
+}
+
+/* SECTION */
+.section{
+  margin:45px auto;
+  padding:0 10px;
+  max-width:950px;
+}
+.section h2{
+  color:var(--gold); font-size:1.8em;
+}
+.tagline{
+  color:var(--text-2);
+  font-size:1.05rem;
+  margin-bottom:12px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+
+/* CARDS */
+.card{
+  background:var(--bg-card);
+  border:1px solid rgba(212,175,55,.28);
+  border-radius:16px;
+  padding:20px;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+.card h3{
+  margin-top:0; color:var(--gold);
+}
+.card p{ color:#cfd6e6; }
+
+/* SUMMARY BOXES */
+details{
+  background:var(--bg-soft);
+  border:1px solid rgba(255,255,255,.08);
+  padding:14px 18px;
+  border-radius:14px;
+  cursor:pointer;
+  margin-bottom:12px;
+}
+details summary{
+  font-weight:600;
+  color:var(--gold);
+}
+details p{
+  margin-top:10px;
+  color:#cfd6e6;
+}
+</style>
+
 </head>
+
 <body>
 
-  <!-- === Breadcrumb / Navigation === -->
-  <nav class="breadcrumb">
-    <a href="/">Home</a> ›
-    <a href="/hard-asset-guide/">Hard Asset Guide</a> ›
-    <span>Mining Aktien</span>
-  </nav>
+<header class="header">
+  <a href="/">🏠 Startseite</a>
+  <a href="/depot-strategie/">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
 
-  <!-- === Hero / Intro === -->
-  <header class="page-hero">
-    <h1>Mining Aktien – Kupfer, Eisenerz, Kohle & Dividenden</h1>
-    <p>
-      Hier bündle ich alle Analysen, Videos und Strategien rund um Mining Aktien –
-      von Kohle-High-Yieldern bis zu globalen Eisenerz- und Kupfer-Giganten.
-      Fokus: Cashflow, Dividenden, Rohstoff-Superzyklus 2025–2030 und harte Fakten.
-    </p>
-  </header>
+  <div class="dropdown">
+    <button class="dropdown-btn">📘 Themen ▾</button>
+    <div class="dropdown-content">
+      <a href="/shipping/">🚢 Shipping</a>
+      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/energie/">⚡ Energie</a>
+      <a href="/rohstoffe/">⛏️ Rohstoffe / Mining</a>
+      <a href="/high-yield/">💰 High Yield</a>
+      <hr>
+      <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien</a>
+      <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien</a>
+      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top High-Yield Aktien</a>
+    </div>
+  </div>
 
-  <!-- === Schnellnavigation === -->
-  <section class="page-nav">
-    <h2>Schnellnavigation</h2>
-    <ul>
-      <li><a href="#top-mining-analysen">Top Mining Analysen</a></li>
-      <li><a href="#superzyklus">Rohstoff-Superzyklus 2025–2030</a></li>
-      <li><a href="#strategie">Strategie & Portfolio-Setup</a></li>
-      <li><a href="#tools">Tools & Research</a></li>
-    </ul>
-  </section>
+  <a href="/blog/index.html">📰 Blog</a>
+  <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/investing-analysen.html">📑 Investing Analysen</a>
+  <a href="/glossar/">📗 Glossar</a>
+</header>
 
-  <!-- === Top Mining Analysen === -->
-  <section id="top-mining-analysen" class="page-section">
-    <h2>Top Mining Analysen & Aktien-Ideen</h2>
-    <p>
-      Diese Analysen bilden das Fundament für meinen Mining-Block im Hard-Asset-Depot.
-      Jede Analyse kommt mit Zahlen, Dividenden-Check und realistischem Chancen/Risiko-Blick.
-    </p>
+<div class="page-wrapper">
 
-    <div class="card-grid">
+<!-- HERO -->
+<section class="hero">
+  <h1>Mining Aktien 2025–2030 – Kupfer, Eisenerz, Kohle & Dividenden</h1>
+  <p>
+    Hier findest du alle Mining-Analysen und Strategien – von Kohle-High-Yieldern bis zu globalen Kupfer- und Eisenerz-Giganten.
+    Fokus: Cashflow, Dividenden, Zyklen und harte Fakten.
+  </p>
+</section>
 
-      <article class="card">
-        <h3><a href="/blog/thungela-resources-analyse-2025.html">Thungela Resources – 15 % Dividende & Kohle-Cashflow</a></h3>
-        <p>
-          High-Yield-Kohleproduzent mit extrem schwankenden Cashflows, starker Bilanz
-          und Sonderdividenden-Potenzial – perfekt, um Zyklen zu spielen.
-        </p>
-      </article>
+<!-- ANALYSEN GRID -->
+<section class="section">
+  <h2>Top Mining Analysen</h2>
+  <p class="tagline">Cashflow, Dividenden, Zyklen – alle Berichte an einem Ort.</p>
 
-      <article class="card">
-        <h3><a href="/blog/whitehaven-coal-analyse-2025.html">Whitehaven Coal – Free Cashflow Maschine im Kohle-Sektor</a></h3>
-        <p>
-          Australien-Kohleplayer mit starkem Free Cashflow, Shareholder-Returns
-          und Hebel auf hohe Kohlepreise im Superzyklus.
-        </p>
-      </article>
+  <div class="grid">
 
-      <article class="card">
-        <h3><a href="/blog/rio-tinto-analyse-2025.html">Rio Tinto – Eisenerz, Kupfer & Dividendenqualität</a></h3>
-        <p>
-          Einer der größten Rohstoffkonzerne der Welt – Fokus auf Eisenerz und Kupfer,
-          solide Bilanz, hohe Ausschüttungsquote und Sonderdividenden-Historie.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3><a href="/blog/vale-analyse-2025.html">Vale – Eisenerz-Gigant mit Quellensteuer-Twist</a></h3>
-        <p>
-          Brasilianischer Eisenerz- und Base-Metals-Gigant mit attraktiven Dividenden,
-          aber steuerlichen Besonderheiten – wichtig für Netto-Cashflow.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3><a href="/blog/bhp-analyse-2025.html">BHP – Kupfer, Potash & Hard-Asset-Basisinvestment</a></h3>
-        <p>
-          Breiter Rohstoffmix mit Fokus auf Kupfer und Potash – defensiver Core-Baustein
-          im Mining-Teil des Depots mit solider Dividendenhistorie.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3><a href="/blog/fortescue-analyse-2025.html">Fortescue Metals – Margenstark, aber China-Sensitiv</a></h3>
-        <p>
-          Eisenerz-Player mit hohen Margen, starkem Cashflow und Exposure Richtung China.
-          Spannend für Zyklen-Trades im Hard-Asset-Superzyklus.
-        </p>
-      </article>
-
+    <div class="card">
+      <h3><a href="/blog/thungela-resources-analyse-2025.html" style="color:var(--gold);">Thungela – 15 % Dividende</a></h3>
+      <p>High-Yield Kohleproduzent mit massiven Cashflows und Sonderdividenden-Potenzial.</p>
     </div>
 
-    <p>
-      Weitere Artikel findest du im <a href="/blog/index.html">kompletten Blog-Archiv</a>.
-    </p>
-  </section>
+    <div class="card">
+      <h3><a href="/blog/whitehaven-coal-analyse-2025.html" style="color:var(--gold);">Whitehaven Coal</a></h3>
+      <p>Australischer FCF-Gigant mit starker Bilanz und Zyklushebel.</p>
+    </div>
 
-  <!-- === Rohstoff-Superzyklus / Makrobild === -->
-  <section id="superzyklus" class="page-section">
-    <h2>Rohstoff-Superzyklus 2025–2030 – Makro-Rahmen für Mining Aktien</h2>
-    <p>
-      Mining Aktien performen nicht im luftleeren Raum – sie hängen direkt an
-      Zyklen in Kupfer, Eisenerz, Kohle, Uran, Öl & Gas. Im Rohstoff-Superzyklus-Artikel
-      skizziere ich das große Bild, das alle Mining-Entscheidungen rahmt.
-    </p>
+    <div class="card">
+      <h3><a href="/blog/rio-tinto-analyse-2025.html" style="color:var(--gold);">Rio Tinto</a></h3>
+      <p>Eisenerz + Kupfer + Dividendenqualität – globaler Rohstoffriese.</p>
+    </div>
 
-    <p>
-      ➜ <a href="/blog/rohstoff-superzyklus-2025.html">Rohstoff-Superzyklus 2025 – Kupfer, Uran, Öl & Gas im Fokus</a>
-    </p>
+    <div class="card">
+      <h3><a href="/blog/vale-analyse-2025.html" style="color:var(--gold);">Vale</a></h3>
+      <p>Eisenerz-Gigant mit steuerrelevanten Besonderheiten.</p>
+    </div>
 
-    <p>
-      In Kombination mit dem <a href="/hard-asset-guide/">Hard Asset Guide</a> entsteht daraus
-      der Masterplan, wie Mining im Gesamtdepot eingebettet wird – von Energiewerten
-      über Shipping bis zu Midstream und BDCs.
-    </p>
-  </section>
+    <div class="card">
+      <h3><a href="/blog/bhp-analyse-2025.html" style="color:var(--gold);">BHP</a></h3>
+      <p>Kupfer, Potash & Cashflow – defensiver Core-Player.</p>
+    </div>
 
-  <!-- === Strategie & Portfolio-Setup === -->
-  <section id="strategie" class="page-section">
-    <h2>Wie Mining in meine Depot-Strategie passt</h2>
-    <p>
-      Mining ist bei mir kein Lotto-Ticket, sondern ein klar definierter Baustein im
-      Hard-Asset-Depot: Rohstoffsensitiver Cashflow + Dividenden + Zyklen-Trades.
-    </p>
+    <div class="card">
+      <h3><a href="/blog/fortescue-analyse-2025.html" style="color:var(--gold);">Fortescue</a></h3>
+      <p>Margenstark, aber China-sensitiv – ideal für Zyklus-Trades.</p>
+    </div>
 
-    <ul>
-      <li>
-        <a href="/depot-strategie/">Depot-Strategie – Hard Assets & Cashflow</a>:
-        Wie Mining mit Energie, Shipping, Midstream, REITs & BDCs zusammenspielt.
-      </li>
-      <li>
-        <a href="/hard-asset-guide/">Hard Asset Guide</a>:
-        Überblick über alle Hard-Asset-Sektoren und ihre Rolle im Superzyklus.
-      </li>
-    </ul>
+  </div>
 
-    <p>
-      Typische Rolle von Mining im Depot:
-    </p>
-    <ul>
-      <li>Exposure auf Rohstoffpreise (Kupfer, Eisenerz, Kohle, Base Metals)</li>
-      <li>Dividenden- & Sonderdividenden-Potenzial in Hochpreisphasen</li>
-      <li>Rebalancing-Quelle: Gewinne aus Übertreibungen in andere Cashflow-Segmente umschichten</li>
-    </ul>
-  </section>
+  <p style="margin-top:18px;">
+    Weitere Artikel findest du im <a href="/blog/index.html" style="color:var(--gold);">kompletten Blog-Archiv</a>.
+  </p>
+</section>
 
-  <!-- === Tools & Research === -->
-  <section id="tools" class="page-section">
-    <h2>Tools & Research für Mining Aktien</h2>
-    <p>
-      Für Fundamentaldaten, Cashflow-Analysen und Bewertungs-Checks nutze ich
-      eine Kombination aus Profi-Tools und eigenem Research.
-    </p>
+<!-- ZYKLUS -->
+<section class="section">
+  <h2>Rohstoff-Superzyklus 2025–2030</h2>
+  <p>
+    Mining hängt direkt an Rohstoffzyklen wie Kupfer, Eisenerz, Kohle und Uran.
+    Das große Bild findest du hier:
+  </p>
 
-    <ul>
-      <li>
-        <a href="/toolbox.html">MB Capital Strategies Toolbox</a> –
-        alle Broker & Analysetools, die ich für Hard Assets und Mining nutze.
-      </li>
-      <li>
-        <a href="/blog/index.html">Blog – alle aktuellen Analysen</a>:
-        Mining, Shipping, Pipelines, High-Yield & mehr.
-      </li>
-    </ul>
+  <p style="margin-top:12px;">
+    ➜ <a href="/blog/rohstoff-superzyklus-2025.html" style="color:var(--gold);">
+      Rohstoff-Superzyklus 2025 – Kupfer, Uran, Öl & Gas
+    </a>
+  </p>
+</section>
 
-    <p>
-      Wichtige Begriffe wie Free Cashflow, CAPEX, ROIC, Reserven, All-in Sustaining Costs
-      und Cash-Cost-Struktur erkläre ich im <a href="/glossar/">Glossar</a> – ideal,
-      um Fachbegriffe aus meinen Mining-Analysen schnell nachzuschlagen.
-    </p>
-  </section>
+<!-- STRATEGIE -->
+<section class="section">
+  <h2>Mining in meiner Depot-Strategie</h2>
+  <p>Mining ist bei mir ein klar definierter Baustein: Cashflow + Zyklen + Dividenden.</p>
+
+  <ul style="line-height:1.8;">
+    <li><a href="/depot-strategie/" style="color:var(--gold);">Depot-Strategie – Hard Assets</a></li>
+    <li><a href="/hard-asset-guide/" style="color:var(--gold);">Hard Asset Guide</a></li>
+  </ul>
+</section>
+
+<!-- TOOLS -->
+<section class="section">
+  <h2>Tools für Mining-Analysen</h2>
+  <p>Für Cashflow-Analysen & Bewertung nutze ich u.a.:</p>
+
+  <ul style="line-height:1.8;">
+    <li><a href="/toolbox.html" style="color:var(--gold);">MB Toolbox</a></li>
+    <li><a href="/glossar/" style="color:var(--gold);">Glossar – wichtige Kennzahlen</a></li>
+  </ul>
+</section>
+
+</div>
+
+<footer style="
+  margin-top:60px;
+  text-align:center;
+  padding:40px 15px;
+  color:#9aa6c0;
+  font-size:0.9rem;
+  background:#0d0f13;
+  border-top:1px solid rgba(212,175,55,0.25);
+">
+  © 2025 MB Capital Strategies ·
+  <a href="/impressum.html" style="color:var(--gold);">Impressum</a> ·
+  <a href="/datenschutz.html" style="color:var(--gold);">Datenschutz</a> ·
+  <a href="/glossar/" style="color:var(--gold);">Glossar</a>
+</footer>
+
+<script>
+const dropdown=document.querySelector(".dropdown");
+const btn=document.querySelector(".dropdown-btn");
+if(dropdown&&btn){
+  btn.addEventListener("click",()=>{
+    if(window.innerWidth<700){
+      dropdown.classList.toggle("open");
+    }
+  });
+}
+</script>
 
 </body>
 </html>
