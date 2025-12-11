@@ -47,5 +47,11 @@
   <changefreq>weekly</changefreq>
   <priority>0.90</priority>
 </url>
+
+  <url>
+  <loc>https://mbcapitalstrategies.com/glossar/shipping-cluster.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
   
 </sitemapindex>
