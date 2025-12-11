@@ -28,5 +28,24 @@
    <sitemap>
     <loc>https://mbcapitalstrategies.com/sitemap-investing.xml</loc>
   </sitemap>
+
+  <!-- Kategorien -->
+<url>
+  <loc>https://mbcapitalstrategies.com/kategorien/mining-aktien.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://mbcapitalstrategies.com/kategorien/high-yield-aktien.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://mbcapitalstrategies.com/kategorien/rohstoff-superzyklus-2025-2030.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
   
 </sitemapindex>
