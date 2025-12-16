@@ -10,7 +10,11 @@
   </sitemap>
 
   <sitemap>
-    <loc>https://mbcapitalstrategies.com/sitemap-tools.xml</loc>
+    <loc>https://mbcapitalstrategies.com/sitemap-investing.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://mbcapitalstrategies.com/sitemap-kategorien.xml</loc>
   </sitemap>
 
   <sitemap>
@@ -18,40 +22,15 @@
   </sitemap>
 
   <sitemap>
-    <loc>https://mbcapitalstrategies.com/sitemap-travel.xml</loc>
+    <loc>https://mbcapitalstrategies.com/sitemap-tools.xml</loc>
   </sitemap>
 
   <sitemap>
     <loc>https://mbcapitalstrategies.com/sitemap-video.xml</loc>
   </sitemap>
 
-   <sitemap>
-    <loc>https://mbcapitalstrategies.com/sitemap-investing.xml</loc>
+  <sitemap>
+    <loc>https://mbcapitalstrategies.com/sitemap-travel.xml</loc>
   </sitemap>
 
-  <!-- Kategorien -->
-<url>
-  <loc>https://mbcapitalstrategies.com/kategorien/mining-aktien.html</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
-
-<url>
-  <loc>https://mbcapitalstrategies.com/kategorien/high-yield-aktien.html</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.85</priority>
-</url>
-
-<url>
-  <loc>https://mbcapitalstrategies.com/kategorien/rohstoff-superzyklus-2025-2030.html</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.90</priority>
-</url>
-
-  <url>
-  <loc>https://mbcapitalstrategies.com/glossar/shipping-cluster.html</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
-</url>
-  
 </sitemapindex>
