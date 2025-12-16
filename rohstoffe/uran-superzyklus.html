@@ -1,271 +1,514 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Uran Superzyklus 2025–2035 – Kernenergie, Angebotsknappheit & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Uran Superzyklus ab 2026: Renaissance der Kernenergie, SMRs & strukturelle Angebotsknappheit. Warum Uran einer der kritischsten Rohstoffe des Superzyklus ist – Strategie ohne Anlageberatung.">
+  <title>Kupfer Superzyklus ab 2026 – Nachfrage, Angebot & Strategie | MB Capital Strategies</title>
+  <meta name="description" content="Kupfer Superzyklus: Energiewende, Stromnetze & KI treiben die Nachfrage – Unterinvestition & lange Minenlaufzeiten begrenzen das Angebot. Meine Strategie: Cashflow & Produzenten statt Explorer." />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/rohstoffe/kupfer-superzyklus.html">
 
-<link rel="canonical" href="https://mbcapitalstrategies.com/rohstoffe/uran-superzyklus.html">
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
 
-<meta property="og:title" content="Uran Superzyklus – Kernenergie & Angebotsknappheit">
-<meta property="og:description" content="Warum Uran ab 2026 strukturell knapp wird – Kernenergie, SMRs & Unterinvestition.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://mbcapitalstrategies.com/rohstoffe/uran-superzyklus.html">
-<meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kupfer Superzyklus ab 2026 – Nachfrage, Angebot & Strategie">
+  <meta property="og:description" content="Energiewende, Netze & KI treffen auf Unterinvestition. Warum Kupfer ab 2026 strukturell knapp werden kann – plus Cashflow-Strategie.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/rohstoffe/kupfer-superzyklus.html">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/rohstoffnachfrage.jpeg">
 
-<style>
-:root{
-  --gold:#d4af37;
-  --bg:#0f1115;
-  --bg-soft:#151821;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kupfer Superzyklus ab 2026 – Strategie & Daten">
+  <meta name="twitter:description" content="Nachfrage boomt, Angebot träge – mein Kupfer-Setup mit Hard Assets & Cashflow.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/rohstoffnachfrage.jpeg">
 
-body{
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <!-- Fonts (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-.page{
-  max-width:1100px;
-  margin:0 auto;
-  padding:40px 16px 80px;
-}
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Kupfer Superzyklus ab 2026 – Nachfrage, Angebot & Strategie",
+    "description":"Energiewende, Stromnetze & KI treiben Kupfer-Nachfrage. Unterinvestition & lange Minenlaufzeiten begrenzen Angebot. Strategie: Cashflow & Produzenten statt Explorer.",
+    "author":{"@type":"Person","name":"Marco Bozem"},
+    "publisher":{"@type":"Organization","name":"MB Capital Strategies"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://mbcapitalstrategies.com/rohstoffe/kupfer-superzyklus.html"}
+  }
+  </script>
 
-h1,h2,h3{color:var(--gold)}
-p{color:#cfd6e6;line-height:1.7}
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-soft:#e0bd55;
+      --bg:#0f1115;
+      --bg-soft:#151821;
+      --bg-card:#1a1f2b;
+      --text:#f5f6fa;
+      --text-2:#9aa6c0;
+    }
 
-.hero{
-  display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:40px;
-  align-items:center;
-  margin-bottom:60px;
-}
-.hero img{
-  width:220px;
-  border-radius:50%;
-  box-shadow:0 0 25px rgba(212,175,55,.45);
-}
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      background:#0f1115 url('/background.jpg') no-repeat center top;
+      background-size:cover;
+      background-attachment:fixed;
+      color:var(--text);
+    }
 
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 22px;
-  background:var(--gold);
-  color:#000;
-  font-weight:700;
-  border-radius:999px;
-  text-decoration:none;
-}
+    .page{
+      max-width:1150px;
+      margin:0 auto;
+      padding:0 16px 60px;
+    }
 
-.section{
-  background:var(--bg-soft);
-  padding:28px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.06);
-  margin-bottom:40px;
-}
+    /* HEADER (wie Startseite) */
+    header.header{
+      background:var(--bg-soft);
+      border-bottom:1px solid rgba(212,175,55,.28);
+      padding:16px 12px;
+      position:sticky;
+      top:0;
+      z-index:30;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:22px;
+    }
+    header.header a{
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.98rem;
+    }
+    header.header a:hover{ text-decoration:underline; }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-}
+    .dropdown{ position:relative; }
+    .dropdown-btn{
+      background:none;
+      border:none;
+      color:var(--gold);
+      font-weight:600;
+      cursor:pointer;
+      padding:4px 8px;
+      font-size:0.98rem;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:var(--bg);
+      min-width:230px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:10px 0;
+      top:32px;
+      left:0;
+      z-index:1000;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 16px;
+      color:var(--text);
+      text-decoration:none;
+      font-size:0.95rem;
+    }
+    .dropdown-content a:hover{
+      background:#1d2330;
+      color:var(--gold);
+    }
+    @media(min-width:700px){
+      .dropdown:hover .dropdown-content{ display:block; }
+    }
+    @media(max-width:699px){
+      .dropdown.open .dropdown-content{ display:block; }
+    }
 
-.card{
-  background:#1a1f2b;
-  padding:22px;
-  border-radius:16px;
-  border:1px solid rgba(212,175,55,.3);
-}
+    /* HERO */
+    .hero{
+      padding:40px 0 18px;
+    }
+    .hero-eyebrow{
+      color:var(--text-2);
+      font-size:0.9rem;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+    .hero h1{
+      font-size:2.35rem;
+      color:var(--gold);
+      margin:10px 0 10px;
+      line-height:1.15;
+    }
+    .hero-sub{
+      color:#cfd6e6;
+      max-width:820px;
+      font-size:1.05rem;
+      line-height:1.7;
+      margin:0 0 10px;
+    }
 
-.info-box{
-  background:#151821;
-  border:1px solid rgba(212,175,55,.4);
-  border-radius:14px;
-  padding:16px;
-  margin:24px 0;
-}
-.info-box a{
-  color:var(--gold);
-  font-weight:600;
-  text-decoration:none;
-}
-.info-box a:hover{text-decoration:underline;}
-</style>
+    .crumbs{
+      margin-top:12px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .crumbs a{
+      color:var(--gold-soft);
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    .crumbs a:hover{ text-decoration:underline; }
+
+    /* TOC */
+    .toc{
+      margin:22px 0 28px;
+      padding:16px 18px;
+      border-radius:14px;
+      background:rgba(15,17,21,.9);
+      border:1px solid rgba(212,175,55,.3);
+      font-size:0.95rem;
+    }
+    .toc strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--gold-soft);
+    }
+    .toc a{
+      color:var(--text-2);
+      text-decoration:none;
+      display:block;
+      padding:4px 0;
+    }
+    .toc a:hover{
+      color:var(--gold);
+      text-decoration:underline;
+    }
+
+    h2{
+      color:var(--gold);
+      margin-top:38px;
+      margin-bottom:10px;
+      font-size:1.7rem;
+    }
+    h3{
+      color:var(--gold-soft);
+      margin-top:18px;
+      margin-bottom:8px;
+      font-size:1.15rem;
+    }
+    p{
+      color:#cfd6e6;
+      line-height:1.75;
+      font-size:0.98rem;
+      margin:0 0 12px;
+    }
+    ul{
+      padding-left:20px;
+      margin:8px 0 16px;
+    }
+    li{
+      color:#cfd6e6;
+      margin-bottom:6px;
+      line-height:1.6;
+    }
+
+    .section{ margin-top:34px; }
+
+    .highlight-box{
+      background:#151821;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.35);
+      padding:16px 18px;
+      margin:18px 0;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+    }
+    @media(max-width:900px){
+      .two-col{ grid-template-columns:1fr; }
+    }
+
+    .hero-photo{
+      width:100%;
+      max-width:520px;
+      border-radius:16px;
+      border:1px solid rgba(212,175,55,.25);
+      box-shadow:0 8px 20px rgba(0,0,0,.45);
+      display:block;
+      margin:10px auto 0;
+    }
+
+    .note{
+      font-size:0.88rem;
+      color:var(--text-2);
+      margin-top:6px;
+    }
+
+    .cta{
+      margin:22px 0 10px;
+      padding:16px 18px;
+      border-radius:16px;
+      background:#171b24;
+      border:1px solid rgba(212,175,55,.45);
+    }
+    .cta a{
+      color:var(--gold-soft);
+      font-weight:700;
+      text-decoration:none;
+    }
+    .cta a:hover{ text-decoration:underline; }
+
+    details{
+      background:rgba(15,17,21,.85);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:10px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:var(--gold-soft);
+    }
+
+    footer{
+      margin-top:60px;
+      text-align:center;
+      padding:40px 15px 20px;
+      font-size:0.88rem;
+      color:var(--text-2);
+      background:#0d0f13;
+      border-top:1px solid rgba(212,175,55,.3);
+    }
+    footer a{
+      color:var(--gold-soft);
+      text-decoration:none;
+    }
+  </style>
 </head>
 
 <body>
 
-<main class="page">
+<header class="header">
+  <a href="/">🏠 Startseite</a>
+  <a href="/depot-strategie/">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
-    <h1>Uran Superzyklus</h1>
+  <div class="dropdown">
+    <button class="dropdown-btn">📘 Themen ▾</button>
+    <div class="dropdown-content">
+      <a href="/shipping/">🚢 Shipping</a>
+      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/energie/">⚡ Energie</a>
+      <hr>
+      <a href="/kategorien/mining-aktien.html">⛏️ Mining Aktien</a>
+      <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+      <a href="/kategorien/rohstoff-superzyklus-2025-2030.html">🌋 Rohstoff Superzyklus</a>
+      <hr>
+      <a href="/glossar/shipping-cluster.html">📘 Shipping Glossar</a>
+      <a href="/high-yield/">💰 High Yield Dividenden</a>
+      <hr>
+      <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a>
+      <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a>
+      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a>
+    </div>
+  </div>
+
+  <a href="/blog/index.html">📰 Blog</a>
+  <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/investing-analysen.html">📑 Investing Analysen</a>
+  <a href="/glossar/">📗 Glossar</a>
+</header>
+
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-eyebrow">Rohstoffe · Kupfer · Superzyklus</div>
+    <h1>Kupfer Superzyklus ab 2026</h1>
+    <p class="hero-sub">
+      Kupfer ist das Rückgrat der Energiewende, der Elektrifizierung und der globalen KI-Infrastruktur.
+      Ohne Kupfer keine Stromnetze, keine E-Autos, keine Rechenzentren. Gleichzeitig wurde das Angebot
+      über Jahre vernachlässigt: Unterinvestition + lange Minenlaufzeiten = strukturelles Engpass-Risiko.
+    </p>
+
+    <div class="crumbs">
+      <a href="/kategorien/rohstoff-superzyklus-2025-2030.html">🌋 Zum Superzyklus-Hub</a>
+      <a href="/kategorien/mining-aktien.html">⛏️ Mining Aktien</a>
+    </div>
+
+    <img class="hero-photo" src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
+    <div class="note">Hard Assets · Cashflow · Dividenden – MB Capital Strategies</div>
+  </section>
+
+  <nav class="toc">
+    <strong>Inhalt</strong>
+    <a href="#warum">1. Warum Kupfer der Schlüsselrohstoff ist</a>
+    <a href="#nachfrage">2. Nachfrage: Energiewende, Netze & KI</a>
+    <a href="#angebot">3. Angebot: Unterinvestition & Minenlaufzeiten</a>
+    <a href="#ab2026">4. Warum ab 2026 kritisch werden könnte</a>
+    <a href="#strategie">5. Meine Kupfer-Strategie</a>
+    <a href="#faq">6. FAQ</a>
+  </nav>
+
+  <section id="warum" class="section">
+    <h2>1. Warum Kupfer der Schlüsselrohstoff des Superzyklus ist</h2>
     <p>
-      Uran steht im Zentrum der <strong>globalen Rückkehr zur Kernenergie</strong>.
-      Klimaziele, Versorgungssicherheit und der explodierende Strombedarf durch
-      Rechenzentren & KI machen Kernkraft wieder strategisch relevant.
+      Kupfer ist überall dort unverzichtbar, wo Strom fließt. Während viele Rohstoffe substituierbar sind,
+      gilt: <strong>Ohne Kupfer keine Energiewende.</strong>
     </p>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>E-Mobilität</strong> benötigt deutlich mehr Kupfer als Verbrenner (Kabelbäume, Motoren, Ladeinfrastruktur).</li>
+        <li><strong>Stromnetze</strong> müssen massiv ausgebaut werden (Verteilnetze, Umspannwerke, Hochspannung).</li>
+        <li><strong>Rechenzentren & KI</strong> treiben den Strombedarf – indirekter Kupfer-Turbo.</li>
+      </ul>
+      <p style="margin:0;">
+        Kontext: Kupfer ist einer der wichtigsten Treiber im <a href="/kategorien/rohstoff-superzyklus-2025-2030.html" style="color:var(--gold-soft); font-weight:700; text-decoration:none;">Rohstoff Superzyklus 2025–2030</a>.
+      </p>
+    </div>
+  </section>
+
+  <section id="nachfrage" class="section">
+    <h2>2. Nachfrage: Energiewende, Netze & KI</h2>
+
+    <h3>⚡ Stromnetze</h3>
+    <p>Netzausbau, Speicher & Hochspannung sind extrem kupferintensiv – die Welt baut “Strom-Autobahnen”.</p>
+
+    <h3>🚗 E-Mobilität</h3>
+    <p>E-Autos, Ladeinfrastruktur & Batteriefabriken treiben den Bedarf – plus die komplette Zulieferkette.</p>
+
+    <h3>🧠 KI & Rechenzentren</h3>
+    <p>Explodierender Stromverbrauch = mehr Netze, mehr Kühlung, mehr Infrastruktur – und damit mehr Kupfer.</p>
+  </section>
+
+  <section id="angebot" class="section">
+    <h2>3. Angebot: Unterinvestition & Minenlaufzeiten</h2>
+    <div class="two-col">
+      <div>
+        <p>
+          Neue Kupferminen brauchen häufig <strong>10–15 Jahre</strong>. Genehmigungen, ESG,
+          sinkende Erzgrade und politische Risiken bremsen zusätzlich.
+        </p>
+        <ul>
+          <li>Historische Unterinvestition</li>
+          <li>Politische & regulatorische Hürden</li>
+          <li>Angebot reagiert extrem träge</li>
+        </ul>
+        <p>
+          Genau deshalb entstehen Engpässe nicht “über Nacht” – aber wenn sie da sind,
+          laufen Preise und Cashflows oft über Jahre.
+        </p>
+      </div>
+      <div class="highlight-box">
+        <p style="margin:0 0 10px;"><strong style="color:var(--gold-soft);">Merksatz:</strong> Nachfrage kann schnell explodieren – Angebot nicht.</p>
+        <p style="margin:0;">Das ist das Setup, das einen Superzyklus überhaupt möglich macht.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ab2026" class="section">
+    <h2>4. Warum 2026+ kritisch werden könnte</h2>
     <p>
-      Gleichzeitig ist der Uranmarkt einer der <strong>am stärksten unterinvestierten Rohstoffmärkte</strong>.
-      Für mich ist Uran ein klarer Profiteur des <strong>Rohstoff Superzyklus ab 2026</strong>.
+      Wenn Nachfrage weiterzieht und neue Projekte nicht rechtzeitig ans Netz gehen,
+      werden die sichtbarsten Angebotslücken oft “mit Verzögerung” spürbar.
+      Ich erwarte die spannendste Phase <strong>ab Mitte der Dekade</strong>.
     </p>
+    <div class="highlight-box">
+      <p style="margin:0;">
+        🎯 <strong style="color:var(--gold-soft);">Taktik:</strong>
+        Akkumulation in schwachen Phasen, Cashflow in starken Phasen.
+      </p>
+    </div>
+  </section>
 
-    <a href="/kategorien/rohstoff-superzyklus-2025-2030.html" class="btn">🌋 Zum Superzyklus-Hub</a>
-    <a href="/kategorien/mining-aktien.html" class="btn">⛏️ Mining Aktien</a>
-  </div>
+  <section id="strategie" class="section">
+    <h2>5. Meine Kupfer-Strategie</h2>
+    <ul>
+      <li><strong>Etablierte Produzenten</strong> statt Explorer (besseres Chancen/Risiko, echte Cashflows).</li>
+      <li><strong>Royalties & Infrastruktur</strong> als Stabilitätsanker (wenn passend).</li>
+      <li><strong>Dividenden & Free Cashflow</strong> priorisieren – Superzyklus + Cashflow ist die Kombi.</li>
+    </ul>
 
-  <div style="text-align:center">
-    <img src="/marco.jpg" alt="Marco Bozem – Uran & Hard Assets">
-    <p style="color:var(--muted);margin-top:10px;font-size:.9rem">
-      Marco Bozem · Hard Assets · Cashflow
-    </p>
-  </div>
-</section>
-
-<!-- WARUM URAN -->
-<section class="section">
-  <h2>Warum Uran ein Schlüsselrohstoff des Superzyklus ist</h2>
-  <p>
-    Kernenergie ist <strong>CO₂-arm, grundlastfähig und skalierbar</strong>.
-    Genau deshalb erlebt sie weltweit ein Comeback – unabhängig von politischem Framing.
-  </p>
-
-  <ul>
-    <li>Neue Kernkraftwerke weltweit (USA, China, Indien, Frankreich)</li>
-    <li>Laufzeitverlängerungen bestehender Reaktoren</li>
-    <li>SMRs (Small Modular Reactors) als Gamechanger</li>
-  </ul>
-
-  <div class="info-box">
-    📘 Kontext:
-    Uran ist ein Kernbaustein des
-    <a href="/kategorien/rohstoff-superzyklus-2025-2030.html">Rohstoff Superzyklus 2025–2030</a>.
-  </div>
-</section>
-
-<!-- NACHFRAGE -->
-<section class="section">
-  <h2>Nachfrage: Kernenergie, SMRs & Stromhunger</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>⚡ Grundlast & Versorgung</h3>
-      <p>
-        Kernenergie liefert stabile Grundlast –
-        unverzichtbar für Industrienationen & Netze.
+    <div class="cta">
+      <p style="margin:0 0 8px;"><strong style="color:var(--gold-soft);">Weiterklicken:</strong></p>
+      <p style="margin:0;">
+        👉 <a href="/kategorien/mining-aktien.html">Mining-Hub</a> ·
+        👉 <a href="/depot-strategie/">Depot-Strategie</a> ·
+        👉 <a href="/shipping/">Shipping-Hub</a>
       </p>
     </div>
 
-    <div class="card">
-      <h3>🧠 KI & Rechenzentren</h3>
-      <p>
-        Der Strombedarf von KI & Cloud wächst exponentiell –
-        erneuerbare Energien allein reichen nicht.
+    <p class="note">⚠️ Keine Anlageberatung. Eigene Meinung & Analyse.</p>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>6. FAQ – Kupfer Superzyklus</h2>
+
+    <details>
+      <summary>Ist Kupfer nicht schon teuer?</summary>
+      <p style="margin-top:10px;">
+        Möglich – aber Zyklen sind nicht linear. Entscheidend ist, ob Nachfrage strukturell steigt und Angebot nicht nachkommt.
       </p>
-    </div>
+    </details>
 
-    <div class="card">
-      <h3>🔬 SMR-Technologie</h3>
-      <p>
-        Small Modular Reactors senken Kosten, Bauzeiten
-        und erhöhen die Akzeptanz von Kernenergie.
+    <details>
+      <summary>Warum keine Explorer?</summary>
+      <p style="margin-top:10px;">
+        Explorer sind binär & kapitalintensiv. Ich bevorzuge Cashflow, Bilanzstärke und Ausschüttungsfähigkeit.
       </p>
-    </div>
-  </div>
-</section>
+    </details>
 
-<!-- ANGEBOT -->
-<section class="section">
-  <h2>Angebot: strukturelle Knappheit</h2>
-  <p>
-    Der Uranmarkt leidet unter massiver Unterinvestition:
-    Nach Fukushima wurden Minen geschlossen,
-    Exploration eingestellt und Kapazitäten abgebaut.
-  </p>
+    <details>
+      <summary>Was hat das mit Shipping zu tun?</summary>
+      <p style="margin-top:10px;">
+        Rohstoffe müssen transportiert werden – Nachfrage nach Metallen kann Frachtraten und Flottenauslastung indirekt stützen.
+      </p>
+    </details>
+  </section>
 
-  <ul>
-    <li>Viele Minen sind stillgelegt oder unterproduktiv</li>
-    <li>Neue Projekte brauchen Jahre bis zur Förderung</li>
-    <li>Staatliche Lagerbestände schrumpfen</li>
-  </ul>
+</div>
 
-  <p>
-    Ergebnis: <strong>Die Angebotsseite reagiert extrem träge</strong> –
-    ein klassisches Setup für einen mehrjährigen Superzyklus.
-  </p>
-</section>
+<footer>
+  © 2025 MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a> ·
+  <a href="/glossar/">Glossar</a>
+  <br><br>
+  <span style="font-size:0.8rem; color:#888;">
+    Einige Links können Affiliate-Links enthalten. Für dich entstehen keine Mehrkosten, du unterstützt damit meine Arbeit.
+  </span>
+</footer>
 
-<!-- ZEITFENSTER -->
-<section class="section">
-  <h2>Warum 2026+ entscheidend wird</h2>
-  <p>
-    Viele neue Reaktoren gehen ab Mitte der Dekade ans Netz,
-    während neue Minen noch im Genehmigungsprozess stecken.
-    Diese zeitliche Lücke ist der Kern des Uran-Setups.
-  </p>
-
-  <div class="info-box">
-    🔍 Mein Ansatz:
-    Antizyklisch positionieren – Cashflow & Qualität priorisieren.
-  </div>
-</section>
-
-<!-- STRATEGIE -->
-<section class="section">
-  <h2>Meine Uran-Strategie</h2>
-  <p>
-    Uran ist volatil und politisch sensibel.
-    Deshalb setze ich nicht auf Hype, sondern auf Struktur.
-  </p>
-
-  <ul>
-    <li>Etablierte Produzenten & Projektentwickler</li>
-    <li>Langfristige Nachfrage statt kurzfristiger Preiswetten</li>
-    <li>Risikobegrenzung durch Gesamtportfolio</li>
-  </ul>
-
-  <p>
-    Wie Uran in mein Gesamtbild passt, zeige ich in der
-    <a href="/depot-strategie/">Depot-Strategie</a>
-    und im
-    <a href="/hard-asset-guide/">Hard Asset Guide</a>.
-  </p>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <h2>FAQ – Uran Superzyklus</h2>
-
-  <h3>Ist Uran nicht politisch riskant?</h3>
-  <p>
-    Ja – genau deshalb ist das Angebot begrenzt.
-    Politische Risiken sind Teil der Knappheit.
-  </p>
-
-  <h3>Warum kein All-in?</h3>
-  <p>
-    Uran ist zyklisch und volatil.
-    Ich nutze es als Baustein, nicht als Wette.
-  </p>
-
-  <h3>Wie hängt Uran mit dem Superzyklus zusammen?</h3>
-  <p>
-    Ohne stabile Energieversorgung scheitern
-    Energiewende, KI & Industrie.
-    Uran ist dafür ein Schlüsselrohstoff.
-  </p>
-</section>
-
-</main>
+<script>
+  // Mobile Dropdown
+  const dropdown = document.querySelector(".dropdown");
+  const btn = document.querySelector(".dropdown-btn");
+  if (dropdown && btn) {
+    btn.addEventListener("click", () => {
+      if (window.innerWidth < 700) dropdown.classList.toggle("open");
+    });
+  }
+</script>
 
 </body>
 </html>
