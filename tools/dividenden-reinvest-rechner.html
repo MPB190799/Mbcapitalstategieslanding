@@ -3,274 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dividenden-Reinvest-Rechner (DRIP) – MB Capital Strategies</title>
-<meta name="description" content="Simuliere, wie sich dein Depot entwickelt, wenn du alle Dividenden wieder anlegst (DRIP).">
+
+<title>Dividenden-Reinvest-Rechner (DRIP) – Zinseszins & Cashflow | MB Capital Strategies</title>
+<meta name="description" content="Dividenden-Reinvest-Rechner (DRIP): Berechne, wie stark dein Depot durch Wiederanlage aller Dividenden wächst. Zinseszins-Effekt für Dividenden- & Cashflow-Investoren.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
 <style>
+:root{
+  --gold:#d4af37;
+  --gold-soft:#e0bd55;
+  --bg:#0f1115;
+  --bg-soft:#151821;
+  --bg-card:#1a1f2b;
+  --text:#f5f6fa;
+  --muted:#9aa6c0;
+}
+
+*{box-sizing:border-box;}
 body{
-  background:#0f1115;
-  color:#f5f6fa;
-  font-family:'Montserrat',sans-serif;
   margin:0;
-  padding:20px;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Montserrat',sans-serif;
 }
-.container{max-width:650px;margin:0 auto;}
-h1{color:#d4af37;text-align:center;}
+
+/* ===== HEADER ===== */
+.topbar{
+  background:linear-gradient(180deg,#11141b,#0b0d12);
+  border-bottom:1px solid rgba(212,175,55,.25);
+  padding:10px 18px;
+}
+.topnav{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-size:.92em;
+}
+.nav-item{
+  color:#f5f6fa;
+  font-weight:600;
+  text-decoration:none;
+  position:relative;
+}
+.nav-item:hover{color:var(--gold);}
+
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:26px;
+  left:0;
+  background:#12151d;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:10px;
+  padding:10px;
+  min-width:170px;
+  z-index:100;
+}
+.dropdown-menu a{
+  display:block;
+  padding:6px 10px;
+  color:#fff;
+  font-size:.9em;
+}
+.dropdown-menu a:hover{
+  background:#0f1115;
+  border-radius:6px;
+  color:var(--gold);
+}
+.dropdown:hover .dropdown-menu{display:block;}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:700px;
+  margin:35px auto;
+  padding:0 20px;
+}
+
+h1{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
 .card{
-  background:#151821;
-  border-radius:12px;
+  background:var(--bg-soft);
+  border-radius:14px;
   border:1px solid rgba(212,175,55,.3);
-  padding:20px;
-  margin-top:20px;
+  padding:22px;
 }
-label{display:block;margin:10px 0 5px;}
+
+label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:600;
+}
+
 input{
   width:100%;
-  padding:10px;
+  padding:12px;
   border-radius:8px;
   border:1px solid #444;
   background:#0f1115;
   color:#fff;
 }
+
 button{
   width:100%;
-  padding:12px;
-  margin-top:15px;
+  padding:14px;
+  margin-top:18px;
   border:none;
-  border-radius:8px;
-  background:#d4af37;
-  color:#0f1115;
+  border-radius:999px;
+  background:var(--gold);
+  color:#000;
   font-size:1.05em;
-  font-weight:600;
+  font-weight:700;
   cursor:pointer;
 }
-button:hover{background:#e0bd55;}
+button:hover{background:var(--gold-soft);}
+
 .result{
   margin-top:20px;
-  padding:15px;
-  background:#1a1f2b;
-  border-left:4px solid #d4af37;
-  border-radius:8px;
+  padding:18px;
+  background:var(--bg-card);
+  border-left:4px solid var(--gold);
+  border-radius:10px;
+  line-height:1.7;
 }
-small{color:#9aa6c0;}
 
-.ad-box {
-  margin:25px 0;
+.ad-box{
+  margin:22px 0;
   text-align:center;
 }
+
+small{color:var(--muted);}
+
+section{
+  margin-top:45px;
+  padding:26px;
+  background:var(--bg-soft);
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:14px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  margin-top:60px;
+  padding:30px 20px;
+  text-align:center;
+  font-size:.9em;
+  color:var(--muted);
+  border-top:1px solid rgba(212,175,55,.25);
+}
+.site-footer a{color:var(--gold);}
 </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>🔁 Dividenden-Reinvest-Rechner (DRIP)</h1>
+<!-- HEADER -->
+<header class="topbar">
+  <nav class="topnav">
+    <a href="/" class="nav-item">🏠 Startseite</a>
+    <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
 
-  <!-- ===== TOP AD ===== -->
-  <div class="ad-box">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7097302643579933"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
-  <div class="card">
-    <p><small>Alle Dividenden werden automatisch wieder angelegt. Einfaches Modell mit konstanter Dividendenrendite.</small></p>
-
-    <label>Startkapital (€)</label>
-    <input type="number" id="start" placeholder="z. B. 10.000">
-
-    <label>Dividendenrendite (% p.a.)</label>
-    <input type="number" id="yield" placeholder="z. B. 8">
-
-    <label>Anlagehorizont (Jahre)</label>
-    <input type="number" id="years" placeholder="z. B. 15">
-
-    <button onclick="calcDRIP()">Berechnen</button>
-
-    <!-- ===== MID AD ===== -->
-    <div class="ad-box">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7097302643579933"
-           data-ad-slot="9876543210"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+    <div class="nav-item dropdown">
+      📁 Themen ▾
+      <div class="dropdown-menu">
+        <a href="/kategorien/energie.html">⚡ Energie</a>
+        <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
+        <a href="/kategorien/shipping.html">🚢 Shipping</a>
+      </div>
     </div>
 
-    <div id="output" class="result" style="display:none;"></div>
-  </div>
+    <a href="/blog/" class="nav-item">📰 Blog</a>
+    <a href="/tools/" class="nav-item">🧰 Toolbox</a>
+    <a href="/investing-analysen.html" class="nav-item">📈 Investing Analysen</a>
+    <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  </nav>
+</header>
 
-  <!-- ===== BOTTOM AD ===== -->
-  <div class="ad-box">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7097302643579933"
-         data-ad-slot="1122334455"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
+<!-- CONTENT -->
+<div class="container">
+
+<h1>🔁 Dividenden-Reinvest-Rechner (DRIP)</h1>
+
+<div class="ad-box">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7097302643579933"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="card">
+<p><small>
+Simuliere den echten <strong>Zinseszinseffekt</strong>, wenn du alle Dividenden konsequent wieder anlegst (DRIP).
+</small></p>
+
+<label>Startkapital (€)</label>
+<input type="number" id="start" placeholder="z. B. 10.000">
+
+<label>Dividendenrendite (% p.a.)</label>
+<input type="number" id="yield" placeholder="z. B. 8">
+
+<label>Anlagehorizont (Jahre)</label>
+<input type="number" id="years" placeholder="z. B. 15">
+
+<button onclick="calcDRIP()">Berechnen</button>
+
+<div class="ad-box">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7097302643579933"
+       data-ad-slot="9876543210"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div id="output" class="result" style="display:none;"></div>
+</div>
+
+<!-- SEO CONTENT -->
+<section>
+<h2>Was ist ein Dividenden-Reinvest-Rechner (DRIP)?</h2>
+<p>
+Der Dividenden-Reinvest-Rechner zeigt dir, wie stark dein Depot wächst,
+wenn <strong>alle Ausschüttungen automatisch wieder investiert</strong> werden.
+Das ist der Kern jeder langfristigen Cashflow-Strategie.
+</p>
+
+<h3>Warum ist DRIP so mächtig?</h3>
+<ul>
+<li>Zinseszinseffekt auf Dividenden</li>
+<li>Exponentielles Depotwachstum</li>
+<li>Mehr Anteile → mehr Cashflow</li>
+<li>Ideal für High-Yield-Strategien</li>
+</ul>
+
+<h3>Für wen ist DRIP sinnvoll?</h3>
+<ul>
+<li>Dividenden- & Cashflow-Investoren</li>
+<li>ETF-Anleger (Ausschütter & Thesaurierer)</li>
+<li>FIRE-Strategen</li>
+<li>Langfristige Buy-&-Hold-Investoren</li>
+</ul>
+</section>
+
+<section>
+<h2>Häufige Fragen zum Dividenden-Reinvest (DRIP)</h2>
+
+<h3>Was bedeutet DRIP?</h3>
+<p>
+DRIP steht für „Dividend Reinvestment Plan“. Dividenden werden automatisch wieder angelegt,
+anstatt ausgezahlt zu werden.
+</p>
+
+<h3>Warum beschleunigt Reinvest mein Depot?</h3>
+<p>
+Weil jede reinvestierte Dividende neue Anteile erzeugt,
+die wiederum Dividenden zahlen – ein exponentieller Effekt.
+</p>
+
+<h3>Welche Renditen sind realistisch?</h3>
+<p>
+3–6 % für defensive Titel, 6–10 % für High-Yield-Sektoren wie Shipping,
+Midstream oder BDCs – entscheidend ist die Nachhaltigkeit.
+</p>
+
+<h3>Wie lange sollte man DRIP nutzen?</h3>
+<p>
+Je länger, desto stärker. Die größten Effekte zeigen sich meist ab 10–20 Jahren.
+</p>
+</section>
 
 </div>
 
+<!-- FOOTER -->
+<footer class="site-footer">
+  © MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a>
+</footer>
+
 <script>
 function calcDRIP(){
-  const start = parseFloat(document.getElementById("start").value);
-  const y     = parseFloat(document.getElementById("yield").value)/100;
-  const n     = parseFloat(document.getElementById("years").value);
+  const start = +document.getElementById("start").value;
+  const y = +document.getElementById("yield").value / 100;
+  const n = +document.getElementById("years").value;
   if(!start || !y || !n) return;
 
-  // klassisches Zinseszins-Modell
-  const endVal = start * Math.pow(1+y, n);
+  const endVal = start * Math.pow(1 + y, n);
 
-  // Summe der ausgeschütteten und reinvestierten Dividenden
   let dividendsTotal = 0;
   let capital = start;
-  for(let t=0; t<n; t++){
+  for(let i=0;i<n;i++){
     const div = capital * y;
     dividendsTotal += div;
-    capital += div; // Reinvest
+    capital += div;
   }
 
-  document.getElementById("output").style.display = "block";
-  document.getElementById("output").innerHTML = `
+  const out = document.getElementById("output");
+  out.style.display="block";
+  out.innerHTML=`
     <strong>Startkapital:</strong> ${start.toFixed(2)} €<br>
-    <strong>Depotwert nach ${n} Jahren (mit Reinvest):</strong> ${endVal.toFixed(2)} €<br>
-    <strong>Summe reinvestierter Dividenden:</strong> ${dividendsTotal.toFixed(2)} €<br><br>
-    <small>Vereinfachtes Modell: konstante Rendite, jährliche Ausschüttung & Wiederanlage.</small>
+    <strong>Depotwert nach ${n} Jahren:</strong> ${endVal.toFixed(2)} €<br>
+    <strong>Reinvestierte Dividenden:</strong> ${dividendsTotal.toFixed(2)} €<br><br>
+    <small>Vereinfachtes Modell: konstante Rendite & jährliche Wiederanlage.</small>
   `;
 }
 </script>
-<!-- ========================================= -->
-<!-- 🔥 SEO-Bereich: Erklärung + Vorteile      -->
-<!-- ========================================= -->
 
-<section style="margin-top:40px; padding:24px; background:#151821; border:1px solid #2a2a2a; border-radius:12px; color:#f5f5f5;">
-
-  <h2 style="color:#d4af37;">Was macht der Dividenden-Reinvest-Rechner (DRIP)?</h2>
-  <p>
-    Dieser Rechner zeigt dir, wie stark dein Depot wächst, wenn du <strong>alle Dividenden automatisch wieder anlegst</strong>.
-    Genau das ist der echte Zinseszinseffekt: Dividenden erzeugen neues Kapital – und dieses neue Kapital wiederum höhere Dividenden.
-  </p>
-
-  <p>
-    Besonders Dividendeninvestoren, ETF-Sparer und FIRE-Strategen profitieren massiv von Wiederanlage,
-    da der Cashflow jedes Jahr beschleunigt steigt.
-  </p>
-
-  <h3 style="color:#d4af37;">Warum ist DRIP so mächtig?</h3>
-  <ul>
-    <li>Dividenden erzeugen neues Kapital für weiteres Wachstum</li>
-    <li>Exponentieller Zinseszinseffekt</li>
-    <li>Dein Depot wächst selbst dann, wenn Kurse stagnieren</li>
-    <li>Perfekt für langfristige High-Yield-Investoren (Shipping, Midstream, BDCs)</li>
-  </ul>
-
-  <h3 style="color:#d4af37;">Für wen ist der Reinvest-Rechner ideal?</h3>
-  <ul>
-    <li>Dividenden- und Cashflow-Investoren</li>
-    <li>ETF-Anleger (Ausschütter & Thesaurierer)</li>
-    <li>FIRE-Community</li>
-    <li>Anleger, die die echte Power vom Zinseszinseffekt verstehen wollen</li>
-  </ul>
-
-  <p>
-    Viele Anleger unterschätzen DRIP enorm – dabei erzeugt er über lange Zeiträume mehr Vermögen als reine Kursgewinne.
-  </p>
-
-</section>
-
-
-<!-- ========================================= -->
-<!-- 🔥 SEO FAQ-Bereich                        -->
-<!-- ========================================= -->
-
-<section style="margin-top:40px; padding:24px; background:#111; border:1px solid #2a2a2a; border-radius:12px; color:#f5f5f5;">
-
-  <h2 style="color:#d4af37;">Häufige Fragen zum Dividenden-Reinvest (DRIP)</h2>
-
-  <h3 style="color:#d4af37;">Was bedeutet DRIP?</h3>
-  <p>
-    DRIP steht für „Dividend Reinvestment Plan“. Dabei werden alle Dividenden automatisch wieder in dieselbe Position reinvestiert.
-  </p>
-
-  <h3 style="color:#d4af37;">Wie profitiere ich von der Wiederanlage von Dividenden?</h3>
-  <p>
-    Reinvest beschleunigt dein Depotwachstum, weil du mehr Anteile erhältst, die wiederum Dividenden ausschütten.  
-    Dadurch entsteht ein exponentieller Zinseszinseffekt.
-  </p>
-
-  <h3 style="color:#d4af37;">Wie realistisch ist eine Rendite von 8 %?</h3>
-  <p>
-    Für klassische Blue Chips eher hoch – aber für High-Yield-Sektoren wie Shipping, Midstream oder BDCs völlig normal.
-    Entscheidend ist die Nachhaltigkeit der Cashflows.
-  </p>
-
-  <h3 style="color:#d4af37;">Wie lange sollte man DRIP nutzen?</h3>
-  <p>
-    Je länger, desto stärker der Effekt.  
-    Die größten Sprünge zeigen sich meist erst nach 10–20 Jahren.
-  </p>
-
-</section>
-
-
-<!-- ========================================= -->
-<!-- 🔥 FAQ JSON-LD MARKUP (Google SEO Boost)  -->
-<!-- ========================================= -->
-
+<!-- FAQ JSON-LD -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
     {
-      "@type": "Question",
-      "name": "Was bedeutet DRIP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "DRIP steht für Dividend Reinvestment Plan. Dabei werden alle Dividenden automatisch wieder angelegt, um zusätzlichen Zinseszinseffekt zu erzeugen."
+      "@type":"Question",
+      "name":"Was bedeutet DRIP?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"DRIP steht für Dividend Reinvestment Plan. Dividenden werden automatisch wieder angelegt, um den Zinseszinseffekt zu maximieren."
       }
     },
     {
-      "@type": "Question",
-      "name": "Wie funktioniert die Wiederanlage von Dividenden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dividenden werden genutzt, um neue Anteile zu kaufen. Diese zusätzlichen Anteile erzeugen wiederum Dividenden, wodurch ein exponentielles Wachstum entsteht."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie hoch ist eine realistische Dividendenrendite?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Langfristige Dividendenrenditen liegen typischerweise zwischen 3 und 8 Prozent. High-Yield-Sektoren können jedoch auch höhere Werte erreichen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum ist DRIP so effektiv?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "DRIP nutzt den Zinseszinseffekt optimal aus. Durch die Wiederanlage steigt der Depotwert jedes Jahr schneller, da das investierte Kapital ständig wächst."
+      "@type":"Question",
+      "name":"Warum ist Dividenden-Reinvest so effektiv?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Durch die Wiederanlage entstehen neue Anteile, die wiederum Dividenden zahlen. Das führt zu exponentiellem Depotwachstum."
       }
     }
   ]
 }
 </script>
+
 </body>
 </html>
