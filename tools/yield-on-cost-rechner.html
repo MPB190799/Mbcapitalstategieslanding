@@ -4,33 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yield-on-Cost Rechner – MB Capital Strategies</title>
-<meta name="description" content="Berechne deine persönliche Yield on Cost, die aktuelle Dividendenrendite und deine jährliche Dividende. Perfekt für Hard-Asset- und Cashflow-Investoren.">
+<title>Yield-on-Cost Rechner – Dividenden & Cashflow | MB Capital Strategies</title>
+<meta name="description" content="Yield-on-Cost Rechner: Berechne YOC, aktuelle Dividendenrendite & Cashflow. Perfekt für Dividenden-, Hard-Asset- & Buy-and-Hold-Investoren.">
+
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
 <style>
+:root{
+  --gold:#d4af37;
+  --gold-soft:#e0bd55;
+  --bg:#0f1115;
+  --bg-soft:#151821;
+  --bg-card:#1a1f2b;
+  --text:#f5f6fa;
+  --muted:#9aa6c0;
+}
+
 body{
-  background:#0f1115;
-  color:#f5f6fa;
+  background:var(--bg);
+  color:var(--text);
   font-family:'Montserrat',sans-serif;
   margin:0;
   padding:20px;
 }
-.container{max-width:650px;margin:0 auto;}
-h1{text-align:center;color:#d4af37;}
+
+.container{max-width:720px;margin:0 auto;}
+h1{text-align:center;color:var(--gold);}
 
 .card{
-  background:#151821;
-  border-radius:12px;
+  background:var(--bg-soft);
+  border-radius:14px;
   border:1px solid rgba(212,175,55,.3);
-  padding:20px;
+  padding:22px;
   margin-top:20px;
 }
 
-label{
-  display:block;
-  margin:10px 0 5px;
-  font-weight:600;
-}
+label{display:block;margin:10px 0 6px;font-weight:600;}
 
 input{
   width:100%;
@@ -47,205 +57,178 @@ button{
   padding:14px;
   margin-top:18px;
   border:none;
-  border-radius:8px;
-  background:#d4af37;
-  color:#0f1115;
-  font-size:1.1em;
+  border-radius:999px;
+  background:var(--gold);
+  color:#000;
+  font-size:1.05em;
   font-weight:700;
   cursor:pointer;
-  transition:.25s;
 }
-button:hover{background:#e0bd55;}
+button:hover{background:var(--gold-soft);}
 
 .result{
   margin-top:20px;
   padding:18px;
-  background:#1a1f2b;
-  border-left:4px solid #d4af37;
-  border-radius:8px;
+  background:var(--bg-card);
+  border-left:4px solid var(--gold);
+  border-radius:10px;
   line-height:1.7;
 }
 
 .ads-box{
-  margin-top:20px;
+  margin:22px 0;
   padding:12px;
-  background:#1a1f2b;
-  border-radius:10px;
+  background:var(--bg-card);
+  border-radius:12px;
   text-align:center;
-  border:1px solid rgba(212,175,55,.2);
+  border:1px solid rgba(212,175,55,.25);
 }
-small{color:#9aa6c0;}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.tab-btn{
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid rgba(212,175,55,.35);
+  background:#0f1115;
+  color:var(--gold);
+  cursor:pointer;
+  font-weight:600;
+}
+.tab-btn.active{
+  background:var(--gold);
+  color:#000;
+}
+
+.tab-content{display:none;margin-top:20px;}
+.tab-content.active{display:block;}
+
+a{color:var(--gold);text-decoration:none;font-weight:600;}
+small{color:var(--muted);}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-  <h1>📊 Yield-on-Cost Rechner</h1>
 
-  <div class="card">
-    <p><small>Berechne deine persönliche Rendite auf den Einstandskurs – inkl. aktueller Dividendenrendite.</small></p>
+<h1>📊 Yield-on-Cost Rechner</h1>
 
-    <label>Kaufkurs je Aktie (€)</label>
-    <input type="number" id="buyPrice" placeholder="z. B. 25">
+<div class="card">
 
-    <label>Aktueller Kurs je Aktie (€)</label>
-    <input type="number" id="currentPrice" placeholder="z. B. 32">
+<p><small>
+Berechne deine persönliche Dividendenrendite auf den <strong>Einstandskurs</strong> – inkl. aktueller Rendite & Cashflow.
+</small></p>
 
-    <label>Aktuelle Jahresdividende je Aktie (€)</label>
-    <input type="number" id="divPS" placeholder="z. B. 2.00">
+<label>Kaufkurs je Aktie (€)</label>
+<input type="number" id="buyPrice" placeholder="z. B. 25">
 
-    <label>Stückzahl</label>
-    <input type="number" id="shares" placeholder="z. B. 200">
+<label>Aktueller Kurs je Aktie (€)</label>
+<input type="number" id="currentPrice" placeholder="z. B. 32">
 
-    <button onclick="calcYOC()">Berechnen</button>
+<label>Jahresdividende je Aktie (€)</label>
+<input type="number" id="divPS" placeholder="z. B. 2.00">
 
-    <!-- ADS -->
-    <div class="ads-box">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7097302643579933"
-           data-ad-slot="1234567891"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+<label>Stückzahl</label>
+<input type="number" id="shares" placeholder="z. B. 200">
 
-    <div id="output" class="result" style="display:none;"></div>
-  </div>
+<button onclick="calcYOC()">Berechnen</button>
+
+<div id="output" class="result" style="display:none;"></div>
+
+<!-- ADS -->
+<div class="ads-box">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7097302643579933"
+       data-ad-slot="1234567891"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab-btn active" onclick="openTab(0)">📘 Erklärung</div>
+  <div class="tab-btn" onclick="openTab(1)">🧠 Praxis</div>
+  <div class="tab-btn" onclick="openTab(2)">🔗 Weiterführend</div>
+</div>
+
+<!-- TAB 1 -->
+<div class="tab-content active">
+<h2>Was ist Yield on Cost?</h2>
+<p>
+Der <strong>Yield on Cost (YOC)</strong> zeigt, wie viel Dividendenrendite du auf
+deinen ursprünglichen Kaufpreis erzielst – nicht auf den heutigen Kurs.
+</p>
+<ul>
+<li>Perfekt für Buy & Hold</li>
+<li>Zeigt Dividendenwachstum über Zeit</li>
+<li>Wichtiger als Momentaufnahmen</li>
+</ul>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab-content">
+<h2>Praxisbeispiel</h2>
+<p>
+Du kaufst eine Aktie für 20 € mit 1 € Dividende.<br>
+Heute zahlt sie 3 € Dividende → dein <strong>YOC = 15 %</strong>.
+</p>
+<p>
+👉 Genau deshalb sind <strong>Dividendenwachstum & günstige Einstiege</strong> entscheidend.
+</p>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab-content">
+<h2>Nächste Schritte</h2>
+<ul>
+<li>👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle-Freiheit-Rechner</a></li>
+<li>👉 <a href="/tools/dividenden-rechner.html">Dividenden-Rechner</a></li>
+<li>👉 <a href="/rohstoff-superzyklus-master.html">Rohstoff-Superzyklus (Master-Hub)</a></li>
+<li>👉 <a href="/kategorien/mining-aktien.html">Mining-Aktien Übersicht</a></li>
+</ul>
+<p><small>So baust du aus Rendite → Cashflow → Freiheit.</small></p>
+</div>
+
 </div>
 
 <script>
 function calcYOC(){
-  const buy = parseFloat(document.getElementById("buyPrice").value);
-  const cur = parseFloat(document.getElementById("currentPrice").value);
-  const div = parseFloat(document.getElementById("divPS").value);
-  const sh  = parseFloat(document.getElementById("shares").value);
+  const buy = +buyPrice.value;
+  const cur = +currentPrice.value;
+  const div = +divPS.value;
+  const sh  = +shares.value;
+  if(!buy||!cur||!div||!sh) return;
 
-  if(!buy || !cur || !div || !sh) return;
+  const yearly = div*sh;
+  const cost   = buy*sh;
+  const value  = cur*sh;
+  const yoc    = yearly/cost*100;
+  const yieldC = yearly/value*100;
 
-  const yearlyDiv  = div * sh;
-  const costBasis  = buy * sh;
-  const marketVal  = cur * sh;
-  const yoc        = (yearlyDiv / costBasis) * 100;
-  const curYield   = (yearlyDiv / marketVal) * 100;
-
-  document.getElementById("output").style.display = "block";
-  document.getElementById("output").innerHTML = `
-    <strong>📆 Jahresdividende (gesamt):</strong> ${yearlyDiv.toFixed(2)} €<br>
+  output.style.display="block";
+  output.innerHTML=`
+    <strong>📆 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
     <strong>🎯 Yield on Cost:</strong> ${yoc.toFixed(2)} %<br>
-    <strong>📈 Aktuelle Dividendenrendite:</strong> ${curYield.toFixed(2)} %<br><br>
-    <small>Cost-Basis: ${costBasis.toFixed(2)} € · Aktueller Depotwert: ${marketVal.toFixed(2)} €</small>
+    <strong>📈 Aktuelle Rendite:</strong> ${yieldC.toFixed(2)} %<br><br>
+    <small>Einstand: ${cost.toFixed(2)} € · Wert heute: ${value.toFixed(2)} €</small>
   `;
 }
-</script>
 
-
-<!-- ========================================================= -->
-<!-- 🔥 SEO-Bereich: Erklärung & Vorteile                      -->
-<!-- ========================================================= -->
-<section style="margin-top:40px; padding:24px; background:#151821; border:1px solid #2a2a2a; border-radius:12px;">
-
-  <h2 style="color:#d4af37;">Was macht der Yield-on-Cost Rechner?</h2>
-  <p>
-    Der Yield on Cost (YOC) zeigt dir, wie viel Dividendenrendite du bezogen auf deinen ursprünglichen Kaufpreis erzielst.
-    Er ist eine der wichtigsten Kennzahlen für langfristige Dividendeninvestoren –
-    besonders in Hard-Asset-Sektoren wie Shipping, Midstream, Rohstoffe und BDCs.
-  </p>
-
-  <h3 style="color:#d4af37;">Warum ist YOC so wichtig?</h3>
-  <ul>
-    <li>Zeigt, wie stark sich deine Dividende über die Zeit entwickelt</li>
-    <li>Bedeutend für Buy&Hold und langfristige Cashflow-Strategien</li>
-    <li>Hilft bei der Bewertung, ob eine Position langfristig attraktiv bleibt</li>
-    <li>Spiegelt Dividendenwachstum viel besser wider als die aktuelle Rendite</li>
-  </ul>
-
-  <h3 style="color:#d4af37;">Für wen ist dieser Rechner ideal?</h3>
-  <ul>
-    <li>Dividenden- & Cashflow-Investoren</li>
-    <li>Hard-Asset-Anleger (Shipping, BDC, Midstream, Commodities)</li>
-    <li>FIRE-Community</li>
-    <li>Langfristige Buy-and-Hold-Investoren</li>
-  </ul>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- 🔥 FAQ Bereich (SEO Boost)                               -->
-<!-- ========================================================= -->
-<section style="margin-top:40px; padding:24px; background:#111; border:1px solid #2a2a2a; border-radius:12px;">
-
-  <h2 style="color:#d4af37;">Häufige Fragen zum Yield on Cost</h2>
-
-  <h3 style="color:#d4af37;">Was ist der Yield on Cost?</h3>
-  <p>
-    Der YOC zeigt deine persönliche Dividendenrendite basierend auf deinem ursprünglichen Kaufpreis – nicht auf dem heutigen Kurs.
-  </p>
-
-  <h3 style="color:#d4af37;">Warum ist YOC oft höher als die aktuelle Rendite?</h3>
-  <p>
-    Weil Unternehmen ihre Dividenden steigern und dein Einstandskurs unverändert bleibt.
-  </p>
-
-  <h3 style="color:#d4af37;">Ist ein hoher YOC ein Kaufargument?</h3>
-  <p>
-    Nein – YOC ist eine persönliche Kennzahl.  
-    Für Entscheidungen ist <strong>die aktuelle Rendite</strong> relevanter.
-  </p>
-
-  <h3 style="color:#d4af37;">Wann steigt der YOC besonders schnell?</h3>
-  <p>
-    Wenn du in High-Yield-Sektoren oder Unternehmen mit starkem Dividendenwachstum investierst.
-  </p>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- 🔥 JSON-LD: FAQ für Google Featured Snippets             -->
-<!-- ========================================================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was ist der Yield on Cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Yield on Cost beschreibt deine persönliche Dividendenrendite basierend auf deinem ursprünglichen Kaufpreis. Er zeigt, wie stark deine Dividende im Verhältnis zu deinem Einstand wächst."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Warum unterscheidet sich YOC von der aktuellen Dividendenrendite?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der YOC basiert auf deinem Kaufkurs, während die aktuelle Rendite auf dem heutigen Aktienkurs basiert. Bei steigenden Dividenden wächst der YOC automatisch."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist der Yield on Cost eine Kaufentscheidung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nein. Der YOC ist eine persönliche Kennzahl. Für neue Investitionsentscheidungen ist die aktuelle Dividendenrendite relevanter."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie steigert man seinen YOC am schnellsten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Durch Dividendenwachstum, Reinvestitionen und Käufe zu günstigen Kursen – besonders in High-Yield- oder Hard-Asset-Sektoren."
-      }
-    }
-  ]
+function openTab(i){
+  document.querySelectorAll(".tab-btn").forEach((b,idx)=>b.classList.toggle("active",idx===i));
+  document.querySelectorAll(".tab-content").forEach((c,idx)=>c.classList.toggle("active",idx===i));
 }
 </script>
 
 </body>
 </html>
+
