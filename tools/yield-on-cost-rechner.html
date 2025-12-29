@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Yield-on-Cost Rechner – Dividenden & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Yield-on-Cost Rechner: Berechne YOC, aktuelle Dividendenrendite & Cashflow. Perfekt für Dividenden-, Hard-Asset- & Buy-and-Hold-Investoren.">
+<meta name="description" content="Yield-on-Cost Rechner: Berechne Yield on Cost, aktuelle Dividendenrendite & Cashflow. Ideal für Dividenden- & Hard-Asset-Investoren.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -21,26 +21,89 @@
   --muted:#9aa6c0;
 }
 
+/* RESET */
+*{box-sizing:border-box;}
 body{
+  margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:'Montserrat',sans-serif;
-  margin:0;
-  padding:20px;
 }
 
-.container{max-width:720px;margin:0 auto;}
-h1{text-align:center;color:var(--gold);}
+/* ===== HEADER ===== */
+.topbar{
+  background:linear-gradient(180deg,#11141b,#0b0d12);
+  border-bottom:1px solid rgba(212,175,55,.25);
+  padding:10px 18px;
+}
+.topnav{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-size:.92em;
+}
+.nav-item{
+  color:#f5f6fa;
+  font-weight:600;
+  text-decoration:none;
+  position:relative;
+}
+.nav-item:hover{color:var(--gold);}
+
+/* Dropdown */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:26px;
+  left:0;
+  background:#12151d;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:10px;
+  padding:10px;
+  min-width:170px;
+  z-index:100;
+}
+.dropdown-menu a{
+  display:block;
+  padding:6px 10px;
+  color:#fff;
+  font-size:.9em;
+}
+.dropdown-menu a:hover{
+  background:#0f1115;
+  border-radius:6px;
+  color:var(--gold);
+}
+.dropdown:hover .dropdown-menu{display:block;}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:720px;
+  margin:35px auto;
+  padding:0 20px;
+}
+
+h1{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:20px;
+}
 
 .card{
   background:var(--bg-soft);
   border-radius:14px;
   border:1px solid rgba(212,175,55,.3);
   padding:22px;
-  margin-top:20px;
 }
 
-label{display:block;margin:10px 0 6px;font-weight:600;}
+label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:600;
+}
 
 input{
   width:100%;
@@ -84,6 +147,7 @@ button:hover{background:var(--gold-soft);}
   border:1px solid rgba(212,175,55,.25);
 }
 
+/* Tabs */
 .tabs{
   display:flex;
   gap:8px;
@@ -103,23 +167,56 @@ button:hover{background:var(--gold-soft);}
   background:var(--gold);
   color:#000;
 }
-
 .tab-content{display:none;margin-top:20px;}
 .tab-content.active{display:block;}
 
 a{color:var(--gold);text-decoration:none;font-weight:600;}
 small{color:var(--muted);}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  margin-top:60px;
+  padding:30px 20px;
+  text-align:center;
+  font-size:.9em;
+  color:var(--muted);
+  border-top:1px solid rgba(212,175,55,.25);
+}
+.site-footer a{color:var(--gold);}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+<header class="topbar">
+  <nav class="topnav">
+    <a href="/" class="nav-item">🏠 Startseite</a>
+    <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
+
+    <div class="nav-item dropdown">
+      📁 Themen ▾
+      <div class="dropdown-menu">
+        <a href="/kategorien/energie.html">⚡ Energie</a>
+        <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
+        <a href="/kategorien/shipping.html">🚢 Shipping</a>
+      </div>
+    </div>
+
+    <a href="/blog/" class="nav-item">📰 Blog</a>
+    <a href="/tools/" class="nav-item">🧰 Toolbox</a>
+    <a href="/investing-analysen.html" class="nav-item">📈 Investing Analysen</a>
+    <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  </nav>
+</header>
+
+<!-- CONTENT -->
 <div class="container">
 
 <h1>📊 Yield-on-Cost Rechner</h1>
 
 <div class="card">
-
 <p><small>
 Berechne deine persönliche Dividendenrendite auf den <strong>Einstandskurs</strong> – inkl. aktueller Rendite & Cashflow.
 </small></p>
@@ -140,7 +237,6 @@ Berechne deine persönliche Dividendenrendite auf den <strong>Einstandskurs</str
 
 <div id="output" class="result" style="display:none;"></div>
 
-<!-- ADS -->
 <div class="ads-box">
   <ins class="adsbygoogle"
        style="display:block"
@@ -150,55 +246,51 @@ Berechne deine persönliche Dividendenrendite auf den <strong>Einstandskurs</str
        data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
 </div>
 
-<!-- TABS -->
 <div class="tabs">
   <div class="tab-btn active" onclick="openTab(0)">📘 Erklärung</div>
   <div class="tab-btn" onclick="openTab(1)">🧠 Praxis</div>
   <div class="tab-btn" onclick="openTab(2)">🔗 Weiterführend</div>
 </div>
 
-<!-- TAB 1 -->
 <div class="tab-content active">
 <h2>Was ist Yield on Cost?</h2>
 <p>
-Der <strong>Yield on Cost (YOC)</strong> zeigt, wie viel Dividendenrendite du auf
-deinen ursprünglichen Kaufpreis erzielst – nicht auf den heutigen Kurs.
+Der <strong>Yield on Cost (YOC)</strong> misst deine Dividendenrendite bezogen auf den ursprünglichen Kaufpreis – nicht auf den aktuellen Kurs.
 </p>
 <ul>
-<li>Perfekt für Buy & Hold</li>
+<li>Ideal für Buy & Hold</li>
 <li>Zeigt Dividendenwachstum über Zeit</li>
-<li>Wichtiger als Momentaufnahmen</li>
+<li>Cashflow-Fokus statt Kursrauschen</li>
 </ul>
 </div>
 
-<!-- TAB 2 -->
 <div class="tab-content">
 <h2>Praxisbeispiel</h2>
 <p>
-Du kaufst eine Aktie für 20 € mit 1 € Dividende.<br>
-Heute zahlt sie 3 € Dividende → dein <strong>YOC = 15 %</strong>.
-</p>
-<p>
-👉 Genau deshalb sind <strong>Dividendenwachstum & günstige Einstiege</strong> entscheidend.
+Kauf: 20 € · Dividende damals: 1 €<br>
+Heute: 3 € Dividende → <strong>YOC = 15 %</strong>
 </p>
 </div>
 
-<!-- TAB 3 -->
 <div class="tab-content">
 <h2>Nächste Schritte</h2>
 <ul>
 <li>👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle-Freiheit-Rechner</a></li>
 <li>👉 <a href="/tools/dividenden-rechner.html">Dividenden-Rechner</a></li>
-<li>👉 <a href="/rohstoff-superzyklus-master.html">Rohstoff-Superzyklus (Master-Hub)</a></li>
-<li>👉 <a href="/kategorien/mining-aktien.html">Mining-Aktien Übersicht</a></li>
+<li>👉 <a href="/rohstoff-superzyklus-master.html">Rohstoff-Superzyklus</a></li>
 </ul>
-<p><small>So baust du aus Rendite → Cashflow → Freiheit.</small></p>
 </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  © MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a>
+</footer>
 
 <script>
 function calcYOC(){
@@ -231,4 +323,3 @@ function openTab(i){
 
 </body>
 </html>
-
