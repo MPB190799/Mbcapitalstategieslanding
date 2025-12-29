@@ -1,154 +1,287 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies</title>
-  <meta name="description" content="Berechne Cashflows von Tankern & Bulkern: TCE, OPEX, Gewinn, FCF pro Aktie & Dividendenpotenzial. Perfekt für Shipping-Investoren: TORM, Hafnia, Dorian LPG & mehr.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- STYLE -->
-  <style>
-    body{
-      background:#0f1115;
-      color:#f5f6fa;
-      font-family:'Montserrat',sans-serif;
-      margin:0;
-      padding:20px;
-    }
-    .container{max-width:700px;margin:0 auto;}
-    h1{text-align:center;color:#d4af37;margin-bottom:10px;}
+<title>Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies</title>
+<meta name="description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, FCF pro Aktie & Dividendenpotenzial für Tanker & Bulker. Ideal für TORM, Hafnia, Dorian LPG & Shipping-Investoren.">
 
-    .card{
-      background:#151821;
-      border-radius:12px;
-      border:1px solid rgba(212,175,55,.3);
-      padding:20px;
-      margin-top:20px;
-    }
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-    label{display:block;margin:10px 0 5px;font-weight:600;}
-    input{
-      width:100%;padding:12px;border-radius:8px;
-      border:1px solid #444;background:#0f1115;color:#fff;
-      font-size:1em;
-    }
+<style>
+:root{
+  --bg:#0f1115;
+  --card:#151821;
+  --accent:#d4af37;
+  --text:#f5f6fa;
+  --muted:#9aa6c0;
+  --border:#2a2a2a;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Montserrat',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    button{
-      width:100%;padding:14px;margin-top:20px;
-      background:#d4af37;color:#0f1115;
-      border:none;border-radius:8px;
-      font-size:1.1em;font-weight:700;
-      cursor:pointer;transition:.25s;
-    }
-    button:hover{background:#e0bd55;}
+/* ===== HEADER ===== */
+.topbar{
+  background:linear-gradient(180deg,#11141b,#0b0d12);
+  border-bottom:1px solid rgba(212,175,55,.25);
+  padding:10px 18px;
+}
+.topnav{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+  font-size:.92em;
+}
+.nav-item{
+  color:#f5f6fa;
+  font-weight:600;
+  text-decoration:none;
+}
+.nav-item:hover{color:var(--accent);}
+.dropdown{position:relative;}
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:26px;
+  left:0;
+  background:#12151d;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:10px;
+  padding:10px;
+  min-width:170px;
+  z-index:99;
+}
+.dropdown-menu a{
+  display:block;
+  padding:6px 10px;
+  color:#fff;
+}
+.dropdown-menu a:hover{
+  background:#0f1115;
+  border-radius:6px;
+  color:var(--accent);
+}
+.dropdown:hover .dropdown-menu{display:block;}
 
-    .result{
-      margin-top:20px;padding:18px;
-      background:#1a1f2b;border-left:4px solid #d4af37;
-      border-radius:8px;line-height:1.7;
-    }
+/* ===== CONTENT ===== */
+.wrapper{max-width:700px;margin:40px auto;padding:0 16px 40px;}
+.card{
+  background:var(--card);
+  border-radius:14px;
+  border:1px solid rgba(212,175,55,.35);
+  padding:22px;
+}
+.header{text-align:center;margin-bottom:10px;}
+.title{color:var(--accent);margin:0;}
+.sub{color:var(--muted);font-size:.9rem;}
 
-    .ads-box{
-      margin-top:20px;
-      padding:12px;
-      background:#1a1f2b;
-      border-radius:10px;
-      text-align:center;
-      border:1px solid rgba(212,175,55,.2);
-    }
-  </style>
+label{display:block;margin:12px 0 6px;font-weight:600;}
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+}
 
-  <!-- Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+button{
+  width:100%;
+  padding:14px;
+  margin-top:18px;
+  background:var(--accent);
+  color:#000;
+  border:none;
+  border-radius:10px;
+  font-size:1.05em;
+  font-weight:700;
+  cursor:pointer;
+}
+button:hover{filter:brightness(1.08);}
 
+.result{
+  margin-top:20px;
+  padding:18px;
+  background:#1a1f2b;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  line-height:1.7;
+}
+
+.ads-box{
+  margin:20px 0;
+  padding:12px;
+  background:#1a1f2b;
+  border-radius:10px;
+  text-align:center;
+  border:1px solid rgba(212,175,55,.25);
+}
+
+.seo{
+  margin-top:40px;
+  padding:26px;
+  background:#151821;
+  border:1px solid #2a2a2a;
+  border-radius:14px;
+}
+
+.site-footer{
+  margin-top:60px;
+  padding:30px 20px;
+  text-align:center;
+  font-size:.9em;
+  color:var(--muted);
+  border-top:1px solid rgba(212,175,55,.25);
+}
+.site-footer a{color:var(--accent);}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>🚢 Shipping Cashflow Rechner</h1>
-
-  <div class="card">
-
-    <p><small>Berechne Cashflow, FCF & Dividendenpotenzial deiner Lieblings-Shipping-Aktien wie TORM, Hafnia, Dorian LPG & mehr.</small></p>
-
-    <label>TCE / Tagesrate (USD)</label>
-    <input type="number" id="tce" placeholder="z. B. 35.000">
-
-    <label>OPEX pro Tag (USD)</label>
-    <input type="number" id="opex" placeholder="z. B. 8.000">
-
-    <label>Anzahl Schiffe</label>
-    <input type="number" id="ships" placeholder="z. B. 15">
-
-    <label>Auslastung (%)</label>
-    <input type="number" id="util" placeholder="z. B. 92">
-
-    <label>Payout Ratio (%)</label>
-    <input type="number" id="payout" placeholder="z. B. 70">
-
-    <label>Shares Outstanding (optional)</label>
-    <input type="number" id="shares" placeholder="z. B. 85.000.000">
-
-    <button onclick="calcCashflow()">Berechnen</button>
-
-    <!-- ADS -->
-    <div class="ads-box">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7097302643579933"
-           data-ad-slot="1234567890"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<header class="topbar">
+<nav class="topnav">
+  <a href="/" class="nav-item">🏠 Startseite</a>
+  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
+  <div class="nav-item dropdown">📁 Themen ▾
+    <div class="dropdown-menu">
+      <a href="/kategorien/energie.html">⚡ Energie</a>
+      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
+      <a href="/kategorien/shipping.html">🚢 Shipping</a>
     </div>
-
-    <div id="output" class="result" style="display:none;"></div>
-
   </div>
+  <a href="/blog/" class="nav-item">📰 Blog</a>
+  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
+  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+</nav>
+</header>
+
+<main class="wrapper">
+
+<section class="card">
+<header class="header">
+  <h1 class="title">Shipping Cashflow Rechner</h1>
+  <p class="sub">TCE, OPEX, Gewinn, FCF & Dividendenpotenzial für Tanker & Bulker.</p>
+</header>
+
+<label>TCE / Tagesrate (USD)</label>
+<input type="number" id="tce" placeholder="z. B. 35.000">
+
+<label>OPEX pro Tag (USD)</label>
+<input type="number" id="opex" placeholder="z. B. 8.000">
+
+<label>Anzahl Schiffe</label>
+<input type="number" id="ships" placeholder="z. B. 15">
+
+<label>Auslastung (%)</label>
+<input type="number" id="util" placeholder="z. B. 92">
+
+<label>Payout Ratio (%)</label>
+<input type="number" id="payout" placeholder="z. B. 70">
+
+<label>Shares Outstanding (optional)</label>
+<input type="number" id="shares" placeholder="z. B. 85.000.000">
+
+<button onclick="calcCashflow()">Berechnen</button>
+
+<div class="ads-box">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7097302643579933"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
+
+<div id="output" class="result" style="display:none;"></div>
+</section>
+
+<section class="seo">
+<h2>Was zeigt der Shipping Cashflow Rechner?</h2>
+<p>
+Der Rechner zeigt dir, wie profitabel eine Shipping-Flotte bei gegebenen Tagesraten (TCE) arbeitet.
+Du siehst Break-even, Jahresgewinn, Free Cashflow je Aktie und das mögliche Dividendenpotenzial.
+</p>
+
+<h3>Warum ist Shipping-Cashflow so zyklisch?</h3>
+<ul>
+<li>Tagesraten schwanken stark je nach Angebot & Nachfrage</li>
+<li>Fixe OPEX sorgen für enormen operativen Hebel</li>
+<li>Hohe Cashflows in Boomphasen → Sonderdividenden</li>
+<li>Perfekt für taktische Dividendenstrategien</li>
+</ul>
+</section>
+
+<section class="seo">
+<h2>Häufige Fragen zum Shipping-Cashflow</h2>
+<p>
+Bereits kleine Änderungen im TCE haben massive Auswirkungen auf Gewinn und Dividenden –
+genau deshalb ist Shipping ein Hoch-Cashflow-Sektor.
+</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+© MB Capital Strategies ·
+<a href="/impressum.html">Impressum</a> ·
+<a href="/datenschutz.html">Datenschutz</a>
+</footer>
 
 <script>
 function calcCashflow(){
-  const tce = parseFloat(document.getElementById("tce").value);
-  const opex = parseFloat(document.getElementById("opex").value);
-  const ships = parseFloat(document.getElementById("ships").value);
-  const util = (parseFloat(document.getElementById("util").value) || 0) / 100;
-  const payout = (parseFloat(document.getElementById("payout").value) || 0) / 100;
-  const shares = parseFloat(document.getElementById("shares").value);
+  const tce=parseFloat(tce.value);
+  const opex=parseFloat(opex.value);
+  const ships=parseFloat(ships.value);
+  const util=(parseFloat(util.value)||0)/100;
+  const payout=(parseFloat(payout.value)||0)/100;
+  const shares=parseFloat(shares.value);
 
-  if(!tce || !opex || !ships){
-    alert("Bitte TCE, OPEX und Schiffe eingeben.");
-    return;
-  }
+  if(!tce||!opex||!ships){alert("Bitte TCE, OPEX und Schiffe eingeben.");return;}
 
-  const breakeven = opex;
-  const profitDay = (tce - opex) * ships * util;
-  const profitYear = profitDay * 365;
+  const profitDay=(tce-opex)*ships*util;
+  const profitYear=profitDay*365;
 
-  let fcfPerShare = null;
-  let divPotential = null;
-
-  if(shares){
-    fcfPerShare = profitYear / shares;
-    divPotential = fcfPerShare * payout;
-  }
-
-  let html = `
-    <strong>⚓ Break-even TCE:</strong> ${breakeven.toLocaleString()} USD<br>
+  let html=`
+    <strong>⚓ Break-even TCE:</strong> ${opex.toLocaleString()} USD<br>
     <strong>🟢 Gewinn pro Tag (Flotte):</strong> ${profitDay.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
     <strong>💵 Gewinn pro Jahr:</strong> ${profitYear.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
   `;
 
-  if(fcfPerShare){
-    html += `
-      <br><strong>📈 FCF je Aktie:</strong> ${fcfPerShare.toFixed(2)} USD<br>
-      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${divPotential.toFixed(2)} USD<br>
+  if(shares){
+    const fcf=profitYear/shares;
+    const div=fcf*payout;
+    html+=`
+      <br><strong>📈 FCF je Aktie:</strong> ${fcf.toFixed(2)} USD<br>
+      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${div.toFixed(2)} USD<br>
     `;
   }
 
-  document.getElementById("output").style.display = "block";
-  document.getElementById("output").innerHTML = html;
+  output.style.display="block";
+  output.innerHTML=html;
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Wie berechnet man Shipping-Cashflow?","acceptedAnswer":{"@type":"Answer","text":"Shipping-Cashflow ergibt sich aus Tagesrate (TCE) minus OPEX multipliziert mit der Flottengröße und Auslastung."}},
+{"@type":"Question","name":"Warum zahlen Shipping-Unternehmen hohe Dividenden?","acceptedAnswer":{"@type":"Answer","text":"In Hochphasen generieren Shipping-Unternehmen enorme Free Cashflows, die häufig über Sonderdividenden ausgeschüttet werden."}}
+]
 }
 </script>
 
