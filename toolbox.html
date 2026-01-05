@@ -1,240 +1,296 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  
+  <!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-<!-- ================= BASIC ================= -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BDC Aktien erklärt 2025 – High Yield Dividenden & Cashflow | MB Capital Strategies Podcast</title>
-<meta name="description" content="BDC Aktien erklärt 2025: Business Development Companies, 8–12 % Dividenden, Cashflow-Strategien & Risikoanalyse.">
-
-<link rel="canonical" href="https://mbcapitalstrategies.com/podcast/bdc-aktien-erklaert-2025.html">
 <meta name="theme-color" content="#0f1115">
 
-<!-- ================= STYLES (INLINE – KEIN styles.css) ================= -->
-<style>
-:root{
-  --gold:#d4af37;
-  --bg:#0f1115;
-  --bg-soft:#151821;
-  --bg-card:#1a1f2b;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-}
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-body{
-  margin:0;
-  font-family:Montserrat,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* HEADER */
-.header{
-  background:var(--bg-soft);
-  border-bottom:1px solid rgba(212,175,55,.3);
-  padding:16px 12px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  flex-wrap:wrap;
-  position:sticky;
-  top:0;
-  z-index:50;
-}
-.header a{
-  color:var(--gold);
-  text-decoration:none;
-  font-weight:600;
-}
+  <title>MB Capital Strategies – Toolbox</title>
+  <meta name="description" content="Meine Toolbox: Die Broker, Tools & Ressourcen, die ich selbst nutze – inklusive Rabatten, Boni & echten Vorteilen. Perfekt für Hard-Asset- und Dividendeninvestoren.">
 
-/* DROPDOWN */
-.dropdown{ position:relative; }
-.dropdown-btn{
-  background:none;
-  border:none;
-  color:var(--gold);
-  font-weight:600;
-  cursor:pointer;
-  font-size:1em;
-}
-.dropdown-content{
-  display:none;
-  position:absolute;
-  top:36px;
-  left:0;
-  background:#0f1115;
-  min-width:260px;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:14px;
-  box-shadow:0 10px 28px rgba(0,0,0,.45);
-  padding:10px 0;
-  z-index:1000;
-}
-.dropdown-content a{
-  display:block;
-  padding:10px 16px;
-  color:#f5f6fa;
-}
-.dropdown-content a:hover{
-  background:#1d2330;
-  color:var(--gold);
-}
-@media(min-width:700px){
-  .dropdown:hover .dropdown-content{ display:block; }
-}
-@media(max-width:699px){
-  .dropdown.open .dropdown-content{ display:block; }
-}
+  <!-- Open Graph -->
+  <meta property="og:title" content="MB Capital Strategies Toolbox">
+  <meta property="og:description" content="Die Tools, die ich selbst nutze – inklusive Rabatten & Boni.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
+  <meta property="og:type" content="website">
 
-/* LAYOUT */
-.container{
-  max-width:1000px;
-  margin:40px auto;
-  padding:0 16px;
-}
-.card{
-  background:var(--bg-card);
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:16px;
-  padding:24px;
-  margin-bottom:32px;
-}
-h1,h2{ color:var(--gold); }
+  <style>
+    body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; margin:0; }
 
-.video-wrapper{
-  position:relative;
-  padding-bottom:56.25%;
-  height:0;
-  border-radius:14px;
-  overflow:hidden;
-  background:#000;
-}
-.video-wrapper iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
-}
+    a { color:#d4af37; }
 
-.breadcrumbs{
-  font-size:0.9rem;
-  margin-bottom:20px;
-}
-.breadcrumbs a{ color:var(--gold); text-decoration:none; }
+    header {
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      padding:15px 10px;
+      text-align:center;
+      position:sticky; top:0; z-index:10;
+    }
+    header a { margin:0 15px; text-decoration:none; font-weight:600; }
+    header a:hover { text-decoration:underline; }
 
-.footer{
-  text-align:center;
-  padding:40px 16px;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.footer a{ color:var(--gold); }
-</style>
+    /* HERO */
+    .hero {
+      text-align:center;
+      padding:80px 20px 60px;
+    }
+    .hero img {
+      width:160px; height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:20px;
+      box-shadow:0 0 25px rgba(212,175,55,0.5);
+    }
+    .hero h1 {
+      color:#d4af37;
+      font-size:2.4em;
+      margin-bottom:10px;
+    }
+    .hero p {
+      color:#cfd6e6;
+      font-size:1.1em;
+      max-width:600px;
+      margin:0 auto 25px;
+    }
 
+    .btn {
+      display:inline-block; padding:12px 26px;
+      background:#d4af37; color:#0f1115;
+      border-radius:999px; text-decoration:none;
+      font-weight:600; font-size:1.05em;
+      box-shadow:0 0 12px rgba(212,175,55,0.55);
+      transition:0.3s;
+    }
+    .btn:hover { background:#e0bd55; box-shadow:0 0 20px rgba(212,175,55,0.9); }
+
+    /* GRID */
+    .category-title {
+      font-size:1.6em;
+      color:#d4af37;
+      margin:40px 0 10px 0;
+      text-align:left;
+      padding-left:20px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:22px;
+      padding:20px;
+    }
+
+    .card {
+      background:#1a1f2b;
+      border:1px solid rgba(212,175,55,0.35);
+      border-radius:16px;
+      padding:22px;
+      text-align:left;
+      transition:0.3s;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .card h3 { color:#d4af37; margin-bottom:8px; }
+    .usp { color:#82cfff; font-size:0.9em; margin:8px 0 14px; }
+    .note { color:#9aa6c0; font-size:0.85em; margin-top:8px; }
+
+    footer {
+      text-align:center; padding:25px;
+      font-size:0.9em; margin-top:40px;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,0.07);
+    }
+    footer a { color:#d4af37; }
+  </style>
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
+<header>
   <a href="/">🏠 Startseite</a>
   <a href="/depot-strategie/">📊 Depot-Strategie</a>
   <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-
-  <!-- PODCAST DROPDOWN -->
-  <div class="dropdown">
-    <button class="dropdown-btn">🎙️ Podcast ▾</button>
-    <div class="dropdown-content">
-      <a href="/podcast/">🎧 Alle Podcasts (Übersicht)</a>
-      <hr>
-      <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
-      <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividendenstrategie</a>
-      <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime Investments</a>
-      <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien erklärt</a>
-      <a href="/podcast/pipeline-aktien-analyse-2025.html">🛢️ Pipeline-Aktien</a>
-      <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining-Serie</a>
-      <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing & Marktzyklen</a>
-    </div>
-  </div>
-
-  <a href="/blog/">📰 Blog</a>
+  <a href="/blog/index.html">📰 Blog</a>
   <a href="/toolbox.html">🧰 Toolbox</a>
-  <a href="/glossar/">📗 Glossar</a>
 </header>
 
-<main class="container">
-
-<!-- ================= BREADCRUMBS ================= -->
-<nav class="breadcrumbs">
-  <a href="/">Startseite</a> ›
-  <a href="/podcast/">Podcast</a> ›
-  <span>BDC Aktien erklärt 2025</span>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="card">
-  <h1>🎙️ BDC Aktien erklärt 2025</h1>
-  <p>
-    Business Development Companies, <strong>8–12 % Dividendenrendite</strong>,
-    Cashflow, Risiken & reale Zahlen – ohne Marketing.
-  </p>
+<!-- HERO -->
+<section class="hero">
+  <img src="marco.jpg" alt="Marco Bozem – MB Capital Strategies">
+  <h1>🧰 Meine Toolbox</h1>
+  <p>Alle Tools, Broker & Ressourcen, die ich selbst nutze – inklusive exklusiven Vorteilen wie Rabatten und Boni.</p>
+  <a href="#tools" class="btn">Zu meinen Empfehlungen →</a>
 </section>
 
-<!-- ================= PLAYLIST ================= -->
-<section class="card">
-  <h2>🎧 Alle Podcast-Folgen</h2>
+<div id="tools"></div>
 
-  <div class="video-wrapper">
-    <iframe
-      loading="lazy"
-      src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9dc-EO3us31wivRvTW4iFNgx"
-      allowfullscreen>
-    </iframe>
+<!-- ===================================== -->
+<!-- 🟡 1: BROKER -->
+<!-- ===================================== -->
+
+<h2 class="category-title">📈 Broker</h2>
+<section class="grid">
+
+  <!-- Scalable -->
+  <div class="card">
+    <h3>Scalable Capital</h3>
+    <p>Mein Hauptbroker für Dividenden, ETFs & Hard-Asset-Positionen.</p>
+    <p class="usp">💛 Vorteil: 0 € Sparpläne & extrem niedrige Gebühren.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener" 
+       href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43">
+       Zu Scalable →
+    </a>
+    <p class="note">⚠️ Investitionen bergen Risiken.</p>
   </div>
 
-  <p style="color:var(--muted); margin-top:12px;">
-    Die komplette Serie als YouTube-Podcast (Video & Audio).
-  </p>
+  <!-- TR -->
+  <div class="card">
+    <h3>Trade Republic</h3>
+    <p>Mein Zweitbroker – ideal für schnelle Orders & Sparpläne.</p>
+    <p class="usp">💛 Vorteil: 0 € Sparpläne & kostenlose Kontoführung.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener" 
+       href="https://refnocode.trade.re/79z763g7">
+       Zu Trade Republic →
+    </a>
+  </div>
+
 </section>
 
-<!-- ================= CONTENT ================= -->
-<section class="card">
-  <h2>🔥 Was dich erwartet</h2>
-  <ul>
-    <li>BDC-Geschäftsmodelle einfach erklärt</li>
-    <li>Dividenden, NAV & Kreditqualität</li>
-    <li>Zinsumfeld & Risikoanalyse</li>
-    <li>Strategie für langfristigen Cashflow</li>
-  </ul>
+<!-- ===================================== -->
+<!-- 🟡 2: ANALYSE & DATEN -->
+<!-- ===================================== -->
+
+<h2 class="category-title">📊 Analysen & Daten</h2>
+<section class="grid">
+
+  <!-- InvestingPro -->
+  <div class="card">
+    <h3>InvestingPro</h3>
+    <p>Mein Analyse-Tool Nr. 1 – Fair Value, Cashflows, Screener, Earnings.</p>
+    <p class="usp">💛 Vorteil: <strong>15 % Rabatt</strong> über meinen Link.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://www.investing-referral.com/mbcapital3/">
+       15 % Rabatt sichern →
+    </a>
+  </div>
+
+  <!-- Parqet -->
+  <div class="card">
+    <h3>Parqet</h3>
+    <p>Nutze ich für Cashflow, Dividendenkalender & Branchenanalyse.</p>
+    <p class="usp">💛 Vorteil: <strong>15 % Rabatt</strong> im ersten Jahr.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8">
+       Parqet –15 % →
+    </a>
+  </div>
+
 </section>
 
-<section class="card">
-  <h2>⚠️ Hinweis</h2>
-  <p>
-    Keine Anlageberatung. Alle Inhalte dienen Informations- und Bildungszwecken.
-  </p>
+<!-- ===================================== -->
+<!-- 🟡 3: KRYPTOPLATFORMEN -->
+<!-- ===================================== -->
+
+<h2 class="category-title">🔐 Krypto</h2>
+<section class="grid">
+
+  <div class="card">
+    <h3>Binance</h3>
+    <p>Meine Plattform für Staking & aktives Trading.</p>
+    <p class="usp">💛 Vorteil: Gebühren-Kickback.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9">
+       Zu Binance →
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Coinbase</h3>
+    <p>Einfach, sicher & ideal für langfristige Positionen.</p>
+    <p class="usp">💛 Vorteil: Bonus für Neukunden.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://coinbase.com/join/EN8NVAV?src=referral-link">
+       Zu Coinbase →
+    </a>
+  </div>
+
 </section>
 
-</main>
+<!-- ===================================== -->
+<!-- 🟡 4: REISEN & FINANZEN -->
+<!-- ===================================== -->
 
-<footer class="footer">
-  © 2025 MB Capital Strategies ·
-  <a href="/impressum.html">Impressum</a> ·
-  <a href="/datenschutz.html">Datenschutz</a>
+<h2 class="category-title">🌍 Reisen & Finanzen</h2>
+<section class="grid">
+
+  <div class="card">
+    <h3>Wise</h3>
+    <p>Nutze ich für Reisen & Multi-Währungen – ich bestimme selbst den Wechselkurs.</p>
+    <p class="usp">💛 Vorteil: Gebührenfrei starten.</p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://wise.com/invite/dic/marcopeterb2">
+       Zu Wise →
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Airalo (eSIM)</h3>
+    <p>Bei jeder Asien-Reise nutze ich Airalo – direkt online nach der Landung.</p>
+    <p class="usp">💛 Vorteil: <strong>3 € Bonuscode: BAND1T8990</strong></p>
+    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+       href="https://www.airalo.com?ref=BAND1T8990">
+       Mit Bonus starten →
+    </a>
+  </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- 🟡 5: COMMUNITY -->
+<!-- ===================================== -->
+
+<h2 class="category-title">▶ Community & Content</h2>
+<section class="grid">
+
+  <div class="card">
+    <h3>YouTube</h3>
+    <p>Depot-Updates, Analysen & echte Hard-Asset-Einblicke.</p>
+    <a class="btn" target="_blank" rel="noopener"
+       href="https://www.youtube.com/@mbcapitalstrategies">
+       Zum Kanal →
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Odysee</h3>
+    <p>Dezentrale Plattform für meine Videos – ohne Einschränkungen.</p>
+    <a class="btn" target="_blank" rel="nofollow noopener"
+       href="https://odysee.com/@mbcapitalstrategies:5">
+       Auf Odysee ansehen →
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 MB Capital Strategies · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
+  <br><br>
+  Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
 </footer>
-
-<!-- ================= DROPDOWN SCRIPT ================= -->
-<script>
-document.querySelectorAll(".dropdown-btn").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    if(window.innerWidth < 700){
-      btn.parentElement.classList.toggle("open");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
