@@ -1,123 +1,140 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  
-  <!-- Favicon / Brand Icons -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
 
-<meta name="theme-color" content="#0f1115">
-
-  <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
-
+  <!-- BASIC -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MB Capital Strategies – Toolbox</title>
-  <meta name="description" content="Meine Toolbox: Die Broker, Tools & Ressourcen, die ich selbst nutze – inklusive Rabatten, Boni & echten Vorteilen. Perfekt für Hard-Asset- und Dividendeninvestoren.">
+  <meta name="description" content="Meine Toolbox: Broker, Analyse-Tools & Ressourcen für Dividenden-, Cashflow- & Hard-Asset-Investoren.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="MB Capital Strategies Toolbox">
-  <meta property="og:description" content="Die Tools, die ich selbst nutze – inklusive Rabatten & Boni.">
-  <meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
-  <meta property="og:type" content="website">
+  <!-- BRAND -->
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="robots" content="index, follow">
 
+  <!-- STYLES -->
   <style>
-    body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; margin:0; }
-
-    a { color:#d4af37; }
-
-    header {
-      background:#151821;
-      border-bottom:1px solid rgba(212,175,55,0.3);
-      padding:15px 10px;
-      text-align:center;
-      position:sticky; top:0; z-index:10;
+    body{
+      background:#0f1115;
+      color:#f5f6fa;
+      font-family:Montserrat,sans-serif;
+      margin:0;
     }
-    header a { margin:0 15px; text-decoration:none; font-weight:600; }
-    header a:hover { text-decoration:underline; }
 
-    /* HERO */
-    .hero {
+    a{ color:#d4af37; }
+
+    header{
+      background:#151821;
+      border-bottom:1px solid rgba(212,175,55,.3);
+      padding:16px;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    header a{
+      margin:0 14px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .hero{
       text-align:center;
       padding:80px 20px 60px;
     }
-    .hero img {
-      width:160px; height:160px;
+
+    .hero img{
+      width:160px;
+      height:160px;
       border-radius:50%;
-      object-fit:cover;
+      box-shadow:0 0 25px rgba(212,175,55,.5);
       margin-bottom:20px;
-      box-shadow:0 0 25px rgba(212,175,55,0.5);
     }
-    .hero h1 {
+
+    .hero h1{
       color:#d4af37;
       font-size:2.4em;
       margin-bottom:10px;
     }
-    .hero p {
+
+    .hero p{
       color:#cfd6e6;
+      max-width:620px;
+      margin:0 auto 24px;
       font-size:1.1em;
-      max-width:600px;
-      margin:0 auto 25px;
     }
 
-    .btn {
-      display:inline-block; padding:12px 26px;
-      background:#d4af37; color:#0f1115;
-      border-radius:999px; text-decoration:none;
-      font-weight:600; font-size:1.05em;
-      box-shadow:0 0 12px rgba(212,175,55,0.55);
-      transition:0.3s;
+    .btn{
+      display:inline-block;
+      padding:12px 26px;
+      background:#d4af37;
+      color:#0f1115;
+      border-radius:999px;
+      font-weight:600;
+      text-decoration:none;
+      margin:6px;
+      box-shadow:0 0 12px rgba(212,175,55,.55);
     }
-    .btn:hover { background:#e0bd55; box-shadow:0 0 20px rgba(212,175,55,0.9); }
 
-    /* GRID */
-    .category-title {
+    .btn:hover{
+      background:#e0bd55;
+    }
+
+    .category-title{
       font-size:1.6em;
       color:#d4af37;
-      margin:40px 0 10px 0;
-      text-align:left;
+      margin:40px 0 10px;
       padding-left:20px;
     }
 
-    .grid {
+    .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:22px;
       padding:20px;
     }
 
-    .card {
+    .card{
       background:#1a1f2b;
-      border:1px solid rgba(212,175,55,0.35);
+      border:1px solid rgba(212,175,55,.35);
       border-radius:16px;
       padding:22px;
-      text-align:left;
-      transition:0.3s;
+      transition:.3s;
     }
-    .card:hover {
+
+    .card:hover{
       transform:translateY(-6px);
-      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+      box-shadow:0 10px 25px rgba(0,0,0,.4);
     }
 
-    .card h3 { color:#d4af37; margin-bottom:8px; }
-    .usp { color:#82cfff; font-size:0.9em; margin:8px 0 14px; }
-    .note { color:#9aa6c0; font-size:0.85em; margin-top:8px; }
+    .card h3{ color:#d4af37; }
 
-    footer {
-      text-align:center; padding:25px;
-      font-size:0.9em; margin-top:40px;
+    .usp{
+      color:#82cfff;
+      font-size:.9em;
+      margin:8px 0 14px;
+    }
+
+    .note{
       color:#9aa6c0;
-      border-top:1px solid rgba(255,255,255,0.07);
+      font-size:.85em;
     }
-    footer a { color:#d4af37; }
-  </style>
-</head>
 
+    footer{
+      text-align:center;
+      padding:28px;
+      font-size:.9em;
+      color:#9aa6c0;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+
+    footer a{ color:#d4af37; }
+  </style>
+
+</head>
 <body>
 
 <header>
@@ -125,173 +142,100 @@
   <a href="/depot-strategie/">📊 Depot-Strategie</a>
   <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
   <a href="/blog/index.html">📰 Blog</a>
+  <a href="/podcast/index.html">🎙️ Podcast</a>
   <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/glossar/">📗 Glossar</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="marco.jpg" alt="Marco Bozem – MB Capital Strategies">
+  <img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies">
   <h1>🧰 Meine Toolbox</h1>
-  <p>Alle Tools, Broker & Ressourcen, die ich selbst nutze – inklusive exklusiven Vorteilen wie Rabatten und Boni.</p>
-  <a href="#tools" class="btn">Zu meinen Empfehlungen →</a>
+  <p>
+    Alle Broker, Analyse-Tools & Ressourcen, die ich selbst nutze –
+    fokussiert auf Dividenden, Cashflow & Hard Assets.
+  </p>
+
+  <a href="/depot-strategie/" class="btn">📊 Depot-Strategie</a>
+  <a href="/podcast/index.html" class="btn">🎙️ Podcast</a>
+  <a href="/blog/index.html" class="btn">📰 Blog</a>
 </section>
 
-<div id="tools"></div>
-
-<!-- ===================================== -->
-<!-- 🟡 1: BROKER -->
-<!-- ===================================== -->
-
+<!-- BROKER -->
 <h2 class="category-title">📈 Broker</h2>
 <section class="grid">
 
-  <!-- Scalable -->
   <div class="card">
     <h3>Scalable Capital</h3>
-    <p>Mein Hauptbroker für Dividenden, ETFs & Hard-Asset-Positionen.</p>
-    <p class="usp">💛 Vorteil: 0 € Sparpläne & extrem niedrige Gebühren.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener" 
-       href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43">
-       Zu Scalable →
+    <p>Mein Hauptbroker für Dividenden & ETFs.</p>
+    <p class="usp">💛 0 € Sparpläne & niedrige Gebühren</p>
+    <a class="btn" target="_blank" rel="nofollow noopener"
+       href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick">
+      Zu Scalable →
     </a>
     <p class="note">⚠️ Investitionen bergen Risiken.</p>
   </div>
 
-  <!-- TR -->
   <div class="card">
     <h3>Trade Republic</h3>
-    <p>Mein Zweitbroker – ideal für schnelle Orders & Sparpläne.</p>
-    <p class="usp">💛 Vorteil: 0 € Sparpläne & kostenlose Kontoführung.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener" 
+    <p>Zweitbroker für Sparpläne & schnelle Orders.</p>
+    <p class="usp">💛 Kostenlose Kontoführung</p>
+    <a class="btn" target="_blank" rel="nofollow noopener"
        href="https://refnocode.trade.re/79z763g7">
-       Zu Trade Republic →
+      Zu Trade Republic →
     </a>
   </div>
 
 </section>
 
-<!-- ===================================== -->
-<!-- 🟡 2: ANALYSE & DATEN -->
-<!-- ===================================== -->
-
-<h2 class="category-title">📊 Analysen & Daten</h2>
+<!-- ANALYSE -->
+<h2 class="category-title">📊 Analyse & Daten</h2>
 <section class="grid">
 
-  <!-- InvestingPro -->
   <div class="card">
     <h3>InvestingPro</h3>
-    <p>Mein Analyse-Tool Nr. 1 – Fair Value, Cashflows, Screener, Earnings.</p>
-    <p class="usp">💛 Vorteil: <strong>15 % Rabatt</strong> über meinen Link.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+    <p>Fair Value, Cashflows & Screener.</p>
+    <p class="usp">💛 15 % Rabatt</p>
+    <a class="btn" target="_blank" rel="nofollow noopener"
        href="https://www.investing-referral.com/mbcapital3/">
-       15 % Rabatt sichern →
+      Rabatt sichern →
     </a>
   </div>
 
-  <!-- Parqet -->
   <div class="card">
     <h3>Parqet</h3>
-    <p>Nutze ich für Cashflow, Dividendenkalender & Branchenanalyse.</p>
-    <p class="usp">💛 Vorteil: <strong>15 % Rabatt</strong> im ersten Jahr.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+    <p>Cashflow- & Dividenden-Tracking.</p>
+    <p class="usp">💛 15 % Rabatt im ersten Jahr</p>
+    <a class="btn" target="_blank" rel="nofollow noopener"
        href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8">
-       Parqet –15 % →
+      Zu Parqet →
     </a>
   </div>
 
 </section>
 
-<!-- ===================================== -->
-<!-- 🟡 3: KRYPTOPLATFORMEN -->
-<!-- ===================================== -->
-
-<h2 class="category-title">🔐 Krypto</h2>
-<section class="grid">
-
-  <div class="card">
-    <h3>Binance</h3>
-    <p>Meine Plattform für Staking & aktives Trading.</p>
-    <p class="usp">💛 Vorteil: Gebühren-Kickback.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
-       href="https://binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9">
-       Zu Binance →
-    </a>
-  </div>
-
-  <div class="card">
-    <h3>Coinbase</h3>
-    <p>Einfach, sicher & ideal für langfristige Positionen.</p>
-    <p class="usp">💛 Vorteil: Bonus für Neukunden.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
-       href="https://coinbase.com/join/EN8NVAV?src=referral-link">
-       Zu Coinbase →
-    </a>
-  </div>
-
-</section>
-
-<!-- ===================================== -->
-<!-- 🟡 4: REISEN & FINANZEN -->
-<!-- ===================================== -->
-
-<h2 class="category-title">🌍 Reisen & Finanzen</h2>
-<section class="grid">
-
-  <div class="card">
-    <h3>Wise</h3>
-    <p>Nutze ich für Reisen & Multi-Währungen – ich bestimme selbst den Wechselkurs.</p>
-    <p class="usp">💛 Vorteil: Gebührenfrei starten.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
-       href="https://wise.com/invite/dic/marcopeterb2">
-       Zu Wise →
-    </a>
-  </div>
-
-  <div class="card">
-    <h3>Airalo (eSIM)</h3>
-    <p>Bei jeder Asien-Reise nutze ich Airalo – direkt online nach der Landung.</p>
-    <p class="usp">💛 Vorteil: <strong>3 € Bonuscode: BAND1T8990</strong></p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
-       href="https://www.airalo.com?ref=BAND1T8990">
-       Mit Bonus starten →
-    </a>
-  </div>
-
-</section>
-
-<!-- ===================================== -->
-<!-- 🟡 6: PODCAST -->
-<!-- ===================================== -->
-
-<h2 class="category-title">🎙️ Podcast (Video & Audio)</h2>
+<!-- PODCAST -->
+<h2 class="category-title">🎙️ Podcast</h2>
 <section class="grid">
 
   <div class="card">
     <h3>MB Capital Strategies Podcast</h3>
     <p>
-      Alle Podcast-Serien von MB Capital Strategies gebündelt an einem Ort:
-      Dividenden, Cashflow, Makro, Shipping, Energie, Mining & Hard Assets.
+      Dividenden, Cashflow, Makro, Shipping, Energie & Mining –
+      gebündelt als YouTube-Podcast.
     </p>
-
-    <p class="usp">
-      💛 Vorteil: YouTube Podcast = Video + Audio, Playlists, Kapitel & Google-Indexierung.
-    </p>
-
-    <a class="btn" href="/podcast/">
+    <p class="usp">💛 Video + Audio, Playlists & SEO-Power</p>
+    <a class="btn" href="/podcast/index.html">
       Zum Podcast-Hub →
     </a>
-
-    <p class="note">
-      Alle Folgen erscheinen als strukturierte Playlists –
-      ideal für langfristigen Cashflow- & Zyklus-Content.
-    </p>
   </div>
 
 </section>
 
 <footer>
-  © 2025 MB Capital Strategies · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
-  <br><br>
+  © 2025 MB Capital Strategies ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a><br><br>
   Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
 </footer>
 
