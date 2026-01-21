@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dividendenstrategie: Cashflow, Hard Assets & High Yield | MB Capital Strategies</title>
+  <meta name="description" content="Meine Dividendenstrategie: Hard Assets, Cashflow & High-Yield – klar, zyklisch, datenbasiert. Inkl. Tools: Dividendenrechner, Yield-on-Cost & Reinvest (DRIP)." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dividendenstrategie: Cashflow, Hard Assets & High Yield | MB Capital Strategies">
+  <meta property="og:description" content="Der MB Capital Ansatz: Cashflow statt Story. Hard Assets, Zyklen, High Yield – inkl. Rechner & Tools.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/dividendenstrategie/">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ist eine High-Yield Dividendenstrategie nicht zu riskant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "High Yield ist nicht automatisch Risiko. Entscheidend ist die Cashflow-Qualität, Bilanz, Zyklik und ob die Ausschüttung aus freiem Cashflow kommt. Ich setze auf Hard Assets und nutze Zyklen, statt blind Rendite zu jagen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Kennzahlen sind für Dividendeninvestoren am wichtigsten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Payout Ratio (auf FCF), Free Cashflow, Netto-Verschuldung/EBITDA, Capex-Zyklus, Break-even (z.B. bei Shipping/Energie) und der Track Record der Kapitalallokation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist Yield-on-Cost (YOC) und warum ist das wichtig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yield-on-Cost zeigt deine persönliche Rendite bezogen auf deinen Einstiegskurs. Bei starkem Cashflow und Reinvest kann YOC über Jahre deutlich steigen und wird zur Cashflow-Maschine."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-strong:#e0bd55;
+      --bg:#0f1115;
+      --bg-soft:#151821;
+      --bg-card:#1a1f2b;
+      --text:#f5f6fa;
+      --text-2:#9aa6c0;
+    }
+
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:#0f1115 url('/background.jpg') no-repeat center top;
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px 70px;
+    }
+
+    header.header{
+      background:var(--bg-soft);
+      border-bottom:1px solid rgba(212,175,55,.28);
+      padding:16px 12px;
+      position:sticky;
+      top:0;
+      z-index:30;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:22px;
+    }
+    header.header a{
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:600;
+      font-size:1em;
+    }
+    header.header a:hover{ text-decoration:underline; }
+
+    .dropdown{ position:relative; }
+    .dropdown-btn{
+      background:none; border:none;
+      color:var(--gold);
+      font-weight:600; cursor:pointer;
+      padding:6px 10px; font-size:1em;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:var(--bg);
+      min-width:230px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:10px 0;
+      top:36px; left:0;
+      z-index:1000;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 16px;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .dropdown-content a:hover{
+      background:#1d2330;
+      color:var(--gold);
+    }
+    @media(min-width:700px){
+      .dropdown:hover .dropdown-content{ display:block; }
+    }
+    @media(max-width:699px){
+      .dropdown.open .dropdown-content{ display:block; }
+    }
+
+    .hero{
+      text-align:left;
+      padding:70px 10px 10px;
+      max-width:980px;
+      margin:0 auto;
+    }
+    .kicker{
+      color:var(--gold);
+      font-weight:700;
+      letter-spacing:.3px;
+      margin-bottom:10px;
+    }
+    h1{
+      color:var(--gold);
+      font-size:2.4em;
+      margin:0 0 12px;
+    }
+    .lead{
+      color:#cfd6e6;
+      font-size:1.12em;
+      line-height:1.6;
+      margin:0 0 18px;
+      max-width:900px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#000;
+      font-weight:700;
+      text-decoration:none;
+      font-size:1.02em;
+      box-shadow:0 0 14px rgba(212,175,55,0.6);
+      transition:0.25s;
+    }
+    .btn:hover{
+      background:var(--gold-strong);
+      box-shadow:0 0 18px rgba(212,175,55,0.9);
+      transform:translateY(-2px);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--gold);
+      border:1px solid rgba(212,175,55,.55);
+      box-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:#141823;
+      transform:translateY(-2px);
+      box-shadow:0 0 18px rgba(212,175,55,0.25);
+    }
+
+    .section{
+      max-width:980px;
+      margin:40px auto;
+      padding:0 10px;
+    }
+    h2{
+      color:var(--gold);
+      font-size:1.7em;
+      margin:0 0 12px;
+    }
+    h3{
+      color:#f2d78a;
+      margin:18px 0 8px;
+    }
+    p{
+      color:#cfd6e6;
+      line-height:1.65;
+      margin:10px 0;
+    }
+    ul{
+      color:#cfd6e6;
+      line-height:1.7;
+      margin:10px 0 10px 18px;
+    }
+
+    .card{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+      margin-top:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    .embed{
+      margin-top:18px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.22);
+      background:#0d0f13;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+    }
+    .embed iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+
+    .mini-note{
+      color:var(--text-2);
+      font-size:0.95em;
+      margin-top:6px;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(212,175,55,.18);
+      margin:26px 0;
+    }
+
+    details{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:12px 0;
+    }
+    summary{
+      color:var(--gold);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:80px;
+      text-align:center;
+      padding:45px 15px;
+      color:#9aa6c0;
+      font-size:0.9rem;
+      background:#0d0f13;
+      border-top:1px solid rgba(212,175,55,0.25);
+    }
+    footer a{ color:var(--gold); text-decoration:none; margin:0 10px; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="/">🏠 Startseite</a>
+  <a href="/depot-strategie/">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">📘 Themen ▾</button>
+    <div class="dropdown-content">
+      <a href="/shipping/">🚢 Shipping</a>
+      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/energie/">⚡ Energie</a>
+      <hr>
+      <a href="/kategorien/mining-aktien.html">⛏️ Mining Aktien</a>
+      <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+      <a href="/kategorien/rohstoff-superzyklus-2025-2030.html">🌋 Rohstoff Superzyklus</a>
+      <hr>
+      <a href="/glossar/shipping-cluster.html">📘 Shipping Glossar</a>
+      <a href="/high-yield/">💰 High Yield Dividenden</a>
+      <hr>
+      <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a>
+      <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a>
+      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">🎙️ Podcast ▾</button>
+    <div class="dropdown-content">
+      <a href="/podcast/">🎧 Alle Podcasts</a>
+      <hr>
+      <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+      <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>
+      <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing & Marktzyklen</a>
+      <hr>
+      <a href="/podcast/pipeline-aktien-analyse-2025.html">🛢️ Pipeline / Midstream</a>
+      <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>
+      <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>
+      <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+    </div>
+  </div>
+
+  <a href="/blog/index.html">📰 Blog</a>
+  <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/investing-analysen.html">📑 Investing Analysen</a>
+  <a href="/glossar/">📗 Glossar</a>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">🔶 Pillar Page · MB Capital Strategies</div>
+    <h1>Dividendenstrategie: Cashflow, Hard Assets & High Yield</h1>
+    <p class="lead">
+      Kursgewinne sind nett – <strong>Cashflow ist Macht.</strong> Ich investiere in reale, cashflow-starke Unternehmen
+      (Hard Assets) und nutze Zyklen, um <strong>hohe Ausschüttungen</strong> nicht als Glück, sondern als System zu spielen.
+      Diese Seite ist der zentrale Hub für meinen Ansatz – inklusive Tools, Rechner und den wichtigsten Kennzahlen.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn" href="/depot-strategie/">📊 Depot-Strategie ansehen</a>
+      <a class="btn btn-secondary" href="/tools/dividendenrechner.html">💰 Dividendenrechner</a>
+      <a class="btn btn-secondary" href="/tools/yield-on-cost-rechner.html">📈 Yield-on-Cost</a>
+    </div>
+
+    <p class="mini-note">Hinweis: Keine Anlageberatung. Ich teile meinen Ansatz & meine Analyse-Logik.</p>
+
+    <!-- YouTube Embed (ersetze VIDEO) -->
+    <div class="embed" aria-label="YouTube Video">
+      <iframe
+        src="https://www.youtube.com/embed/ANwHQxes6UE"
+        title="MB Capital Strategies – Dividendenstrategie"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="mini-note">👉 Ersetze <strong>VIDEO_ID</strong> durch die ID deines passenden Videos.</p>
+  </section>
+
+  <!-- SECTION 1 -->
+  <section class="section">
+    <h2>Warum Dividenden = Cashflow (und nicht „Bonus“)</h2>
+    <div class="card">
+      <p>
+        Dividenden sind für mich nicht das Sahnehäubchen, sondern das Produkt. Cashflow ist messbar, planbar und kann
+        konsequent reinvestiert werden. Das Ziel ist nicht „maximaler Hype“, sondern ein Portfolio, das auch in Seitwärtsphasen
+        liefert – und in Boomphasen skaliert.
+      </p>
+      <ul>
+        <li><strong>Cashflow</strong> statt Kursfantasie</li>
+        <li><strong>Reale Assets</strong> statt Story-Aktien</li>
+        <li><strong>Zyklen nutzen</strong> statt ignorieren</li>
+        <li><strong>Reinvest</strong> als Turbo (DRIP)</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Meine Dividendenstrategie (MB Capital Ansatz)</h2>
+
+    <h3>Fokus auf Hard Assets</h3>
+    <p>
+      Ich setze auf Sektoren, die echte Nachfrage bedienen: Energie, Midstream, Shipping, Mining, Infrastruktur.
+      Das sind Bereiche, in denen Angebot/Nachfrage-Zyklen hart wirken – und genau dort entstehen Cashflow-Spitzen.
+    </p>
+
+    <h3>Warum High Yield kein Glücksspiel ist</h3>
+    <p>
+      High Yield wird oft pauschal als „gefährlich“ abgestempelt. In Wahrheit ist die Frage:
+      <strong>Kommt die Dividende aus freiem Cashflow – oder aus Hoffnung?</strong>
+      Entscheidend sind FCF, Bilanz, Capex-Zyklus und Kapitaldisziplin.
+    </p>
+
+    <h3>Zyklisch investieren statt Buy & Hold</h3>
+    <p>
+      In zyklischen Branchen entstehen die besten Einstiege nicht, wenn alle begeistert sind, sondern wenn Unsicherheit dominiert.
+      Ich achte deshalb auf: Orderbook/Flotte (Shipping), Capex-Disziplin (Energie), Cost-Curves (Mining) und Bewertung vs. Zyklus.
+    </p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="section">
+    <h2>Die Kern-Sektoren meiner Dividendenstrategie</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🛢️ Energie & Midstream</h3>
+        <p>Stabiler Cashflow, oft hohe Ausschüttungen, klare Kennzahlen: FCF, Debt/EBITDA, Hedge-Profile.</p>
+        <p><a class="btn btn-secondary" href="/midstream/">Midstream ansehen →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>🚢 Shipping & Tanker</h3>
+        <p>Zyklisch, brutal ehrlich. Cashflow-Spitzen + Sonderdividenden möglich – wenn du den Zyklus verstehst.</p>
+        <p><a class="btn btn-secondary" href="/shipping/">Shipping ansehen →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>⛏️ Mining & Rohstoffe</h3>
+        <p>Hebel auf Rohstoffpreise, starke Ausschüttungen in Boomphasen, aber Bewertung & Kosten sind alles.</p>
+        <p><a class="btn btn-secondary" href="/kategorien/mining-aktien.html">Mining öffnen →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>🏦 BDCs & Infrastruktur</h3>
+        <p>Cashflow-orientiert, oft monatliche/regelmäßige Ausschüttungen – Fokus auf Kreditqualität & NAV.</p>
+        <p><a class="btn btn-secondary" href="/kategorien/high-yield-aktien.html">High Yield öffnen →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="section">
+    <h2>Yield-on-Cost & Reinvest (DRIP): Der Turbo</h2>
+    <div class="card">
+      <p>
+        Der größte Hebel im Dividenden-Game ist nicht der eine perfekte Pick, sondern der Effekt aus
+        <strong>Reinvest + Zeit</strong>. Yield-on-Cost macht sichtbar, wie deine persönliche Rendite mit wachsendem Cashflow
+        und Wiederanlage steigt.
+      </p>
+      <ul>
+        <li>YOC zeigt deine Rendite bezogen auf deinen Einstiegskurs</li>
+        <li>Reinvest erhöht Stückzahl → mehr Dividende → mehr Reinvest</li>
+        <li>In Cashflow-Spitzenphasen beschleunigt sich der Effekt massiv</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn" href="/tools/yield-on-cost-rechner.html">📈 Yield-on-Cost Rechner</a>
+        <a class="btn" href="/tools/dividenden-reinvest-rechner.html">🔁 Reinvest (DRIP) Rechner</a>
+        <a class="btn btn-secondary" href="/tools/dividenden-wachstumsrechner.html">🚀 Dividendenwachstum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="section">
+    <h2>Tools & Rechner für Dividendeninvestoren</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💰 Dividendenrechner</h3>
+        <p>Jährlich / monatlich / quartalsweise – schnell & sauber.</p>
+        <p><a class="btn" href="/tools/dividendenrechner.html">Jetzt berechnen →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>❄️ Dividend Snowball PRO</h3>
+        <p>Langfristige Simulation + Reinvest-Effekt.</p>
+        <p><a class="btn" href="/tools/dividenden-snowball-rechner.html">Jetzt simulieren →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>🏁 Finanzielle Freiheit</h3>
+        <p>Wann decken Dividenden deine monatlichen Kosten?</p>
+        <p><a class="btn" href="/tools/finanzielle-freiheit-rechner.html">Jetzt starten →</a></p>
+      </div>
+
+      <div class="card">
+        <h3>🛳️ Shipping Cashflow</h3>
+        <p>TCE, OPEX, Gewinn, FCF & Dividendenpotenzial.</p>
+        <p><a class="btn" href="/tools/shipping-cashflow-rechner.html">Rechner öffnen →</a></p>
+      </div>
+    </div>
+
+    <p class="mini-note">Mehr Tools findest du gesammelt hier: <a href="/rechner/" style="color:var(--gold);">/rechner/</a></p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="section">
+    <h2>Häufige Fehler bei Dividendenstrategien (damit du sie vermeidest)</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Yield-Chasing:</strong> nur auf Rendite schauen, ohne Cashflow-Qualität zu prüfen.</li>
+        <li><strong>Falsche Payout-Metrik:</strong> Earnings statt Free Cashflow (FCF) bewerten.</li>
+        <li><strong>Zyklen ignorieren:</strong> in Boomphasen kaufen, in Crashphasen verkaufen.</li>
+        <li><strong>Bilanz unterschätzen:</strong> Debt/EBITDA, Fälligkeiten & Refinanzierung nicht prüfen.</li>
+        <li><strong>Keine Strategie:</strong> ohne Regeln wird’s emotional.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>Ist High Yield immer riskant?</summary>
+      <p>Nein. Riskant ist eine Dividende, die nicht durch FCF gedeckt ist. High Yield kann solide sein, wenn Bilanz & Cashflow stimmen.</p>
+    </details>
+
+    <details>
+      <summary>Welche Kennzahlen sind am wichtigsten?</summary>
+      <p>FCF, Payout auf FCF, Debt/EBITDA, Capex-Zyklus, Break-even (je nach Sektor), Management-Disziplin.</p>
+    </details>
+
+    <details>
+      <summary>Wie nutze ich Reinvest am besten?</summary>
+      <p>Reinvest funktioniert am stärksten, wenn du antizyklisch nachkaufst und Cashflow-Spitzen für beschleunigte Wiederanlage nutzt.</p>
+    </details>
+  </section>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:24px;">
+    <strong style="color:#d4af37; font-size:1rem;">Publikationen</strong><br>
+    <a href="/investing-analysen.html">📑 Investing Analysen</a>
+    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank">▶ YouTube Videos</a>
+  </div>
+
+  <div style="margin-bottom:18px;">
+    © 2025 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a>
+  </div>
+
+  <div style="font-size:0.82rem; opacity:0.75; margin-top:8px;">
+    Einige Links sind Affiliate-Links. Für dich entstehen keine Mehrkosten.
+  </div>
+</footer>
+
+<script>
+  const dropdown = document.querySelector(".dropdown");
+  const btn = document.querySelector(".dropdown-btn");
+
+  if (dropdown && btn) {
+    btn.addEventListener("click", () => {
+      if (window.innerWidth < 700) {
+        dropdown.classList.toggle("open");
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
