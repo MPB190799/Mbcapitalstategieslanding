@@ -1,190 +1,595 @@
-<!-- ============================= -->
-<!-- HERO -->
-<!-- ============================= -->
-<section class="section">
-  <h1>⛏️ Mining Aktien: Cashflow, Dividenden & Rohstoff-Zyklen</h1>
-  <p>
-    Mining-Aktien sind keine Story-Investments, sondern zyklische Cashflow-Maschinen.
-    Hier zeige ich meinen kompletten Ansatz zur Analyse von Bergbau-Aktien –
-    fokussiert auf Cashflow, Kosten, Bilanz und Zyklus-Timing.
-  </p>
-</section>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
 
-<!-- ============================= -->
-<!-- VIDEO CARD -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
-    <h2>🎥 MB Mining Serie – Echtgeld-Analysen ohne Hype</h2>
-    <p>
-      In der MB Mining Serie analysiere ich Mining-Aktien nüchtern und datenbasiert.
-      Jede Analyse betrachtet Cashflow, Dividendenlogik, Kostenstruktur und
-      Zyklus-Positionierung – ohne Storytelling.
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mining Aktien: Cashflow, Dividenden & Rohstoff-Zyklen | MB Capital Strategies</title>
+  <meta name="description" content="Mining Aktien sind zyklische Cashflow-Maschinen. Mein Ansatz: AISC, Free Cashflow, Bilanz, Capex-Disziplin & Zyklus-Timing. Inkl. MB Mining Serie (YouTube) und Tools für Cashflow-Investoren." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mining Aktien: Cashflow, Dividenden & Rohstoff-Zyklen | MB Capital Strategies">
+  <meta property="og:description" content="Der MB Mining Ansatz: Cashflow statt Story. AISC, FCF, Bilanz, Capex & Zyklus-Timing – inkl. Mining-Serie & Tools.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/kategorien/mining-aktien.html">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Warum sind Mining-Aktien so stark zyklisch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mining-Unternehmen haben einen operativen Hebel auf Rohstoffpreise: Steigen Preise, explodiert der Free Cashflow; fallen Preise, brechen Margen schnell ein. Zusätzlich wirkt der Capex-Zyklus: In Boomphasen wird zu viel investiert, in Abschwüngen wird gekürzt. Deshalb ist Zyklus-Timing entscheidend."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Kennzahlen sind bei Mining-Aktien am wichtigsten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Fokus stehen AISC bzw. Kostenposition in der Cost Curve, Free Cashflow über den Zyklus, Netto-Verschuldung/EBITDA, Capex-Disziplin (Sustaining vs. Growth), Reserven/Lebensdauer, sowie Kapitalallokation (Buybacks, Dividenden, M&A)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind hohe Dividenden bei Minern nachhaltig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Meist nur zyklisch. Hohe Ausschüttungen entstehen in Hochphasen aus Free Cashflow – sie sind selten konstant. Nachhaltig sind Dividenden nur, wenn Kosten niedrig, Bilanz stark und Capex planbar bleibt. Sonderdividenden müssen immer als Zyklus-Effekt eingeordnet werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie kann man Mining-Aktien sinnvoll timen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Antizyklisch: Wenn Sentiment schlecht ist, Capex gekürzt wird und Bewertungen niedrig sind, entstehen oft die besten Setups. Ich kombiniere Rohstoff-Cluster, Kostenposition (AISC), Bilanzstress-Signale und Zyklusindikatoren statt blind auf Dividendenrendite zu schauen."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --gold:#d4af37;
+      --gold-strong:#e0bd55;
+      --bg:#0f1115;
+      --bg-soft:#151821;
+      --text:#f5f6fa;
+      --text-2:#9aa6c0;
+    }
+
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:#0f1115 url('/background.jpg') no-repeat center top;
+      background-size:cover;
+      background-attachment:fixed;
+    }
+
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px 70px;
+    }
+
+    header.header{
+      background:var(--bg-soft);
+      border-bottom:1px solid rgba(212,175,55,.28);
+      padding:16px 12px;
+      position:sticky;
+      top:0;
+      z-index:30;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:22px;
+    }
+    header.header a{
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:600;
+      font-size:1em;
+    }
+    header.header a:hover{ text-decoration:underline; }
+
+    .dropdown{ position:relative; }
+    .dropdown-btn{
+      background:none; border:none;
+      color:var(--gold);
+      font-weight:600; cursor:pointer;
+      padding:6px 10px; font-size:1em;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:var(--bg);
+      min-width:230px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:10px 0;
+      top:36px; left:0;
+      z-index:1000;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 16px;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .dropdown-content a:hover{
+      background:#1d2330;
+      color:var(--gold);
+    }
+    .dropdown-content hr{
+      border:0;
+      height:1px;
+      background:rgba(212,175,55,.18);
+      margin:8px 12px;
+    }
+    @media(min-width:700px){
+      .dropdown:hover .dropdown-content{ display:block; }
+    }
+    @media(max-width:699px){
+      .dropdown.open .dropdown-content{ display:block; }
+    }
+
+    .hero{
+      text-align:left;
+      padding:70px 10px 10px;
+      max-width:980px;
+      margin:0 auto;
+    }
+    .kicker{
+      color:var(--gold);
+      font-weight:700;
+      letter-spacing:.3px;
+      margin-bottom:10px;
+    }
+    h1{
+      color:var(--gold);
+      font-size:2.4em;
+      margin:0 0 12px;
+    }
+    .lead{
+      color:#cfd6e6;
+      font-size:1.12em;
+      line-height:1.6;
+      margin:0 0 18px;
+      max-width:900px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#000;
+      font-weight:700;
+      text-decoration:none;
+      font-size:1.02em;
+      box-shadow:0 0 14px rgba(212,175,55,0.6);
+      transition:0.25s;
+    }
+    .btn:hover{
+      background:var(--gold-strong);
+      box-shadow:0 0 18px rgba(212,175,55,0.9);
+      transform:translateY(-2px);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--gold);
+      border:1px solid rgba(212,175,55,.55);
+      box-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:#141823;
+      transform:translateY(-2px);
+      box-shadow:0 0 18px rgba(212,175,55,0.25);
+    }
+
+    .section{
+      max-width:980px;
+      margin:40px auto;
+      padding:0 10px;
+    }
+    h2{
+      color:var(--gold);
+      font-size:1.7em;
+      margin:0 0 12px;
+    }
+    h3{
+      color:#f2d78a;
+      margin:18px 0 8px;
+    }
+    p{
+      color:#cfd6e6;
+      line-height:1.65;
+      margin:10px 0;
+    }
+    ul{
+      color:#cfd6e6;
+      line-height:1.7;
+      margin:10px 0 10px 18px;
+    }
+
+    .card{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+      margin-top:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    .embed{
+      margin-top:18px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.22);
+      background:#0d0f13;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+    }
+    .embed iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+
+    .mini-note{
+      color:var(--text-2);
+      font-size:0.95em;
+      margin-top:6px;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(212,175,55,.18);
+      margin:26px 0;
+    }
+
+    details{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:12px 0;
+    }
+    summary{
+      color:var(--gold);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:80px;
+      text-align:center;
+      padding:45px 15px;
+      color:#9aa6c0;
+      font-size:0.9rem;
+      background:#0d0f13;
+      border-top:1px solid rgba(212,175,55,0.25);
+    }
+    footer a{ color:var(--gold); text-decoration:none; margin:0 10px; }
+    footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="/">🏠 Startseite</a>
+  <a href="/depot-strategie/">📊 Depot-Strategie</a>
+  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">📘 Themen ▾</button>
+    <div class="dropdown-content">
+      <a href="/shipping/">🚢 Shipping</a>
+      <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+      <a href="/energie/">⚡ Energie</a>
+      <hr>
+      <a href="/kategorien/mining-aktien.html">⛏️ Mining Aktien</a>
+      <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+      <a href="/kategorien/rohstoff-superzyklus-2025-2030.html">🌋 Rohstoff Superzyklus</a>
+      <hr>
+      <a href="/glossar/shipping-cluster.html">📘 Shipping Glossar</a>
+      <a href="/high-yield/">💰 High Yield Dividenden</a>
+      <hr>
+      <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a>
+      <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a>
+      <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">🎙️ Podcast ▾</button>
+    <div class="dropdown-content">
+      <a href="/podcast/">🎧 Alle Podcasts</a>
+      <hr>
+      <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+      <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>
+      <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing & Marktzyklen</a>
+      <hr>
+      <a href="/podcast/pipeline-aktien-analyse-2025.html">🛢️ Pipeline / Midstream</a>
+      <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>
+      <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>
+      <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+    </div>
+  </div>
+
+  <a href="/blog/index.html">📰 Blog</a>
+  <a href="/toolbox.html">🧰 Toolbox</a>
+  <a href="/investing-analysen.html">📑 Investing Analysen</a>
+  <a href="/glossar/">📗 Glossar</a>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">⛏️ Pillar Page · MB Capital Strategies</div>
+    <h1>Mining Aktien: Cashflow, Dividenden & Rohstoff-Zyklen</h1>
+    <p class="lead">
+      Mining-Aktien sind keine Story-Investments, sondern <strong>zyklische Cashflow-Maschinen</strong>.
+      Entscheidend sind Kosten (AISC), Free Cashflow, Bilanzstärke und Capex-Disziplin –
+      plus ein klares Verständnis der Rohstoff-Zyklen. Genau darum geht es hier: <strong>Cashflow statt Hype.</strong>
     </p>
 
-    <div class="video-container">
+    <div class="cta-row">
+      <a class="btn" href="/kategorien/mining-aktien.html">⛏️ Mining-Analysen</a>
+      <a class="btn btn-secondary" href="/rohstoff-superzyklus-master.html">🌋 Rohstoff-Hub</a>
+      <a class="btn btn-secondary" href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+    </div>
+
+    <p class="mini-note">Hinweis: Mining ist zyklisch. Ich teile meine Analyse-Logik – keine Anlageberatung.</p>
+
+    <!-- YouTube Playlist -->
+    <div class="embed" aria-label="YouTube Playlist">
       <iframe
         src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9dei7BFRgzB7nRBy4ZYCAl6Q"
         title="MB Mining Serie Playlist"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================= -->
-<!-- WARUM MINING -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
+  <!-- WARUM MINING -->
+  <section class="section">
     <h2>Warum Mining-Aktien ein eigener Investment-Zyklus sind</h2>
-    <p>
-      Mining-Aktien reagieren direkt auf Rohstoffpreise, Förderkosten und
-      Kapitaldisziplin. In Hochphasen entstehen massive Cashflows,
-      in Abschwüngen trennt sich Qualität von Substanz.
-    </p>
-    <ul>
-      <li>Operativer Hebel auf Rohstoffpreise</li>
-      <li>Free Cashflow wichtiger als bilanzieller Gewinn</li>
-      <li>Zyklische Dividenden & Sonderausschüttungen</li>
-      <li>Kein Buy-&-Forget-Sektor</li>
-    </ul>
-  </div>
-</section>
+    <div class="card">
+      <p>
+        Mining-Aktien bewegen sich nicht „linear“. Der Sektor wird von Rohstoffpreisen, Kostenkurven und dem Capex-Zyklus getrieben.
+        In Hochphasen entstehen extreme Cashflows, in Abschwüngen entscheidet Bilanz und Kostenposition über Überleben und Marktanteile.
+      </p>
+      <ul>
+        <li>Operativer Hebel auf Rohstoffpreise</li>
+        <li>Free Cashflow wichtiger als bilanzieller Gewinn</li>
+        <li>Zyklische Dividenden & Sonderausschüttungen</li>
+        <li>Kein Buy-&-Forget-Sektor</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- ============================= -->
-<!-- MEIN ANSATZ -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
+  <!-- MEIN ANSATZ -->
+  <section class="section">
     <h2>Mein Mining-Ansatz (MB Capital Strategies)</h2>
-    <p>Ich bewerte Mining-Aktien nicht nach Kursfantasie, sondern nach:</p>
-    <ul>
-      <li><strong>AISC & Kostenstruktur</strong></li>
-      <li><strong>Free Cashflow über den Zyklus</strong></li>
-      <li><strong>Bilanz & Nettoverschuldung</strong></li>
-      <li><strong>Capex-Disziplin</strong></li>
-      <li><strong>Zyklus-Positionierung</strong></li>
-    </ul>
-  </div>
-</section>
+    <div class="card">
+      <p>
+        Ich bewerte Miner nicht nach Kursfantasie, sondern nach Cashflow-Qualität und Zyklus-Fit.
+        Der Schlüssel ist: <strong>Wie robust ist das Unternehmen, wenn Rohstoffpreise fallen?</strong>
+      </p>
+      <ul>
+        <li><strong>AISC & Kostenstruktur</strong> (Cost Curve: Low-Cost gewinnt)</li>
+        <li><strong>Free Cashflow über den Zyklus</strong> (nicht nur Peak-Jahre)</li>
+        <li><strong>Bilanz & Nettoverschuldung</strong> (Refinanzierungsrisiko)</li>
+        <li><strong>Capex-Disziplin</strong> (Sustaining vs. Growth)</li>
+        <li><strong>Zyklus-Positionierung</strong> (Sentiment, Angebot/ Nachfrage, Investitionswellen)</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- ============================= -->
-<!-- ANALYSIERTE AKTIEN -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
+  <!-- ANALYSIERTE AKTIEN -->
+  <section class="section">
     <h2>Diese Mining-Aktien habe ich analysiert</h2>
-    <p>
-      Alle folgenden Mining-Aktien wurden detailliert analysiert –
-      jeweils mit Fokus auf Cashflow, Dividenden und Risiken:
-    </p>
-    <ul>
-      <li>Thungela Resources</li>
-      <li>Whitehaven Coal</li>
-      <li>Yancoal Australia</li>
-      <li>Fortescue Metals Group</li>
-      <li>BHP Group</li>
-      <li>Vale</li>
-      <li>Rio Tinto</li>
-      <li>Glencore</li>
-      <li>Anglo American</li>
-      <li>Kazatomprom</li>
-      <li>Barrick Mining</li>
-      <li>Newmont</li>
-      <li>AngloGold Ashanti</li>
-      <li>Exxaro Resources</li>
-      <li>South32</li>
-      <li>Fresnillo</li>
-      <li>Central Asia Metals</li>
-      <li>Gerdau</li>
-      <li>Jiangxi Copper</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================= -->
-<!-- KERNBEREICHE -->
-<!-- ============================= -->
-<section class="section">
-  <h2>Mining-Segmente & Rohstoff-Cluster</h2>
-
-  <div class="grid">
     <div class="card">
-      <h3>🔋 Kupfer-Mining</h3>
-      <p>Energiewende, Netzausbau & KI als strukturelle Nachfrage-Treiber.</p>
-      <a href="/rohstoffe/kupfer-superzyklus.html" class="btn">Kupfer-Zyklus →</a>
+      <p>
+        Alle folgenden Mining-Aktien wurden detailliert analysiert – jeweils mit Fokus auf Cashflow, Dividenden und Risiken:
+      </p>
+      <ul>
+        <li>Thungela Resources</li>
+        <li>Whitehaven Coal</li>
+        <li>Yancoal Australia</li>
+        <li>Fortescue Metals Group</li>
+        <li>BHP Group</li>
+        <li>Vale</li>
+        <li>Rio Tinto</li>
+        <li>Glencore</li>
+        <li>Anglo American</li>
+        <li>Kazatomprom</li>
+        <li>Barrick Mining</li>
+        <li>Newmont</li>
+        <li>AngloGold Ashanti</li>
+        <li>Exxaro Resources</li>
+        <li>South32</li>
+        <li>Fresnillo</li>
+        <li>Central Asia Metals</li>
+        <li>Gerdau</li>
+        <li>Jiangxi Copper</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>⚛️ Uran-Mining</h3>
-      <p>SMRs, Kernenergie & Angebotsknappheit.</p>
-      <a href="/rohstoffe/uran-superzyklus.html" class="btn">Uran-Zyklus →</a>
+  <!-- SEGMENTE -->
+  <section class="section">
+    <h2>Mining-Segmente & Rohstoff-Cluster</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🔋 Kupfer-Mining</h3>
+        <p>Energiewende, Netzausbau & KI als strukturelle Nachfrage-Treiber.</p>
+        <a href="/rohstoffe/kupfer-superzyklus.html" class="btn btn-secondary">Kupfer-Zyklus →</a>
+      </div>
+
+      <div class="card">
+        <h3>⚛️ Uran-Mining</h3>
+        <p>SMRs, Kernenergie & Angebotsknappheit.</p>
+        <a href="/rohstoffe/uran-superzyklus.html" class="btn btn-secondary">Uran-Zyklus →</a>
+      </div>
+
+      <div class="card">
+        <h3>🏗️ Kohle & Stahl</h3>
+        <p>Extrem cashflow-stark, politisch sensibel, hochzyklisch.</p>
+        <a href="/kategorien/mining-aktien.html" class="btn btn-secondary">Mining-Analysen →</a>
+      </div>
+
+      <div class="card">
+        <h3>🔩 Diversifizierte Miner</h3>
+        <p>Multi-Commodity-Produzenten mit Cashflow-Breite.</p>
+        <a href="/rohstoff-superzyklus-master.html" class="btn btn-secondary">Rohstoff-Hub →</a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>🏗️ Kohle & Stahl</h3>
-      <p>Extrem cashflow-stark, politisch sensibel, hochzyklisch.</p>
-      <a href="/kategorien/mining-aktien.html" class="btn">Mining-Analysen →</a>
-    </div>
-
-    <div class="card">
-      <h3>🔩 Diversifizierte Miner</h3>
-      <p>Multi-Commodity-Produzenten mit Cashflow-Breite.</p>
-      <a href="/rohstoff-superzyklus-master.html" class="btn">Rohstoff-Hub →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================= -->
-<!-- DIVIDENDEN LOGIK -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
+  <!-- DIVIDENDEN LOGIK -->
+  <section class="section">
     <h2>Mining & Dividenden – Cashflow statt Versprechen</h2>
-    <ul>
-      <li>Dividenden sind zyklisch – nicht planbar</li>
-      <li>Free Cashflow entscheidet, nicht Gewinn</li>
-      <li>Sonderdividenden müssen richtig eingeordnet werden</li>
-      <li>Capex bestimmt die Nachhaltigkeit</li>
-    </ul>
+    <div class="card">
+      <p>
+        Mining-Dividenden sind oft beeindruckend – aber fast nie linear. Entscheidend ist, ob die Ausschüttung
+        aus freiem Cashflow kommt und ob das Unternehmen Capex sauber steuert. Sonderdividenden sind kein „neues Normal“,
+        sondern ein Zyklus-Phänomen.
+      </p>
+      <ul>
+        <li>Dividenden sind zyklisch – nicht planbar wie bei defensiven Sektoren</li>
+        <li>Free Cashflow entscheidet, nicht bilanzieller Gewinn</li>
+        <li>Sonderdividenden müssen als Peak-Effekt eingeordnet werden</li>
+        <li>Capex bestimmt die Nachhaltigkeit (Sustaining vs. Growth)</li>
+      </ul>
 
-    <a href="/dividendenstrategie/" class="btn">
-      Zur Dividendenstrategie →
-    </a>
-  </div>
-</section>
+      <a href="/dividendenstrategie/" class="btn">Zur Dividendenstrategie →</a>
+    </div>
+  </section>
 
-<!-- ============================= -->
-<!-- FEHLER -->
-<!-- ============================= -->
-<section class="section">
-  <div class="card">
+  <!-- FEHLER -->
+  <section class="section">
     <h2>Häufige Fehler bei Mining-Aktien</h2>
-    <ul>
-      <li>Zyklus-Hochphasen als Normalzustand interpretieren</li>
-      <li>Einmal-Dividenden extrapolieren</li>
-      <li>Capex-Risiken unterschätzen</li>
-      <li>Politische Risiken ignorieren</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============================= -->
-<!-- TOOLS -->
-<!-- ============================= -->
-<section class="section">
-  <h2>Tools für Mining- & Cashflow-Investoren</h2>
-
-  <div class="grid">
     <div class="card">
-      <h3>📊 Dividendenrechner</h3>
-      <a href="/tools/dividendenrechner.html" class="btn">Jetzt berechnen →</a>
+      <ul>
+        <li>Zyklus-Hochphasen als Normalzustand interpretieren</li>
+        <li>Einmal-Dividenden extrapolieren</li>
+        <li>Capex-Risiken unterschätzen (Kostenexplosion, Overbuild, Fehlallokation)</li>
+        <li>Politische Risiken ignorieren (Royalties, Steuern, Lizenz-/Sanktionsrisiken)</li>
+        <li>Cost Curve ignorieren (High-Cost-Miner sterben im Downcycle)</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>💸 Cashflow-Rechner</h3>
-      <a href="/tools/finanzielle-freiheit-rechner.html" class="btn">Cashflow planen →</a>
+  <!-- TOOLS -->
+  <section class="section">
+    <h2>Tools für Mining- & Cashflow-Investoren</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>📊 Dividendenrechner</h3>
+        <p>Dividenden sauber auf Jahres-/Monatsbasis rechnen.</p>
+        <a href="/tools/dividendenrechner.html" class="btn">Jetzt berechnen →</a>
+      </div>
+
+      <div class="card">
+        <h3>💸 Cashflow-Rechner</h3>
+        <p>Dein Ziel: Wann deckt Cashflow deine Ausgaben?</p>
+        <a href="/tools/finanzielle-freiheit-rechner.html" class="btn">Cashflow planen →</a>
+      </div>
     </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>Warum ist AISC so wichtig?</summary>
+      <p>AISC zeigt, wie wettbewerbsfähig ein Miner ist. In Downcycles überleben Low-Cost-Produzenten, High-Cost-Miner geraten unter Druck. Kostenposition ist deshalb die Basis für Risiko- und Cashflow-Einschätzung.</p>
+    </details>
+
+    <details>
+      <summary>Warum ist Free Cashflow wichtiger als Gewinn?</summary>
+      <p>Gewinn kann durch Abschreibungen, Bewertungs- und Buchungseffekte verzerrt sein. Free Cashflow zeigt, was nach Capex wirklich übrig bleibt – und damit, ob Dividenden/Buybacks realistisch sind.</p>
+    </details>
+
+    <details>
+      <summary>Wie erkenne ich „gefährliche“ Sonderdividenden?</summary>
+      <p>Wenn Sonderdividenden gezahlt werden, obwohl Bilanz schwach ist, Growth-Capex steigt oder der Rohstoffpreis bereits Peak-Niveau hat, ist Vorsicht angesagt. Sonderdividenden sind oft Zyklus-Spitzen – nicht nachhaltig.</p>
+    </details>
+
+  </section>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:24px;">
+    <strong style="color:#d4af37; font-size:1rem;">Publikationen</strong><br>
+    <a href="/investing-analysen.html">📑 Investing Analysen</a>
+    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank">▶ YouTube Videos</a>
   </div>
-</section>
+
+  <div style="margin-bottom:18px;">
+    © 2025 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a>
+  </div>
+
+  <div style="font-size:0.82rem; opacity:0.75; margin-top:8px;">
+    Einige Links sind Affiliate-Links. Für dich entstehen keine Mehrkosten.
+  </div>
+</footer>
+
+<script>
+  const dropdown = document.querySelectorAll(".dropdown");
+  dropdown.forEach(d => {
+    const btn = d.querySelector(".dropdown-btn");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        if (window.innerWidth < 700) d.classList.toggle("open");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
