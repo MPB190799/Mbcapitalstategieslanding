@@ -27,7 +27,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
   background:linear-gradient(180deg,#11141b,#0b0d12);
   border-bottom:1px solid rgba(212,175,55,.25);
@@ -48,32 +48,8 @@ body{
   text-decoration:none;
 }
 .nav-item:hover{color:var(--accent);}
-.dropdown{position:relative;}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:26px;
-  left:0;
-  background:#12151d;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:10px;
-  padding:10px;
-  min-width:170px;
-  z-index:99;
-}
-.dropdown-menu a{
-  display:block;
-  padding:6px 10px;
-  color:#fff;
-}
-.dropdown-menu a:hover{
-  background:#0f1115;
-  border-radius:6px;
-  color:var(--accent);
-}
-.dropdown:hover .dropdown-menu{display:block;}
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .wrapper{
   max-width:900px;
   margin:40px auto;
@@ -91,7 +67,6 @@ body{
   font-size:1.8rem;
   margin:0 0 6px;
   color:var(--accent);
-  text-transform:uppercase;
 }
 .sub{font-size:.9rem;color:var(--muted);}
 
@@ -149,7 +124,7 @@ input{
   border-radius:14px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .site-footer{
   margin-top:60px;
   padding:30px 20px;
@@ -167,18 +142,9 @@ input{
 <header class="topbar">
 <nav class="topnav">
   <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-  <div class="nav-item dropdown">📁 Themen ▾
-    <div class="dropdown-menu">
-      <a href="/kategorien/energie.html">⚡ Energie</a>
-      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-      <a href="/kategorien/shipping.html">🚢 Shipping</a>
-    </div>
-  </div>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
   <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  <a href="/blog/" class="nav-item">📰 Blog</a>
 </nav>
 </header>
 
@@ -187,16 +153,16 @@ input{
 <section class="card">
 <header class="header">
   <h1 class="title">Finanzielle Freiheit Rechner</h1>
-  <p class="sub">Berechne, ab welchem Jahr deine Nettodividenden deine Lebenshaltungskosten decken.</p>
+  <p class="sub">Ab welchem Jahr deckt dein Dividenden-Cashflow deine monatlichen Ausgaben?</p>
 </header>
 
 <div class="grid">
-  <div><label>Startkapital (€)</label><input id="start" type="number" value="25000"></div>
-  <div><label>Monatliche Sparrate (€)</label><input id="save" type="number" value="500"></div>
-  <div><label>Ziel-Nettoeinkommen (€ / Monat)</label><input id="target" type="number" value="2000"></div>
-  <div><label>Dividendenrendite (% p.a.)</label><input id="yield" type="number" value="7"></div>
-  <div><label>Dividendenwachstum (% p.a.)</label><input id="growth" type="number" value="3"></div>
-  <div><label>Steuer auf Dividenden (%)</label><input id="tax" type="number" value="26.4"></div>
+  <div><label>Startkapital (€)</label><input id="startCapital" type="number" min="0" value="25000"></div>
+  <div><label>Monatliche Sparrate (€)</label><input id="monthlySave" type="number" min="0" value="500"></div>
+  <div><label>Ziel-Nettoeinkommen (€ / Monat)</label><input id="targetMonthly" type="number" min="0" value="2000"></div>
+  <div><label>Dividendenrendite (% p.a.)</label><input id="divYield" type="number" min="0" value="7"></div>
+  <div><label>Dividendenwachstum (% p.a.)</label><input id="divGrowth" type="number" min="0" value="3"></div>
+  <div><label>Steuer auf Dividenden (%)</label><input id="taxRate" type="number" min="0" value="26.4"></div>
 </div>
 
 <div class="inline">
@@ -213,64 +179,76 @@ input{
 <h2>Was bedeutet finanzielle Freiheit?</h2>
 <p>
 Finanzielle Freiheit ist erreicht, wenn deine <strong>Nettodividenden</strong>
-deine monatlichen Ausgaben dauerhaft decken. Dieser Rechner zeigt dir realistisch,
-ab welchem Jahr dieses Ziel erreichbar ist.
+deine monatlichen Lebenshaltungskosten dauerhaft decken – unabhängig von Job oder Marktphase.
 </p>
 
-<h3>Warum ist dieser Rechner besonders realistisch?</h3>
+<h3>Warum dieser Rechner realistisch ist</h3>
 <ul>
-<li>Berücksichtigung von <strong>Steuern</strong></li>
-<li>Dividenden-<strong>Wachstum</strong> statt fixer Rendite</li>
-<li>Vollständiger <strong>Reinvest-Zinseszinseffekt</strong></li>
+<li>Berücksichtigung von Steuern</li>
+<li>Dividendenwachstum statt fixer Rendite</li>
+<li>Reinvest-Zinseszinseffekt</li>
 <li>Cashflow-Fokus statt Kursfantasien</li>
 </ul>
 </section>
 
 <section class="seo">
-<h2>Häufige Fragen zur finanziellen Freiheit</h2>
+<h2>Häufige Fragen</h2>
 <p>
-Je nach Sparrate, Rendite und Wachstum liegt der Zeitraum typischerweise
-zwischen <strong>8 und 25 Jahren</strong>.
+Je nach Sparrate, Rendite und Wachstum liegt der Zeitraum meist zwischen
+<strong>8 und 25 Jahren</strong>.
 </p>
 </section>
 
 </main>
 
 <footer class="site-footer">
-© MB Capital Strategies ·
+© 2026 MB Capital Strategies ·
 <a href="/impressum.html">Impressum</a> ·
 <a href="/datenschutz.html">Datenschutz</a>
 </footer>
 
 <script>
 function calcFreedom(){
-  const start=+start.value;
-  const save=+save.value;
-  const target=+target.value;
-  let y=+yield.value/100;
-  const g=+growth.value/100;
-  const t=+tax.value/100;
-  let wealth=start, net=0, year=new Date().getFullYear();
+  const start = +document.getElementById("startCapital").value;
+  const save = +document.getElementById("monthlySave").value;
+  const target = +document.getElementById("targetMonthly").value;
+  let yieldRate = +document.getElementById("divYield").value / 100;
+  const growth = +document.getElementById("divGrowth").value / 100;
+  const tax = +document.getElementById("taxRate").value / 100;
+  const reinvest = document.getElementById("reinvest").checked;
 
-  results.innerHTML="";
+  let wealth = start;
+  let netDividend = 0;
+  let year = new Date().getFullYear();
 
-  if(target<=0){results.innerHTML="<p>Ziel-Einkommen eingeben.</p>";return;}
+  const results = document.getElementById("results");
+  results.innerHTML = "";
 
-  for(let i=1;i<=60;i++){
-    wealth+=save*12;
-    const gross=wealth*y;
-    net=gross*(1-t);
-    if(reinvest.checked) wealth+=net;
-    y*=1+g;
-    if(net/12>=target){year+=i;break;}
-    if(i===60){results.innerHTML="<p>Ziel wird in 60 Jahren nicht erreicht.</p>";return;}
+  if(target <= 0){
+    results.innerHTML = "<p>Bitte ein gültiges Ziel-Einkommen eingeben.</p>";
+    return;
   }
 
-  results.innerHTML=`
-    <p>Jahr der Freiheit: <span class="highlight">${year}</span></p>
-    <p>Depotvolumen: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-    <p>Nettodividende/Jahr: <span class="highlight">${net.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-    <p>Pro Monat: <span class="highlight">${(net/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
+  for(let i=1;i<=60;i++){
+    wealth += save * 12;
+    const gross = wealth * yieldRate;
+    netDividend = gross * (1 - tax);
+
+    if(reinvest) wealth += netDividend;
+    yieldRate *= (1 + growth);
+
+    if(netDividend / 12 >= target){
+      year += i;
+      results.innerHTML = `
+        <p>Jahr der finanziellen Freiheit: <span class="highlight">${year}</span></p>
+        <p>Depotvolumen: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
+        <p>Nettodividende / Jahr: <span class="highlight">${netDividend.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
+        <p>Nettodividende / Monat: <span class="highlight">${(netDividend/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
+      return;
+    }
+  }
+
+  results.innerHTML = "<p>Ziel wird innerhalb von 60 Jahren nicht erreicht.</p>";
 }
 </script>
 
@@ -279,8 +257,8 @@ function calcFreedom(){
 "@context":"https://schema.org",
 "@type":"FAQPage",
 "mainEntity":[
-{"@type":"Question","name":"Wie berechnet man finanzielle Freiheit?","acceptedAnswer":{"@type":"Answer","text":"Finanzielle Freiheit ist erreicht, wenn Nettodividenden dauerhaft die monatlichen Ausgaben decken."}},
-{"@type":"Question","name":"Wie lange dauert finanzielle Freiheit realistisch?","acceptedAnswer":{"@type":"Answer","text":"Bei konsequentem Cashflow-Investing liegt der Zeitraum meist zwischen 8 und 25 Jahren."}}
+{"@type":"Question","name":"Wann bin ich finanziell frei?","acceptedAnswer":{"@type":"Answer","text":"Finanzielle Freiheit ist erreicht, wenn Nettodividenden dauerhaft die monatlichen Ausgaben decken."}},
+{"@type":"Question","name":"Wie realistisch ist finanzielle Freiheit durch Dividenden?","acceptedAnswer":{"@type":"Answer","text":"Mit konsequentem Sparen, Reinvest und Dividendenwachstum meist in 8–25 Jahren erreichbar."}}
 ]
 }
 </script>
