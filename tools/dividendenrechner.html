@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dividendenrechner – Dividenden Cashflow berechnen | MB Capital Strategies</title>
-<meta name="description" content="Dividendenrechner: Berechne jährliche, monatliche und quartalsweise Dividenden. Ideal für Dividenden-, Hard-Asset- und Cashflow-Investoren.">
+<title>Dividendenrechner – monatliche & jährliche Dividenden berechnen | MB Capital Strategies</title>
+<meta name="description" content="Dividendenrechner: Berechne deinen jährlichen, monatlichen und quartalsweisen Dividenden-Cashflow. Ideal für Dividendenstrategien, High-Yield-Aktien & Cashflow-Investoren.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -27,65 +27,40 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
+  background:#0d0f13;
   border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
+  padding:12px 18px;
 }
 .topnav{
-  max-width:1200px;
+  max-width:1100px;
   margin:0 auto;
   display:flex;
   gap:18px;
   align-items:center;
   flex-wrap:wrap;
-  font-size:.92em;
 }
 .nav-item{
-  color:#f5f6fa;
+  color:var(--accent);
   font-weight:600;
   text-decoration:none;
 }
-.nav-item:hover{color:var(--accent);}
-.dropdown{position:relative;}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:26px;
-  left:0;
-  background:#12151d;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:10px;
-  padding:10px;
-  min-width:170px;
-  z-index:99;
-}
-.dropdown-menu a{
-  display:block;
-  padding:6px 10px;
-  color:#fff;
-}
-.dropdown-menu a:hover{
-  background:#0f1115;
-  border-radius:6px;
-  color:var(--accent);
-}
-.dropdown:hover .dropdown-menu{display:block;}
+.nav-item:hover{text-decoration:underline;}
 
-/* ===== CONTENT ===== */
-.wrapper{max-width:600px;margin:40px auto;padding:0 16px 40px;}
+/* CONTENT */
+.wrapper{max-width:640px;margin:40px auto;padding:0 16px 60px;}
 .card{
   background:var(--card);
-  border-radius:14px;
+  border-radius:16px;
   border:1px solid rgba(212,175,55,.35);
-  padding:22px;
+  padding:26px;
 }
-.header{text-align:center;margin-bottom:10px;}
+.header{text-align:center;margin-bottom:18px;}
 .title{color:var(--accent);margin:0;}
-.sub{color:var(--muted);font-size:.9rem;}
+.sub{color:var(--muted);font-size:.95rem;line-height:1.6;}
 
-label{display:block;margin:12px 0 6px;font-weight:600;}
+label{display:block;margin:14px 0 6px;font-weight:600;}
 input{
   width:100%;
   padding:12px;
@@ -99,11 +74,11 @@ input{
 button{
   width:100%;
   padding:14px;
-  margin-top:20px;
+  margin-top:22px;
   background:var(--accent);
   color:#000;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
   font-size:1.05em;
   font-weight:700;
   cursor:pointer;
@@ -111,33 +86,38 @@ button{
 button:hover{filter:brightness(1.08);}
 
 .result{
-  margin-top:20px;
-  padding:18px;
+  margin-top:22px;
+  padding:20px;
   background:#1a1f2b;
   border-left:4px solid var(--accent);
-  border-radius:10px;
+  border-radius:12px;
   line-height:1.7;
 }
 
 .ads-box{
-  margin-top:20px;
+  margin-top:22px;
   padding:12px;
   background:#1a1f2b;
-  border-radius:10px;
+  border-radius:12px;
   text-align:center;
   border:1px solid rgba(212,175,55,.25);
 }
 
 .seo{
-  margin-top:40px;
-  padding:26px;
+  margin-top:50px;
+  padding:28px;
   background:#151821;
   border:1px solid #2a2a2a;
-  border-radius:14px;
+  border-radius:16px;
 }
 
+.seo h2{color:var(--accent);}
+.seo ul{margin-left:18px;line-height:1.7;}
+.seo a{color:var(--accent);text-decoration:none;}
+.seo a:hover{text-decoration:underline;}
+
 .site-footer{
-  margin-top:60px;
+  margin-top:80px;
   padding:30px 20px;
   text-align:center;
   font-size:.9em;
@@ -153,18 +133,9 @@ button:hover{filter:brightness(1.08);}
 <header class="topbar">
 <nav class="topnav">
   <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-  <div class="nav-item dropdown">📁 Themen ▾
-    <div class="dropdown-menu">
-      <a href="/kategorien/energie.html">⚡ Energie</a>
-      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-      <a href="/kategorien/shipping.html">🚢 Shipping</a>
-    </div>
-  </div>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
-  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
+  <a href="/mining-aktien/" class="nav-item">⛏️ Mining</a>
+  <a href="/toolbox.html" class="nav-item">🧰 Toolbox</a>
 </nav>
 </header>
 
@@ -172,17 +143,28 @@ button:hover{filter:brightness(1.08);}
 
 <section class="card">
 <header class="header">
-  <h1 class="title">Dividendenrechner</h1>
-  <p class="sub">Berechne deinen jährlichen, monatlichen und quartalsweisen Cashflow.</p>
+  <h1 class="title">Dividendenrechner – monatliche & jährliche Dividenden berechnen</h1>
+  <p class="sub">
+    Berechne deinen Dividenden-Cashflow schnell & einfach –
+    jährlich, monatlich und quartalsweise.  
+    Ideal für Dividendenstrategien, High-Yield-Aktien und Cashflow-Investoren.
+  </p>
 </header>
 
 <label>Investitionssumme (€)</label>
-<input type="number" id="investment" placeholder="z. B. 5.000">
+<input type="number" id="investment" placeholder="z. B. 10.000">
 
 <label>Dividendenrendite (% p.a.)</label>
-<input type="number" id="yield" placeholder="z. B. 8">
+<input type="number" id="yield" placeholder="z. B. 7">
 
-<button onclick="calculate()">Berechnen</button>
+<button onclick="calculate()">Dividende berechnen</button>
+
+<div id="output" class="result" style="display:none;"></div>
+
+<p style="margin-top:14px;font-size:.9rem;color:#9aa6c0;">
+👉 So tracke ich meine Dividenden & Cashflows:
+<a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Parqet nutzen</a>
+</p>
 
 <div class="ads-box">
   <ins class="adsbygoogle"
@@ -193,38 +175,66 @@ button:hover{filter:brightness(1.08);}
        data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
-<div id="output" class="result" style="display:none;"></div>
 </section>
 
 <section class="seo">
-<h2>Was macht der Dividendenrechner?</h2>
+<h2>So funktioniert der Dividendenrechner</h2>
+<ol>
+  <li>Investitionssumme eingeben</li>
+  <li>Erwartete Dividendenrendite eintragen</li>
+  <li>Cashflow pro Jahr, Monat & Quartal ablesen</li>
+</ol>
 <p>
-Der Dividendenrechner zeigt dir auf einen Blick, wie viel Cashflow dein Investment erzeugt –
-jährlich, monatlich und quartalsweise. Ideal für Dividendenstrategien, Hard Assets und FIRE-Planung.
+Die Berechnung basiert auf einer konstanten Rendite und dient
+ausschließlich der Cashflow-Planung – nicht zur Kursprognose.
 </p>
+</section>
 
-<h3>Für wen ist dieser Rechner ideal?</h3>
+<section class="seo">
+<h2>Für wen ist der Dividendenrechner geeignet?</h2>
 <ul>
-<li>Dividenden- & Cashflow-Investoren</li>
-<li>ETF- & Aktien-Anleger</li>
-<li>High-Yield-Sektoren wie Shipping, Midstream & BDCs</li>
-<li>Planung finanzieller Freiheit</li>
+  <li>Dividenden- & Cashflow-Investoren</li>
+  <li>High-Yield-Sektoren (BDC, Shipping, Midstream)</li>
+  <li>FIRE- & Freiheits-Planung</li>
+  <li>Vergleich verschiedener Dividendenrenditen</li>
+</ul>
+
+<p>Passend dazu:</p>
+<ul>
+  <li><a href="/dividendenstrategie/">Dividendenstrategie & Cashflow-Ansatz</a></li>
+  <li><a href="/tools/yield-on-cost-rechner.html">Yield-on-Cost Rechner</a></li>
+  <li><a href="/tools/dividenden-reinvest-rechner.html">Dividenden Reinvest Rechner</a></li>
+  <li><a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a></li>
+</ul>
+</section>
+
+<section class="seo">
+<h2>Typische Fehler bei der Dividenden-Berechnung</h2>
+<ul>
+  <li>Hochphasen-Dividenden einfach fortschreiben</li>
+  <li>Einmal-Sonderdividenden als nachhaltig ansehen</li>
+  <li>Steuern & Quellensteuer ignorieren</li>
+  <li>Bilanz- & Cashflow-Risiken ausblenden</li>
 </ul>
 </section>
 
 <section class="seo">
 <h2>Häufige Fragen</h2>
-<p>
-High-Yield liefert sofort Cashflow, Wachstum steigert ihn langfristig.
-Die optimale Strategie kombiniert beides.
+<p><strong>Wie berechnet man eine Dividende?</strong><br>
+Jahresdividende = Investitionssumme × Dividendenrendite.</p>
+
+<p><strong>Ist eine Dividendenrendite von 8 % realistisch?</strong><br>
+In High-Yield-Sektoren ja – bei defensiven Blue Chips eher selten.</p>
+
+<p><strong>Ist das eine Anlageberatung?</strong><br>
+Nein. Die Inhalte dienen ausschließlich Informations- und Bildungszwecken.
 </p>
 </section>
 
 </main>
 
 <footer class="site-footer">
-© MB Capital Strategies ·
+© 2026 MB Capital Strategies ·
 <a href="/impressum.html">Impressum</a> ·
 <a href="/datenschutz.html">Datenschutz</a>
 </footer>
@@ -244,19 +254,37 @@ function calculate(){
     <strong>📈 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
     <strong>📆 Monatlicher Cashflow:</strong> ${monthly.toFixed(2)} €<br>
     <strong>🗓️ Quartalsdividende:</strong> ${quarterly.toFixed(2)} €<br><br>
-    <small>Berechnung basiert auf konstanter Rendite ohne Kursveränderungen.</small>
+    <small>Berechnung ohne Steuern & Kursveränderungen.</small>
   `;
 }
 </script>
 
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
 "@type":"FAQPage",
 "mainEntity":[
 {"@type":"Question","name":"Wie berechnet man eine Dividende?","acceptedAnswer":{"@type":"Answer","text":"Jahresdividende = Investitionssumme × Dividendenrendite."}},
-{"@type":"Question","name":"Ist eine Dividendenrendite von 8 % realistisch?","acceptedAnswer":{"@type":"Answer","text":"In High-Yield-Sektoren wie Shipping oder BDCs ja, bei klassischen Blue Chips eher selten."}}
+{"@type":"Question","name":"Ist eine Dividendenrendite von 8 % realistisch?","acceptedAnswer":{"@type":"Answer","text":"In High-Yield-Sektoren wie Shipping oder BDCs ja, bei defensiven Blue Chips eher selten."}}
 ]
+}
+</script>
+
+<!-- Software Application Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Dividendenrechner",
+"applicationCategory":"FinanceApplication",
+"operatingSystem":"All",
+"description":"Online Dividendenrechner zur Berechnung von jährlichem, monatlichem und quartalsweisem Dividenden-Cashflow.",
+"provider":{
+  "@type":"Organization",
+  "name":"MB Capital Strategies",
+  "url":"https://mbcapitalstrategies.com"
+}
 }
 </script>
 
