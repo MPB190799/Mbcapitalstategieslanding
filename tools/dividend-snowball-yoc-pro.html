@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dividend Snowball YOC PRO – Yield on Cost, Wachstum & Reinvest | MB Capital Strategies</title>
+<meta name="description" content="Dividend Snowball YOC PRO: Simuliere Yield on Cost mit Dividendenwachstum & Reinvest. Echter Cashflow-Snowball inkl. Steuern, YOC-Entwicklung & Nettodividenden.">
+
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+<style>
+:root{
+  --gold:#d4af37;
+  --bg:#0f1115;
+  --card:#151821;
+  --text:#f5f6fa;
+  --muted:#9aa6c0;
+  --border:#2a2a2a;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Montserrat',system-ui,sans-serif;
+}
+.container{
+  max-width:900px;
+  margin:50px auto;
+  padding:0 20px 60px;
+}
+h1{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:8px;
+}
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:30px;
+}
+.card{
+  background:var(--card);
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:16px;
+  padding:28px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+@media(max-width:700px){.grid{grid-template-columns:1fr;}}
+label{
+  font-weight:600;
+  font-size:.9rem;
+}
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#0f1115;
+  color:#fff;
+}
+button{
+  margin-top:24px;
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:999px;
+  background:var(--gold);
+  color:#000;
+  font-weight:700;
+  font-size:1.05rem;
+  cursor:pointer;
+}
+.result{
+  margin-top:30px;
+  padding:24px;
+  background:#10131a;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+.highlight{color:var(--gold);font-weight:700;}
+.table-wrap{
+  margin-top:24px;
+  overflow:auto;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+}
+th,td{
+  padding:8px 10px;
+  border-bottom:1px solid #222;
+  text-align:right;
+}
+th:first-child,td:first-child{text-align:left;}
+th{color:var(--gold);}
+.seo{
+  margin-top:50px;
+  padding:30px;
+  background:#151821;
+  border-radius:16px;
+  border:1px solid #2a2a2a;
+}
+.footer{
+  text-align:center;
+  margin-top:60px;
+  font-size:.85rem;
+  color:var(--muted);
+}
+.footer a{color:var(--gold);}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Dividend Snowball YOC PRO</h1>
+<p class="subtitle">Yield on Cost mit Dividendenwachstum & Reinvest – echter Cashflow-Snowball.</p>
+
+<div class="card">
+
+<div class="grid">
+  <div><label>Kaufkurs je Aktie (€)</label><input id="buy" type="number" value="25"></div>
+  <div><label>Stückzahl</label><input id="shares" type="number" value="200"></div>
+  <div><label>Start-Dividende je Aktie (€ / Jahr)</label><input id="div" type="number" value="2"></div>
+  <div><label>Dividendenwachstum (% p.a.)</label><input id="growth" type="number" value="5"></div>
+  <div><label>Reinvest-Quote (% Nettodividenden)</label><input id="reinvest" type="number" value="100"></div>
+  <div><label>Steuer auf Dividenden (%)</label><input id="tax" type="number" value="26.4"></div>
+  <div><label>Zeitraum (Jahre)</label><input id="years" type="number" value="20"></div>
+</div>
+
+<button onclick="runSnowball()">Snowball simulieren</button>
+
+<div id="output" class="result" style="display:none;"></div>
+
+</div>
+
+<div class="seo">
+<h2>Yield on Cost Snowball – warum das mächtig ist</h2>
+<p>
+Der Yield-on-Cost-Snowball zeigt, wie stark sich dein Cashflow entwickelt,
+wenn Dividenden <strong>wachsen</strong> und konsequent <strong>reinvestiert</strong> werden.
+Gerade bei High-Yield-Strategien ist nicht der Kurs entscheidend,
+sondern die Entwicklung der <strong>Nettodividenden</strong>.
+</p>
+<ul>
+<li>Realer Cashflow statt Kursfantasie</li>
+<li>Exponentieller Effekt durch Reinvest</li>
+<li>Perfekt für Buy-&-Hold-Dividendenstrategien</li>
+<li>Grundlage für finanzielle Freiheit</li>
+</ul>
+</div>
+
+<div class="footer">
+© 2026 MB Capital Strategies ·
+<a href="/impressum.html">Impressum</a> ·
+<a href="/datenschutz.html">Datenschutz</a>
+</div>
+
+</div>
+
+<script>
+function runSnowball(){
+  const buy=+buy.value;
+  const shares=+shares.value;
+  let div=+div.value;
+  const g=+growth.value/100;
+  const r=+reinvest.value/100;
+  const t=+tax.value/100;
+  const y=+years.value;
+
+  let invested=buy*shares;
+  let netDiv=0, cumDiv=0;
+  let table="";
+
+  for(let i=1;i<=y;i++){
+    const gross=div*shares;
+    netDiv=gross*(1-t);
+    cumDiv+=netDiv;
+    invested+=netDiv*r;
+    div*=1+g;
+
+    if([1,5,10,15,20].includes(i)){
+      table+=`
+      <tr>
+        <td>${i}</td>
+        <td>${netDiv.toFixed(0)} €</td>
+        <td>${((netDiv/(buy*shares))*100).toFixed(2)} %</td>
+        <td>${cumDiv.toFixed(0)} €</td>
+      </tr>`;
+    }
+  }
+
+  const yocEnd=(netDiv/(buy*shares))*100;
+  const snowball=(netDiv/(+div.value*shares)).toFixed(1);
+
+  output.style.display="block";
+  output.innerHTML=`
+  <h2>Ergebnis</h2>
+  <p>🎯 Yield on Cost Start: <span class="highlight">${((+div.value*shares)/(buy*shares)*100).toFixed(2)} %</span></p>
+  <p>🚀 Yield on Cost Ende: <span class="highlight">${yocEnd.toFixed(2)} %</span></p>
+  <p>💰 Nettodividende im letzten Jahr: <span class="highlight">${netDiv.toFixed(0)} €</span></p>
+  <p>❄️ Snowball-Faktor: <span class="highlight">${snowball}×</span></p>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Jahr</th><th>Nettodividende</th><th>YOC</th><th>Kumuliert</th></tr>
+    </thead>
+    <tbody>${table}</tbody>
+  </table>
+  </div>
+
+  <p style="margin-top:16px;">
+    👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a>
+  </p>
+  `;
+}
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Dividend Snowball YOC PRO",
+"applicationCategory":"FinanceApplication",
+"operatingSystem":"Web",
+"description":"Yield on Cost Rechner mit Dividendenwachstum & Reinvest zur Simulation eines Cashflow-Snowballs.",
+"creator":{"@type":"Organization","name":"MB Capital Strategies","url":"https://mbcapitalstrategies.com/"}
+}
+</script>
+
+</body>
+</html>
