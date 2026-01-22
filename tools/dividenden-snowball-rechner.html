@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dividend Snowball Rechner – Dividendenwachstum & Cashflow simulieren | MB Capital Strategies</title>
-<meta name="description" content="Dividend Snowball Rechner: Simuliere, wie sich dein Dividenden-Cashflow mit Sparrate, Reinvest, Wachstum & Steuern über Jahrzehnte entwickelt.">
+<meta name="description" content="Dividend Snowball Rechner: Simuliere Dividendenwachstum, Reinvest, Sparrate & Cashflow über Jahrzehnte. Ideal für Dividenden- & Cashflow-Investoren.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
   background:linear-gradient(180deg,#11141b,#0b0d12);
   border-bottom:1px solid rgba(212,175,55,.25);
@@ -73,7 +73,7 @@ body{
 }
 .dropdown:hover .dropdown-menu{display:block;}
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .wrapper{
   max-width:1000px;
   margin:40px auto;
@@ -83,7 +83,7 @@ body{
   background:var(--card);
   border-radius:16px;
   border:1px solid var(--accent);
-  padding:24px 20px 28px;
+  padding:26px 22px 30px;
   box-shadow:0 12px 30px rgba(0,0,0,.6);
 }
 .header{text-align:center;margin-bottom:18px;}
@@ -91,7 +91,6 @@ body{
   font-size:1.8rem;
   margin:0 0 6px;
   color:var(--accent);
-  text-transform:uppercase;
 }
 .sub{font-size:.9rem;color:var(--muted);}
 
@@ -103,9 +102,8 @@ body{
 @media(max-width:800px){.grid{grid-template-columns:1fr;}}
 
 .field{display:flex;flex-direction:column;gap:4px;font-size:.9rem;}
-.field small{color:var(--muted);font-size:.75rem;}
 .input{
-  padding:9px 10px;
+  padding:10px;
   border-radius:8px;
   border:1px solid var(--border);
   background:#111;
@@ -119,12 +117,12 @@ body{
   align-items:center;
   font-size:.85rem;
   color:var(--muted);
-  margin:10px 0;
+  margin:12px 0;
 }
 
 .btn{
   width:100%;
-  padding:12px;
+  padding:14px;
   border-radius:10px;
   border:none;
   background:var(--accent);
@@ -132,14 +130,14 @@ body{
   font-weight:700;
   font-size:1rem;
   cursor:pointer;
-  margin:14px 0 18px;
+  margin:16px 0 18px;
 }
 
 .results-summary{
   background:#101010;
   border-radius:12px;
   border:1px solid var(--border);
-  padding:14px;
+  padding:16px;
   margin-bottom:14px;
 }
 .results-summary h2{margin:0 0 8px;color:var(--accent);}
@@ -163,13 +161,12 @@ tr:nth-child(even) td{background:#151515;}
 
 .seo{
   margin-top:40px;
-  padding:26px;
+  padding:28px;
   background:#151515;
   border:1px solid #2a2a2a;
   border-radius:14px;
 }
 
-/* ===== FOOTER ===== */
 .site-footer{
   margin-top:60px;
   padding:30px 20px;
@@ -187,18 +184,9 @@ tr:nth-child(even) td{background:#151515;}
 <header class="topbar">
 <nav class="topnav">
   <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-  <div class="nav-item dropdown">📁 Themen ▾
-    <div class="dropdown-menu">
-      <a href="/kategorien/energie.html">⚡ Energie</a>
-      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-      <a href="/kategorien/shipping.html">🚢 Shipping</a>
-    </div>
-  </div>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
   <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  <a href="/blog/" class="nav-item">📰 Blog</a>
 </nav>
 </header>
 
@@ -206,8 +194,8 @@ tr:nth-child(even) td{background:#151515;}
 
 <section class="card">
 <header class="header">
-  <h1 class="title">Dividend Snowball PRO</h1>
-  <p class="sub">Langfristiges Dividendenwachstum, Reinvest & Cashflow realistisch simulieren.</p>
+  <h1 class="title">Dividend Snowball Rechner – Dividendenwachstum & Cashflow simulieren</h1>
+  <p class="sub">Langfristiger Cashflow-Aufbau durch Reinvest & Zeit.</p>
 </header>
 
 <div class="grid">
@@ -216,8 +204,8 @@ tr:nth-child(even) td{background:#151515;}
   <div class="field"><label>Dividendenrendite (% p.a.)</label><input id="snow_yield" class="input" type="number" value="7"></div>
   <div class="field"><label>Dividendenwachstum (% p.a.)</label><input id="snow_divGrowth" class="input" type="number" value="3"></div>
   <div class="field"><label>Kurswachstum (% p.a.)</label><input id="snow_priceGrowth" class="input" type="number" value="3"></div>
-  <div class="field"><label>Steuer auf Dividenden (%)</label><input id="snow_tax" class="input" type="number" value="26.4"></div>
-  <div class="field"><label>Zeitraum (Jahre)</label><input id="snow_years" class="input" type="number" value="25"></div>
+  <div class="field"><label>Steuern auf Dividenden (%)</label><input id="snow_tax" class="input" type="number" value="26.4"></div>
+  <div class="field"><label>Anlagehorizont (Jahre)</label><input id="snow_years" class="input" type="number" value="25"></div>
 </div>
 
 <div class="inline">
@@ -225,7 +213,7 @@ tr:nth-child(even) td{background:#151515;}
   <label for="snow_reinvest">Dividenden nach Steuern reinvestieren</label>
 </div>
 
-<button class="btn" onclick="runSnowball()">Snowball Simulation starten</button>
+<button class="btn" onclick="runSnowball()">Simulation starten</button>
 
 <section id="snow_summary" class="results-summary">
   <h2>Ergebnis</h2>
@@ -246,25 +234,35 @@ tr:nth-child(even) td{background:#151515;}
 <tbody id="snow_tableBody"></tbody>
 </table>
 </div>
+
+<p style="margin-top:14px;font-size:.85rem;color:#aaaaaa;">
+Mehr zur Strategie:
+<a href="/dividendenstrategie/" style="color:#d4af37;">Dividendenstrategie & Cashflow-Aufbau</a>
+</p>
+
 </section>
 
 <section class="seo">
-<h2>Was ist der Dividend Snowball?</h2>
+<h2>Warum der Dividend Snowball so mächtig ist</h2>
 <p>
 Der Dividend Snowball beschreibt den Effekt, bei dem Dividenden konsequent reinvestiert werden
 und dadurch Cashflow und Depotwert exponentiell wachsen.
+</p>
+<p>
+Gerade bei High-Yield-Strategien in Bereichen wie Shipping, Midstream oder BDCs
+ist der Schneeballeffekt der wichtigste Renditetreiber.
 </p>
 </section>
 
 <section class="seo">
 <h2>Häufige Fragen</h2>
-<p>Die größten Effekte zeigen sich meist nach 10–20 Jahren langfristiger Wiederanlage.</p>
+<p>Die größten Effekte zeigen sich meist nach 10–20 Jahren konsequenter Wiederanlage.</p>
 </section>
 
 </main>
 
 <footer class="site-footer">
-© MB Capital Strategies ·
+© 2026 MB Capital Strategies ·
 <a href="/impressum.html">Impressum</a> ·
 <a href="/datenschutz.html">Datenschutz</a>
 </footer>
@@ -278,8 +276,10 @@ function runSnowball(){
   const p=+snow_priceGrowth.value/100;
   const t=+snow_tax.value/100;
   const years=+snow_years.value;
+
   let wealth=start, cum=0, last=0;
   snow_tableBody.innerHTML="";
+
   for(let i=1;i<=years;i++){
     wealth+=monthly*12;
     const gross=wealth*y;
@@ -289,6 +289,7 @@ function runSnowball(){
     wealth*=1+p;
     y*=1+g;
     last=net;
+
     snow_tableBody.innerHTML+=`
       <tr>
         <td>${new Date().getFullYear()+i}</td>
@@ -298,13 +299,16 @@ function runSnowball(){
         <td>${cum.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
       </tr>`;
   }
+
   snow_tableWrapper.style.display="block";
-  snow_summary.innerHTML=`<h2>Ergebnis</h2>
-  <p>Depotwert nach ${years} Jahren: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-  <p>Nettodividende im letzten Jahr: <span class="highlight">${last.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
+  snow_summary.innerHTML=`
+    <h2>Ergebnis</h2>
+    <p>Depotwert nach ${years} Jahren: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
+    <p>Nettodividende im letzten Jahr: <span class="highlight">${last.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
 }
 </script>
 
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
@@ -313,6 +317,23 @@ function runSnowball(){
 {"@type":"Question","name":"Was ist ein Dividend Snowball?","acceptedAnswer":{"@type":"Answer","text":"Ein Dividend Snowball entsteht durch konsequente Wiederanlage von Dividenden und führt zu exponentiellem Cashflow-Wachstum."}},
 {"@type":"Question","name":"Wie lange wirkt der Schneeballeffekt?","acceptedAnswer":{"@type":"Answer","text":"Die stärksten Effekte zeigen sich meist nach 10–20 Jahren."}}
 ]
+}
+</script>
+
+<!-- Tool Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Dividend Snowball Rechner",
+"applicationCategory":"FinanceApplication",
+"operatingSystem":"Web",
+"description":"Interaktiver Dividend Snowball Rechner zur Simulation von Dividendenwachstum, Reinvest und Cashflow über Jahrzehnte.",
+"creator":{
+  "@type":"Organization",
+  "name":"MB Capital Strategies",
+  "url":"https://mbcapitalstrategies.com/"
+}
 }
 </script>
 
