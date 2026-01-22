@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dividend Snowball YOC PRO – Yield on Cost mit Dividendenwachstum & Reinvest</title>
+<meta name="description" content="Dividend Snowball YOC PRO: Simuliere, wie dein Yield on Cost durch Dividendenwachstum und Reinvest über Jahre explodiert. Cashflow-, Dividenden- & Snowball-Rechner für Investoren.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+<style>
+:root{
+  --bg:#0f1115;
+  --card:#151821;
+  --accent:#d4af37;
+  --text:#f5f6fa;
+  --muted:#9aa6c0;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Montserrat',system-ui,sans-serif;
+}
+.container{max-width:820px;margin:40px auto;padding:0 18px;}
+.card{
+  background:var(--card);
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:16px;
+  padding:26px;
+}
+h1{color:var(--accent);text-align:center;margin-bottom:8px;}
+.sub{text-align:center;color:var(--muted);margin-bottom:24px;}
+label{display:block;margin:12px 0 6px;font-weight:600;}
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#0f1115;
+  color:#fff;
+}
+button{
+  width:100%;
+  margin-top:20px;
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  font-size:1.05em;
+  cursor:pointer;
+}
+button:hover{filter:brightness(1.08);}
+.result{
+  margin-top:22px;
+  padding:18px;
+  background:#1a1f2b;
+  border-left:4px solid var(--accent);
+  border-radius:10px;
+  line-height:1.7;
+}
+table{
+  width:100%;
+  margin-top:18px;
+  border-collapse:collapse;
+  font-size:.9em;
+}
+th,td{
+  padding:6px;
+  border-bottom:1px solid #2a2a2a;
+  text-align:right;
+}
+th:first-child,td:first-child{text-align:left;}
+th{color:var(--accent);}
+.highlight{color:var(--accent);font-weight:700;}
+small{color:var(--muted);}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Dividend Snowball YOC PRO</h1>
+<p class="sub">Yield on Cost mit Dividendenwachstum & Reinvest – echter Cashflow-Snowball.</p>
+
+<div class="card">
+
+<label>Kaufkurs je Aktie (€)</label>
+<input id="buy" type="number" value="25">
+
+<label>Stückzahl</label>
+<input id="shares" type="number" value="200">
+
+<label>Start-Dividende je Aktie (€ / Jahr)</label>
+<input id="div0" type="number" value="2">
+
+<label>Dividendenwachstum (% p.a.)</label>
+<input id="growth" type="number" value="5">
+
+<label>Reinvest-Quote (% der Nettodividenden)</label>
+<input id="reinvest" type="number" value="100">
+
+<label>Steuer auf Dividenden (%)</label>
+<input id="tax" type="number" value="26.4">
+
+<label>Zeitraum (Jahre)</label>
+<input id="years" type="number" value="20">
+
+<button onclick="runSnowball()">Snowball simulieren</button>
+
+<div id="out" class="result" style="display:none;"></div>
+<div id="tableWrap"></div>
+
+</div>
+</div>
+
+<script>
+function runSnowball(){
+  const buy=+buy.value;
+  const sh=+shares.value;
+  let div=+div0.value;
+  const g=+growth.value/100;
+  const reinv=+reinvest.value/100;
+  const tax=+tax.value/100;
+  const yrs=+years.value;
+
+  let capital=buy*sh;
+  let cumDiv=0;
+  let html=`<strong>Start-YOC:</strong> ${(div/buy*100).toFixed(2)} %<br><br>`;
+  let table=`<table><tr><th>Jahr</th><th>YOC</th><th>Jahresdiv.</th><th>Kumuliert</th></tr>`;
+
+  for(let i=1;i<=yrs;i++){
+    const gross=div*sh;
+    const net=gross*(1-tax);
+    cumDiv+=net;
+    capital+=net*reinv;
+    const yoc=(div/buy*100);
+    if([1,5,10,20].includes(i))
+      table+=`<tr><td>${i}</td><td>${yoc.toFixed(2)}%</td><td>${net.toFixed(0)}€</td><td>${cumDiv.toFixed(0)}€</td></tr>`;
+    div*=1+g;
+  }
+
+  table+=`</table>`;
+
+  html+=`
+  <strong>YOC nach ${yrs} Jahren:</strong> <span class="highlight">${(div/buy*100).toFixed(2)} %</span><br>
+  <strong>Jahresdividende:</strong> ${div.toFixed(2)} € je Aktie<br>
+  <strong>Kumulierte Dividenden:</strong> ${cumDiv.toFixed(0)} €<br>
+  <strong>Depotwert durch Reinvest:</strong> ${capital.toFixed(0)} €
+  `;
+
+  out.style.display="block";
+  out.innerHTML=html;
+  tableWrap.innerHTML=table;
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Dividend Snowball YOC PRO",
+"applicationCategory":"FinanceApplication",
+"description":"Yield-on-Cost Rechner mit Dividendenwachstum und Reinvest zur Simulation langfristigen Cashflows.",
+"creator":{
+  "@type":"Organization",
+  "name":"MB Capital Strategies",
+  "url":"https://mbcapitalstrategies.com"
+}
+}
+</script>
+
+</body>
+</html>
