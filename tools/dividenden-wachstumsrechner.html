@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dividenden-Wachstumsrechner – Dividendenwachstum & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Dividenden-Wachstumsrechner: Berechne, wie sich deine Dividenden durch jährliches Wachstum entwickeln. Zukünftiger Cashflow, Langfrist-Effekt & Gesamtausschüttung.">
+<title>Dividenden-Wachstumsrechner – Dividendenwachstum & Cashflow simulieren | MB Capital Strategies</title>
+<meta name="description" content="Dividenden-Wachstumsrechner: Berechne zukünftigen Cashflow durch Dividendenwachstum. Langfrist-Effekt, Gesamtausschüttung & Kaufkraft-Logik – ohne Reinvest.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
   background:linear-gradient(180deg,#11141b,#0b0d12);
   border-bottom:1px solid rgba(212,175,55,.25);
@@ -48,40 +48,16 @@ body{
   text-decoration:none;
 }
 .nav-item:hover{color:var(--accent);}
-.dropdown{position:relative;}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:26px;
-  left:0;
-  background:#12151d;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:10px;
-  padding:10px;
-  min-width:170px;
-  z-index:99;
-}
-.dropdown-menu a{
-  display:block;
-  padding:6px 10px;
-  color:#fff;
-}
-.dropdown-menu a:hover{
-  background:#0f1115;
-  border-radius:6px;
-  color:var(--accent);
-}
-.dropdown:hover .dropdown-menu{display:block;}
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 .wrapper{max-width:650px;margin:40px auto;padding:0 16px 40px;}
 .card{
   background:var(--card);
   border-radius:14px;
   border:1px solid rgba(212,175,55,.35);
-  padding:22px;
+  padding:24px;
 }
-.header{text-align:center;margin-bottom:10px;}
+.header{text-align:center;margin-bottom:14px;}
 .title{color:var(--accent);margin:0;}
 .sub{color:var(--muted);font-size:.9rem;}
 
@@ -118,18 +94,9 @@ button:hover{filter:brightness(1.08);}
   line-height:1.7;
 }
 
-.ads-box{
-  margin:20px 0;
-  padding:12px;
-  background:#1a1f2b;
-  border-radius:10px;
-  text-align:center;
-  border:1px solid rgba(212,175,55,.25);
-}
-
 .seo{
   margin-top:40px;
-  padding:26px;
+  padding:28px;
   background:#151821;
   border:1px solid #2a2a2a;
   border-radius:14px;
@@ -152,18 +119,9 @@ button:hover{filter:brightness(1.08);}
 <header class="topbar">
 <nav class="topnav">
   <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-  <div class="nav-item dropdown">📁 Themen ▾
-    <div class="dropdown-menu">
-      <a href="/kategorien/energie.html">⚡ Energie</a>
-      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-      <a href="/kategorien/shipping.html">🚢 Shipping</a>
-    </div>
-  </div>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
   <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  <a href="/blog/" class="nav-item">📰 Blog</a>
 </nav>
 </header>
 
@@ -172,105 +130,107 @@ button:hover{filter:brightness(1.08);}
 <section class="card">
 <header class="header">
   <h1 class="title">Dividenden-Wachstumsrechner</h1>
-  <p class="sub">Berechne, wie stark deine Dividenden über Jahre hinweg wachsen.</p>
+  <p class="sub">Wie stark wächst dein Dividenden-Cashflow über Zeit – ganz ohne Reinvest?</p>
 </header>
 
-<div class="ads-box">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="2222222222"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
 <label>Aktuelle Jahresdividende (€)</label>
-<input type="number" id="dividend" placeholder="z. B. 400">
+<input type="number" id="dividend" placeholder="z. B. 1.200">
 
 <label>Jährliches Dividendenwachstum (% p.a.)</label>
 <input type="number" id="growth" placeholder="z. B. 5">
 
 <label>Anlagehorizont (Jahre)</label>
-<input type="number" id="years" placeholder="z. B. 10">
+<input type="number" id="years" placeholder="z. B. 15">
 
 <button onclick="calcGrowth()">Berechnen</button>
 
-<div class="ads-box">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="3333333333"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
 <div id="output" class="result" style="display:none;"></div>
+
+<p style="margin-top:14px;font-size:.85rem;color:#9aa6c0;">
+Ergänzend:
+<a href="/tools/dividenden-snowball-rechner.html" style="color:#d4af37;">Dividend Snowball (mit Reinvest)</a> ·
+<a href="/dividendenstrategie/" style="color:#d4af37;">Dividendenstrategie</a>
+</p>
 </section>
 
 <section class="seo">
 <h2>Was zeigt der Dividenden-Wachstumsrechner?</h2>
 <p>
-Der Rechner zeigt dir, wie stark deine jährlichen Dividenden steigen,
-wenn Unternehmen ihre Ausschüttungen kontinuierlich erhöhen.
-Schon kleine Wachstumsraten entfalten über Jahre enorme Effekte.
+Dieser Rechner simuliert, wie sich dein jährlicher Dividenden-Cashflow allein durch
+<strong>Dividendenwachstum</strong> entwickelt – ohne zusätzliches Kapital und ohne Reinvest.
 </p>
-
-<h3>Warum ist Dividendenwachstum entscheidend?</h3>
 <ul>
-<li>Steigender Cashflow ohne zusätzliches Kapital</li>
-<li>Inflationsschutz über lange Zeiträume</li>
-<li>Massiver Langfrist-Hebel (Zinseszinseffekt)</li>
-<li>Besonders relevant für Buy-&-Hold-Investoren</li>
+<li>Langfristiger Kaufkrafterhalt</li>
+<li>Inflationsschutz</li>
+<li>Planbarer Cashflow für Buy-&-Hold</li>
+<li>Perfekte Ergänzung zu High-Yield-Strategien</li>
 </ul>
 </section>
 
 <section class="seo">
-<h2>Häufige Fragen zum Dividendenwachstum</h2>
+<h2>Wichtig zu verstehen</h2>
 <p>
-Typische Wachstumsraten liegen zwischen <strong>3 und 8 %</strong>.
-Über 20 Jahre kann sich die Dividende dadurch mehr als verdoppeln.
+Der Rechner geht von konstantem Dividendenwachstum aus.
+Er zeigt den <strong>reinen Wachstumseffekt</strong> – nicht Kursgewinne und keinen Zinseszins.
 </p>
 </section>
 
 </main>
 
 <footer class="site-footer">
-© MB Capital Strategies ·
+© 2026 MB Capital Strategies ·
 <a href="/impressum.html">Impressum</a> ·
 <a href="/datenschutz.html">Datenschutz</a>
 </footer>
 
 <script>
 function calcGrowth(){
-  const d0=parseFloat(dividend.value);
-  const g=parseFloat(growth.value)/100;
-  const n=parseInt(years.value);
-  if(!d0||!g||!n)return;
+  const d0 = parseFloat(dividend.value);
+  const g  = parseFloat(growth.value)/100;
+  const n  = parseInt(years.value);
 
-  const dN=d0*Math.pow(1+g,n);
-  let sum=0;
-  for(let t=0;t<n;t++){sum+=d0*Math.pow(1+g,t);}
+  if(!d0 || !g || !n) return;
+
+  const dN = d0 * Math.pow(1+g, n);
+  let sum = 0;
+  for(let t=0;t<n;t++) sum += d0 * Math.pow(1+g, t);
 
   output.style.display="block";
   output.innerHTML=`
     <strong>Dividende heute:</strong> ${d0.toFixed(2)} € / Jahr<br>
     <strong>Dividende in ${n} Jahren:</strong> ${dN.toFixed(2)} € / Jahr<br>
-    <strong>Gesamte Dividenden (${n} Jahre):</strong> ${sum.toFixed(2)} €<br><br>
-    <small>Annahme: konstantes Dividendenwachstum ohne Reinvest.</small>
+    <strong>Gesamtausschüttung (${n} Jahre):</strong> ${sum.toFixed(2)} €<br><br>
+    <small>Annahme: konstantes Dividendenwachstum, kein Reinvest.</small>
   `;
 }
 </script>
 
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
 "@type":"FAQPage",
 "mainEntity":[
-{"@type":"Question","name":"Was ist eine typische Dividendenwachstumsrate?","acceptedAnswer":{"@type":"Answer","text":"Viele Unternehmen steigern ihre Dividende jährlich um 3 bis 8 Prozent."}},
-{"@type":"Question","name":"Warum ist Dividendenwachstum wichtig?","acceptedAnswer":{"@type":"Answer","text":"Dividendenwachstum erhöht langfristig den Cashflow, schützt vor Inflation und verstärkt den Zinseszinseffekt."}}
+{"@type":"Question","name":"Was ist eine realistische Dividendenwachstumsrate?","acceptedAnswer":{"@type":"Answer","text":"Langfristig liegen nachhaltige Dividendenwachstumsraten meist zwischen 3 und 8 Prozent pro Jahr."}},
+{"@type":"Question","name":"Ist Dividendenwachstum wichtiger als hohe Rendite?","acceptedAnswer":{"@type":"Answer","text":"Wachstum schützt langfristig vor Inflation und steigert den Cashflow auch ohne zusätzliches Kapital."}}
 ]
+}
+</script>
+
+<!-- Tool Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"SoftwareApplication",
+"name":"Dividenden-Wachstumsrechner",
+"applicationCategory":"FinanceApplication",
+"operatingSystem":"Web",
+"description":"Interaktiver Rechner zur Simulation von Dividendenwachstum und langfristigem Cashflow ohne Reinvest.",
+"creator":{
+  "@type":"Organization",
+  "name":"MB Capital Strategies",
+  "url":"https://mbcapitalstrategies.com/"
+}
 }
 </script>
 
