@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies</title>
-<meta name="description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, FCF pro Aktie & Dividendenpotenzial für Tanker & Bulker. Ideal für TORM, Hafnia, Dorian LPG & Shipping-Investoren.">
+<meta name="description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, Free Cashflow je Aktie & Dividendenpotenzial für Tanker- & Bulker-Reedereien.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@ body{
   color:var(--text);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
   background:linear-gradient(180deg,#11141b,#0b0d12);
   border-bottom:1px solid rgba(212,175,55,.25);
@@ -42,46 +42,18 @@ body{
   flex-wrap:wrap;
   font-size:.92em;
 }
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
+.nav-item{color:#f5f6fa;font-weight:600;text-decoration:none;}
 .nav-item:hover{color:var(--accent);}
-.dropdown{position:relative;}
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:26px;
-  left:0;
-  background:#12151d;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:10px;
-  padding:10px;
-  min-width:170px;
-  z-index:99;
-}
-.dropdown-menu a{
-  display:block;
-  padding:6px 10px;
-  color:#fff;
-}
-.dropdown-menu a:hover{
-  background:#0f1115;
-  border-radius:6px;
-  color:var(--accent);
-}
-.dropdown:hover .dropdown-menu{display:block;}
 
-/* ===== CONTENT ===== */
-.wrapper{max-width:700px;margin:40px auto;padding:0 16px 40px;}
+/* CONTENT */
+.wrapper{max-width:720px;margin:40px auto;padding:0 16px 40px;}
 .card{
   background:var(--card);
   border-radius:14px;
   border:1px solid rgba(212,175,55,.35);
   padding:22px;
 }
-.header{text-align:center;margin-bottom:10px;}
+.header{text-align:center;margin-bottom:12px;}
 .title{color:var(--accent);margin:0;}
 .sub{color:var(--muted);font-size:.9rem;}
 
@@ -118,15 +90,6 @@ button:hover{filter:brightness(1.08);}
   line-height:1.7;
 }
 
-.ads-box{
-  margin:20px 0;
-  padding:12px;
-  background:#1a1f2b;
-  border-radius:10px;
-  text-align:center;
-  border:1px solid rgba(212,175,55,.25);
-}
-
 .seo{
   margin-top:40px;
   padding:26px;
@@ -152,18 +115,8 @@ button:hover{filter:brightness(1.08);}
 <header class="topbar">
 <nav class="topnav">
   <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-  <div class="nav-item dropdown">📁 Themen ▾
-    <div class="dropdown-menu">
-      <a href="/kategorien/energie.html">⚡ Energie</a>
-      <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-      <a href="/kategorien/shipping.html">🚢 Shipping</a>
-    </div>
-  </div>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
-  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+  <a href="/kategorien/shipping.html" class="nav-item">🚢 Shipping</a>
+  <a href="/tools/" class="nav-item">🧰 Tools</a>
 </nav>
 </header>
 
@@ -172,64 +125,40 @@ button:hover{filter:brightness(1.08);}
 <section class="card">
 <header class="header">
   <h1 class="title">Shipping Cashflow Rechner</h1>
-  <p class="sub">TCE, OPEX, Gewinn, FCF & Dividendenpotenzial für Tanker & Bulker.</p>
+  <p class="sub">TCE, OPEX, Gewinn, FCF & Dividendenpotenzial auf einen Blick</p>
 </header>
 
 <label>TCE / Tagesrate (USD)</label>
-<input type="number" id="tce" placeholder="z. B. 35.000">
+<input id="tceInput" type="number" placeholder="z. B. 35.000">
 
 <label>OPEX pro Tag (USD)</label>
-<input type="number" id="opex" placeholder="z. B. 8.000">
+<input id="opexInput" type="number" placeholder="z. B. 8.000">
 
 <label>Anzahl Schiffe</label>
-<input type="number" id="ships" placeholder="z. B. 15">
+<input id="shipsInput" type="number" placeholder="z. B. 15">
 
 <label>Auslastung (%)</label>
-<input type="number" id="util" placeholder="z. B. 92">
+<input id="utilInput" type="number" placeholder="z. B. 92">
 
 <label>Payout Ratio (%)</label>
-<input type="number" id="payout" placeholder="z. B. 70">
+<input id="payoutInput" type="number" placeholder="z. B. 70">
 
-<label>Shares Outstanding (optional)</label>
-<input type="number" id="shares" placeholder="z. B. 85.000.000">
+<label>Aktienanzahl (optional)</label>
+<input id="sharesInput" type="number" placeholder="z. B. 85.000.000">
 
-<button onclick="calcCashflow()">Berechnen</button>
-
-<div class="ads-box">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+<button onclick="calcShipping()">Berechnen</button>
 
 <div id="output" class="result" style="display:none;"></div>
 </section>
 
 <section class="seo">
-<h2>Was zeigt der Shipping Cashflow Rechner?</h2>
-<p>
-Der Rechner zeigt dir, wie profitabel eine Shipping-Flotte bei gegebenen Tagesraten (TCE) arbeitet.
-Du siehst Break-even, Jahresgewinn, Free Cashflow je Aktie und das mögliche Dividendenpotenzial.
-</p>
-
-<h3>Warum ist Shipping-Cashflow so zyklisch?</h3>
+<h2>Warum dieser Shipping Cashflow Rechner?</h2>
 <ul>
-<li>Tagesraten schwanken stark je nach Angebot & Nachfrage</li>
-<li>Fixe OPEX sorgen für enormen operativen Hebel</li>
-<li>Hohe Cashflows in Boomphasen → Sonderdividenden</li>
-<li>Perfekt für taktische Dividendenstrategien</li>
+<li>Extrem hoher operativer Hebel</li>
+<li>Ideal für Tanker, Bulker & LNG</li>
+<li>Perfekt für Dividenden- & Zyklusstrategien</li>
+<li>Zeigt sofort das Dividendenpotenzial</li>
 </ul>
-</section>
-
-<section class="seo">
-<h2>Häufige Fragen zum Shipping-Cashflow</h2>
-<p>
-Bereits kleine Änderungen im TCE haben massive Auswirkungen auf Gewinn und Dividenden –
-genau deshalb ist Shipping ein Hoch-Cashflow-Sektor.
-</p>
 </section>
 
 </main>
@@ -241,47 +170,40 @@ genau deshalb ist Shipping ein Hoch-Cashflow-Sektor.
 </footer>
 
 <script>
-function calcCashflow(){
-  const tce=parseFloat(tce.value);
-  const opex=parseFloat(opex.value);
-  const ships=parseFloat(ships.value);
-  const util=(parseFloat(util.value)||0)/100;
-  const payout=(parseFloat(payout.value)||0)/100;
-  const shares=parseFloat(shares.value);
+function calcShipping(){
+  const tceVal = Number(tceInput.value);
+  const opexVal = Number(opexInput.value);
+  const shipsVal = Number(shipsInput.value);
+  const utilVal = (Number(utilInput.value) || 100) / 100;
+  const payoutVal = (Number(payoutInput.value) || 0) / 100;
+  const sharesVal = Number(sharesInput.value);
 
-  if(!tce||!opex||!ships){alert("Bitte TCE, OPEX und Schiffe eingeben.");return;}
+  if(!tceVal || !opexVal || !shipsVal){
+    output.style.display="block";
+    output.innerHTML="<strong>Bitte TCE, OPEX und Schiffe korrekt eingeben.</strong>";
+    return;
+  }
 
-  const profitDay=(tce-opex)*ships*util;
-  const profitYear=profitDay*365;
+  const profitDay = (tceVal - opexVal) * shipsVal * utilVal;
+  const profitYear = profitDay * 365;
 
-  let html=`
-    <strong>⚓ Break-even TCE:</strong> ${opex.toLocaleString()} USD<br>
-    <strong>🟢 Gewinn pro Tag (Flotte):</strong> ${profitDay.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
-    <strong>💵 Gewinn pro Jahr:</strong> ${profitYear.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
+  let html = `
+    <strong>⚓ Break-even TCE:</strong> ${opexVal.toLocaleString()} USD<br>
+    <strong>🟢 Gewinn pro Tag:</strong> ${profitDay.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
+    <strong>💵 Gewinn pro Jahr:</strong> ${profitYear.toLocaleString(undefined,{maximumFractionDigits:0})} USD
   `;
 
-  if(shares){
-    const fcf=profitYear/shares;
-    const div=fcf*payout;
-    html+=`
-      <br><strong>📈 FCF je Aktie:</strong> ${fcf.toFixed(2)} USD<br>
-      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${div.toFixed(2)} USD<br>
+  if(sharesVal){
+    const fcfPerShare = profitYear / sharesVal;
+    const divPotential = fcfPerShare * payoutVal;
+    html += `
+      <br><br><strong>📈 FCF je Aktie:</strong> ${fcfPerShare.toFixed(2)} USD<br>
+      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${divPotential.toFixed(2)} USD
     `;
   }
 
   output.style.display="block";
-  output.innerHTML=html;
-}
-</script>
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Wie berechnet man Shipping-Cashflow?","acceptedAnswer":{"@type":"Answer","text":"Shipping-Cashflow ergibt sich aus Tagesrate (TCE) minus OPEX multipliziert mit der Flottengröße und Auslastung."}},
-{"@type":"Question","name":"Warum zahlen Shipping-Unternehmen hohe Dividenden?","acceptedAnswer":{"@type":"Answer","text":"In Hochphasen generieren Shipping-Unternehmen enorme Free Cashflows, die häufig über Sonderdividenden ausgeschüttet werden."}}
-]
+  output.innerHTML = html;
 }
 </script>
 
