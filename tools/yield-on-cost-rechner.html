@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yield-on-Cost Rechner – Dividenden & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Yield-on-Cost Rechner: Berechne Yield on Cost, aktuelle Dividendenrendite & Cashflow. Ideal für Dividenden- & Hard-Asset-Investoren.">
+<title>Yield-on-Cost Rechner (YOC) – Dividendenrendite & Cashflow | MB Capital Strategies</title>
+<meta name="description" content="Yield-on-Cost Rechner (YOC): Berechne deine persönliche Dividendenrendite auf den Einstandspreis, aktuelle Rendite, Cashflow & Depotwert. Ideal für Buy-&-Hold & High-Yield-Investoren.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -20,8 +20,6 @@
   --text:#f5f6fa;
   --muted:#9aa6c0;
 }
-
-/* RESET */
 *{box-sizing:border-box;}
 body{
   margin:0;
@@ -30,7 +28,7 @@ body{
   font-family:'Montserrat',sans-serif;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .topbar{
   background:linear-gradient(180deg,#11141b,#0b0d12);
   border-bottom:1px solid rgba(212,175,55,.25);
@@ -49,62 +47,31 @@ body{
   color:#f5f6fa;
   font-weight:600;
   text-decoration:none;
-  position:relative;
 }
 .nav-item:hover{color:var(--gold);}
 
-/* Dropdown */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:26px;
-  left:0;
-  background:#12151d;
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:10px;
-  padding:10px;
-  min-width:170px;
-  z-index:100;
-}
-.dropdown-menu a{
-  display:block;
-  padding:6px 10px;
-  color:#fff;
-  font-size:.9em;
-}
-.dropdown-menu a:hover{
-  background:#0f1115;
-  border-radius:6px;
-  color:var(--gold);
-}
-.dropdown:hover .dropdown-menu{display:block;}
-
-/* ===== CONTENT ===== */
+/* CONTENT */
 .container{
-  max-width:720px;
-  margin:35px auto;
+  max-width:760px;
+  margin:40px auto;
   padding:0 20px;
 }
-
 h1{
   text-align:center;
   color:var(--gold);
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
-
 .card{
   background:var(--bg-soft);
-  border-radius:14px;
+  border-radius:16px;
   border:1px solid rgba(212,175,55,.3);
-  padding:22px;
+  padding:26px;
 }
-
 label{
   display:block;
-  margin:12px 0 6px;
+  margin:14px 0 6px;
   font-weight:600;
 }
-
 input{
   width:100%;
   padding:12px;
@@ -112,13 +79,11 @@ input{
   border:1px solid #444;
   background:#0f1115;
   color:#fff;
-  font-size:1em;
 }
-
 button{
   width:100%;
   padding:14px;
-  margin-top:18px;
+  margin-top:20px;
   border:none;
   border-radius:999px;
   background:var(--gold);
@@ -130,28 +95,18 @@ button{
 button:hover{background:var(--gold-soft);}
 
 .result{
-  margin-top:20px;
-  padding:18px;
+  margin-top:24px;
+  padding:20px;
   background:var(--bg-card);
   border-left:4px solid var(--gold);
-  border-radius:10px;
-  line-height:1.7;
-}
-
-.ads-box{
-  margin:22px 0;
-  padding:12px;
-  background:var(--bg-card);
   border-radius:12px;
-  text-align:center;
-  border:1px solid rgba(212,175,55,.25);
+  line-height:1.75;
 }
 
-/* Tabs */
 .tabs{
   display:flex;
-  gap:8px;
-  margin-top:30px;
+  gap:10px;
+  margin-top:40px;
   flex-wrap:wrap;
 }
 .tab-btn{
@@ -173,9 +128,8 @@ button:hover{background:var(--gold-soft);}
 a{color:var(--gold);text-decoration:none;font-weight:600;}
 small{color:var(--muted);}
 
-/* ===== FOOTER ===== */
 .site-footer{
-  margin-top:60px;
+  margin-top:70px;
   padding:30px 20px;
   text-align:center;
   font-size:.9em;
@@ -188,106 +142,82 @@ small{color:var(--muted);}
 
 <body>
 
-<!-- HEADER -->
 <header class="topbar">
   <nav class="topnav">
     <a href="/" class="nav-item">🏠 Startseite</a>
-    <a href="/depot-strategie.html" class="nav-item">📊 Depot-Strategie</a>
-    <a href="/hard-asset-guide.html" class="nav-item">🧱 Hard Asset Guide</a>
-
-    <div class="nav-item dropdown">
-      📁 Themen ▾
-      <div class="dropdown-menu">
-        <a href="/kategorien/energie.html">⚡ Energie</a>
-        <a href="/kategorien/mining-aktien.html">⛏️ Mining</a>
-        <a href="/kategorien/shipping.html">🚢 Shipping</a>
-      </div>
-    </div>
-
-    <a href="/blog/" class="nav-item">📰 Blog</a>
+    <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
     <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-    <a href="/investing-analysen.html" class="nav-item">📈 Investing Analysen</a>
-    <a href="/glossar.html" class="nav-item">📘 Glossar</a>
+    <a href="/blog/" class="nav-item">📰 Blog</a>
   </nav>
 </header>
 
-<!-- CONTENT -->
 <div class="container">
 
-<h1>📊 Yield-on-Cost Rechner</h1>
+<h1>📊 Yield-on-Cost Rechner (YOC)</h1>
 
 <div class="card">
 <p><small>
-Berechne deine persönliche Dividendenrendite auf den <strong>Einstandskurs</strong> – inkl. aktueller Rendite & Cashflow.
+Der Yield on Cost zeigt dir, wie stark dein <strong>Cashflow auf deinen ursprünglichen Kaufpreis</strong> wächst – unabhängig vom aktuellen Kurs.
 </small></p>
 
 <label>Kaufkurs je Aktie (€)</label>
-<input type="number" id="buyPrice" placeholder="z. B. 25">
+<input type="number" id="buyPrice" value="25">
 
 <label>Aktueller Kurs je Aktie (€)</label>
-<input type="number" id="currentPrice" placeholder="z. B. 32">
+<input type="number" id="currentPrice" value="32">
 
 <label>Jahresdividende je Aktie (€)</label>
-<input type="number" id="divPS" placeholder="z. B. 2.00">
+<input type="number" id="divPS" value="2">
 
 <label>Stückzahl</label>
-<input type="number" id="shares" placeholder="z. B. 200">
+<input type="number" id="shares" value="200">
 
-<button onclick="calcYOC()">Berechnen</button>
+<button onclick="calcYOC()">Yield on Cost berechnen</button>
 
 <div id="output" class="result" style="display:none;"></div>
-
-<div class="ads-box">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="1234567891"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
 </div>
 
 <div class="tabs">
   <div class="tab-btn active" onclick="openTab(0)">📘 Erklärung</div>
   <div class="tab-btn" onclick="openTab(1)">🧠 Praxis</div>
-  <div class="tab-btn" onclick="openTab(2)">🔗 Weiterführend</div>
+  <div class="tab-btn" onclick="openTab(2)">🚀 Nächste Schritte</div>
 </div>
 
 <div class="tab-content active">
-<h2>Was ist Yield on Cost?</h2>
+<h2>Was sagt der Yield on Cost aus?</h2>
 <p>
-Der <strong>Yield on Cost (YOC)</strong> misst deine Dividendenrendite bezogen auf den ursprünglichen Kaufpreis – nicht auf den aktuellen Kurs.
+Der <strong>Yield on Cost (YOC)</strong> misst deine Dividendenrendite bezogen auf den ursprünglichen Kaufpreis.
+Er zeigt, wie stark dein Cashflow über Zeit wächst – selbst wenn der Kurs schwankt.
 </p>
 <ul>
-<li>Ideal für Buy & Hold</li>
-<li>Zeigt Dividendenwachstum über Zeit</li>
-<li>Cashflow-Fokus statt Kursrauschen</li>
+<li>Perfekt für Buy & Hold</li>
+<li>Ideal für Dividendenwachstum</li>
+<li>Cashflow-Fokus statt Kurslärm</li>
 </ul>
 </div>
 
 <div class="tab-content">
 <h2>Praxisbeispiel</h2>
 <p>
-Kauf: 20 € · Dividende damals: 1 €<br>
-Heute: 3 € Dividende → <strong>YOC = 15 %</strong>
+Kaufpreis: 20 €<br>
+Dividende heute: 3 €<br>
+👉 <strong>Yield on Cost = 15 %</strong>
 </p>
 </div>
 
 <div class="tab-content">
-<h2>Nächste Schritte</h2>
+<h2>Weiterführende Rechner</h2>
 <ul>
-<li>👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle-Freiheit-Rechner</a></li>
-<li>👉 <a href="/tools/dividenden-rechner.html">Dividenden-Rechner</a></li>
-<li>👉 <a href="/rohstoff-superzyklus-master.html">Rohstoff-Superzyklus</a></li>
+<li>👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit Rechner</a></li>
+<li>👉 <a href="/tools/dividend-snowball-rechner.html">Dividend Snowball</a></li>
+<li>👉 <a href="/dividendenstrategie/">Dividendenstrategie</a></li>
 </ul>
 </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
-  © MB Capital Strategies ·
+  © 2026 MB Capital Strategies ·
   <a href="/impressum.html">Impressum</a> ·
   <a href="/datenschutz.html">Datenschutz</a>
 </footer>
@@ -300,24 +230,38 @@ function calcYOC(){
   const sh  = +shares.value;
   if(!buy||!cur||!div||!sh) return;
 
-  const yearly = div*sh;
-  const cost   = buy*sh;
-  const value  = cur*sh;
-  const yoc    = yearly/cost*100;
-  const yieldC = yearly/value*100;
+  const yearly = div * sh;
+  const invested = buy * sh;
+  const value = cur * sh;
+  const yoc = yearly / invested * 100;
+  const currentYield = yearly / value * 100;
 
   output.style.display="block";
   output.innerHTML=`
     <strong>📆 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
     <strong>🎯 Yield on Cost:</strong> ${yoc.toFixed(2)} %<br>
-    <strong>📈 Aktuelle Rendite:</strong> ${yieldC.toFixed(2)} %<br><br>
-    <small>Einstand: ${cost.toFixed(2)} € · Wert heute: ${value.toFixed(2)} €</small>
+    <strong>📈 Aktuelle Rendite:</strong> ${currentYield.toFixed(2)} %<br>
+    <strong>💼 Investiert:</strong> ${invested.toFixed(2)} €<br>
+    <strong>📊 Depotwert heute:</strong> ${value.toFixed(2)} €<br>
+    <strong>💸 Cashflow / Monat:</strong> ${(yearly/12).toFixed(2)} €<br><br>
+    <small>YOC zeigt deinen echten Cashflow-Fortschritt – unabhängig vom Kurs.</small>
   `;
 }
 
 function openTab(i){
   document.querySelectorAll(".tab-btn").forEach((b,idx)=>b.classList.toggle("active",idx===i));
   document.querySelectorAll(".tab-content").forEach((c,idx)=>c.classList.toggle("active",idx===i));
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Was ist Yield on Cost?","acceptedAnswer":{"@type":"Answer","text":"Yield on Cost misst die Dividendenrendite bezogen auf den ursprünglichen Kaufpreis einer Aktie."}},
+{"@type":"Question","name":"Warum ist Yield on Cost wichtig?","acceptedAnswer":{"@type":"Answer","text":"YOC zeigt, wie stark der Cashflow über Zeit wächst – unabhängig vom aktuellen Kurs."}}
+]
 }
 </script>
 
