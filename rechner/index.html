@@ -2,72 +2,44 @@
 <html lang="de">
 <head>
 
-  <!-- Favicon / Brand Icons -->
+<!-- ===================== META & BRAND ===================== -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-
 <meta name="theme-color" content="#0f1115">
 
-    <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Finanzrechner – Dividenden, Yield on Cost, Wachstum & Reinvest | MB Capital Strategies</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Kostenlose Finanzrechner für Dividendeninvestoren: Dividendenrechner, Yield-on-Cost, Dividendenwachstum, Reinvest-Rechner und Dividend Snowball PRO. Cashflow & Hard Assets einfach durchrechnen.">
+<title>Finanzrechner für Dividenden & Cashflow | YOC, Reinvest & Snowball</title>
+<meta name="description" content="Kostenlose Finanzrechner für Dividenden- & Cashflow-Investoren: Yield on Cost, Reinvest, Snowball & Cashflow-Simulationen für Hard Assets.">
 
-  <link rel="stylesheet" href="../blog/styles.css?v=1">
+<link rel="stylesheet" href="../blog/styles.css?v=1">
 
-  <style>
-    /* Breadcrumbs */
-    .breadcrumbs {
-      margin: 20px 0;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    .breadcrumbs a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    .breadcrumbs a:hover {
-      text-decoration: underline;
-    }
+<style>
+.breadcrumbs { margin:20px 0; font-size:0.9rem; color:#ccc; }
+.breadcrumbs ol { list-style:none; padding:0; display:flex; gap:6px; flex-wrap:wrap; }
+.breadcrumbs li::after { content:"›"; margin-left:6px; }
+.breadcrumbs li:last-child::after { content:""; }
+.breadcrumbs a { color:#d4af37; text-decoration:none; }
+.breadcrumbs a:hover { text-decoration:underline; }
 
-    /* Zentrierte Container */
-    .container {
-      max-width: 900px !important;
-      margin: 0 auto !important;
-    }
+.container { max-width:900px; margin:0 auto; }
 
-    /* Zentrierter Footer */
-    footer.footer {
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-      display: block;
-    }
-    footer.footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer.footer a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    footer.footer a:hover { text-decoration: underline; }
+footer.footer { max-width:900px; margin:40px auto; text-align:center; }
+footer.footer ul { list-style:none; padding:0; }
+footer.footer a { color:#d4af37; text-decoration:none; }
+footer.footer a:hover { text-decoration:underline; }
 
-    /* FAQ Layout */
-    .faq-section h3 {
-      color: #d4af37;
-      margin-top: 18px;
-    }
-  </style>
+.faq-section h3 { color:#d4af37; margin-top:18px; }
+</style>
 </head>
 
 <body>
 
-<!-- =============== HEADER =============== -->
+<!-- ===================== HEADER ===================== -->
 <header class="header">
   <a href="/">🏠 Startseite</a>
   <a href="/depot-strategie/">📊 Depot-Strategie</a>
@@ -90,221 +62,140 @@
 </header>
 
 <!-- ===================== CONTENT ===================== -->
-<section class="container">
+<main class="container">
 
-  <!-- BREADCRUMBS -->
-  <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Startseite</a> › 
-    <a href="/toolbox.html">Toolbox</a> › 
-    <span>Finanzrechner</span>
-  </nav>
+<!-- ===================== BREADCRUMBS ===================== -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Startseite</a></li>
+    <li><a href="/toolbox.html">Toolbox</a></li>
+    <li aria-current="page">Finanzrechner</li>
+  </ol>
+</nav>
 
-  <h1>📊 Finanzrechner für Dividenden & Cashflow</h1>
-  <p>
-    Die komplette MB Capital Rechner-Suite – perfekt für Dividenden- & Cashflow-Investoren.
-    Berechne Dividenden, Wachstum, Yield on Cost, Reinvest-Modelle und Snowball-Effekte.
-  </p>
+<h1>📊 Finanzrechner für Dividenden- & Cashflow-Investoren</h1>
+<p>
+Kostenlose Profi-Rechner für Dividenden,
+<a href="/glossar/yield-on-cost.html">Yield on Cost</a>,
+<a href="/glossar/dividendenwachstum.html">Dividendenwachstum</a>
+und <a href="/glossar/reinvest.html">Reinvest-Strategien</a>.
+Entwickelt für langfristige Cashflow- & Hard-Asset-Portfolios.
+</p>
 
-  <!-- TOP ADSENSE -->
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center; margin:20px auto;"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- ===================== TOP AD ===================== -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:20px auto"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1234567890"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-  <!-- INTRO CARD -->
+<!-- ===================== INTRO ===================== -->
+<section class="card">
+<h2>Welche Finanzrechner findest du hier?</h2>
+<ul>
+<li><strong>Shipping Cashflow:</strong> TCE, OPEX, FCF & Dividendenpotenzial</li>
+<li><strong>Dividendenrechner:</strong> monatlich & jährlich</li>
+<li><strong>Yield on Cost:</strong> persönliche Einstandsrendite</li>
+<li><strong>Dividendenwachstum:</strong> Simulation über Jahrzehnte</li>
+<li><strong>Reinvest (DRIP):</strong> echter Zinseszins</li>
+<li><strong>Dividend Snowball:</strong> klassischer Reinvest-Effekt</li>
+<li><strong>Snowball YOC PRO:</strong> Wachstum + Steuern + YOC</li>
+<li><strong>Finanzielle Freiheit:</strong> Cashflow vs. Lebenshaltung</li>
+</ul>
+</section>
+
+<!-- ===================== TOOL GRID ===================== -->
+<section class="grid">
+
 <div class="card">
-  <h2>Welche Rechner findest du hier?</h2>
-  <ul>
-    <li><strong>Shipping Cashflow Rechner:</strong> TCE, OPEX, FCF & Dividendenpotenzial</li>
-    <li><strong>Dividendenrechner:</strong> Monatliche & jährliche Ausschüttungen</li>
-    <li><strong>Yield-on-Cost Rechner:</strong> deine persönliche Einstandsrendite</li>
-    <li><strong>Dividendenwachstum:</strong> Erhöhungen über Jahre simulieren</li>
-    <li><strong>Reinvest-Rechner (DRIP):</strong> echtes Zinseszins-Modell</li>
-    <li><strong>Dividend Snowball:</strong> klassischer Reinvest-Snowball</li>
-    <li><strong>Dividend Snowball YOC PRO:</strong> Wachstum + Reinvest + Steuern + YOC</li>
-    <li><strong>Finanzielle Freiheit Rechner:</strong> Wann decken Dividenden deine Kosten?</li>
-  </ul>
+<h3>🚢 Shipping Cashflow Rechner</h3>
+<p>TCE, OPEX, FCF & Dividendenpotenzial berechnen.</p>
+<a href="/tools/shipping-cashflow-rechner.html">Rechner öffnen →</a>
 </div>
 
-
-  <!-- MID ADSENSE -->
-  <ins class="adsbygoogle"
-       style="display:block; margin:20px auto; text-align:center;"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="1234567891"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-
-  <!-- ================= GRID MIT ALLEN TOOLS ================= -->
-  <div class="grid">
-
-    <div class="tool-card">
-  <h3>🚢 Shipping Cashflow Rechner</h3>
-  <p>Berechne TCE, OPEX, Gewinn, FCF & Dividendenpotenzial.</p>
-  <a href="/tools/shipping-cashflow-rechner.html" class="btn">
-    Rechner öffnen →
-  </a>
+<div class="card">
+<h3>💰 Dividendenrechner</h3>
+<p>Monatliche & jährliche Ausschüttungen.</p>
+<a href="/tools/dividendenrechner.html">Jetzt berechnen →</a>
 </div>
 
-    <div class="card">
-      <h3>💰 Dividendenrechner</h3>
-      <p>Berechne jährliche, monatliche oder quartalsweise Ausschüttungen.</p>
-      <a class="glossar-link" href="/tools/dividendenrechner.html">Jetzt berechnen →</a>
-    </div>
-
-    <div class="card">
-      <h3>📈 Yield-on-Cost Rechner</h3>
-      <p>Deine persönliche Rendite auf Einstandskurs.</p>
-      <a class="glossar-link" href="/tools/yield-on-cost-rechner.html">YOC berechnen →</a>
-    </div>
-
-    <div class="card">
-      <h3>🚀 Dividenden-Wachstumsrechner</h3>
-      <p>Simuliert Dividendenerhöhungen über 5–30 Jahre.</p>
-      <a class="glossar-link" href="/tools/dividenden-wachstumsrechner.html">Zum Rechner →</a>
-    </div>
-
-    <div class="card">
-      <h3>🔁 Reinvest-Rechner (DRIP)</h3>
-      <p>Berechnet echten Zinseszins aus wiederangelegten Dividenden.</p>
-      <a class="glossar-link" href="/tools/dividenden-reinvest-rechner.html">Reinvest berechnen →</a>
-    </div>
-
-    <div class="card">
-      <h3>❄️ Dividend Snowball PRO</h3>
-      <p>Langfristige Simulation inkl. Wachstum, Steuern & Reinvest.</p>
-      <a class="glossar-link" href="/tools/dividenden-snowball-rechner.html">Snowball starten →</a>
-    </div>
-
-    <div class="card highlight">
-  <h3>❄️ Dividend Snowball YOC PRO</h3>
-  <p>
-    Yield on Cost + Dividendenwachstum + Reinvest + Steuern –<br>
-    der ultimative Cashflow-Snowball.
-  </p>
-  <a class="glossar-link" href="/tools/dividend-snowball-yoc-pro.html">
-    Snowball simulieren →
-  </a>
+<div class="card">
+<h3>📈 Yield-on-Cost Rechner</h3>
+<p>Deine persönliche Einstandsrendite.</p>
+<a href="/tools/yield-on-cost-rechner.html">YOC berechnen →</a>
 </div>
 
-    <div class="card">
-      <h3>🏁 Finanzielle Freiheit Rechner</h3>
-      <p>Wann decken deine Dividenden deine monatlichen Ausgaben?</p>
-      <a class="glossar-link" href="/tools/finanzielle-freiheit-rechner.html">Jetzt berechnen →</a>
-    </div>
+<div class="card">
+<h3>🔁 Reinvest-Rechner (DRIP)</h3>
+<p>Zinseszins durch Wiederanlage.</p>
+<a href="/tools/dividenden-reinvest-rechner.html">Reinvest berechnen →</a>
+</div>
 
-  </div>
+<div class="card highlight">
+<h3>❄️ Dividend Snowball YOC PRO</h3>
+<p>Der realistischste Cashflow-Snowball mit Wachstum & Steuern.</p>
+<a href="/tools/dividend-snowball-yoc-pro.html">Snowball simulieren →</a>
+</div>
 
-  <!-- ===================== FAQ SECTION ===================== -->
-  <section class="faq-section" style="margin:40px 0; padding:24px; background:#151515; border:1px solid #2a2a2a; border-radius:12px;">
-
-    <h2 style="color:#d4af37; text-align:center;">❓ Häufige Fragen zu den Finanzrechnern</h2>
-
-    <h3>Wie funktionieren Dividendenrechner?</h3>
-    <p>Ein Dividendenrechner zeigt dir, wie viel Cashflow du monatlich oder jährlich erhältst – basierend auf Investition & Dividendenrendite.</p>
-
-    <h3>Was bringt der Yield-on-Cost Rechner?</h3>
-    <p>Der YOC zeigt dir deine tatsächliche Einstandsrendite. Steigt die Dividende, steigt auch dein persönlicher YOC.</p>
-
-    <h3>Was ist der Unterschied zwischen Reinvest und Snowball?</h3>
-    <p>Der DRIP-Rechner betrachtet nur Reinvest. Snowball PRO simuliert Wachstum, Steuern & Kursentwicklung.</p>
-
-    <h3>Was ist der Unterschied zwischen Snowball und Snowball YOC PRO?</h3>
-    <p>Der klassische Dividend Snowball simuliert Reinvest-Effekte.
-    <strong>Snowball YOC PRO</strong> kombiniert zusätzlich Dividendenwachstum,
-    Steuern und deinen persönlichen Yield on Cost – deutlich realistischer.</p>
-
-    <h3>Sind die Werte realistisch?</h3>
-    <p>Ja – alle Modelle basieren auf üblichen Cashflow-Daten von Dividenden- & Hard-Asset-Investoren.</p>
-
-  </section>
+<div class="card">
+<h3>🏁 Finanzielle Freiheit</h3>
+<p>Wann decken Dividenden deine Fixkosten?</p>
+<a href="/tools/finanzielle-freiheit-rechner.html">Jetzt berechnen →</a>
+</div>
 
 </section>
 
+<!-- ===================== FAQ ===================== -->
+<section class="faq-section" style="margin:40px 0;padding:24px;background:#151515;border-radius:12px;">
+<h2>❓ Häufige Fragen zu Finanzrechnern</h2>
 
-<!-- BOTTOM ADS -->
-<ins class="adsbygoogle"
-     style="display:block; margin:30px auto; text-align:center;"
-     data-ad-client="ca-pub-7097302643579933"
-     data-ad-slot="1234567892"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<h3>Wie funktionieren Dividendenrechner?</h3>
+<p>Sie berechnen deinen Cashflow basierend auf Investitionssumme und Dividendenrendite.</p>
 
+<h3>Was ist Yield on Cost?</h3>
+<p>Der YOC zeigt deine persönliche Rendite auf den ursprünglichen Kaufpreis.</p>
 
-<!-- FOOTER -->
+<h3>Unterschied Snowball vs. Snowball YOC PRO?</h3>
+<p>YOC PRO kombiniert Reinvest, Wachstum, Steuern & Einstandsrendite – deutlich realistischer.</p>
+
+<h3>Sind die Ergebnisse realistisch?</h3>
+<p>Ja – sie basieren auf marktüblichen Cashflow- und Dividendenannahmen.</p>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
-  <div class="footer-best">
-    <h3>⭐ Beliebte Bestenlisten 2025</h3>
-    <ul>
-      <li><a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2025</a></li>
-      <li><a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield Aktien 2025</a></li>
-      <li><a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2025</a></li>
-    </ul>
-  </div>
-
-  © 2025 MB Capital Strategies ·
-  <a href="/impressum.html">Impressum</a> ·
-  <a href="/datenschutz.html">Datenschutz</a> ·
-  <a href="/glossar/">Glossar</a>
+© 2025 MB Capital Strategies ·
+<a href="/impressum.html">Impressum</a> ·
+<a href="/datenschutz.html">Datenschutz</a> ·
+<a href="/glossar/">Glossar</a>
 </footer>
 
-
-<!-- ===================== JSON-LD Breadcrumbs + FAQ ===================== -->
+<!-- ===================== SCHEMA ===================== -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://mbcapitalstrategies.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Toolbox", "item": "https://mbcapitalstrategies.com/toolbox.html" },
-    { "@type": "ListItem", "position": 3, "name": "Finanzrechner" }
-  ]
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+{"@type":"ListItem","position":1,"name":"Startseite","item":"https://mbcapitalstrategies.com/"},
+{"@type":"ListItem","position":2,"name":"Toolbox","item":"https://mbcapitalstrategies.com/toolbox.html"},
+{"@type":"ListItem","position":3,"name":"Finanzrechner","item":"https://mbcapitalstrategies.com/finanzrechner.html"}
+]
 }
 </script>
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Wie funktionieren Dividendenrechner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ein Dividendenrechner berechnet deinen Cashflow basierend auf Investitionssumme und Dividendenrendite."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was bringt der Yield-on-Cost Rechner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der YOC zeigt dir deine persönliche Einstandsrendite, die mit steigenden Dividenden ebenfalls steigt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was ist der Unterschied zwischen Reinvest und Snowball?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der DRIP-Rechner zeigt Wiederanlage. Der Snowball PRO kombiniert Wachstum, Steuern, Kursbewegungen & Zinseszins."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Sind die Werte realistisch?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Modelle basieren auf marktüblichen Cashflow-Werten von Dividenden-, Hard-Asset- und High-Yield-Portfolios."
-      }
-    }
-  ]
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Wie funktionieren Dividendenrechner?","acceptedAnswer":{"@type":"Answer","text":"Sie berechnen deinen Cashflow basierend auf Investitionssumme und Dividendenrendite."}},
+{"@type":"Question","name":"Was ist Yield on Cost?","acceptedAnswer":{"@type":"Answer","text":"Yield on Cost zeigt deine persönliche Rendite bezogen auf den ursprünglichen Kaufpreis."}},
+{"@type":"Question","name":"Was ist der Unterschied zwischen Snowball und Snowball YOC PRO?","acceptedAnswer":{"@type":"Answer","text":"Snowball YOC PRO kombiniert Reinvest, Dividendenwachstum, Steuern und Yield on Cost."}},
+{"@type":"Question","name":"Sind die Ergebnisse realistisch?","acceptedAnswer":{"@type":"Answer","text":"Ja, die Modelle basieren auf marktüblichen Cashflow- und Dividendenannahmen."}}
+]
 }
 </script>
 
