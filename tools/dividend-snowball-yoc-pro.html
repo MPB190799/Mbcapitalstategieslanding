@@ -128,16 +128,16 @@ th{color:var(--gold);}
 <div class="card">
 
 <div class="grid">
-  <div><label>Kaufkurs je Aktie (€)</label><input id="buy" type="number" value="25"></div>
-  <div><label>Stückzahl</label><input id="shares" type="number" value="200"></div>
-  <div><label>Start-Dividende je Aktie (€ / Jahr)</label><input id="div" type="number" value="2"></div>
-  <div><label>Dividendenwachstum (% p.a.)</label><input id="growth" type="number" value="5"></div>
-  <div><label>Reinvest-Quote (% Nettodividenden)</label><input id="reinvest" type="number" value="100"></div>
-  <div><label>Steuer auf Dividenden (%)</label><input id="tax" type="number" value="26.4"></div>
-  <div><label>Zeitraum (Jahre)</label><input id="years" type="number" value="20"></div>
+  <div><label>Kaufkurs je Aktie (€)</label><input id="buy" type="number" value="25" step="0.01"></div>
+  <div><label>Stückzahl</label><input id="shares" type="number" value="200" step="1"></div>
+  <div><label>Start-Dividende je Aktie (€ / Jahr)</label><input id="div" type="number" value="2" step="0.01"></div>
+  <div><label>Dividendenwachstum (% p.a.)</label><input id="growth" type="number" value="5" step="0.01"></div>
+  <div><label>Reinvest-Quote (% Nettodividenden)</label><input id="reinvest" type="number" value="100" step="0.01"></div>
+  <div><label>Steuer auf Dividenden (%)</label><input id="tax" type="number" value="26.4" step="0.01"></div>
+  <div><label>Zeitraum (Jahre)</label><input id="years" type="number" value="20" step="1"></div>
 </div>
 
-<button onclick="runSnowball()">Snowball simulieren</button>
+<button type="button" onclick="runSnowball()">Snowball simulieren</button>
 
 <div id="output" class="result" style="display:none;"></div>
 
@@ -168,60 +168,96 @@ sondern die Entwicklung der <strong>Nettodividenden</strong>.
 </div>
 
 <script>
+function euro(n){ return n.toLocaleString('de-DE',{maximumFractionDigits:0}) + ' €'; }
+function pct(n){ return n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %'; }
+
 function runSnowball(){
-  const buy=+buy.value;
-  const shares=+shares.value;
-  let div=+div.value;
-  const g=+growth.value/100;
-  const r=+reinvest.value/100;
-  const t=+tax.value/100;
-  const y=+years.value;
+  // Inputs sauber holen (kein Shadowing)
+  const buyEl = document.getElementById('buy');
+  const sharesEl = document.getElementById('shares');
+  const divEl = document.getElementById('div');
+  const growthEl = document.getElementById('growth');
+  const reinvestEl = document.getElementById('reinvest');
+  const taxEl = document.getElementById('tax');
+  const yearsEl = document.getElementById('years');
+  const outputEl = document.getElementById('output');
 
-  let invested=buy*shares;
-  let netDiv=0, cumDiv=0;
-  let table="";
+  const buy = Number(buyEl.value);
+  let shares = Number(sharesEl.value);
+  let divPerShare = Number(divEl.value);
 
-  for(let i=1;i<=y;i++){
-    const gross=div*shares;
-    netDiv=gross*(1-t);
-    cumDiv+=netDiv;
-    invested+=netDiv*r;
-    div*=1+g;
+  const g = Number(growthEl.value) / 100;
+  const r = Number(reinvestEl.value) / 100;
+  const t = Number(taxEl.value) / 100;
+  const y = Math.max(1, Math.floor(Number(yearsEl.value)));
 
-    if([1,5,10,15,20].includes(i)){
-      table+=`
-      <tr>
-        <td>${i}</td>
-        <td>${netDiv.toFixed(0)} €</td>
-        <td>${((netDiv/(buy*shares))*100).toFixed(2)} %</td>
-        <td>${cumDiv.toFixed(0)} €</td>
-      </tr>`;
+  // Basic Guards
+  if(!isFinite(buy) || buy <= 0 || !isFinite(shares) || shares <= 0 || !isFinite(divPerShare) || divPerShare < 0){
+    outputEl.style.display="block";
+    outputEl.innerHTML = `<p class="highlight">Bitte valide Werte eingeben (Kurs > 0, Stückzahl > 0, Dividende ≥ 0).</p>`;
+    return;
+  }
+
+  const initialShares = shares;
+  const initialDivPerShare = divPerShare;
+  const initialInvestment = buy * initialShares;
+
+  let netDiv = 0;
+  let cumNetDiv = 0;
+  let tableRows = "";
+
+  for(let i=1; i<=y; i++){
+    const gross = divPerShare * shares;
+    netDiv = gross * (1 - t);
+    cumNetDiv += netDiv;
+
+    // Reinvest: Nettodividende (Anteil r) kauft neue Shares zum Kurs buy
+    const reinvestAmount = netDiv * r;
+    const newShares = reinvestAmount / buy;
+    shares += newShares;
+
+    // Dividende wächst für nächstes Jahr
+    divPerShare *= (1 + g);
+
+    const yoc = (netDiv / initialInvestment) * 100;
+
+    // Jahr 1, alle 5 Jahre, und letztes Jahr
+    if(i === 1 || i === y || i % 5 === 0){
+      tableRows += `
+        <tr>
+          <td>${i}</td>
+          <td>${euro(netDiv)}</td>
+          <td>${pct(yoc)}</td>
+          <td>${euro(cumNetDiv)}</td>
+        </tr>`;
     }
   }
 
-  const yocEnd=(netDiv/(buy*shares))*100;
-  const snowball=(netDiv/(+div.value*shares)).toFixed(1);
+  const yocStart = ((initialDivPerShare * initialShares) * (1 - t) / initialInvestment) * 100;
+  const yocEnd = (netDiv / initialInvestment) * 100;
+  const snowballFactor = (yocStart > 0) ? (yocEnd / yocStart) : 0;
 
-  output.style.display="block";
-  output.innerHTML=`
-  <h2>Ergebnis</h2>
-  <p>🎯 Yield on Cost Start: <span class="highlight">${((+div.value*shares)/(buy*shares)*100).toFixed(2)} %</span></p>
-  <p>🚀 Yield on Cost Ende: <span class="highlight">${yocEnd.toFixed(2)} %</span></p>
-  <p>💰 Nettodividende im letzten Jahr: <span class="highlight">${netDiv.toFixed(0)} €</span></p>
-  <p>❄️ Snowball-Faktor: <span class="highlight">${snowball}×</span></p>
+  outputEl.style.display="block";
+  outputEl.innerHTML = `
+    <h2>Ergebnis</h2>
+    <p>🎯 Yield on Cost Start (netto): <span class="highlight">${pct(yocStart)}</span></p>
+    <p>🚀 Yield on Cost Ende (netto): <span class="highlight">${pct(yocEnd)}</span></p>
+    <p>💰 Nettodividende im letzten Jahr: <span class="highlight">${euro(netDiv)}</span></p>
+    <p>📈 Stückzahl am Ende (durch Reinvest): <span class="highlight">${shares.toLocaleString('de-DE',{maximumFractionDigits:2})}</span></p>
+    <p>❄️ Snowball-Faktor (YOC Ende / Start): <span class="highlight">${snowballFactor.toLocaleString('de-DE',{maximumFractionDigits:2})}×</span></p>
 
-  <div class="table-wrap">
-  <table>
-    <thead>
-      <tr><th>Jahr</th><th>Nettodividende</th><th>YOC</th><th>Kumuliert</th></tr>
-    </thead>
-    <tbody>${table}</tbody>
-  </table>
-  </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Jahr</th><th>Nettodividende</th><th>YOC (netto)</th><th>Kumuliert (netto)</th></tr>
+        </thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
 
-  <p style="margin-top:16px;">
-    👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a>
-  </p>
+    <p style="margin-top:16px;">
+      👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a>
+    </p>
   `;
 }
 </script>
