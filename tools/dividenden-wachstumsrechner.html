@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dividenden-Wachstumsrechner – Dividendenwachstum & Cashflow simulieren | MB Capital Strategies</title>
-<meta name="description" content="Dividenden-Wachstumsrechner: Berechne zukünftigen Cashflow durch Dividendenwachstum. Langfrist-Effekt, Gesamtausschüttung & Kaufkraft-Logik – ohne Reinvest.">
+<title>Dividenden-Wachstumsrechner – Dividendenwachstum & Cashflow | MB Capital Strategies</title>
+<meta name="description" content="Dividenden-Wachstumsrechner: Berechne zukünftigen Dividenden-Cashflow durch Wachstum. Mit Beispiel, Gesamtausschüttung & Kaufkraft-Logik – ohne Reinvest.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -83,7 +83,6 @@ button{
   font-weight:700;
   cursor:pointer;
 }
-button:hover{filter:brightness(1.08);}
 
 .result{
   margin-top:20px;
@@ -127,10 +126,27 @@ button:hover{filter:brightness(1.08);}
 
 <main class="wrapper">
 
+<!-- SEO INTRO -->
+<section class="seo">
+<h2>Dividenden-Wachstumsrechner – Cashflow ohne Reinvest planen</h2>
+<p>
+Der Dividenden-Wachstumsrechner zeigt dir, wie sich dein
+<strong>jährlicher Dividenden-Cashflow</strong> entwickelt,
+wenn Dividenden kontinuierlich steigen – ganz ohne Reinvest
+und ohne zusätzliche Einzahlungen.
+</p>
+<p>
+Im Fokus steht der <strong>reine Wachstumseffekt</strong>:
+Wie stark wächst dein Einkommen allein durch Dividendenerhöhungen?
+Gerade für Investoren, die Dividenden entnehmen möchten,
+ist diese Perspektive entscheidend.
+</p>
+</section>
+
 <section class="card">
 <header class="header">
   <h1 class="title">Dividenden-Wachstumsrechner</h1>
-  <p class="sub">Wie stark wächst dein Dividenden-Cashflow über Zeit – ganz ohne Reinvest?</p>
+  <p class="sub">Wie stark wächst dein Cashflow – ohne Reinvest?</p>
 </header>
 
 <label>Aktuelle Jahresdividende (€)</label>
@@ -147,32 +163,50 @@ button:hover{filter:brightness(1.08);}
 <div id="output" class="result" style="display:none;"></div>
 
 <p style="margin-top:14px;font-size:.85rem;color:#9aa6c0;">
-Ergänzend:
-<a href="/tools/dividenden-snowball-rechner.html" style="color:#d4af37;">Dividend Snowball (mit Reinvest)</a> ·
-<a href="/dividendenstrategie/" style="color:#d4af37;">Dividendenstrategie</a>
+Passend dazu:
+<a href="/tools/dividenden-snowball-rechner.html" style="color:#d4af37;">Dividend Snowball</a> ·
+<a href="/tools/dividenden-reinvest-rechner.html" style="color:#d4af37;">DRIP-Rechner</a>
 </p>
 </section>
 
 <section class="seo">
-<h2>Was zeigt der Dividenden-Wachstumsrechner?</h2>
+<h2>So funktioniert der Dividenden-Wachstumsrechner</h2>
 <p>
-Dieser Rechner simuliert, wie sich dein jährlicher Dividenden-Cashflow allein durch
-<strong>Dividendenwachstum</strong> entwickelt – ohne zusätzliches Kapital und ohne Reinvest.
+Der Rechner geht von einer konstanten jährlichen Wachstumsrate aus.
+Die Dividende wird Jahr für Jahr erhöht,
+ohne dass neue Aktien gekauft oder Dividenden reinvestiert werden.
 </p>
 <ul>
-<li>Langfristiger Kaufkrafterhalt</li>
-<li>Inflationsschutz</li>
-<li>Planbarer Cashflow für Buy-&-Hold</li>
-<li>Perfekte Ergänzung zu High-Yield-Strategien</li>
+<li>Keine Sparrate</li>
+<li>Kein Reinvest</li>
+<li>Fokus auf Kaufkraft & Einkommen</li>
+<li>Ideal für Entnahme-Strategien</li>
 </ul>
 </section>
 
 <section class="seo">
-<h2>Wichtig zu verstehen</h2>
+<h2>Beispiel: Dividendenwachstum über 15 Jahre</h2>
 <p>
-Der Rechner geht von konstantem Dividendenwachstum aus.
-Er zeigt den <strong>reinen Wachstumseffekt</strong> – nicht Kursgewinne und keinen Zinseszins.
+Du erhältst heute <strong>1.200 €</strong> Dividenden pro Jahr.
+Wachsen diese um <strong>5 %</strong> jährlich,
+liegt dein jährlicher Cashflow nach 15 Jahren
+bei deutlich über <strong>2.000 €</strong> – ohne zusätzliches Kapital.
 </p>
+<p>
+Der Rechner zeigt außerdem,
+wie hoch deine <strong>Gesamtausschüttung</strong>
+über den gesamten Zeitraum ausfällt.
+</p>
+</section>
+
+<section class="seo">
+<h2>Warum Dividendenwachstum so wichtig ist</h2>
+<ul>
+<li>Schützt langfristig vor Inflation</li>
+<li>Erhöht den Cashflow ohne Mehreinsatz</li>
+<li>Ideal für Ruhestand & Entnahme</li>
+<li>Ergänzt High-Yield-Strategien perfekt</li>
+</ul>
 </section>
 
 </main>
@@ -188,7 +222,6 @@ function calcGrowth(){
   const d0 = parseFloat(dividend.value);
   const g  = parseFloat(growth.value)/100;
   const n  = parseInt(years.value);
-
   if(!d0 || !g || !n) return;
 
   const dN = d0 * Math.pow(1+g, n);
@@ -212,25 +245,11 @@ function calcGrowth(){
 "@type":"FAQPage",
 "mainEntity":[
 {"@type":"Question","name":"Was ist eine realistische Dividendenwachstumsrate?","acceptedAnswer":{"@type":"Answer","text":"Langfristig liegen nachhaltige Dividendenwachstumsraten meist zwischen 3 und 8 Prozent pro Jahr."}},
-{"@type":"Question","name":"Ist Dividendenwachstum wichtiger als hohe Rendite?","acceptedAnswer":{"@type":"Answer","text":"Wachstum schützt langfristig vor Inflation und steigert den Cashflow auch ohne zusätzliches Kapital."}}
+{"@type":"Question","name":"Ist Dividendenwachstum wichtiger als hohe Rendite?","acceptedAnswer":{"@type":"Answer","text":"Dividendenwachstum schützt langfristig vor Inflation und erhöht den Cashflow auch ohne zusätzliches Kapital."}},
+{"@type":"Question","name":"Berücksichtigt der Rechner Reinvest?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner zeigt bewusst nur den reinen Wachstumseffekt ohne Wiederanlage."}},
+{"@type":"Question","name":"Für wen ist der Dividenden-Wachstumsrechner geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für langfristige Dividendeninvestoren mit Fokus auf Einkommen und Kaufkraft."}},
+{"@type":"Question","name":"Ist der Rechner realistisch?","acceptedAnswer":{"@type":"Answer","text":"Er nutzt vereinfachte Annahmen, eignet sich aber sehr gut zur langfristigen Cashflow-Planung."}}
 ]
-}
-</script>
-
-<!-- Tool Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"SoftwareApplication",
-"name":"Dividenden-Wachstumsrechner",
-"applicationCategory":"FinanceApplication",
-"operatingSystem":"Web",
-"description":"Interaktiver Rechner zur Simulation von Dividendenwachstum und langfristigem Cashflow ohne Reinvest.",
-"creator":{
-  "@type":"Organization",
-  "name":"MB Capital Strategies",
-  "url":"https://mbcapitalstrategies.com/"
-}
 }
 </script>
 
