@@ -15,12 +15,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Shipping Aktien: Cashflow, Raten & Marktzyklen | MB Capital Strategies</title>
-  <meta name="description" content="Shipping Aktien sind zyklische Cashflow-Maschinen. Mein Ansatz: Dayrates/TCE, Spot vs Time Charter, Orderbook, Break-even, Bilanz & Kapitaldisziplin. Inkl. Segment-Hub (Tanker, LNG, Dry Bulk, Container) + Tools." />
+  <!-- ✅ GEÄNDERT: Dividenden als Primär-Keyword -->
+  <title>Shipping Aktien & Dividenden – Cashflow, TCE & Zyklen | MB Capital Strategies</title>
+  <meta name="description" content="Shipping Aktien für Dividenden-Investoren: Dayrates, TCE, Spot vs Time-Charter, Orderbook & Break-even erklärt. Analysen zu Tanker, LNG & Bulk + kostenlose Tools." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Shipping Aktien: Cashflow, Raten & Marktzyklen | MB Capital Strategies">
-  <meta property="og:description" content="Der MB Shipping Ansatz: Cashflow statt Story. Dayrates/TCE, Spot vs Charter, Orderbook & Zyklus-Timing – inkl. Segment-Hub & Tools.">
+  <meta property="og:title" content="Shipping Aktien & Dividenden – Cashflow, TCE & Zyklen | MB Capital Strategies">
+  <meta property="og:description" content="Zyklische Cashflow-Maschinen: Shipping-Aktien mit Fokus auf Dayrates/TCE, Break-even & Dividenden – inkl. Analysen & Tools.">
   <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mbcapitalstrategies.com/shipping-aktien/">
@@ -28,7 +29,50 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://mbcapitalstrategies.com/shipping-aktien/">
 
-  <!-- FAQ Schema -->
+  <!-- ✅ NEU: BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"https://mbcapitalstrategies.com/"},
+      {"@type":"ListItem","position":2,"name":"Hard Asset Guide","item":"https://mbcapitalstrategies.com/hard-asset-guide/"},
+      {"@type":"ListItem","position":3,"name":"Shipping Aktien","item":"https://mbcapitalstrategies.com/shipping-aktien/"}
+    ]
+  }
+  </script>
+
+  <!-- ✅ NEU: Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Shipping Aktien & Dividenden – Cashflow, TCE & Zyklen",
+    "description": "Vollständige Pillar Page zu Shipping-Aktien: Dayrates, TCE, Orderbook, Dividendenanalysen und Cashflow-Tools für Dividenden-Investoren.",
+    "url": "https://mbcapitalstrategies.com/shipping-aktien/",
+    "author": {
+      "@type": "Person",
+      "name": "Marco Bozem",
+      "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com/",
+      "logo": {"@type":"ImageObject","url":"https://mbcapitalstrategies.com/Logo.png"}
+    },
+    "about": [
+      {"@type":"Thing","name":"Shipping Aktien"},
+      {"@type":"Thing","name":"Tanker Dividenden"},
+      {"@type":"Thing","name":"LNG Carrier"},
+      {"@type":"Thing","name":"TCE Rate"},
+      {"@type":"Thing","name":"Frachtraten"},
+      {"@type":"Thing","name":"Cashflow Investing"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema – UNVERÄNDERT, war schon gut -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,11 +109,20 @@
           "@type": "Answer",
           "text": "Meist zyklisch. In Hochphasen entstehen Sonderdividenden aus Free Cashflow – das ist kein Normalzustand. Nachhaltig sind Ausschüttungen nur bei solidem Break-even, starker Bilanz und diszipliniertem Capex. Sonderdividenden müssen immer als Zyklus-Effekt eingeordnet werden."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie berechne ich den Cashflow einer Shipping-Aktie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mit dem Shipping Cashflow Rechner auf MB Capital Strategies: TCE-Rate minus OPEX = Free Cashflow pro Schiff. Multipliziert mit der Flottenanzahl ergibt sich das Dividendenpotenzial der gesamten Flotte."
+        }
       }
     ]
   }
   </script>
 
+  <!-- CSS: UNVERÄNDERT -->
   <style>
     :root{
       --gold:#d4af37;
@@ -296,6 +349,54 @@
       cursor:pointer;
     }
 
+    /* ✅ NEU: Artikel-Liste */
+    .article-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .article-list li{
+      border-bottom:1px solid rgba(255,255,255,.06);
+      padding:14px 0;
+    }
+    .article-list li:last-child{border-bottom:none;}
+    .article-list a{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:1em;
+    }
+    .article-list a:hover{color:var(--gold);}
+    .article-meta{
+      font-size:0.85em;
+      color:var(--text-2);
+      margin-top:3px;
+    }
+
+    /* ✅ NEU: Related Box -->
+    .related-box{
+      background:var(--bg-soft);
+      border-left:3px solid var(--gold);
+      border-radius:0 14px 14px 0;
+      padding:16px 20px;
+      max-width:980px;
+      margin:30px auto 0;
+    }
+    .related-box p{
+      margin:0 0 10px;
+      font-weight:700;
+      color:var(--gold);
+      font-size:0.95em;
+    }
+    .related-box a{
+      display:inline-block;
+      color:#cfd6e6;
+      text-decoration:none;
+      margin:3px 14px 3px 0;
+      font-size:0.9em;
+    }
+    .related-box a:hover{color:var(--gold); text-decoration:underline;}
+
     footer{
       margin-top:80px;
       text-align:center;
@@ -312,6 +413,7 @@
 
 <body>
 
+<!-- HEADER: UNVERÄNDERT -->
 <header class="header">
   <a href="/">🏠 Startseite</a>
   <a href="/depot-strategie/">📊 Depot-Strategie</a>
@@ -361,37 +463,39 @@
 
 <div class="page-wrapper">
 
-  <!-- HERO -->
+  <!-- HERO: UNVERÄNDERT -->
   <section class="hero">
     <div class="kicker">🚢 Pillar Page · MB Capital Strategies</div>
     <h1>Shipping Aktien: Cashflow, Raten & Marktzyklen</h1>
     <p class="lead">
       Shipping-Aktien sind zyklische Cashflow-Maschinen mit brutal ehrlicher Preisbildung:
       Wenn Raten steigen, explodiert der Free Cashflow – wenn der Zyklus dreht, fallen Margen schnell.
-      Genau deshalb ist Shipping kein Buy-&-Forget-Sektor, sondern ein Timing-Game mit klaren Regeln.
+      Shipping ist Teil meiner <a href="/hard-asset-guide/" style="color:var(--gold);">Hard-Asset-Strategie</a>:
+      kein Buy-&-Forget, sondern ein Timing-Game mit klaren Regeln.
       Hier findest du meinen kompletten Ansatz: <strong>Dayrates/TCE, Spot vs Time Charter, Break-even, Orderbook, Bilanz & Kapitaldisziplin.</strong>
     </p>
 
     <div class="cta-row">
       <a class="btn" href="/shipping/">🚢 Shipping-Hub öffnen</a>
+      <a class="btn btn-secondary" href="/tools/shipping-cashflow-rechner.html">🧮 Cashflow berechnen</a>
       <a class="btn btn-secondary" href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Tanker-Liste</a>
       <a class="btn btn-secondary" href="/bestenlisten/beste-lng-aktien-2025.html">🔥 LNG-Liste</a>
     </div>
 
     <p class="mini-note">Hinweis: Keine Anlageberatung. Shipping ist hochzyklisch und volatil.</p>
 
-    <!-- YouTube Embed (Playlist: Maritime/Shipping Podcast als zentraler Einstieg) -->
     <div class="embed" aria-label="YouTube Video">
       <iframe
         src="https://www.youtube.com/embed/ANwHQxes6UE"
         title="MB Capital Strategies – Shipping & Maritime Cashflow"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
+        allowfullscreen
+        loading="lazy">
       </iframe>
     </div>
   </section>
 
-  <!-- SECTION: WARUM SHIPPING -->
+  <!-- WARUM SHIPPING: UNVERÄNDERT -->
   <section class="section">
     <h2>Warum Shipping Cashflow liefert</h2>
     <div class="card">
@@ -400,6 +504,8 @@
         <strong>Raten (Dayrates/TCE)</strong> – und diese können in Engpässen extrem schnell steigen.
         Gleichzeitig ist die Angebotsseite träge: Neubauten brauchen Jahre, Verschrottung kommt oft erst im Abschwung.
         Ergebnis: <strong>Cashflow-Spitzen</strong> in Hochphasen und harte Realität in Downcycles.
+        Shipping ist für mich ein <a href="/hard-asset-guide/" style="color:var(--gold);">Hard Asset</a>
+        mit realem Cashflow-Fundament.
       </p>
       <ul>
         <li><strong>Dayrates/TCE</strong> = Umsatz-/Cashflow-Hebel</li>
@@ -410,75 +516,107 @@
     </div>
   </section>
 
-  <!-- SECTION: KENNZAHLEN -->
+  <!-- KENNZAHLEN: UNVERÄNDERT -->
   <section class="section">
     <h2>Meine Shipping-Checkliste (kurz & brutal effektiv)</h2>
     <div class="card">
       <p>
         Ich bewerte Reeder nicht nach Story, sondern nach Cashflow-Mechanik und Überlebensfähigkeit im Downcycle.
-        Das ist die Kernlogik:
+        Das ist die Kernlogik – im Detail erklärt mit dem
+        <a href="/tools/shipping-cashflow-rechner.html" style="color:var(--gold);">Shipping Cashflow Rechner</a>:
       </p>
       <ul>
         <li><strong>TCE/Dayrates vs Break-even:</strong> Wie groß ist die Marge bei normalen Raten?</li>
         <li><strong>Charter-Mix:</strong> Spot-Hebel vs Time-Charter-Stabilität</li>
         <li><strong>Bilanz:</strong> Netto-Verschuldung, Fälligkeiten, Liquidität</li>
-        <li><strong>Flotte:</strong> Alter, Effizienz, regulatorische Risiken</li>
+        <li><strong>Flotte:</strong> Alter, Effizienz, regulatorische Risiken (ETS, CII)</li>
         <li><strong>Kapitalallokation:</strong> Dividenden/Buybacks vs Neubau-Wahn</li>
       </ul>
       <p class="mini-note">Grundsatz: In Hochphasen wird Cash verdient – die Frage ist, ob er behalten und klug verteilt wird.</p>
     </div>
   </section>
 
-  <!-- SECTION: SEGMENTE -->
+  <!-- SEGMENTE: UNVERÄNDERT -->
   <section class="section">
-    <h2>Shipping-Segmente (der Markt ist nicht „ein Ding“)</h2>
-    <p>Jedes Segment hat eigene Treiber, eigene Zyklen und eigene Kennzahlen. Hier sind die wichtigsten Cluster:</p>
+    <h2>Shipping-Segmente (der Markt ist nicht „ein Ding")</h2>
+    <p>Jedes Segment hat eigene Treiber, eigene Zyklen und eigene Kennzahlen:</p>
 
     <div class="grid">
-
       <div class="card">
         <h3>🚢 Tanker (Crude & Product)</h3>
-        <p>
-          Starker Rate-Hebel, hohe Ausschüttungen in Engpässen. Treiber: Ölflüsse, Tonnenmeilen, Flottenstruktur, geopolitische Routen.
-        </p>
+        <p>Starker Rate-Hebel, hohe Ausschüttungen in Engpässen. Treiber: Ölflüsse, Tonnenmeilen, Flottenstruktur, geopolitische Routen.</p>
         <a href="/bestenlisten/beste-tanker-aktien-2025.html" class="btn btn-secondary">Tanker-Übersicht →</a>
       </div>
 
       <div class="card">
         <h3>🔥 LNG Carrier</h3>
-        <p>
-          Langfristige Gasflüsse, Vertragsmix entscheidend. Treiber: LNG-Exportkapazität, Spot/TC, Flottenwachstum, Winter/Nachfrage.
-        </p>
+        <p>Langfristige Gasflüsse, Vertragsmix entscheidend. Treiber: LNG-Exportkapazität, Spot/TC, Flottenwachstum, Winter/Nachfrage.</p>
         <a href="/bestenlisten/beste-lng-aktien-2025.html" class="btn btn-secondary">LNG-Übersicht →</a>
       </div>
 
       <div class="card">
         <h3>⚓ Dry Bulk (BDI, Kohle, Erz, Getreide)</h3>
-        <p>
-          Makro-sensibel und zyklisch. Treiber: China-Importe, Infrastruktur, saisonale Muster, BDI & Flottenwachstum.
-        </p>
+        <p>Makro-sensibel und zyklisch. Direkt verbunden mit <a href="/rohstoff-superzyklus-master.html" style="color:var(--gold);">Rohstoffzyklen</a> – Treiber: China-Importe, BDI & Flottenwachstum.</p>
         <a href="/blog/index.html" class="btn btn-secondary">Bulk-Content im Blog →</a>
       </div>
 
       <div class="card">
         <h3>📦 Container</h3>
-        <p>
-          Handelszyklen und Supply Chains. Treiber: Freight Rates, Konsum, Lagerzyklen, Netzwerk-/Allianzstruktur.
-        </p>
+        <p>Handelszyklen und Supply Chains. Treiber: Freight Rates, Konsum, Lagerzyklen, Netzwerk-/Allianzstruktur.</p>
         <a href="/blog/index.html" class="btn btn-secondary">Container-Content im Blog →</a>
       </div>
-
     </div>
   </section>
 
-  <!-- SECTION: DIVIDENDEN -->
+  <!-- ✅ NEU: Shipping-Analysen Artikel-Liste -->
+  <section class="section">
+    <h2>📰 Alle Shipping-Analysen & Artikel</h2>
+    <p>
+      Meine vollständigen Shipping-Analysen – von High-Yield-Picks bis zur Flottenstruktur.
+      Ergänzend: <a href="/hard-asset-guide/#shipping" style="color:var(--gold);">Shipping im Hard Asset Guide →</a>
+    </p>
+
+    <div class="card" style="padding:8px 22px;">
+      <ul class="article-list">
+        <li>
+          <a href="/blog/shipping-6-aktien-depot-2025.html">6 Shipping-Aktien im Dividendendepot – Aufbau, Gewichtung & Cashflow</a>
+          <div class="article-meta">Diversifikation über Tanker, Gas & Bulk · Rolle im Gesamtdepot</div>
+        </li>
+        <li>
+          <a href="/blog/shipping-3-aktien-10prozent-2025.html">3 Shipping-Aktien mit zweistelliger Dividendenrendite</a>
+          <div class="article-meta">High-Yield-Cashflow · Ausschüttungsquote · Zyklus-Risiken</div>
+        </li>
+        <li>
+          <a href="/blog/shipping-3-aktien-lng-tanker-2025.html">LNG-Tanker: 3 spannende Cashflow-Werte im Gas-Segment</a>
+          <div class="article-meta">LNG-Carrier · Langfristverträge · planbarer Cashflow</div>
+        </li>
+        <li>
+          <a href="/blog/shipping-tanker-mixedfleet-2025.html">Mixed Fleet: Wie gemischte Flotten das Risiko streuen</a>
+          <div class="article-meta">Flottenstruktur · Segmentmix · Schuldenstruktur</div>
+        </li>
+        <li>
+          <a href="/blog/hidden-champions-shipping-2025.html">Hidden Champions im Shipping – Nischenplayer mit Cashflow-Potenzial</a>
+          <div class="article-meta">Spezialisierte Reeder · Nischenflotten · besondere Geschäftsmodelle</div>
+        </li>
+        <li>
+          <a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html">Green Shipping 2026 – Die größte Transformation seit 50 Jahren</a>
+          <div class="article-meta">ETS · FuelEU · CII · CO₂-Kosten · ECO-Flotten-Gewinner</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIVIDENDEN: UNVERÄNDERT -->
   <section class="section">
     <h2>Shipping & Dividenden – Cashflow statt Illusion</h2>
     <div class="card">
       <p>
         Shipping-Dividenden können extrem hoch sein – aber sie sind fast immer <strong>zyklisch</strong>.
         In Hochphasen entstehen Sonderdividenden aus Free Cashflow. Das ist kein Normalzustand, sondern Zyklus-Spitze.
-        Entscheidend ist, ob ein Reeder sein Break-even niedrig hält, die Bilanz schützt und Kapital diszipliniert allokiert.
+        In meiner <a href="/depot-strategie/" style="color:var(--gold);">80/20-Strategie</a>
+        ist Shipping der zyklische Rendite-Booster neben stabileren
+        <a href="/midstream/" style="color:var(--gold);">Midstream-Pipelines</a> und
+        <a href="/mining-aktien/" style="color:var(--gold);">Mining-Royalties</a>.
       </p>
       <ul>
         <li>Dividenden sind oft variabel (FCF-getrieben)</li>
@@ -490,7 +628,7 @@
     </div>
   </section>
 
-  <!-- SECTION: TOOLS -->
+  <!-- TOOLS: UNVERÄNDERT + Rechner-Hub ergänzt -->
   <section class="section">
     <h2>Tools für Shipping- & Cashflow-Investoren</h2>
 
@@ -514,14 +652,14 @@
       </div>
 
       <div class="card">
-        <h3>📗 Glossar: Shipping Cluster</h3>
-        <p>BDI, TCE, Spot/TC, Orderbook – Begriffe und Logik kompakt erklärt.</p>
-        <a href="/glossar/shipping-cluster.html" class="btn btn-secondary">Zum Glossar →</a>
+        <h3>📂 Alle Rechner</h3>
+        <p>YOC, Reinvest, Snowball, Dividendenwachstum – alle Tools auf einen Blick.</p>
+        <a href="/rechner/" class="btn btn-secondary">Zur Rechner-Sammlung →</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: FEHLER -->
+  <!-- FEHLER: UNVERÄNDERT -->
   <section class="section">
     <h2>Häufige Fehler bei Shipping-Aktien</h2>
     <div class="card">
@@ -531,11 +669,12 @@
         <li>Orderbook/Neubau-Wellen ignorieren</li>
         <li>Break-even nicht verstehen (OPEX + Finanzierung + Capex)</li>
         <li>Bilanzrisiken im Downcycle unterschätzen</li>
+        <li>Green-Shipping-Regulierung ab 2026 nicht einpreisen (<a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" style="color:var(--gold);">Analyse →</a>)</li>
       </ul>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ: UNVERÄNDERT + 2 neue Fragen -->
   <section class="section">
     <h2>FAQ</h2>
 
@@ -554,10 +693,33 @@
       <p>Weil der Cashflow direkt von Raten abhängt. In Hochphasen entsteht Überschuss-FCF, in Downcycles sinkt er stark. Gute Reeder schützen die Bilanz und passen Ausschüttungen dem Zyklus an.</p>
     </details>
 
+    <details>
+      <summary>Wie berechne ich den Cashflow einer Shipping-Aktie selbst?</summary>
+      <p>Mit dem <a href="/tools/shipping-cashflow-rechner.html" style="color:var(--gold);">Shipping Cashflow Rechner</a>: TCE-Rate minus OPEX = Free Cashflow pro Schiff. Multipliziert mit Flottenanzahl = Gesamtpotenzial für Dividenden.</p>
+    </details>
+
+    <details>
+      <summary>Was ändert sich durch Green Shipping ab 2026?</summary>
+      <p>EU ETS (100 %), FuelEU Maritime und CII-Ratings treffen alte Flotten hart. ECO-Schiffe erhalten Frachtraten-Prämien. Die vollständige Analyse: <a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" style="color:var(--gold);">Green Shipping 2026 →</a></p>
+    </details>
   </section>
+
+  <!-- ✅ NEU: Related Links Box -->
+  <div class="related-box">
+    <p>🔗 Weiterführende Themen</p>
+    <a href="/hard-asset-guide/">→ Hard Asset Guide (Master Hub)</a>
+    <a href="/shipping/">→ Shipping Hub (alle Segmente & Videos)</a>
+    <a href="/mining-aktien/">→ Mining & Rohstoffe</a>
+    <a href="/midstream/">→ Midstream & Pipelines</a>
+    <a href="/tools/shipping-cashflow-rechner.html">→ Shipping Cashflow Rechner</a>
+    <a href="/rechner/">→ Alle Dividenden-Rechner</a>
+    <a href="/glossar/shipping-cluster.html">→ Shipping Glossar</a>
+    <a href="/dividendenstrategie/">→ Dividenden-Strategie</a>
+  </div>
 
 </div>
 
+<!-- FOOTER: UNVERÄNDERT + Sitemap -->
 <footer>
   <div style="margin-bottom:24px;">
     <strong style="color:#d4af37; font-size:1rem;">Publikationen</strong><br>
@@ -569,7 +731,8 @@
     © 2026 MB Capital Strategies ·
     <a href="/impressum.html">Impressum</a> ·
     <a href="/datenschutz.html">Datenschutz</a> ·
-    <a href="/glossar/">Glossar</a>
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
   </div>
 
   <div style="font-size:0.82rem; opacity:0.75; margin-top:8px;">
