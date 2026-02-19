@@ -15,17 +15,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Marco Bozem – Cashflow, Hard Assets & Marktzyklen | MB Capital Strategies</title>
-  <meta name="description" content="Marco Bozem ist unabhängiger Investor & Gründer von MB Capital Strategies. Fokus: Cashflow, Dividenden, Hard Assets, Mining, Shipping & Marktzyklen. Keine Anlageberatung." />
+  <!-- ✅ SEO-OPTIMIERT: Keyword-reicher Title -->
+  <title>Marco Bozem – Dividenden-Investor, Hard Assets & Cashflow | MB Capital Strategies</title>
+  <meta name="description" content="Marco Bozem analysiert Dividenden-Aktien aus Energie, Shipping & Mining. Unabhängiger Investor & Gründer von MB Capital Strategies – datenbasiert, cashfloworientiert." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mbcapitalstrategies.com/ueber-marco-bozem/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Marco Bozem – Cashflow, Hard Assets & Marktzyklen">
-  <meta property="og:description" content="Unabhängiger Investor & Gründer von MB Capital Strategies. Research zu Dividenden, Cashflow & Hard Assets.">
-  <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+  <meta property="og:title" content="Marco Bozem – Dividenden-Investor, Hard Assets & Cashflow">
+  <meta property="og:description" content="Unabhängiger Investor mit Fokus auf Dividenden aus Hard Assets: Energie, Shipping, Mining & Infrastruktur. Research-Plattform MB Capital Strategies.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/BannermitMarco.jpg">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://mbcapitalstrategies.com/ueber-marco-bozem/">
 
-  <!-- PERSON + ORGANIZATION SCHEMA -->
+  <!-- ✅ ERWEITERTES SCHEMA: Person + Organization + BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,9 +39,10 @@
         "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
         "name": "Marco Bozem",
         "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
-        "image": "https://mbcapitalstrategies.com/Logo.png",
+        "image": "https://mbcapitalstrategies.com/marco.jpg",
         "jobTitle": "Privater Investor & Researcher",
-        "description": "Unabhängiger Investor mit Fokus auf Cashflow, Dividenden, Hard Assets und Marktzyklen.",
+        "description": "Unabhängiger Investor mit Fokus auf Dividenden aus Hard Assets: Energie, Shipping, Mining und Infrastruktur. Gründer von MB Capital Strategies.",
+        "knowsAbout": ["Dividendenaktien", "Hard Assets", "Shipping-Aktien", "Mining-Aktien", "Midstream Pipelines", "Cashflow-Investing"],
         "sameAs": [
           "https://www.youtube.com/@mbcapitalstrategies"
         ]
@@ -54,9 +59,26 @@
         "founder": {
           "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person"
         },
-        "description": "Unabhängige Research- & Content-Plattform mit Fokus auf Cashflow, Dividenden, Hard Assets und Marktzyklen.",
+        "description": "Unabhängige Research-Plattform für Dividenden-Investoren. Fokus: Hard Assets, Energie, Shipping, Mining und Cashflow-Strategien.",
         "sameAs": [
           "https://www.youtube.com/@mbcapitalstrategies"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Startseite",
+            "item": "https://mbcapitalstrategies.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Über Marco Bozem",
+            "item": "https://mbcapitalstrategies.com/ueber-marco-bozem/"
+          }
         ]
       }
     ]
@@ -152,6 +174,7 @@
       padding:0 10px;
     }
     h2{ color:var(--gold); font-size:1.7em; }
+    h3{ color:var(--gold-strong); font-size:1.15em; margin:18px 0 6px; }
     p{ color:#cfd6e6; line-height:1.65; }
     ul{ color:#cfd6e6; line-height:1.7; margin-left:18px; }
     .card{
@@ -162,6 +185,59 @@
       margin-top:18px;
       box-shadow:0 10px 26px rgba(0,0,0,.28);
     }
+
+    /* ✅ NEU: Fokus-Grid für Investment-Bereiche */
+    .focus-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    .focus-card{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:12px;
+      padding:18px;
+      text-align:center;
+      text-decoration:none;
+      transition:border-color .2s;
+    }
+    .focus-card:hover{ border-color:var(--gold); }
+    .focus-card .icon{ font-size:1.8em; margin-bottom:8px; }
+    .focus-card .label{ color:var(--gold); font-weight:700; font-size:.95em; }
+    .focus-card .sub{ color:#9aa6c0; font-size:.82em; margin-top:4px; }
+
+    /* ✅ NEU: Trust-Bar */
+    .trust-bar{
+      background:rgba(212,175,55,.08);
+      border:1px solid rgba(212,175,55,.2);
+      border-radius:12px;
+      padding:16px 22px;
+      margin-top:30px;
+      color:#cfd6e6;
+      font-size:.95em;
+      text-align:center;
+    }
+    .trust-bar strong{ color:var(--gold); }
+
+    /* ✅ NEU: Interne Link-Box */
+    .related-links{
+      background:rgba(21,24,33,.85);
+      border-left:3px solid var(--gold);
+      border-radius:0 12px 12px 0;
+      padding:16px 20px;
+      margin-top:30px;
+    }
+    .related-links p{ margin:0 0 8px; font-weight:700; color:var(--gold); }
+    .related-links a{
+      display:inline-block;
+      color:#cfd6e6;
+      text-decoration:none;
+      margin:3px 10px 3px 0;
+      font-size:.93em;
+    }
+    .related-links a:hover{ color:var(--gold); text-decoration:underline; }
+
     footer{
       margin-top:80px;
       text-align:center;
@@ -177,77 +253,169 @@
 
 <body>
 
+<!-- ✅ NAVIGATION ERWEITERT: Hard Assets + Shipping ergänzt -->
 <header class="header">
   <a href="/">🏠 Startseite</a>
-  <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+  <a href="/hard-asset-guide/">💎 Hard Assets</a>
+  <a href="/dividendenstrategie/">💰 Dividenden</a>
+  <a href="/shipping-aktien/">🚢 Shipping</a>
   <a href="/mining-aktien/">⛏️ Mining</a>
-  <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff-Hub</a>
+  <a href="/rechner/">🧮 Rechner</a>
   <a href="/toolbox.html">🧰 Toolbox</a>
 </header>
 
 <div class="page-wrapper">
 
+  <!-- ✅ HERO: H1 keyword-optimiert, kein "Willkommen"-Intro -->
   <section class="hero">
-    <div class="kicker">👤 Über mich · MB Capital Strategies</div>
-    <h1>Marco Bozem</h1>
+    <div class="kicker">👤 Über den Autor · MB Capital Strategies</div>
+    <h1>Marco Bozem – Dividenden aus Hard Assets</h1>
     <p class="lead">
-      Unabhängiger Investor & Gründer von <strong>MB Capital Strategies</strong>.  
-      Fokus auf <strong>Cashflow, Dividenden, Hard Assets</strong> sowie das Verständnis von
-      <strong>Markt- und Rohstoffzyklen</strong>.
+      Ich bin unabhängiger Investor und analysiere <strong>Dividenden-Aktien aus Energie, Shipping & Mining</strong> –
+      datenbasiert, ohne Hype, mit Fokus auf nachhaltigen Cashflow.
+      Auf dieser Plattform teile ich mein Research zu <strong>Hard Assets</strong>,
+      die echten, messbaren Cashflow liefern: <a href="/hard-asset-guide/" style="color:var(--gold);">Pipelines, Tanker, Rohstoffe & Infrastruktur</a>.
     </p>
 
     <div class="cta-row">
-      <a class="btn" href="/dividendenstrategie/">Dividendenstrategie</a>
-      <a class="btn btn-secondary" href="/mining-aktien/">Mining & Rohstoffe</a>
-      <a class="btn btn-secondary" href="/toolbox.html">Tools & Rechner</a>
+      <a class="btn" href="/hard-asset-guide/">Hard Assets entdecken</a>
+      <a class="btn btn-secondary" href="/dividendenstrategie/">Dividenden-Strategie</a>
+      <a class="btn btn-secondary" href="/rechner/">Tools & Rechner</a>
+    </div>
+
+    <!-- ✅ NEU: Trust-Signal -->
+    <div class="trust-bar">
+      📺 Bekannt aus YouTube · <strong>@mbcapitalstrategies</strong> ·
+      Research zu Dividenden, Hard Assets & Marktzyklen seit 2024
     </div>
   </section>
 
+  <!-- ✅ NEU: Investment-Fokus als klickbare Hub-Karten -->
   <section class="section">
-    <h2>Meine Positionierung</h2>
+    <h2>Mein Investment-Fokus</h2>
+    <p>
+      Hard Assets sind das Fundament meines Ansatzes: Unternehmen, die reale Güter
+      fördern, transportieren oder lagern – und dabei <strong>planbare Dividenden</strong> ausschütten.
+      Kein Wachstums-Hype, kein Storytelling. Nur Cashflow, der sich messen lässt.
+    </p>
+
+    <div class="focus-grid">
+      <a class="focus-card" href="/hard-asset-guide/">
+        <div class="icon">💎</div>
+        <div class="label">Hard Assets Guide</div>
+        <div class="sub">Energie · Shipping · Mining · Infrastruktur</div>
+      </a>
+      <a class="focus-card" href="/shipping-aktien/">
+        <div class="icon">🚢</div>
+        <div class="label">Shipping-Aktien</div>
+        <div class="sub">Tanker · Bulk · LNG · Frachtraten</div>
+      </a>
+      <a class="focus-card" href="/mining-aktien/">
+        <div class="icon">⛏️</div>
+        <div class="label">Mining & Rohstoffe</div>
+        <div class="sub">Gold · Kupfer · Kohle · Royalties</div>
+      </a>
+      <a class="focus-card" href="/midstream/">
+        <div class="icon">🛢️</div>
+        <div class="label">Midstream & Pipelines</div>
+        <div class="sub">MLPs · Take-or-Pay · Stabile Yields</div>
+      </a>
+      <a class="focus-card" href="/dividendenstrategie/">
+        <div class="icon">💰</div>
+        <div class="label">Dividenden-Strategie</div>
+        <div class="sub">80/20-Ansatz · Yield-on-Cost · Reinvest</div>
+      </a>
+      <a class="focus-card" href="/rechner/">
+        <div class="icon">🧮</div>
+        <div class="label">Tools & Rechner</div>
+        <div class="sub">Cashflow · Yield · Dividenden-Tracker</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ✅ OPTIMIERT: Positionierung mit mehr Content -->
+  <section class="section">
+    <h2>Mein Ansatz: Cashflow vor Kursgewinnen</h2>
     <div class="card">
       <p>
-        Ich analysiere Unternehmen konsequent aus Investorensicht.
-        Mein Ansatz ist nüchtern, datenbasiert und auf Cashflow fokussiert –
-        nicht auf Storytelling oder kurzfristigen Hype.
+        Die meisten Privatanleger jagen Kurssteigerungen. Ich investiere anders:
+        <strong>Cashflow zuerst</strong>. Dividenden aus Hard Assets – aus Unternehmen,
+        die echte, physische Güter bewegen – bilden den Kern meines Portfolios.
       </p>
+      <h3>Warum Hard Assets?</h3>
       <p>
+        Energie wird transportiert, Rohstoffe abgebaut, Schiffe fahren –
+        unabhängig davon, was Mr. Market gerade denkt. Diese wirtschaftliche Realität
+        schützt vor Inflation und liefert planbare Ausschüttungen.
+        Mein <a href="/hard-asset-guide/" style="color:var(--gold);">Hard Assets Guide</a>
+        erklärt die 4 Kern-Kategorien mit konkreten Kennzahlen.
+      </p>
+      <h3>Die 80/20-Regel</h3>
+      <p>
+        80 % meines Fokus liegt auf stabilen, vorhersehbaren Dividendenzahlern –
+        Midstream-Pipelines, Infrastruktur-REITs, Mining-Royalties.
+        20 % auf zyklischeren Hochdividenden-Positionen wie
+        <a href="/shipping-aktien/" style="color:var(--gold);">Tanker & Shipping-Aktien</a>,
+        die in Hochphasen überproportionale Renditen liefern.
+      </p>
+      <p style="margin-top:14px;">
         MB Capital Strategies ist <strong>keine Vermögensverwaltung</strong>,
-        <strong>keine Anlageberatung</strong> und <strong>kein Finanzprodukt</strong>,
+        <strong>keine Anlageberatung</strong> und <strong>kein Finanzprodukt</strong> –
         sondern eine unabhängige Research- & Content-Plattform.
       </p>
     </div>
   </section>
 
+  <!-- ✅ NEU: Was du auf dieser Seite findest -->
   <section class="section">
-    <h2>Investment-Fokus</h2>
+    <h2>Was du auf MB Capital Strategies findest</h2>
     <div class="card">
       <ul>
-        <li>Dividenden- & Cashflow-Strategien</li>
-        <li>Hard Assets: Energie, Mining, Shipping, Infrastruktur</li>
-        <li>High-Yield-Aktien (BDC, Midstream, Tanker)</li>
-        <li>Markt- & Rohstoffzyklen</li>
-        <li>Reinvest & Yield-on-Cost</li>
+        <li><strong><a href="/hard-asset-guide/" style="color:var(--gold);">Hard Assets Guide</a></strong> – Der vollständige Überblick: Energie, Shipping, Mining & Infrastruktur als Dividendenquellen</li>
+        <li><strong><a href="/shipping-aktien/" style="color:var(--gold);">Shipping-Aktien Analysen</a></strong> – Tanker, Bulk Carrier, LNG: Frachtraten, Bewertung & Dividenden-Check</li>
+        <li><strong><a href="/mining-aktien/" style="color:var(--gold);">Mining & Rohstoff-Analysen</a></strong> – Gold, Kupfer, Kohle: Welche Unternehmen nachhaltige Dividenden zahlen</li>
+        <li><strong><a href="/midstream/" style="color:var(--gold);">Midstream & Pipelines</a></strong> – MLPs und Infrastruktur-Betreiber mit stabilen Take-or-Pay-Verträgen</li>
+        <li><strong><a href="/dividendenstrategie/" style="color:var(--gold);">Dividenden-Strategie</a></strong> – Yield-on-Cost, Reinvest-Strategie und 80/20-Portfolioaufbau</li>
+        <li><strong><a href="/rechner/" style="color:var(--gold);">Rechner & Tools</a></strong> – Cashflow-Rechner, Yield-Vergleich und Dividenden-Tracker</li>
+        <li><strong><a href="/glossar/" style="color:var(--gold);">Glossar</a></strong> – Alle wichtigen Begriffe: Coverage Ratio, DCF, Payout Ratio, Spot Rate & mehr</li>
       </ul>
     </div>
   </section>
 
+  <!-- ✅ Disclaimer bleibt -->
   <section class="section">
     <h2>Hinweis & Haftungsausschluss</h2>
     <div class="card">
       <p>
-        Die Inhalte dienen ausschließlich Informations- und Bildungszwecken
-        und stellen <strong>keine Anlageberatung</strong> dar.
+        Alle Inhalte auf MB Capital Strategies dienen ausschließlich
+        Informations- und Bildungszwecken und stellen <strong>keine Anlageberatung</strong> dar.
+        Investitionen in Aktien, ETFs oder andere Wertpapiere sind mit Risiken verbunden.
+        Eigene Recherche und ggf. professionelle Beratung vor Investitionsentscheidungen
+        werden ausdrücklich empfohlen.
       </p>
     </div>
   </section>
+
+  <!-- ✅ NEU: Related Links Block für interne Verlinkung -->
+  <div class="section">
+    <div class="related-links">
+      <p>🔗 Weiterführende Themen</p>
+      <a href="/hard-asset-guide/">→ Hard Assets Guide (Master Hub)</a>
+      <a href="/dividendenstrategie/">→ Dividenden-Strategie</a>
+      <a href="/shipping-aktien/">→ Shipping-Aktien</a>
+      <a href="/rechner/">→ Dividenden-Rechner</a>
+      <a href="/glossar/">→ Glossar</a>
+    </div>
+  </div>
 
 </div>
 
 <footer>
   © 2026 MB Capital Strategies ·
   <a href="/impressum.html">Impressum</a> ·
-  <a href="/datenschutz.html">Datenschutz</a>
+  <a href="/datenschutz.html">Datenschutz</a> ·
+  <a href="/glossar/">Glossar</a> ·
+  <a href="/sitemap.xml">Sitemap</a>
 </footer>
 
 </body>
