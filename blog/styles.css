@@ -1,6 +1,6 @@
 /* ============================================
-   MB CAPITAL STRATEGIES – GLOBAL CSS
-   Optimierte Version by ChatGPT 2025
+   MB CAPITAL STRATEGIES – BLOG CSS
+   Optimiert 2026 – mbcapitalstrategies.com
 ============================================ */
 
 /* ===== GLOBAL THEME ===== */
@@ -48,6 +48,12 @@ a:hover {
   text-decoration: underline;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -70,6 +76,21 @@ a:hover {
   color: var(--text-muted);
   margin-bottom: var(--space-3);
   max-width: 700px;
+  line-height: 1.7;
+}
+
+/* ✅ FIX: Section Labels im Grid – immer volle Breite */
+.section-label {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 14px 0 4px;
+  border-top: 1px solid rgba(212,175,55,.15);
+  margin-top: 16px;
 }
 
 /* ===== Cards / Posts ===== */
@@ -80,6 +101,8 @@ a:hover {
   border: 1px solid rgba(212,175,55,.25);
   box-shadow: var(--shadow-card);
   transition: .25s;
+  /* ✅ FIX: Kacheln brechen nie unkontrolliert */
+  min-width: 0;
 }
 .post:hover {
   transform: translateY(-4px);
@@ -88,11 +111,34 @@ a:hover {
 .post h2 {
   color: var(--gold);
   margin-bottom: var(--space-1);
+  margin-top: 0;
   font-size: 1.2em;
+  line-height: 1.4;
 }
 .post p {
   color: var(--text-soft);
   margin-bottom: var(--space-2);
+  font-size: 0.95em;
+}
+
+/* ✅ NEU: Highlight-Post (volle Breite, z.B. Mining-Banner) */
+.post-highlight {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #151821, #1c2230);
+  border: 2px solid rgba(212,175,55,.45);
+  box-shadow: 0 0 30px rgba(212,175,55,.35);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  transition: .25s;
+}
+.post-highlight h2 {
+  color: var(--gold);
+  font-size: 1.6em;
+  margin-top: 0;
+}
+.post-highlight p {
+  color: var(--text-soft);
+  font-size: 1.0em;
 }
 
 /* ===== Buttons ===== */
@@ -105,10 +151,32 @@ a:hover {
   font-weight: 700;
   box-shadow: 0 0 14px rgba(212,175,55,0.45);
   transition: .25s;
+  text-decoration: none;
 }
 .btn:hover {
   background: var(--gold-strong);
   transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ✅ NEU: Sekundär-Button */
+.btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(212,175,55,.5);
+  box-shadow: none;
+}
+.btn-secondary:hover {
+  background: var(--bg-soft);
+  transform: translateY(-2px);
+}
+
+/* ✅ NEU: Button-Reihe */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--space-2);
 }
 
 /* ===== Info Boxes ===== */
@@ -131,6 +199,43 @@ a:hover {
 .disclaimer {
   color: var(--text-muted);
   font-size: 0.9em;
+  line-height: 1.6;
+}
+
+/* ✅ NEU: Vorteil-Box (für Toolbox-Artikel & Affiliates) */
+.vorteil-box {
+  background: rgba(212,175,55,.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px;
+  margin: var(--space-2) 0;
+  font-size: 0.93em;
+  color: var(--text);
+}
+
+/* ✅ NEU: Related Links Box */
+.related-box {
+  background: var(--bg-soft);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-3);
+}
+.related-box p {
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 0.95em;
+}
+.related-box a {
+  display: inline-block;
+  color: var(--text-soft);
+  margin: 3px 14px 3px 0;
+  font-size: 0.9em;
+}
+.related-box a:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 /* ===== Glossary Links ===== */
@@ -143,6 +248,35 @@ a:hover {
 }
 .glossar-link:hover {
   color: var(--gold-strong);
+}
+
+/* ===== Tags / Pills ===== */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tag {
+  font-size: 0.78em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.35);
+  color: var(--gold);
+}
+
+/* ===== Article Meta ===== */
+.article-meta {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+.article-kicker {
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
 }
 
 /* ============================================
@@ -169,7 +303,6 @@ a:hover {
 /* ============================================
    HEADER + DROPDOWN
 ============================================ */
-
 header.header {
   background: var(--bg-soft);
   padding: var(--space-2) var(--space-3);
@@ -187,7 +320,6 @@ header.header a {
   font-weight: 600;
 }
 
-/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -197,6 +329,9 @@ header.header a {
   color: var(--gold);
   cursor: pointer;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  padding: 0;
 }
 .dropdown-content {
   display: none;
@@ -209,6 +344,7 @@ header.header a {
   box-shadow: var(--shadow-hover);
   top: 32px;
   left: 0;
+  z-index: 1001;
 }
 .dropdown-content a {
   display: block;
@@ -218,6 +354,13 @@ header.header a {
 .dropdown-content a:hover {
   background: var(--bg-soft);
   color: var(--gold);
+  text-decoration: none;
+}
+.dropdown-content hr {
+  border: 0;
+  height: 1px;
+  background: rgba(212,175,55,.18);
+  margin: 6px 12px;
 }
 
 @media (min-width: 700px) {
@@ -225,7 +368,6 @@ header.header a {
     display: block;
   }
 }
-
 @media (max-width: 699px) {
   .dropdown.open .dropdown-content {
     display: block;
@@ -242,6 +384,25 @@ header.header a {
 }
 
 /* ============================================
+   PAGE HEADER
+============================================ */
+.page-header {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+.page-header h1 {
+  font-size: 2.4em;
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(212,175,55,.6);
+  margin-bottom: 12px;
+}
+.page-header p {
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ============================================
    FOOTER
 ============================================ */
 footer {
@@ -249,7 +410,27 @@ footer {
   padding: var(--space-4);
   color: var(--text-muted);
   margin-top: var(--space-4);
+  border-top: 1px solid rgba(255,255,255,.07);
+  font-size: 0.9em;
+  line-height: 1.8;
 }
 footer a {
   color: var(--gold);
+  margin: 0 8px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 600px) {
+  h1 { font-size: 1.7em; }
+  h2 { font-size: 1.3em; }
+  .page-header { padding: 40px 16px 24px; }
+  .post-highlight { padding: var(--space-3); }
+  .post-highlight h2 { font-size: 1.3em; }
+  .btn-row { flex-direction: column; }
+  .btn { text-align: center; }
 }
