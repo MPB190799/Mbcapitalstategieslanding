@@ -35,7 +35,7 @@
   }
   </script>
 
-  <!-- ======================= CSS ======================= -->
+  <!-- CSS: UNVERÄNDERT -->
   <style>
     :root{
       --gold:#d4af37;
@@ -62,7 +62,6 @@
       padding:0 16px 60px;
     }
 
-    /* HEADER */
     header.header{
       background:var(--bg-soft);
       border-bottom:1px solid rgba(212,175,55,.28);
@@ -80,11 +79,8 @@
       text-decoration:none;
       font-weight:600;
     }
-    header.header a:hover{
-      text-decoration:underline;
-    }
+    header.header a:hover{ text-decoration:underline; }
 
-    /* Dropdown */
     .dropdown{ position:relative; }
     .dropdown-btn{
       background:none;
@@ -115,11 +111,8 @@
       background:#1d2330;
       color:var(--gold);
     }
-    .dropdown.open .dropdown-content{
-      display:block;
-    }
+    .dropdown.open .dropdown-content{ display:block; }
 
-    /* PAGE HEADER */
     .page-header{
       text-align:center;
       padding:70px 20px 40px;
@@ -136,7 +129,6 @@
       margin:0 auto;
     }
 
-    /* POSTS GRID */
     .posts{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -179,7 +171,20 @@
       transform:translateY(-1px);
     }
 
-    /* FOOTER */
+    /* ✅ Section Label – immer volle Breite */
+    .section-label{
+      grid-column: 1 / -1;
+      font-size:0.85em;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      color:var(--text-2);
+      padding:14px 0 4px;
+      border-top:1px solid rgba(212,175,55,.15);
+      margin-top:16px;
+      width:100%;
+      display:block;
+    }
+
     footer{
       text-align:center;
       padding:35px 10px;
@@ -187,13 +192,8 @@
       margin-top:50px;
       font-size:.9em;
     }
-    footer a{
-      color:var(--gold);
-      text-decoration:none;
-    }
-    footer a:hover{
-      text-decoration:underline;
-    }
+    footer a{ color:var(--gold); text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
   </style>
 
 </head>
@@ -228,362 +228,349 @@
     <p>Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies.</p>
   </section>
 
-<!-- ============= POSTS GRID ============= -->
 <section class="posts">
 
   <!-- ===================== HIGHLIGHT: MINING SERIE ===================== -->
-<div class="post" style="
-  grid-column: 1 / -1;
-  background: linear-gradient(135deg, #151821, #1c2230);
-  border:2px solid rgba(212,175,55,0.45);
-  box-shadow:0 0 30px rgba(212,175,55,0.35);
-">
-
-  <h2 style="font-size:1.6em; color:#d4af37;">
-    ⛏️ Mining Aktien 2026 – 22 Cashflow-Analysen ohne Hype
-  </h2>
-
-  <p style="font-size:1.05em; margin-bottom:18px;">
-    In dieser Serie analysiere ich <strong>22 Mining-Aktien</strong> nüchtern & datenbasiert –
-    mit Fokus auf <strong>Cashflow, Dividendenqualität, Kostenstruktur & Zyklus-Lage 2026</strong>.
-    Kein ESG-Marketing. Kein Storytelling. Nur Zahlen.
-  </p>
-
-  <p style="color:#cfd6e6; font-size:0.95em; margin-bottom:20px;">
-    <strong>Analysierte Mining-Aktien:</strong><br>
-    Anglo American, AngloGold Ashanti, Barrick Gold, BHP, Central Asia Metals,
-    Exxaro Resources, Fortescue Metals, Fresnillo, Gerdau, Glencore,
-    Indo Tambangraya Megah, Jiangxi Copper, Kazatomprom, Newmont,
-    Rio Tinto, South32, SunCoke Energy, Thungela Resources,
-    Valterra Platinum, Vale, Whitehaven Coal, Yancoal Australia
-  </p>
-
-  <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:20px;">
-    <a href="/blog/mining-aktien-ueberblick-2026.html" class="btn">
-      📘 Alle Mining-Analysen lesen →
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=CPoENKdn1cI" target="_blank" class="btn" style="background:#2a2f3f;color:#fff;">
-      🎬 22 Aktien – kompakter Überblick →
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=PosxMQi2Yw0&list=PLb7T0VuyV9dei7BFRgzB7nRBy4ZYCAl6Q"
-       target="_blank"
-       class="btn"
-       style="background:#1f2433;color:#fff;">
-      ▶️ Komplette Mining-Playlist →
-    </a>
+  <div class="post" style="
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #151821, #1c2230);
+    border:2px solid rgba(212,175,55,0.45);
+    box-shadow:0 0 30px rgba(212,175,55,0.35);
+  ">
+    <h2 style="font-size:1.6em; color:#d4af37;">
+      ⛏️ Mining Aktien 2026 – 22 Cashflow-Analysen ohne Hype
+    </h2>
+    <p style="font-size:1.05em; margin-bottom:18px;">
+      In dieser Serie analysiere ich <strong>22 Mining-Aktien</strong> nüchtern & datenbasiert –
+      mit Fokus auf <strong>Cashflow, Dividendenqualität, Kostenstruktur & Zyklus-Lage 2026</strong>.
+      Kein ESG-Marketing. Kein Storytelling. Nur Zahlen.
+    </p>
+    <p style="color:#cfd6e6; font-size:0.95em; margin-bottom:20px;">
+      <strong>Analysierte Mining-Aktien:</strong><br>
+      Anglo American, AngloGold Ashanti, Barrick Gold, BHP, Central Asia Metals,
+      Exxaro Resources, Fortescue Metals, Fresnillo, Gerdau, Glencore,
+      Indo Tambangraya Megah, Jiangxi Copper, Kazatomprom, Newmont,
+      Rio Tinto, South32, SunCoke Energy, Thungela Resources,
+      Valterra Platinum, Vale, Whitehaven Coal, Yancoal Australia
+    </p>
+    <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:20px;">
+      <a href="/blog/mining-aktien-ueberblick-2026.html" class="btn">📘 Alle Mining-Analysen lesen →</a>
+      <a href="https://www.youtube.com/watch?v=CPoENKdn1cI" target="_blank" class="btn" style="background:#2a2f3f;color:#fff;">🎬 22 Aktien – kompakter Überblick →</a>
+      <a href="https://www.youtube.com/watch?v=PosxMQi2Yw0&list=PLb7T0VuyV9dei7BFRgzB7nRBy4ZYCAl6Q" target="_blank" class="btn" style="background:#1f2433;color:#fff;">▶️ Komplette Mining-Playlist →</a>
+    </div>
   </div>
 
-</div>
+  <!-- ===================== ✅ NEU: TOOLBOX ARTIKEL ===================== -->
+  <div class="post" style="
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #151821, #1a2010);
+    border:2px solid rgba(212,175,55,0.4);
+    box-shadow:0 0 22px rgba(212,175,55,0.15);
+  ">
+    <h2 style="font-size:1.4em; color:#d4af37;">
+      🧰 Meine Toolbox 2025: Warum ich Scalable, InvestingPro, Debitum & Co. wirklich nutze
+    </h2>
+    <p style="font-size:1em; margin-bottom:14px;">
+      Ein ehrlicher, ausführlicher Überblick über alle Broker, Analyse-Tools und Plattformen
+      die ich als Hard-Asset- und Dividenden-Investor täglich nutze –
+      inklusive <strong>15 % Rabatt auf InvestingPro</strong>,
+      <strong>15 % Rabatt auf Parqet</strong>,
+      exklusiven Broker-Boni und meiner neuen P2P-Ergänzung <strong>Debitum Investments</strong>.
+    </p>
+    <p style="color:#9aa6c0; font-size:0.88em; margin-bottom:18px;">
+      Scalable Capital · Trade Republic · InvestingPro · Parqet · Debitum · Binance · Coinbase · Wise · Airalo
+    </p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px;">
+      <a href="/blog/meine-toolbox-broker-tools-plattformen-2025.html" class="btn">
+        🧰 Zum vollständigen Artikel →
+      </a>
+      <a href="/toolbox.html" class="btn" style="background:transparent; color:#d4af37; border:1px solid rgba(212,175,55,.5); box-shadow:none;">
+        Direkt zur Toolbox →
+      </a>
+    </div>
+  </div>
 
-  <!-- Finanzrechner Kachel -->
+  <!-- ===================== FINANZRECHNER ===================== -->
   <div class="post" style="
     border:1px solid rgba(212,175,55,0.35);
     border-radius:14px;
     background:#151821;
     padding:22px;
   ">
-    <h2 style="color:#d4af37; margin-bottom:10px;">
-      📊 Finanzrechner-Suite 2025
-    </h2>
-
+    <h2 style="color:#d4af37; margin-bottom:10px;">📊 Finanzrechner-Suite 2025</h2>
     <p style="margin-bottom:16px;">
       Die komplette MB Capital Strategies Tool-Sammlung:<br>
       Dividenden, YOC, Wachstum, Reinvest, Snowball PRO & Finanzielle Freiheit.
     </p>
-
-    <a href="/blog/alle-finanzrechner.html" class="btn">
-      📌 Jetzt alle Finanzrechner öffnen →
-    </a>
+    <a href="/blog/alle-finanzrechner.html" class="btn">📌 Jetzt alle Finanzrechner öffnen →</a>
   </div>
 
-  <!-- Mining-Serie -->
-<div class="post">
-  <h2>#MiningSerie | Thungela Resources Analyse 2025</h2>
-  <p>
-    15 % Dividende, schuldenfrei & massiver Cashflow – Auftakt der Mining-Serie.
-  </p>
-  <a href="thungela-resources-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
-
-<div class="post">
-  <h2>#MiningSerie | Whitehaven Coal Analyse 2025</h2>
-  <p>
-    Australiens Cashflow-Champion mit Turnaround-Potenzial – Kohle im Zyklus-Check.
-  </p>
-  <a href="whitehaven-coal-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <!-- SECTION LABEL -->
+  <div class="section-label">⛏️ Mining Serie – 22 Analysen</div>
 
   <div class="post">
-  <h2>#MiningSerie | Yancoal Australia Analyse 2025</h2>
-  <p>
-    11 % Dividendenrendite, extrem starker Cashflow & massive Unterbewertung – 
-    Australiens Kohle-Powerhouse im Rohstoff-Superzyklus.
-  </p>
-  <a href="yancoal-australia-analyse-2025.html" class="btn">
-    Beitrag lesen →
-  </a>
-</div>
+    <h2>#MiningSerie | Thungela Resources Analyse 2025</h2>
+    <p>15 % Dividende, schuldenfrei & massiver Cashflow – Auftakt der Mining-Serie.</p>
+    <a href="thungela-resources-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Rio Tinto Analyse 2025</h2>
-  <p>
-    6 % Dividende, Kupfer-Boom & starker Cashflow – einer der größten Rohstoffkonzerne der Welt.
-  </p>
-  <a href="rio-tinto-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Whitehaven Coal Analyse 2025</h2>
+    <p>Australiens Cashflow-Champion mit Turnaround-Potenzial – Kohle im Zyklus-Check.</p>
+    <a href="whitehaven-coal-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Vale Analyse 2025</h2>
-  <p>
-    Eisenerz, Base Metals, Dividende & 10 % Quellensteuer – kompletter Deep-Dive.
-  </p>
-  <a href="vale-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Yancoal Australia Analyse 2025</h2>
+    <p>11 % Dividendenrendite, extrem starker Cashflow & massive Unterbewertung.</p>
+    <a href="yancoal-australia-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | BHP Analyse 2025</h2>
-  <p>
-    Dividende, Cashflow, Kupfer & Potash – der stabilste Rohstoffriese der Welt.
-  </p>
-  <a href="bhp-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Rio Tinto Analyse 2025</h2>
+    <p>6 % Dividende, Kupfer-Boom & starker Cashflow.</p>
+    <a href="rio-tinto-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Fortescue Analyse 2025</h2>
-  <p>
-    High-Grade Eisenerz, Cashflow-Maschine & China-Risiko – volle Zyklusanalyse.
-  </p>
-  <a href="fortescue-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
-<div class="post">
-  <h2>#MiningSerie | Anglo American Analyse 2025</h2>
-  <p>
-    Kupfer-Fokus, Konzernumbau & Teck-Merger – Turnaround-Chance oder Value Trap?
-  </p>
-  <a href="angloamerican-analyse.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Vale Analyse 2025</h2>
+    <p>Eisenerz, Base Metals, Dividende & 10 % Quellensteuer – kompletter Deep-Dive.</p>
+    <a href="vale-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Glencore Analyse 2025</h2>
-  <p>
-    Kupfer, Kohle & Trading – extreme Cashflows, hohe Volatilität & ESG-Risiken.
-  </p>
-  <a href="glencore-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | BHP Analyse 2025</h2>
+    <p>Dividende, Cashflow, Kupfer & Potash – der stabilste Rohstoffriese der Welt.</p>
+    <a href="bhp-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Kazatomprom Analyse 2025</h2>
-  <p>
-    Weltgrößter Uranproduzent mit ~40 % Marktmacht – Cashflow-Hebel oder geopolitische Falle?
-  </p>
-  <a href="kazatomprom-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>  
+  <div class="post">
+    <h2>#MiningSerie | Fortescue Analyse 2025</h2>
+    <p>High-Grade Eisenerz, Cashflow-Maschine & China-Risiko – volle Zyklusanalyse.</p>
+    <a href="fortescue-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-  <!-- ======== MINING SERIE – WEITERE ANALYSEN ======== -->
+  <div class="post">
+    <h2>#MiningSerie | Anglo American Analyse 2025</h2>
+    <p>Kupfer-Fokus, Konzernumbau & Teck-Merger – Turnaround-Chance oder Value Trap?</p>
+    <a href="angloamerican-analyse.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Newmont Analyse 2025</h2>
-  <p>Gold-Gigant mit Dividende, Rekord-Cashflow & neuem CEO.</p>
-  <a href="newmont-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Glencore Analyse 2025</h2>
+    <p>Kupfer, Kohle & Trading – extreme Cashflows, hohe Volatilität & ESG-Risiken.</p>
+    <a href="glencore-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Barrick Gold Analyse 2025</h2>
-  <p>Gold & Kupfer – globaler Cashflow-Riese mit Zyklushebel.</p>
-  <a href="barrick-mining-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Kazatomprom Analyse 2025</h2>
+    <p>Weltgrößter Uranproduzent mit ~40 % Marktmacht – Cashflow-Hebel oder geopolitische Falle?</p>
+    <a href="kazatomprom-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | AngloGold Ashanti Analyse 2025</h2>
-  <p>Turnaround, Dividenden-Turbo & Gold-Hebel.</p>
-  <a href="anglogold-ashanti-analyse-2025.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Newmont Analyse 2025</h2>
+    <p>Gold-Gigant mit Dividende, Rekord-Cashflow & neuem CEO.</p>
+    <a href="newmont-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Fresnillo Analyse 2026</h2>
-  <p>Weltgrößter Silberproduzent – maximaler Hebel auf den Silberpreis.</p>
-  <a href="fresnillo-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Barrick Gold Analyse 2025</h2>
+    <p>Gold & Kupfer – globaler Cashflow-Riese mit Zyklushebel.</p>
+    <a href="barrick-mining-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Central Asia Metals Analyse 2026</h2>
-  <p>Langweiliger Cashflow-Gewinner mit Netto-Cash & Dividende.</p>
-  <a href="central-asia-metals-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | AngloGold Ashanti Analyse 2025</h2>
+    <p>Turnaround, Dividenden-Turbo & Gold-Hebel.</p>
+    <a href="anglogold-ashanti-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Gerdau Analyse 2026</h2>
-  <p>Stahl-Cashflow aus Brasilien – Zyklus pur.</p>
-  <a href="gerdau-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Fresnillo Analyse 2026</h2>
+    <p>Weltgrößter Silberproduzent – maximaler Hebel auf den Silberpreis.</p>
+    <a href="fresnillo-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Jiangxi Copper Analyse 2026</h2>
-  <p>Kupfer-Hebel aus China – Profiteur des Superzyklus.</p>
-  <a href="jiangxi-copper-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Central Asia Metals Analyse 2026</h2>
+    <p>Langweiliger Cashflow-Gewinner mit Netto-Cash & Dividende.</p>
+    <a href="central-asia-metals-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Indo Tambangraya Megah Analyse 2026</h2>
-  <p>Thermal Coal Cashflow aus Asien – Dividendenrealität statt Illusion.</p>
-  <a href="indo-tambangraya-megah-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Gerdau Analyse 2026</h2>
+    <p>Stahl-Cashflow aus Brasilien – Zyklus pur.</p>
+    <a href="gerdau-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Exxaro Resources Analyse 2026</h2>
-  <p>Südafrika, Kohle & hohe Ausschüttungen – politisch anspruchsvoll.</p>
-  <a href="exxaro-resources-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Jiangxi Copper Analyse 2026</h2>
+    <p>Kupfer-Hebel aus China – Profiteur des Superzyklus.</p>
+    <a href="jiangxi-copper-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | SunCoke Energy Analyse 2026</h2>
-  <p>Industrie-Kohle mit Take-or-Pay-Verträgen & stabiler Dividende.</p>
-  <a href="suncoke-energy-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Indo Tambangraya Megah Analyse 2026</h2>
+    <p>Thermal Coal Cashflow aus Asien – Dividendenrealität statt Illusion.</p>
+    <a href="indo-tambangraya-megah-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | South32 Analyse 2026</h2>
-  <p>Diversifizierter Miner – Cashflow ohne Hype.</p>
-  <a href="south32-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | Exxaro Resources Analyse 2026</h2>
+    <p>Südafrika, Kohle & hohe Ausschüttungen – politisch anspruchsvoll.</p>
+    <a href="exxaro-resources-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>#MiningSerie | Valterra Platinum Analyse 2026</h2>
-  <p>PGM-Hebel nach Demerger – extrem zyklisch, hoher Upside.</p>
-  <a href="valterra-platinum-analyse-2026.html" class="btn">Beitrag lesen →</a>
-</div>
+  <div class="post">
+    <h2>#MiningSerie | SunCoke Energy Analyse 2026</h2>
+    <p>Industrie-Kohle mit Take-or-Pay-Verträgen & stabiler Dividende.</p>
+    <a href="suncoke-energy-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <!-- Pipeline -->
-    <div class="post">
-      <h2>Pembina Pipeline Analyse 2025</h2>
-      <p>Kanadas Midstream-Anker mit stabiler Dividende.</p>
-      <a href="pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>#MiningSerie | South32 Analyse 2026</h2>
+    <p>Diversifizierter Miner – Cashflow ohne Hype.</p>
+    <a href="south32-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>TC Energy Analyse 2025</h2>
-      <p>5 % Dividende & Schuldenrisiko – Teil 2.</p>
-      <a href="pipeline-serie-teil2-tc-energy-analyse-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>#MiningSerie | Valterra Platinum Analyse 2026</h2>
+    <p>PGM-Hebel nach Demerger – extrem zyklisch, hoher Upside.</p>
+    <a href="valterra-platinum-analyse-2026.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>Enbridge Analyse 2025</h2>
-      <p>Nordamerikas größter Pipeline-Betreiber – Teil 3.</p>
-      <a href="pipeline-serie-teil3-enbridge-analyse-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <!-- SECTION LABEL -->
+  <div class="section-label">🛢️ Pipeline & Midstream</div>
 
-    <div class="post">
-      <h2>Pipeline Serie Finale</h2>
-      <p>Vergleich: Pembina, TC Energy, Enbridge, ONEOK & Co.</p>
-      <a href="pipeline-serie-finale-vergleich-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Pembina Pipeline Analyse 2025</h2>
+    <p>Kanadas Midstream-Anker mit stabiler Dividende.</p>
+    <a href="pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <!-- Shipping -->
-<div class="post">
-  <h2>Shipping Cashflow Rechner 2025</h2>
-  <p>
-    Berechne TCE, OPEX, Gewinn, Break-Even, FCF & Dividendenpotenzial für Tanker- und Shipping-Aktien – der erste Cashflow-Rechner im deutschsprachigen Raum.
-  </p>
-  <a href="/blog/shipping-cashflow-rechner.html" class="btn">Beitrag lesen →</a>
-</div>
-  
-    <div class="post">
-      <h2>3 Schifffahrtsaktien 2025</h2>
-      <p>Dorian LPG, Torm & Frontline – High Yield auf See.</p>
-      <a href="shipping-3-aktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>TC Energy Analyse 2025</h2>
+    <p>5 % Dividende & Schuldenrisiko – Teil 2.</p>
+    <a href="pipeline-serie-teil2-tc-energy-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>3 LNG- & Tanker-Aktien</h2>
-      <p>Flex LNG, BW LPG & INSW – Top Cashflow.</p>
-      <a href="shipping-3-aktien-lng-tanker-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Enbridge Analyse 2025</h2>
+    <p>Nordamerikas größter Pipeline-Betreiber – Teil 3.</p>
+    <a href="pipeline-serie-teil3-enbridge-analyse-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>6 Shipping-Aktien im Depot</h2>
-      <p>Bulk & Container – Dividendenmaschinen.</p>
-      <a href="shipping-6-aktien-depot-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Pipeline Serie Finale</h2>
+    <p>Vergleich: Pembina, TC Energy, Enbridge, ONEOK & Co.</p>
+    <a href="pipeline-serie-finale-vergleich-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>Tanker & Mixed Fleet</h2>
-      <p>Hafnia, Ardmore, DHT, SFL – starke Flotten.</p>
-      <a href="shipping-tanker-mixedfleet-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <!-- SECTION LABEL -->
+  <div class="section-label">🚢 Shipping & Tanker</div>
 
-    <div class="post">
-      <h2>Hidden Champions Shipping</h2>
-      <p>Wallenius, Höegh, ZIM – Spezialisten.</p>
-      <a href="hidden-champions-shipping-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Shipping Cashflow Rechner 2025</h2>
+    <p>Berechne TCE, OPEX, Break-Even & Dividendenpotenzial für Shipping-Aktien.</p>
+    <a href="/blog/shipping-cashflow-rechner.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<div class="post">
-  <h2>Green Shipping 2026 – Größte Transformation seit 50 Jahren</h2>
-  <p>
-    ETS Maritime, FuelEU, CII, MEPC-Regeln, Retrofit-Boom & CO₂-Kostenexplosion – 
-    die massivste Reform der Schifffahrt seit einem halben Jahrhundert.
-  </p>
-  <a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" class="btn">
-    Beitrag lesen →
-  </a>
-</div>
+  <div class="post">
+    <h2>3 Schifffahrtsaktien 2025</h2>
+    <p>Dorian LPG, Torm & Frontline – High Yield auf See.</p>
+    <a href="shipping-3-aktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-      <!-- BDC -->
-    <div class="post">
-      <h2>BDC Duell: Newtek vs Hercules</h2>
-      <p>Zwei High-Yield BDCs im Vergleich.</p>
-      <a href="bdc-dividendenaktien-2025-newtek-vs-hercules.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>3 LNG- & Tanker-Aktien</h2>
+    <p>Flex LNG, BW LPG & INSW – Top Cashflow.</p>
+    <a href="shipping-3-aktien-lng-tanker-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>Crescent vs Blue Owl</h2>
-      <p>BDC Vergleich mit 11–12 % Dividende.</p>
-      <a href="bdc-duell-2025-crescent-vs-blue-owl.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>6 Shipping-Aktien im Depot</h2>
+    <p>Bulk & Container – Dividendenmaschinen.</p>
+    <a href="shipping-6-aktien-depot-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <!-- Rohstoffe -->
-    <div class="post">
-      <h2>10 High-Yield Dividendenaktien</h2>
-      <p>5.500 € Cashflow – echte Einkommensaktien.</p>
-      <a href="dividendenaktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Tanker & Mixed Fleet</h2>
+    <p>Hafnia, Ardmore, DHT, SFL – starke Flotten.</p>
+    <a href="shipping-tanker-mixedfleet-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>5 Stabile Dividendenaktien</h2>
-      <p>Defensiver Cashflow in jeder Marktphase.</p>
-      <a href="dividendenaktien-5-stabil-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Hidden Champions Shipping</h2>
+    <p>Wallenius, Höegh, ZIM – Spezialisten.</p>
+    <a href="hidden-champions-shipping-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>Rohstoff-Superzyklus</h2>
-      <p>Öl, Gas, Uran, Kupfer, Lithium – 2025 Trend.</p>
-      <a href="rohstoff-superzyklus-2025.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <div class="post">
+    <h2>Green Shipping 2026 – Größte Transformation seit 50 Jahren</h2>
+    <p>ETS Maritime, FuelEU, CII, Retrofit-Boom & CO₂-Kostenexplosion.</p>
+    <a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-    <div class="post">
-      <h2>ONEOK Analyse</h2>
-      <p>US-Midstream-Gigant mit 5 % Dividende.</p>
-      <a href="oneok.html" class="btn">Beitrag lesen →</a>
-    </div>
+  <!-- SECTION LABEL -->
+  <div class="section-label">🏦 BDC & Dividenden</div>
 
-  </section> 
+  <div class="post">
+    <h2>BDC Duell: Newtek vs Hercules</h2>
+    <p>Zwei High-Yield BDCs im Vergleich.</p>
+    <a href="bdc-dividendenaktien-2025-newtek-vs-hercules.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<h2 class="section-title" style="margin-top:60px;">✈️ Reise & Travel Hacks</h2>
+  <div class="post">
+    <h2>Crescent vs Blue Owl</h2>
+    <p>BDC Vergleich mit 11–12 % Dividende.</p>
+    <a href="bdc-duell-2025-crescent-vs-blue-owl.html" class="btn">Beitrag lesen →</a>
+  </div>
 
-<p class="section-description">
+  <div class="post">
+    <h2>10 High-Yield Dividendenaktien</h2>
+    <p>5.500 € Cashflow – echte Einkommensaktien.</p>
+    <a href="dividendenaktien-10prozent-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
+
+  <div class="post">
+    <h2>5 Stabile Dividendenaktien</h2>
+    <p>Defensiver Cashflow in jeder Marktphase.</p>
+    <a href="dividendenaktien-5-stabil-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
+
+  <div class="post">
+    <h2>Rohstoff-Superzyklus</h2>
+    <p>Öl, Gas, Uran, Kupfer, Lithium – 2025 Trend.</p>
+    <a href="rohstoff-superzyklus-2025.html" class="btn">Beitrag lesen →</a>
+  </div>
+
+  <div class="post">
+    <h2>ONEOK Analyse</h2>
+    <p>US-Midstream-Gigant mit 5 % Dividende.</p>
+    <a href="oneok.html" class="btn">Beitrag lesen →</a>
+  </div>
+
+</section>
+
+<!-- REISE SEKTION: UNVERÄNDERT -->
+<h2 class="section-title" style="margin-top:60px; color:#d4af37;">✈️ Reise & Travel Hacks</h2>
+
+<p class="section-description" style="color:#9aa6c0; max-width:700px; line-height:1.7;">
   Neue Kategorie auf meinem Blog: Hier teile ich meine persönlichen Erfahrungen zu
   <strong>Reisen, Backpacking, digitalen Nomadentools, eSIMs, Kostenfallen & Travel-Banking</strong>.
   Perfekt für alle, die smarter und günstiger unterwegs sein wollen.
-  Die Kategorie wird laufend erweitert – dies ist mein erster Beitrag.
 </p>
 
-<div class="post">
-  <h2>Wise & Airalo Vietnam Erfahrungen</h2>
-  <p>Wie ich über 60 € gespart habe – inkl. Video, Tipps & Bonuslinks.</p>
-  <a href="wise-airalo-vietnam-erfahrungen.html" class="btn">Beitrag lesen →</a>
+<div class="posts" style="margin-top:20px;">
+  <div class="post">
+    <h2>Wise & Airalo Vietnam Erfahrungen</h2>
+    <p>Wie ich über 60 € gespart habe – inkl. Video, Tipps & Bonuslinks.</p>
+    <a href="wise-airalo-vietnam-erfahrungen.html" class="btn">Beitrag lesen →</a>
+  </div>
 </div>
+
+</div><!-- end page-wrapper -->
 
 <footer>
   © 2026 MB Capital Strategies ·
@@ -591,16 +578,13 @@
   <a href="/datenschutz.html">Datenschutz</a> ·
   <a href="/glossar/">Glossar</a>
 </footer>
- 
+
 <script>
   const dropdown = document.querySelector(".dropdown");
   const btn = document.querySelector(".dropdown-btn");
-
   if(btn && dropdown){
     btn.addEventListener("click", () => {
-      if(window.innerWidth < 700){
-        dropdown.classList.toggle("open");
-      }
+      if(window.innerWidth < 700){ dropdown.classList.toggle("open"); }
     });
   }
 </script>
