@@ -1,321 +1,836 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Yield-on-Cost Rechner (YOC) – Dividendenrendite & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Yield-on-Cost Rechner (YOC): Berechne deine persönliche Dividendenrendite auf den Einstandspreis, Cashflow & aktuelle Rendite. Mit Beispiel & Erklärung für Buy-&-Hold-Investoren.">
+  <!-- ✅ SEO: Optimierter Title & Meta-Description -->
+  <title>Yield on Cost Rechner – YOC kostenlos berechnen | MB Capital Strategies</title>
+  <meta name="description" content="Yield on Cost Rechner: Berechne deine persönliche Dividendenrendite auf den Einstandskurs (YOC) kostenlos – inkl. Cashflow, Praxisbeispiele & FAQ für Dividendeninvestoren." />
+  <meta name="keywords" content="yield on cost rechner, yoc berechnen, yield on cost berechnen, dividendenrendite einstandskurs, YOC rechner, dividenden cashflow rechner" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/jsadsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yield on Cost Rechner – YOC kostenlos berechnen" />
+  <meta property="og:description" content="Berechne deine persönliche Dividendenrendite auf den Einstandspreis – kostenlos & sofort." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --gold:#d4af37;
-  --gold-soft:#e0bd55;
-  --bg:#0f1115;
-  --bg-soft:#151821;
-  --bg-card:#1a1f2b;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Montserrat',sans-serif;
-}
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Yield on Cost Rechner",
+    "url": "https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser Yield-on-Cost-Rechner für Dividendeninvestoren – berechne deine persönliche Rendite auf den Einstandspreis.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{color:var(--gold);}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-/* CONTENT */
-.container{
-  max-width:760px;
-  margin:40px auto;
-  padding:0 20px;
-}
-h1{
-  text-align:center;
-  color:var(--gold);
-  margin-bottom:18px;
-}
-.card{
-  background:var(--bg-soft);
-  border-radius:16px;
-  border:1px solid rgba(212,175,55,.3);
-  padding:26px;
-}
-label{
-  display:block;
-  margin:14px 0 6px;
-  font-weight:600;
-}
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#0f1115;
-  color:#fff;
-}
-button{
-  width:100%;
-  padding:14px;
-  margin-top:20px;
-  border:none;
-  border-radius:999px;
-  background:var(--gold);
-  color:#000;
-  font-size:1.05em;
-  font-weight:700;
-  cursor:pointer;
-}
-button:hover{background:var(--gold-soft);}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-.result{
-  margin-top:24px;
-  padding:20px;
-  background:var(--bg-card);
-  border-left:4px solid var(--gold);
-  border-radius:12px;
-  line-height:1.75;
-}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --border: rgba(255,255,255,0.07);
+    }
 
-.tabs{
-  display:flex;
-  gap:10px;
-  margin-top:40px;
-  flex-wrap:wrap;
-}
-.tab-btn{
-  padding:8px 16px;
-  border-radius:999px;
-  border:1px solid rgba(212,175,55,.35);
-  background:#0f1115;
-  color:var(--gold);
-  cursor:pointer;
-  font-weight:600;
-}
-.tab-btn.active{
-  background:var(--gold);
-  color:#000;
-}
-.tab-content{display:none;margin-top:20px;}
-.tab-content.active{display:block;}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.seo{
-  margin-top:50px;
-  padding:28px;
-  background:#151821;
-  border-radius:16px;
-  border:1px solid #2a2a2a;
-}
+    html { scroll-behavior: smooth; }
 
-a{color:var(--gold);text-decoration:none;font-weight:600;}
-small{color:var(--muted);}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-.site-footer{
-  margin-top:70px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--gold);}
-</style>
+    /* ─── NAV ─── */
+    nav {
+      background: rgba(14,15,17,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      height: 56px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(160deg, #161412 0%, var(--dark) 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    h1 span { color: var(--gold); }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .stat { text-align: center; }
+    .stat-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ─── MAIN ─── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ─── RECHNER CARD ─── */
+    .calc-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .calc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 520px) { .input-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    input[type="number"] {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      padding: 0.65rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      -moz-appearance: textfield;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .btn-calc {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--gold);
+      color: #0E0F11;
+      border: none;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    .result-box {
+      display: none;
+      margin-top: 1.5rem;
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .result-box.show { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .result-item { text-align: center; }
+    .result-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1.1;
+    }
+    .result-val.green { color: var(--green); }
+    .result-lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .result-bar-wrap { margin-top: 1rem; }
+    .result-bar-lbl { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.4rem; }
+    .result-bar-bg { background: var(--dark-4); border-radius: 100px; height: 8px; overflow: hidden; }
+    .result-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 100px; transition: width 0.8s ease; width: 0%; }
+
+    /* ─── AFFILIATE BANNER ─── */
+    .affiliate-banner {
+      background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a {
+      display: inline-block;
+      background: var(--gold);
+      color: #0E0F11;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* ─── CONTENT SECTIONS ─── */
+    .section { margin: 3rem 0; }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 .accent { color: var(--gold); }
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.25rem 0 0.5rem;
+    }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    /* Example Box */
+    .example-box {
+      background: var(--dark-2);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .example-box p { margin: 0; }
+    .example-box .tag {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* Formula Box */
+    .formula-box {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-align: center;
+    }
+    .formula-box small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; }
+
+    /* Comparison Table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+    .compare-table th {
+      background: var(--dark-3);
+      color: var(--gold);
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .compare-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--text); font-weight: 500; }
+
+    /* FAQ */
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1rem 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      background: var(--dark-2);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; font-size: 1.1rem; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.2s;
+      padding: 0 1.25rem;
+      color: var(--text-muted);
+      background: var(--dark-2);
+      font-size: 0.92rem;
+    }
+    .faq-a.open { max-height: 400px; padding: 0.75rem 1.25rem 1.25rem; }
+
+    /* Rechner Links */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+    .tool-link {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-  <nav class="topnav">
-    <a href="/" class="nav-item">🏠 Startseite</a>
-    <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-    <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-    <a href="/blog/" class="nav-item">📰 Blog</a>
-  </nav>
+<!-- ─── NAVIGATION ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="hero-badge">Kostenloser Dividenden-Rechner</div>
+  <h1>Yield on Cost Rechner<br /><span>YOC kostenlos berechnen</span></h1>
+  <p class="hero-sub">
+    Deine persönliche Dividendenrendite auf den Einstandskurs –
+    das einzige Maß, das wirklich zählt für Buy-&amp;-Hold-Investoren.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">YOC</span><span class="stat-lbl">Yield on Cost</span></div>
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">∞</span><span class="stat-lbl">Berechnungen</span></div>
+  </div>
 </header>
 
-<div class="container">
+<!-- ─── MAIN ─── -->
+<main class="container">
 
-<!-- SEO INTRO -->
-<section class="seo">
-<h2>Yield-on-Cost Rechner – wie stark arbeitet dein Kapital wirklich?</h2>
-<p>
-Der Yield-on-Cost-Rechner zeigt dir,
-<strong>wie hoch deine persönliche Dividendenrendite auf den ursprünglichen Kaufpreis ist</strong>.
-Damit misst du nicht Marktstimmung,
-sondern den realen Cashflow-Erfolg deiner Investition.
-</p>
-<p>
-Gerade bei Buy-&-Hold- und High-Yield-Strategien
-ist der Yield on Cost oft aussagekräftiger
-als die aktuelle Dividendenrendite.
-</p>
-</section>
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">📊 Yield on Cost Rechner</div>
 
-<h1>📊 Yield-on-Cost Rechner (YOC)</h1>
+    <div class="input-grid">
+      <div class="field">
+        <label for="kaufkurs">Kaufkurs je Aktie (€)</label>
+        <input type="number" id="kaufkurs" placeholder="z.B. 20.00" step="0.01" min="0" />
+      </div>
+      <div class="field">
+        <label for="aktuell">Aktueller Kurs je Aktie (€)</label>
+        <input type="number" id="aktuell" placeholder="z.B. 35.00" step="0.01" min="0" />
+      </div>
+      <div class="field">
+        <label for="dividende">Jahresdividende je Aktie (€)</label>
+        <input type="number" id="dividende" placeholder="z.B. 3.00" step="0.01" min="0" />
+      </div>
+      <div class="field">
+        <label for="stueck">Anzahl Aktien</label>
+        <input type="number" id="stueck" placeholder="z.B. 100" step="1" min="0" />
+      </div>
+    </div>
 
-<div class="card">
-<p><small>
-Der Yield on Cost zeigt dir,
-wie stark dein <strong>Cashflow auf deinen ursprünglichen Einstandspreis</strong> wächst –
-unabhängig vom aktuellen Kurs.
-</small></p>
+    <button class="btn-calc" onclick="berechne()">Yield on Cost berechnen →</button>
 
-<label>Kaufkurs je Aktie (€)</label>
-<input type="number" id="buyPrice" value="25">
+    <div class="result-box" id="result">
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-val" id="res-yoc">—</span>
+          <div class="result-lbl">Yield on Cost</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val" id="res-aktuell-yield">—</span>
+          <div class="result-lbl">Aktuelle Rendite</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val green" id="res-cashflow">—</span>
+          <div class="result-lbl">Jährlicher Cashflow</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val green" id="res-monatlich">—</span>
+          <div class="result-lbl">Cashflow / Monat</div>
+        </div>
+      </div>
+      <div class="result-bar-wrap">
+        <div class="result-bar-lbl">
+          <span>Aktuelle Rendite</span>
+          <span>Dein YOC</span>
+        </div>
+        <div class="result-bar-bg">
+          <div class="result-bar-fill" id="res-bar"></div>
+        </div>
+      </div>
+      <p id="res-text" style="margin-top:1rem; font-size:0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1rem;"></p>
+    </div>
+  </div>
 
-<label>Aktueller Kurs je Aktie (€)</label>
-<input type="number" id="currentPrice" value="32">
+  <!-- AFFILIATE BANNER -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Fair Value, Cashflow & Dividendenqualität prüfen</h3>
+      <p>Ich nutze InvestingPro für alle meine Analysen – Fair Value, FCF, Dividenden-Screening & mehr. Über meinen Link gibt es <strong>15 % Rabatt</strong>.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
 
-<label>Jahresdividende je Aktie (€)</label>
-<input type="number" id="divPS" value="2">
+  <!-- WAS IST YOC -->
+  <section class="section">
+    <h2>Was ist der <span class="accent">Yield on Cost</span>?</h2>
+    <p>
+      Der <strong>Yield on Cost (YOC)</strong> ist die Dividendenrendite bezogen auf deinen ursprünglichen Kaufpreis –
+      nicht auf den aktuellen Börsenkurs. Er zeigt dir, wie stark dein investiertes Kapital heute für dich arbeitet.
+    </p>
+    <p>
+      Das ist besonders relevant für langfristige Dividendeninvestoren: Eine Aktie, die du vor Jahren günstig
+      gekauft hast, kann heute einen YOC von 15 % oder mehr haben – selbst wenn die aktuelle Dividendenrendite
+      am Markt nur 5 % beträgt.
+    </p>
 
-<label>Stückzahl</label>
-<input type="number" id="shares" value="200">
+    <div class="formula-box">
+      Yield on Cost = (Jahresdividende ÷ Kaufkurs) × 100
+      <small>Beispiel: 3 € Dividende ÷ 20 € Kaufkurs × 100 = 15 % YOC</small>
+    </div>
 
-<button onclick="calcYOC()">Yield on Cost berechnen</button>
+    <div class="example-box">
+      <span class="tag">📘 Praxisbeispiel</span>
+      <p>
+        Du kaufst TORM im Jahr 2022 zu <strong>20 €</strong>. Das Unternehmen schüttet 2024 <strong>4 € Dividende</strong> aus.
+        Dein YOC beträgt <strong>20 %</strong> – obwohl der aktuelle Kurs bei 40 € steht und die aktuelle Rendite
+        nur noch 10 % für Neukäufer beträgt. Dein Kaufpreis ist eingefroren – dein YOC steigt mit jedem Dividenden-Wachstum.
+      </p>
+    </div>
+  </section>
 
-<div id="output" class="result" style="display:none;"></div>
-</div>
+  <!-- YOC vs AKTUELLE RENDITE -->
+  <section class="section">
+    <h2>YOC vs. <span class="accent">aktuelle Dividendenrendite</span></h2>
+    <p>
+      Viele Investoren schauen nur auf die aktuelle Dividendenrendite. Das ist für Neukäufer korrekt –
+      aber für bestehende Positionen sagt der YOC viel mehr aus.
+    </p>
 
-<div class="tabs">
-  <div class="tab-btn active" onclick="openTab(0)">📘 Erklärung</div>
-  <div class="tab-btn" onclick="openTab(1)">🧠 Praxis</div>
-  <div class="tab-btn" onclick="openTab(2)">🚀 Nächste Schritte</div>
-</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Kennzahl</th>
+          <th>Basis</th>
+          <th>Für wen relevant?</th>
+          <th>Steigt mit Dividendenwachstum?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Yield on Cost (YOC)</td>
+          <td>Dein Kaufkurs</td>
+          <td>Bestehende Investoren</td>
+          <td>✅ Ja – der YOC steigt</td>
+        </tr>
+        <tr>
+          <td>Aktuelle Dividendenrendite</td>
+          <td>Aktueller Börsenkurs</td>
+          <td>Neukäufer</td>
+          <td>❌ Nein – abhängig vom Kurs</td>
+        </tr>
+        <tr>
+          <td>Payout Ratio</td>
+          <td>Gewinn / FCF</td>
+          <td>Dividendensicherheit prüfen</td>
+          <td>— (unabhängig)</td>
+        </tr>
+      </tbody>
+    </table>
 
-<div class="tab-content active">
-<h2>Was sagt der Yield on Cost aus?</h2>
-<p>
-Der <strong>Yield on Cost (YOC)</strong> misst die Dividendenrendite
-bezogen auf deinen ursprünglichen Kaufpreis.
-</p>
-<ul>
-<li>Unabhängig vom aktuellen Kurs</li>
-<li>Zeigt echten Cashflow-Fortschritt</li>
-<li>Ideal für Buy-&-Hold-Investoren</li>
-</ul>
-</div>
+    <p>
+      <strong>Fazit:</strong> Der YOC ist dein persönliches Erfolgsmaß – er zeigt, wie gut deine
+      ursprüngliche Kaufentscheidung sich ausgezahlt hat. Eine hohe aktuelle Rendite
+      bedeutet nicht automatisch eine gute Investition; ein hoher YOC schon.
+    </p>
+  </section>
 
-<div class="tab-content">
-<h2>Praxisbeispiel</h2>
-<p>
-Du kaufst eine Aktie zu <strong>20 €</strong>
-und erhältst heute <strong>3 € Dividende</strong>.
-</p>
-<p>
-👉 Dein <strong>Yield on Cost beträgt 15 %</strong> –
-selbst wenn der Kurs inzwischen stark gestiegen ist.
-</p>
-</div>
+  <!-- WANN YOC BESONDERS WERTVOLL -->
+  <section class="section">
+    <h2>Wann ist der <span class="accent">YOC besonders wertvoll</span>?</h2>
 
-<div class="tab-content">
-<h2>Weiterführende Rechner</h2>
-<ul>
-<li>👉 <a href="/tools/dividenden-snowball-rechner.html">Dividend Snowball Rechner</a></li>
-<li>👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit</a></li>
-<li>👉 <a href="/tools/dividenden-reinvest-rechner.html">Dividenden Reinvest (DRIP)</a></li>
-</ul>
-</div>
+    <h3>📈 Dividendenwachstums-Strategie</h3>
+    <p>
+      Wer auf Unternehmen mit stetig steigenden Dividenden setzt (z.B. Dividend Growers),
+      profitiert doppelt: Der YOC steigt durch das Dividendenwachstum, ohne dass du mehr investieren musst.
+      Eine Aktie mit 3 % aktueller Rendite und 8 % jährlichem Dividendenwachstum hat nach 10 Jahren einen
+      YOC von über 6 % auf den Einstandskurs.
+    </p>
 
-<section class="seo">
-<h2>Yield on Cost vs. aktuelle Dividendenrendite</h2>
-<ul>
-<li><strong>YOC:</strong> misst deine persönliche Rendite</li>
-<li><strong>Aktuelle Rendite:</strong> abhängig vom Marktpreis</li>
-<li>YOC steigt mit Dividendenwachstum</li>
-<li>Perfekt zur Langfrist-Bewertung</li>
-</ul>
-</section>
+    <h3>🛢️ Hard Assets & Zyklus-Investoren</h3>
+    <p>
+      Besonders bei Shipping-, Pipeline- und Mining-Aktien: Wer antizyklisch kauft –
+      also in Tiefphasen des Zyklus – erzielt in der Hochphase einen extrem hohen YOC.
+      TORM, Frontline oder BHP können in starken Jahren zweistellige Dividendenrenditen zahlen.
+      Der YOC misst, ob du zum richtigen Zeitpunkt gekauft hast.
+    </p>
 
-<section class="seo">
-<h2>Für wen ist der Yield-on-Cost-Rechner geeignet?</h2>
-<ul>
-<li>Buy-&-Hold-Investoren</li>
-<li>Dividendenwachstumsstrategien</li>
-<li>High-Yield-Portfolios</li>
-<li>Cashflow-orientierte Anleger</li>
-</ul>
-</section>
+    <h3>📊 Portfoliobewertung</h3>
+    <p>
+      Wenn du ein bestehendes Dividendenportfolio bewertest, gibt dir der YOC pro Position
+      sofort einen Überblick: Welche Positionen liefern echten Cashflow? Welche sind
+      trotz gesunkenem Kurs immer noch profitabel? Diese Frage beantwortet nur der YOC.
+    </p>
 
-</div>
+    <div class="example-box">
+      <span class="tag">⛏️ Fallstudie – Mining-Zyklus</span>
+      <p>
+        Thungela Resources: Einstieg 2021 zu ~8 GBP. In 2022 zahlt Thungela ~15 GBP Dividende –
+        ein YOC von fast <strong>190 %</strong> auf den Einstandskurs. Das ist die Magie des
+        antizyklischen Hard-Asset-Investments. Die aktuelle Rendite für Neukäufer war da
+        bereits viel niedriger.
+      </p>
+    </div>
+  </section>
 
-<footer class="site-footer">
-  © 2026 MB Capital Strategies ·
-  <a href="/impressum.html">Impressum</a> ·
-  <a href="/datenschutz.html">Datenschutz</a>
+  <!-- ZWEITER AFFILIATE-BANNER -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Dividendenqualität prüfen mit Parqet</h3>
+      <p>Ich tracke mein gesamtes Dividenden-Portfolio mit Parqet – Cashflow-Kalender, YOC-Tracking & Analyse. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet –15 % →</a>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Häufige Fragen zum Yield on Cost</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist ein guter Yield on Cost?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Es gibt keine universelle Antwort, aber als Faustregel gilt: Ein YOC über 6–8 % auf den Einstandskurs
+        ist für Dividendeninvestoren sehr solide. Bei zyklischen Sektoren wie Shipping oder Mining sind
+        temporäre YOCs von 15–25 % in Hochphasen möglich. Entscheidend ist, ob der Cashflow nachhaltig ist –
+        sprich: ob das Unternehmen die Dividende aus dem Free Cashflow bezahlt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie steigt der Yield on Cost über die Zeit?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Der YOC steigt auf zwei Wegen: (1) Das Unternehmen erhöht die Dividende –
+        dein Kaufkurs bleibt gleich, die Ausschüttung wächst. (2) Du reinvestierst Dividenden (DRIP),
+        was deine Gesamtposition vergrößert. Unser <a href="/tools/dividenden-reinvest-rechner.html" style="color:var(--gold)">Reinvest-Rechner</a>
+        zeigt dir den kombinierten Effekt über die Jahre.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Yield on Cost oder aktuelle Rendite – was ist wichtiger beim Kauf?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Beim Kauf einer neuen Position ist die aktuelle Dividendenrendite entscheidend –
+        das ist dein Einstiegspunkt. Der YOC wird erst im Nachhinein relevant: Er misst
+        retrospektiv, wie gut deine Kaufentscheidung war. Trotzdem lohnt es sich,
+        beim Kauf das YOC-Potenzial zu modellieren: Welchen YOC hätte ich in 5 Jahren,
+        wenn das Unternehmen die Dividende jährlich um 5 % erhöht?
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Kann der Yield on Cost sinken?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Ja – wenn das Unternehmen die Dividende kürzt oder streicht, sinkt auch dein YOC.
+        Das ist der wichtigste Risikofaktor. Deshalb ist die Analyse der Dividendensicherheit
+        (Coverage Ratio, Free Cashflow, Verschuldung) unverzichtbar. Ein hoher YOC auf
+        eine unsichere Dividende ist kein Erfolg – er ist eine Zeitbombe.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist der Unterschied zwischen YOC und Yield on Cost adjusted?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Der "adjusted YOC" berücksichtigt bereits erhaltene Dividenden, die den
+        effektiven Einstandskurs reduzieren. Beispiel: Du kaufst für 20 €, hast
+        inzwischen 6 € Dividenden erhalten → dein adjusted Kaufpreis = 14 €.
+        Der adjusted YOC wäre entsprechend höher. Unser Rechner oben zeigt den
+        Standard-YOC (auf Basis des ursprünglichen Kaufpreises).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie berechne ich den Yield on Cost für mein gesamtes Depot?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Berechne den YOC für jede Position einzeln, dann gewichte nach Investitionsbetrag.
+        Formel: Portfolio-YOC = Σ(Jahresdividende aller Positionen) ÷ Σ(Kaufpreise aller Positionen) × 100.
+        Tools wie Parqet berechnen das automatisch für dich. Ich nutze Parqet täglich –
+        <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" style="color:var(--gold)" target="_blank" rel="nofollow noopener">hier gibt es 15 % Rabatt</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <p>Alle Rechner sind kostenlos – perfekt für deine Cashflow-Analyse.</p>
+    <div class="tool-grid">
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 Reinvest-Rechner (DRIP)</a>
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball PRO</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/dividend-snowball-yoc-pro.html" class="tool-link">❄️ Snowball YOC PRO</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+  <!-- WEITERFÜHRENDE INHALTE -->
+  <section class="section">
+    <h2>Weiterführende <span class="accent">Inhalte & Analysen</span></h2>
+    <div class="tool-grid">
+      <a href="/hard-asset-guide/" class="tool-link">🧱 Hard Asset Guide</a>
+      <a href="/depot-strategie/" class="tool-link">📊 Meine Depot-Strategie</a>
+      <a href="/kategorien/high-yield-aktien.html" class="tool-link">💰 High-Yield Aktien</a>
+      <a href="/shipping-aktien/" class="tool-link">🚢 Shipping-Aktien</a>
+      <a href="/mining-aktien/" class="tool-link">⛏️ Mining-Aktien</a>
+      <a href="/glossar/" class="tool-link">📗 Glossar</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Kein Anlageberatung. Alle Berechnungen dienen der Information und ersetzen keine professionelle Finanzberatung.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-function calcYOC(){
-  const buy = +buyPrice.value;
-  const cur = +currentPrice.value;
-  const div = +divPS.value;
-  const sh  = +shares.value;
-  if(!buy||!cur||!div||!sh) return;
+  function berechne() {
+    const kauf = parseFloat(document.getElementById('kaufkurs').value);
+    const aktuell = parseFloat(document.getElementById('aktuell').value);
+    const div = parseFloat(document.getElementById('dividende').value);
+    const stueck = parseFloat(document.getElementById('stueck').value) || 1;
 
-  const yearly = div * sh;
-  const invested = buy * sh;
-  const value = cur * sh;
-  const yoc = yearly / invested * 100;
-  const currentYield = yearly / value * 100;
+    if (!kauf || !div) {
+      alert('Bitte mindestens Kaufkurs und Jahresdividende eingeben.');
+      return;
+    }
 
-  output.style.display="block";
-  output.innerHTML=`
-    <strong>📆 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
-    <strong>🎯 Yield on Cost:</strong> ${yoc.toFixed(2)} %<br>
-    <strong>📈 Aktuelle Rendite:</strong> ${currentYield.toFixed(2)} %<br>
-    <strong>💼 Investiert:</strong> ${invested.toFixed(2)} €<br>
-    <strong>📊 Depotwert heute:</strong> ${value.toFixed(2)} €<br>
-    <strong>💸 Cashflow / Monat:</strong> ${(yearly/12).toFixed(2)} €<br><br>
-    <small>Yield on Cost zeigt deinen echten Cashflow-Fortschritt – nicht Marktstimmung.</small>
-  `;
-}
+    const yoc = (div / kauf) * 100;
+    const aktuelleYield = aktuell ? (div / aktuell) * 100 : null;
+    const cashflow = div * stueck;
+    const monatlich = cashflow / 12;
 
-function openTab(i){
-  document.querySelectorAll(".tab-btn").forEach((b,idx)=>b.classList.toggle("active",idx===i));
-  document.querySelectorAll(".tab-content").forEach((c,idx)=>c.classList.toggle("active",idx===i));
-}
-</script>
+    document.getElementById('res-yoc').textContent = yoc.toFixed(2) + ' %';
+    document.getElementById('res-aktuell-yield').textContent = aktuelleYield ? aktuelleYield.toFixed(2) + ' %' : '—';
+    document.getElementById('res-cashflow').textContent = cashflow.toFixed(2) + ' €';
+    document.getElementById('res-monatlich').textContent = monatlich.toFixed(2) + ' €';
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Was ist Yield on Cost?","acceptedAnswer":{"@type":"Answer","text":"Yield on Cost misst die Dividendenrendite bezogen auf den ursprünglichen Kaufpreis."}},
-{"@type":"Question","name":"Warum ist Yield on Cost wichtig?","acceptedAnswer":{"@type":"Answer","text":"Er zeigt, wie stark dein Cashflow über Zeit wächst – unabhängig vom Kurs."}},
-{"@type":"Question","name":"Ist Yield on Cost besser als Dividendenrendite?","acceptedAnswer":{"@type":"Answer","text":"Für Langfrist-Investoren ja, da er den persönlichen Renditefortschritt misst."}},
-{"@type":"Question","name":"Steigt Yield on Cost automatisch?","acceptedAnswer":{"@type":"Answer","text":"Nur wenn Dividenden steigen oder reinvestiert werden."}},
-{"@type":"Question","name":"Ist das eine Anlageberatung?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner dient ausschließlich Informationszwecken."}}
-]
-}
+    // Bar: YOC im Verhältnis zur aktuellen Rendite
+    if (aktuelleYield) {
+      const pct = Math.min((yoc / (yoc + aktuelleYield)) * 100, 100);
+      document.getElementById('res-bar').style.width = pct + '%';
+    }
+
+    let txt = '';
+    if (yoc >= 10) {
+      txt = `💪 Starker YOC: Dein Kapital erwirtschaftet <strong>${yoc.toFixed(1)} %</strong> auf den Einstandskurs. Das ist ein echter Cashflow-Erfolg.`;
+    } else if (yoc >= 5) {
+      txt = `✅ Solider YOC: Mit <strong>${yoc.toFixed(1)} %</strong> liegt dein Yield on Cost im guten Bereich für Dividendeninvestoren.`;
+    } else {
+      txt = `🔍 YOC von <strong>${yoc.toFixed(1)} %</strong> – noch im frühen Bereich. Dividendenwachstum und Reinvestition erhöhen deinen YOC über die Zeit.`;
+    }
+    document.getElementById('res-text').innerHTML = txt;
+
+    const box = document.getElementById('result');
+    box.classList.add('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function toggleFaq(el) {
+    const ans = el.nextElementSibling;
+    const isOpen = ans.classList.contains('open');
+    document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q.open').forEach(q => q.classList.remove('open'));
+    if (!isOpen) {
+      ans.classList.add('open');
+      el.classList.add('open');
+    }
+  }
+
+  // Enter-Taste triggert Berechnung
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') berechne();
+  });
 </script>
 
 </body>
