@@ -1,256 +1,721 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Dividenden-Wachstumsrechner – Dividendenwachstum & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Dividenden-Wachstumsrechner: Berechne zukünftigen Dividenden-Cashflow durch Wachstum. Mit Beispiel, Gesamtausschüttung & Kaufkraft-Logik – ohne Reinvest.">
+  <title>Dividenden-Wachstumsrechner – Cashflow durch Dividendenwachstum berechnen | MB Capital Strategies</title>
+  <meta name="description" content="Dividenden-Wachstumsrechner: Berechne kostenlos, wie stark dein Cashflow durch Dividendenwachstum steigt – mit Jahres-Tabelle, Inflationsschutz-Analyse & FAQ für Dividendeninvestoren." />
+  <meta name="keywords" content="dividenden wachstumsrechner, dividendenwachstum berechnen, dividendenerhöhung rechner, cashflow wachstum dividenden, dividende zukunft berechnen, DGI rechner" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Dividenden-Wachstumsrechner – Wie stark wächst dein Cashflow?" />
+  <meta property="og:description" content="Berechne kostenlos, wie dein Dividenden-Cashflow durch jährliche Erhöhungen wächst – mit Jahres-Tabelle & Inflationsvergleich." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --bg:#0f1115;
-  --card:#151821;
-  --accent:#d4af37;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Montserrat',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividenden-Wachstumsrechner",
+    "url": "https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser Rechner: Wie stark wächst dein Dividenden-Cashflow durch jährliche Dividendenerhöhungen?",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{color:var(--accent);}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist eine realistische Dividendenwachstumsrate?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Für nachhaltige Dividendenwachstums-Aktien (DGI) liegen realistische Raten zwischen 3 und 8 % pro Jahr. MLPs und Midstream-Unternehmen wachsen oft bei 3–5 %, Quality-Dividendenzahler wie Johnson & Johnson bei 5–7 %, High-Growth-Titel können kurzfristig auch 10 %+ erreichen – aber selten dauerhaft." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Dividendenwachstum wichtiger als eine hohe Dividendenrendite?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Langfristig oft ja. Eine Aktie mit 3 % Rendite und 8 % jährlichem Dividendenwachstum überholt nach 12–15 Jahren eine Aktie mit 8 % statischer Rendite und 0 % Wachstum – beim Cashflow auf den Einstandskurs (YOC). Wachstum schützt zudem vor Inflation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Berücksichtigt der Rechner Reinvest?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Nein – dieser Rechner zeigt bewusst nur den reinen Wachstumseffekt ohne Wiederanlage. Für die Reinvest-Simulation gibt es den separaten DRIP-Rechner und Dividend Snowball Rechner." }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Aktien haben das stärkste Dividendenwachstum?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Historisch stark: Midstream-MLPs (3–5 %), Blue-Chip-Dividendenzahler wie Microsoft oder Apple (8–12 %), REITs (3–6 %), BDCs variabel. Im Hard-Asset-Bereich – Shipping, Mining – ist das Wachstum zyklisch und kann in Hochphasen extrem hoch sein, in Tiefphasen aber auch null." }
+      },
+      {
+        "@type": "Question",
+        "name": "Schützt Dividendenwachstum vor Inflation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja – wenn das Dividendenwachstum die Inflationsrate übersteigt, wächst dein realer Cashflow. Bei 3 % Inflation und 5 % Dividendenwachstum steigt deine Kaufkraft jährlich um ca. 2 %. Das ist ein entscheidender Vorteil gegenüber Festgeld oder Anleihen mit fixen Kupons." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen Dividendenwachstum und Yield on Cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dividendenwachstum beschreibt die Rate, mit der ein Unternehmen seine Ausschüttung erhöht. Yield on Cost (YOC) ist die resultierende persönliche Rendite auf deinen Kaufkurs nach Jahren des Wachstums. Beide Konzepte hängen eng zusammen: Hohe Wachstumsraten führen langfristig zu hohem YOC." }
+      }
+    ]
+  }
+  </script>
 
-/* CONTENT */
-.wrapper{max-width:650px;margin:40px auto;padding:0 16px 40px;}
-.card{
-  background:var(--card);
-  border-radius:14px;
-  border:1px solid rgba(212,175,55,.35);
-  padding:24px;
-}
-.header{text-align:center;margin-bottom:14px;}
-.title{color:var(--accent);margin:0;}
-.sub{color:var(--muted);font-size:.9rem;}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-label{display:block;margin:12px 0 6px;font-weight:600;}
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#0f1115;
-  color:#fff;
-}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-button{
-  width:100%;
-  padding:14px;
-  margin-top:18px;
-  background:var(--accent);
-  color:#000;
-  border:none;
-  border-radius:10px;
-  font-size:1.05em;
-  font-weight:700;
-  cursor:pointer;
-}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --border: rgba(255,255,255,0.07);
+    }
 
-.result{
-  margin-top:20px;
-  padding:18px;
-  background:#1a1f2b;
-  border-left:4px solid var(--accent);
-  border-radius:10px;
-  line-height:1.7;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
 
-.seo{
-  margin-top:40px;
-  padding:28px;
-  background:#151821;
-  border:1px solid #2a2a2a;
-  border-radius:14px;
-}
+    /* NAV */
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
 
-.site-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--accent);}
-</style>
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #0f1208 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* RECHNER CARD */
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 540px) { .input-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+
+    input[type="number"] { background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%; -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .btn-calc { width: 100%; padding: 0.9rem; background: var(--gold); color: #0E0F11; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; letter-spacing: 0.02em; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    /* ERGEBNIS */
+    .result-box { display: none; margin-top: 1.75rem; }
+    .result-box.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+    .result-summary {
+      background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 14px; padding: 1.5rem; margin-bottom: 1.25rem;
+    }
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+    .result-item { text-align: center; background: var(--dark-4); border-radius: 10px; padding: 1rem 0.75rem; }
+    .result-val { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--gold); display: block; line-height: 1.1; }
+    .result-val.green { color: var(--green); }
+    .result-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Jahres-Tabelle */
+    .table-wrap { overflow-x: auto; margin-top: 1rem; border-radius: 10px; border: 1px solid var(--border); }
+    .growth-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .growth-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.6rem 0.9rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .growth-table th:first-child { text-align: left; }
+    .growth-table td { padding: 0.55rem 0.9rem; border-top: 1px solid var(--border); color: var(--text-muted); text-align: right; }
+    .growth-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .growth-table tr.milestone td { background: var(--gold-dim); color: var(--gold); }
+    .growth-table tr.freedom td { background: rgba(76,175,122,0.1); color: var(--green); }
+    .growth-bar-cell { width: 100px; padding-right: 1rem !important; }
+    .growth-bar-bg { background: var(--dark-4); border-radius: 100px; height: 6px; }
+    .growth-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 100px; }
+
+    /* AFFILIATE */
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    /* Vergleichs-Tabelle */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    .compare-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.7rem 1rem; text-align: left; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--text); font-weight: 500; }
+    .compare-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    /* DGI Sektoren */
+    .sector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .sector-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+    .sector-card .s-name { font-weight: 600; color: var(--text); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .sector-card .s-rate { color: var(--gold); font-family: 'DM Serif Display', serif; font-size: 1.1rem; }
+    .sector-card .s-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 500px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-<nav class="topnav">
-  <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
 </nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Kostenloser Dividenden-Rechner</div>
+  <h1>Dividenden-Wachstumsrechner<br /><span>Wie stark wächst dein Cashflow?</span></h1>
+  <p class="hero-sub">
+    Berechne, wie sich dein jährlicher Dividenden-Cashflow
+    durch konsequentes Dividendenwachstum entwickelt –
+    ohne Reinvest, ohne Einzahlungen. Nur der pure Wachstumseffekt.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Jahres-</span><span class="stat-lbl">Tabelle inkl.</span></div>
+    <div class="stat"><span class="stat-val">Inflation</span><span class="stat-lbl">Vergleich inkl.</span></div>
+  </div>
 </header>
 
-<main class="wrapper">
+<main class="container">
 
-<!-- SEO INTRO -->
-<section class="seo">
-<h2>Dividenden-Wachstumsrechner – Cashflow ohne Reinvest planen</h2>
-<p>
-Der Dividenden-Wachstumsrechner zeigt dir, wie sich dein
-<strong>jährlicher Dividenden-Cashflow</strong> entwickelt,
-wenn Dividenden kontinuierlich steigen – ganz ohne Reinvest
-und ohne zusätzliche Einzahlungen.
-</p>
-<p>
-Im Fokus steht der <strong>reine Wachstumseffekt</strong>:
-Wie stark wächst dein Einkommen allein durch Dividendenerhöhungen?
-Gerade für Investoren, die Dividenden entnehmen möchten,
-ist diese Perspektive entscheidend.
-</p>
-</section>
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">📈 Dividenden-Wachstumsrechner</div>
 
-<section class="card">
-<header class="header">
-  <h1 class="title">Dividenden-Wachstumsrechner</h1>
-  <p class="sub">Wie stark wächst dein Cashflow – ohne Reinvest?</p>
-</header>
+    <div class="input-grid">
+      <div class="field">
+        <label for="dividend">Aktuelle Jahresdividende (€)</label>
+        <input type="number" id="dividend" placeholder="z. B. 1200" min="0" step="100" />
+        <span class="field-hint">Deine heutige jährliche Ausschüttung</span>
+      </div>
+      <div class="field">
+        <label for="growth">Dividendenwachstum (% p.a.)</label>
+        <input type="number" id="growth" placeholder="z. B. 5" min="0" max="30" step="0.5" />
+        <span class="field-hint">Jährliche Erhöhungsrate der Ausschüttung</span>
+      </div>
+      <div class="field">
+        <label for="years">Anlagehorizont (Jahre)</label>
+        <input type="number" id="years" placeholder="z. B. 15" min="1" max="50" step="1" />
+        <span class="field-hint">Zeitraum der Berechnung</span>
+      </div>
+      <div class="field">
+        <label for="inflation">Inflation (% p.a.) – Vergleich</label>
+        <input type="number" id="inflation" value="2.5" min="0" max="15" step="0.1" />
+        <span class="field-hint">Zum Kaufkraftvergleich (Standard: 2,5 %)</span>
+      </div>
+    </div>
 
-<label>Aktuelle Jahresdividende (€)</label>
-<input type="number" id="dividend" placeholder="z. B. 1.200">
+    <button class="btn-calc" onclick="calcGrowth()">Dividendenwachstum berechnen →</button>
 
-<label>Jährliches Dividendenwachstum (% p.a.)</label>
-<input type="number" id="growth" placeholder="z. B. 5">
+    <div class="result-box" id="results"></div>
+  </div>
 
-<label>Anlagehorizont (Jahre)</label>
-<input type="number" id="years" placeholder="z. B. 15">
+  <!-- AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Dividendenwachstum von Aktien prüfen</h3>
+      <p>Mit InvestingPro sehe ich historisches Dividendenwachstum, Payout Ratio & FCF-Coverage auf einen Blick. Über meinen Link gibt es <strong>15 % Rabatt</strong>.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
 
-<button onclick="calcGrowth()">Berechnen</button>
+  <!-- WAS IST DIVIDENDENWACHSTUM -->
+  <section class="section">
+    <h2>Was ist <span class="accent">Dividendenwachstum</span> und warum ist es so mächtig?</h2>
+    <p>
+      Dividendenwachstum bedeutet: Ein Unternehmen erhöht seine jährliche Ausschüttung
+      systematisch – Jahr für Jahr, unabhängig vom Börsenkurs.
+      Das klingt unspektakulär, ist aber einer der mächtigsten Hebel im Vermögensaufbau.
+    </p>
+    <p>
+      Warum? Weil der <strong>Zinseszinseffekt nicht nur auf Kapital wirkt, sondern auch auf Einkommen</strong>.
+      Eine Dividende von 1.200 € heute, die jährlich um 5 % wächst,
+      ist in 15 Jahren 2.494 € – ohne dass du einen Euro mehr investierst.
+      Das ist der reine Wachstumseffekt, den dieser Rechner sichtbar macht.
+    </p>
 
-<div id="output" class="result" style="display:none;"></div>
+    <div class="example-box">
+      <span class="tag">📘 Praxisbeispiel</span>
+      <p>
+        Du hältst Enbridge-Aktien und erhältst heute <strong>1.200 € Jahres-Dividende</strong>.
+        Enbridge erhöht die Ausschüttung historisch um ca. <strong>3 % p.a.</strong>
+        Nach 20 Jahren beträgt deine Jahresdividende aus dieser unveränderten Position
+        bereits <strong>2.165 €</strong> – ohne Reinvest, ohne Nachkauf.
+        Dazu kommen die Gesamtausschüttungen über 20 Jahre: über <strong>32.000 €</strong>.
+      </p>
+    </div>
+  </section>
 
-<p style="margin-top:14px;font-size:.85rem;color:#9aa6c0;">
-Passend dazu:
-<a href="/tools/dividenden-snowball-rechner.html" style="color:#d4af37;">Dividend Snowball</a> ·
-<a href="/tools/dividenden-reinvest-rechner.html" style="color:#d4af37;">DRIP-Rechner</a>
-</p>
-</section>
+  <!-- WACHSTUM VS HOHE RENDITE -->
+  <section class="section">
+    <h2><span class="accent">Dividendenwachstum vs. hohe Rendite</span> – was ist besser?</h2>
+    <p>
+      Eine häufige Frage: Lieber 10 % statische Dividendenrendite oder 4 % mit 8 % jährlichem Wachstum?
+      Die Antwort hängt vom Zeithorizont ab – und die Mathematik überrascht viele:
+    </p>
 
-<section class="seo">
-<h2>So funktioniert der Dividenden-Wachstumsrechner</h2>
-<p>
-Der Rechner geht von einer konstanten jährlichen Wachstumsrate aus.
-Die Dividende wird Jahr für Jahr erhöht,
-ohne dass neue Aktien gekauft oder Dividenden reinvestiert werden.
-</p>
-<ul>
-<li>Keine Sparrate</li>
-<li>Kein Reinvest</li>
-<li>Fokus auf Kaufkraft & Einkommen</li>
-<li>Ideal für Entnahme-Strategien</li>
-</ul>
-</section>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Strategie</th>
+          <th>Rendite heute</th>
+          <th>Cashflow Jahr 1</th>
+          <th>Cashflow Jahr 10</th>
+          <th>Cashflow Jahr 20</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hohe Rendite, kein Wachstum</td>
+          <td>10 %</td>
+          <td>1.000 €</td>
+          <td>1.000 €</td>
+          <td>1.000 €</td>
+        </tr>
+        <tr>
+          <td>Moderates Wachstum (5 %)</td>
+          <td>5 %</td>
+          <td>500 €</td>
+          <td>815 €</td>
+          <td>1.327 €</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Starkes Wachstum (8 %)</td>
+          <td>4 %</td>
+          <td>400 €</td>
+          <td>864 €</td>
+          <td>1.864 €</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Basis: 10.000 € investiertes Kapital, kein Reinvest. Vereinfachte Annahmen.</p>
 
-<section class="seo">
-<h2>Beispiel: Dividendenwachstum über 15 Jahre</h2>
-<p>
-Du erhältst heute <strong>1.200 €</strong> Dividenden pro Jahr.
-Wachsen diese um <strong>5 %</strong> jährlich,
-liegt dein jährlicher Cashflow nach 15 Jahren
-bei deutlich über <strong>2.000 €</strong> – ohne zusätzliches Kapital.
-</p>
-<p>
-Der Rechner zeigt außerdem,
-wie hoch deine <strong>Gesamtausschüttung</strong>
-über den gesamten Zeitraum ausfällt.
-</p>
-</section>
+    <p>
+      <strong>Fazit:</strong> Die Wachstumsstrategie (4 % / 8 % p.a.) überholt die statische
+      10%-Rendite nach etwa <strong>Jahr 12–13</strong> beim jährlichen Cashflow –
+      und übersteigt sie danach massiv. Für Investoren mit langem Horizont
+      ist Dividendenwachstum oft mächtiger als hohe Sofortrendite.
+    </p>
+    <p>
+      Meine persönliche Strategie: <strong>Kombination beider Ansätze.</strong>
+      Stabile Wachstumszahler als Kern, ergänzt durch zyklische High-Yield-Titel
+      (Shipping, Mining) für sofortigen Cashflow. Details in der
+      <a href="/depot-strategie/" style="color:var(--gold)">Depot-Strategie</a>.
+    </p>
+  </section>
 
-<section class="seo">
-<h2>Warum Dividendenwachstum so wichtig ist</h2>
-<ul>
-<li>Schützt langfristig vor Inflation</li>
-<li>Erhöht den Cashflow ohne Mehreinsatz</li>
-<li>Ideal für Ruhestand & Entnahme</li>
-<li>Ergänzt High-Yield-Strategien perfekt</li>
-</ul>
-</section>
+  <!-- DIVIDENDENWACHSTUM NACH SEKTOR -->
+  <section class="section">
+    <h2>Typische <span class="accent">Dividendenwachstumsraten nach Sektor</span></h2>
+    <p>
+      Nicht alle Sektoren wachsen gleich – hier ein realistischer Überblick,
+      der dir bei der Planung hilft:
+    </p>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="s-name">🛢️ Midstream / MLPs</div>
+        <div class="s-rate">3–5 % p.a.</div>
+        <div class="s-note">Stabil, vertragsbasiert. Enbridge, Pembina, ONEOK.</div>
+      </div>
+      <div class="sector-card">
+        <div class="s-name">🏦 BDCs</div>
+        <div class="s-rate">Variabel</div>
+        <div class="s-note">Zinsabhängig. ARCC, MAIN historisch wachsend.</div>
+      </div>
+      <div class="sector-card">
+        <div class="s-name">🏢 REITs</div>
+        <div class="s-rate">3–6 % p.a.</div>
+        <div class="s-note">Abhängig von Mieterhöhungen & Expansion.</div>
+      </div>
+      <div class="sector-card">
+        <div class="s-name">⛏️ Mining / Rohstoffe</div>
+        <div class="s-rate">Zyklisch 0–50 %</div>
+        <div class="s-note">In Hochphasen extrem, in Tiefphasen Kürzung möglich.</div>
+      </div>
+      <div class="sector-card">
+        <div class="s-name">🚢 Shipping / Tanker</div>
+        <div class="s-rate">Zyklisch variabel</div>
+        <div class="s-note">Variable Dividenden. TORM, Frontline: frachtratenabhängig.</div>
+      </div>
+      <div class="sector-card">
+        <div class="s-name">💊 Blue Chips / Pharma</div>
+        <div class="s-rate">5–8 % p.a.</div>
+        <div class="s-note">Sehr stabil. Johnson & Johnson, AbbVie, Novartis.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZWEITER AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Dividenden tracken & Wachstum verfolgen</h3>
+      <p>Ich nutze Parqet für meinen Dividenden-Kalender und YOC-Tracking – siehst du auf einen Blick, wie dein Cashflow wächst. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet –15 % →</a>
+  </div>
+
+  <!-- INFLATIONSSCHUTZ -->
+  <section class="section">
+    <h2>Dividendenwachstum als <span class="accent">Inflationsschutz</span></h2>
+    <p>
+      Festgeld und Anleihen mit fixen Kupons verlieren real an Kaufkraft, wenn die Inflation steigt.
+      Dividenden mit Wachstum dagegen können die Inflation schlagen –
+      und dein realer Cashflow steigt trotzdem.
+    </p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Anlageklasse</th>
+          <th>Cashflow Jahr 1</th>
+          <th>Realer Cashflow Jahr 10 (bei 3 % Inflation)</th>
+          <th>Realer Cashflow Jahr 20</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Festgeld 4 % fix</td>
+          <td>1.000 €</td>
+          <td>~744 € (Kaufkraft)</td>
+          <td>~554 € (Kaufkraft)</td>
+        </tr>
+        <tr>
+          <td>Dividende 5 % / 0 % Wachstum</td>
+          <td>1.000 €</td>
+          <td>~744 € (Kaufkraft)</td>
+          <td>~554 € (Kaufkraft)</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Dividende 5 % / 5 % Wachstum</td>
+          <td>1.000 €</td>
+          <td>~1.215 € (real +21 %)</td>
+          <td>~1.478 € (real +47 %)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Basis: 10.000 € Kapital, vereinfachte Annahmen. Steuern nicht berücksichtigt.</p>
+
+    <p>
+      <strong>Dividendenwachstum über der Inflationsrate = realer Kaufkraftgewinn.</strong>
+      Das ist der Grund, warum langfristige Dividendeninvestoren ruhiger schlafen
+      als Festgeld-Sparer – selbst in Inflationsphasen.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Dividenden-Wachstumsrechner</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist eine realistische Dividendenwachstumsrate?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Für nachhaltige Dividendenwachstums-Aktien (DGI) liegen realistische Raten
+        zwischen <strong>3 und 8 % pro Jahr</strong>. MLPs und Midstream-Unternehmen
+        wachsen oft bei 3–5 %, Quality-Dividendenzahler wie Johnson &amp; Johnson bei 5–7 %,
+        High-Growth-Titel können kurzfristig auch 10 %+ erreichen – aber selten dauerhaft.
+        Zyklische Sektoren (Shipping, Mining) haben keine planbare Wachstumsrate.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Ist Dividendenwachstum wichtiger als hohe Dividendenrendite?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Langfristig oft ja. Eine Aktie mit 4 % Rendite und 8 % jährlichem Wachstum
+        überholt beim Cashflow auf den Einstandskurs (YOC) nach ca. 12–15 Jahren
+        eine Aktie mit 10 % statischer Rendite und 0 % Wachstum – und übersteigt
+        sie danach deutlich. Kurzfristig liefert die hohe Rendite mehr Cashflow,
+        langfristig gewinnt das Wachstum. Meine Strategie: Kombination beider Ansätze.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Welche Aktien haben das stärkste Dividendenwachstum?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Historisch stark: US-Dividendenadel ("Dividend Aristocrats") wie Johnson &amp; Johnson,
+        Coca-Cola, Realty Income (5–7 % p.a. über Jahrzehnte). Im deutschen Markt:
+        BASF, Allianz (unregelmäßiger). Im Hard-Asset-Bereich: Midstream-MLPs wie
+        Enbridge, Pembina (3–5 % stabil). Mining und Shipping sind zyklisch –
+        kein konstantes Wachstum, dafür Potenzial auf Sonderdividenden in Hochphasen.
+        Mehr in der <a href="/kategorien/high-yield-aktien.html">High-Yield Kategorie</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Schützt Dividendenwachstum vor Inflation?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Ja – wenn das Dividendenwachstum die Inflationsrate übersteigt, wächst dein
+        realer Cashflow. Bei 2,5 % Inflation und 5 % Dividendenwachstum steigt
+        deine Kaufkraft jährlich um ca. 2,5 %. Das ist ein entscheidender Vorteil
+        gegenüber Festgeld oder Anleihen mit fixen Kupons, die real an Kaufkraft verlieren.
+        Unser Rechner zeigt dir den Kaufkraftvergleich direkt in der Jahres-Tabelle.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist der Unterschied zwischen Dividendenwachstum und Yield on Cost?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Dividendenwachstum beschreibt die Rate, mit der ein Unternehmen seine Ausschüttung
+        erhöht (z.B. 5 % p.a.). Yield on Cost (YOC) ist die resultierende persönliche
+        Rendite auf deinen Kaufkurs nach Jahren des Wachstums. Eine Aktie mit 4 % Rendite
+        beim Kauf und 5 % jährlichem Wachstum hat nach 15 Jahren einen YOC von
+        ca. 8,3 % – auf deinen ursprünglichen Kaufkurs. Berechne deinen YOC mit dem
+        <a href="/tools/yield-on-cost-rechner.html">YOC-Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Berücksichtigt der Rechner Reinvest?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Nein – dieser Rechner zeigt bewusst nur den <strong>reinen Wachstumseffekt</strong>
+        ohne Wiederanlage. Das ist besonders relevant für Investoren in der Entnahmephase,
+        die Dividenden als Einkommen nutzen. Für die Reinvest-Simulation mit
+        Zinseszinseffekt nutze den
+        <a href="/tools/dividenden-reinvest-rechner.html">DRIP-Rechner</a> oder den
+        <a href="/tools/dividenden-snowball-rechner.html">Dividend Snowball Rechner</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <p>Alle kostenlos – für deine vollständige Cashflow-Planung.</p>
+    <div class="tool-grid">
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 Reinvest-Rechner (DRIP)</a>
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball PRO</a>
+      <a href="/tools/dividend-snowball-yoc-pro.html" class="tool-link">❄️ Snowball YOC PRO</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+  <!-- WEITERFÜHREND -->
+  <section class="section">
+    <h2>Weiterführende <span class="accent">Inhalte</span></h2>
+    <div class="tool-grid">
+      <a href="/hard-asset-guide/" class="tool-link">🧱 Hard Asset Guide</a>
+      <a href="/depot-strategie/" class="tool-link">📊 Meine Depot-Strategie</a>
+      <a href="/kategorien/high-yield-aktien.html" class="tool-link">💰 High-Yield Aktien</a>
+      <a href="/midstream/" class="tool-link">🛢️ Pipelines & Midstream</a>
+      <a href="/mining-aktien/" class="tool-link">⛏️ Mining-Aktien</a>
+      <a href="/glossar/" class="tool-link">📗 Glossar</a>
+    </div>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Alle Berechnungen dienen der Orientierung und ersetzen keine professionelle Finanzberatung.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-function calcGrowth(){
-  const d0 = parseFloat(dividend.value);
-  const g  = parseFloat(growth.value)/100;
-  const n  = parseInt(years.value);
-  if(!d0 || !g || !n) return;
+function calcGrowth() {
+  const d0  = parseFloat(document.getElementById("dividend").value);
+  const g   = parseFloat(document.getElementById("growth").value) / 100;
+  const n   = parseInt(document.getElementById("years").value);
+  const inf = parseFloat(document.getElementById("inflation").value) / 100;
 
-  const dN = d0 * Math.pow(1+g, n);
-  let sum = 0;
-  for(let t=0;t<n;t++) sum += d0 * Math.pow(1+g, t);
+  if (!d0 || !g || !n) { alert("Bitte Jahresdividende, Wachstum und Zeitraum eingeben."); return; }
 
-  output.style.display="block";
-  output.innerHTML=`
-    <strong>Dividende heute:</strong> ${d0.toFixed(2)} € / Jahr<br>
-    <strong>Dividende in ${n} Jahren:</strong> ${dN.toFixed(2)} € / Jahr<br>
-    <strong>Gesamtausschüttung (${n} Jahre):</strong> ${sum.toFixed(2)} €<br><br>
-    <small>Annahme: konstantes Dividendenwachstum, kein Reinvest.</small>
+  const dN = d0 * Math.pow(1 + g, n);
+  let total = 0;
+  for (let t = 0; t < n; t++) total += d0 * Math.pow(1 + g, t);
+
+  const wachstumFaktor = ((dN / d0 - 1) * 100).toFixed(1);
+  const realDN = dN / Math.pow(1 + inf, n);
+  const infSchlag = g > inf ? "✅ Schlägt Inflation" : "⚠️ Unter Inflation";
+
+  // Tabelle aufbauen
+  let rows = "";
+  const maxDiv = dN;
+  const milestones = new Set([1, Math.round(n/2), n]);
+
+  for (let t = 1; t <= n; t++) {
+    const div = d0 * Math.pow(1 + g, t);
+    const realDiv = div / Math.pow(1 + inf, t);
+    const cumulative = (() => { let s = 0; for (let i = 0; i < t; i++) s += d0 * Math.pow(1+g,i); return s; })();
+    const barPct = Math.round((div / maxDiv) * 100);
+    const isMilestone = milestones.has(t);
+    const rowClass = t === n ? "freedom" : (isMilestone ? "milestone" : "");
+
+    rows += `
+      <tr class="${rowClass}">
+        <td>Jahr ${t}</td>
+        <td>${div.toLocaleString("de-DE", {minimumFractionDigits:2, maximumFractionDigits:2})} €</td>
+        <td>${(div/12).toLocaleString("de-DE", {minimumFractionDigits:2, maximumFractionDigits:2})} €</td>
+        <td>${realDiv.toLocaleString("de-DE", {minimumFractionDigits:2, maximumFractionDigits:2})} €</td>
+        <td>${cumulative.toLocaleString("de-DE", {minimumFractionDigits:0, maximumFractionDigits:0})} €</td>
+        <td class="growth-bar-cell"><div class="growth-bar-bg"><div class="growth-bar-fill" style="width:${barPct}%"></div></div></td>
+      </tr>`;
+  }
+
+  const box = document.getElementById("results");
+  box.innerHTML = `
+    <div class="result-summary">
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-val">${dN.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})} €</span>
+          <div class="result-lbl">Dividende in Jahr ${n}</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val">${(dN/12).toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})} €</span>
+          <div class="result-lbl">Cashflow / Monat</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val green">${total.toLocaleString("de-DE",{minimumFractionDigits:0,maximumFractionDigits:0})} €</span>
+          <div class="result-lbl">Gesamtausschüttung</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val">+${wachstumFaktor} %</span>
+          <div class="result-lbl">Cashflow-Wachstum</div>
+        </div>
+      </div>
+      <p style="font-size:0.84rem;color:var(--text-muted);margin-top:0.75rem;border-top:1px solid var(--border);padding-top:0.75rem;">
+        📊 Realer Cashflow in Jahr ${n} (nach ${(inf*100).toFixed(1)} % Inflation): 
+        <strong style="color:var(--text)">${realDN.toLocaleString("de-DE",{minimumFractionDigits:2,maximumFractionDigits:2})} €</strong> – 
+        <span style="color:${g>inf?'var(--green)':'var(--gold)'}">${infSchlag}</span>
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="growth-table">
+        <thead>
+          <tr>
+            <th style="text-align:left">Jahr</th>
+            <th>Dividende / Jahr</th>
+            <th>Dividende / Monat</th>
+            <th>Real (Kaufkraft)</th>
+            <th>Kumuliert</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text-dim);">
+      Kein Reinvest, keine Einzahlungen – reiner Wachstumseffekt. Keine Anlageberatung.
+    </p>
   `;
+  box.classList.add("show");
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
-</script>
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Was ist eine realistische Dividendenwachstumsrate?","acceptedAnswer":{"@type":"Answer","text":"Langfristig liegen nachhaltige Dividendenwachstumsraten meist zwischen 3 und 8 Prozent pro Jahr."}},
-{"@type":"Question","name":"Ist Dividendenwachstum wichtiger als hohe Rendite?","acceptedAnswer":{"@type":"Answer","text":"Dividendenwachstum schützt langfristig vor Inflation und erhöht den Cashflow auch ohne zusätzliches Kapital."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Reinvest?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner zeigt bewusst nur den reinen Wachstumseffekt ohne Wiederanlage."}},
-{"@type":"Question","name":"Für wen ist der Dividenden-Wachstumsrechner geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für langfristige Dividendeninvestoren mit Fokus auf Einkommen und Kaufkraft."}},
-{"@type":"Question","name":"Ist der Rechner realistisch?","acceptedAnswer":{"@type":"Answer","text":"Er nutzt vereinfachte Annahmen, eignet sich aber sehr gut zur langfristigen Cashflow-Planung."}}
-]
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
 }
+
+document.addEventListener("keydown", e => { if (e.key === "Enter") calcGrowth(); });
 </script>
 
 </body>
