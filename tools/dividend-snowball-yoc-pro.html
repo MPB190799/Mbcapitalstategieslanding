@@ -1,331 +1,672 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>
-Dividend Snowball Rechner – Yield on Cost mit Reinvest & Wachstum | MB Capital Strategies
-</title>
-<meta name="description" content="Dividend Snowball Rechner: Berechne deinen Yield on Cost mit Dividendenwachstum & Reinvest. Inklusive Beispiel, Steuern & Nettodividenden für realistischen Cashflow.">
+  <title>Dividend Snowball YOC PRO – Yield on Cost mit Reinvest & Wachstum berechnen | MB Capital Strategies</title>
+  <meta name="description" content="Dividend Snowball YOC PRO: Berechne deinen Yield on Cost mit Dividendenwachstum & Reinvest – aktienbasiert, mit Jahrestabelle, Snowball-Faktor & realistischer Steuerbetrachtung." />
+  <meta name="keywords" content="dividend snowball yoc rechner, yield on cost rechner reinvest, yoc wachstum rechner, dividenden snowball pro, yield on cost berechnen wachstum, dividenden zinseszins yoc" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/dividend-snowball-yoc-pro.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Dividend Snowball YOC PRO – Yield on Cost mit Reinvest simulieren" />
+  <meta property="og:description" content="Berechne kostenlos, wie dein YOC durch Dividendenwachstum & Reinvest wächst – aktienbasiert, mit Jahrestabelle & Snowball-Faktor." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/dividend-snowball-yoc-pro.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --gold:#d4af37;
-  --bg:#0f1115;
-  --card:#151821;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Montserrat',system-ui,sans-serif;
-}
-.container{
-  max-width:900px;
-  margin:50px auto;
-  padding:0 20px 60px;
-}
-h1{
-  text-align:center;
-  color:var(--gold);
-  margin-bottom:8px;
-}
-.subtitle{
-  text-align:center;
-  color:var(--muted);
-  margin-bottom:30px;
-}
-.card{
-  background:var(--card);
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:16px;
-  padding:28px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-@media(max-width:700px){.grid{grid-template-columns:1fr;}}
-label{
-  font-weight:600;
-  font-size:.9rem;
-}
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid var(--border);
-  background:#0f1115;
-  color:#fff;
-}
-button{
-  margin-top:24px;
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:999px;
-  background:var(--gold);
-  color:#000;
-  font-weight:700;
-  font-size:1.05rem;
-  cursor:pointer;
-}
-.result{
-  margin-top:30px;
-  padding:24px;
-  background:#10131a;
-  border-radius:14px;
-  border:1px solid var(--border);
-}
-.highlight{color:var(--gold);font-weight:700;}
-.table-wrap{
-  margin-top:24px;
-  overflow:auto;
-}
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:600px;
-}
-th,td{
-  padding:8px 10px;
-  border-bottom:1px solid #222;
-  text-align:right;
-}
-th:first-child,td:first-child{text-align:left;}
-th{color:var(--gold);}
-.seo{
-  margin-top:50px;
-  padding:30px;
-  background:#151821;
-  border-radius:16px;
-  border:1px solid #2a2a2a;
-}
-.footer{
-  text-align:center;
-  margin-top:60px;
-  font-size:.85rem;
-  color:var(--muted);
-}
-.footer a{color:var(--gold);}
-</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividend Snowball YOC PRO",
+    "url": "https://mbcapitalstrategies.com/tools/dividend-snowball-yoc-pro.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Aktienbasierter Dividend-Snowball-Rechner mit Yield-on-Cost-Tracking, Reinvest, Dividendenwachstum und Steuer – für professionelle Dividendeninvestoren.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist Yield on Cost (YOC) und warum ist er wichtig?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der Yield on Cost (YOC) ist die Dividendenrendite bezogen auf deinen ursprünglichen Kaufkurs – nicht auf den aktuellen Börsenkurs. Ein YOC von 15 % bedeutet: Du erhältst 15 % deines Kaufpreises jährlich als Dividende. Das ist die echte Messgröße für langfristigen Cashflow-Erfolg." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen Dividend Snowball YOC PRO und dem normalen Snowball Rechner?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der YOC PRO arbeitet aktienbasiert: Du gibst Kaufkurs, Stückzahl und Dividende je Aktie ein. Reinvest kauft neue Aktien zum Kaufkurs. Das ermöglicht exakte YOC-Berechnung auf dein ursprünglich eingesetztes Kapital. Der normale Snowball Rechner arbeitet mit Gesamtkapital und Sparrate." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet der Snowball-Faktor?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der Snowball-Faktor zeigt, um das Wievielfache dein YOC am Ende gegenüber dem Start gewachsen ist. Ein Faktor von 3× bedeutet: Dein Yield on Cost ist dreimal so hoch wie beim Kauf – durch Dividendenwachstum und Reinvest allein." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist eine realistische Reinvest-Quote?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In der Aufbauphase: 100 % – jede Nettodividende geht zurück ins Depot. In der Entnahmephase: 0–50 %. Viele erfahrene Dividendeninvestoren fahren 50–70 % Reinvest und entnehmen den Rest als Lebenshaltungskosten. Der PRO-Rechner erlaubt jede Quote zwischen 0 und 100 %." }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum rechnet der Rechner Reinvest zum Kaufkurs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Weil YOC auf den ursprünglichen Kaufkurs bezogen ist. Der Rechner hält den Kaufkurs konstant, um den reinen YOC-Effekt durch Wachstum und Reinvest zu isolieren. In der Praxis variiert der tatsächliche Nachkaufkurs – nutze 0 % Reinvest um den reinen Wachstumseffekt ohne Reinvest zu sehen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Aktien eignen sich für den Dividend Snowball mit hohem YOC?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Beste YOC-Kandidaten verbinden hohe Startrendite mit stabilem Dividendenwachstum: Midstream-MLPs (Enbridge, ONEOK: 6–8 % Start, 3–5 % Wachstum), BDCs (ARCC, MAIN: 8–10 % Start), solide Mining-Titel in Tiefphasen (hoher YOC durch günstigen Kaufkurs). Wichtig: FCF-Coverage prüfen." }
+      }
+    ]
+  }
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --blue: #5B9BD5;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
+
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
+
+    .hero { background: linear-gradient(160deg, #0d0e08 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 620px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.4rem; }
+    .calc-subtitle { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem; }
+
+    .input-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 680px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px) { .input-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+
+    input[type="number"] { background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%; -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .btn-calc { width: 100%; padding: 0.9rem; background: var(--gold); color: #0E0F11; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; margin-top: 1.25rem; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    .result-area { display: none; margin-top: 1.75rem; }
+    .result-area.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    /* YOC Gauge */
+    .yoc-display { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 500px) { .yoc-display { grid-template-columns: 1fr; } }
+    .yoc-card { background: var(--dark-3); border-radius: 14px; padding: 1.25rem; text-align: center; border: 1px solid var(--border); }
+    .yoc-card.highlight { border-color: rgba(201,168,76,0.35); background: var(--gold-dim); }
+    .yoc-label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .yoc-val { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--gold); line-height: 1; }
+    .yoc-card.highlight .yoc-val { color: var(--green); }
+    .yoc-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.85rem; margin-bottom: 1.25rem; }
+    .kpi { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.12); border-radius: 12px; padding: 0.9rem 0.75rem; text-align: center; }
+    .kpi-val { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--gold); display: block; line-height: 1.1; }
+    .kpi-val.green { color: var(--green); }
+    .kpi-val.blue { color: var(--blue); }
+    .kpi-lbl { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Snowball-Faktor Badge */
+    .factor-badge { background: linear-gradient(135deg, #1a1500, var(--dark-3)); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 1rem; }
+    .factor-num { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--gold); flex-shrink: 0; line-height: 1; }
+    .factor-text { font-size: 0.88rem; color: var(--text-muted); }
+    .factor-text strong { color: var(--text); }
+
+    /* YOC Progress Bar */
+    .yoc-progress { margin-bottom: 1.25rem; }
+    .yoc-progress-label { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.4rem; display: flex; justify-content: space-between; }
+    .yoc-bar-bg { background: var(--dark-4); border-radius: 100px; height: 8px; }
+    .yoc-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--green)); border-radius: 100px; transition: width 0.8s ease; }
+
+    /* Tabelle */
+    .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .table-header span { font-size: 0.85rem; color: var(--text-muted); }
+    .table-toggle { background: var(--dark-3); border: 1px solid var(--border); color: var(--gold); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); max-height: 400px; overflow-y: auto; }
+    .yoc-table { width: 100%; border-collapse: collapse; min-width: 580px; font-size: 0.84rem; }
+    .yoc-table thead { position: sticky; top: 0; background: var(--dark-3); z-index: 2; }
+    .yoc-table th { color: var(--gold); padding: 0.6rem 0.9rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .yoc-table th:first-child { text-align: left; }
+    .yoc-table td { padding: 0.5rem 0.9rem; border-top: 1px solid var(--border); text-align: right; color: var(--text-muted); }
+    .yoc-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .yoc-table tr.milestone td { background: var(--gold-dim); color: var(--gold); }
+    .yoc-table tr.milestone td:first-child { color: var(--gold); }
+    .yoc-table tr.doubled td { background: rgba(76,175,122,0.1); color: var(--green); }
+
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    .compare-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.7rem 1rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); text-align: right; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .compare-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
+</nav>
 
-<h1>Dividend Snowball YOC PRO</h1>
-<p class="subtitle">
-Yield on Cost mit Dividendenwachstum & Reinvest – simuliere deinen echten Cashflow-Snowball.
-</p>
+<header class="hero">
+  <div class="hero-badge">Professioneller YOC-Simulator</div>
+  <h1>Dividend Snowball <span>YOC PRO</span></h1>
+  <p class="hero-sub">
+    Berechne deinen Yield on Cost mit Dividendenwachstum & Reinvest –
+    aktienbasiert, mit Jahrestabelle, Snowball-Faktor & realistischer Steuerbetrachtung.
+    Der einzige Rechner, der YOC und Reinvest kombiniert.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">YOC</span><span class="stat-lbl">Tracking</span></div>
+    <div class="stat"><span class="stat-val">Aktien-</span><span class="stat-lbl">basiert</span></div>
+    <div class="stat"><span class="stat-val">Snowball</span><span class="stat-lbl">Faktor</span></div>
+  </div>
+</header>
 
-<!-- 🔹 SEO INTRO -->
-<div class="seo">
-<h2>Dividend Snowball Rechner – realistischen Dividenden-Cashflow berechnen</h2>
-<p>
-Der Dividend Snowball Rechner hilft dir zu verstehen, wie sich dein
-<strong>realer Dividenden-Cashflow</strong> über Jahre entwickelt.
-Im Fokus steht nicht der Aktienkurs, sondern die Frage:
-<strong>Wie stark arbeitet mein eingesetztes Kapital für mich?</strong>
-</p>
-<p>
-Gerade bei Dividenden- und High-Yield-Strategien entsteht Vermögen nicht durch Trading,
-sondern durch einen stetig wachsenden Strom aus Ausschüttungen.
-Wenn Dividenden steigen und konsequent reinvestiert werden,
-entsteht der sogenannte <strong>Snowball-Effekt</strong>.
-</p>
-</div>
+<main class="container">
 
-<div class="card">
+  <div class="calc-card">
+    <div class="calc-title">❄️ Dividend Snowball YOC PRO</div>
+    <div class="calc-subtitle">Aktienbasiert · YOC-Tracking · Reinvest-Quote wählbar</div>
 
-<div class="grid">
-  <div><label>Kaufkurs je Aktie (€)</label><input id="buy" type="number" value="25" step="0.01"></div>
-  <div><label>Stückzahl</label><input id="shares" type="number" value="200" step="1"></div>
-  <div><label>Start-Dividende je Aktie (€ / Jahr)</label><input id="div" type="number" value="2" step="0.01"></div>
-  <div><label>Dividendenwachstum (% p.a.)</label><input id="growth" type="number" value="5" step="0.01"></div>
-  <div><label>Reinvest-Quote (% Nettodividenden)</label><input id="reinvest" type="number" value="100" step="0.01"></div>
-  <div><label>Steuer auf Dividenden (%)</label><input id="tax" type="number" value="26.4" step="0.01"></div>
-  <div><label>Zeitraum (Jahre)</label><input id="years" type="number" value="20" step="1"></div>
-</div>
+    <div class="input-grid">
+      <div class="field">
+        <label for="buy">Kaufkurs je Aktie (€)</label>
+        <input type="number" id="buy" value="25" step="0.01" min="0.01" />
+        <span class="field-hint">Dein Einstiegskurs – Basis für YOC</span>
+      </div>
+      <div class="field">
+        <label for="shares">Anzahl Aktien</label>
+        <input type="number" id="shares" value="200" step="1" min="1" />
+        <span class="field-hint">Deine aktuelle Stückzahl</span>
+      </div>
+      <div class="field">
+        <label for="divPerShare">Dividende je Aktie (€/Jahr)</label>
+        <input type="number" id="divPerShare" value="2" step="0.01" min="0" />
+        <span class="field-hint">Aktuelle Jahresdividende pro Aktie</span>
+      </div>
+      <div class="field">
+        <label for="growth">Dividendenwachstum (% p.a.)</label>
+        <input type="number" id="growth" value="5" step="0.1" min="0" max="30" />
+        <span class="field-hint">Jährliche Dividendenerhöhung</span>
+      </div>
+      <div class="field">
+        <label for="reinvestPct">Reinvest-Quote (%)</label>
+        <input type="number" id="reinvestPct" value="100" step="5" min="0" max="100" />
+        <span class="field-hint">0 % = Entnahme · 100 % = Vollreinvest</span>
+      </div>
+      <div class="field">
+        <label for="taxRate">Steuer auf Dividenden (%)</label>
+        <input type="number" id="taxRate" value="26.375" step="0.1" min="0" max="50" />
+        <span class="field-hint">Abgeltungssteuer inkl. Soli = 26,375 %</span>
+      </div>
+      <div class="field">
+        <label for="years">Zeitraum (Jahre)</label>
+        <input type="number" id="years" value="20" step="1" min="1" max="40" />
+        <span class="field-hint">Max. 40 Jahre</span>
+      </div>
+    </div>
 
-<button type="button" onclick="runSnowball()">Snowball simulieren</button>
-<div id="output" class="result" style="display:none;"></div>
-</div>
+    <button class="btn-calc" onclick="runSnowball()">YOC Snowball simulieren →</button>
 
-<div class="seo">
-<h2>So funktioniert der Dividend Snowball Rechner</h2>
-<p>
-Der Rechner simuliert Jahr für Jahr deine Dividendenentwicklung.
-Zuerst wird die Bruttodividende berechnet, anschließend die Steuer abgezogen
-und nur mit der <strong>Nettodividende</strong> weitergerechnet.
-</p>
-<ul>
-<li>Dividenden wachsen jährlich um deine Wachstumsrate</li>
-<li>Nettodividenden können teilweise oder vollständig reinvestiert werden</li>
-<li>Reinvest erhöht die Stückzahl und verstärkt den Zinseszinseffekt</li>
-<li>Der Yield on Cost zeigt die Effizienz deines Startkapitals</li>
-</ul>
-</div>
+    <div class="result-area" id="resultArea">
+      <div class="yoc-display" id="yocDisplay"></div>
+      <div class="factor-badge" id="factorBadge"></div>
+      <div class="yoc-progress" id="yocProgress"></div>
+      <div class="kpi-grid" id="kpiGrid"></div>
+      <div class="table-header">
+        <span>Jahrestabelle</span>
+        <button class="table-toggle" onclick="toggleTable()">Ein-/ausblenden</button>
+      </div>
+      <div class="table-wrap" id="tableWrap">
+        <table class="yoc-table">
+          <thead>
+            <tr>
+              <th style="text-align:left">Jahr</th>
+              <th>Aktien</th>
+              <th>Nettodiv. / Jahr</th>
+              <th>Nettodiv. / Monat</th>
+              <th>YOC (netto)</th>
+              <th>Kumuliert (netto)</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text-dim);">Keine Anlageberatung. Reinvest zum Kaufkurs berechnet.</p>
+    </div>
+  </div>
 
-<div class="seo">
-<h2>Beispiel: Dividend Snowball mit Reinvest & Wachstum</h2>
-<p>
-Du investierst <strong>5.000 €</strong> zu einem Kurs von <strong>25 €</strong> pro Aktie
-und erhältst <strong>2 € Dividende</strong> je Aktie.
-Das entspricht einer Start-Dividendenrendite von 8 %.
-</p>
-<p>
-Bei <strong>5 % Dividendenwachstum</strong> und vollständigem Reinvest
-steigt dein Cashflow Jahr für Jahr.
-Nach 20 Jahren liegt dein persönlicher Yield on Cost deutlich höher
-als die ursprünglichen 8 % – ohne zusätzliches Kapital einzuzahlen.
-</p>
-<p>
-Genau diesen Effekt macht der Rechner transparent sichtbar.
-</p>
-</div>
+  <!-- AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Dividenden-Aktien für hohen YOC finden</h3>
+      <p>Ich prüfe jede Position mit InvestingPro: FCF-Coverage, Payout Ratio, Dividenden-Geschichte & Fair Value. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
 
-<div class="seo">
-<h2>Warum Yield on Cost entscheidend ist</h2>
-<p>
-Die aktuelle Dividendenrendite schwankt mit dem Kurs.
-Der Yield on Cost hingegen zeigt,
-<strong>wie stark dein ursprünglich eingesetztes Kapital arbeitet</strong>.
-Langfristige Investoren profitieren davon massiv.
-</p>
-<ul>
-<li>Messgröße für echten Cashflow-Erfolg</li>
-<li>Unabhängig von Marktvolatilität</li>
-<li>Ideal für Buy-and-Hold-Strategien</li>
-</ul>
-</div>
+  <!-- WAS IST YOC -->
+  <section class="section">
+    <h2>Was ist <span class="accent">Yield on Cost (YOC)</span> und warum ist er so wichtig?</h2>
+    <p>
+      Der Yield on Cost (YOC) ist die Dividendenrendite bezogen auf deinen
+      <strong>ursprünglichen Kaufkurs</strong> – nicht auf den aktuellen Börsenkurs.
+      Er misst, wie effizient dein eingesetztes Kapital für dich arbeitet.
+    </p>
+    <p>
+      <strong>Beispiel:</strong> Du kaufst eine Aktie für 25 € mit 2 € Dividende = 8 % YOC.
+      Nach 10 Jahren mit 5 % jährlichem Dividendenwachstum zahlt die Aktie 3,26 € Dividende.
+      Dein YOC auf den Kaufkurs von 25 € beträgt jetzt <strong>13 %</strong> –
+      auch wenn die Aktie inzwischen bei 40 € notiert und die aktuelle Rendite nur 8 % ist.
+    </p>
 
-<div class="footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
-</div>
+    <div class="example-box">
+      <span class="tag">📘 YOC vs. aktuelle Rendite – der Unterschied</span>
+      <p>
+        Aktuelle Dividendenrendite = Dividende ÷ <strong>aktueller Kurs</strong> (schwankt täglich)<br />
+        Yield on Cost = Dividende ÷ <strong>dein Kaufkurs</strong> (persönlich, unveränderlich)<br /><br />
+        Ein langfristiger Investor in Enbridge mit Kaufkurs 2010 hat heute einen YOC von 15–20 %
+        auf seinen Kaufkurs – auch wenn die aktuelle Rendite am heutigen Kurs nur 6–7 % beträgt.
+        Das ist der Lohn der Geduld.
+      </p>
+    </div>
+  </section>
 
-</div>
+  <!-- YOC UND REINVEST -->
+  <section class="section">
+    <h2>Wie <span class="accent">Reinvest den YOC</span> beschleunigt</h2>
+    <p>
+      Reinvest kauft zum Kaufkurs neue Anteile – und diese neuen Anteile
+      erhalten dieselbe (und mit der Zeit steigende) Dividende je Aktie.
+      Das Ergebnis: Dein YOC wächst nicht nur durch Dividendenwachstum,
+      sondern auch durch <strong>mehr Anteile, die Dividende zahlen</strong>.
+    </p>
 
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Szenario</th>
+          <th>YOC Jahr 1</th>
+          <th>YOC Jahr 10</th>
+          <th>YOC Jahr 20</th>
+          <th>Snowball-Faktor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kein Wachstum, kein Reinvest</td>
+          <td>5,89 %</td>
+          <td>5,89 %</td>
+          <td>5,89 %</td>
+          <td>1,0×</td>
+        </tr>
+        <tr>
+          <td>5 % Wachstum, kein Reinvest</td>
+          <td>5,89 %</td>
+          <td>9,60 %</td>
+          <td>15,64 %</td>
+          <td>2,7×</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>5 % Wachstum + 100 % Reinvest</td>
+          <td>5,89 %</td>
+          <td>13,2 %</td>
+          <td>30,5 %</td>
+          <td>5,2×</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Basis: Kaufkurs 25 €, 200 Aktien, 2 € Startdividende (8 % brutto / 5,89 % netto). Näherungswerte.</p>
+
+    <p>
+      <strong>Der Snowball-Faktor von 5,2×</strong> bedeutet: Nach 20 Jahren erhältst du
+      mehr als das Fünffache deines ursprünglichen Netto-YOC –
+      ohne einen Cent neue Einzahlung, nur durch Wachstum und Reinvest.
+    </p>
+  </section>
+
+  <!-- ANTIZYKLISCHES INVESTIEREN -->
+  <section class="section">
+    <h2>YOC als <span class="accent">antizyklisches Werkzeug</span></h2>
+    <p>
+      Der YOC-Ansatz macht antizyklisches Investieren besonders attraktiv:
+      In Markttiefs kaufst du eine Aktie zu niedrigem Kurs und hoher Rendite –
+      dein YOC auf diesen Kaufkurs bleibt dauerhaft hoch,
+      selbst wenn der Kurs später steigt.
+    </p>
+
+    <div class="example-box">
+      <span class="tag">📘 Praxisbeispiel: Thungela in der Mining-Delle</span>
+      <p>
+        Thungela wurde im Tief 2022 für ~8 GBP gehandelt mit einer Dividende von 3,60 GBP –
+        ein YOC von 45 % auf den Tief-Kaufkurs. Wer damals kaufte,
+        erhält diesen YOC auf seinen Kaufkurs dauerhaft (bei stabiler Dividende),
+        auch wenn der Kurs später auf 15 GBP stieg und die <em>aktuelle</em> Rendite
+        auf den neuen Kurs nur noch ~24 % beträgt.
+        Der antizyklische Käufer hat den Vorteil auf ewig eingeloggt.
+      </p>
+    </div>
+
+    <p>
+      Das ist der Kern meiner Hard-Asset-Strategie:
+      <strong>Zyklische Hochrenditetitel antizyklisch kaufen</strong>,
+      den YOC durch Reinvest in Hochphasen weiter steigern
+      und in Tiefs günstig nachkaufen. Mehr dazu im
+      <a href="/hard-asset-guide/" style="color:var(--gold)">Hard Asset Guide</a>.
+    </p>
+  </section>
+
+  <!-- AFFILIATE 2 -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>YOC tracken mit Parqet</h3>
+      <p>Ich tracke meinen echten YOC für jede Position mit Parqet – siehst du auf einen Blick, welche Aktien deinen Kaufkurs am besten verzinsen. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet – 15 % Rabatt →</a>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Dividend Snowball YOC PRO</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist Yield on Cost (YOC) und warum ist er wichtig?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Der YOC ist die Dividendenrendite auf deinen persönlichen Kaufkurs – nicht auf den aktuellen Börsenkurs. Ein YOC von 15 % bedeutet: Du erhältst 15 % deines Kaufpreises jährlich als Dividende. Das ist die wichtigste Messgröße für langfristigen Cashflow-Erfolg, weil sie zeigt, wie gut dein eingesetztes Kapital für dich arbeitet – unabhängig von täglichen Kursschwankungen. Mehr im <a href="/tools/yield-on-cost-rechner.html">YOC-Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist der Unterschied zwischen YOC PRO und dem normalen Snowball Rechner?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Der YOC PRO arbeitet <strong>aktienbasiert</strong>: Kaufkurs, Stückzahl, Dividende je Aktie. Reinvest kauft neue Anteile zum Kaufkurs und erhöht die Stückzahl. Das ermöglicht exakte YOC-Berechnung auf dein Startkapital. Der <a href="/tools/dividenden-snowball-rechner.html">normale Snowball Rechner</a> arbeitet mit Gesamtkapital und monatlicher Sparrate – ideal für die Gesamtportfolio-Planung. Beide Rechner ergänzen sich.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was bedeutet der Snowball-Faktor?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Der Snowball-Faktor zeigt, um das Wievielfache dein YOC am Ende gegenüber dem Start gewachsen ist. Ein Faktor von 5× bedeutet: Dein YOC ist fünfmal so hoch wie beim Kauf – durch Dividendenwachstum und Reinvest allein, ohne neue Einzahlungen. Ein hoher Snowball-Faktor ist das Ziel langfristiger Dividendeninvestoren.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welche Reinvest-Quote ist empfehlenswert?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        In der Aufbauphase: <strong>100 %</strong> – maximaler Snowball-Effekt. In der Übergangsphase: <strong>50–70 %</strong> – du entnimmst einen Teil als Lebenshaltungskosten, lässt den Rest wachsen. In der Entnahmephase: <strong>0–30 %</strong> – der Cashflow ist das Ziel. Der PRO-Rechner erlaubt jede Quote zwischen 0 und 100 %, sodass du alle Szenarien durchspielen kannst.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welche Aktien eignen sich am besten für hohen YOC?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Beste YOC-Kandidaten verbinden hohe Startrendite mit stabilem Dividendenwachstum. Midstream-MLPs (Enbridge, ONEOK): 6–8 % Start, 3–5 % Wachstum p.a. BDCs (ARCC, MAIN): 8–10 % Start, variables Wachstum. Mining-Titel antizyklisch in Tiefphasen: potenziell 15–30 % YOC auf den Tiefkurs. Wichtig: FCF-Coverage prüfen – ein hoher YOC ist nur nachhaltig, wenn der Free Cashflow die Dividende deckt. Mehr in der <a href="/depot-strategie/">Depot-Strategie</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berücksichtigt der Rechner Steuern korrekt?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ja. Der Rechner berechnet Nettodividenden nach Abgeltungssteuer (Standard 26,375 %) und reinvestiert nur den Nettobetrag – realistischer als Rechner, die Brutto reinvestieren. Den Steuersatz kannst du anpassen: bei Kirchensteuer ~28 %, bei Nutzung des Freistellungsauftrags (1.000 € p.a.) 0 % bis zur Grenze.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <div class="tool-grid">
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost Rechner</a>
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball PRO</a>
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 DRIP-Rechner</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-rechner.html" class="tool-link">💰 Dividendenrechner</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Reinvest zum Kaufkurs berechnet – tatsächliche Nachkaufkurse variieren.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
+</footer>
 
 <script>
-function euro(n){ return n.toLocaleString('de-DE',{maximumFractionDigits:0}) + ' €'; }
-function pct(n){ return n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %'; }
+let tableVisible = true;
 
-function runSnowball(){
-  // Inputs sauber holen (kein Shadowing)
-  const buyEl = document.getElementById('buy');
-  const sharesEl = document.getElementById('shares');
-  const divEl = document.getElementById('div');
-  const growthEl = document.getElementById('growth');
-  const reinvestEl = document.getElementById('reinvest');
-  const taxEl = document.getElementById('tax');
-  const yearsEl = document.getElementById('years');
-  const outputEl = document.getElementById('output');
+function euro(n) { return n.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' }); }
+function pct(n)  { return n.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' %'; }
 
-  const buy = Number(buyEl.value);
-  let shares = Number(sharesEl.value);
-  let divPerShare = Number(divEl.value);
+function runSnowball() {
+  const buyPrice    = parseFloat(document.getElementById('buy').value);
+  let   numShares   = parseFloat(document.getElementById('shares').value);
+  let   divPS       = parseFloat(document.getElementById('divPerShare').value);
+  const growth      = parseFloat(document.getElementById('growth').value) / 100;
+  const reinvestPct = parseFloat(document.getElementById('reinvestPct').value) / 100;
+  const taxRate     = parseFloat(document.getElementById('taxRate').value) / 100;
+  const years       = Math.min(Math.max(1, parseInt(document.getElementById('years').value)), 40);
 
-  const g = Number(growthEl.value) / 100;
-  const r = Number(reinvestEl.value) / 100;
-  const t = Number(taxEl.value) / 100;
-  const y = Math.max(1, Math.floor(Number(yearsEl.value)));
-
-  // Basic Guards
-  if(!isFinite(buy) || buy <= 0 || !isFinite(shares) || shares <= 0 || !isFinite(divPerShare) || divPerShare < 0){
-    outputEl.style.display="block";
-    outputEl.innerHTML = `<p class="highlight">Bitte valide Werte eingeben (Kurs > 0, Stückzahl > 0, Dividende ≥ 0).</p>`;
+  if (!buyPrice || buyPrice <= 0 || !numShares || numShares <= 0 || divPS < 0) {
+    alert("Bitte valide Werte eingeben (Kurs > 0, Stückzahl > 0, Dividende ≥ 0).");
     return;
   }
 
-  const initialShares = shares;
-  const initialDivPerShare = divPerShare;
-  const initialInvestment = buy * initialShares;
+  const initShares   = numShares;
+  const initDivPS    = divPS;
+  const initInvest   = buyPrice * initShares;
+  const initGross    = initDivPS * initShares;
+  const initNet      = initGross * (1 - taxRate);
+  const initYOC      = (initNet / initInvest) * 100;
 
-  let netDiv = 0;
-  let cumNetDiv = 0;
-  let tableRows = "";
+  let cumNet = 0;
+  let lastNet = 0;
+  let doubledYear = null;
+  let doubleYOC = initYOC * 2;
 
-  for(let i=1; i<=y; i++){
-    const gross = divPerShare * shares;
-    netDiv = gross * (1 - t);
-    cumNetDiv += netDiv;
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+  const milestones = new Set([5, 10, 15, 20, 25, 30]);
+  const currentYear = new Date().getFullYear();
 
-    // Reinvest: Nettodividende (Anteil r) kauft neue Shares zum Kurs buy
-    const reinvestAmount = netDiv * r;
-    const newShares = reinvestAmount / buy;
-    shares += newShares;
+  for (let i = 1; i <= years; i++) {
+    const gross    = divPS * numShares;
+    const net      = gross * (1 - taxRate);
+    const reinvAmt = net * reinvestPct;
+    const newShares= reinvAmt / buyPrice;
+    numShares += newShares;
+    divPS     *= (1 + growth);
+    cumNet    += net;
+    lastNet    = net;
 
-    // Dividende wächst für nächstes Jahr
-    divPerShare *= (1 + g);
+    const yoc = (net / initInvest) * 100;
+    if (!doubledYear && yoc >= doubleYOC) doubledYear = i;
 
-    const yoc = (netDiv / initialInvestment) * 100;
+    const isMilestone = milestones.has(i);
+    const isDoubled   = doubledYear === i;
+    const row = document.createElement('tr');
+    if (isDoubled) row.classList.add('doubled');
+    else if (isMilestone) row.classList.add('milestone');
 
-    // Jahr 1, alle 5 Jahre, und letztes Jahr
-    if(i === 1 || i === y || i % 5 === 0){
-      tableRows += `
-        <tr>
-          <td>${i}</td>
-          <td>${euro(netDiv)}</td>
-          <td>${pct(yoc)}</td>
-          <td>${euro(cumNetDiv)}</td>
-        </tr>`;
-    }
+    row.innerHTML = `
+      <td>${currentYear + i}${isDoubled ? ' 🎯' : ''}</td>
+      <td>${numShares.toLocaleString('de-DE',{maximumFractionDigits:2})}</td>
+      <td>${euro(net)}</td>
+      <td>${euro(net/12)}</td>
+      <td>${pct(yoc)}</td>
+      <td>${euro(cumNet)}</td>
+    `;
+    tbody.appendChild(row);
   }
 
-  const yocStart = ((initialDivPerShare * initialShares) * (1 - t) / initialInvestment) * 100;
-  const yocEnd = (netDiv / initialInvestment) * 100;
-  const snowballFactor = (yocStart > 0) ? (yocEnd / yocStart) : 0;
+  const finalYOC    = (lastNet / initInvest) * 100;
+  const snowFactor  = initYOC > 0 ? finalYOC / initYOC : 0;
+  const yocBarPct   = Math.min(100, (finalYOC / (initYOC * 10)) * 100);
 
-  outputEl.style.display="block";
-  outputEl.innerHTML = `
-    <h2>Ergebnis</h2>
-    <p>🎯 Yield on Cost Start (netto): <span class="highlight">${pct(yocStart)}</span></p>
-    <p>🚀 Yield on Cost Ende (netto): <span class="highlight">${pct(yocEnd)}</span></p>
-    <p>💰 Nettodividende im letzten Jahr: <span class="highlight">${euro(netDiv)}</span></p>
-    <p>📈 Stückzahl am Ende (durch Reinvest): <span class="highlight">${shares.toLocaleString('de-DE',{maximumFractionDigits:2})}</span></p>
-    <p>❄️ Snowball-Faktor (YOC Ende / Start): <span class="highlight">${snowballFactor.toLocaleString('de-DE',{maximumFractionDigits:2})}×</span></p>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Jahr</th><th>Nettodividende</th><th>YOC (netto)</th><th>Kumuliert (netto)</th></tr>
-        </thead>
-        <tbody>${tableRows}</tbody>
-      </table>
+  // YOC Cards
+  document.getElementById('yocDisplay').innerHTML = `
+    <div class="yoc-card">
+      <div class="yoc-label">YOC Start (netto)</div>
+      <div class="yoc-val">${pct(initYOC)}</div>
+      <div class="yoc-sub">auf deinen Kaufkurs</div>
     </div>
-
-    <p style="margin-top:16px;">
-      👉 <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a>
-    </p>
+    <div class="yoc-card highlight">
+      <div class="yoc-label">YOC Ende nach ${years} Jahren</div>
+      <div class="yoc-val">${pct(finalYOC)}</div>
+      <div class="yoc-sub">netto nach Steuer</div>
+    </div>
   `;
-}
-</script>
 
-<!-- Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Was ist ein Dividend Snowball?","acceptedAnswer":{"@type":"Answer","text":"Der Dividend Snowball beschreibt den Effekt, dass reinvestierte Dividenden neue Aktien kaufen, die wiederum zusätzliche Dividenden erzeugen."}},
-{"@type":"Question","name":"Was bedeutet Yield on Cost?","acceptedAnswer":{"@type":"Answer","text":"Yield on Cost ist die Dividendenrendite bezogen auf dein ursprünglich investiertes Kapital, nicht auf den aktuellen Aktienkurs."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Steuern?","acceptedAnswer":{"@type":"Answer","text":"Ja, der Rechner kalkuliert mit Nettodividenden nach Steuern, um realistischen Cashflow darzustellen."}},
-{"@type":"Question","name":"Ist Reinvest immer sinnvoll?","acceptedAnswer":{"@type":"Answer","text":"Langfristig verstärkt Reinvest den Zinseszinseffekt, kurzfristig kann eine Ausschüttung jedoch sinnvoll sein."}},
-{"@type":"Question","name":"Für wen ist der Dividend Snowball Rechner geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für langfristige Dividendeninvestoren mit Buy-and-Hold-Strategie und Cashflow-Fokus."}}
-]
+  // Snowball Badge
+  document.getElementById('factorBadge').innerHTML = `
+    <div class="factor-num">${snowFactor.toLocaleString('de-DE',{maximumFractionDigits:2})}×</div>
+    <div class="factor-text">
+      <strong>Snowball-Faktor</strong> – dein YOC ist nach ${years} Jahren das ${snowFactor.toLocaleString('de-DE',{maximumFractionDigits:2})}-fache deines Start-YOC.
+      ${doubledYear ? `YOC-Verdopplung in <strong>Jahr ${doubledYear}</strong>.` : ''}
+    </div>
+  `;
+
+  // Progress Bar
+  document.getElementById('yocProgress').innerHTML = `
+    <div class="yoc-progress-label">
+      <span>YOC Start: ${pct(initYOC)}</span>
+      <span>YOC Ende: ${pct(finalYOC)}</span>
+    </div>
+    <div class="yoc-bar-bg"><div class="yoc-bar-fill" style="width:${Math.min(100,yocBarPct)}%"></div></div>
+  `;
+
+  // KPIs
+  document.getElementById('kpiGrid').innerHTML = `
+    <div class="kpi"><span class="kpi-val green">${euro(lastNet)}</span><div class="kpi-lbl">Nettodiv. Jahr ${years}</div></div>
+    <div class="kpi"><span class="kpi-val green">${euro(lastNet/12)}</span><div class="kpi-lbl">Nettodiv. / Monat</div></div>
+    <div class="kpi"><span class="kpi-val">${euro(cumNet)}</span><div class="kpi-lbl">Dividenden kumuliert</div></div>
+    <div class="kpi"><span class="kpi-val blue">${numShares.toLocaleString('de-DE',{maximumFractionDigits:1})}</span><div class="kpi-lbl">Aktien am Ende</div></div>
+    <div class="kpi"><span class="kpi-val">${euro(initInvest)}</span><div class="kpi-lbl">Einsatz (unveränderlich)</div></div>
+  `;
+
+  const area = document.getElementById('resultArea');
+  area.classList.add('show');
+  area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  document.getElementById('tableWrap').style.display = 'block';
+  tableVisible = true;
+}
+
+function toggleTable() {
+  const wrap = document.getElementById('tableWrap');
+  tableVisible = !tableVisible;
+  wrap.style.display = tableVisible ? 'block' : 'none';
+}
+
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q.open').forEach(q => q.classList.remove('open'));
+  if (!isOpen) { ans.classList.add('open'); el.classList.add('open'); }
 }
 </script>
 
