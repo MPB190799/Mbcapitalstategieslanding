@@ -1,303 +1,860 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Finanzielle Freiheit Rechner – Zieljahr mit Dividenden & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Finanzielle Freiheit Rechner: Berechne realistisch, ab welchem Jahr deine Nettodividenden deine monatlichen Ausgaben decken – mit Sparrate, Reinvest, Wachstum & Steuern.">
+  <!-- ✅ SEO: Optimierter Title -->
+  <title>Finanzielle Freiheit Rechner – Wann tragen dich Dividenden? | MB Capital Strategies</title>
+  <meta name="description" content="Finanzielle Freiheit Rechner: Berechne kostenlos, ab welchem Jahr deine Nettodividenden deine Ausgaben decken – mit Sparrate, Reinvest, Dividendenwachstum & Steuern. Sofort & kostenlos." />
+  <meta name="keywords" content="finanzielle freiheit rechner, finanzielle freiheit berechnen, finanzielle unabhängigkeit rechner, dividenden finanzielle freiheit, wie viel kapital für finanzielle freiheit, cashflow rechner" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Finanzielle Freiheit Rechner – Wann tragen dich Dividenden?" />
+  <meta property="og:description" content="Berechne kostenlos, wann deine Dividenden dein Einkommen ersetzen – mit Reinvest, Steuern & Wachstum." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --bg:#0b0b0b;
-  --card:#151515;
-  --accent:#d4af37;
-  --text:#f5f5f5;
-  --muted:#aaaaaa;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Finanzielle Freiheit Rechner",
+    "url": "https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser Rechner: Ab welchem Jahr decken deine Nettodividenden deine monatlichen Ausgaben?",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{color:var(--accent);}
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie viel Kapital brauche ich für finanzielle Freiheit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bei 7 % Dividendenrendite und 2.000 € Nettobedarf pro Monat benötigst du ca. 410.000–450.000 € investiertes Kapital. Der genaue Betrag hängt von Rendite, Steuern und Dividendenwachstum ab – unser Rechner berechnet das individuell." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert finanzielle Freiheit mit Dividenden?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Je nach Sparrate, Startkapital und Rendite zwischen 8 und 25 Jahren. Mit 500 € Sparrate, 25.000 € Start und 7 % Rendite typischerweise 15–20 Jahre." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet finanzielle Freiheit durch Dividenden?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Finanzielle Freiheit durch Dividenden bedeutet, dass deine jährlichen Netto-Dividendenausschüttungen deine gesamten Lebenshaltungskosten decken – ohne aktives Arbeitseinkommen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Berücksichtigt der Rechner Steuern?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Rechner berechnet auf Basis von Nettodividenden nach Abzug der Abgeltungssteuer (Standard: 26,375 % inkl. Solidaritätszuschlag)." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Dividenden-Reinvest wichtig für finanzielle Freiheit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, Reinvest ist der stärkste Hebel. Wer Dividenden konsequent wieder anlegt, erreicht finanzielle Freiheit deutlich schneller durch den Zinseszinseffekt auf die Ausschüttungen." }
+      }
+    ]
+  }
+  </script>
 
-/* CONTENT */
-.wrapper{
-  max-width:900px;
-  margin:40px auto;
-  padding:0 16px 40px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--accent);
-  border-radius:16px;
-  padding:24px;
-}
-.header{text-align:center;margin-bottom:18px;}
-.title{
-  font-size:1.8rem;
-  margin:0 0 6px;
-  color:var(--accent);
-}
-.sub{font-size:.9rem;color:var(--muted);}
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-@media(max-width:700px){.grid{grid-template-columns:1fr;}}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-label{font-weight:600;}
-input{
-  width:100%;
-  padding:10px;
-  border-radius:8px;
-  background:#111;
-  border:1px solid var(--border);
-  color:var(--text);
-}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --blue: #5B9BD5;
+      --border: rgba(255,255,255,0.07);
+    }
 
-.inline{
-  margin-top:10px;
-  font-size:.9rem;
-  color:var(--muted);
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-.btn{
-  margin-top:20px;
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:var(--accent);
-  color:#000;
-  font-size:1rem;
-  font-weight:700;
-  cursor:pointer;
-}
+    /* NAV */
+    nav {
+      background: rgba(14,15,17,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 0.25rem;
+      height: 56px; flex-wrap: wrap; font-size: 0.85rem;
+    }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
 
-.results{
-  margin-top:20px;
-  padding:16px;
-  background:#101010;
-  border-radius:12px;
-  border:1px solid var(--border);
-}
-.highlight{color:var(--accent);font-weight:600;}
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #121008 0%, var(--dark) 65%);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2; color: var(--text); margin-bottom: 1rem;
+    }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.seo{
-  margin-top:40px;
-  padding:26px;
-  background:#151515;
-  border:1px solid #2a2a2a;
-  border-radius:14px;
-}
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
 
-/* FOOTER */
-.site-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--accent);}
-</style>
+    /* RECHNER */
+    .calc-card {
+      background: var(--dark-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; margin: 2.5rem 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 540px) { .input-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+    input[type="number"] {
+      background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem;
+      padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%;
+      -moz-appearance: textfield;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .reinvest-row {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin: 0.75rem 0 1.25rem; font-size: 0.88rem; color: var(--text-muted);
+    }
+    input[type="checkbox"] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+    .btn-calc {
+      width: 100%; padding: 0.9rem;
+      background: var(--gold); color: #0E0F11;
+      border: none; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    /* ERGEBNIS */
+    .result-box {
+      display: none; margin-top: 1.75rem;
+      background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 14px; padding: 1.5rem;
+    }
+    .result-box.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+    .result-highlight {
+      text-align: center; margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
+    }
+    .result-year {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3.5rem; color: var(--gold); line-height: 1; display: block;
+    }
+    .result-year-lbl { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .result-item { text-align: center; background: var(--dark-4); border-radius: 10px; padding: 1rem 0.75rem; }
+    .result-val { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--green); display: block; line-height: 1.1; }
+    .result-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Fortschritts-Timeline */
+    .timeline { margin-top: 1.25rem; }
+    .tl-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem; font-size: 0.85rem; }
+    .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 5px; }
+    .tl-dot.green { background: var(--green); }
+    .tl-text { color: var(--text-muted); }
+    .tl-text strong { color: var(--text); }
+
+    /* AFFILIATE */
+    .affiliate-banner {
+      background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%);
+      border: 1px solid rgba(201,168,76,0.35); border-radius: 14px;
+      padding: 1.5rem 1.75rem; margin: 2rem 0;
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a {
+      display: inline-block; background: var(--gold); color: #0E0F11;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem;
+      padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap;
+      transition: background 0.2s; flex-shrink: 0;
+    }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; }
+    h2 {
+      font-family: 'DM Serif Display', serif; font-size: 1.5rem;
+      color: var(--text); margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    /* Kapital-Tabelle */
+    .kapital-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    .kapital-table th {
+      background: var(--dark-3); color: var(--gold); font-weight: 600;
+      padding: 0.7rem 1rem; text-align: left;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .kapital-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+    .kapital-table tr:last-child td { border-bottom: none; }
+    .kapital-table td:first-child { color: var(--text); font-weight: 500; }
+    .kapital-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    /* Beispiel & Formel */
+    .example-box {
+      background: var(--dark-2); border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0;
+    }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    .formula-box {
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0;
+      font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--gold); text-align: center;
+    }
+    .formula-box small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; }
+
+    /* Strategie-Steps */
+    .steps { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .step {
+      background: var(--dark-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .step-num {
+      background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold); font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem; width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; flex-shrink: 0;
+    }
+    .step-content h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .step-content p { font-size: 0.84rem; color: var(--text-muted); margin: 0; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q {
+      padding: 1rem 1.25rem; font-weight: 500; color: var(--text);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      user-select: none; background: var(--dark-2); transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s;
+      padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem;
+    }
+    .faq-a.open { max-height: 500px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool-Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link {
+      background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-2); border-top: 1px solid var(--border);
+      margin-top: 4rem; padding: 2rem 1.5rem;
+      text-align: center; color: var(--text-dim); font-size: 0.82rem;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-<nav class="topnav">
-  <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
 </nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Kostenloser Cashflow-Rechner</div>
+  <h1>Finanzielle Freiheit Rechner<br /><span>Wann tragen dich Dividenden?</span></h1>
+  <p class="hero-sub">
+    Berechne realistisch, ab welchem Jahr deine Nettodividenden
+    deine monatlichen Ausgaben vollständig decken –
+    mit Sparrate, Reinvest, Dividendenwachstum &amp; Steuern.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Steuern</span><span class="stat-lbl">Berücksichtigt</span></div>
+    <div class="stat"><span class="stat-val">Reinvest</span><span class="stat-lbl">Einkalkuliert</span></div>
+  </div>
 </header>
 
-<main class="wrapper">
+<main class="container">
 
-<!-- SEO INTRO -->
-<section class="seo">
-<h2>Finanzielle Freiheit Rechner – wann tragen dich deine Dividenden?</h2>
-<p>
-Der Finanzielle-Freiheit-Rechner zeigt dir realistisch,
-<strong>ab welchem Jahr deine Nettodividenden deine monatlichen Ausgaben decken</strong>.
-Im Fokus steht nicht Vermögenshöhe,
-sondern planbarer, nachhaltiger <strong>Cashflow</strong>.
-</p>
-<p>
-Berücksichtigt werden Sparrate, Dividendenrendite,
-Dividendenwachstum, Reinvest und Steuern.
-So erhältst du kein Wunschdenken,
-sondern eine belastbare Orientierung.
-</p>
-</section>
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">🏁 Finanzielle Freiheit Rechner</div>
 
-<section class="card">
-<header class="header">
-  <h1 class="title">Finanzielle Freiheit Rechner</h1>
-  <p class="sub">Ab welchem Jahr ersetzen Dividenden dein Arbeitseinkommen?</p>
-</header>
+    <div class="input-grid">
+      <div class="field">
+        <label for="startCapital">Startkapital (€)</label>
+        <input type="number" id="startCapital" value="25000" min="0" step="1000" />
+        <span class="field-hint">Dein aktuelles investiertes Kapital</span>
+      </div>
+      <div class="field">
+        <label for="monthlySave">Monatliche Sparrate (€)</label>
+        <input type="number" id="monthlySave" value="500" min="0" step="50" />
+        <span class="field-hint">Was du monatlich neu investierst</span>
+      </div>
+      <div class="field">
+        <label for="targetMonthly">Ziel-Nettoeinkommen (€/Monat)</label>
+        <input type="number" id="targetMonthly" value="2000" min="0" step="100" />
+        <span class="field-hint">Deine monatlichen Ausgaben / Ziel</span>
+      </div>
+      <div class="field">
+        <label for="divYield">Dividendenrendite (% p.a.)</label>
+        <input type="number" id="divYield" value="7" min="0" max="30" step="0.5" />
+        <span class="field-hint">Ø-Rendite deines Portfolios</span>
+      </div>
+      <div class="field">
+        <label for="divGrowth">Dividendenwachstum (% p.a.)</label>
+        <input type="number" id="divGrowth" value="3" min="0" max="20" step="0.5" />
+        <span class="field-hint">Jährliches Wachstum der Ausschüttungen</span>
+      </div>
+      <div class="field">
+        <label for="taxRate">Steuer auf Dividenden (%)</label>
+        <input type="number" id="taxRate" value="26.375" min="0" max="50" step="0.1" />
+        <span class="field-hint">Abgeltungssteuer inkl. Soli = 26,375 %</span>
+      </div>
+    </div>
 
-<div class="grid">
-  <div><label>Startkapital (€)</label><input id="startCapital" type="number" value="25000"></div>
-  <div><label>Monatliche Sparrate (€)</label><input id="monthlySave" type="number" value="500"></div>
-  <div><label>Ziel-Nettoeinkommen (€ / Monat)</label><input id="targetMonthly" type="number" value="2000"></div>
-  <div><label>Dividendenrendite (% p.a.)</label><input id="divYield" type="number" value="7"></div>
-  <div><label>Dividendenwachstum (% p.a.)</label><input id="divGrowth" type="number" value="3"></div>
-  <div><label>Steuer auf Dividenden (%)</label><input id="taxRate" type="number" value="26.4"></div>
-</div>
+    <div class="reinvest-row">
+      <input type="checkbox" id="reinvest" checked />
+      <label for="reinvest">Nettodividenden nach Steuern reinvestieren (DRIP)</label>
+    </div>
 
-<div class="inline">
-  <input type="checkbox" id="reinvest" checked>
-  <label for="reinvest">Dividenden nach Steuern reinvestieren</label>
-</div>
+    <button class="btn-calc" onclick="calcFreedom()">Finanzielle Freiheit berechnen →</button>
 
-<button class="btn" onclick="calcFreedom()">Finanzielle Freiheit berechnen</button>
+    <div class="result-box" id="results">
+      <!-- Wird per JS befüllt -->
+    </div>
+  </div>
 
-<div class="results" id="results"></div>
-</section>
+  <!-- AFFILIATE BANNER -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Die richtigen Dividenden-Aktien finden</h3>
+      <p>Ich prüfe jede Position mit InvestingPro – Fair Value, FCF-Coverage, Dividendensicherheit & mehr. Über meinen Link gibt es <strong>15 % Rabatt</strong>.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
 
-<section class="seo">
-<h2>So funktioniert der Rechner</h2>
-<ul>
-<li>Dein Kapital wächst durch Sparrate und Reinvest</li>
-<li>Dividenden werden jährlich ausgeschüttet</li>
-<li>Steuern werden realistisch berücksichtigt</li>
-<li>Ziel erreicht, wenn Nettodividende ≥ Ausgaben</li>
-</ul>
-<p>
-Der Rechner beantwortet eine einzige zentrale Frage:
-<strong>Wann ersetzt dein Cashflow dein Einkommen?</strong>
-</p>
-</section>
+  <!-- WAS IST FINANZIELLE FREIHEIT -->
+  <section class="section">
+    <h2>Was ist <span class="accent">finanzielle Freiheit durch Dividenden</span>?</h2>
+    <p>
+      Finanzielle Freiheit durch Dividenden bedeutet: Dein investiertes Kapital arbeitet so hart,
+      dass die jährlichen Netto-Dividendenausschüttungen deine gesamten Lebenshaltungskosten decken –
+      <strong>ohne dass du aktiv arbeiten musst</strong>.
+    </p>
+    <p>
+      Das ist kein Lottogewinn-Konzept, sondern ein planbarer Prozess:
+      Du baust systematisch ein Portfolio aus Dividendenaktien auf,
+      reinvestierst die Ausschüttungen und nutzt den Zinseszinseffekt –
+      so lange, bis der Cashflow dein Einkommen ersetzt.
+    </p>
 
-<section class="seo">
-<h2>Beispiel: Finanzielle Freiheit planen</h2>
-<p>
-Du startest mit <strong>25.000 €</strong>,
-investierst monatlich <strong>500 €</strong>
-und strebst <strong>2.000 € Nettodividende pro Monat</strong> an.
-</p>
-<p>
-Bei 7 % Dividendenrendite,
-3 % Wachstum und Reinvest zeigt dir der Rechner,
-<strong>in welchem Jahr dieses Ziel realistisch erreichbar ist</strong>.
-</p>
-</section>
+    <div class="formula-box">
+      Benötigtes Kapital = (Monatlicher Bedarf × 12) ÷ Nettodividendenrendite
+      <small>Beispiel: 2.000 € × 12 = 24.000 € ÷ 0,0516 (7 % nach 26,375 % Steuer) ≈ 465.000 €</small>
+    </div>
 
-<section class="seo">
-<h2>Warum Cashflow wichtiger ist als Depotgröße</h2>
-<ul>
-<li>Rechnungen werden mit Einkommen bezahlt</li>
-<li>Cashflow ist planbar, Kurse nicht</li>
-<li>Dividenden funktionieren auch seitwärts</li>
-<li>Psychologisch stabiler als Kursgewinne</li>
-</ul>
-</section>
+    <p>
+      Wichtig: Es geht nicht um Vermögenshöhe, sondern um <strong>Cashflow</strong>.
+      Ein Portfolio von 400.000 € mit 7 % Rendite und 3 % Wachstum
+      liefert mehr langfristigen Cashflow als 600.000 € in Festgeld.
+    </p>
+  </section>
 
-<section class="seo">
-<h2>Weiterführende Rechner</h2>
-<ul>
-  <li><a href="/tools/dividenden-snowball-rechner.html">Dividend Snowball</a></li>
-  <li><a href="/tools/dividenden-reinvest-rechner.html">DRIP-Rechner</a></li>
-  <li><a href="/tools/yield-on-cost-rechner.html">Yield-on-Cost</a></li>
-</ul>
-</section>
+  <!-- WIE VIEL KAPITAL -->
+  <section class="section">
+    <h2>Wie viel Kapital brauche ich für <span class="accent">finanzielle Freiheit</span>?</h2>
+    <p>
+      Die häufigste Frage – und die Antwort hängt von drei Faktoren ab:
+      deinem monatlichen Bedarf, deiner Dividendenrendite und dem Steuersatz.
+      Hier eine Übersicht für typische Szenarien:
+    </p>
+
+    <table class="kapital-table">
+      <thead>
+        <tr>
+          <th>Monatlicher Nettobedarf</th>
+          <th>Bei 5 % Rendite</th>
+          <th>Bei 7 % Rendite</th>
+          <th>Bei 10 % Rendite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.000 € / Monat</td>
+          <td>~321.000 €</td>
+          <td>~232.000 €</td>
+          <td>~161.000 €</td>
+        </tr>
+        <tr>
+          <td>1.500 € / Monat</td>
+          <td>~482.000 €</td>
+          <td>~348.000 €</td>
+          <td>~242.000 €</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>2.000 € / Monat</td>
+          <td>~643.000 €</td>
+          <td>~465.000 €</td>
+          <td>~323.000 €</td>
+        </tr>
+        <tr>
+          <td>3.000 € / Monat</td>
+          <td>~964.000 €</td>
+          <td>~697.000 €</td>
+          <td>~484.000 €</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem; color:var(--text-dim);">Alle Werte nach Abgeltungssteuer 26,375 %. Keine Anlageberatung.</p>
+
+    <p>
+      <strong>Fazit:</strong> Mit einer Dividendenrendite von 7 % – erreichbar durch Hard Assets,
+      MLPs, BDCs oder Shipping-Titel – brauchst du für 2.000 € Netto-Cashflow pro Monat
+      etwa <strong>465.000 € investiertes Kapital</strong>. Das klingt viel – aber mit
+      konsequenter Sparrate und Reinvest ist das in 15–20 Jahren ein realistisches Ziel.
+    </p>
+  </section>
+
+  <!-- DER WEG -->
+  <section class="section">
+    <h2>Der Weg zur <span class="accent">finanziellen Freiheit</span> – Schritt für Schritt</h2>
+    <p>Finanzielle Freiheit durch Dividenden folgt immer denselben vier Phasen:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Kapital aufbauen – Sparrate maximieren</h4>
+          <p>Jeder Euro Sparrate zählt. In der Aufbauphase ist die Sparrate wichtiger als die Rendite.
+          Wer monatlich 800 € statt 400 € investiert, halbiert die Zeit zur finanziellen Freiheit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Dividendenportfolio aufbauen – Qualität vor Rendite</h4>
+          <p>Hohe Rendite ist wertlos, wenn die Dividende nicht nachhaltig ist.
+          Fokus auf Free-Cashflow-Coverage, Verschuldung und Zyklusposition.
+          Hard Assets, MLPs & BDCs als Kern.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Konsequent reinvestieren – Zinseszins aktivieren</h4>
+          <p>Dividenden reinvestieren (DRIP) ist der mächtigste Hebel. Wer 10 Jahre lang
+          konsequent reinvestiert, kann seinen Cashflow gegenüber einem Nicht-Reinvestor
+          verdoppeln oder mehr.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Zyklisch nachkaufen – antizyklisch denken</h4>
+          <p>In Korrekturen und Zyklustiefs nachkaufen statt verkaufen.
+          Das senkt deinen Einstandskurs und erhöht deinen YOC für die Zukunft.
+          Shipping und Mining bieten solche Kaufzonen regelmäßig.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <span class="tag">📘 Praxisbeispiel – Marcos Strategie</span>
+      <p>
+        Startkapital <strong>25.000 €</strong>, monatliche Sparrate <strong>500 €</strong>,
+        Dividendenrendite <strong>7 %</strong> (Hard Assets: Shipping, Pipeline, Mining),
+        3 % Dividendenwachstum, alles reinvestiert.
+        Ergebnis: Finanzielle Freiheit bei 2.000 € Monatsbedarf in ca. <strong>18–20 Jahren</strong>.
+        Mit 800 € Sparrate statt 500 €: rund <strong>4–5 Jahre früher</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ZWEITER AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Depot & Cashflow-Kalender tracken</h3>
+      <p>Ich tracke meinen Weg zur finanziellen Freiheit mit Parqet – Dividendenkalender, YOC-Tracking, Portfolio-Analyse. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet –15 % →</a>
+  </div>
+
+  <!-- REINVEST-EFFEKT -->
+  <section class="section">
+    <h2>Warum <span class="accent">Reinvest</span> alles verändert</h2>
+    <p>
+      Der Reinvest-Effekt ist der Grund, warum Dividendeninvestoren schneller zur
+      finanziellen Freiheit kommen als erwartet. Wer Dividenden reinvestiert,
+      kauft mit jeder Ausschüttung neue Anteile – die ihrerseits wieder Dividenden zahlen.
+    </p>
+
+    <table class="kapital-table">
+      <thead>
+        <tr>
+          <th>Szenario</th>
+          <th>Nach 10 Jahren</th>
+          <th>Nach 20 Jahren</th>
+          <th>Monatlicher Cashflow (Jahr 20)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ohne Reinvest (500 €/Monat, 7 %)</td>
+          <td>~121.000 €</td>
+          <td>~248.000 €</td>
+          <td>~1.070 € netto</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Mit Reinvest (500 €/Monat, 7 %)</td>
+          <td>~178.000 €</td>
+          <td>~465.000 €</td>
+          <td>~2.000 € netto</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem; color:var(--text-dim);">Näherungswerte, 25.000 € Start, 3 % Dividendenwachstum, 26,375 % Steuer.</p>
+
+    <p>
+      <strong>Der Unterschied:</strong> Mit Reinvest erreichst du im Beispiel
+      nach 20 Jahren fast <strong>doppelten Cashflow</strong> gegenüber ohne Reinvest –
+      bei identischer Sparrate. Das ist kein Trick, sondern Mathematik.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Finanzielle Freiheit Rechner</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie viel Kapital brauche ich für finanzielle Freiheit?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Das hängt von deinem monatlichen Bedarf und deiner Dividendenrendite ab.
+        Faustregel: Benötigtes Kapital = (Monatsbedarf × 12) ÷ Nettodividendenrendite.
+        Bei 2.000 € Monatsbedarf und 7 % Rendite (nach Steuer ca. 5,15 %) brauchst du
+        rund <strong>465.000 €</strong> investiertes Kapital. Unser Rechner berechnet das
+        individuell für deine Parameter.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Welche Dividendenrendite ist realistisch für finanzielle Freiheit?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Für ein nachhaltiges, diversifiziertes Portfolio sind 5–8 % realistisch.
+        Im Hard-Asset-Bereich (Shipping, MLPs, BDCs, Mining) sind 7–12 % erreichbar –
+        aber mit höherem Risiko und Zyklusabhängigkeit. Ich setze auf einen Mix:
+        stabile Kern-Dividendenzahler bei 5–7 %, ergänzt durch zyklische High-Yield-Titel
+        für höheren Gesamtcashflow. Mehr dazu in der
+        <a href="/depot-strategie/">Depot-Strategie</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie lange dauert finanzielle Freiheit mit 500 € Sparrate?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Mit 500 € monatlicher Sparrate, 25.000 € Startkapital, 7 % Dividendenrendite
+        und konsequentem Reinvest erreichst du 2.000 € Netto-Cashflow pro Monat
+        in etwa <strong>18–20 Jahren</strong>. Mit 800 € Sparrate verkürzt sich das
+        auf rund 15–17 Jahre. Spiel es direkt im Rechner oben durch – du kannst
+        alle Parameter anpassen.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Berücksichtigt der Rechner die deutsche Abgeltungssteuer?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Ja. Der Standardwert ist 26,375 % (25 % Abgeltungssteuer + 5,5 % Solidaritätszuschlag).
+        Kirchensteuer wird nicht automatisch berücksichtigt – bei Bedarf einfach
+        auf ~27,8–28 % anpassen. Bei ausländischen Dividenden (z.B. US-Aktien) können
+        Quellensteuern anfallen, die teilweise angerechnet werden.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Ist Dividenden-Investing besser als ETF-Sparen für finanzielle Freiheit?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Beide Ansätze funktionieren – sie unterscheiden sich im Mechanismus.
+        ETF-Sparen optimiert auf Gesamtrendite (Kurs + Dividende), du entnimmst
+        im Alter durch Verkäufe. Dividenden-Investing optimiert auf laufenden Cashflow –
+        du musst nichts verkaufen, die Ausschüttungen fließen automatisch.
+        Psychologisch und planerisch ist Cashflow für viele einfacher.
+        Für Hard-Asset-Investoren bietet der Dividendenansatz zusätzlich
+        Rohstoff- und Inflationsschutz.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was sind die größten Risiken auf dem Weg zur finanziellen Freiheit?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Die drei größten Risiken: (1) <strong>Dividendenkürzungen</strong> – wenn Unternehmen
+        die Ausschüttung kürzen, sinkt dein Cashflow. Lösung: breite Diversifikation und
+        Fokus auf FCF-Coverage. (2) <strong>Zu hohe Renditeerwartung</strong> – wer mit 12 %
+        plant aber nur 6 % bekommt, liegt komplett daneben. (3) <strong>Aussetzen der Sparrate</strong>
+        in Krisenzeiten – das ist der häufigste Fehler. Automatisierung hilft.
+      </div>
+    </div>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <p>Alle kostenlos – für deine vollständige Cashflow-Planung.</p>
+    <div class="tool-grid">
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 Reinvest-Rechner (DRIP)</a>
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball PRO</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/dividend-snowball-yoc-pro.html" class="tool-link">❄️ Snowball YOC PRO</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+  <!-- WEITERFÜHREND -->
+  <section class="section">
+    <h2>Weiterführende <span class="accent">Inhalte</span></h2>
+    <div class="tool-grid">
+      <a href="/hard-asset-guide/" class="tool-link">🧱 Hard Asset Guide</a>
+      <a href="/depot-strategie/" class="tool-link">📊 Meine Depot-Strategie</a>
+      <a href="/kategorien/high-yield-aktien.html" class="tool-link">💰 High-Yield Aktien</a>
+      <a href="/midstream/" class="tool-link">🛢️ Pipelines & Midstream</a>
+      <a href="/mining-aktien/" class="tool-link">⛏️ Mining-Aktien</a>
+      <a href="/glossar/" class="tool-link">📗 Glossar</a>
+    </div>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Alle Berechnungen dienen der finanziellen Orientierung und ersetzen keine professionelle Finanzberatung.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-/* JS UNVERÄNDERT */
-function calcFreedom(){
-  const start = +document.getElementById("startCapital").value;
-  const save = +document.getElementById("monthlySave").value;
+function calcFreedom() {
+  const start  = +document.getElementById("startCapital").value;
+  const save   = +document.getElementById("monthlySave").value;
   const target = +document.getElementById("targetMonthly").value;
   let yieldRate = +document.getElementById("divYield").value / 100;
-  const growth = +document.getElementById("divGrowth").value / 100;
-  const tax = +document.getElementById("taxRate").value / 100;
-  const reinvest = document.getElementById("reinvest").checked;
+  const growth  = +document.getElementById("divGrowth").value / 100;
+  const tax     = +document.getElementById("taxRate").value / 100;
+  const doReinvest = document.getElementById("reinvest").checked;
+
+  if (!start || !target || !yieldRate) {
+    alert("Bitte alle Pflichtfelder ausfüllen.");
+    return;
+  }
 
   let wealth = start;
-  let netDividend = 0;
-  let year = new Date().getFullYear();
+  let netDiv = 0;
+  let freedomYear = null;
+  const currentYear = new Date().getFullYear();
+  const milestones = [];
 
-  const results = document.getElementById("results");
-  results.innerHTML = "";
-
-  for(let i=1;i<=60;i++){
+  for (let i = 1; i <= 60; i++) {
     wealth += save * 12;
     const gross = wealth * yieldRate;
-    netDividend = gross * (1 - tax);
-
-    if(reinvest) wealth += netDividend;
+    netDiv = gross * (1 - tax);
+    if (doReinvest) wealth += netDiv;
     yieldRate *= (1 + growth);
 
-    if(netDividend / 12 >= target){
-      year += i;
-      results.innerHTML = `
-        <p>Jahr der finanziellen Freiheit: <span class="highlight">${year}</span></p>
-        <p>Depotvolumen: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-        <p>Nettodividende / Jahr: <span class="highlight">${netDividend.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-        <p>Nettodividende / Monat: <span class="highlight">${(netDividend/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
-      return;
+    // Meilensteine
+    if (i === 5 || i === 10) {
+      milestones.push({ year: currentYear + i, wealth, netDiv });
+    }
+
+    if (!freedomYear && netDiv / 12 >= target) {
+      freedomYear = currentYear + i;
+      milestones.push({ year: freedomYear, wealth, netDiv, isFreedom: true });
+      break;
     }
   }
-  results.innerHTML = "<p>Ziel wird innerhalb von 60 Jahren nicht erreicht.</p>";
-}
-</script>
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Wann bin ich finanziell frei?","acceptedAnswer":{"@type":"Answer","text":"Wenn deine Nettodividenden dauerhaft deine monatlichen Ausgaben decken."}},
-{"@type":"Question","name":"Wie lange dauert finanzielle Freiheit mit Dividenden?","acceptedAnswer":{"@type":"Answer","text":"Je nach Sparrate, Rendite und Wachstum meist zwischen 8 und 25 Jahren."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Steuern?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Berechnung erfolgt auf Basis von Nettodividenden nach Steuern."}},
-{"@type":"Question","name":"Ist Reinvest notwendig?","acceptedAnswer":{"@type":"Answer","text":"Nicht zwingend, beschleunigt den Weg jedoch erheblich."}},
-{"@type":"Question","name":"Ist das eine Anlageberatung?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner dient ausschließlich der finanziellen Orientierung."}}
-]
+  const box = document.getElementById("results");
+
+  if (!freedomYear) {
+    box.innerHTML = `<p style="color:var(--text-muted); text-align:center; padding:1rem;">
+      Ziel innerhalb von 60 Jahren nicht erreicht.<br>
+      <small>Tipp: Erhöhe Sparrate oder Dividendenrendite.</small>
+    </p>`;
+    box.classList.add("show");
+    return;
+  }
+
+  const yearsNeeded = freedomYear - currentYear;
+  const monatlich = (netDiv / 12).toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+  const jaehrlich = netDiv.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+  const depotVal  = wealth.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+
+  const tlHtml = milestones.map(m => `
+    <div class="tl-item">
+      <div class="tl-dot ${m.isFreedom ? 'green' : ''}"></div>
+      <div class="tl-text">
+        <strong>${m.year}</strong> –
+        ${m.isFreedom
+          ? `🎯 <strong>Finanzielle Freiheit erreicht!</strong> ${(m.netDiv/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})} / Monat Netto`
+          : `Depot: ${m.wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})} · Cashflow: ${(m.netDiv/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})} / Monat`
+        }
+      </div>
+    </div>
+  `).join("");
+
+  box.innerHTML = `
+    <div class="result-highlight">
+      <span class="result-year">${freedomYear}</span>
+      <div class="result-year-lbl">Jahr der finanziellen Freiheit · in ${yearsNeeded} Jahren</div>
+    </div>
+    <div class="result-grid">
+      <div class="result-item">
+        <span class="result-val">${monatlich}</span>
+        <div class="result-lbl">Netto / Monat</div>
+      </div>
+      <div class="result-item">
+        <span class="result-val">${jaehrlich}</span>
+        <div class="result-lbl">Netto / Jahr</div>
+      </div>
+      <div class="result-item">
+        <span class="result-val">${depotVal}</span>
+        <div class="result-lbl">Depotvolumen</div>
+      </div>
+    </div>
+    <div class="timeline">${tlHtml}</div>
+    <p style="margin-top:1rem; font-size:0.82rem; color:var(--text-dim); border-top:1px solid var(--border); padding-top:1rem;">
+      Keine Anlageberatung. Simulation auf Basis konstanter Parameter – tatsächliche Ergebnisse können abweichen.
+    </p>
+  `;
+  box.classList.add("show");
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
+}
+
+document.addEventListener("keydown", e => { if (e.key === "Enter") calcFreedom(); });
 </script>
 
 </body>
