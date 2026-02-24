@@ -1,314 +1,714 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Dividendenrechner – monatliche & jährliche Dividenden berechnen | MB Capital Strategies</title>
-<meta name="description" content="Dividendenrechner: Berechne deinen jährlichen, monatlichen und quartalsweisen Dividenden-Cashflow. Mit Beispiel & Erklärung für Dividenden- und Cashflow-Investoren.">
+  <title>Dividendenrechner – Dividenden berechnen: monatlich, jährlich & nach Steuern | MB Capital Strategies</title>
+  <meta name="description" content="Dividendenrechner kostenlos: Berechne sofort deinen jährlichen, monatlichen & quartalsweisen Dividenden-Cashflow – brutto & netto nach Abgeltungssteuer. Mit Beispielen & FAQ." />
+  <meta name="keywords" content="dividendenrechner, dividenden berechnen, dividendenrendite berechnen, dividenden rechner kostenlos, monatliche dividenden berechnen, dividende pro monat, dividenden cashflow" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/dividenden-rechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Dividendenrechner – Dividenden kostenlos berechnen" />
+  <meta property="og:description" content="Berechne sofort deinen Dividenden-Cashflow: jährlich, monatlich, quartalsweise – brutto & netto nach Steuern." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/dividenden-rechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --bg:#0f1115;
-  --card:#151821;
-  --accent:#d4af37;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Montserrat',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividendenrechner",
+    "url": "https://mbcapitalstrategies.com/tools/dividenden-rechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser Online-Dividendenrechner: Jährlicher, monatlicher und quartalsweiser Dividenden-Cashflow brutto und netto nach Abgeltungssteuer.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:#0d0f13;
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:12px 18px;
-}
-.topnav{
-  max-width:1100px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.nav-item{
-  color:var(--accent);
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{text-decoration:underline;}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie berechnet man eine Dividende?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Die Formel lautet: Jahresdividende = Investitionssumme × Dividendenrendite ÷ 100. Beispiel: 10.000 € × 7 % = 700 € Jahresdividende, also ca. 58 € pro Monat. Unser kostenloser Dividendenrechner übernimmt diese Berechnung sofort." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie viel Kapital brauche ich für 1.000 € Dividenden pro Monat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Für 1.000 € Netto-Dividende pro Monat (12.000 € p.a.) brauchst du bei 7 % Rendite und 26,375 % Steuer etwa 220.000–240.000 € investiertes Kapital. Bei 5 % Rendite ca. 310.000 €, bei 10 % ca. 160.000 €." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie hoch ist die Steuer auf Dividenden in Deutschland?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In Deutschland gilt die Abgeltungssteuer von 25 % plus Solidaritätszuschlag (5,5 % auf die Steuer), also insgesamt 26,375 %. Hinzu kann Kirchensteuer kommen. Auf ausländische Dividenden kann zusätzlich Quellensteuer anfallen, die teilweise auf die deutsche Steuer angerechnet wird." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist eine Dividendenrendite von 7–10 % realistisch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja – in spezialisierten Sektoren. BDCs (Business Development Companies) wie ARCC zahlen 8–10 %, Shipping-Aktien (TORM, Frontline) in Hochphasen 10–20 %, Midstream-MLPs (Enbridge, ONEOK) 5–8 %. Bei Renditen über 10 % ist kritische Prüfung der Dividendennachhaltigkeit essenziell." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie oft werden Dividenden ausgezahlt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Das variiert je nach Aktie und Land. US-Aktien zahlen meist quartalsweise, viele europäische Aktien jährlich oder halbjährlich. Manche REITs und BDCs zahlen monatlich. Ein diversifiziertes Portfolio kann so strukturiert werden, dass jeden Monat Dividenden eingehen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen Dividendenrendite und Yield on Cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dividendenrendite bezieht sich auf den aktuellen Kurs. Yield on Cost (YOC) bezieht sich auf deinen persönlichen Kaufkurs. Wer eine Aktie für 100 € kauft und nach 10 Jahren eine Dividende von 10 € bekommt, hat einen YOC von 10 % – auch wenn die aktuelle Rendite auf den neuen Kurs nur 5 % beträgt." }
+      }
+    ]
+  }
+  </script>
 
-/* CONTENT */
-.wrapper{max-width:640px;margin:40px auto;padding:0 16px 60px;}
-.card{
-  background:var(--card);
-  border-radius:16px;
-  border:1px solid rgba(212,175,55,.35);
-  padding:26px;
-}
-.header{text-align:center;margin-bottom:18px;}
-.title{color:var(--accent);margin:0;}
-.sub{color:var(--muted);font-size:.95rem;line-height:1.6;}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-label{display:block;margin:14px 0 6px;font-weight:600;}
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#0f1115;
-  color:#fff;
-  font-size:1em;
-}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-button{
-  width:100%;
-  padding:14px;
-  margin-top:22px;
-  background:var(--accent);
-  color:#000;
-  border:none;
-  border-radius:12px;
-  font-size:1.05em;
-  font-weight:700;
-  cursor:pointer;
-}
-button:hover{filter:brightness(1.08);}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --border: rgba(255,255,255,0.07);
+    }
 
-.result{
-  margin-top:22px;
-  padding:20px;
-  background:#1a1f2b;
-  border-left:4px solid var(--accent);
-  border-radius:12px;
-  line-height:1.7;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
 
-.ads-box{
-  margin-top:22px;
-  padding:12px;
-  background:#1a1f2b;
-  border-radius:12px;
-  text-align:center;
-  border:1px solid rgba(212,175,55,.25);
-}
+    /* NAV */
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
 
-.seo{
-  margin-top:50px;
-  padding:28px;
-  background:#151821;
-  border:1px solid #2a2a2a;
-  border-radius:16px;
-}
-.seo h2{color:var(--accent);}
-.seo ul{margin-left:18px;line-height:1.7;}
-.seo a{color:var(--accent);text-decoration:none;}
-.seo a:hover{text-decoration:underline;}
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #0f1008 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.site-footer{
-  margin-top:80px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--accent);}
-</style>
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* CALC CARD */
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 540px) { .input-grid { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+
+    input[type="number"] { background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%; -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .tax-row { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.25rem; font-size: 0.88rem; color: var(--text-muted); }
+    input[type="checkbox"] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+    .btn-calc { width: 100%; padding: 0.9rem; background: var(--gold); color: #0E0F11; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    /* ERGEBNIS */
+    .result-box { display: none; margin-top: 1.75rem; }
+    .result-box.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+    .result-main { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2); border-radius: 14px; padding: 1.5rem; }
+    .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 480px) { .result-grid { grid-template-columns: 1fr 1fr; } }
+    .result-item { text-align: center; background: var(--dark-4); border-radius: 10px; padding: 1rem 0.75rem; }
+    .result-val { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--gold); display: block; line-height: 1.1; }
+    .result-val.green { color: var(--green); }
+    .result-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .result-netto { background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    .result-netto-item { text-align: center; }
+    .result-netto-val { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--green); display: block; }
+    .result-netto-lbl { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* KAPITAL TABELLE */
+    .kapital-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; overflow-x: auto; display: block; }
+    .kapital-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.7rem 1rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .kapital-table th:first-child { text-align: left; }
+    .kapital-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); text-align: right; white-space: nowrap; }
+    .kapital-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .kapital-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    /* AFFILIATE */
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .formula-box { background: var(--dark-3); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--gold); text-align: center; }
+    .formula-box small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    /* Rendite-Vergleich */
+    .rendite-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .rendite-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+    .rendite-card .r-name { font-weight: 600; color: var(--text); font-size: 0.88rem; margin-bottom: 0.4rem; }
+    .rendite-card .r-val { color: var(--gold); font-family: 'DM Serif Display', serif; font-size: 1.15rem; }
+    .rendite-card .r-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-<nav class="topnav">
-  <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-  <a href="/mining-aktien/" class="nav-item">⛏️ Mining</a>
-  <a href="/toolbox.html" class="nav-item">🧰 Toolbox</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
 </nav>
-</header>
 
-<main class="wrapper">
-
-<!-- SEO INTRO -->
-<section class="seo">
-<h2>Dividendenrechner – Cashflow realistisch berechnen</h2>
-<p>
-Der Dividendenrechner zeigt dir auf einen Blick,
-wie hoch dein <strong>jährlicher, monatlicher und quartalsweiser Dividenden-Cashflow</strong> ist.
-Er eignet sich ideal als erster Einstieg in jede Dividendenstrategie.
-</p>
-<p>
-Im Fokus steht nicht Kursfantasie,
-sondern die einfache Frage:
-<strong>Wie viel Geld fließt mir regelmäßig aus meinem Depot zu?</strong>
-</p>
-</section>
-
-<section class="card">
-<header class="header">
-  <h1 class="title">Dividendenrechner</h1>
-  <p class="sub">
-    Berechne deinen Dividenden-Cashflow schnell & einfach –
-    jährlich, monatlich und quartalsweise.
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Kostenloser Dividendenrechner</div>
+  <h1>Dividendenrechner<br /><span>Dividenden sofort berechnen</span></h1>
+  <p class="hero-sub">
+    Berechne deinen Dividenden-Cashflow jährlich, monatlich und quartalsweise –
+    brutto und netto nach Abgeltungssteuer. Kostenlos, sofort, ohne Anmeldung.
   </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Netto</span><span class="stat-lbl">nach Steuer</span></div>
+    <div class="stat"><span class="stat-val">Sofort</span><span class="stat-lbl">Ergebnis</span></div>
+  </div>
 </header>
 
-<label>Investitionssumme (€)</label>
-<input type="number" id="investment" placeholder="z. B. 10.000">
+<main class="container">
 
-<label>Dividendenrendite (% p.a.)</label>
-<input type="number" id="yield" placeholder="z. B. 7">
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">💰 Dividendenrechner</div>
 
-<button onclick="calculate()">Dividende berechnen</button>
+    <div class="input-grid">
+      <div class="field">
+        <label for="investment">Investitionssumme (€)</label>
+        <input type="number" id="investment" placeholder="z. B. 10000" min="0" step="1000" />
+        <span class="field-hint">Dein investiertes Kapital</span>
+      </div>
+      <div class="field">
+        <label for="divYield">Dividendenrendite (% p.a.)</label>
+        <input type="number" id="divYield" placeholder="z. B. 7" min="0" max="50" step="0.1" />
+        <span class="field-hint">Aktuelle Dividendenrendite der Aktie / des Portfolios</span>
+      </div>
+      <div class="field">
+        <label for="taxRate">Steuer auf Dividenden (%)</label>
+        <input type="number" id="taxRate" value="26.375" min="0" max="50" step="0.1" />
+        <span class="field-hint">Abgeltungssteuer inkl. Soli = 26,375 %</span>
+      </div>
+      <div class="field">
+        <label for="shares">Anzahl Aktien (optional)</label>
+        <input type="number" id="shares" placeholder="z. B. 100" min="0" step="1" />
+        <span class="field-hint">Für Berechnung per Aktie</span>
+      </div>
+    </div>
 
-<div id="output" class="result" style="display:none;"></div>
+    <div class="tax-row">
+      <input type="checkbox" id="showNetto" checked />
+      <label for="showNetto">Netto-Ergebnis nach Steuern anzeigen</label>
+    </div>
 
-<p style="margin-top:14px;font-size:.9rem;color:#9aa6c0;">
-👉 So tracke ich meine Dividenden & Cashflows:
-<a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank">Parqet nutzen</a>
-</p>
+    <button class="btn-calc" onclick="calculate()">Dividende berechnen →</button>
 
-<div class="ads-box">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7097302643579933"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-</section>
+    <div class="result-box" id="results"></div>
+  </div>
 
-<section class="seo">
-<h2>So funktioniert der Dividendenrechner</h2>
-<ol>
-  <li>Investitionssumme eingeben</li>
-  <li>Dividendenrendite festlegen</li>
-  <li>Cashflow pro Jahr, Monat & Quartal ablesen</li>
-</ol>
-<p>
-Der Rechner nutzt eine einfache Formel:
-<strong>Dividende = Investitionssumme × Dividendenrendite</strong>.
-Er dient ausschließlich der Cashflow-Planung.
-</p>
-</section>
+  <!-- AFFILIATE PARQET -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Dividenden automatisch tracken</h3>
+      <p>Ich tracke meinen gesamten Dividenden-Cashflow mit Parqet – Kalender, YOC, Portfolio-Analyse auf einen Blick. Über meinen Link gibt es <strong>15 % Rabatt</strong>.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet – 15 % Rabatt →</a>
+  </div>
 
-<section class="seo">
-<h2>Beispiel: Dividenden-Cashflow berechnen</h2>
-<p>
-Du investierst <strong>10.000 €</strong> in eine Aktie oder ein Portfolio
-mit einer Dividendenrendite von <strong>7 %</strong>.
-</p>
-<ul>
-  <li>Jahresdividende: <strong>700 €</strong></li>
-  <li>Monatlicher Cashflow: <strong>≈ 58 €</strong></li>
-  <li>Quartalsdividende: <strong>175 €</strong></li>
-</ul>
-<p>
-Der Rechner zeigt dir genau diese Werte –
-ohne Annahmen zu Kursen oder Wachstum.
-</p>
-</section>
+  <!-- WIE FUNKTIONIERT DER RECHNER -->
+  <section class="section">
+    <h2>Wie berechnet man eine <span class="accent">Dividende</span>?</h2>
+    <p>
+      Die Grundformel für Dividenden ist simpel –
+      und trotzdem machen viele Einsteiger dabei Fehler.
+      Hier die korrekte Berechnung:
+    </p>
 
-<section class="seo">
-<h2>Für wen ist der Dividendenrechner geeignet?</h2>
-<ul>
-  <li>Einsteiger in Dividendenstrategien</li>
-  <li>Cashflow-Investoren & FIRE-Planung</li>
-  <li>High-Yield-Sektoren (BDC, Shipping, Midstream)</li>
-  <li>Vergleich unterschiedlicher Dividendenrenditen</li>
-</ul>
-</section>
+    <div class="formula-box">
+      Jahresdividende = Investitionssumme × Dividendenrendite ÷ 100
+      <small>Netto = Brutto × (1 − Steuersatz) · Beispiel: 10.000 € × 7 % = 700 € brutto → 515 € netto (nach 26,375 % Steuer)</small>
+    </div>
 
-<section class="seo">
-<h2>Häufige Fehler bei Dividenden-Berechnungen</h2>
-<ul>
-  <li>Sonderdividenden als dauerhaft annehmen</li>
-  <li>Steuern & Quellensteuer ignorieren</li>
-  <li>Dividenden ohne Cashflow-Check extrapolieren</li>
-  <li>Zu hohe Renditen als „sicher“ betrachten</li>
-</ul>
-</section>
+    <p>
+      Die monatliche und quartalsweise Aufteilung ist eine rechnerische Näherung –
+      tatsächlich zahlen Aktien je nach Herkunftsland quartalsweise (USA),
+      halbjährlich oder jährlich (Deutschland, Europa).
+    </p>
 
-<section class="seo">
-<h2>Weiterführende Rechner</h2>
-<ul>
-  <li><a href="/tools/dividenden-snowball-rechner.html">Dividend Snowball Rechner</a></li>
-  <li><a href="/tools/dividenden-reinvest-rechner.html">Dividenden Reinvest (DRIP)</a></li>
-  <li><a href="/tools/yield-on-cost-rechner.html">Yield-on-Cost Rechner</a></li>
-  <li><a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit berechnen</a></li>
-</ul>
-</section>
+    <div class="example-box">
+      <span class="tag">📘 Konkretes Beispiel</span>
+      <p>
+        Du investierst <strong>10.000 €</strong> in ein Portfolio mit
+        durchschnittlich <strong>7 % Dividendenrendite</strong>
+        (z.B. Midstream-MLPs, BDCs, Shipping-Titel).
+        Brutto-Jahresdividende: <strong>700 €</strong>.
+        Nach Abgeltungssteuer (26,375 %): <strong>515,38 € netto</strong> –
+        das sind <strong>42,95 € netto pro Monat</strong>.
+        Mit 100.000 € investiert: <strong>429 € netto pro Monat</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- WIE VIEL KAPITAL FÜR X DIVIDENDE -->
+  <section class="section">
+    <h2>Wie viel Kapital für <span class="accent">X € Dividende pro Monat</span>?</h2>
+    <p>
+      Die häufigste Frage nach dem Dividendenrechner: Wie viel muss ich investieren,
+      um einen bestimmten monatlichen Cashflow zu erzielen?
+      Hier die Antwort für verschiedene Szenarien – netto nach Abgeltungssteuer:
+    </p>
+
+    <table class="kapital-table">
+      <thead>
+        <tr>
+          <th>Ziel-Cashflow (netto/Monat)</th>
+          <th>Bei 5 % Rendite</th>
+          <th>Bei 7 % Rendite</th>
+          <th>Bei 10 % Rendite</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>100 € / Monat</td>
+          <td>~32.100 €</td>
+          <td>~23.200 €</td>
+          <td>~16.100 €</td>
+        </tr>
+        <tr>
+          <td>500 € / Monat</td>
+          <td>~160.000 €</td>
+          <td>~116.000 €</td>
+          <td>~80.600 €</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>1.000 € / Monat</td>
+          <td>~321.000 €</td>
+          <td>~232.000 €</td>
+          <td>~161.000 €</td>
+        </tr>
+        <tr>
+          <td>2.000 € / Monat</td>
+          <td>~643.000 €</td>
+          <td>~465.000 €</td>
+          <td>~323.000 €</td>
+        </tr>
+        <tr>
+          <td>3.000 € / Monat</td>
+          <td>~964.000 €</td>
+          <td>~697.000 €</td>
+          <td>~484.000 €</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Alle Werte nach Abgeltungssteuer 26,375 %. Keine Anlageberatung.</p>
+
+    <p>
+      <strong>Fazit:</strong> Für 1.000 € Netto-Cashflow pro Monat brauchst du
+      bei 7 % Rendite etwa <strong>232.000 € investiertes Kapital</strong>.
+      Wie lange es dauert, dieses Kapital aufzubauen, zeigt der
+      <a href="/tools/finanzielle-freiheit-rechner.html" style="color:var(--gold)">Finanzielle-Freiheit-Rechner</a>.
+    </p>
+  </section>
+
+  <!-- DIVIDENDENRENDITEN NACH SEKTOR -->
+  <section class="section">
+    <h2>Realistische <span class="accent">Dividendenrenditen nach Sektor</span></h2>
+    <p>
+      Nicht alle Dividenden sind gleich. Je nach Sektor variieren Rendite,
+      Nachhaltigkeit und Zahlungsrhythmus stark:
+    </p>
+
+    <div class="rendite-grid">
+      <div class="rendite-card">
+        <div class="r-name">🏢 Blue Chips / DAX</div>
+        <div class="r-val">2–4 % p.a.</div>
+        <div class="r-note">BASF, Allianz, Deutsche Post. Stabil, aber geringe Rendite.</div>
+      </div>
+      <div class="rendite-card">
+        <div class="r-name">🛢️ Midstream / MLPs</div>
+        <div class="r-val">5–8 % p.a.</div>
+        <div class="r-note">Enbridge, ONEOK, Pembina. Vertragsbasiert, stabil.</div>
+      </div>
+      <div class="rendite-card">
+        <div class="r-name">🏦 BDCs</div>
+        <div class="r-val">8–12 % p.a.</div>
+        <div class="r-note">ARCC, MAIN, OBDC. Monatliche Zahlung, zinsabhängig.</div>
+      </div>
+      <div class="rendite-card">
+        <div class="r-name">🚢 Shipping / Tanker</div>
+        <div class="r-val">5–20 %+ (zyklisch)</div>
+        <div class="r-note">TORM, Frontline. Variable Dividenden, frachtratenabhängig.</div>
+      </div>
+      <div class="rendite-card">
+        <div class="r-name">⛏️ Mining / Kohle</div>
+        <div class="r-val">5–25 %+ (zyklisch)</div>
+        <div class="r-note">Thungela, Whitehaven. Sehr zyklisch, Sonderdividenden möglich.</div>
+      </div>
+      <div class="rendite-card">
+        <div class="r-name">🏠 REITs</div>
+        <div class="r-val">4–7 % p.a.</div>
+        <div class="r-note">Realty Income, W.P. Carey. Oft monatlich, immobilienbasiert.</div>
+      </div>
+    </div>
+
+    <p>
+      <strong>Wichtig:</strong> Hohe Rendite bedeutet nicht automatisch hohes Risiko –
+      aber es bedeutet immer <em>mehr Analysebedarf</em>.
+      Ich prüfe jede Position auf Free-Cashflow-Coverage und Dividendennachhaltigkeit.
+      Mehr dazu im <a href="/hard-asset-guide/" style="color:var(--gold)">Hard Asset Guide</a>.
+    </p>
+  </section>
+
+  <!-- AFFILIATE INVESTINGPRO -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Dividendennachhaltigkeit prüfen</h3>
+      <p>Bevor ich in Hochrendite-Titel investiere, prüfe ich mit InvestingPro: FCF-Coverage, Payout Ratio, Dividenden-Geschichte. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
+
+  <!-- HÄUFIGE FEHLER -->
+  <section class="section">
+    <h2>Häufige <span class="accent">Fehler beim Dividenden berechnen</span></h2>
+    <p>Diese Fehler sehe ich regelmäßig bei Dividendeninvestoren – besonders bei Einsteigern:</p>
+
+    <h3>1. Steuern ignorieren</h3>
+    <p>
+      Viele rechnen mit der Brutto-Dividendenrendite und vergessen die Abgeltungssteuer (26,375 %).
+      Ein Portfolio mit 7 % Brutto-Rendite liefert <strong>netto nur 5,15 %</strong>.
+      Bei 100.000 € macht das einen Unterschied von fast 2.000 € pro Jahr.
+    </p>
+
+    <h3>2. Sonderdividenden als dauerhaft annehmen</h3>
+    <p>
+      Gerade in Rohstoff- und Shipping-Sektoren zahlen Unternehmen in Boomjahren
+      massive Sonderdividenden. Wer diese in die Kalkulation einbezieht,
+      überschätzt den nachhaltigen Cashflow erheblich.
+    </p>
+
+    <h3>3. Quellensteuer vergessen</h3>
+    <p>
+      Bei US-Aktien fällt eine Quellensteuer von 15 % an, die auf die deutsche
+      Abgeltungssteuer angerechnet wird – du zahlst insgesamt 26,375 %,
+      aber das Depot zieht beides separat ab. Bei Aktien aus anderen Ländern
+      kann es komplizierter werden.
+    </p>
+
+    <h3>4. Zu hohe Renditen als sicher betrachten</h3>
+    <p>
+      Eine Dividendenrendite von 20 % klingt verlockend – aber sie kann ein
+      Warnsignal sein. Oft signalisiert sie einen gefallenen Kurs
+      oder eine erwartete Dividendenkürzung. Prüfe immer FCF-Coverage und Payout Ratio.
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Dividendenrechner</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie berechnet man eine Dividende?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Die Formel: <strong>Jahresdividende = Investitionssumme × Dividendenrendite ÷ 100</strong>.
+        Beispiel: 10.000 € × 7 % = 700 € Brutto-Jahresdividende.
+        Netto nach 26,375 % Abgeltungssteuer: 700 × (1 − 0,26375) = 515,38 €.
+        Unser Rechner oben übernimmt diese Berechnung automatisch –
+        brutto und netto gleichzeitig.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie viel Kapital brauche ich für 1.000 € Dividende pro Monat?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Für 1.000 € netto pro Monat (12.000 € netto p.a.) brauchst du:
+        bei 5 % Rendite ca. <strong>321.000 €</strong>,
+        bei 7 % Rendite ca. <strong>232.000 €</strong>,
+        bei 10 % Rendite ca. <strong>161.000 €</strong>.
+        Wie du dieses Kapital durch Sparrate und Reinvest aufbaust,
+        zeigt der <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle Freiheit Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Ist eine Dividendenrendite von 7–10 % realistisch?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Ja – in spezialisierten Sektoren absolut. BDCs wie ARCC oder MAIN zahlen
+        historisch 8–10 %, Midstream-MLPs wie Enbridge 5–7 %, Shipping-Titel
+        in Hochphasen auch mehr. Die entscheidende Frage ist nicht die Höhe der Rendite,
+        sondern ihre Nachhaltigkeit: Deckt der Free Cashflow die Dividende?
+        Mehr dazu im <a href="/hard-asset-guide/">Hard Asset Guide</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie oft werden Dividenden ausgezahlt?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Das hängt von der Aktie und dem Land ab. US-Aktien zahlen meist
+        <strong>quartalsweise</strong> (4× pro Jahr), viele deutsche und europäische Aktien
+        <strong>jährlich</strong> oder halbjährlich. REITs und BDCs zahlen oft
+        <strong>monatlich</strong>. Ein gut strukturiertes Dividendenportfolio kann
+        so aufgebaut werden, dass jeden Monat Cashflow eingeht.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist der Unterschied zwischen Dividendenrendite und Yield on Cost?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Die <strong>Dividendenrendite</strong> bezieht sich auf den aktuellen Börsenkurs.
+        Der <strong>Yield on Cost (YOC)</strong> bezieht sich auf deinen persönlichen Kaufkurs.
+        Wer eine Aktie 2015 für 20 € gekauft hat und heute 2 € Dividende erhält,
+        hat einen YOC von 10 % – auch wenn die aktuelle Rendite am Kurs von 40 €
+        nur 5 % beträgt. Berechne deinen YOC mit dem
+        <a href="/tools/yield-on-cost-rechner.html">YOC-Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie hoch ist die Steuer auf Dividenden in Deutschland?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Die Abgeltungssteuer beträgt 25 % + 5,5 % Solidaritätszuschlag =
+        <strong>insgesamt 26,375 %</strong>. Kirchensteuer kommt ggf. dazu (~27,8–28 %).
+        Bei ausländischen Dividenden kann zusätzlich Quellensteuer anfallen,
+        die teilweise auf die deutsche Steuer angerechnet wird
+        (z.B. USA: 15 % Quellensteuer wird voll angerechnet).
+        Unser Rechner rechnet automatisch mit 26,375 % – anpassbar.
+      </div>
+    </div>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <p>Alle kostenlos – für deine vollständige Cashflow-Planung.</p>
+    <div class="tool-grid">
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 Reinvest-Rechner (DRIP)</a>
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball PRO</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+  <!-- WEITERFÜHREND -->
+  <section class="section">
+    <h2>Weiterführende <span class="accent">Inhalte</span></h2>
+    <div class="tool-grid">
+      <a href="/hard-asset-guide/" class="tool-link">🧱 Hard Asset Guide</a>
+      <a href="/depot-strategie/" class="tool-link">📊 Meine Depot-Strategie</a>
+      <a href="/kategorien/high-yield-aktien.html" class="tool-link">💰 High-Yield Aktien</a>
+      <a href="/midstream/" class="tool-link">🛢️ Pipelines & Midstream</a>
+      <a href="/mining-aktien/" class="tool-link">⛏️ Mining-Aktien</a>
+      <a href="/glossar/" class="tool-link">📗 Glossar</a>
+    </div>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Alle Berechnungen dienen der finanziellen Orientierung und ersetzen keine professionelle Finanzberatung.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-function calculate(){
-  const inv=parseFloat(investment.value);
-  const y=parseFloat(yield.value);
-  if(!inv||!y)return;
+function calculate() {
+  const inv     = parseFloat(document.getElementById("investment").value);
+  const yld     = parseFloat(document.getElementById("divYield").value);
+  const tax     = parseFloat(document.getElementById("taxRate").value) / 100;
+  const shares  = parseFloat(document.getElementById("shares").value);
+  const showNet = document.getElementById("showNetto").checked;
 
-  const yearly=inv*(y/100);
-  const monthly=yearly/12;
-  const quarterly=yearly/4;
+  if (!inv || !yld) { alert("Bitte Investitionssumme und Dividendenrendite eingeben."); return; }
 
-  output.style.display="block";
-  output.innerHTML=`
-    <strong>📈 Jahresdividende:</strong> ${yearly.toFixed(2)} €<br>
-    <strong>📆 Monatlicher Cashflow:</strong> ${monthly.toFixed(2)} €<br>
-    <strong>🗓️ Quartalsdividende:</strong> ${quarterly.toFixed(2)} €<br><br>
-    <small>Berechnung ohne Steuern & Kursveränderungen.</small>
+  const yearly    = inv * (yld / 100);
+  const monthly   = yearly / 12;
+  const quarterly = yearly / 4;
+
+  const netYearly    = yearly    * (1 - tax);
+  const netMonthly   = monthly   * (1 - tax);
+  const netQuarterly = quarterly * (1 - tax);
+
+  const fmt = (n) => n.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
+
+  let shareHtml = "";
+  if (shares && shares > 0) {
+    const divPerShare = yearly / shares;
+    const netDivPerShare = divPerShare * (1 - tax);
+    shareHtml = `
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-muted);">
+        📌 Pro Aktie: <strong style="color:var(--text)">${fmt(divPerShare)}</strong> brutto
+        ${showNet ? `· <strong style="color:var(--green)">${fmt(netDivPerShare)}</strong> netto` : ''}
+        (bei ${shares.toLocaleString("de-DE")} Aktien)
+      </p>`;
+  }
+
+  const box = document.getElementById("results");
+  box.innerHTML = `
+    <div class="result-main">
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-val">${fmt(yearly)}</span>
+          <div class="result-lbl">Brutto / Jahr</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val">${fmt(monthly)}</span>
+          <div class="result-lbl">Brutto / Monat</div>
+        </div>
+        <div class="result-item">
+          <span class="result-val">${fmt(quarterly)}</span>
+          <div class="result-lbl">Brutto / Quartal</div>
+        </div>
+      </div>
+
+      ${showNet ? `
+      <div class="result-netto">
+        <div class="result-netto-item">
+          <span class="result-netto-val">${fmt(netYearly)}</span>
+          <div class="result-netto-lbl">Netto / Jahr</div>
+        </div>
+        <div class="result-netto-item">
+          <span class="result-netto-val">${fmt(netMonthly)}</span>
+          <div class="result-netto-lbl">Netto / Monat</div>
+        </div>
+        <div class="result-netto-item">
+          <span class="result-netto-val">${fmt(netQuarterly)}</span>
+          <div class="result-netto-lbl">Netto / Quartal</div>
+        </div>
+        <div class="result-netto-item">
+          <span class="result-netto-val">${fmt(yearly - netYearly)}</span>
+          <div class="result-netto-lbl">Steuer / Jahr</div>
+        </div>
+      </div>` : ''}
+
+      ${shareHtml}
+
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:0.75rem;">
+        Berechnung: ${inv.toLocaleString("de-DE")} € × ${yld} % · Steuer: ${(tax*100).toFixed(3)} % · Keine Anlageberatung.
+      </p>
+    </div>
   `;
+  box.classList.add("show");
+  box.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
-</script>
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Wie berechnet man eine Dividende?","acceptedAnswer":{"@type":"Answer","text":"Jahresdividende = Investitionssumme × Dividendenrendite."}},
-{"@type":"Question","name":"Ist eine Dividendenrendite von 8 % realistisch?","acceptedAnswer":{"@type":"Answer","text":"In High-Yield-Sektoren ja, bei defensiven Blue Chips eher selten."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Steuern?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Berechnung erfolgt vor Steuern und dient der Cashflow-Orientierung."}},
-{"@type":"Question","name":"Ist der Rechner für Einsteiger geeignet?","acceptedAnswer":{"@type":"Answer","text":"Ja. Der Dividendenrechner ist bewusst einfach gehalten und ideal für den Einstieg."}},
-{"@type":"Question","name":"Kann ich damit finanzielle Freiheit planen?","acceptedAnswer":{"@type":"Answer","text":"Als erste Orientierung ja. Für Ziel-Cashflow empfiehlt sich ein Finanzielle-Freiheit-Rechner."}}
-]
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
 }
-</script>
 
-<!-- Software Application Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"SoftwareApplication",
-"name":"Dividendenrechner",
-"applicationCategory":"FinanceApplication",
-"operatingSystem":"All",
-"description":"Online Dividendenrechner zur Berechnung von jährlichem, monatlichem und quartalsweisem Dividenden-Cashflow.",
-"provider":{
-  "@type":"Organization",
-  "name":"MB Capital Strategies",
-  "url":"https://mbcapitalstrategies.com"
-}
-}
+document.addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
 </script>
 
 </body>
