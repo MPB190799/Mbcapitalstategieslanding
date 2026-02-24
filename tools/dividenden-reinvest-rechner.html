@@ -1,279 +1,697 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Dividenden-Reinvest-Rechner (DRIP) – Zinseszinseffekt & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Dividenden-Reinvest-Rechner (DRIP): Berechne den Zinseszinseffekt durch konsequente Wiederanlage von Dividenden. Mit Beispiel & Erklärung für Cashflow-Investoren.">
+  <title>Dividenden-Reinvest-Rechner (DRIP) – Zinseszinseffekt kostenlos berechnen | MB Capital Strategies</title>
+  <meta name="description" content="DRIP Rechner kostenlos: Berechne den Zinseszinseffekt durch Dividenden-Reinvest – mit Jahrestabelle, Steuer, Vergleich mit/ohne Reinvest & realistischen Beispielen für Dividendeninvestoren." />
+  <meta name="keywords" content="drip rechner, dividenden reinvest rechner, dividenden zinseszins rechner, drip dividenden, dividend reinvestment plan rechner, dividenden wiederanlage berechnen" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/dividenden-reinvest-rechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Dividenden-Reinvest-Rechner (DRIP) – Zinseszinseffekt berechnen" />
+  <meta property="og:description" content="Berechne kostenlos, wie dein Kapital durch konsequenten Dividenden-Reinvest wächst – mit Jahrestabelle & Steuer." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/dividenden-reinvest-rechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --gold:#d4af37;
-  --gold-soft:#e0bd55;
-  --bg:#0f1115;
-  --bg-soft:#151821;
-  --bg-card:#1a1f2b;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Montserrat',sans-serif;
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividenden-Reinvest-Rechner (DRIP)",
+    "url": "https://mbcapitalstrategies.com/tools/dividenden-reinvest-rechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser DRIP-Rechner: Berechne den Zinseszinseffekt durch konsequente Dividenden-Wiederanlage – mit Jahrestabelle und realistischer Steuerbetrachtung.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{color:var(--gold);}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist ein DRIP (Dividend Reinvestment Plan)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ein DRIP (Dividend Reinvestment Plan) ist ein Mechanismus, bei dem erhaltene Dividenden automatisch oder manuell wieder in neue Aktienanteile investiert werden – anstatt sie als Einkommen zu entnehmen. Der Effekt: Mehr Anteile = mehr Dividenden = noch mehr Anteile. Ein sich selbst verstärkender Zinseszinskreislauf." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie stark wirkt der DRIP-Zinseszinseffekt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bei 8 % Dividendenrendite und vollständigem Reinvest verdoppelt sich dein Kapital in ca. 9 Jahren (Regel 72: 72 ÷ 8 = 9). Nach 20 Jahren liegt dein Kapital bei ca. 4,66× des Startkapitals – nur durch Reinvest, ohne eine einzige zusätzliche Einzahlung." }
+      },
+      {
+        "@type": "Question",
+        "name": "Berücksichtigt der DRIP-Rechner Steuern?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja – unser Rechner berechnet wahlweise brutto (ohne Steuer) oder netto (nach Abgeltungssteuer 26,375 %). Der Unterschied ist erheblich: Bei 8 % Rendite und 20 Jahren Reinvest liegt das Nettoendkapital ca. 30 % unter dem Bruttoendkapital." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen DRIP und Dividend Snowball?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der DRIP-Rechner simuliert ausschließlich den Reinvest-Effekt ohne zusätzliche Einzahlungen (Sparrate). Der Dividend Snowball kombiniert Reinvest + monatliche Sparrate – und ist damit die vollständigere Simulation für Investoren in der Aufbauphase." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann zahlt sich DRIP am meisten aus?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DRIP zahlt sich exponentiell aus – je länger der Zeithorizont, desto stärker. In den ersten 5 Jahren ist der Effekt moderat. Ab Jahr 10 beginnt er deutlich zu wirken. Ab Jahr 15–20 überholen die reinvestierten Dividenden oft das ursprüngliche Startkapital als Wachstumstreiber." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich DRIP bei meinem deutschen Broker nutzen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Viele deutsche Broker bieten einen automatischen Reinvest-Plan an – z.B. Trade Republic, Scalable Capital, Comdirect. Alternativ kannst du Dividenden manuell wieder anlegen. Der steuerliche Effekt ist identisch: Auf jede Ausschüttung fällt Abgeltungssteuer an, der Nettobetrag wird reinvestiert." }
+      }
+    ]
+  }
+  </script>
 
-/* CONTENT */
-.container{
-  max-width:700px;
-  margin:40px auto;
-  padding:0 20px;
-}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-h1{
-  text-align:center;
-  color:var(--gold);
-  margin-bottom:18px;
-}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-.card{
-  background:var(--bg-soft);
-  border-radius:14px;
-  border:1px solid rgba(212,175,55,.3);
-  padding:24px;
-}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --border: rgba(255,255,255,0.07);
+    }
 
-label{
-  display:block;
-  margin:12px 0 6px;
-  font-weight:600;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
 
-input{
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #444;
-  background:#0f1115;
-  color:#fff;
-}
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
 
-button{
-  width:100%;
-  padding:14px;
-  margin-top:18px;
-  border:none;
-  border-radius:999px;
-  background:var(--gold);
-  color:#000;
-  font-size:1.05em;
-  font-weight:700;
-  cursor:pointer;
-}
-button:hover{background:var(--gold-soft);}
+    .hero { background: linear-gradient(160deg, #0a100c 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.result{
-  margin-top:20px;
-  padding:18px;
-  background:var(--bg-card);
-  border-left:4px solid var(--gold);
-  border-radius:10px;
-  line-height:1.7;
-}
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
 
-small{color:var(--muted);}
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
 
-.section{
-  margin-top:45px;
-  padding:28px;
-  background:var(--bg-soft);
-  border:1px solid rgba(212,175,55,.25);
-  border-radius:14px;
-}
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 540px) { .input-grid { grid-template-columns: 1fr; } }
 
-/* FOOTER */
-.site-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--gold);}
-</style>
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+
+    input[type="number"] { background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%; -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .tax-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.5rem 0 1.25rem; font-size: 0.88rem; color: var(--text-muted); }
+    input[type="checkbox"] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+    .btn-calc { width: 100%; padding: 0.9rem; background: var(--gold); color: #0E0F11; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    .result-area { display: none; margin-top: 1.75rem; }
+    .result-area.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .kpi { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.15); border-radius: 12px; padding: 1rem 0.75rem; text-align: center; }
+    .kpi-val { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); display: block; line-height: 1.1; }
+    .kpi-val.green { color: var(--green); }
+    .kpi-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Verdoppelungs-Highlight */
+    .double-box { background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.25); border-radius: 10px; padding: 0.9rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.88rem; color: var(--text-muted); }
+    .double-box strong { color: var(--gold); }
+
+    /* Vergleichs-Streifen */
+    .compare-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .strip-card { background: var(--dark-3); border-radius: 10px; padding: 1rem; text-align: center; }
+    .strip-card .s-lbl { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .strip-card .s-val { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--text-muted); }
+    .strip-card.winner .s-val { color: var(--green); }
+    .strip-card .s-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+    /* Tabelle */
+    .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .table-header span { font-size: 0.85rem; color: var(--text-muted); }
+    .table-toggle { background: var(--dark-3); border: 1px solid var(--border); color: var(--gold); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); max-height: 380px; overflow-y: auto; }
+    .drip-table { width: 100%; border-collapse: collapse; min-width: 500px; font-size: 0.84rem; }
+    .drip-table thead { position: sticky; top: 0; background: var(--dark-3); z-index: 2; }
+    .drip-table th { color: var(--gold); padding: 0.6rem 0.9rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .drip-table th:first-child { text-align: left; }
+    .drip-table td { padding: 0.5rem 0.9rem; border-top: 1px solid var(--border); text-align: right; color: var(--text-muted); }
+    .drip-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .drip-table tr.milestone td { background: var(--gold-dim); color: var(--gold); }
+    .drip-table tr.milestone td:first-child { color: var(--gold); }
+    .drip-table tr.doubled td { background: rgba(76,175,122,0.1); color: var(--green); }
+
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .formula-box { background: var(--dark-3); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0; font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--gold); text-align: center; }
+    .formula-box small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    .compare-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.7rem 1rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); text-align: right; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .compare-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    /* Regel-72-Box */
+    .rule72-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .rule72-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-align: center; }
+    .rule72-card .r-rate { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); }
+    .rule72-card .r-years { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .rule72-card .r-note { font-size: 0.72rem; color: var(--text-dim); margin-top: 0.15rem; }
+
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-  <nav class="topnav">
-    <a href="/" class="nav-item">🏠 Startseite</a>
-    <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-    <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-    <a href="/blog/" class="nav-item">📰 Blog</a>
-  </nav>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Kostenloser DRIP-Rechner</div>
+  <h1>Dividenden-Reinvest-Rechner<br /><span>DRIP – Zinseszins durch Dividenden</span></h1>
+  <p class="hero-sub">
+    Berechne, wie dein Kapital allein durch Dividenden-Wiederanlage wächst –
+    mit Jahrestabelle, Steuerbetrachtung & Vergleich mit und ohne Reinvest.
+    Kein Cent neue Einzahlung nötig.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Steuer</span><span class="stat-lbl">Einkalkuliert</span></div>
+    <div class="stat"><span class="stat-val">Jahres-</span><span class="stat-lbl">Tabelle inkl.</span></div>
+  </div>
 </header>
 
-<div class="container">
+<main class="container">
 
-<h1>Dividenden-Reinvest-Rechner (DRIP)</h1>
+  <div class="calc-card">
+    <div class="calc-title">🔁 Dividenden-Reinvest-Rechner (DRIP)</div>
 
-<!-- SEO INTRO -->
-<section class="section">
-<h2>Dividenden-Reinvest-Rechner – Zinseszinseffekt realistisch berechnen</h2>
-<p>
-Der Dividenden-Reinvest-Rechner zeigt dir, wie stark dein Kapital wächst,
-wenn du <strong>alle Dividenden konsequent wieder anlegst</strong>.
-Im Fokus steht nicht der Aktienkurs,
-sondern der langfristige Aufbau von <strong>Cashflow</strong>.
-</p>
-<p>
-Gerade bei Dividendenstrategien entsteht Vermögen nicht durch hektisches Umschichten,
-sondern durch Geduld, Zeit und Reinvest.
-Der sogenannte <strong>DRIP-Effekt</strong> (Dividend Reinvestment Plan)
-wirkt exponentiell – je länger der Zeitraum, desto stärker der Hebel.
-</p>
-</section>
+    <div class="input-grid">
+      <div class="field">
+        <label for="start">Startkapital (€)</label>
+        <input type="number" id="start" placeholder="z. B. 10000" min="0" step="1000" />
+        <span class="field-hint">Einmalig investiertes Kapital</span>
+      </div>
+      <div class="field">
+        <label for="divYield">Dividendenrendite (% p.a.)</label>
+        <input type="number" id="divYield" placeholder="z. B. 8" min="0" max="30" step="0.5" />
+        <span class="field-hint">Ø-Rendite des Portfolios</span>
+      </div>
+      <div class="field">
+        <label for="years">Anlagehorizont (Jahre)</label>
+        <input type="number" id="years" placeholder="z. B. 20" min="1" max="40" step="1" />
+        <span class="field-hint">Simulationszeitraum (max. 40 J.)</span>
+      </div>
+      <div class="field">
+        <label for="taxRate">Steuer auf Dividenden (%)</label>
+        <input type="number" id="taxRate" value="26.375" min="0" max="50" step="0.1" />
+        <span class="field-hint">Abgeltungssteuer inkl. Soli = 26,375 %</span>
+      </div>
+    </div>
 
-<div class="card">
-<p><small>
-Simuliere den echten <strong>Zinseszinseffekt</strong> ohne Sparrate –
-nur durch Wiederanlage deiner Dividenden.
-</small></p>
+    <div class="tax-row">
+      <input type="checkbox" id="useTax" checked />
+      <label for="useTax">Steuer berücksichtigen (Netto-Reinvest)</label>
+    </div>
 
-<label>Startkapital (€)</label>
-<input type="number" id="start" placeholder="z. B. 10.000">
+    <button class="btn-calc" onclick="calcDRIP()">DRIP simulieren →</button>
 
-<label>Dividendenrendite (% p.a.)</label>
-<input type="number" id="yield" placeholder="z. B. 8">
+    <div class="result-area" id="resultArea">
+      <div class="kpi-grid" id="kpiGrid"></div>
+      <div class="double-box" id="doubleBox"></div>
+      <div class="compare-strip" id="compareStrip"></div>
+      <div class="table-header">
+        <span>Jahrestabelle</span>
+        <button class="table-toggle" onclick="toggleTable()">Ein-/ausblenden</button>
+      </div>
+      <div class="table-wrap" id="tableWrap">
+        <table class="drip-table">
+          <thead>
+            <tr>
+              <th style="text-align:left">Jahr</th>
+              <th>Kapital</th>
+              <th>Dividende (brutto)</th>
+              <th>Dividende (netto)</th>
+              <th>Steuer gezahlt</th>
+              <th>Kumuliert reinvestiert</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text-dim);">Keine Anlageberatung. Vereinfachte Modellrechnung mit konstanter Rendite.</p>
+    </div>
+  </div>
 
-<label>Anlagehorizont (Jahre)</label>
-<input type="number" id="years" placeholder="z. B. 20">
+  <!-- AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Dividenden-Reinvest live verfolgen</h3>
+      <p>Ich tracke meinen DRIP-Effekt mit Parqet – Dividendenkalender, YOC-Entwicklung, Cashflow auf einen Blick. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet – 15 % Rabatt →</a>
+  </div>
 
-<button onclick="calcDRIP()">Simulation starten</button>
+  <!-- WAS IST DRIP -->
+  <section class="section">
+    <h2>Was ist <span class="accent">DRIP – Dividend Reinvestment Plan</span>?</h2>
+    <p>
+      Ein DRIP (Dividend Reinvestment Plan) ist eine der einfachsten und mächtigsten
+      Strategien im Dividendeninvesting: Statt Dividenden als Einkommen zu entnehmen,
+      werden sie sofort wieder in neue Anteile investiert.
+    </p>
+    <p>
+      Das Ergebnis ist ein <strong>Zinseszinseffekt auf Dividenden</strong>:
+      Mehr Anteile zahlen mehr Dividenden, die wieder mehr Anteile kaufen – ein
+      selbstverstärkender Kreislauf, der über Jahrzehnte dramatisch wirkt.
+    </p>
 
-<div id="output" class="result" style="display:none;"></div>
+    <div class="formula-box">
+      Kapital(n) = Startkapital × (1 + Nettodividendenrendite)ⁿ
+      <small>Beispiel: 10.000 € × (1 + 0,0589)²⁰ = 31.200 € netto (bei 8 % Rendite, 26,375 % Steuer)</small>
+    </div>
 
-<p style="margin-top:14px;font-size:.85rem;color:#9aa6c0;">
-Kombinieren mit:
-<a href="/tools/dividenden-snowball-rechner.html" style="color:#d4af37;">Dividend Snowball</a> ·
-<a href="/tools/finanzielle-freiheit-rechner.html" style="color:#d4af37;">Finanzielle Freiheit</a>
-</p>
-</div>
+    <div class="example-box">
+      <span class="tag">📘 Konkretes Beispiel – DRIP in Zahlen</span>
+      <p>
+        Du investierst einmalig <strong>10.000 €</strong> in ein Portfolio mit
+        <strong>8 % Dividendenrendite</strong> und reinvestierst alle Dividenden
+        – brutto ohne Steuer: nach 20 Jahren <strong>46.600 €</strong>.
+        Netto nach Abgeltungssteuer (26,375 %): <strong>31.200 €</strong>.
+        Immer noch mehr als das 3-fache – ohne eine einzige zusätzliche Einzahlung.
+      </p>
+    </div>
+  </section>
 
-<section class="section">
-<h2>So funktioniert der DRIP-Rechner</h2>
-<p>
-Der Rechner geht von einer konstanten Dividendenrendite aus.
-Jährlich erhaltene Dividenden werden vollständig reinvestiert
-und erhöhen damit die Kapitalbasis für das nächste Jahr.
-</p>
-<ul>
-<li>Dividenden werden jährlich ausgeschüttet</li>
-<li>100 % Reinvest ohne Sparrate</li>
-<li>Exponentieller Zinseszinseffekt</li>
-<li>Fokus auf langfristigen Cashflow</li>
-</ul>
-</section>
+  <!-- REGEL 72 -->
+  <section class="section">
+    <h2>Die <span class="accent">Regel 72</span> – Wann verdoppelt sich dein Kapital?</h2>
+    <p>
+      Die Regel 72 ist eine einfache Faustformel: Teile 72 durch die jährliche Rendite –
+      das ergibt die Jahre bis zur Kapitalverdopplung durch Reinvest.
+      Für Dividendeninvestoren ist das ein nützlicher Schnell-Check:
+    </p>
 
-<section class="section">
-<h2>Beispiel: Dividenden-Reinvest über 20 Jahre</h2>
-<p>
-Du investierst <strong>10.000 €</strong> mit einer Dividendenrendite von <strong>8 %</strong>.
-Ohne zusätzliche Einzahlungen reinvestierst du jede Ausschüttung.
-</p>
-<p>
-Nach 20 Jahren liegt dein Depotwert deutlich über dem Startkapital.
-Ein Großteil des Wachstums stammt nicht aus neuen Einzahlungen,
-sondern aus <strong>reinvestierten Dividenden</strong>.
-</p>
-</section>
+    <div class="rule72-grid">
+      <div class="rule72-card">
+        <div class="r-rate">4 % Rendite</div>
+        <div class="r-years">≈ 18 Jahre</div>
+        <div class="r-note">Niedrig-Rendite-Depot</div>
+      </div>
+      <div class="rule72-card">
+        <div class="r-rate">5 % Rendite</div>
+        <div class="r-years">≈ 14 Jahre</div>
+        <div class="r-note">Midstream / REITs</div>
+      </div>
+      <div class="rule72-card">
+        <div class="r-rate">7 % Rendite</div>
+        <div class="r-years">≈ 10 Jahre</div>
+        <div class="r-note">Diversifiziertes HY-Depot</div>
+      </div>
+      <div class="rule72-card">
+        <div class="r-rate">8 % Rendite</div>
+        <div class="r-years">≈ 9 Jahre</div>
+        <div class="r-note">BDCs / MLPs</div>
+      </div>
+      <div class="rule72-card">
+        <div class="r-rate">10 % Rendite</div>
+        <div class="r-years">≈ 7 Jahre</div>
+        <div class="r-note">High-Yield (höheres Risiko)</div>
+      </div>
+      <div class="rule72-card">
+        <div class="r-rate">12 % Rendite</div>
+        <div class="r-years">≈ 6 Jahre</div>
+        <div class="r-note">Zyklische Hochphasen</div>
+      </div>
+    </div>
 
-<section class="section">
-<h2>Abgrenzung zu anderen Rechnern</h2>
-<ul>
-<li><strong>DRIP-Rechner:</strong> Reinvest, keine Sparrate</li>
-<li><strong>Dividend Snowball:</strong> Reinvest + Sparrate</li>
-<li><strong>Wachstumsrechner:</strong> Wachstum ohne Reinvest</li>
-</ul>
-</section>
+    <p>
+      <strong>Wichtig:</strong> Die Regel 72 gilt für den Brutto-Effekt vor Steuer.
+      Nach Abgeltungssteuer (26,375 %) sinkt die effektive Nettorendite –
+      bei 8 % Brutto auf ca. 5,89 % netto, also Verdopplung in ~12 statt 9 Jahren.
+      Unser Rechner berechnet das exakt.
+    </p>
+  </section>
 
-</div>
+  <!-- MIT VS OHNE REINVEST -->
+  <section class="section">
+    <h2>Mit Reinvest vs. <span class="accent">ohne Reinvest</span> – der Unterschied nach 20 Jahren</h2>
+    <p>
+      Viele Dividendeninvestoren unterschätzen, wie groß der Unterschied zwischen
+      Reinvest und Entnahme über lange Zeiträume wird:
+    </p>
 
-<footer class="site-footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Szenario</th>
+          <th>Kapital nach 10 J.</th>
+          <th>Kapital nach 20 J.</th>
+          <th>Kumulierte Dividenden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ohne Reinvest (Entnahme)</td>
+          <td>10.000 € (unverändert)</td>
+          <td>10.000 € (unverändert)</td>
+          <td>~14.800 € (netto, 20 J.)</td>
+        </tr>
+        <tr>
+          <td>Mit Reinvest (brutto)</td>
+          <td>~21.600 €</td>
+          <td>~46.600 €</td>
+          <td>im Depot thesauriert</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Mit Reinvest (netto, 26,375 %)</td>
+          <td>~17.800 €</td>
+          <td>~31.200 €</td>
+          <td>im Depot thesauriert</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Basis: 10.000 € Startkapital, 8 % Dividendenrendite. Keine Sparrate.</p>
+
+    <p>
+      <strong>Fazit:</strong> Wer 20 Jahre lang Dividenden entnimmt, hat am Ende
+      10.000 € Kapital + kumulierte Ausschüttungen.
+      Wer reinvestiert, hat fast <strong>das 3-fache Kapital</strong> im Depot –
+      das dann seinerseits deutlich höhere Dividenden produziert.
+    </p>
+  </section>
+
+  <!-- DRIP PRAKTISCH -->
+  <section class="section">
+    <h2>DRIP in der <span class="accent">Praxis</span> – so setzt du es um</h2>
+
+    <h3>Option 1: Automatischer DRIP beim Broker</h3>
+    <p>
+      Viele Broker bieten einen automatischen Reinvest-Plan an.
+      Trade Republic, Scalable Capital und Comdirect ermöglichen es,
+      Dividenden automatisch in neue Anteile umzuwandeln.
+      Vorteil: Disziplin ohne Aufwand. Nachteil: Oft nur in ganze Anteile,
+      Reste bleiben als Cash.
+    </p>
+
+    <h3>Option 2: Manueller Reinvest</h3>
+    <p>
+      Du sammelst Dividenden und kaufst manuell nach – entweder in die
+      gleiche Position oder in untergewichtete Positionen des Portfolios.
+      Das gibt mehr Kontrolle und ist besonders sinnvoll,
+      wenn Positionen günstig nachgekauft werden können.
+    </p>
+
+    <h3>Option 3: Thesaurierende ETFs als Ergänzung</h3>
+    <p>
+      Wer nicht jeden Monat manuelle Transaktionen durchführen möchte,
+      kann thesaurierende ETFs als Reinvest-Vehikel nutzen:
+      Dividenden fließen automatisch in den ETF zurück.
+      Steuerlich werden thesaurierende ETFs in Deutschland
+      durch die Vorabpauschale behandelt – kein sofortiger Steuerabzug
+      auf jede Ausschüttung.
+    </p>
+
+    <div class="example-box">
+      <span class="tag">💡 Marcos Ansatz</span>
+      <p>
+        Ich nutze manuellen Reinvest – nicht immer in die gleiche Aktie,
+        sondern antizyklisch in die Position mit dem besten
+        Chance-Risiko-Verhältnis im jeweiligen Zyklus.
+        In Shipping-Tiefs werden Shipping-Dividenden in Shipping reinvestiert,
+        in Mining-Tiefs entsprechend. Das maximiert den YOC-Effekt langfristig.
+      </p>
+    </div>
+  </section>
+
+  <!-- AFFILIATE 2 -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Dividenden-Aktien für den DRIP analysieren</h3>
+      <p>Mit InvestingPro prüfe ich FCF-Coverage, Payout Ratio & Dividenden-Geschichte jeder Position. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Dividenden-Reinvest-Rechner (DRIP)</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist ein DRIP (Dividend Reinvestment Plan)?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ein DRIP ist die systematische Wiederanlage erhaltener Dividenden in neue Aktienanteile. Statt die Ausschüttung zu entnehmen, kaufst du damit neue Anteile derselben (oder einer anderen) Aktie. Das Ergebnis: ein Zinseszinseffekt auf Dividenden, der über Jahrzehnte dramatisch wirkt. Bei 8 % Rendite und 20 Jahren Reinvest wächst dein Kapital auf das ~4,6-fache (brutto) bzw. ~3,1-fache (netto nach Steuer).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berücksichtigt der Rechner Steuern korrekt?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ja – im Gegensatz zu vielen anderen DRIP-Rechnern berechnet dieser den Netto-Reinvest nach Abgeltungssteuer. Das ist realistischer: Du zahlst auf jede Ausschüttung 26,375 % Steuer (25 % + 5,5 % Soli), der Nettobetrag wird reinvestiert. Der Brutto-Vergleich ist im Ergebnis immer mitangegeben. Du kannst den Steuersatz anpassen – z.B. wenn du einen Freistellungsauftrag nutzt (bis 1.000 € p.a. steuerfrei) oder Kirchensteuer anfällt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist der Unterschied zwischen DRIP-Rechner und Dividend Snowball?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Der DRIP-Rechner simuliert ausschließlich den Reinvest-Effekt ohne Sparrate – ideal für die Frage: "Was passiert, wenn ich einmalig investiere und nie wieder einzahle?" Der <a href="/tools/dividenden-snowball-rechner.html">Dividend Snowball Rechner</a> kombiniert Reinvest + monatliche Sparrate + Kurswachstum und ist damit die vollständigere Simulation für Investoren in der aktiven Aufbauphase.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Wann zahlt sich DRIP am meisten aus?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        DRIP zahlt sich exponentiell aus – je länger der Zeithorizont, desto dramatischer der Effekt. In den ersten 5 Jahren ist das Wachstum noch linear-wirkend. Ab Jahr 10 beginnt der Effekt spürbar zu beschleunigen. Ab Jahr 15–20 überholen reinvestierte Dividenden oft das ursprüngliche Startkapital als Wachstumstreiber. Frühzeitig anfangen ist wichtiger als der perfekte Einstiegszeitpunkt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Kann ich DRIP bei deutschen Brokern nutzen?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ja. Trade Republic, Scalable Capital und Comdirect bieten automatische Reinvest-Pläne an. Alternativ kannst du Dividenden manuell reinvestieren – das gibt mehr Kontrolle über den Kaufzeitpunkt und die Zielposition. Steuerlich ist der Effekt identisch: Auf jede Ausschüttung fällt Abgeltungssteuer an, der Nettobetrag fließt zurück ins Depot. Ich persönlich bevorzuge manuellen Reinvest für antizyklisches Nachkaufen.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welche Dividendenrendite eignet sich am besten für DRIP?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Für DRIP gilt: <strong>Nachhaltigkeit vor Höhe</strong>. Eine gekürzte Dividende unterbricht den Zinseszinskreislauf. Ich bevorzuge 5–8 % Rendite mit stabiler FCF-Coverage (Midstream-MLPs, BDCs, solide REITs) als DRIP-Kern. Zyklische High-Yield-Positionen (Shipping, Mining) eignen sich für manuelle Reinvestition in Tiefphasen, aber nicht als automatischer DRIP-Kern.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <div class="tool-grid">
+      <a href="/tools/dividenden-snowball-rechner.html" class="tool-link">❄️ Dividend Snowball</a>
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-rechner.html" class="tool-link">💰 Dividendenrechner</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/dividend-snowball-yoc-pro.html" class="tool-link">❄️ Snowball YOC PRO</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Simulation auf Basis konstanter Parameter – tatsächliche Ergebnisse können abweichen.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-function calcDRIP(){
-  const start = +document.getElementById("start").value;
-  const y = +document.getElementById("yield").value / 100;
-  const n = +document.getElementById("years").value;
-  if(!start || !y || !n) return;
+let tableVisible = true;
 
-  let capital = start;
-  let divSum = 0;
+function calcDRIP() {
+  const start    = parseFloat(document.getElementById("start").value);
+  const yldRaw   = parseFloat(document.getElementById("divYield").value) / 100;
+  const years    = Math.min(parseInt(document.getElementById("years").value), 40);
+  const taxRate  = parseFloat(document.getElementById("taxRate").value) / 100;
+  const useTax   = document.getElementById("useTax").checked;
 
-  for(let i=0;i<n;i++){
-    const div = capital * y;
-    divSum += div;
-    capital += div;
+  if (!start || !yldRaw || !years) { alert("Bitte alle Felder ausfüllen."); return; }
+
+  const netYld = useTax ? yldRaw * (1 - taxRate) : yldRaw;
+
+  let capitalNet   = start;
+  let capitalGross = start;
+  let cumReinvest  = 0;
+  let cumTax       = 0;
+  let doubledYear  = null;
+
+  const currentYear = new Date().getFullYear();
+  const tbody = document.getElementById("tableBody");
+  tbody.innerHTML = "";
+
+  const milestones = new Set([5, 10, 15, 20, 25, 30]);
+
+  for (let i = 1; i <= years; i++) {
+    const grossDiv  = capitalGross * yldRaw;
+    const netDiv    = capitalNet   * netYld;
+    const taxPaid   = grossDiv * taxRate;
+
+    capitalGross += grossDiv;
+    capitalNet   += netDiv;
+    cumReinvest  += netDiv;
+    cumTax       += taxPaid;
+
+    if (!doubledYear && capitalNet >= start * 2) doubledYear = i;
+
+    const isMilestone = milestones.has(i);
+    const isDoubled   = doubledYear === i;
+    const row = document.createElement("tr");
+    if (isDoubled) row.classList.add("doubled");
+    else if (isMilestone) row.classList.add("milestone");
+
+    const fmt = n => n.toLocaleString("de-DE",{style:"currency",currency:"EUR"});
+    row.innerHTML = `
+      <td>${currentYear + i}${isDoubled ? ' 🎯 Verdoppelt' : ''}</td>
+      <td>${fmt(useTax ? capitalNet : capitalGross)}</td>
+      <td>${fmt(grossDiv)}</td>
+      <td>${fmt(netDiv)}</td>
+      <td>${fmt(useTax ? taxPaid : 0)}</td>
+      <td>${fmt(cumReinvest)}</td>
+    `;
+    tbody.appendChild(row);
   }
 
-  const out = document.getElementById("output");
-  out.style.display="block";
-  out.innerHTML=`
-    <strong>Startkapital:</strong> ${start.toFixed(2)} €<br>
-    <strong>Depotwert nach ${n} Jahren:</strong> ${capital.toFixed(2)} €<br>
-    <strong>Reinvestierte Dividenden:</strong> ${divSum.toFixed(2)} €<br><br>
-    <small>Modellannahme: konstante Rendite, jährliche Wiederanlage.</small>
-  `;
-}
-</script>
+  const fmt = n => n.toLocaleString("de-DE",{style:"currency",currency:"EUR"});
+  const finalCapital = useTax ? capitalNet : capitalGross;
+  const growth = ((finalCapital / start - 1) * 100).toFixed(1);
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Was bedeutet DRIP?","acceptedAnswer":{"@type":"Answer","text":"DRIP steht für Dividend Reinvestment Plan. Dividenden werden automatisch wieder angelegt, um den Zinseszinseffekt zu nutzen."}},
-{"@type":"Question","name":"Ist Dividenden-Reinvest sinnvoll?","acceptedAnswer":{"@type":"Answer","text":"Langfristig ja. Der größte Effekt entsteht bei Zeiträumen über 10 bis 20 Jahre."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Steuern?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner zeigt einen vereinfachten Brutto-Effekt zur Illustration des Zinseszinseffekts."}},
-{"@type":"Question","name":"Gibt es eine Sparrate?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der DRIP-Rechner simuliert ausschließlich die Wiederanlage der Dividenden."}},
-{"@type":"Question","name":"Für wen ist der DRIP-Rechner geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für langfristige Dividendeninvestoren mit Buy-and-Hold-Strategie und Cashflow-Fokus."}}
-]
+  document.getElementById("kpiGrid").innerHTML = `
+    <div class="kpi"><span class="kpi-val">${fmt(finalCapital)}</span><div class="kpi-lbl">Kapital nach ${years} J.</div></div>
+    <div class="kpi"><span class="kpi-val green">${fmt(finalCapital - start)}</span><div class="kpi-lbl">Zuwachs durch Reinvest</div></div>
+    <div class="kpi"><span class="kpi-val">+${growth} %</span><div class="kpi-lbl">Gesamtwachstum</div></div>
+    <div class="kpi"><span class="kpi-val">${fmt(cumTax)}</span><div class="kpi-lbl">Steuern kumuliert</div></div>
+  `;
+
+  const r72 = doubledYear
+    ? `Dein Kapital hat sich in <strong>Jahr ${doubledYear} (${currentYear + doubledYear})</strong> verdoppelt. Regel 72: ${(72 / (netYld * 100)).toFixed(1)} Jahre erwartet.`
+    : `Kapitalverdopplung wurde im Simulationszeitraum nicht erreicht.`;
+  document.getElementById("doubleBox").innerHTML = `⏱️ ${r72}`;
+
+  // Vergleich mit / ohne
+  document.getElementById("compareStrip").innerHTML = `
+    <div class="strip-card">
+      <div class="s-lbl">Ohne Reinvest (Entnahme)</div>
+      <div class="s-val">${fmt(start)}</div>
+      <div class="s-note">Kapital unverändert</div>
+    </div>
+    <div class="strip-card winner">
+      <div class="s-lbl">Mit Reinvest (DRIP)</div>
+      <div class="s-val">${fmt(finalCapital)}</div>
+      <div class="s-note">+${growth} % Wachstum</div>
+    </div>
+  `;
+
+  const area = document.getElementById("resultArea");
+  area.classList.add("show");
+  area.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  document.getElementById("tableWrap").style.display = "block";
+  tableVisible = true;
 }
+
+function toggleTable() {
+  const wrap = document.getElementById("tableWrap");
+  tableVisible = !tableVisible;
+  wrap.style.display = tableVisible ? "block" : "none";
+}
+
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
+}
+
+document.addEventListener("keydown", e => { if (e.key === "Enter") calcDRIP(); });
 </script>
 
 </body>
