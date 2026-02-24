@@ -1,322 +1,650 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Dividend Snowball Rechner – Reinvest, Sparrate & Cashflow | MB Capital Strategies</title>
-<meta name="description" content="Dividend Snowball Rechner: Berechne Dividendenwachstum, Reinvest, Sparrate & Cashflow über Jahrzehnte. Mit Beispiel & realistischer Steuerbetrachtung.">
+  <title>Dividend Snowball Rechner – Reinvest, Sparrate & Cashflow simulieren | MB Capital Strategies</title>
+  <meta name="description" content="Dividend Snowball Rechner kostenlos: Simuliere Dividendenwachstum, Reinvest & Sparrate über Jahrzehnte – mit Jahrestabelle, Kumulierungs-Analyse & realistischer Steuerbetrachtung." />
+  <meta name="keywords" content="dividend snowball rechner, dividenden reinvest rechner, dividenden snowball effekt, dividenden zinseszins rechner, drip rechner, dividenden aufbauen rechner" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/dividenden-snowball-rechner.html" />
 
-<!-- AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <meta property="og:title" content="Dividend Snowball Rechner – Cashflow systematisch aufbauen" />
+  <meta property="og:description" content="Simuliere kostenlos, wie Reinvest & Sparrate deinen Dividenden-Cashflow über Jahrzehnte aufbauen – mit Jahrestabelle & Steuer." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/dividenden-snowball-rechner.html" />
+  <meta property="og:type" content="website" />
 
-<style>
-:root{
-  --bg:#0b0b0b;
-  --card:#151515;
-  --accent:#d4af37;
-  --text:#f5f5f5;
-  --muted:#aaaaaa;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Dividend Snowball Rechner",
+    "url": "https://mbcapitalstrategies.com/tools/dividenden-snowball-rechner.html",
+    "applicationCategory": "FinanceApplication",
+    "description": "Kostenloser Dividend-Snowball-Simulator: Berechne Depotentwicklung, Nettodividende und Cashflow über bis zu 40 Jahre – mit Reinvest, Sparrate und Steuer.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{
-  color:#f5f6fa;
-  font-weight:600;
-  text-decoration:none;
-}
-.nav-item:hover{color:var(--accent);}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist der Dividend Snowball Effekt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Der Dividend Snowball Effekt beschreibt, wie Dividenden durch konsequentes Reinvestieren immer mehr Dividenden generieren – ähnlich einem Schneeball, der bergab rollt und immer größer wird. Kombiniert mit einer monatlichen Sparrate wächst der Cashflow exponentiell statt linear." }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Dividenden-Reinvest (DRIP) sinnvoll?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Langfristig fast immer ja. Wer Dividenden konsequent reinvestiert, kann seinen Cashflow gegenüber einem Nicht-Reinvestor nach 20 Jahren nahezu verdoppeln. Der Effekt wirkt stärker bei hoher Dividendenrendite und langem Zeithorizont." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie wichtig ist die Sparrate für den Dividend Snowball?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sehr wichtig – besonders in den ersten Jahren. Wer monatlich 500 € investiert statt 250 €, halbiert die Zeit zur finanziellen Freiheit grob um 3–5 Jahre. In der Aufbauphase (erste 10 Jahre) ist die Sparrate wichtiger als die Rendite." }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Dividendenrendite ist realistisch für den Snowball?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Für ein diversifiziertes Dividendenportfolio sind 5–8 % realistisch. Hard Assets (Shipping, MLPs, BDCs, Mining) können 7–12 % liefern – mit höherem Risiko. Der Snowball-Effekt wirkt bei 7 % Rendite deutlich stärker als bei 4 %." }
+      },
+      {
+        "@type": "Question",
+        "name": "Berücksichtigt der Rechner Steuern?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Rechner berechnet Nettodividenden nach Abgeltungssteuer (Standard: 26,375 %) und reinvestiert nur den Nettobetrag. Das ist realistischer als viele andere Rechner, die vor Steuer rechnen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen Dividend Snowball und DRIP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DRIP (Dividend Reinvestment Plan) ist der Mechanismus – automatische Wiederanlage von Dividenden in neue Anteile. Der Dividend Snowball ist das Ergebnis: Ein über Jahre wachsendes Dividendeneinkommen durch konsequenten Reinvest plus Sparrate plus Dividendenwachstum." }
+      }
+    ]
+  }
+  </script>
 
-/* CONTENT */
-.wrapper{
-  max-width:1000px;
-  margin:40px auto;
-  padding:0 16px 40px;
-}
-.card{
-  background:var(--card);
-  border-radius:16px;
-  border:1px solid var(--accent);
-  padding:26px 22px 30px;
-}
-.header{text-align:center;margin-bottom:18px;}
-.title{
-  font-size:1.8rem;
-  margin:0 0 6px;
-  color:var(--accent);
-}
-.sub{font-size:.9rem;color:var(--muted);}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px 20px;
-}
-@media(max-width:800px){.grid{grid-template-columns:1fr;}}
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-.field{display:flex;flex-direction:column;gap:4px;font-size:.9rem;}
-.input{
-  padding:10px;
-  border-radius:8px;
-  border:1px solid var(--border);
-  background:#111;
-  color:#fff;
-}
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim: rgba(201,168,76,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --border: rgba(255,255,255,0.07);
+    }
 
-.inline{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  font-size:.85rem;
-  color:var(--muted);
-  margin:12px 0;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
 
-.btn{
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:none;
-  background:var(--accent);
-  color:#000;
-  font-weight:700;
-  font-size:1rem;
-  cursor:pointer;
-  margin:16px 0 18px;
-}
+    /* NAV */
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
 
-.results-summary{
-  background:#101010;
-  border-radius:12px;
-  border:1px solid var(--border);
-  padding:16px;
-  margin-bottom:14px;
-}
-.results-summary h2{margin:0 0 8px;color:var(--accent);}
-.highlight{color:var(--accent);font-weight:600;}
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #0b100f 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
 
-.table-wrapper{
-  max-height:380px;
-  overflow:auto;
-  border-radius:12px;
-  border:1px solid var(--border);
-  background:#111;
-  display:none;
-}
+    /* CONTAINER */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
 
-table{width:100%;border-collapse:collapse;min-width:640px;}
-thead{position:sticky;top:0;background:#181818;}
-th,td{padding:6px 8px;border-bottom:1px solid #222;text-align:right;}
-th:first-child,td:first-child{text-align:left;}
-th{color:var(--accent);}
+    /* CALC CARD */
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
 
-.seo{
-  margin-top:40px;
-  padding:28px;
-  background:#151515;
-  border:1px solid #2a2a2a;
-  border-radius:14px;
-}
+    .input-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 700px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .input-grid { grid-template-columns: 1fr; } }
 
-.site-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--accent);}
-</style>
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.03em; }
+    .field-hint { font-size: 0.72rem; color: var(--text-dim); }
+
+    input[type="number"] { background: var(--dark-3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; padding: 0.65rem 0.9rem; outline: none; transition: border-color 0.2s; width: 100%; -moz-appearance: textfield; }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus { border-color: var(--gold); }
+
+    .reinvest-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.75rem 0 1.25rem; font-size: 0.88rem; color: var(--text-muted); }
+    input[type="checkbox"] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+    .btn-calc { width: 100%; padding: 0.9rem; background: var(--gold); color: #0E0F11; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+    .btn-calc:hover { background: var(--gold-light); }
+    .btn-calc:active { transform: scale(0.99); }
+
+    /* ERGEBNIS */
+    .result-area { display: none; margin-top: 1.75rem; }
+    .result-area.show { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .kpi { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.15); border-radius: 12px; padding: 1.1rem 1rem; text-align: center; }
+    .kpi-val { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--gold); display: block; line-height: 1.1; }
+    .kpi-val.green { color: var(--green); }
+    .kpi-lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Breakdown Bar */
+    .breakdown { background: var(--dark-3); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+    .breakdown-title { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .bar-row { display: flex; gap: 0; border-radius: 6px; overflow: hidden; height: 20px; margin-bottom: 0.5rem; }
+    .bar-seg { height: 100%; transition: width 0.6s ease; }
+    .bar-einzahl { background: #3A6BC4; }
+    .bar-divs { background: var(--gold); }
+    .bar-kurs { background: var(--green); }
+    .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--text-muted); }
+    .leg-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+
+    /* Tabelle */
+    .table-section { margin-top: 1rem; }
+    .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .table-header span { font-size: 0.85rem; color: var(--text-muted); }
+    .table-toggle { background: var(--dark-3); border: 1px solid var(--border); color: var(--gold); padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); max-height: 400px; overflow-y: auto; }
+    .snow-table { width: 100%; border-collapse: collapse; min-width: 600px; font-size: 0.84rem; }
+    .snow-table thead { position: sticky; top: 0; background: var(--dark-3); z-index: 2; }
+    .snow-table th { color: var(--gold); padding: 0.6rem 0.9rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
+    .snow-table th:first-child { text-align: left; }
+    .snow-table td { padding: 0.5rem 0.9rem; border-top: 1px solid var(--border); text-align: right; color: var(--text-muted); }
+    .snow-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .snow-table tr.milestone td { background: var(--gold-dim); color: var(--gold); }
+    .snow-table tr.milestone td:first-child { color: var(--gold); }
+
+    /* AFFILIATE */
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(201,168,76,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.88rem; }
+    .compare-table th { background: var(--dark-3); color: var(--gold); font-weight: 600; padding: 0.7rem 1rem; text-align: right; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .compare-table th:first-child { text-align: left; }
+    .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); text-align: right; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+    .compare-table .highlight-row td { color: var(--gold); background: var(--gold-dim); }
+
+    /* Phase Cards */
+    .phase-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .phase-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+    .phase-card .p-num { color: var(--gold); font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 0.25rem; }
+    .phase-card .p-title { font-weight: 600; color: var(--text); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .phase-card .p-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+    footer .disclaimer { margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-dim); max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
 </head>
-
 <body>
 
-<header class="topbar">
-<nav class="topnav">
-  <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/dividendenstrategie/" class="nav-item">💰 Dividendenstrategie</a>
-  <a href="/tools/" class="nav-item">🧰 Toolbox</a>
-  <a href="/blog/" class="nav-item">📰 Blog</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="home">🏠 MB Capital</a>
+    <span class="nav-sep">›</span>
+    <a href="/depot-strategie/">📊 Depot-Strategie</a>
+    <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
+    <a href="/rechner/">🧮 Alle Rechner</a>
+    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </div>
 </nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Kostenloser Dividenden-Simulator</div>
+  <h1>Dividend Snowball Rechner<br /><span>Cashflow systematisch aufbauen</span></h1>
+  <p class="hero-sub">
+    Simuliere, wie Reinvest, Sparrate und Dividendenwachstum deinen Cashflow
+    über Jahrzehnte aufbauen – mit Jahrestabelle, Kapital-Breakdown und realistischer Steuerbetrachtung.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">Bis 40J</span><span class="stat-lbl">Simulation</span></div>
+    <div class="stat"><span class="stat-val">Steuer</span><span class="stat-lbl">Einkalkuliert</span></div>
+    <div class="stat"><span class="stat-val">Breakdown</span><span class="stat-lbl">Einzahlung vs Dividende</span></div>
+  </div>
 </header>
 
-<main class="wrapper">
+<main class="container">
 
-<!-- SEO INTRO -->
-<section class="seo">
-<h2>Dividend Snowball Rechner – Cashflow systematisch aufbauen</h2>
-<p>
-Der Dividend Snowball Rechner zeigt dir, wie sich dein <strong>Dividenden-Cashflow</strong>
-über viele Jahre entwickelt, wenn Ausschüttungen konsequent reinvestiert
-und zusätzliches Kapital investiert wird.
-</p>
-<p>
-Im Fokus steht nicht kurzfristige Performance,
-sondern der <strong>langfristige Aufbau stabiler, planbarer Erträge</strong>.
-Genau hier entfaltet der Snowball-Effekt seine volle Wirkung.
-</p>
-</section>
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">❄️ Dividend Snowball Simulator</div>
 
-<section class="card">
-<header class="header">
-  <h1 class="title">Dividend Snowball Rechner</h1>
-  <p class="sub">Reinvest, Sparrate & Zeit als Cashflow-Hebel</p>
-</header>
+    <div class="input-grid">
+      <div class="field">
+        <label for="snow_start">Startkapital (€)</label>
+        <input type="number" id="snow_start" value="25000" min="0" step="1000" />
+        <span class="field-hint">Aktuell investiertes Kapital</span>
+      </div>
+      <div class="field">
+        <label for="snow_save">Monatliche Sparrate (€)</label>
+        <input type="number" id="snow_save" value="500" min="0" step="50" />
+        <span class="field-hint">Monatliche Neuinvestition</span>
+      </div>
+      <div class="field">
+        <label for="snow_yield">Dividendenrendite (% p.a.)</label>
+        <input type="number" id="snow_yield" value="7" min="0" max="30" step="0.5" />
+        <span class="field-hint">Ø-Rendite des Portfolios</span>
+      </div>
+      <div class="field">
+        <label for="snow_divGrowth">Dividendenwachstum (% p.a.)</label>
+        <input type="number" id="snow_divGrowth" value="3" min="0" max="20" step="0.5" />
+        <span class="field-hint">Jährliche Dividendenerhöhung</span>
+      </div>
+      <div class="field">
+        <label for="snow_priceGrowth">Kurswachstum (% p.a.)</label>
+        <input type="number" id="snow_priceGrowth" value="3" min="0" max="20" step="0.5" />
+        <span class="field-hint">Jährliche Kurssteigerung (optional)</span>
+      </div>
+      <div class="field">
+        <label for="snow_tax">Steuer auf Dividenden (%)</label>
+        <input type="number" id="snow_tax" value="26.375" min="0" max="50" step="0.1" />
+        <span class="field-hint">Abgeltungssteuer inkl. Soli</span>
+      </div>
+      <div class="field">
+        <label for="snow_years">Anlagehorizont (Jahre)</label>
+        <input type="number" id="snow_years" value="25" min="1" max="40" step="1" />
+        <span class="field-hint">Simulationszeitraum (max. 40 J.)</span>
+      </div>
+    </div>
 
-<div class="grid">
-  <div class="field"><label>Startkapital (€)</label><input id="snow_start" class="input" type="number" value="25000"></div>
-  <div class="field"><label>Monatliche Sparrate (€)</label><input id="snow_save" class="input" type="number" value="500"></div>
-  <div class="field"><label>Dividendenrendite (% p.a.)</label><input id="snow_yield" class="input" type="number" value="7"></div>
-  <div class="field"><label>Dividendenwachstum (% p.a.)</label><input id="snow_divGrowth" class="input" type="number" value="3"></div>
-  <div class="field"><label>Kurswachstum (% p.a.)</label><input id="snow_priceGrowth" class="input" type="number" value="3"></div>
-  <div class="field"><label>Steuern auf Dividenden (%)</label><input id="snow_tax" class="input" type="number" value="26.4"></div>
-  <div class="field"><label>Anlagehorizont (Jahre)</label><input id="snow_years" class="input" type="number" value="25"></div>
-</div>
+    <div class="reinvest-row">
+      <input type="checkbox" id="snow_reinvest" checked />
+      <label for="snow_reinvest">Nettodividenden nach Steuern reinvestieren (DRIP)</label>
+    </div>
 
-<div class="inline">
-  <input id="snow_reinvest" type="checkbox" checked>
-  <label for="snow_reinvest">Dividenden nach Steuern reinvestieren</label>
-</div>
+    <button class="btn-calc" onclick="runSnowball()">Snowball starten →</button>
 
-<button class="btn" onclick="runSnowball()">Simulation starten</button>
+    <div class="result-area" id="resultArea">
+      <div class="kpi-grid" id="kpiGrid"></div>
+      <div class="breakdown" id="breakdownSection"></div>
+      <div class="table-section">
+        <div class="table-header">
+          <span>Jahrestabelle</span>
+          <button class="table-toggle" onclick="toggleTable()">Tabelle ein-/ausblenden</button>
+        </div>
+        <div class="table-wrap" id="tableWrap">
+          <table class="snow-table">
+            <thead>
+              <tr>
+                <th style="text-align:left">Jahr</th>
+                <th>Depotwert</th>
+                <th>Nettodiv. / Jahr</th>
+                <th>Nettodiv. / Monat</th>
+                <th>Einzahlungen kum.</th>
+                <th>Dividenden kum.</th>
+              </tr>
+            </thead>
+            <tbody id="snow_tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.78rem;color:var(--text-dim);">Keine Anlageberatung. Simulation mit konstanten Parametern.</p>
+    </div>
+  </div>
 
-<section id="snow_summary" class="results-summary">
-  <h2>Ergebnis</h2>
-  <p>Noch keine Simulation durchgeführt.</p>
-</section>
+  <!-- AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📊</div>
+    <div class="content">
+      <h3>Dividenden-Portfolio tracken & Snowball live verfolgen</h3>
+      <p>Ich tracke meinen echten Dividend Snowball mit Parqet – Dividendenkalender, YOC, Cashflow-Entwicklung auf einen Blick. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="nofollow noopener">Parqet – 15 % Rabatt →</a>
+  </div>
 
-<div class="table-wrapper" id="snow_tableWrapper">
-<table>
-<thead>
-<tr>
-  <th>Jahr</th>
-  <th>Depotwert</th>
-  <th>Nettodividende/Jahr</th>
-  <th>Nettodividende/Monat</th>
-  <th>Kumulierte Nettodividende</th>
-</tr>
-</thead>
-<tbody id="snow_tableBody"></tbody>
-</table>
-</div>
+  <!-- WAS IST DER SNOWBALL EFFEKT -->
+  <section class="section">
+    <h2>Was ist der <span class="accent">Dividend Snowball Effekt</span>?</h2>
+    <p>
+      Der Dividend Snowball Effekt funktioniert wie ein Schneeball, der einen Hang hinunterrollt:
+      Je länger er rollt, desto größer wird er – und desto schneller wächst er.
+      Auf Dividenden übertragen bedeutet das:
+    </p>
+    <p>
+      Jede reinvestierte Dividende kauft neue Anteile → diese neuen Anteile zahlen selbst Dividenden →
+      diese Dividenden kaufen noch mehr Anteile → und so weiter.
+      <strong>Das Wachstum wird exponentiell, nicht linear.</strong>
+    </p>
 
-<p style="margin-top:14px;font-size:.85rem;color:#aaaaaa;">
-Ergänzend:
-<a href="/tools/dividenden-reinvest-rechner.html" style="color:#d4af37;">DRIP-Rechner</a> ·
-<a href="/tools/dividenden-snowball-yoc-pro.html" style="color:#d4af37;">Yield on Cost Snowball</a>
-</p>
+    <div class="example-box">
+      <span class="tag">📘 Zahlenbeispiel: Snowball in der Praxis</span>
+      <p>
+        Start: <strong>25.000 €</strong> · Sparrate: <strong>500 €/Monat</strong> ·
+        Rendite: <strong>7 %</strong> · Dividendenwachstum: <strong>3 % p.a.</strong> ·
+        Reinvest: an · Steuer: 26,375 %.<br /><br />
+        Jahr 5: Nettodividende ~<strong>4.200 €/Jahr</strong> (350 €/Monat)<br />
+        Jahr 10: Nettodividende ~<strong>9.800 €/Jahr</strong> (817 €/Monat)<br />
+        Jahr 20: Nettodividende ~<strong>30.000 €/Jahr</strong> (2.500 €/Monat)<br />
+        Jahr 25: Nettodividende ~<strong>55.000 €+/Jahr</strong> (4.600 €/Monat)
+      </p>
+    </div>
 
-</section>
+    <p>
+      Der entscheidende Moment ist der <strong>Turning Point</strong>:
+      ab Jahr 10–12 beginnt der Reinvest-Effekt die Sparrate zu überholen –
+      die Dividenden allein bringen mehr neues Kapital als deine monatliche Einzahlung.
+      Ab da wächst der Snowball von selbst.
+    </p>
+  </section>
 
-<section class="seo">
-<h2>Beispiel: Dividend Snowball über 25 Jahre</h2>
-<p>
-Du startest mit <strong>25.000 €</strong>, investierst monatlich <strong>500 €</strong>
-und erzielst eine Dividendenrendite von <strong>7 %</strong>.
-Dividenden wachsen jährlich um <strong>3 %</strong> und werden nach Steuern reinvestiert.
-</p>
-<p>
-Nach 25 Jahren stammt ein erheblicher Teil deines Vermögens
-nicht aus Einzahlungen, sondern aus <strong>kumulierten Nettodividenden</strong>.
-Der Rechner macht diesen Effekt transparent sichtbar.
-</p>
-</section>
+  <!-- REINVEST VS NICHT REINVEST -->
+  <section class="section">
+    <h2>Reinvest vs. kein Reinvest – <span class="accent">der Unterschied nach 20 Jahren</span></h2>
+    <p>
+      Keine Entscheidung im Dividendeninvestment hat langfristig mehr Auswirkung
+      als die Frage: Reinvestiere ich meine Dividenden oder entnehme ich sie?
+    </p>
 
-<section class="seo">
-<h2>Warum der Dividend Snowball so mächtig ist</h2>
-<ul>
-<li>Reinvest verstärkt den Zinseszinseffekt</li>
-<li>Sparrate beschleunigt den Kapitalaufbau</li>
-<li>Dividendenwachstum erhöht den Cashflow langfristig</li>
-<li>Ideal für Buy-&-Hold-Strategien</li>
-</ul>
-</section>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Szenario</th>
+          <th>Depotwert Jahr 10</th>
+          <th>Depotwert Jahr 20</th>
+          <th>Cashflow/Monat Jahr 20</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kein Reinvest (500 €/Monat, 7 %)</td>
+          <td>~168.000 €</td>
+          <td>~310.000 €</td>
+          <td>~1.300 € netto</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>Mit Reinvest (500 €/Monat, 7 %)</td>
+          <td>~220.000 €</td>
+          <td>~530.000 €</td>
+          <td>~2.200 € netto</td>
+        </tr>
+        <tr>
+          <td>Nur Reinvest, keine Sparrate (25.000 € Start)</td>
+          <td>~75.000 €</td>
+          <td>~215.000 €</td>
+          <td>~940 € netto</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem;color:var(--text-dim);">Basis: 25.000 € Start, 26,375 % Steuer, 3 % Dividendenwachstum. Näherungswerte.</p>
+
+    <p>
+      <strong>Fazit:</strong> Reinvest mit Sparrate schlägt beide anderen Szenarien klar.
+      Wer beides kombiniert, erreicht nach 20 Jahren fast <strong>doppelten Cashflow</strong>
+      gegenüber reiner Entnahme.
+    </p>
+  </section>
+
+  <!-- DIE 3 PHASEN -->
+  <section class="section">
+    <h2>Die 3 Phasen des <span class="accent">Dividend Snowball</span></h2>
+    <p>Der Aufbau eines Dividend Snowball verläuft in drei klar erkennbaren Phasen:</p>
+
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="p-num">Phase 1</div>
+        <div class="p-title">Aufbau (Jahr 1–8)</div>
+        <div class="p-desc">Die Sparrate dominiert. Dividenden sind noch klein. Konsequenz ist entscheidend – nicht die Rendite. Fokus: Kapital aufbauen, reinvestieren, nicht verkaufen.</div>
+      </div>
+      <div class="phase-card">
+        <div class="p-num">Phase 2</div>
+        <div class="p-title">Beschleunigung (Jahr 9–18)</div>
+        <div class="p-desc">Der Reinvest-Effekt wird spürbar. Dividenden wachsen schneller als Einzahlungen. Der Turning Point naht: Dividenden überholen die Sparrate als Hauptwachstumstreiber.</div>
+      </div>
+      <div class="phase-card">
+        <div class="p-num">Phase 3</div>
+        <div class="p-title">Freiheit (Jahr 19+)</div>
+        <div class="p-desc">Der Snowball rollt von selbst. Dividenden übersteigen den Monatsbedarf. Optional: Sparrate reduzieren oder einstellen, Dividenden entnehmen statt reinvestieren.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZWEITER AFFILIATE -->
+  <div class="affiliate-banner">
+    <div class="icon">📈</div>
+    <div class="content">
+      <h3>Die richtigen Positionen für den Snowball finden</h3>
+      <p>Ich prüfe jede Dividenden-Position mit InvestingPro auf FCF-Coverage, Nachhaltigkeit & Fair Value. <strong>15 % Rabatt</strong> über meinen Link.</p>
+    </div>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="nofollow noopener">15 % Rabatt sichern →</a>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Dividend Snowball Rechner</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist der Dividend Snowball Effekt?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Der Dividend Snowball Effekt beschreibt das exponentielle Wachstum des Dividenden-Cashflows durch konsequentes Reinvestieren. Jede reinvestierte Dividende kauft neue Anteile, die selbst Dividenden zahlen – ein sich selbst verstärkender Kreislauf. Kombiniert mit einer monatlichen Sparrate und Dividendenwachstum entsteht ein Effekt, der langfristig jeden linearen Ansatz schlägt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Ist Dividenden-Reinvest (DRIP) wirklich so mächtig?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ja – die Zahlen sind eindeutig. Bei 7 % Rendite, 500 € Sparrate und 25.000 € Startkapital ist der Cashflow nach 20 Jahren mit Reinvest fast <strong>doppelt so hoch</strong> wie ohne. Der Effekt wirkt stärker je höher die Rendite und je länger der Zeithorizont. Bei 10 Jahren ist der Unterschied noch moderat, bei 20+ Jahren dramatisch. Mehr dazu zeigt der <a href="/tools/dividenden-reinvest-rechner.html">DRIP-Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Wie wichtig ist die Sparrate für den Dividend Snowball?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Sehr wichtig – besonders in den ersten 8–10 Jahren (Phase 1). In dieser Phase ist die Sparrate wichtiger als die Rendite, weil der Snowball noch klein ist. Wer 800 € statt 400 € monatlich investiert, kann 3–5 Jahre früher finanzielle Freiheit erreichen. Ab Jahr 12–15 dreht sich das Verhältnis: dann überholen die reinvestierten Dividenden die Sparrate als Wachstumstreiber.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Welche Dividendenrendite macht den besten Snowball?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Für den Snowball-Effekt gilt: Höhere Rendite = schnelleres Wachstum – aber nur wenn die Dividende nachhaltig ist. Eine Rendite von 10 % mit 50 % Kürzungswahrscheinlichkeit ist schlechter als 7 % mit stabiler Dividende. Meine Strategie: Kern bei 5–8 % (MLPs, REITs, BDCs), ergänzt durch zyklische Positionen (Shipping, Mining) für Sonder-Cashflow in Hochphasen. Mehr in der <a href="/depot-strategie/">Depot-Strategie</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Was ist der Unterschied zwischen Dividend Snowball und DRIP?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        DRIP (Dividend Reinvestment Plan) ist der <em>Mechanismus</em> – die automatische Wiederanlage von Dividenden in neue Anteile direkt beim Broker. Der Dividend Snowball ist das <em>Ergebnis</em> des langfristigen Reinvests kombiniert mit Sparrate und Dividendenwachstum. DRIP kann über den Broker automatisiert werden, oder du kaufst manuell nach. Das Ergebnis ist gleich.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Berücksichtigt der Rechner Steuern korrekt?<span class="arrow">▾</span></div>
+      <div class="faq-a">
+        Ja – realistischer als die meisten anderen Rechner. Der Snowball reinvestiert nur den <strong>Nettobetrag nach Abgeltungssteuer (26,375 %)</strong>, nicht den Bruttobetrag. Das ist entscheidend für eine realistische Planung. Du kannst den Steuersatz anpassen – z.B. wenn Kirchensteuer dazu kommt (~28 %) oder wenn du Freistellungsauftrag nutzt (bis 1.000 € Freibetrag p.a. steuerfrei).
+      </div>
+    </div>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Dividenden-Rechner</span></h2>
+    <div class="tool-grid">
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-rechner.html" class="tool-link">💰 Dividendenrechner</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/dividenden-reinvest-rechner.html" class="tool-link">🔁 Reinvest (DRIP)</a>
+      <a href="/tools/dividend-snowball-yoc-pro.html" class="tool-link">❄️ Snowball YOC PRO</a>
+    </div>
+  </section>
 
 </main>
 
-<footer class="site-footer">
-© 2026 MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+<footer>
+  <p>
+    © 2026 MB Capital Strategies ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/glossar/">Glossar</a> ·
+    <a href="/sitemap.xml">Sitemap</a>
+  </p>
+  <p class="disclaimer">
+    Keine Anlageberatung. Simulation auf Basis konstanter Parameter – tatsächliche Ergebnisse können abweichen.
+    Einige Links sind Affiliate-Links – für dich ohne Mehrkosten.
+  </p>
 </footer>
 
 <script>
-/* JS UNVERÄNDERT */
-function runSnowball(){
-  const start=+snow_start.value;
-  const monthly=+snow_save.value;
-  let y=+snow_yield.value/100;
-  const g=+snow_divGrowth.value/100;
-  const p=+snow_priceGrowth.value/100;
-  const t=+snow_tax.value/100;
-  const years=+snow_years.value;
+let tableVisible = true;
 
-  let wealth=start, cum=0, last=0;
-  snow_tableBody.innerHTML="";
+function toggleTable() {
+  const wrap = document.getElementById("tableWrap");
+  tableVisible = !tableVisible;
+  wrap.style.display = tableVisible ? "block" : "none";
+}
 
-  for(let i=1;i<=years;i++){
-    wealth+=monthly*12;
-    const gross=wealth*y;
-    const net=gross*(1-t);
-    cum+=net;
-    if(snow_reinvest.checked) wealth+=net;
-    wealth*=1+p;
-    y*=1+g;
-    last=net;
+function runSnowball() {
+  const start     = +document.getElementById("snow_start").value;
+  const monthly   = +document.getElementById("snow_save").value;
+  const yieldBase = +document.getElementById("snow_yield").value / 100;
+  const divGrowth = +document.getElementById("snow_divGrowth").value / 100;
+  const priceGrow = +document.getElementById("snow_priceGrowth").value / 100;
+  const tax       = +document.getElementById("snow_tax").value / 100;
+  const years     = Math.min(+document.getElementById("snow_years").value, 40);
+  const doReinvest = document.getElementById("snow_reinvest").checked;
 
-    snow_tableBody.innerHTML+=`
-      <tr>
-        <td>${new Date().getFullYear()+i}</td>
-        <td>${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
-        <td>${net.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
-        <td>${(net/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
-        <td>${cum.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
-      </tr>`;
+  if (!start || !yieldBase || !years) { alert("Bitte alle Pflichtfelder ausfüllen."); return; }
+
+  let wealth = start;
+  let yieldRate = yieldBase;
+  let cumDivs = 0;
+  let cumEinzahl = start;
+  let lastNetDiv = 0;
+  const currentYear = new Date().getFullYear();
+  const tbody = document.getElementById("snow_tableBody");
+  tbody.innerHTML = "";
+
+  const milestones = new Set([5, 10, 15, 20, 25, 30]);
+
+  for (let i = 1; i <= years; i++) {
+    wealth += monthly * 12;
+    cumEinzahl += monthly * 12;
+
+    const gross = wealth * yieldRate;
+    const net   = gross * (1 - tax);
+    cumDivs += net;
+    lastNetDiv = net;
+
+    if (doReinvest) wealth += net;
+    wealth *= (1 + priceGrow);
+    yieldRate *= (1 + divGrowth);
+
+    const isMilestone = milestones.has(i);
+    const row = document.createElement("tr");
+    if (isMilestone) row.classList.add("milestone");
+    row.innerHTML = `
+      <td>${currentYear + i}</td>
+      <td>${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
+      <td>${net.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
+      <td>${(net/12).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
+      <td>${cumEinzahl.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
+      <td>${cumDivs.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</td>
+    `;
+    tbody.appendChild(row);
   }
 
-  snow_tableWrapper.style.display="block";
-  snow_summary.innerHTML=`
-    <h2>Ergebnis</h2>
-    <p>Depotwert nach ${years} Jahren: <span class="highlight">${wealth.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>
-    <p>Nettodividende im letzten Jahr: <span class="highlight">${last.toLocaleString("de-DE",{style:"currency",currency:"EUR"})}</span></p>`;
-}
-</script>
+  // KPIs
+  const fmt = n => n.toLocaleString("de-DE",{style:"currency",currency:"EUR"});
+  document.getElementById("kpiGrid").innerHTML = `
+    <div class="kpi"><span class="kpi-val">${fmt(wealth)}</span><div class="kpi-lbl">Depotwert nach ${years} J.</div></div>
+    <div class="kpi"><span class="kpi-val green">${fmt(lastNetDiv)}</span><div class="kpi-lbl">Nettodiv. im letzten Jahr</div></div>
+    <div class="kpi"><span class="kpi-val green">${fmt(lastNetDiv/12)}</span><div class="kpi-lbl">Nettodiv. / Monat</div></div>
+    <div class="kpi"><span class="kpi-val">${fmt(cumDivs)}</span><div class="kpi-lbl">Dividenden kumuliert</div></div>
+    <div class="kpi"><span class="kpi-val">${fmt(cumEinzahl)}</span><div class="kpi-lbl">Einzahlungen kumuliert</div></div>
+  `;
 
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"Was ist ein Dividend Snowball?","acceptedAnswer":{"@type":"Answer","text":"Ein Dividend Snowball entsteht durch konsequente Wiederanlage von Dividenden und regelmäßige Einzahlungen."}},
-{"@type":"Question","name":"Ist Reinvest sinnvoll?","acceptedAnswer":{"@type":"Answer","text":"Langfristig ja. Reinvest verstärkt den Zinseszinseffekt erheblich."}},
-{"@type":"Question","name":"Wie wichtig ist die Sparrate?","acceptedAnswer":{"@type":"Answer","text":"Eine Sparrate beschleunigt den Snowball-Effekt deutlich, ist aber nicht zwingend notwendig."}},
-{"@type":"Question","name":"Berücksichtigt der Rechner Steuern?","acceptedAnswer":{"@type":"Answer","text":"Ja. Dividenden werden nach Steuern reinvestiert."}},
-{"@type":"Question","name":"Für wen ist der Dividend Snowball Rechner geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für langfristige Dividendeninvestoren mit Fokus auf Cashflow."}}
-]
+  // Breakdown Bar
+  const total = wealth;
+  const pctEinzahl = Math.round((cumEinzahl / total) * 100);
+  const pctDivs    = Math.round((cumDivs    / total) * 100);
+  const pctKurs    = Math.max(0, 100 - pctEinzahl - pctDivs);
+  document.getElementById("breakdownSection").innerHTML = `
+    <div class="breakdown-title">Woher kommt dein Depotwert nach ${years} Jahren?</div>
+    <div class="bar-row">
+      <div class="bar-seg bar-einzahl" style="width:${pctEinzahl}%"></div>
+      <div class="bar-seg bar-divs"    style="width:${pctDivs}%"></div>
+      <div class="bar-seg bar-kurs"    style="width:${pctKurs}%"></div>
+    </div>
+    <div class="legend">
+      <span><span class="leg-dot" style="background:#3A6BC4"></span>Einzahlungen: ${pctEinzahl} % (${fmt(cumEinzahl)})</span>
+      <span><span class="leg-dot" style="background:var(--gold)"></span>Reinvestierte Dividenden: ${pctDivs} % (${fmt(cumDivs)})</span>
+      <span><span class="leg-dot" style="background:var(--green)"></span>Kurswachstum: ${pctKurs} %</span>
+    </div>
+  `;
+
+  const area = document.getElementById("resultArea");
+  area.classList.add("show");
+  area.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  document.getElementById("tableWrap").style.display = "block";
+  tableVisible = true;
+}
+
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
 }
 </script>
 
