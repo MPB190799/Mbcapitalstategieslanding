@@ -4,6 +4,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://mbcapitalstrategies.com/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
@@ -11,18 +12,21 @@
   <!-- Core Pillars -->
   <url>
     <loc>https://mbcapitalstrategies.com/dividendenstrategie/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/mining-aktien/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/shipping-aktien/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -30,31 +34,78 @@
   <!-- Supporting Hubs -->
   <url>
     <loc>https://mbcapitalstrategies.com/rohstoff-superzyklus-master.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/depot-strategie/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/hard-asset-guide/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/shipping/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/midstream/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/toolbox.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/rechner/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/ueber-marco-bozem/</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
   </url>
 
   <!-- Legal -->
   <url>
     <loc>https://mbcapitalstrategies.com/impressum.html</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/datenschutz.html</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
