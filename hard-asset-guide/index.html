@@ -170,18 +170,6 @@
   <style>
     body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; margin:0; }
 
-    header {
-      background:#151821;
-      border-bottom:1px solid rgba(212,175,55,0.3);
-      padding:15px 10px;
-      text-align:center;
-      position:sticky; top:0; z-index:10;
-    }
-    header a {
-      color:#d4af37; margin:0 15px; text-decoration:none; font-weight:600;
-    }
-    header a:hover { text-decoration:underline; }
-
     .page { max-width:960px; margin:0 auto; padding:20px; }
 
     h1 { font-size:2.2em; color:#d4af37; margin:0 0 10px; }
@@ -242,16 +230,66 @@
 
 <body>
 
-<!-- ✅ GEÄNDERT: Navigation – Shipping & Mining Hubs ergänzt -->
-<header>
-  <a href="/">🏠 Startseite</a>
-  <a href="/depot-strategie/">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-  <a href="/shipping-aktien/">🚢 Shipping</a>
-  <a href="/mining-aktien/">⛏️ Mining</a>
-  <a href="/rechner/">🧮 Rechner</a>
-  <a href="/blog/index.html">📰 Blog</a>
-  <a href="/glossar/">📗 Glossar</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/" class="active">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Shipping Podcast</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Sektoren</div>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+    <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
 </header>
 
 

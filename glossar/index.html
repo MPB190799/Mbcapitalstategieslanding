@@ -57,7 +57,22 @@
       { "@type": "DefinedTerm", "name": "CII" },
       { "@type": "DefinedTerm", "name": "EEXI" },
       { "@type": "DefinedTerm", "name": "Orderbook" },
-      { "@type": "DefinedTerm", "name": "Fleet Renewal" }
+      { "@type": "DefinedTerm", "name": "Fleet Renewal" },
+      { "@type": "DefinedTerm", "name": "AISC" },
+      { "@type": "DefinedTerm", "name": "Royalty Streaming" },
+      { "@type": "DefinedTerm", "name": "NSR" },
+      { "@type": "DefinedTerm", "name": "Uran" },
+      { "@type": "DefinedTerm", "name": "Ore Grade" },
+      { "@type": "DefinedTerm", "name": "Marktkapitalisierung" },
+      { "@type": "DefinedTerm", "name": "DCF" },
+      { "@type": "DefinedTerm", "name": "WACC" },
+      { "@type": "DefinedTerm", "name": "MLP" },
+      { "@type": "DefinedTerm", "name": "Distributable Cash Flow" },
+      { "@type": "DefinedTerm", "name": "DPS" },
+      { "@type": "DefinedTerm", "name": "DRIP" },
+      { "@type": "DefinedTerm", "name": "Deflation" },
+      { "@type": "DefinedTerm", "name": "Realrendite" },
+      { "@type": "DefinedTerm", "name": "Antizyklisch" }
     ]
   }
   </script>
@@ -71,24 +86,6 @@
       font-family:'Montserrat',sans-serif;
       margin:0;
     }
-
-    /* Header */
-    header{
-      background:#151821;
-      border-bottom:1px solid rgba(212,175,55,.25);
-      padding:15px 10px;
-      text-align:center;
-      position:sticky;
-      top:0;
-      z-index:20;
-    }
-    header a{
-      color:#d4af37;
-      margin:0 15px;
-      text-decoration:none;
-      font-weight:600;
-    }
-    header a:hover{text-decoration:underline;}
 
     .page{
       max-width:960px;
@@ -205,13 +202,66 @@
 
 <body>
 
-<header>
-  <a href="/">🏠 Startseite</a>
-  <a href="/depot-strategie/">📊 Depot-Strategie</a>
-  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-  <a href="/blog/index.html">📰 Blog</a>
-  <a href="/toolbox.html">🧰 Toolbox</a>
-  <a href="/glossar/index.html">📘 Glossar</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Shipping Podcast</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/" class="active">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Sektoren</div>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+    <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
 </header>
 
 <main class="page">
@@ -1333,6 +1383,204 @@
       <!-- Dummy, damit IDs eindeutig bleiben, Inhalt bereits bei 'rezession' -->
       <summary>_</summary>
       <div class="term-body"></div>
+    </details>
+
+    <!-- ===== MINING & ROHSTOFFE ===== -->
+
+    <details class="term" id="aisc" data-term="aisc all-in sustaining cost goldminen minenkosten">
+      <summary>AISC – All-In Sustaining Cost</summary>
+      <div class="term-body">
+        <strong>AISC</strong> (All-In Sustaining Cost) ist die wichtigste Kostenkennzahl bei Goldminen und anderen Edelmetallproduzenten.
+        Sie umfasst alle Kosten, um die aktuelle Produktionsrate aufrechtzuerhalten: direkte Förderkosten, Energie, Royalties,
+        Umweltkosten, G&amp;A-Overhead und Sustaining CapEx. Je niedriger der AISC, desto profitabler die Mine.
+        Goldproduzenten mit AISC unter 1.000 USD/oz gelten als sehr effizient.
+      </div>
+    </details>
+
+    <details class="term" id="royalty-streaming" data-term="royalty streaming nsr gold silver wheaton franconevada">
+      <summary>Royalty &amp; Streaming – Passives Mining-Exposure</summary>
+      <div class="term-body">
+        <strong>Royalty-Unternehmen</strong> kaufen das Recht, einen Prozentsatz der Mine-Produktion oder des Umsatzes zu erhalten (NSR = Net Smelter Return).
+        <strong>Streaming-Unternehmen</strong> vereinbaren vorab einen Liefervertrag zu einem Festpreis (z. B. Gold zu 400 USD/oz).
+        Beides ermöglicht Mining-Exposure ohne Betriebsrisiken. Bekannte Beispiele: Franco-Nevada, Wheaton Precious Metals, Royal Gold.
+      </div>
+    </details>
+
+    <details class="term" id="ore-grade" data-term="erzgehalt ore grade head grade gramm pro tonne g/t">
+      <summary>Ore Grade – Erzgehalt</summary>
+      <div class="term-body">
+        Der <strong>Erzgehalt</strong> (Head Grade) gibt an, wie viel Metall in einer Tonne Gestein enthalten ist – z. B. 1,5 g/t Gold.
+        Höherer Erzgehalt bedeutet niedrigere Förderkosten pro Unze. Über die Lebensdauer einer Mine sinkt der Erzgehalt oft (Grade Decline).
+        Beim Vergleich von Minen ist der Erzgehalt zusammen mit dem AISC die wichtigste Qualitätskennzahl.
+      </div>
+    </details>
+
+    <details class="term" id="uranium" data-term="uran uranium yellowcake u3o8 kazatomprom cameco">
+      <summary>Uran – Yellowcake &amp; U₃O₈</summary>
+      <div class="term-body">
+        <strong>Uran</strong> (chemisch U) ist der Brennstoff für Kernkraftwerke. Die Handelsform ist <strong>Yellowcake (U₃O₈)</strong>.
+        Der Uranpreis wird in USD pro Pfund U₃O₈ angegeben. Großproduzenten sind Kasachstan (Kazatomprom), Kanada (Cameco) und Australien.
+        Uran gilt als Knappheits-Trade: Neue Reaktoren weltweit und ausgedünnte Lagerbestände sorgen für strukturelle Nachfrage.
+      </div>
+    </details>
+
+    <details class="term" id="nsr" data-term="nsr net smelter return royalty mining prozentsatz">
+      <summary>NSR – Net Smelter Return</summary>
+      <div class="term-body">
+        Eine <strong>NSR-Royalty</strong> berechtigt den Inhaber zu einem festgelegten Prozentsatz der Bruttoeinnahmen, die eine Mine nach Abzug von
+        Verhüttungs- und Raffinierungskosten erzielt. NSRs laufen typisch über die gesamte Minenlebensdauer und sind
+        besonders wertvoll, weil keine Betriebskosten anfallen.
+      </div>
+    </details>
+
+    <!-- ===== BEWERTUNG & FINANZEN ===== -->
+
+    <details class="term" id="marktkapitalisierung" data-term="marktkapitalisierung market cap börsenkapitalisierung unternehmensgröße">
+      <summary>Marktkapitalisierung – Market Cap</summary>
+      <div class="term-body">
+        Die <strong>Marktkapitalisierung</strong> ist der aktuelle Börsenwert eines Unternehmens: Aktienkurs × Anzahl ausstehender Aktien.
+        Large Cap: &gt;10 Mrd. USD | Mid Cap: 2–10 Mrd. | Small Cap: 300 Mio.–2 Mrd. | Micro Cap: &lt;300 Mio.
+        Zusammen mit dem Enterprise Value ist sie die Ausgangsgröße für fast alle Bewertungsmultiples.
+      </div>
+    </details>
+
+    <details class="term" id="dcf" data-term="dcf discounted cash flow bewertung barwert ertragswert">
+      <summary>DCF – Discounted Cash Flow</summary>
+      <div class="term-body">
+        Das <strong>DCF-Modell</strong> berechnet den fairen Wert eines Unternehmens, indem es zukünftige Free Cashflows
+        mit einem Diskontierungssatz (WACC) auf den heutigen Barwert abzinst. Der DCF gilt als fundamentale Bewertungsmethode,
+        ist aber stark von Annahmen über Wachstum und Diskontierungssatz abhängig.
+      </div>
+    </details>
+
+    <details class="term" id="wacc" data-term="wacc weighted average cost of capital kapitalkosten diskontierungssatz">
+      <summary>WACC – Kapitalkosten</summary>
+      <div class="term-body">
+        Der <strong>WACC</strong> (Weighted Average Cost of Capital) ist der gewichtete Durchschnitt aus Eigenkapital- und
+        Fremdkapitalkosten. Er dient als Diskontierungssatz im DCF-Modell. Hoher WACC = strengere Bewertungsanforderungen =
+        niedrigerer fairer Wert. Hard-Asset-Unternehmen mit stabilen Cashflows haben oft niedrigere WACCs.
+      </div>
+    </details>
+
+    <details class="term" id="p-fcf" data-term="p/fcf price to free cashflow bewertung cashflow-rendite">
+      <summary>P/FCF – Kurs-Cashflow-Verhältnis</summary>
+      <div class="term-body">
+        Das <strong>Kurs-Free-Cashflow-Verhältnis</strong> (P/FCF) setzt den Aktienkurs ins Verhältnis zum Free Cashflow je Aktie.
+        Es zeigt, wie günstig eine Aktie gemessen an ihrem realen Geldfluss bewertet ist – und ist oft aussagekräftiger als das KGV,
+        da Buchgewinne manipulierbar sind, Cashflows jedoch nicht.
+      </div>
+    </details>
+
+    <details class="term" id="beta" data-term="beta volatilität marktrisiko schwankung">
+      <summary>Beta – Marktrisiko-Kennzahl</summary>
+      <div class="term-body">
+        <strong>Beta</strong> misst, wie stark eine Aktie gegenüber dem Gesamtmarkt schwankt. Beta 1 = gleichauf mit dem Markt.
+        Beta &gt;1 = überproportionale Schwankungen (mehr Risiko, mehr Chance). Beta &lt;1 = defensivere Aktie.
+        Viele Hard-Asset-Aktien haben Beta-Werte unter 0,8 – sie sind weniger korreliert mit Tech-getriebenen Marktphasen.
+      </div>
+    </details>
+
+    <!-- ===== DIVIDENDEN & AUSSCHÜTTUNGEN ===== -->
+
+    <details class="term" id="dps" data-term="dps dividende je aktie dividend per share">
+      <summary>DPS – Dividende je Aktie</summary>
+      <div class="term-body">
+        <strong>DPS</strong> (Dividend Per Share) ist die gesamte Dividende, die ein Unternehmen pro Aktie und Zeitraum ausschüttet.
+        DPS × Aktienanzahl = gesamte Dividendenausschüttung. Steigendes DPS über mehrere Jahre ist ein gutes Zeichen für
+        solides Dividendenwachstum. Der Yield on Cost basiert immer auf dem ursprünglichen Kaufkurs und dem aktuellen DPS.
+      </div>
+    </details>
+
+    <details class="term" id="drip" data-term="drip dividend reinvestment plan dividende reinvestieren sparplan">
+      <summary>DRIP – Dividenden-Reinvestitionsplan</summary>
+      <div class="term-body">
+        Ein <strong>DRIP</strong> (Dividend Reinvestment Plan) erlaubt es Aktionären, ihre Dividenden automatisch in neue Aktien
+        des gleichen Unternehmens zu reinvestieren – oft ohne Transaktionsgebühren und teils mit Kursabschlag.
+        DRIPs nutzen den Zinseszins-Effekt maximal aus und eignen sich besonders für langfristige Dividendeninvestoren.
+      </div>
+    </details>
+
+    <details class="term" id="dividend-coverage" data-term="dividend coverage ratio dividendendeckung sicherheit ausschüttung">
+      <summary>Dividend Coverage Ratio – Dividendendeckung</summary>
+      <div class="term-body">
+        Die <strong>Dividend Coverage Ratio</strong> zeigt, wie oft der Gewinn (oder DCF) die Dividende abdeckt.
+        Berechnung: EPS / DPS oder DCF / Distribution. Wert &gt;2 gilt als sehr sicher. Wert unter 1 bedeutet:
+        die Dividende wird aus der Substanz gezahlt – ein Warnsignal für eine Kürzung.
+      </div>
+    </details>
+
+    <!-- ===== MIDSTREAM & MLPs ===== -->
+
+    <details class="term" id="mlp" data-term="mlp master limited partnership us pipeline steuerstruktur k-1">
+      <summary>MLP – Master Limited Partnership</summary>
+      <div class="term-body">
+        Eine <strong>MLP</strong> ist eine US-Unternehmensstruktur, die vor allem für Energie-Infrastruktur genutzt wird.
+        MLPs zahlen keine Körperschaftsteuer und schütten den Großteil des Cashflows als Distributions aus.
+        Wichtig für nicht-US-Investoren: Auf Distributions fällt oft 37–39 % Quellensteuer an. Außerdem kommt das
+        <strong>K-1 Steuerformular</strong>, das die Steuererklärung erheblich erschwert. Bekannte MLPs:
+        Enterprise Products Partners (EPD), Magellan Midstream.
+      </div>
+    </details>
+
+    <details class="term" id="distributable-cash-flow" data-term="dcf distributable cash flow midstream mlp ausschüttung">
+      <summary>Distributable Cash Flow (DCF) – Midstream</summary>
+      <div class="term-body">
+        Der <strong>Distributable Cash Flow (DCF)</strong> ist die zentrale Cashflow-Kennzahl bei MLPs und Midstream-Unternehmen.
+        Er zeigt, wie viel Cashflow nach Betriebskosten und Maintenance CapEx für Ausschüttungen verfügbar ist.
+        Das Verhältnis DCF / Distributions ergibt die Coverage Ratio – ein Maß für die Dividendensicherheit.
+      </div>
+    </details>
+
+    <!-- ===== MAKRO & ALLGEMEIN ===== -->
+
+    <details class="term" id="deflation" data-term="deflation sinkende preise kaufkraft wirtschaft">
+      <summary>Deflation</summary>
+      <div class="term-body">
+        <strong>Deflation</strong> bezeichnet einen allgemeinen Rückgang des Preisniveaus. Im Gegensatz zur Inflation
+        steigt dadurch die reale Kaufkraft des Geldes. Deflation ist für Schuldner problematisch (reale Schuldenlast steigt)
+        und kann wirtschaftliche Abwärtsspiralen auslösen. Hard Assets und Rohstoffe schneiden in deflationären Phasen
+        typischerweise schwach ab – aber hohe Dividenden können den Gesamtertrag abfedern.
+      </div>
+    </details>
+
+    <details class="term" id="real-return" data-term="realrendite real return inflation kaufkraft ertrag">
+      <summary>Realrendite – Real Return</summary>
+      <div class="term-body">
+        Die <strong>Realrendite</strong> ist die Investmentrendite nach Abzug der Inflation.
+        Formel: Realrendite ≈ Nominalrendite − Inflationsrate. Eine Anleihe mit 3 % Zinsen bei 5 % Inflation hat eine
+        Realrendite von −2 % – d. h. Kaufkraftverlust. Hard Assets wie Rohstoffe, Schiffe und Pipelines haben historisch
+        bessere Realrenditen als Nominal-Assets in Inflationsphasen erzielt.
+      </div>
+    </details>
+
+    <details class="term" id="antizyklisch" data-term="antizyklisch contrarian gegenläufig zyklus timing investieren">
+      <summary>Antizyklisch investieren</summary>
+      <div class="term-body">
+        <strong>Antizyklisches Investieren</strong> bedeutet, in Sektoren zu investieren, die gerade im Tief sind und
+        von der breiten Masse gemieden werden – um bei der Erholung überproportional zu profitieren.
+        Klassische antizyklische Sektoren: Rohstoffe, Shipping, Kohle und Uran in Bärenmärkten.
+        Das Gegenteil ist prozyklisches Investieren (Kaufen auf dem Höchststand, Verkaufen im Tief).
+      </div>
+    </details>
+
+    <details class="term" id="working-capital" data-term="working capital netto umlaufvermögen liquidität kurzfristig">
+      <summary>Working Capital – Netto-Umlaufvermögen</summary>
+      <div class="term-body">
+        Das <strong>Working Capital</strong> ist die Differenz aus kurzfristigem Vermögen (Forderungen, Vorräte, Cash)
+        und kurzfristigen Verbindlichkeiten. Positives Working Capital = das Unternehmen kann kurzfristige Verpflichtungen
+        decken. Negatives Working Capital kann auf Liquiditätsprobleme hinweisen, ist aber in manchen Sektoren (Einzelhandel,
+        Supermarkte) strukturell normal.
+      </div>
+    </details>
+
+    <details class="term" id="leerverkauf" data-term="leerverkauf short selling short squeeze leerverkäufer">
+      <summary>Leerverkauf – Short Selling</summary>
+      <div class="term-body">
+        Beim <strong>Leerverkauf</strong> leiht ein Investor Aktien, verkauft sie und kauft sie später (hoffentlich günstiger)
+        zurück. Ziel: Profit aus fallenden Kursen. Hohes Short-Interest bei einer Aktie kann ein Warnsignal sein –
+        oder im Falle eines <strong>Short Squeeze</strong> zu explosiven Kursgewinnen führen (viele Leerverkäufer müssen
+        gleichzeitig zurückkaufen).
+      </div>
     </details>
 
     <p class="muted">

@@ -156,5 +156,57 @@
   "E-Methanol": "methanol-fuel",
   "Zero Emission Fuels": "zero-emission-fuels",
   "Lifecycle Emissions": "lifecycle-emissions",
-  "Fleet Renewal": "fleet-renewal"
+  "Fleet Renewal": "fleet-renewal",
+
+  /* --- MINING & ROHSTOFFE --- */
+  "AISC": "aisc",
+  "All-In Sustaining Cost": "aisc",
+  "Royalty": "royalty-streaming",
+  "Streaming": "royalty-streaming",
+  "Royalty & Streaming": "royalty-streaming",
+  "NSR": "nsr",
+  "Net Smelter Return": "nsr",
+  "Uran": "uranium",
+  "Uranium": "uranium",
+  "Yellowcake": "uranium",
+  "U₃O₈": "uranium",
+  "Erzgehalt": "ore-grade",
+  "Ore Grade": "ore-grade",
+  "Head Grade": "ore-grade",
+
+  /* --- BEWERTUNG & FINANZEN --- */
+  "Marktkapitalisierung": "marktkapitalisierung",
+  "Market Cap": "marktkapitalisierung",
+  "DCF": "dcf",
+  "Discounted Cash Flow": "dcf",
+  "WACC": "wacc",
+  "P/FCF": "p-fcf",
+  "Kurs-Cashflow-Verhältnis": "p-fcf",
+  "Beta": "beta",
+  "Working Capital": "working-capital",
+  "Umlaufvermögen": "working-capital",
+
+  /* --- DIVIDENDEN --- */
+  "DPS": "dps",
+  "Dividende je Aktie": "dps",
+  "Dividend Per Share": "dps",
+  "DRIP": "drip",
+  "Dividend Coverage": "dividend-coverage",
+  "Dividend Coverage Ratio": "dividend-coverage",
+  "Dividendendeckung": "dividend-coverage",
+
+  /* --- MIDSTREAM & MLPs --- */
+  "MLP": "mlp",
+  "Master Limited Partnership": "mlp",
+  "K-1": "mlp",
+  "Distributable Cash Flow": "distributable-cash-flow",
+
+  /* --- MAKRO & ALLGEMEIN --- */
+  "Deflation": "deflation",
+  "Realrendite": "real-return",
+  "Real Return": "real-return",
+  "Antizyklisch": "antizyklisch",
+  "Leerverkauf": "leerverkauf",
+  "Short Selling": "leerverkauf",
+  "Short Squeeze": "leerverkauf"
 }
