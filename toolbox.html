@@ -44,15 +44,7 @@
 
     a { color:#d4af37; }
 
-    header {
-      background:#151821;
-      border-bottom:1px solid rgba(212,175,55,0.3);
-      padding:15px 10px;
-      text-align:center;
-      position:sticky; top:0; z-index:10;
-    }
-    header a { margin:0 12px; text-decoration:none; font-weight:600; color:#d4af37; }
-    header a:hover { text-decoration:underline; }
+    /* old header replaced by .nav from styles.css */
 
     .hero {
       text-align:center;
@@ -186,23 +178,57 @@
 <body>
 
 <!-- ✅ GEÄNDERT: Navigation mit Hubs erweitert -->
-<header>
-  <a href="/">🏠 Startseite</a>
-  <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-  <a href="/depot-strategie/">📊 Depot-Strategie</a>
-  <a href="/shipping/">🚢 Shipping</a>
-  <a href="/mining-aktien/">⛏️ Mining</a>
-  <a href="/rechner/">🧮 Rechner</a>
-  <a href="/blog/index.html">📰 Blog</a>
-  <a href="/toolbox.html">🧰 Toolbox</a>
-  <a href="/glossar/">📗 Glossar</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Rechner</a>
+      <a href="/toolbox.html" class="nav-highlight">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Sektoren</div>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+    <a href="/midstream/">🛢️ Midstream</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/rechner/">📊 Rechner</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
 </header>
 
-<!-- HERO: UNVERÄNDERT -->
+<!-- HERO -->
 <section class="hero">
-  <img src="marco.jpg" alt="Marco Bozem – MB Capital Strategies Toolbox">
-  <h1>🧰 Meine Toolbox</h1>
-  <p>Alle Tools, Broker & Plattformen, die ich selbst nutze – inklusive exklusiven Vorteilen wie Rabatten und Boni.</p>
+  <h1>🧰 Meine Toolbox für Dividenden-Investoren</h1>
+  <p>Alle Broker, Analyse-Tools & Cashflow-Plattformen, die ich selbst täglich nutze –<br>mit exklusiven Rabatten, Boni und ehrlichen Einschätzungen.</p>
   <a href="#tools" class="btn">Zu meinen Empfehlungen →</a>
 </section>
 
