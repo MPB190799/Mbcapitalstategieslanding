@@ -221,6 +221,7 @@ body::before {
 @media (min-width: 900px) {
   .dropdown:hover .dropdown-content { display: block; }
 }
+.dropdown.open .dropdown-content { display: block; }
 
 /* Hamburger */
 .nav-hamburger {
@@ -1015,7 +1016,6 @@ details.faq-item .faq-answer a { color: var(--gold); }
           <a href="/midstream/">🛢️ Pipelines / Midstream</a>
           <a href="/mining-aktien/">⛏️ Mining Aktien</a>
     <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
-          <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
           <hr>
           <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
           <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
@@ -1041,23 +1041,23 @@ details.faq-item .faq-answer a { color: var(--gold); }
         </div>
       </div>
 
-      <a href="/blog/index.html">Blog</a>
+      <a href="/blog/">Blog</a>
       <a href="/investing-analysen.html">Investing.com</a>
       <a href="/rechner/" class="nav-highlight">Rechner</a>
     </div>
 
-    <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <!-- Mobile Nav -->
-  <div class="nav-mobile" id="mobileNav">
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
     <div class="mob-label">Navigation</div>
     <a href="/">🏠 Startseite</a>
     <a href="/depot-strategie/">📊 Depot-Strategie</a>
     <a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>
-    <a href="/blog/index.html">📰 Blog</a>
+    <a href="/blog/">📰 Blog</a>
     <a href="/rechner/">🧮 Alle Rechner</a>
     <a href="/investing-analysen.html">🔗 Investing.com</a>
     <a href="/toolbox.html">🧰 Toolbox</a>
@@ -1073,7 +1073,7 @@ details.faq-item .faq-answer a { color: var(--gold); }
     <a href="/podcast/">🎧 Alle Podcasts</a>
     <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
     <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
-  </div>
+  </nav>
 </nav>
 
 <div class="page-wrapper">
@@ -1564,52 +1564,7 @@ details.faq-item .faq-answer a { color: var(--gold); }
   </div>
 </footer>
 
-<script>
-  // Mobile hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', function() {
-      mobileNav.classList.toggle('open');
-    });
-  }
-
-  // Desktop dropdowns on click (mobile fallback handled by hamburger menu)
-  document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-    const btn = dropdown.querySelector('.dropdown-btn');
-    if (btn) {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const content = dropdown.querySelector('.dropdown-content');
-        if (content) {
-          const isVisible = content.style.display === 'block';
-          // Close all
-          document.querySelectorAll('.dropdown-content').forEach(function(c) {
-            c.style.display = 'none';
-          });
-          if (!isVisible) content.style.display = 'block';
-        }
-      });
-    }
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.dropdown-content').forEach(function(c) {
-      c.style.display = 'none';
-    });
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(function(el) { observer.observe(el); });
-</script>
+<script src="/assets/js/nav.js"></script>
 
 </body>
 </html>
