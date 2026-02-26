@@ -31,6 +31,8 @@
   }
   </script>
 
+    <link rel="stylesheet" href="/blog/styles.css?v=2">
+
   <style>
     body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; line-height:1.7; margin:0; padding:0; }
     header.navbar { background:#151821; border-bottom:1px solid rgba(212,175,55,0.3); padding:15px 10px; text-align:center; position:sticky; top:0; z-index:10; }
@@ -55,16 +57,105 @@
     footer { text-align:center; padding:25px; font-size:0.9em; color:#9aa6c0; border-top:1px solid rgba(255,255,255,.05); margin-top:60px; }
     footer a { color:#d4af37; text-decoration:none; }
     footer a:hover { text-decoration:underline; }
-  </style>
+  
+<style>
+.related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
+.related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
+.related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+.related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
+.related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
+</style>
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Minen-Aktien 2025 #2 | Whitehaven Coal \u2013 50 % Upside-Potenzial im Rohstoff-Superzyklus?",
+  "description": "Whitehaven Coal Analyse 2025: Australiens Kohle-Champion mit 50 % Upside, starker Bilanz & hoher Dividende. Teil 2 der MB Mining Serie 2025. Chancen & Risiken im \u00dcberblick.",
+  "url": "https://mbcapitalstrategies.com/blog/whitehaven-coal-analyse-2025.html",
+  "datePublished": "2025-10-01",
+  "dateModified": "2026-02-26",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.png"
+    }
+  }
+}
+</script>
 </head>
 <body>
 
   <!-- ✅ Navigation -->
-  <header class="navbar">
-    <a href="https://mbcapitalstrategies.com/">🏠 Startseite</a>
-    <a href="https://mbcapitalstrategies.com/blog/index.html">📰 Blog</a>
-    <a href="https://mbcapitalstrategies.com/#tools">🧰 Toolbox</a>
-  </header>
+  <header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Shipping Podcast</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Sektoren</div>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+    <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
 
   <div class="container">
 
@@ -142,7 +233,17 @@
       Investor Relations: Whitehaven Coal Ltd (ASX: WHC)
     </div>
 
-    <div class="disclaimer">
+    
+<div class="related-articles">
+  <h3>⛏️ Verwandte Kohle & Mining-Analysen</h3>
+  <ul>
+      <li><a href="/blog/mining-aktien-ueberblick-2026.html">🔗 Mining-Aktien Überblick 2026</a></li>
+      <li><a href="/blog/thungela-resources-analyse-2025.html">🔗 Thungela Resources – Südafrikanische Kohle</a></li>
+      <li><a href="/blog/yancoal-australia-analyse-2025.html">🔗 Yancoal – Australische Konkurrenz</a></li>
+      <li><a href="/blog/glencore-analyse-2025.html">🔗 Glencore – Kohlehandel & Produktion</a></li>
+  </ul>
+</div>
+<div class="disclaimer">
       📢 <strong>Transparenz & Rechtliches:</strong><br>
       Dies ist meine persönliche Meinung & Analyse – keine Anlageberatung.<br>
       Enthält Affiliate-Links. Wenn du über diese Links etwas abschließt, erhalte ich eine Provision – für dich entstehen keine Mehrkosten.
@@ -153,15 +254,43 @@
     </div>
   </div>
 
-  <footer>
-    © 2025 MB Capital Strategies · 
-    <a href="/impressum.html">Impressum</a> · 
-    <a href="/datenschutz.html">Datenschutzerklärung</a>
-    <br><br>
-    <p style="font-size:0.8em;color:#888;max-width:800px;margin:0 auto;">
-      ⚠️ Hinweis: Diese Seite enthält Affiliate-Links. Wenn du über diese Links etwas abschließt, unterstützt du meinen Kanal – für dich entstehen keine Mehrkosten. Investitionen bergen Risiken und können zu Verlusten führen.
-    </p>
-  </footer>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping-aktien/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.js"></script>
 
 <script src="/assets/js/glossar-linking.js"></script>
 </body>
