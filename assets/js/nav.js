@@ -1,6 +1,6 @@
 /**
- * MB Capital Strategies – Shared Navigation + Scroll Reveal
- * Handles: hamburger menu, dropdown toggles, click-outside-close, scroll reveal
+ * MB Capital Strategies – Shared Navigation + Scroll Reveal + Reading Progress
+ * Handles: hamburger menu, dropdown toggles, click-outside-close, scroll reveal, reading bar
  */
 (function () {
   'use strict';
@@ -11,6 +11,8 @@
     setupHamburger();
     setupDropdowns();
     setupScrollReveal();
+    setupReadingProgress();
+    setupActiveNav();
   }
 
   /* ── Hamburger / Mobile Nav ── */
@@ -78,5 +80,45 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ── Reading Progress Bar ── */
+  function setupReadingProgress() {
+    /* Only activate on blog articles (not hub/index pages) */
+    var isArticle = document.querySelector('.article-body, article, .article-hero');
+    if (!isArticle) return;
+
+    var bar = document.createElement('div');
+    bar.className = 'reading-progress';
+    bar.id = 'readingProgress';
+    document.body.insertBefore(bar, document.body.firstChild);
+
+    function updateProgress() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+      bar.style.width = pct + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  /* ── Mark current nav link as active ── */
+  function setupActiveNav() {
+    var path = window.location.pathname;
+    var links = document.querySelectorAll('.nav-links a, .nav-mobile a');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href) return;
+      /* Exact or starts-with match for directory paths */
+      if (
+        (path === href) ||
+        (href.length > 1 && path.startsWith(href) && href !== '/')
+      ) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
   }
 }());
