@@ -6,48 +6,75 @@
   <title>Impressum | MB Capital Strategies</title>
   <meta name="description" content="Impressum der Website MB Capital Strategies – Verantwortlich gemäß § 5 TMG und § 55 RStV.">
 
+  <link rel="stylesheet" href="/blog/styles.css?v=2">
   <style>
-    body {
-      background: #0f1115;
-      color: #f5f6fa;
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.7;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1, h2 {
-      color: #d4af37;
-      text-shadow: 0 0 10px rgba(212,175,55,0.6);
-    }
-    a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    p {
-      margin-bottom: 16px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid rgba(255,255,255,.05);
-      color: #9aa6c0;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
+    .container { max-width:860px; margin:0 auto; padding:0 20px 60px; }
+    .legal-content h2 { color:#d4af37; margin-top:36px; font-size:1.2rem; }
+    .legal-content p { color:#ccc; line-height:1.9; }
+    .legal-content a { color:#d4af37; }
+    .legal-content a:hover { text-decoration:underline; }
+    .page-title { color:#d4af37; font-size:1.8rem; margin:32px 0 8px; }
+    .breadcrumbs { margin:20px 0; font-size:0.9rem; color:#ccc; }
+    .breadcrumbs ol { list-style:none; padding:0; display:flex; gap:6px; flex-wrap:wrap; }
+    .breadcrumbs li::after { content:"›"; margin-left:6px; }
+    .breadcrumbs li:last-child::after { content:""; }
+    .breadcrumbs a { color:#d4af37; text-decoration:none; }
   </style>
 </head>
 
 <body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Rechner</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/rechner/">📊 Rechner</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
+
   <div class="container">
-    <h1>Impressum</h1>
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Startseite</a></li>
+      <li aria-current="page">Impressum</li>
+    </ol>
+  </nav>
+
+    <h1 class="page-title">Impressum</h1>
+  <div class="legal-content">
 
     <p>Angaben gemäß § 5 TMG:</p>
 
@@ -108,8 +135,35 @@
 
   </div>
 
-  <footer>
-    © 2026 MB Capital Strategies · <a href="/datenschutz.html">Datenschutzerklärung</a>
-  </footer>
+  </div><!-- end legal-content -->
+  </div><!-- end container -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.js"></script>
 </body>
 </html>

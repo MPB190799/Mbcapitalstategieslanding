@@ -1,223 +1,520 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0f1115">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies</title>
-<meta name="description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, Free Cashflow je Aktie & Dividendenpotenzial für Tanker- & Bulker-Reedereien.">
-<meta name="author" content="Marco Bozem">
-
 <link rel="canonical" href="https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html">
 
-<meta property="og:title" content="Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies">
-<meta property="og:description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, Free Cashflow je Aktie & Dividendenpotenzial für Tanker- & Bulker-Reedereien.">
-<meta property="og:url" content="https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html">
-<meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shipping Cashflow Rechner – Tanker & Bulker Dividenden | MB Capital Strategies">
-<meta name="twitter:description" content="Shipping Cashflow Rechner: Berechne TCE, OPEX, Gewinn, Free Cashflow je Aktie & Dividendenpotenzial für Tanker- & Bulker-Reedereien.">
-<meta name="twitter:image" content="https://mbcapitalstrategies.com/marco.jpg">
+<title>Shipping Cashflow Rechner – TCE, OPEX & Dividendenpotenzial berechnen | MB Capital Strategies</title>
+<meta name="description" content="Kostenloser Shipping Cashflow Rechner: TCE-Rate, OPEX, Break-even, Free Cashflow & Dividendenpotenzial für Tanker- & Bulker-Aktien berechnen – wie ein professioneller Maritime-Analyst.">
 
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="/blog/styles.css?v=2">
+
+<meta property="og:title" content="Shipping Cashflow Rechner – TCE, OPEX & Dividendenpotenzial | MB Capital Strategies">
+<meta property="og:description" content="TCE, OPEX, Break-even, Free Cashflow & Dividendenpotenzial für Tanker- & Bulker-Aktien – kostenlos & praxisnah.">
+<meta property="og:url" content="https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html">
+<meta property="og:image" content="https://mbcapitalstrategies.com/marco.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shipping Cashflow Rechner | MB Capital Strategies">
+<meta name="twitter:description" content="TCE, OPEX, Break-even & Dividendenpotenzial für Tanker & Bulker berechnen.">
+<meta name="twitter:image" content="https://mbcapitalstrategies.com/marco.jpg">
+<meta name="author" content="Marco Bozem">
+
 <style>
-:root{
-  --bg:#0f1115;
-  --card:#151821;
-  --accent:#d4af37;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
-  --border:#2a2a2a;
-}
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Montserrat',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+.breadcrumbs { margin:20px 0; font-size:0.9rem; color:#ccc; }
+.breadcrumbs ol { list-style:none; padding:0; display:flex; gap:6px; flex-wrap:wrap; }
+.breadcrumbs li::after { content:"›"; margin-left:6px; }
+.breadcrumbs li:last-child::after { content:""; }
+.breadcrumbs a { color:#d4af37; text-decoration:none; }
+.breadcrumbs a:hover { text-decoration:underline; }
 
-/* HEADER */
-.topbar{
-  background:linear-gradient(180deg,#11141b,#0b0d12);
-  border-bottom:1px solid rgba(212,175,55,.25);
-  padding:10px 18px;
-}
-.topnav{
-  max-width:1200px;
-  margin:0 auto;
-  display:flex;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-  font-size:.92em;
-}
-.nav-item{color:#f5f6fa;font-weight:600;text-decoration:none;}
-.nav-item:hover{color:var(--accent);}
+.container { max-width:860px; margin:0 auto; }
+footer.footer { max-width:860px; margin:40px auto; text-align:center; }
+footer.footer ul { list-style:none; padding:0; }
+footer.footer a { color:#d4af37; text-decoration:none; }
 
-/* CONTENT */
-.wrapper{max-width:720px;margin:40px auto;padding:0 16px 40px;}
-.card{
-  background:var(--card);
+/* Rechner Styles */
+.rechner-box {
+  background:#151821;
+  border:1px solid rgba(212,175,55,0.35);
   border-radius:14px;
-  border:1px solid rgba(212,175,55,.35);
-  padding:22px;
+  padding:28px;
+  margin:24px 0;
 }
-.header{text-align:center;margin-bottom:12px;}
-.title{color:var(--accent);margin:0;}
-.sub{color:var(--muted);font-size:.9rem;}
-
-label{display:block;margin:12px 0 6px;font-weight:600;}
-input{
+.rechner-box h2 { color:#d4af37; margin-top:0; font-size:1.2rem; }
+.input-group { margin:14px 0; }
+.input-group label { display:block; font-weight:600; margin-bottom:6px; color:#f5f6fa; }
+.input-group input {
   width:100%;
-  padding:12px;
+  padding:12px 14px;
   border-radius:8px;
-  border:1px solid #444;
+  border:1px solid #333;
   background:#0f1115;
   color:#fff;
+  font-size:1rem;
+  box-sizing:border-box;
 }
-
-button{
+.input-group input:focus { outline:none; border-color:#d4af37; }
+.calc-btn {
   width:100%;
   padding:14px;
   margin-top:18px;
-  background:var(--accent);
+  background:#d4af37;
   color:#000;
   border:none;
   border-radius:10px;
-  font-size:1.05em;
+  font-size:1.05rem;
   font-weight:700;
   cursor:pointer;
+  transition:filter 0.2s;
 }
-button:hover{filter:brightness(1.08);}
-
-.result{
+.calc-btn:hover { filter:brightness(1.1); }
+.result-box {
+  display:none;
   margin-top:20px;
-  padding:18px;
+  padding:20px;
   background:#1a1f2b;
-  border-left:4px solid var(--accent);
+  border-left:4px solid #d4af37;
   border-radius:10px;
-  line-height:1.7;
+  line-height:2;
 }
-
-.seo{
-  margin-top:40px;
-  padding:26px;
-  background:#151821;
-  border:1px solid #2a2a2a;
-  border-radius:14px;
-}
-
-.site-footer{
-  margin-top:60px;
-  padding:30px 20px;
-  text-align:center;
-  font-size:.9em;
-  color:var(--muted);
-  border-top:1px solid rgba(212,175,55,.25);
-}
-.site-footer a{color:var(--accent);}
+.result-box strong { color:#d4af37; }
+.result-box .result-line { display:flex; justify-content:space-between; border-bottom:1px solid #222; padding:6px 0; }
+.result-box .result-line:last-child { border-bottom:none; }
+.kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:20px 0; }
+.kpi-card { background:#1a1f2b; border:1px solid #2a2a2a; border-radius:10px; padding:16px; text-align:center; }
+.kpi-card .kpi-num { font-size:1.5rem; font-weight:700; color:#d4af37; }
+.kpi-card .kpi-label { font-size:0.8rem; color:#9aa6c0; margin-top:4px; }
+.faq-section h3 { color:#d4af37; margin-top:18px; }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
-<nav class="topnav">
-  <a href="/" class="nav-item">🏠 Startseite</a>
-  <a href="/kategorien/shipping.html" class="nav-item">🚢 Shipping</a>
-  <a href="/tools/" class="nav-item">🧰 Tools</a>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40">
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Sektoren ▾</button>
+        <div class="dropdown-content">
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+          <hr>
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Midstream</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Shipping Podcast</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Rechner</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Sektoren</div>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
+    <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/rechner/">📊 Rechner</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
+
+<main class="container">
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Startseite</a></li>
+    <li><a href="/rechner/">Finanzrechner</a></li>
+    <li aria-current="page">Shipping Cashflow Rechner</li>
+  </ol>
 </nav>
-</header>
 
-<main class="wrapper">
+<h1>🚢 Shipping Cashflow Rechner – TCE, OPEX & Dividendenpotenzial</h1>
+<p>
+Der einzige deutsche <strong>Shipping Cashflow Rechner</strong> für Dividendeninvestoren.
+Berechne TCE-Rate, OPEX, Break-even, jährlichen Free Cashflow und das Dividendenpotenzial
+deiner Tanker-, Bulker- oder LNG-Carrier-Aktie – genau so wie professionelle Maritime-Analysten.
+</p>
 
+<!-- AdSense -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:20px auto"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1234567890"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- RECHNER -->
+<div class="rechner-box">
+  <h2>⚓ Shipping Cashflow Rechner</h2>
+
+  <div class="input-group">
+    <label for="tceInput">TCE / Tagesrate (USD)</label>
+    <input id="tceInput" type="number" placeholder="z. B. 35.000 – typisch für VLCC-Tanker">
+  </div>
+  <div class="input-group">
+    <label for="opexInput">OPEX pro Tag (USD)</label>
+    <input id="opexInput" type="number" placeholder="z. B. 8.000 – operativer Aufwand pro Schiff/Tag">
+  </div>
+  <div class="input-group">
+    <label for="shipsInput">Anzahl Schiffe in der Flotte</label>
+    <input id="shipsInput" type="number" placeholder="z. B. 15">
+  </div>
+  <div class="input-group">
+    <label for="utilInput">Auslastung / Beschäftigungsgrad (%)</label>
+    <input id="utilInput" type="number" placeholder="z. B. 92 – typisch für Tankerflotten">
+  </div>
+  <div class="input-group">
+    <label for="payoutInput">Payout Ratio (% des FCF als Dividende)</label>
+    <input id="payoutInput" type="number" placeholder="z. B. 70 – viele Reedereien zahlen 50–100 %">
+  </div>
+  <div class="input-group">
+    <label for="sharesInput">Aktienanzahl (optional – für FCF/Aktie)</label>
+    <input id="sharesInput" type="number" placeholder="z. B. 85.000.000">
+  </div>
+
+  <button class="calc-btn" onclick="calcShipping()">Cashflow berechnen</button>
+  <div id="output" class="result-box"></div>
+</div>
+
+<!-- ERKLAERUNG -->
 <section class="card">
-<header class="header">
-  <h1 class="title">Shipping Cashflow Rechner</h1>
-  <p class="sub">TCE, OPEX, Gewinn, FCF & Dividendenpotenzial auf einen Blick</p>
-</header>
-
-<label>TCE / Tagesrate (USD)</label>
-<input id="tceInput" type="number" placeholder="z. B. 35.000">
-
-<label>OPEX pro Tag (USD)</label>
-<input id="opexInput" type="number" placeholder="z. B. 8.000">
-
-<label>Anzahl Schiffe</label>
-<input id="shipsInput" type="number" placeholder="z. B. 15">
-
-<label>Auslastung (%)</label>
-<input id="utilInput" type="number" placeholder="z. B. 92">
-
-<label>Payout Ratio (%)</label>
-<input id="payoutInput" type="number" placeholder="z. B. 70">
-
-<label>Aktienanzahl (optional)</label>
-<input id="sharesInput" type="number" placeholder="z. B. 85.000.000">
-
-<button onclick="calcShipping()">Berechnen</button>
-
-<div id="output" class="result" style="display:none;"></div>
+<h2>Was dieser Rechner berechnet – und warum das wichtig ist</h2>
+<p>
+Shipping-Aktien sind komplexer als normale Dividendentitel.
+Die Dividende hängt nicht einfach von einem fixen Ausschüttungssatz ab,
+sondern direkt vom <strong>Free Cashflow der Flotte</strong> – und der ändert sich täglich mit den Frachtraten.
+</p>
+<p>
+Der Shipping Cashflow Rechner rechnet folgende Logik durch:
+</p>
+<ul>
+<li><strong>TCE (Time Charter Equivalent)</strong> – die bereinigte Tagesrate nach Hafenkosten und Bunkeröl. Das ist der tatsächliche Ertrag pro Schiff pro Tag.</li>
+<li><strong>OPEX (Operating Expenditure)</strong> – die täglichen Betriebskosten pro Schiff: Besatzung, Wartung, Versicherung, Management. Typisch 6.000–12.000 USD/Tag je nach Schiffstyp.</li>
+<li><strong>Break-even TCE</strong> – der OPEX ist gleichzeitig dein Break-even. Liegt die TCE-Rate darunter, verliert die Reederei Geld.</li>
+<li><strong>Gewinn pro Tag & Jahr</strong> – (TCE − OPEX) × Schiffe × Auslastung × 365 Tage</li>
+<li><strong>Free Cashflow je Aktie</strong> – Jahresgewinn ÷ Aktienanzahl</li>
+<li><strong>Dividendenpotenzial</strong> – FCF/Aktie × Payout Ratio</li>
+</ul>
+<p>
+Das Ergebnis zeigt dir sofort: Ist die aktuelle Dividende bei diesem TCE-Niveau nachhaltig?
+Und was passiert, wenn die Frachtraten um 20 % fallen?
+</p>
 </section>
 
-<section class="seo">
-<h2>Warum dieser Shipping Cashflow Rechner?</h2>
-<ul>
-<li>Extrem hoher operativer Hebel</li>
-<li>Ideal für Tanker, Bulker & LNG</li>
-<li>Perfekt für Dividenden- & Zyklusstrategien</li>
-<li>Zeigt sofort das Dividendenpotenzial</li>
-</ul>
+<!-- KPI SECTION -->
+<section class="card">
+<h2>Typische Referenzwerte für Shipping-Rechnungen</h2>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-num">25–55k</div>
+    <div class="kpi-label">VLCC Tanker TCE (USD/Tag)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-num">8–12k</div>
+    <div class="kpi-label">OPEX VLCC (USD/Tag)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-num">15–30k</div>
+    <div class="kpi-label">MR Tanker TCE (USD/Tag)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-num">6–9k</div>
+    <div class="kpi-label">MR Tanker OPEX (USD/Tag)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-num">88–95%</div>
+    <div class="kpi-label">Typischer Beschäftigungsgrad</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-num">50–100%</div>
+    <div class="kpi-label">Payout Ratio Tanker-Reedereien</div>
+  </div>
+</div>
+<p style="color:#9aa6c0;font-size:0.9rem;">
+Diese Werte sind Richtwerte für 2024–2026. Werte können je nach Marktphase, Schiffstyp und Charter-Mix stark abweichen.
+Für exakte Daten: Geschäftsbericht der jeweiligen Reederei oder maritime Datenanbieter wie Clarksons oder Baltic Exchange.
+</p>
+</section>
+
+<!-- MID AD -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:28px auto"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1234567891"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- STRATEGIE -->
+<section class="card">
+<h2>Wie du den Rechner strategisch einsetzt</h2>
+<p>
+Der Rechner ist am nützlichsten für drei Szenarien:
+</p>
+<p>
+<strong>1. Bewertung der aktuellen Dividendenrendite:</strong>
+Gib die aktuelle TCE-Rate der Reederei aus dem letzten Quartalsbericht ein.
+Stimmt das Dividendenpotenzial mit der ausgeschütteten Dividende überein?
+Ist der Payout Ratio unter 80 % (nachhaltig) oder über 100 % (nicht nachhaltig)?
+</p>
+<p>
+<strong>2. Stress-Test bei fallenden Frachtraten:</strong>
+Was passiert, wenn die TCE um 30 % fällt?
+Gib den niedrigeren Wert ein und sieh, ob die Dividende noch gedeckt ist.
+Das zeigt dir das Downside-Risiko bevor du investierst.
+</p>
+<p>
+<strong>3. Vergleich zwischen Reedereien:</strong>
+Zwei Reedereien, gleiche TCE – aber unterschiedlicher OPEX und Flottensize.
+Wer hat den besseren Free Cashflow je Aktie?
+Das ist die richtige Frage für Dividendeninvestoren.
+</p>
+<p>
+Für alle anderen Kennzahlen empfehle ich die weiteren Tools:
+<a href="/tools/dividendenrechner.html">Dividendenrechner</a>,
+<a href="/tools/yield-on-cost-rechner.html">Yield-on-Cost Rechner</a> und
+<a href="/tools/dividend-snowball-yoc-pro.html">Snowball YOC PRO</a>.
+Oder alle auf einen Blick: <a href="/rechner/">Alle 8 Finanzrechner</a>.
+</p>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" style="margin:40px 0;padding:24px;background:#151515;border-radius:12px;">
+<h2>Häufige Fragen zum Shipping Cashflow Rechner</h2>
+
+<h3>Was ist die TCE-Rate und wie unterscheidet sie sich von der Dayrate?</h3>
+<p>
+Die Dayrate ist der Bruttoertrag pro Tag, den ein Schiff in der Charterfahrt erzielt.
+Die TCE (Time Charter Equivalent) ist die bereinigte Version: Hafenkosten und Bunkeröl-Kosten aus dem Spotmarkt
+werden abgezogen. Dadurch ist die TCE der sauberere Vergleichswert zwischen verschiedenen Charter-Typen und Routen.
+Im Time-Charter-Markt entspricht die Dayrate oft schon der TCE.
+</p>
+
+<h3>Was gehört zum OPEX einer Reederei?</h3>
+<p>
+OPEX (Operating Expenditure) umfasst alle laufenden Betriebskosten pro Schiff:
+Besatzungskosten, Schiffswartung, Versicherung, Flottenmanagement und Verwaltungskosten.
+Der OPEX ist gleichzeitig der Break-even: Liegt die TCE darunter, fährt das Schiff mit Verlust.
+Typische OPEX-Werte: 6.000–9.000 USD/Tag (MR Tanker), 8.000–12.000 USD/Tag (VLCC), 10.000–16.000 USD/Tag (LNG-Carrier).
+</p>
+
+<h3>Was ist der Payout Ratio bei Shipping-Aktien und was ist realistisch?</h3>
+<p>
+Der Payout Ratio gibt an, welcher Anteil des Free Cashflows als Dividende ausgeschüttet wird.
+Tanker-Reedereien wie DHT Holdings, Nordic American Tankers oder Frontline zahlen oft 70–100 % des FCF aus.
+Das macht hohe Dividendenrenditen möglich, bedeutet aber auch: Bei sinkenden Frachtraten sinkt die Dividende sofort.
+Ein Payout Ratio unter 75 % gilt als nachhaltig – darüber wird es zyklisch riskant.
+</p>
+
+<h3>Wie berechne ich die Flotten-Auslastung?</h3>
+<p>
+Die Auslastung (Beschäftigungsgrad) gibt an, wie viele Tage im Jahr das Schiff wirklich Einnahmen erzielt.
+Auch bei hoher Nachfrage gibt es Trockendock-Tage, Wartezeiten und Positionierungsfahrten.
+Realistische Werte: 90–95 % bei Time-Charter-Flotten, 85–92 % bei Spot-fokussierten Flotten.
+Im Rechner kannst du verschiedene Szenarien durchrechnen.
+</p>
+
+<h3>Kann ich diesen Rechner auch für LNG-Carrier und Bulker nutzen?</h3>
+<p>
+Ja – die Berechnungslogik ist für alle Schiffstypen identisch.
+Für LNG-Carrier sind typische TCE-Werte 50.000–120.000 USD/Tag in Hochphasen,
+für Capesize Bulker 15.000–40.000 USD/Tag.
+Passe einfach TCE, OPEX und Flottenanzahl an die jeweilige Reederei an.
+</p>
+</section>
+
+<!-- WEITERE TOOLS -->
+<section class="card">
+<h2>Weitere Finanzrechner</h2>
+<div class="grid">
+  <div class="card">
+    <h3>💰 Dividendenrechner</h3>
+    <p>Monatliche & jährliche Ausschüttungen berechnen.</p>
+    <a href="/tools/dividendenrechner.html">Jetzt berechnen →</a>
+  </div>
+  <div class="card">
+    <h3>📈 Yield-on-Cost</h3>
+    <p>Deine persönliche Einstandsrendite.</p>
+    <a href="/tools/yield-on-cost-rechner.html">YOC berechnen →</a>
+  </div>
+  <div class="card">
+    <h3>🚀 Snowball YOC PRO</h3>
+    <p>Reinvest + Wachstum + Steuern + YOC.</p>
+    <a href="/tools/dividend-snowball-yoc-pro.html">Simulieren →</a>
+  </div>
+  <div class="card">
+    <h3>📂 Alle 8 Rechner</h3>
+    <p>Alle Finanztools auf einem Blick.</p>
+    <a href="/rechner/">Zur Sammlung →</a>
+  </div>
+</div>
 </section>
 
 </main>
 
 <footer class="site-footer">
-© MB Capital Strategies ·
-<a href="/impressum.html">Impressum</a> ·
-<a href="/datenschutz.html">Datenschutz</a>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping-aktien/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
 </footer>
+<script src="/assets/js/nav.js"></script>
 
 <script>
 function calcShipping(){
-  const tceVal = Number(tceInput.value);
-  const opexVal = Number(opexInput.value);
-  const shipsVal = Number(shipsInput.value);
-  const utilVal = (Number(utilInput.value) || 100) / 100;
-  const payoutVal = (Number(payoutInput.value) || 0) / 100;
-  const sharesVal = Number(sharesInput.value);
+  const tceVal = Number(document.getElementById('tceInput').value);
+  const opexVal = Number(document.getElementById('opexInput').value);
+  const shipsVal = Number(document.getElementById('shipsInput').value);
+  const utilVal = (Number(document.getElementById('utilInput').value) || 92) / 100;
+  const payoutVal = (Number(document.getElementById('payoutInput').value) || 0) / 100;
+  const sharesVal = Number(document.getElementById('sharesInput').value);
+  const output = document.getElementById('output');
 
   if(!tceVal || !opexVal || !shipsVal){
-    output.style.display="block";
-    output.innerHTML="<strong>Bitte TCE, OPEX und Schiffe korrekt eingeben.</strong>";
+    output.style.display='block';
+    output.innerHTML='<strong style="color:#e05;">Bitte TCE, OPEX und Anzahl Schiffe eingeben.</strong>';
     return;
   }
 
-  const profitDay = (tceVal - opexVal) * shipsVal * utilVal;
-  const profitYear = profitDay * 365;
+  const effectiveDays = 365 * utilVal;
+  const profitPerShipDay = tceVal - opexVal;
+  const profitPerDay = profitPerShipDay * shipsVal;
+  const profitYear = profitPerDay * effectiveDays;
 
   let html = `
-    <strong>⚓ Break-even TCE:</strong> ${opexVal.toLocaleString()} USD<br>
-    <strong>🟢 Gewinn pro Tag:</strong> ${profitDay.toLocaleString(undefined,{maximumFractionDigits:0})} USD<br>
-    <strong>💵 Gewinn pro Jahr:</strong> ${profitYear.toLocaleString(undefined,{maximumFractionDigits:0})} USD
+    <div class="result-line"><span>⚓ Break-even TCE</span><span><strong>${opexVal.toLocaleString('de-DE')} USD/Tag</strong></span></div>
+    <div class="result-line"><span>${profitPerShipDay >= 0 ? '🟢' : '🔴'} Gewinn je Schiff / Tag</span><span><strong>${profitPerShipDay.toLocaleString('de-DE', {maximumFractionDigits:0})} USD</strong></span></div>
+    <div class="result-line"><span>📅 Effektive Betriebstage / Jahr</span><span><strong>${Math.round(effectiveDays)} Tage</strong></span></div>
+    <div class="result-line"><span>💵 Jahresgewinn (Gesamtflotte)</span><span><strong>${profitYear.toLocaleString('de-DE', {maximumFractionDigits:0})} USD</strong></span></div>
   `;
 
   if(sharesVal){
     const fcfPerShare = profitYear / sharesVal;
-    const divPotential = fcfPerShare * payoutVal;
+    const divPotential = payoutVal > 0 ? fcfPerShare * payoutVal : null;
     html += `
-      <br><br><strong>📈 FCF je Aktie:</strong> ${fcfPerShare.toFixed(2)} USD<br>
-      <strong>💰 Dividendenpotenzial je Aktie:</strong> ${divPotential.toFixed(2)} USD
+      <div class="result-line"><span>📈 FCF je Aktie</span><span><strong>${fcfPerShare.toFixed(2)} USD</strong></span></div>
     `;
+    if(divPotential !== null){
+      html += `
+        <div class="result-line"><span>💰 Dividendenpotenzial je Aktie</span><span><strong>${divPotential.toFixed(2)} USD</strong></span></div>
+      `;
+    }
   }
 
-  output.style.display="block";
+  html += `<p style="margin-top:12px;font-size:0.85rem;color:#9aa6c0;">Diese Berechnung ist eine Simulation. Keine Anlageberatung.</p>`;
+  output.style.display='block';
   output.innerHTML = html;
+}
+</script>
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"Shipping Cashflow Rechner",
+"url":"https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html",
+"description":"Kostenloser Shipping Cashflow Rechner: TCE, OPEX, Break-even, Free Cashflow und Dividendenpotenzial für Tanker-, Bulker- und LNG-Carrier-Aktien berechnen.",
+"applicationCategory":"FinanceApplication",
+"operatingSystem":"Web Browser",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+"author":{"@type":"Person","name":"Marco Bozem","url":"https://mbcapitalstrategies.com/ueber-marco-bozem/"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BreadcrumbList",
+"itemListElement":[
+{"@type":"ListItem","position":1,"name":"Startseite","item":"https://mbcapitalstrategies.com/"},
+{"@type":"ListItem","position":2,"name":"Finanzrechner","item":"https://mbcapitalstrategies.com/rechner/"},
+{"@type":"ListItem","position":3,"name":"Shipping Cashflow Rechner","item":"https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html"}
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Was ist die TCE-Rate und wie unterscheidet sie sich von der Dayrate?","acceptedAnswer":{"@type":"Answer","text":"Die Dayrate ist der Bruttoertrag pro Tag. Die TCE (Time Charter Equivalent) ist die bereinigte Version nach Abzug von Hafenkosten und Bunkeröl – der sauberere Vergleichswert zwischen verschiedenen Charter-Typen."}},
+{"@type":"Question","name":"Was gehört zum OPEX einer Reederei?","acceptedAnswer":{"@type":"Answer","text":"OPEX (Operating Expenditure) umfasst Besatzungskosten, Wartung, Versicherung, Flottenmanagement und Verwaltung. Der OPEX ist gleichzeitig der Break-even: Typische Werte sind 6.000–9.000 USD/Tag (MR Tanker) und 8.000–12.000 USD/Tag (VLCC)."}},
+{"@type":"Question","name":"Was ist ein realistischer Payout Ratio bei Shipping-Aktien?","acceptedAnswer":{"@type":"Answer","text":"Tanker-Reedereien zahlen oft 70–100 % des Free Cashflows aus. Ein Payout Ratio unter 75 % gilt als nachhaltig. Bei sinkenden Frachtraten sinkt die Dividende proportional – das ist das Hauptrisiko im Shipping-Sektor."}},
+{"@type":"Question","name":"Kann ich diesen Rechner auch für LNG-Carrier und Bulker nutzen?","acceptedAnswer":{"@type":"Answer","text":"Ja – die Berechnungslogik ist für alle Schiffstypen identisch. Passe TCE, OPEX und Flottenanzahl an den jeweiligen Schiffstyp an. LNG-Carrier TCE: 50.000–120.000 USD/Tag in Hochphasen. Capesize Bulker: 15.000–40.000 USD/Tag."}},
+{"@type":"Question","name":"Wie hoch ist die typische Flottenauslastung?","acceptedAnswer":{"@type":"Answer","text":"Realistisch sind 88–95 % bei gut gemanagten Flotten. Time-Charter-Flotten erreichen oft 92–95 %, Spot-fokussierte Flotten 85–92 %. Trockendock, Wartung und Repositionierung reduzieren die Betriebstage."}}
+]
 }
 </script>
 
