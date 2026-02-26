@@ -1144,6 +1144,58 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
 .muted { color: var(--text-muted); font-size: 0.83em; line-height: 1.7; }
 
 /* ============================================================
+   BLOG FILTER BAR
+   ============================================================ */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+}
+.filter-bar label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  align-self: center;
+  margin-right: 4px;
+  flex-basis: 100%;
+  margin-bottom: 4px;
+}
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid rgba(212,175,55,0.2);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgba(212,175,55,0.12);
+  color: var(--gold);
+  border-color: rgba(212,175,55,0.4);
+}
+.post.hidden { display: none !important; }
+.filter-count {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+/* ============================================================
    PRINT
    ============================================================ */
 @media print {
