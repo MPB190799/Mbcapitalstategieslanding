@@ -6,8 +6,8 @@ Disallow: /private/
 Allow: /
 
 # --- Ressourcen freigeben (wichtig für Mobile-Friendly & Ranking)
-Allow: /*.css$
-Allow: /*.js$
+Allow: /*.css
+Allow: /*.js
 
 # --- MASTER SITEMAP INDEX
 Sitemap: https://mbcapitalstrategies.com/sitemap.xml
@@ -19,6 +19,8 @@ Sitemap: https://mbcapitalstrategies.com/sitemap-tools.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-bestenlisten.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-travel.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-investing.xml
+Sitemap: https://mbcapitalstrategies.com/sitemap-kategorien.xml
+Sitemap: https://mbcapitalstrategies.com/glossar-sitemap.xml
 
 # --- VIDEO Sitemaps (du hast 2 → entscheide dich für EINE!)
 Sitemap: https://mbcapitalstrategies.com/sitemap-video.xml
