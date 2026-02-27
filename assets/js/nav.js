@@ -1,6 +1,8 @@
 /**
  * MB Capital Strategies – Shared Navigation + Scroll Reveal + Reading Progress
- * + Cookie Consent (DSGVO/GDPR) + Author Bio Injection
+ * + Cookie Consent (DSGVO/GDPR) + Author Bio Injection + Article Schema Injection
+ *
+ * v3 – Nav HTML injection: one source of truth for navigation across all 100+ pages
  */
 (function () {
   'use strict';
@@ -21,14 +23,105 @@
 
   /* ── Boot ── */
   document.addEventListener('DOMContentLoaded', function () {
+    injectNav();          /* must run first – creates nav DOM */
     setupHamburger();
     setupDropdowns();
     setupScrollReveal();
     setupReadingProgress();
     setupActiveNav();
     setupAuthorBio();
+    injectArticleSchema();
     if (!existingConsent) setupCookieBanner();
   });
+
+  /* ═══════════════════════════════════════════════════════════
+     NAV INJECTION
+     Replaces the nav element on every page with the canonical
+     navigation HTML from the homepage (gold standard).
+     One change here = consistent nav on all 100+ pages.
+  ═══════════════════════════════════════════════════════════ */
+  function injectNav() {
+    var existing = document.querySelector('nav.nav, header.nav');
+    if (!existing) return;
+
+    var html =
+      '<nav class="nav" id="main-nav">' +
+        '<div class="nav-inner">' +
+          '<a href="/" class="nav-brand">' +
+            '<img src="/Logo.png" alt="MB Capital Strategies" width="44" height="44">' +
+            '<span>MB Capital Strategies</span>' +
+          '</a>' +
+          '<div class="nav-links">' +
+            '<a href="/">Startseite</a>' +
+            '<a href="/depot-strategie/">Depot</a>' +
+            '<a href="/hard-asset-guide/">Hard Asset Guide</a>' +
+            '<div class="dropdown">' +
+              '<button class="dropdown-btn" aria-haspopup="true">Themen &#x25be;</button>' +
+              '<div class="dropdown-content">' +
+                '<a href="/shipping-aktien/">🚢 Shipping Aktien</a>' +
+                '<a href="/midstream/">🛢️ Pipelines / Midstream</a>' +
+                '<a href="/mining-aktien/">⛏️ Mining Aktien</a>' +
+                '<a href="/upstream-aktien/">🛢️ Upstream Aktien</a>' +
+                '<a href="/dividendenstrategie/">💰 Dividendenstrategie</a>' +
+                '<hr>' +
+                '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
+                '<a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>' +
+                '<hr>' +
+                '<a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2026</a>' +
+                '<a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2026</a>' +
+                '<a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield 2026</a>' +
+              '</div>' +
+            '</div>' +
+            '<div class="dropdown">' +
+              '<button class="dropdown-btn" aria-haspopup="true">Podcast &#x25be;</button>' +
+              '<div class="dropdown-content">' +
+                '<a href="/podcast/">🎧 Alle Podcasts</a>' +
+                '<hr>' +
+                '<a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>' +
+                '<a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>' +
+                '<a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing &amp; Zyklen</a>' +
+                '<hr>' +
+                '<a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>' +
+                '<a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>' +
+                '<a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>' +
+              '</div>' +
+            '</div>' +
+            '<a href="/blog/">Blog</a>' +
+            '<a href="/investing-analysen.html">Investing.com</a>' +
+            '<a href="/rechner/" class="nav-highlight">Rechner</a>' +
+          '</div>' +
+          '<button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">' +
+            '<span></span><span></span><span></span>' +
+          '</button>' +
+        '</div>' +
+        '<nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">' +
+          '<div class="mob-label">Navigation</div>' +
+          '<a href="/">🏠 Startseite</a>' +
+          '<a href="/depot-strategie/">📊 Depot-Strategie</a>' +
+          '<a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>' +
+          '<a href="/blog/">📰 Blog</a>' +
+          '<a href="/rechner/">🧮 Alle Rechner</a>' +
+          '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
+          '<a href="/toolbox.html">🧰 Toolbox</a>' +
+          '<a href="/glossar/">📗 Glossar</a>' +
+          '<div class="mob-label">Themen</div>' +
+          '<a href="/shipping-aktien/">🚢 Shipping Aktien</a>' +
+          '<a href="/midstream/">🛢️ Midstream / Pipelines</a>' +
+          '<a href="/mining-aktien/">⛏️ Mining Aktien</a>' +
+          '<a href="/upstream-aktien/">🛢️ Upstream Aktien</a>' +
+          '<a href="/dividendenstrategie/">💰 Dividendenstrategie</a>' +
+          '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
+          '<a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>' +
+          '<div class="mob-label">Podcast</div>' +
+          '<a href="/podcast/">🎧 Alle Podcasts</a>' +
+          '<a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>' +
+          '<a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>' +
+        '</nav>' +
+      '</nav>';
+
+    /* Replace the existing nav element (works for both <nav> and <header>) */
+    existing.outerHTML = html;
+  }
 
   /* ── Hamburger / Mobile Nav ── */
   function setupHamburger() {
@@ -130,10 +223,11 @@
     });
   }
 
-  /* ── Author Bio Injection ────────────────────────────────────
+  /* ═══════════════════════════════════════════════════════════
+     AUTHOR BIO INJECTION
      Automatically injects a visible author bio on all blog
      article pages. Skips index and tool-listing pages.
-  ─────────────────────────────────────────────────────────── */
+  ═══════════════════════════════════════════════════════════ */
   function setupAuthorBio() {
     var path = window.location.pathname;
 
@@ -146,9 +240,22 @@
     if (!isBlogArticle) return;
     if (document.querySelector('.author-bio-inject')) return;
 
-    /* Insert after breadcrumbs nav, or before first section */
-    var anchor = document.querySelector('nav.breadcrumbs');
-    if (!anchor) anchor = document.querySelector('section.container, .page-wrapper');
+    /* Try multiple selectors to find a good insertion point */
+    var anchor = (
+      document.querySelector('nav.breadcrumb') ||
+      document.querySelector('nav.breadcrumbs') ||
+      document.querySelector('.breadcrumb') ||
+      document.querySelector('.breadcrumbs') ||
+      document.querySelector('section.container') ||
+      document.querySelector('.page-wrapper') ||
+      document.querySelector('.container h1') ||
+      null
+    );
+
+    /* Fallback: insert after the main nav */
+    if (!anchor) {
+      anchor = document.querySelector('#main-nav, nav.nav');
+    }
     if (!anchor) return;
 
     var bio = document.createElement('div');
@@ -175,6 +282,129 @@
       '</div>';
 
     anchor.insertAdjacentElement('afterend', bio);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     ARTICLE SCHEMA INJECTION
+     Automatically adds BlogPosting JSON-LD to blog articles
+     that don't already have an Article/BlogPosting schema.
+     This fixes YMYL / E-E-A-T anonymity for legacy articles.
+  ═══════════════════════════════════════════════════════════ */
+  function injectArticleSchema() {
+    var path = window.location.pathname;
+
+    var isBlogArticle = (
+      path.startsWith('/blog/') &&
+      path !== '/blog/' &&
+      !path.endsWith('index.html') &&
+      !path.endsWith('alle-finanzrechner.html') &&
+      !path.endsWith('meine-toolbox-broker-tools-plattformen-2025.html') &&
+      !path.endsWith('wise-airalo-vietnam-erfahrungen.html')
+    );
+    if (!isBlogArticle) return;
+
+    /* Check if Article/BlogPosting schema already exists */
+    var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < scripts.length; i++) {
+      try {
+        var data = JSON.parse(scripts[i].textContent || scripts[i].innerText);
+        if (data['@type'] === 'Article' || data['@type'] === 'BlogPosting') return;
+        if (data['@graph']) {
+          for (var j = 0; j < data['@graph'].length; j++) {
+            var t = data['@graph'][j]['@type'];
+            if (t === 'Article' || t === 'BlogPosting') return;
+          }
+        }
+      } catch (e) { /* skip malformed JSON */ }
+    }
+
+    /* Extract headline from h1 or title */
+    var h1El = document.querySelector('h1');
+    var headline = h1El ? h1El.textContent.trim().replace(/^[^\w]+/, '') : document.title;
+
+    /* Extract description from meta description */
+    var descMeta = document.querySelector('meta[name="description"]');
+    var description = descMeta ? descMeta.getAttribute('content') : '';
+
+    /* Extract date from URL (year pattern) or og:updated_time */
+    var datePublished = extractDateFromPage();
+
+    /* Extract canonical URL */
+    var canonicalEl = document.querySelector('link[rel="canonical"]');
+    var url = canonicalEl ? canonicalEl.getAttribute('href') : window.location.href;
+
+    /* Extract image from og:image */
+    var imgMeta = document.querySelector('meta[property="og:image"]');
+    var image = imgMeta ? imgMeta.getAttribute('content') : 'https://mbcapitalstrategies.com/marco.jpg';
+
+    var schema = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': headline.substring(0, 110),
+      'description': description,
+      'url': url,
+      'image': image,
+      'datePublished': datePublished,
+      'dateModified': datePublished,
+      'author': {
+        '@type': 'Person',
+        'name': 'Marco Bozem',
+        'url': 'https://mbcapitalstrategies.com/ueber-marco-bozem/',
+        'sameAs': [
+          'https://www.youtube.com/@mbcapitalstrategies',
+          'https://www.linkedin.com/in/marco-bozem-182173295'
+        ]
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'MB Capital Strategies',
+        'url': 'https://mbcapitalstrategies.com/',
+        'logo': {
+          '@type': 'ImageObject',
+          'url': 'https://mbcapitalstrategies.com/Logo.png'
+        }
+      },
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': url
+      }
+    };
+
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
+  function extractDateFromPage() {
+    /* 1. Try article:published_time meta */
+    var pt = document.querySelector('meta[property="article:published_time"]');
+    if (pt) return pt.getAttribute('content');
+
+    /* 2. Try datePublished in existing ld+json */
+    var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < scripts.length; i++) {
+      try {
+        var d = JSON.parse(scripts[i].textContent || scripts[i].innerText);
+        if (d.datePublished) return d.datePublished;
+      } catch (e) {}
+    }
+
+    /* 3. Extract from URL: analyse-2026, februar-2026, etc. */
+    var path = window.location.pathname;
+    var m2026 = path.match(/\b2026\b/);
+    var m2025 = path.match(/\b2025\b/);
+
+    if (m2026) {
+      /* Month hints in URL */
+      if (/januar/.test(path))   return '2026-01-15';
+      if (/februar/.test(path))  return '2026-02-15';
+      if (/maerz/.test(path))    return '2026-03-15';
+      return '2026-01-01';
+    }
+    if (m2025) return '2025-06-01';
+
+    return '2025-01-01';
   }
 
   /* ── Cookie Consent Banner (DSGVO) ──────────────────────────
