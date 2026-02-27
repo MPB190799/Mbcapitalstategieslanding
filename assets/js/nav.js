@@ -67,9 +67,9 @@
                 '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
                 '<a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>' +
                 '<hr>' +
-                '<a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2026</a>' +
-                '<a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2026</a>' +
-                '<a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield 2026</a>' +
+                '<a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>' +
+                '<a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>' +
+                '<a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>' +
               '</div>' +
             '</div>' +
             '<div class="dropdown">' +
