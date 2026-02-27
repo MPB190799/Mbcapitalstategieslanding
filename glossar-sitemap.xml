@@ -132,4 +132,9 @@
   <url><loc>https://mbcapitalstrategies.com/glossar/?begriff=yield-on-cost</loc></url>
   <url><loc>https://mbcapitalstrategies.com/glossar/?begriff=zero-emission-fuels</loc></url>
   <url><loc>https://mbcapitalstrategies.com/glossar/?begriff=zinszyklus</loc></url>
+
+  <!-- Dedicated Glossar-Artikel-Seiten -->
+  <url><loc>https://mbcapitalstrategies.com/glossar/aisc-mining.html</loc><lastmod>2026-02-27</lastmod><priority>0.85</priority></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/tce-rate.html</loc><lastmod>2026-02-27</lastmod><priority>0.85</priority></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/shipping-cluster.html</loc><lastmod>2026-02-26</lastmod><priority>0.80</priority></url>
 </urlset>
