@@ -202,7 +202,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/8vlKa2jBDmw/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Exxaro Resources Analyse 2026</video:title>
-      <video:description>Exxaro Resources Analyse – Kohle-Cashflow, Dividenden & Südafrika-Risiken.</video:description>
+      <video:description>Exxaro Resources Analyse – Kohle-Cashflow, Dividenden &amp; Südafrika-Risiken.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/8vlKa2jBDmw</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=8vlKa2jBDmw</video:content_loc>
       <video:duration>840</video:duration>
@@ -215,7 +215,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/vc5tcYHrVmg/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Barrick Gold Analyse 2026</video:title>
-      <video:description>Barrick Gold Analyse 2026 – Gold & Kupfer, Cashflow, Dividende und Zyklus-Einordnung.</video:description>
+      <video:description>Barrick Gold Analyse 2026 – Gold &amp; Kupfer, Cashflow, Dividende und Zyklus-Einordnung.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/vc5tcYHrVmg</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=vc5tcYHrVmg</video:content_loc>
       <video:duration>900</video:duration>
@@ -241,7 +241,7 @@
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/8SBKR7JnuIg/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>Fresnillo Analyse 2026</video:title>
-      <video:description>Fresnillo Analyse – Silberpreis-Hebel, Kostenstruktur & Zyklus-Risiken.</video:description>
+      <video:description>Fresnillo Analyse – Silberpreis-Hebel, Kostenstruktur &amp; Zyklus-Risiken.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/8SBKR7JnuIg</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=8SBKR7JnuIg</video:content_loc>
       <video:duration>820</video:duration>
@@ -253,8 +253,8 @@
     <loc>https://mbcapitalstrategies.com/blog/mining-aktien-ueberblick-2026.html</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/CPoENKdn1cI/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>22 Mining Aktien 2026 – Cashflow & Zyklus kompakt</video:title>
-      <video:description>Überblick über 22 Mining-Aktien: Cashflow, Dividenden, Risiken & Chancen im Rohstoffzyklus.</video:description>
+      <video:title>22 Mining Aktien 2026 – Cashflow &amp; Zyklus kompakt</video:title>
+      <video:description>Überblick über 22 Mining-Aktien: Cashflow, Dividenden, Risiken &amp; Chancen im Rohstoffzyklus.</video:description>
       <video:player_loc allow_embed="yes">https://www.youtube.com/embed/CPoENKdn1cI</video:player_loc>
       <video:content_loc>https://www.youtube.com/watch?v=CPoENKdn1cI</video:content_loc>
       <video:duration>1100</video:duration>
