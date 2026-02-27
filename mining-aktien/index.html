@@ -312,6 +312,24 @@
     }
     footer a{ color:var(--gold); text-decoration:none; margin:0 10px; }
     footer a:hover{ text-decoration:underline; }
+    .analyse-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+    .analyse-link{
+      display:block;
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:12px;
+      padding:14px 16px;
+      text-decoration:none;
+      transition:border-color .2s,background .2s;
+    }
+    .analyse-link:hover{ border-color:var(--gold); background:rgba(21,24,33,1); }
+    .analyse-link .al-name{ color:var(--gold); font-weight:700; font-size:.93em; }
+    .analyse-link .al-desc{ color:#9aa6c0; font-size:.8em; margin-top:4px; line-height:1.4; }
   </style>
 </head>
 
@@ -490,32 +508,97 @@
 
   <!-- ANALYSIERTE AKTIEN -->
   <section class="section">
-    <h2>Diese Mining-Aktien habe ich analysiert</h2>
-    <div class="card">
-      <p>
-        Alle folgenden Mining-Aktien wurden detailliert analysiert – jeweils mit Fokus auf Cashflow, Dividenden und Risiken:
-      </p>
-      <ul>
-        <li>Thungela Resources</li>
-        <li>Whitehaven Coal</li>
-        <li>Yancoal Australia</li>
-        <li>Fortescue Metals Group</li>
-        <li>BHP Group</li>
-        <li>Vale</li>
-        <li>Rio Tinto</li>
-        <li>Glencore</li>
-        <li>Anglo American</li>
-        <li>Kazatomprom</li>
-        <li>Barrick Mining</li>
-        <li>Newmont</li>
-        <li>AngloGold Ashanti</li>
-        <li>Exxaro Resources</li>
-        <li>South32</li>
-        <li>Fresnillo</li>
-        <li>Central Asia Metals</li>
-        <li>Gerdau</li>
-        <li>Jiangxi Copper</li>
-      </ul>
+    <h2>Alle 22 Mining-Analysen 2026</h2>
+    <p style="color:#9aa6c0;margin-bottom:4px;">Jede Analyse mit Fokus auf Cashflow, Dividenden, AISC und Zyklus-Risiken:</p>
+    <div class="analyse-grid">
+      <a class="analyse-link" href="/blog/thungela-resources-analyse-2026.html">
+        <div class="al-name">⛏️ Thungela Resources</div>
+        <div class="al-desc">Kohle-Cashflow & 15 % Dividende – Mega-Chance oder Risiko?</div>
+      </a>
+      <a class="analyse-link" href="/blog/whitehaven-coal-analyse-2026.html">
+        <div class="al-name">⛏️ Whitehaven Coal</div>
+        <div class="al-desc">50 % Upside-Potenzial im Rohstoff-Superzyklus?</div>
+      </a>
+      <a class="analyse-link" href="/blog/yancoal-australia-analyse-2026.html">
+        <div class="al-name">⛏️ Yancoal Australia</div>
+        <div class="al-desc">11 % Dividende, Cashflow & Kohle-Zyklus</div>
+      </a>
+      <a class="analyse-link" href="/blog/indo-tambangraya-megah-analyse-2026.html">
+        <div class="al-name">⛏️ Indo Tambangraya Megah</div>
+        <div class="al-desc">Cashflow-Kohle oder Dividenden-Illusion?</div>
+      </a>
+      <a class="analyse-link" href="/blog/exxaro-resources-analyse-2026.html">
+        <div class="al-name">⛏️ Exxaro Resources</div>
+        <div class="al-desc">Cashflow-Kohle & Dividendenrealität 2026</div>
+      </a>
+      <a class="analyse-link" href="/blog/suncoke-energy-analyse-2026.html">
+        <div class="al-name">⛏️ SunCoke Energy</div>
+        <div class="al-desc">6 % Dividende aus Stahl-Cashflow?</div>
+      </a>
+      <a class="analyse-link" href="/blog/fortescue-analyse-2026.html">
+        <div class="al-name">🔩 Fortescue</div>
+        <div class="al-desc">High-Grade Eisenerz, Dividende & Risiken</div>
+      </a>
+      <a class="analyse-link" href="/blog/bhp-analyse-2026.html">
+        <div class="al-name">🔩 BHP Group</div>
+        <div class="al-desc">Dividende, Rohstoffe & Cashflow-Riese</div>
+      </a>
+      <a class="analyse-link" href="/blog/vale-analyse-2026.html">
+        <div class="al-name">🔩 Vale</div>
+        <div class="al-desc">Dividende, Eisenerz & 10 % Quellensteuer</div>
+      </a>
+      <a class="analyse-link" href="/blog/rio-tinto-analyse-2026.html">
+        <div class="al-name">🔩 Rio Tinto</div>
+        <div class="al-desc">Dividende, Kupfer & Cashflow-Analyse</div>
+      </a>
+      <a class="analyse-link" href="/blog/glencore-analyse-2026.html">
+        <div class="al-name">🔩 Glencore</div>
+        <div class="al-desc">Kupfer, Kohle, Cashflow & Superzyklus</div>
+      </a>
+      <a class="analyse-link" href="/blog/angloamerican-analyse.html">
+        <div class="al-name">🔩 Anglo American</div>
+        <div class="al-desc">Turnaround, Kupfer & Cashflow-Potenzial</div>
+      </a>
+      <a class="analyse-link" href="/blog/gerdau-analyse-2026.html">
+        <div class="al-name">🔩 Gerdau</div>
+        <div class="al-desc">Stahl-Cashflow aus Brasilien</div>
+      </a>
+      <a class="analyse-link" href="/blog/kazatomprom-analyse-2026.html">
+        <div class="al-name">⚛️ Kazatomprom</div>
+        <div class="al-desc">40 % Uran-Marktanteil, Cashflow & Risiken</div>
+      </a>
+      <a class="analyse-link" href="/blog/barrick-gold-analyse-2026.html">
+        <div class="al-name">🏅 Barrick Gold</div>
+        <div class="al-desc">Tier-1 Gold & Kupfer Cashflow 2026</div>
+      </a>
+      <a class="analyse-link" href="/blog/anglogold-ashanti-analyse-2026.html">
+        <div class="al-name">🏅 AngloGold Ashanti</div>
+        <div class="al-desc">Gold-Cashflow & Turnaround-Story</div>
+      </a>
+      <a class="analyse-link" href="/blog/b2gold-analyse-2026.html">
+        <div class="al-name">🏅 B2Gold</div>
+        <div class="al-desc">Gold-Cashflow mit Risiko? Dividende check</div>
+      </a>
+      <a class="analyse-link" href="/blog/fresnillo-analyse-2026.html">
+        <div class="al-name">🥈 Fresnillo</div>
+        <div class="al-desc">Silber-Cashflow statt Hype – Bewertung 2026</div>
+      </a>
+      <a class="analyse-link" href="/blog/central-asia-metals-analyse-2026.html">
+        <div class="al-name">🥈 Central Asia Metals</div>
+        <div class="al-desc">Langweiliger Cashflow-Gewinner?</div>
+      </a>
+      <a class="analyse-link" href="/blog/valterra-platinum-analyse-2026.html">
+        <div class="al-name">💎 Valterra Platinum</div>
+        <div class="al-desc">Cashflow-Hebel im PGM-Zyklus?</div>
+      </a>
+      <a class="analyse-link" href="/blog/jiangxi-copper-analyse-2026.html">
+        <div class="al-name">🔋 Jiangxi Copper</div>
+        <div class="al-desc">Kupfer-Hebel im Superzyklus?</div>
+      </a>
+      <a class="analyse-link" href="/blog/mining-aktien-ueberblick-2026.html">
+        <div class="al-name">📊 Mining Überblick 2026</div>
+        <div class="al-desc">Alle 22 Miner kompakt – Cashflow & Dividenden</div>
+      </a>
     </div>
   </section>
 
