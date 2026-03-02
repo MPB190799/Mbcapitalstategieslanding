@@ -52,17 +52,18 @@
       <div class="dropdown">
         <button class="dropdown-btn" aria-haspopup="true">Themen ▾</button>
         <div class="dropdown-content">
-          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
           <a href="/midstream/">🛢️ Pipelines / Midstream</a>
           <a href="/mining-aktien/">⛏️ Mining Aktien</a>
           <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+          <a href="/dividendenstrategie/">💰 Dividendenstrategie</a>
           <hr>
-          <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+          <a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>
           <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
           <hr>
-          <a href="/bestenlisten/beste-lng-aktien-2025.html">🔥 Beste LNG-Aktien 2026</a>
-          <a href="/bestenlisten/beste-tanker-aktien-2025.html">🚢 Beste Tanker-Aktien 2026</a>
-          <a href="/bestenlisten/top-5-high-yield-aktien-2025.html">💸 Top 5 High-Yield 2026</a>
+          <a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>
+          <a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>
         </div>
       </div>
       <div class="dropdown">
@@ -92,7 +93,7 @@
     <a href="/depot-strategie/">Depot-Strategie</a>
     <a href="/hard-asset-guide/">Hard Asset Guide</a>
     <div class="mob-label">Themen</div>
-    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/shipping-aktien/">🚢 Shipping Aktien</a>
     <a href="/midstream/">🛢️ Midstream / Pipelines</a>
     <a href="/mining-aktien/">⛏️ Mining Aktien</a>
     <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
@@ -148,10 +149,30 @@
     Google kann hierfür Cookies und ähnliche Technologien nutzen, um die Nutzung der Website zu analysieren
     und personalisierte oder nicht-personalisierte Werbung anzuzeigen.<br><br>
     Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
-    Die Einwilligung erfolgt über das Google-Consent-Tool beim ersten Besuch.
-    Du kannst deine Einwilligung jederzeit über das Cookie-Banner widerrufen.
+    Die Einwilligung wird beim ersten Websitebesuch über das <strong>Cookie-Banner am unteren Bildschirmrand</strong> eingeholt.
+    Du kannst deine Einwilligung jederzeit widerrufen – klicke dazu auf die Schaltfläche unten:
   </p>
-
+  <p>
+    <button id="revoke-consent-btn" style="
+      background:#d4af37;color:#000;border:none;border-radius:8px;
+      padding:10px 20px;font-weight:700;font-size:0.9rem;cursor:pointer;
+      font-family:inherit;margin:4px 0 12px;
+    ">Cookie-Einwilligung widerrufen</button>
+    <span id="revoke-msg" style="display:none;color:#4CAF7A;font-size:0.88rem;margin-left:12px;">
+      ✓ Einwilligung zurückgesetzt. Beim nächsten Seitenaufruf wird der Banner erneut angezeigt.
+    </span>
+  </p>
+  <script>
+    document.getElementById('revoke-consent-btn').addEventListener('click', function() {
+      localStorage.removeItem('mbcs_consent_v1');
+      if (window.dataLayer) {
+        window.dataLayer.push(function() { this.get('gtm.start'); });
+      }
+      document.getElementById('revoke-msg').style.display = 'inline';
+      document.getElementById('revoke-consent-btn').disabled = true;
+      document.getElementById('revoke-consent-btn').style.opacity = '0.5';
+    });
+  </script>
   <p><strong>b) Affiliate-Links</strong><br>
     Diese Website enthält Affiliate-Links zu Partnern wie Scalable Capital, Trade Republic, InvestingPro,
     Parqet, Wise u. a. Beim Klick auf solche Links können Cookies gesetzt werden, um Registrierungen
