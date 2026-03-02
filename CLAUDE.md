@@ -4,7 +4,7 @@
 
 **MB Capital Strategies** (`mbcapitalstrategies.com`) is a German-language static website focused on dividend investing in hard assets (energy, shipping, mining, pipelines). It is authored by Marco Bozem and hosted on **GitHub Pages** with a custom domain via `CNAME`.
 
-This is **not** a JavaScript/Node.js application — it is a **static HTML site** with ~115 hand-authored HTML pages, inline CSS/JS, and a handful of utility scripts for batch operations.
+This is **not** a JavaScript/Node.js application — it is a **static HTML site** with ~122 hand-authored HTML pages, inline CSS/JS, and a handful of utility scripts for batch operations.
 
 ## Tech Stack
 
@@ -30,9 +30,9 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── ads.txt                 # AdSense publisher verification
 ├── site.webmanifest        # PWA manifest (icons, theme)
 │
-├── blog/                   # ~70 article pages (stock analyses, market news, guides)
+├── blog/                   # 69 article pages + index (stock analyses, market news, guides)
 │   ├── index.html          # Blog listing page
-│   └── styles.css          # Shared stylesheet for blog + most content pages
+│   └── styles.css          # Shared stylesheet for blog + most content pages (~1206 lines)
 │
 ├── tools/                  # Interactive financial calculators (8 tools)
 │   ├── dividendenrechner.html
@@ -52,16 +52,18 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 │   ├── styles.css          # Podcast-specific styles (shares design tokens)
 │   └── *.html
 │
-├── glossar/                # Financial glossary system
+├── glossar/                # Financial glossary system (196 terms)
 │   ├── index.html          # Glossary page with search
 │   ├── terms.json          # Term→slug mapping (used for auto-linking)
 │   ├── glossar.js          # Glossary page logic
 │   ├── autolink-glossar.js # Client-side glossary term auto-linker
-│   └── shipping-cluster.html
+│   ├── shipping-cluster.html  # Shipping terminology hub
+│   ├── aisc-mining.html    # Mining cost definitions (AISC)
+│   └── tce-rate.html       # Shipping TCE rate glossary
 │
 ├── assets/
 │   └── js/
-│       ├── nav.js          # Shared navigation + cookie consent + scroll effects
+│       ├── nav.js          # Shared nav injection + cookie consent + scroll effects + article schema (v3, 484 lines)
 │       └── glossar-linking.js  # Auto-links glossary terms in article content
 │
 ├── shipping/               # Shipping sector hub
@@ -71,8 +73,12 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── upstream-aktien/        # Upstream oil & gas stocks index
 ├── rohstoffe/              # Commodity deep-dives (copper, nickel, uranium, zinc)
 ├── kategorien/             # Category pages (high-yield, mining, commodity supercycle)
-├── bestenlisten/           # "Best of" lists (LNG, tanker, high-yield)
+├── bestenlisten/           # "Best of" lists (LNG, tanker, high-yield) — 2026 pages + 2025 redirect stubs
 ├── dividendenstrategie/    # Dividend strategy guide
+│   ├── index.html          # Main dividend strategy page
+│   ├── abgeltungssteuer.html  # Capital gains tax guide
+│   └── bdc-aktien/         # BDC stocks sub-section
+│       └── index.html
 ├── depot-strategie/        # Portfolio strategy with embedded Parqet widgets
 ├── hard-asset-guide/       # Hard asset investing guide
 ├── ueber-marco-bozem/      # About the author
@@ -91,6 +97,7 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── blogindex.html          # Alternative blog listing
 ├── investing-analysen.html # Investing.com analyses hub
 ├── rohstoff-superzyklus-master.html  # Commodity supercycle master page
+├── googleecd17b151bd5b1c1.html      # Google Search Console verification
 │
 ├── *.py                    # Python batch-processing scripts (see below)
 ├── build-glossar-sitemap.mjs  # Node.js ESM script to generate glossar-sitemap.xml
@@ -156,7 +163,7 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 
 There are **two main CSS sources** — pages use one or the other:
 
-1. **`/blog/styles.css`** — The shared design system stylesheet (~1200 lines). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=2">`.
+1. **`/blog/styles.css`** — The shared design system stylesheet (1206 lines). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=2">`.
 
 2. **Inline `<style>` blocks** — The homepage (`index.html`) and some older pages embed their own styles directly. These share the same design tokens but may have page-specific additions.
 
@@ -164,30 +171,41 @@ Some pages include **both** the shared stylesheet and additional inline `<style>
 
 ## Navigation
 
-### Shared Navigation (`/assets/js/nav.js`)
+### Shared Navigation (`/assets/js/nav.js` — v3)
 
 All pages should include:
 ```html
 <script src="/assets/js/nav.js" defer></script>
 ```
 
-This script provides:
+This script (484 lines) is the **single source of truth** for navigation across all 100+ pages. It provides:
+
+- **Nav HTML injection** — replaces `<nav class="nav">` or `<header class="nav">` elements with the canonical navigation HTML at runtime. A nav change in `nav.js` propagates to every page automatically.
 - **Hamburger menu** toggle for mobile (< 700px)
 - **Dropdown menus** (hover on desktop, click on mobile)
 - **Scroll reveal** animation (IntersectionObserver on `.reveal` elements)
 - **Reading progress bar** (on pages with `.article-body`, `article`, or `.article-hero`)
 - **Active nav link** highlighting based on current URL path
-- **Author bio injection** on `/blog/*` article pages (auto-inserts Marco Bozem bio)
+- **Author bio injection** on `/blog/*` article pages (auto-inserts Marco Bozem bio with links to YouTube and LinkedIn)
+- **Article schema injection** — auto-generates `BlogPosting` JSON-LD for blog articles that lack one (fixes E-E-A-T for legacy articles)
 - **Cookie consent banner** (DSGVO-compliant, Google Consent Mode v2, stored in `localStorage` as `mbcs_consent_v1`)
 
 ### Canonical Navigation HTML
 
-The standard nav structure is defined in `add_nav.py` and `fix_nav.py`. It includes:
-- Brand logo + name linking to `/`
-- Desktop links: Startseite, Depot-Strategie, Hard Asset Guide, Themen (dropdown), Podcast (dropdown), Blog, Investing.com, Rechner (highlighted)
-- Mobile nav with categorized sections (Navigation, Themen, Podcast)
+The canonical nav is now defined in **three places** (keep them in sync):
+1. **`/assets/js/nav.js`** `injectNav()` function — the runtime source of truth
+2. **`add_nav.py`** `CANONICAL_NAV_HTML` constant — for batch-adding nav to new pages
+3. **`fix_nav.py`** `CANONICAL_NAV` constant — for batch-fixing nav across all pages
 
-When adding or modifying pages, **always use the canonical nav HTML** from `add_nav.py` (the `CANONICAL_NAV_HTML` constant) to maintain consistency.
+Current desktop nav links:
+- Startseite, Depot, Hard Asset Guide
+- **Themen** dropdown: Shipping Aktien, Pipelines/Midstream, Mining Aktien, Upstream Aktien, Dividendenstrategie | High-Yield & BDC, Rohstoff Superzyklus | Beste LNG-Aktien 2026, Beste Tanker-Aktien 2026, Top 5 High-Yield 2026
+- **Podcast** dropdown: Alle Podcasts | Finanzfeuer Talk, Dividenden-Journey, Timing & Zyklen | Maritime/Shipping, BDC Aktien, Mining Serie
+- Blog, Investing.com, Rechner (highlighted)
+
+Mobile nav: 8 main links (incl. Toolbox, Glossar) + 7 Themen + 3 Podcast links
+
+When adding or modifying pages, pages only need a stub `<nav class="nav"></nav>` element — `nav.js` injects the full HTML at runtime. For pages that must work without JS, use the `CANONICAL_NAV_HTML` from `add_nav.py`.
 
 ## SEO Conventions
 
@@ -203,10 +221,12 @@ When adding or modifying pages, **always use the canonical nav HTML** from `add_
 
 ### Structured Data (JSON-LD)
 
-- **Blog articles**: `BreadcrumbList` + optional `BlogPosting` + optional `FAQPage`
+- **Blog articles**: `BreadcrumbList` + `BlogPosting` (auto-injected by `nav.js` if missing) + optional `FAQPage`
 - **Tool pages**: `WebApplication` (with `applicationCategory: "FinanceApplication"`, `price: "0"`) + `FAQPage`
 - **Homepage**: `FAQPage` + `WebSite` + `Organization`
 - **Hub/index pages**: `BreadcrumbList`
+
+Note: `nav.js` automatically injects `BlogPosting` schema for `/blog/*` article pages that don't already include one. This ensures E-E-A-T compliance for legacy articles without manual edits.
 
 ### Sitemaps
 
@@ -248,11 +268,15 @@ Run with: `node build-glossar-sitemap.mjs`
 
 The glossary (`/glossar/`) consists of:
 
-1. **`terms.json`** — Maps German financial terms to URL-safe anchors (e.g., `"Dividendenrendite": "dividendenrendite"`)
-2. **`glossar.js`** — Powers the glossary index page with search/filter
-3. **`autolink-glossar.js`** / **`assets/js/glossar-linking.js`** — Client-side scripts that auto-link glossary terms found in article text, creating links to `/glossar/#anchor` or `/glossar/?begriff=anchor`
+1. **`terms.json`** — Maps 196 German financial terms to URL-safe anchors (e.g., `"Dividendenrendite": "dividendenrendite"`). Categories include: core financial (51), shipping (28), shipping 2026 regulations (34), mining & resources (13), valuation & finance (12), dividends (6), midstream/MLPs (4), macro (5), and more.
+2. **`glossar.js`** — Powers the glossary index page with search/filter and dynamic SEO (title, description, Schema.org based on URL `?begriff=` parameter)
+3. **`autolink-glossar.js`** / **`assets/js/glossar-linking.js`** — Client-side scripts that auto-link glossary terms found in article text, creating links to `/glossar/?begriff=anchor`
+4. **Specialized glossary pages**:
+   - `shipping-cluster.html` — Shipping terminology hub
+   - `aisc-mining.html` — Mining cost definitions (All-In Sustaining Costs)
+   - `tce-rate.html` — Shipping Time Charter Equivalent rates
 
-When adding new financial terms, add them to `terms.json` and regenerate the sitemap.
+When adding new financial terms, add them to `terms.json` and regenerate the sitemap with `node build-glossar-sitemap.mjs`.
 
 ## Page Patterns
 
@@ -306,7 +330,7 @@ Hub pages list articles for a sector with card grids (`.posts` / `.grid`) and us
 - **Disclaimer**: Every analysis article must include a legal disclaimer that content is for informational purposes only and does not constitute investment advice
 - **Author**: Marco Bozem — all articles attributed to him
 - **Date format**: German format in display, ISO 8601 in Schema.org (`datePublished`, `dateModified`)
-- **URLs**: Use lowercase, hyphenated slugs. Year suffix pattern: `aktie-analyse-2026.html`
+- **URLs**: Use lowercase, hyphenated slugs. Year suffix pattern: `aktie-analyse-2026.html`. When renaming year suffixes (e.g., 2025→2026), keep the old file as a `<meta http-equiv="refresh">` redirect stub
 - **Images**: Root-level JPEGs/PNGs for charts and infographics. Use `loading="lazy"` for below-fold images
 - **YouTube embeds**: Wrapped in `.video-wrapper` for responsive 16:9 aspect ratio
 - **AdSense**: Include on all public pages: `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>`
@@ -340,9 +364,10 @@ Hub pages list articles for a sector with card grids (`.posts` / `.grid`) and us
 5. Add card to `rechner/index.html`
 
 ### Updating Navigation Site-Wide
-1. Update the `CANONICAL_NAV_HTML` in `add_nav.py` and `CANONICAL_NAV` in `fix_nav.py`
-2. Run `python3 fix_nav.py` to propagate changes to all pages
-3. Manually verify the homepage (`index.html`) as it has its own inline nav
+1. Update the nav HTML in **all three sources**: `injectNav()` in `/assets/js/nav.js`, `CANONICAL_NAV_HTML` in `add_nav.py`, and `CANONICAL_NAV` in `fix_nav.py`
+2. Since `nav.js` injects the nav at runtime, most pages update automatically after step 1
+3. Run `python3 fix_nav.py` to update the static HTML nav in all pages (for no-JS fallback and initial render)
+4. Manually verify the homepage (`index.html`) as it has its own inline nav
 
 ## Important Notes
 
