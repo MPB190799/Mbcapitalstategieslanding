@@ -7,6 +7,27 @@
 (function () {
   'use strict';
 
+  // ============================================================
+  // GOOGLE ANALYTICS 4 - TRACKING
+  // TODO: Ersetze G-XXXXXXXXXX mit deiner echten GA4 Measurement ID
+  // So bekommst du eine: https://analytics.google.com → Admin →
+  //   Property erstellen → "Web" → Measurement ID kopieren (G-XXXXXXX)
+  // ============================================================
+  // Uncomment wenn GA4 ID bekannt:
+  /*
+  (function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  })();
+  */
+
   /* ── Google Consent Mode v2 Defaults (set before AdSense) ── */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
