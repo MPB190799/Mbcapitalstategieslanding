@@ -1237,27 +1237,95 @@ details.faq-item .faq-answer a { color: var(--gold); }
 <!-- ============================================================
      NEWSLETTER CTA
      ============================================================ -->
-<section class="section reveal">
-  <div style="max-width:620px;margin:0 auto;text-align:center;padding:20px 0 10px;">
+<section class="section reveal" id="newsletter">
+  <div style="max-width:580px;margin:0 auto;text-align:center;padding:20px 0 10px;">
     <span style="display:inline-block;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.3);border-radius:999px;padding:5px 16px;font-size:0.76rem;font-weight:700;color:#d4af37;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;">
-      📬 Monatliche Depot-Updates
+      📬 MB Capital Insider
     </span>
     <h2 style="color:#f5f6fa;font-size:1.55rem;margin:0 0 12px;line-height:1.3;">
       Depot-Updates direkt in dein Postfach
     </h2>
-    <p style="color:#9aa6c0;line-height:1.7;margin:0 0 24px;font-size:0.95rem;">
-      Kein Spam. Nur dann, wenn es etwas Relevantes gibt: neue Analysen,
-      Depot-Änderungen, Hard-Asset-Ideen. Abmeldung jederzeit möglich.
+    <p style="color:#9aa6c0;line-height:1.7;margin:0 0 28px;font-size:0.95rem;">
+      Kein Spam. Nur wenn es etwas Relevantes gibt: neue Analysen,
+      Depot-Änderungen & Hard-Asset-Ideen. Abmeldung jederzeit möglich.
     </p>
-    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener"
-      style="display:inline-block;background:#d4af37;color:#000;font-weight:700;padding:13px 28px;border-radius:10px;text-decoration:none;font-size:0.95rem;margin-bottom:10px;">
-      📺 YouTube-Updates ansehen
-    </a>
+
+    <form id="newsletter-form" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;">
+      <input
+        type="email"
+        id="newsletter-email"
+        placeholder="deine@email.de"
+        required
+        style="flex:1;min-width:220px;max-width:320px;padding:13px 18px;border-radius:10px;border:1px solid rgba(212,175,55,0.35);background:rgba(255,255,255,0.05);color:#f5f6fa;font-size:0.95rem;font-family:inherit;outline:none;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='rgba(212,175,55,0.7)'"
+        onblur="this.style.borderColor='rgba(212,175,55,0.35)'"
+      >
+      <button
+        type="submit"
+        id="newsletter-btn"
+        style="padding:13px 26px;background:#d4af37;color:#000;font-weight:700;border:none;border-radius:10px;font-size:0.95rem;cursor:pointer;font-family:inherit;transition:background 0.2s,transform 0.1s;white-space:nowrap;"
+        onmouseover="this.style.background='#e8c84a'"
+        onmouseout="this.style.background='#d4af37'"
+      >
+        Jetzt eintragen →
+      </button>
+    </form>
+
+    <div id="newsletter-success" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:16px 20px;color:#4ade80;font-weight:600;font-size:0.95rem;margin-bottom:12px;">
+      ✅ Danke! Du bist dabei. Check dein Postfach für die Bestätigung.
+    </div>
+    <div id="newsletter-error" style="display:none;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;color:#f87171;font-weight:600;font-size:0.95rem;margin-bottom:12px;">
+      ❌ Etwas hat nicht geklappt. Bitte nochmal versuchen.
+    </div>
+
     <p style="color:#9aa6c0;font-size:0.78rem;margin:8px 0 0;">
-      Alternativ: <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:#d4af37;">Kanal abonnieren</a> für monatliche Depot-Videos
+      Oder: <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:#d4af37;">YouTube-Kanal abonnieren</a> für monatliche Depot-Videos
     </p>
   </div>
 </section>
+
+<script>
+(function() {
+  var form = document.getElementById('newsletter-form');
+  var btn  = document.getElementById('newsletter-btn');
+  if (!form) return;
+
+  // Brevo sibforms action URL – wird nach Formular-Erstellung in Brevo eingetragen
+  // Brevo → Kontakte → Formulare → Formular wählen → Einbetten → action-URL kopieren
+  var BREVO_FORM_URL = 'BREVO_SIBFORMS_URL_HIER_EINSETZEN';
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var email = document.getElementById('newsletter-email').value.trim();
+    btn.textContent = 'Wird eingetragen…';
+    btn.disabled = true;
+
+    try {
+      var body = new URLSearchParams();
+      body.append('EMAIL', email);
+      body.append('email_address_check', '');
+      body.append('locale', 'de');
+
+      var res = await fetch(BREVO_FORM_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('newsletter-success').style.display = 'block';
+      } else {
+        throw new Error('Form error');
+      }
+    } catch (err) {
+      document.getElementById('newsletter-error').style.display = 'block';
+      btn.textContent = 'Jetzt eintragen →';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
 
 <hr class="divider">
 
