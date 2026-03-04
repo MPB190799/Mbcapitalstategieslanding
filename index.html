@@ -1250,82 +1250,42 @@ details.faq-item .faq-answer a { color: var(--gold); }
       Depot-Änderungen & Hard-Asset-Ideen. Abmeldung jederzeit möglich.
     </p>
 
-    <form id="newsletter-form" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;">
-      <input
-        type="email"
-        id="newsletter-email"
-        placeholder="deine@email.de"
-        required
-        style="flex:1;min-width:220px;max-width:320px;padding:13px 18px;border-radius:10px;border:1px solid rgba(212,175,55,0.35);background:rgba(255,255,255,0.05);color:#f5f6fa;font-size:0.95rem;font-family:inherit;outline:none;transition:border-color 0.2s;"
-        onfocus="this.style.borderColor='rgba(212,175,55,0.7)'"
-        onblur="this.style.borderColor='rgba(212,175,55,0.35)'"
-      >
-      <button
-        type="submit"
-        id="newsletter-btn"
-        style="padding:13px 26px;background:#d4af37;color:#000;font-weight:700;border:none;border-radius:10px;font-size:0.95rem;cursor:pointer;font-family:inherit;transition:background 0.2s,transform 0.1s;white-space:nowrap;"
-        onmouseover="this.style.background='#e8c84a'"
-        onmouseout="this.style.background='#d4af37'"
-      >
-        Jetzt eintragen →
-      </button>
+    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="margin-bottom:16px;">
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;">
+        <input
+          type="email"
+          name="EMAIL"
+          placeholder="deine@email.de"
+          required
+          style="flex:1;min-width:220px;max-width:320px;padding:13px 18px;border-radius:10px;border:1px solid rgba(212,175,55,0.35);background:rgba(255,255,255,0.05);color:#f5f6fa;font-size:0.95rem;font-family:inherit;outline:none;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='rgba(212,175,55,0.7)'"
+          onblur="this.style.borderColor='rgba(212,175,55,0.35)'"
+        >
+        <button
+          type="submit"
+          style="padding:13px 26px;background:#d4af37;color:#000;font-weight:700;border:none;border-radius:10px;font-size:0.95rem;cursor:pointer;font-family:inherit;white-space:nowrap;"
+          onmouseover="this.style.background='#e8c84a'"
+          onmouseout="this.style.background='#d4af37'"
+        >
+          Jetzt eintragen →
+        </button>
+      </div>
+      <label style="display:flex;align-items:flex-start;gap:8px;max-width:440px;margin:0 auto;text-align:left;cursor:pointer;">
+        <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;accent-color:#d4af37;flex-shrink:0;">
+        <span style="color:#5a6480;font-size:0.74rem;">
+          Ich akzeptiere die <a href="/datenschutz.html" style="color:#d4af37;text-decoration:none;">Datenschutzerklärung</a>
+          und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.
+        </span>
+      </label>
+      <input type="hidden" name="email_address_check" value="">
+      <input type="hidden" name="locale" value="de">
     </form>
-
-    <div id="newsletter-success" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:12px;padding:16px 20px;color:#4ade80;font-weight:600;font-size:0.95rem;margin-bottom:12px;">
-      ✅ Danke! Du bist dabei. Check dein Postfach für die Bestätigung.
-    </div>
-    <div id="newsletter-error" style="display:none;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;color:#f87171;font-weight:600;font-size:0.95rem;margin-bottom:12px;">
-      ❌ Etwas hat nicht geklappt. Bitte nochmal versuchen.
-    </div>
 
     <p style="color:#9aa6c0;font-size:0.78rem;margin:8px 0 0;">
       Oder: <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:#d4af37;">YouTube-Kanal abonnieren</a> für monatliche Depot-Videos
     </p>
   </div>
 </section>
-
-<script>
-(function() {
-  var form = document.getElementById('newsletter-form');
-  var btn  = document.getElementById('newsletter-btn');
-  if (!form) return;
-
-  // Brevo sibforms action URL – wird nach Formular-Erstellung in Brevo eingetragen
-  // Brevo → Kontakte → Formulare → Formular wählen → Einbetten → action-URL kopieren
-  var BREVO_FORM_URL = 'BREVO_SIBFORMS_URL_HIER_EINSETZEN';
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var email = document.getElementById('newsletter-email').value.trim();
-    btn.textContent = 'Wird eingetragen…';
-    btn.disabled = true;
-
-    try {
-      var body = new URLSearchParams();
-      body.append('EMAIL', email);
-      body.append('email_address_check', '');
-      body.append('locale', 'de');
-
-      var res = await fetch(BREVO_FORM_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      });
-
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('newsletter-success').style.display = 'block';
-      } else {
-        throw new Error('Form error');
-      }
-    } catch (err) {
-      document.getElementById('newsletter-error').style.display = 'block';
-      btn.textContent = 'Jetzt eintragen →';
-      btn.disabled = false;
-    }
-  });
-})();
-</script>
 
 <hr class="divider">
 
