@@ -245,6 +245,13 @@ header.nav .dropdown-content a:hover {
 @media (max-width: 699px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+
+  .btn, .btn-primary, .btn-secondary, .cta-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
 }
 
 /* ============================================================
