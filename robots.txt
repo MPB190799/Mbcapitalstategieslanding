@@ -22,6 +22,3 @@ Sitemap: https://mbcapitalstrategies.com/sitemap-investing.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-kategorien.xml
 Sitemap: https://mbcapitalstrategies.com/glossar-sitemap.xml
 
-# --- VIDEO Sitemaps (du hast 2 → entscheide dich für EINE!)
-Sitemap: https://mbcapitalstrategies.com/sitemap-video.xml
-# Sitemap: https://mbcapitalstrategies.com/video-sitemap.xml   # (OPTIONAL – auskommentieren oder löschen)
