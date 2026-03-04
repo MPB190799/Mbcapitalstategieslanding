@@ -352,6 +352,7 @@ header.nav .dropdown-content a:hover {
   background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 60%);
   opacity: 0;
   transition: opacity var(--transition);
+  pointer-events: none;
 }
 .post:hover, .card:hover {
   transform: translateY(-6px);
