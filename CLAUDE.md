@@ -1322,22 +1322,277 @@ Text/Labels:     #f5f6fa (Near-White) — Montserrat, sauber
 | **Timeline** | Dividenden-Geschichte, Superzyklus-Phasen | Horizontale Linie mit Gold-Dots, animiert |
 | **Heatmap** | Sektor-Performance, Korrelationen | Rot→Gold→Grün Gradient |
 
-**Chart-Erstellung mit Canva / Figma / After Effects:**
-- Templates im MB Capital Strategies Branding vorbereiten
-- Keine Excel-Charts direkt verwenden — IMMER redesignen
-- Animationen: Zahlen zählen hoch, Balken wachsen, Linien zeichnen sich
+##### Chart-Erstellung: Python (matplotlib + plotly)
 
-**Chart-Erstellung mit ffmpeg (für Screenshare-Overlays):**
+**Primär-Tool**: Python mit matplotlib/plotly — generiert Charts direkt im MB Capital Strategies Branding als PNG/SVG (für Thumbnails, Infografiken) oder als MP4 (für Video-Einbindung).
+
+**matplotlib MB Capital Theme (wiederverwendbar):**
+```python
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+# MB Capital Strategies Theme
+MBCS_THEME = {
+    'bg': '#0f1115',
+    'bg_soft': '#151821',
+    'gold': '#d4af37',
+    'gold_bright': '#e0bd55',
+    'green': '#00c853',
+    'red': '#ff5252',
+    'text': '#f5f6fa',
+    'text_muted': '#9aa6c0',
+    'grid': 'rgba(255,255,255,0.08)',
+}
+
+def apply_mbcs_style():
+    """Wendet MB Capital Strategies Dark+Gold Theme auf alle Charts an."""
+    plt.rcParams.update({
+        'figure.facecolor': MBCS_THEME['bg'],
+        'axes.facecolor': MBCS_THEME['bg'],
+        'axes.edgecolor': MBCS_THEME['text_muted'],
+        'axes.labelcolor': MBCS_THEME['text'],
+        'text.color': MBCS_THEME['text'],
+        'xtick.color': MBCS_THEME['text_muted'],
+        'ytick.color': MBCS_THEME['text_muted'],
+        'grid.color': '#ffffff14',
+        'grid.alpha': 0.08,
+        'font.family': 'Montserrat',
+        'font.size': 14,
+        'figure.figsize': (19.2, 10.8),  # 1920x1080
+        'figure.dpi': 100,
+        'savefig.facecolor': MBCS_THEME['bg'],
+        'savefig.edgecolor': 'none',
+        'savefig.bbox': 'tight',
+        'savefig.pad_inches': 0.5,
+    })
+
+# Beispiel: Dividenden-Verlauf Chart
+apply_mbcs_style()
+years = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+dividends = [0.80, 1.00, 0.60, 1.50, 2.00, 1.80, 2.20, 2.50, 2.80]
+
+fig, ax = plt.subplots()
+ax.fill_between(years, dividends, alpha=0.15, color=MBCS_THEME['gold'])
+ax.plot(years, dividends, color=MBCS_THEME['gold'], linewidth=3, marker='o', markersize=8)
+ax.set_title('Barrick Gold — Dividende pro Aktie (USD)', fontsize=22, fontweight='bold', color=MBCS_THEME['gold'])
+ax.set_xlabel('Jahr')
+ax.set_ylabel('Dividende (USD)')
+ax.grid(True, alpha=0.08)
+# Key-Zahl hervorheben
+ax.annotate('$2.80', xy=(2026, 2.80), fontsize=28, fontweight='bold',
+            color=MBCS_THEME['gold_bright'], ha='center',
+            xytext=(0, 20), textcoords='offset points')
+plt.savefig('chart-dividenden.png')
+```
+
+**plotly (für interaktive Charts / animierte Exports):**
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure()
+fig.add_trace(go.Bar(
+    x=['BHP', 'Rio Tinto', 'Vale', 'Glencore', 'Barrick'],
+    y=[7.2, 5.8, 12.1, 8.5, 3.2],
+    marker_color=['#d4af37', '#d4af37', '#e0bd55', '#d4af37', '#d4af37'],
+    text=['7.2%', '5.8%', '12.1%', '8.5%', '3.2%'],
+    textposition='outside', textfont=dict(size=18, color='#f5f6fa')
+))
+fig.update_layout(
+    title=dict(text='Dividendenrendite Mining-Aktien 2026', font=dict(size=26, color='#d4af37')),
+    paper_bgcolor='#0f1115', plot_bgcolor='#0f1115',
+    font=dict(family='Montserrat', color='#f5f6fa'),
+    xaxis=dict(gridcolor='rgba(255,255,255,0.08)'),
+    yaxis=dict(gridcolor='rgba(255,255,255,0.08)', title='Rendite (%)'),
+    width=1920, height=1080
+)
+fig.write_image('chart-mining-yields.png')
+# Animiert als HTML (für Screenshare):
+fig.write_html('chart-mining-yields.html')
+```
+
+**Chart-Typen mit Code-Mustern:**
+
+| Chart | Python-Tool | Ausgabe | Video-Einbindung |
+|---|---|---|---|
+| Linien (Kursverläufe) | `matplotlib` plot + fill_between | PNG 1920x1080 | Als Screenshare oder PiP-Overlay |
+| Balken (Vergleiche) | `plotly` Bar | PNG oder animiertes HTML | Screenshare mit Zoom |
+| Donut (Portfolioverteilung) | `matplotlib` pie + wedgeprops | PNG (transparent) | Als Overlay auf Talking Head |
+| Split-Vergleich (A vs B) | `matplotlib` subplots (2 nebeneinander) | PNG 1920x1080 | Split-Screen Sequenz |
+| Wasserfall (FCF-Bridge) | `plotly` Waterfall | PNG | Screenshare, animiert einblenden |
+| Gauge/Tacho | `plotly` Indicator | PNG | Fullscreen 3-5s |
+| Timeline | `matplotlib` scatter + annotate | PNG | Screenshare mit horizontalem Scroll |
+| Heatmap | `plotly` Heatmap | PNG | Screenshare |
+
+##### Visual-Assets erstellen: HTML-Templates (Screenshot → Video)
+
+Für aufwändige Grafiken die über Charts hinausgehen — Metric-Cards, Vergleichstabellen, Scorecards — können **HTML-Templates** im MB Capital Brand erstellt und per Screenshot (Puppeteer/Playwright) als Bild exportiert werden:
+
+```html
+<!-- Kennzahlen-Card für Video-Overlay (1920x1080) -->
+<div style="width:1920px;height:1080px;background:#0f1115;display:flex;align-items:center;justify-content:center;gap:40px;padding:60px;font-family:Montserrat">
+  <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.22);border-radius:16px;padding:40px;text-align:center;min-width:280px">
+    <div style="color:#d4af37;font-size:56px;font-weight:800">15.3%</div>
+    <div style="color:#9aa6c0;font-size:20px;margin-top:8px">Dividendenrendite</div>
+  </div>
+  <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.22);border-radius:16px;padding:40px;text-align:center;min-width:280px">
+    <div style="color:#00c853;font-size:56px;font-weight:800">42%</div>
+    <div style="color:#9aa6c0;font-size:20px;margin-top:8px">Payout Ratio</div>
+  </div>
+  <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.22);border-radius:16px;padding:40px;text-align:center;min-width:280px">
+    <div style="color:#e0bd55;font-size:56px;font-weight:800">4.2x</div>
+    <div style="color:#9aa6c0;font-size:20px;margin-top:8px">EV/EBITDA</div>
+  </div>
+  <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.22);border-radius:16px;padding:40px;text-align:center;min-width:280px">
+    <div style="color:#ff5252;font-size:56px;font-weight:800">1.8x</div>
+    <div style="color:#9aa6c0;font-size:20px;margin-top:8px">Debt/EBITDA</div>
+  </div>
+</div>
+```
+
+**Screenshot-Export:**
 ```bash
-# Gold-Text-Overlay auf dunklem Hintergrund
-ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=5" \
-  -vf "drawtext=text='15.3%% YIELD':fontcolor=#d4af37:fontsize=120:x=(w-text_w)/2:y=(h-text_h)/2:fontfile=Montserrat-Bold.ttf" \
-  -c:v libx264 chart-overlay.mp4
+# Mit Puppeteer (Node.js)
+npx puppeteer screenshot metrics-card.html --width 1920 --height 1080 --output metrics.png
 
-# Animierter Zähler (0% → 15.3%)
+# Mit Playwright (Python)
+python -c "
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page(viewport={'width': 1920, 'height': 1080})
+    page.goto('file:///path/to/metrics-card.html')
+    page.screenshot(path='metrics.png')
+    browser.close()
+"
+```
+
+##### Visuals ins Video einbinden: Sequenz-Assembly Pipeline
+
+So werden Charts, Grafiken und Visuals konkret ins Video eingebunden:
+
+**Schritt 1: Assets generieren**
+```bash
+# Charts mit Python erstellen
+python generate_charts.py --ticker GOLD --output ./assets/
+# → assets/chart-dividenden.png, assets/chart-yield-comparison.png, assets/metrics-card.png
+```
+
+**Schritt 2: Statische Bilder → Video-Clips (mit Dauer + Animationen)**
+```bash
+# Bild → 5s Video-Clip (mit Zoom-In Effekt)
+ffmpeg -loop 1 -i chart-dividenden.png -c:v libx264 -t 5 \
+  -vf "scale=2160:1216,zoompan=z='min(zoom+0.001,1.15)':d=150:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1920x1080" \
+  -pix_fmt yuv420p chart-dividenden-zoom.mp4
+
+# Bild → 4s Video-Clip (statisch, Fade-In)
+ffmpeg -loop 1 -i metrics-card.png -c:v libx264 -t 4 \
+  -vf "scale=1920:1080,fade=t=in:st=0:d=0.5" \
+  -pix_fmt yuv420p metrics-fadein.mp4
+
+# Bild → 6s Video-Clip (Pan von links nach rechts)
+ffmpeg -loop 1 -i chart-timeline.png -c:v libx264 -t 6 \
+  -vf "scale=2880:1080,crop=1920:1080:x='(in_w-out_w)*t/6':y=0" \
+  -pix_fmt yuv420p timeline-pan.mp4
+```
+
+**Schritt 3: Text-Overlays / Zahlen-Einblendungen erzeugen**
+```bash
+# Große Gold-Zahl auf dunklem Hintergrund (Fullscreen, 3s)
 ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=3" \
-  -vf "drawtext=text='%{eif\:15.3*t/3\:d\:0}.%{eif\:mod(153*t/3,10)\:d\:0}%%':fontcolor=#d4af37:fontsize=140:x=(w-text_w)/2:y=(h-text_h)/2" \
-  counter.mp4
+  -vf "drawtext=text='15.3%% YIELD':fontcolor=#d4af37:fontsize=120:fontfile=Montserrat-Bold.ttf:\
+  x=(w-text_w)/2:y=(h-text_h)/2,fade=t=in:st=0:d=0.3,fade=t=out:st=2.5:d=0.5" \
+  -c:v libx264 -pix_fmt yuv420p text-yield.mp4
+
+# Animierter Zähler (0% → 15.3% in 3 Sekunden)
+ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=3" \
+  -vf "drawtext=text='%{eif\\:15.3*t/3\\:d\\:0}.%{eif\\:mod(153*t/3\\,10)\\:d\\:0}%%':\
+  fontcolor=#d4af37:fontsize=140:fontfile=Montserrat-Bold.ttf:\
+  x=(w-text_w)/2:y=(h-text_h)/2" \
+  -c:v libx264 -pix_fmt yuv420p counter-yield.mp4
+
+# Lower-Third (Name + Titel, 5s mit Ein/Ausblendung)
+ffmpeg -f lavfi -i "color=c=#0f1115@0.7:s=600x80:d=5" \
+  -vf "drawtext=text='Marco Bozem':fontcolor=#d4af37:fontsize=28:fontfile=Montserrat-Bold.ttf:x=20:y=10,\
+  drawtext=text='MB Capital Strategies':fontcolor=#9aa6c0:fontsize=18:fontfile=Montserrat-Regular.ttf:x=20:y=48,\
+  fade=t=in:st=0:d=0.5,fade=t=out:st=4.5:d=0.5" \
+  -c:v libx264 -pix_fmt yuv420p lower-third.mp4
+```
+
+**Schritt 4: Alles zusammenfügen (Sequenz-Assembly)**
+```bash
+# Filelist erstellen (Reihenfolge = Schnittplan)
+cat > filelist.txt << 'EOF'
+file 'cold-open.mp4'
+file 'intro-talking-head.mp4'
+file 'text-yield.mp4'
+file 'chart-dividenden-zoom.mp4'
+file 'talking-head-analyse.mp4'
+file 'metrics-fadein.mp4'
+file 'broll-goldmine.mp4'
+file 'talking-head-fazit.mp4'
+file 'counter-yield.mp4'
+file 'endscreen.mp4'
+EOF
+
+# Zusammenfügen (alle Clips müssen gleiche Auflösung/Codec haben)
+ffmpeg -f concat -safe 0 -i filelist.txt -c copy assembled.mp4
+
+# Falls unterschiedliche Formate: Re-encode
+ffmpeg -f concat -safe 0 -i filelist.txt \
+  -c:v libx264 -preset fast -crf 18 \
+  -c:a aac -b:a 192k \
+  -r 30 -s 1920x1080 \
+  assembled.mp4
+```
+
+**Schritt 5: Chart/Visual als Overlay auf Talking Head (PiP)**
+```bash
+# Chart als Picture-in-Picture (Marco links klein, Chart rechts groß)
+ffmpeg -i talking-head.mp4 -i chart-dividenden.png \
+  -filter_complex "[1:v]scale=1200:675[chart];\
+  [0:v]scale=640:360[marco];\
+  [chart][marco]overlay=x=10:y=H-h-10[out]" \
+  -map "[out]" -map 0:a -c:v libx264 -c:a copy pip-output.mp4
+
+# Overlay: Transparentes Metrik-Card über Talking Head
+ffmpeg -i talking-head.mp4 -i metrics-card-transparent.png \
+  -filter_complex "[1:v]format=rgba,colorchannelmixer=aa=0.85[overlay];\
+  [0:v][overlay]overlay=x=(W-w)/2:y=H-h-50:enable='between(t,5,10)'[out]" \
+  -map "[out]" -map 0:a pip-metrics.mp4
+```
+
+**Kompletter Workflow (1 Befehl):**
+```bash
+# generate-video-assets.sh — Generiert alle Visuals für ein Video
+#!/bin/bash
+TICKER=$1  # z.B. "GOLD" oder "BHP"
+
+echo "📊 Charts generieren..."
+python generate_charts.py --ticker $TICKER --output ./assets/$TICKER/
+
+echo "🎬 Video-Clips aus Charts..."
+for img in ./assets/$TICKER/*.png; do
+  name=$(basename "$img" .png)
+  ffmpeg -loop 1 -i "$img" -c:v libx264 -t 5 \
+    -vf "scale=1920:1080,fade=t=in:st=0:d=0.5,fade=t=out:st=4.5:d=0.5" \
+    -pix_fmt yuv420p "./clips/$TICKER/${name}.mp4" -y
+done
+
+echo "📝 Text-Overlays..."
+# (Generiert aus Schnittplan-Daten)
+
+echo "🔗 Sequenz-Assembly..."
+ffmpeg -f concat -safe 0 -i ./clips/$TICKER/filelist.txt \
+  -c:v libx264 -preset fast -crf 18 "./output/${TICKER}-assembled.mp4"
+
+echo "🎨 Color Grade..."
+ffmpeg -i "./output/${TICKER}-assembled.mp4" -vf "
+  eq=contrast=1.1:brightness=-0.02:saturation=0.9:gamma=1.05,
+  curves=r='0/0 0.25/0.22 0.5/0.5 0.75/0.78 1/1':b='0/0 0.5/0.45 1/0.95',
+  unsharp=5:5:0.5,vignette=PI/5
+" -c:a copy "./output/${TICKER}-final.mp4"
+
+echo "✅ Fertig: ./output/${TICKER}-final.mp4"
 ```
 
 **Screenshare-Regeln:**
@@ -1346,6 +1601,7 @@ ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=3" \
 3. **Highlights**: Relevante Zahlen mit Gold-Circle oder Gold-Unterstreichung markieren
 4. **Cursor-Bewegung**: Langsam, bewusst, keine hektischen Mausbewegungen
 5. **Browser-Tabs**: Aufräumen! Nur relevante Tabs sichtbar
+6. **Charts IMMER im Brand** — Python-generiert oder HTML-Template, niemals Standard-Excel
 
 ---
 
