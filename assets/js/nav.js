@@ -290,6 +290,9 @@
           '&nbsp;·&nbsp;' +
           '<a href="https://www.linkedin.com/in/marco-bozem-182173295"' +
             ' target="_blank" rel="noopener" style="color:#d4af37;">LinkedIn</a>' +
+          '&nbsp;·&nbsp;' +
+          '<a href="https://www.linkedin.com/company/mb-capital-strategies/"' +
+            ' target="_blank" rel="noopener" style="color:#d4af37;">Unternehmen</a>' +
         '</p>' +
       '</div>';
 
@@ -364,7 +367,8 @@
         'url': 'https://mbcapitalstrategies.com/ueber-marco-bozem/',
         'sameAs': [
           'https://www.youtube.com/@mbcapitalstrategies',
-          'https://www.linkedin.com/in/marco-bozem-182173295'
+          'https://www.linkedin.com/in/marco-bozem-182173295',
+          'https://www.linkedin.com/company/mb-capital-strategies/'
         ]
       },
       'publisher': {
