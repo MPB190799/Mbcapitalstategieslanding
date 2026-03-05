@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preconnect für Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>404 – Seite nicht gefunden | MB Capital Strategies</title>
+  <meta name="description" content="Diese Seite existiert nicht mehr. Finde hier alle Analysen, Tools und Guides von MB Capital Strategies – Hard Assets, Dividendenstrategien & mehr.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/404.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="404 – Seite nicht gefunden | MB Capital Strategies">
+  <meta property="og:description" content="Diese Seite existiert nicht mehr. Entdecke alle Analysen, Tools und Guides von MB Capital Strategies.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/404.html">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/Logo.png">
+
+  <!-- Stylesheet (identisch mit Blog-Seiten) -->
+  <link rel="stylesheet" href="/blog/styles.css?v=2">
+
+  <style>
+    /* ── 404-spezifische Styles ── */
+    .error-page {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    .error-code {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: clamp(6rem, 18vw, 12rem);
+      font-weight: 800;
+      line-height: 1;
+      color: transparent;
+      background: linear-gradient(135deg, #d4af37 0%, #b8972d 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      letter-spacing: -4px;
+      margin: 0 0 8px;
+      user-select: none;
+    }
+
+    .error-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37, #b8972d);
+      border: none;
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+
+    .error-headline {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-weight: 700;
+      color: #e8eaf0;
+      margin: 0 0 16px;
+    }
+
+    .error-subtext {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 1rem;
+      color: #8892a4;
+      max-width: 520px;
+      line-height: 1.75;
+      margin: 0 auto 40px;
+    }
+
+    .error-links-label {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #d4af37;
+      margin-bottom: 18px;
+    }
+
+    .error-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    .error-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .error-link-primary {
+      background: #d4af37;
+      color: #0f1115;
+    }
+
+    .error-link-primary:hover {
+      background: #c9a430;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+    }
+
+    .error-link-secondary {
+      background: transparent;
+      color: #d4af37;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .error-link-secondary:hover {
+      background: rgba(212, 175, 55, 0.08);
+      border-color: #d4af37;
+      transform: translateY(-1px);
+    }
+
+    .error-home-icon {
+      font-size: 1.1em;
+      line-height: 1;
+    }
+
+    .error-search-hint {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: #5a6377;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 480px) {
+      .error-links {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 300px;
+      }
+
+      .error-link {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- nav.js injiziert die Navigation automatisch -->
+  <nav class="nav"></nav>
+
+  <main class="error-page">
+    <p class="error-code" aria-hidden="true">404</p>
+    <hr class="error-divider">
+    <h1 class="error-headline">Seite nicht gefunden</h1>
+    <p class="error-subtext">
+      Diese Seite existiert leider nicht (mehr) oder wurde verschoben.
+      Kein Problem – alle Analysen, Tools und Guides sind weiterhin
+      erreichbar.
+    </p>
+
+    <p class="error-links-label">Direkt weiter zu</p>
+
+    <nav class="error-links" aria-label="Wichtige Seiten">
+      <a href="/" class="error-link error-link-primary">
+        <span class="error-home-icon">🏠</span> Startseite
+      </a>
+      <a href="/blog/" class="error-link error-link-secondary">
+        📰 Blog &amp; Analysen
+      </a>
+      <a href="/rechner/" class="error-link error-link-secondary">
+        🧮 Finanzrechner
+      </a>
+      <a href="/hard-asset-guide/" class="error-link error-link-secondary">
+        🧱 Hard Asset Guide
+      </a>
+      <a href="/depot-strategie/" class="error-link error-link-secondary">
+        📊 Depot-Strategie
+      </a>
+      <a href="/glossar/" class="error-link error-link-secondary">
+        📗 Glossar
+      </a>
+    </nav>
+
+    <p class="error-search-hint">
+      Tipp: Nutze die Navigation oben, um schnell das Richtige zu finden.
+    </p>
+  </main>
+
+  <script src="/assets/js/nav.js" defer></script>
+</body>
+</html>

@@ -7,6 +7,18 @@
 (function () {
   'use strict';
 
+  // ── Google Analytics 4 ──
+  (function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-J1NWEPPKNE', { anonymize_ip: true });
+  })();
+
   /* ── Google Consent Mode v2 Defaults (set before AdSense) ── */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -480,5 +492,30 @@
       banner.remove();
     });
   }
+
+  // ── Conversion Tracking: Newsletter-Anmeldung ──
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (form && form.getAttribute('data-type') === 'subscription') {
+      if (window.gtag) {
+        window.gtag('event', 'newsletter_signup', {
+          'event_category': 'conversion',
+          'event_label': window.location.pathname
+        });
+      }
+    }
+  });
+
+  // ── Conversion Tracking: Affiliate-Link-Klicks ──
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('a[rel*="sponsored"]');
+    if (el && window.gtag) {
+      window.gtag('event', 'affiliate_click', {
+        'event_category': 'monetization',
+        'event_label': el.hostname || el.href,
+        'page': window.location.pathname
+      });
+    }
+  });
 
 }());

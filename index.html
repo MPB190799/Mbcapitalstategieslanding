@@ -994,6 +994,8 @@ details.faq-item .faq-answer a { color: var(--gold); }
 </head>
 <body>
 
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--gold,#d4af37);color:#0f1115;padding:8px 16px;z-index:9999;text-decoration:none;font-weight:700;transition:top .2s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Zum Hauptinhalt springen</a>
+
 <!-- ============================================================
      NAVIGATION
      ============================================================ -->
@@ -1078,7 +1080,7 @@ details.faq-item .faq-answer a { color: var(--gold); }
   </nav>
 </nav>
 
-<div class="page-wrapper">
+<main id="main-content" class="page-wrapper">
 
 <!-- ============================================================
      HERO
@@ -1111,6 +1113,7 @@ details.faq-item .faq-answer a { color: var(--gold); }
     <strong style="color:var(--gold);">Cashflow aus Energie · Shipping · Mining · Pipelines</strong>
   </p>
   <p class="hero-tagline">Klare Strategie · Echte Depot-Transparenz · Cashflow jeden Monat</p>
+  <p style="font-size:0.82rem;color:#9aa6c0;margin-top:6px;">📅 Investor seit 2018 &nbsp;·&nbsp; 💼 60.000€+ Hard-Asset-Depot &nbsp;·&nbsp; 🎯 Cashflow statt Kursfantasie &nbsp;·&nbsp; 580+ YouTube-Abonnenten &nbsp;·&nbsp; Keine Anlageberatung</p>
 
   <!-- Trust Stats -->
   <div class="hero-stats">
@@ -1130,17 +1133,21 @@ details.faq-item .faq-answer a { color: var(--gold); }
       <span class="stat-num">6–15%</span>
       <span class="stat-label">Ziel-Dividendenrendite</span>
     </div>
+    <div class="stat-item">
+      <span class="stat-num">580+</span>
+      <span class="stat-label">▶ YouTube-Abonnenten</span>
+    </div>
   </div>
 
   <div class="hero-cta">
     <a href="/depot-strategie/" class="btn-primary">📊 Mein Depot ansehen</a>
     <a href="/hard-asset-guide/" class="btn-secondary">🧱 Hard Asset Guide</a>
-    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" class="btn-secondary">▶ YouTube</a>
+    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:#d4af37;text-decoration:none;font-size:0.9rem;">▶ YouTube</a>
   </div>
 
   <!-- Trust Bar -->
   <div style="margin-top:28px;padding:14px 20px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:12px;font-size:0.82rem;color:#9aa6c0;letter-spacing:0.03em;">
-    ✔ Unabhängig & werbefinanziert &nbsp;·&nbsp; ✔ Kein Newsletter-Spam &nbsp;·&nbsp; ✔ Echtes Depot einsehbar &nbsp;·&nbsp; ✔ Keine Anlageberatung
+    ✔ Unabhängig & werbefinanziert &nbsp;·&nbsp; ✔ Kein Newsletter-Spam &nbsp;·&nbsp; ✔ Echtes Depot einsehbar &nbsp;·&nbsp; ✔ Keine Anlageberatung &nbsp;·&nbsp; ✔ 580+ YouTube-Abonnenten
   </div>
 </section>
 
@@ -1558,7 +1565,7 @@ details.faq-item .faq-answer a { color: var(--gold); }
   </ul>
 </div>
 
-</div><!-- end page-wrapper -->
+</main><!-- end page-wrapper -->
 
 <!-- ============================================================
      FOOTER
