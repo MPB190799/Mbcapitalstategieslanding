@@ -1172,23 +1172,25 @@ Kernaussage: "Barrick Gold hat 10 Jahre am Stück Dividende gezahlt — trotz Go
 Foto von Marco Bozem, [EMOTION], Blick in Kamera,
 Text-Overlay: "[MAX 3-4 WÖRTER]",
 Hintergrund: [SEKTOR-BEZOGEN],
+Goldener Kompass-Icon unten rechts als Brand-Mark,
 Stil: Dark Theme, Gold-Akzente, YouTube-Thumbnail, 1280x720
 ```
 
 **Thumbnail-Prompt-Template (DALL-E 3 / ChatGPT):**
 ```
 Create a YouTube thumbnail, 1280x720, cinematic:
-- Left: [Person/Objekt] with [EMOTION]
+- Left: Marco Bozem (man in striped shirt) with [EMOTION], looking at camera
 - Right: Large text "[ZAHL/KEYWORD]" in gold on dark background
-- Background: [SEKTOR-SZENE]
+- Bottom-right corner: small golden compass icon (brand mark)
+- Background: [SEKTOR-SZENE], slightly blurred
 - Style: Professional, high contrast, dramatic lighting
 - Colors: Dark (#0f1115) with gold (#d4af37) accents
 ```
 
 **Beispiel-Prompts:**
-- `Marco, shocked face, text "15% DIVIDENDE", gold mining background, dark theme`
-- `Marco pointing at chart, text "BHP vs RIO", split screen, red/green arrows`
-- `Marco serious face, text "CRASH?", oil rig background, dramatic lighting`
+- `Marco, shocked face, text "15% DIVIDENDE", gold mining background, golden compass bottom-right, dark theme`
+- `Marco pointing at chart, text "BHP vs RIO", split screen, red/green arrows, compass brand mark`
+- `Marco serious face, text "CRASH?", oil rig background, compass needle pointing down, dramatic lighting`
 
 **Marcos Thumbnail-Styleguide (basierend auf bestehendem Stil):**
 
@@ -1206,12 +1208,23 @@ Create a YouTube thumbnail, 1280x720, cinematic:
 └─────────────────────────────────────────┘
 ```
 
-**Bestehende Thumbnail-Elemente (BEIBEHALTEN):**
-- Dunkler Hintergrund (near-black, konsistent mit Website #0f1115)
-- Große Zahlen in Gold/Gelb (Dividendenrendite, Wachstum, Kursziel)
-- Sektor-Bilder als Hintergrund (Ölfeld, Goldmine, Schiff, Pipeline, Raffinerie)
-- Trigger-Wörter mit Fragezeichen: "ZU TEUER?", "RESET?", "CASHFLOW?", "FÄLLT"
-- Marco im gestreiften Hemd (Wiedererkennungswert)
+**Brand-Elemente (IMMER verwenden):**
+- **Marco Bozem** — Gesicht, gestreiftes Hemd, authentisch (Wiedererkennungswert)
+- **Kompass** — MB Capital Strategies Brand-Symbol. Steht für Navigation durch die Finanzmärkte. Als Icon/Overlay in Ecke oder als subtiles Hintergrund-Element
+- **Dunkler Hintergrund** (near-black, konsistent mit Website #0f1115)
+- **Gold/Gelb-Akzente** (#d4af37) — Zahlen, Highlights, Kompass-Details
+- **Große Zahlen** in Gold/Gelb (Dividendenrendite, Wachstum, Kursziel)
+- **Sektor-Bilder** als Hintergrund (Ölfeld, Goldmine, Schiff, Pipeline, Raffinerie)
+- **Trigger-Wörter** mit Fragezeichen: "ZU TEUER?", "RESET?", "CASHFLOW?", "FÄLLT"
+
+**Kompass-Einsatz in Thumbnails:**
+
+| Platzierung | Wann | Beispiel |
+|---|---|---|
+| Ecke unten-rechts (klein, 80x80px) | Standard bei jedem Thumbnail | Goldener Kompass als Wasserzeichen/Brand-Mark |
+| Hintergrund (groß, transparent 10-15% Opacity) | Bei allgemeinen Themen (Wochenrückblick, Strategie) | Kompass als subtiles Overlay hinter Marco |
+| Nadel zeigt auf Zahl/Keyword | Bei Empfehlungen / "Richtung" | Kompass-Nadel zeigt auf "15% YIELD" |
+| Zentral (mittelgroß) | Bei Branding-Videos (Kanal-Trailer, Intro) | Kompass als Hauptelement |
 
 **Thumbnail-Regeln:**
 1. **Marco IMMER links**, Zahl IMMER rechts (Eye-Tracking-optimiert: Gesicht links fängt Blick, Zahl rechts hält ihn)
