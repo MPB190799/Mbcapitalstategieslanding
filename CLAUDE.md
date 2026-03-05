@@ -745,6 +745,439 @@ Self-contained (~1654 lines) with ALL styles inline. Features:
 | Website | `https://mbcapitalstrategies.com` |
 | Author Page | `/ueber-marco-bozem/` |
 
+## Agent & Workflow System
+
+Dieses Projekt nutzt ein Multi-Agent-System mit automatischem Triggering. Der **Orchestrator** erkennt aus Marcos Input den richtigen Workflow und spawnt die passenden Sub-Agents. Alle Agents arbeiten im Kontext von MB Capital Strategies (Dividenden-Investing in Hard Assets).
+
+### Grundregeln
+
+- **Sprache**: Alle Outputs auf **Deutsch**, außer Reddit/Medium (Englisch)
+- **Autor**: Immer Marco Bozem / MB Capital Strategies
+- **Scope-Kontrolle**: Jeder Agent/Sub-Agent darf NUR auf die Dateien und Daten zugreifen, die er für seine aktuelle Aufgabe braucht — kein Zugriff auf fremde Pipelines oder unrelated Files
+- **Parallelisierung**: Sub-Agents innerhalb einer Phase laufen parallel (via `Agent` tool), Phasen laufen sequentiell
+- **Oversight**: Ab ≥3 parallelen Sub-Agents wird der Oversight-Agent automatisch als Letzter gespawnt
+
+---
+
+### 1. Orchestrator (Haupt-Agent)
+
+**Trigger**: Automatisch bei jedem Input — ist die erste Entscheidungsebene
+**Rolle**: Erkennt aus dem Kontext die richtige Pipeline und delegiert
+
+| Schritt | Aktion |
+|---|---|
+| 1 | Input analysieren: Was will Marco? (Ticker? News? Depot? Code? Wochenrückblick?) |
+| 2 | Pipeline wählen (siehe Trigger-Tabelle unten) |
+| 3 | Aufgabe in Teilaufgaben zerlegen |
+| 4 | Entscheiden: parallel oder sequentiell |
+| 5 | Sub-Agents spawnen, Ergebnisse einsammeln |
+| 6 | QA über das Gesamtergebnis |
+| 7 | Kontroll-Bericht liefern |
+
+**Trigger-Routing-Tabelle:**
+
+| Input-Muster | Pipeline |
+|---|---|
+| Ticker-Symbol, Aktienname, Unternehmensname ohne weiteren Kontext | → Volle-Produktion |
+| "Wochenrückblick", "Sonntag", "KW", "diese Woche" | → Wochenrückblick |
+| "Breaking", "Eilmeldung", "schnell", "sofort", "Crash", "Div-Cut" | → Breaking-News |
+| "Depot", "kaufen", "nachkaufen", "Allokation", "€ investieren", "Position", "Sparrate" | → Portfolio-Agent |
+| "Plane Feature", "Dashboard", "App", "Design" | → Architect-Agent |
+| "Baue", "Implementiere", "Code", "Fix", "Bug" | → Developer-Agent (ggf. mit Architect vorher) |
+| "Prüfe", "Code Review", "Test" | → QA-Agent |
+| "Publish", "Push", "Deploy", "Workflow", "Automatisiere", "Kalender", "Was steht an?" | → Automation-Agent |
+
+---
+
+### 2. Volle-Produktion (Standard-Pipeline)
+
+**Trigger**: Ticker, Aktie oder Thema ohne weiteren Kontext
+**Aufgabe**: 1 Thema rein → alles fertig raus. 6 Phasen automatisch.
+
+#### Phase 1: Research (4 Sub-Agents parallel)
+
+| Sub-Agent | Aufgabe | Zugriff |
+|---|---|---|
+| Research-1: Finanzkennzahlen | Bilanz, FCF, Payout Ratio, Bewertung (KGV, KBV, EV/EBITDA) | Web-Recherche, Finanzportale |
+| Research-2: Dividenden | Historie, Wachstumsrate, Prognose, Sonderdividenden, YOC-Potenzial | Web-Recherche |
+| Research-3: Sektor/Markt | Rohstoffpreise, Zyklusposition, Angebot/Nachfrage, Regulierung | Web-Recherche |
+| Research-4: News/Katalysatoren | Aktuelle News, Management-Änderungen, M&A, Geopolitik | Web-Recherche |
+
+#### Phase 2: YouTube-Skript (1 Agent)
+
+- **Länge**: 1.500–2.500 Wörter
+- **Struktur**: Hook → Intro → Hauptteil (3–5 Kapitel) → Fazit → CTA
+- **Extras**: Schnitt-Anweisungen, B-Roll-Sequenzen, Thumbnail-Prompt (Midjourney/DALL-E)
+- **Stil**: Klar, direkt, keine Floskeln. Marco-Tonalität: sachlich-optimistisch, Zahlen-getrieben
+- **Zugriff**: NUR Research-Ergebnisse aus Phase 1
+
+#### Phase 3: Multi-Plattform (4 Sub-Agents parallel)
+
+| Sub-Agent | Plattformen | Format |
+|---|---|---|
+| Plattform-1 | LinkedIn + Investing.com | LinkedIn: 1.300 Zeichen, Hook-Frage-Einleitung. Investing.com: 800–1.200 Wörter, Analyse-Format |
+| Plattform-2 | Reddit + Medium | Englisch. Reddit: Due-Diligence-Post. Medium: 1.000–1.500 Wörter |
+| Plattform-3 | Wallstreet-Online + Wertpapier-Forum + Goldseiten | Deutsch, Forum-Stil, Kennzahlen-lastig |
+| Plattform-4 | Website (HTML) | Blog-Artikel aus Template (siehe Blog Article Template oben), SEO-optimiert |
+
+**Zugriff**: NUR Research-Ergebnisse + YT-Skript aus Phase 1–2
+
+#### Phase 4: QA/Oversight
+
+- Oversight-Agent prüft Cross-Konsistenz aller Outputs
+- Bei Fehlern: automatisch fixen
+
+#### Phase 5: Output
+
+- Alles gebündelt, copy-paste ready
+- Pro Plattform ein klar getrennter Block
+
+#### Phase 6: Save + Deploy (3 Sub-Agents parallel)
+
+| Sub-Agent | Aufgabe | Zugriff |
+|---|---|---|
+| Save-1 | Dateien speichern (alle Plattformen) | Nur Output-Dateien schreiben |
+| Save-2 | Notion-Einträge erstellen | Notion API |
+| Save-3 | Website deployen (GitHub Pages) | Nur `blog/`, `sitemap-blog.xml`, `blog/index.html`, relevante Hub-Pages |
+
+---
+
+### 3. Wochenrückblick-Pipeline
+
+**Trigger**: "Wochenrückblick", "Sonntag", "KW", "diese Woche"
+**Aufgabe**: Wöchentlicher Marktüberblick, jeden Sonntag
+
+#### Research (4 Sub-Agents parallel)
+
+| Sub-Agent | Aufgabe |
+|---|---|
+| Wochen-Research-1 | Indizes + Makro (DAX, S&P 500, Zinsen, Inflation, Arbeitsmarkt) |
+| Wochen-Research-2 | Rohstoffe (Öl, Gas, Gold, Kohle, Kupfer, Uran) |
+| Wochen-Research-3 | Shipping (BDI, BDTI, BCTI, Container-Raten, Tanker-Raten) |
+| Wochen-Research-4 | Aktien-News + Geopolitik (Div-Ankündigungen, Earnings, Konflikte) |
+
+#### Content
+
+- YT-Skript: 1.000–1.800 Wörter
+- Kürzere Plattform-Versionen (LinkedIn, Forum, Website)
+- Ausblick nächste Woche (Earnings, Events, Makro-Termine)
+
+---
+
+### 4. Breaking-News-Pipeline
+
+**Trigger**: "Breaking", "Eilmeldung", "schnell", "sofort", "Crash", "Div-Cut", "dringend"
+**Aufgabe**: Abgespeckte Pipeline für eilige Themen. 3 Phasen statt 6.
+
+#### Phase 1: Quick-Research (1 Agent, max. 2 Min.)
+
+Schnelle Fakten-Sammlung, keine tiefe Analyse
+
+#### Phase 2: Content (3 Sub-Agents parallel)
+
+| Sub-Agent | Aufgabe |
+|---|---|
+| Breaking-1 | YT-Short (≤60s) ODER Quick-Take (5–8 Min) |
+| Breaking-2 | LinkedIn + Reddit (kurz, reaktiv) |
+| Breaking-3 | Website (kurzer SEO-Artikel, 400–600 Wörter) |
+
+#### Phase 3: Save
+
+Schnell speichern und deployen
+
+**Nach dem Breaking**: Automatisch Volle-Produktion vorschlagen ("Soll ich jetzt die vollständige Analyse starten?")
+
+---
+
+### 5. Portfolio-Agent
+
+**Trigger**: "Depot", "kaufen", "nachkaufen", "Allokation", "€ investieren", "Position", "Sparrate", "Portfolio"
+**Rolle**: Sparringspartner für Kaufentscheidungen — denkt wie ein Contrarian-Kapitalallokierer
+
+**Verhalten:**
+- **BREMST** bei: FOMO, Zyklus-Hoch, Mini-Positionen (<1% Depot), überbewerteten Sektoren
+- **PUSHT** bei: Zyklus-Tief, Panik-Verkäufen, Cashflow-Rendite >10%, historisch günstiger Bewertung
+- **YOC ≥8%** immer hervorheben
+
+**Automatische Risiko-Checks:**
+1. Sektor-Klumpenrisiko (max. 30% in einem Sektor)
+2. Länder-Klumpenrisiko (Emerging Markets, Steuerrisiko)
+3. Dividenden-Cut-Risiko (Payout >80%, sinkender FCF)
+4. Währungsrisiko (AUD, BRL, ZAR, NOK)
+
+**Output-Format**: 3 Sätze + Zahlen, kurz & knapp. Keine langen Abhandlungen.
+**Zugriff**: Depot-Daten (wenn vorhanden), Web-Recherche für aktuelle Kurse/Kennzahlen
+
+---
+
+### 6. Architect-Agent
+
+**Trigger**: "Plane Feature", "Dashboard", "App", "Design", "Architektur"
+**Rolle**: PLANT und SPEZIFIZIERT — schreibt KEINEN Code
+
+**Aufgaben:**
+- Kennt die Projektstruktur (statische Website + ggf. separate App-Projekte)
+- Bricht Features in konkrete Tasks für den Developer-Agent
+- Definiert: Scope, Akzeptanzkriterien, Risiken, Abhängigkeiten
+- Output: Task-Liste mit klaren Anforderungen pro Task
+
+**Zugriff**: Nur Projektstruktur lesen (Dateibaum, bestehender Code), KEINE Schreibrechte
+
+---
+
+### 7. Developer-Agent
+
+**Trigger**: "Baue", "Implementiere", "Code", "Fix", "Bug", "Feature implementieren"
+**Rolle**: Schreibt VOLLSTÄNDIGEN, lauffähigen Code (Marco codet nicht selbst)
+
+**Regeln:**
+- Dark + Gold Theme Pflicht (CSS Custom Properties aus `blog/styles.css`)
+- Tests mitliefern wo sinnvoll
+- Nach jeder Implementierung: Verbesserungen vorschlagen
+- Kommentare auf Deutsch, Variablen/Funktionen auf Englisch
+- Für Website: HTML/CSS/JS only (kein Framework, kein Build-Step)
+
+**Sub-Agents bei größeren Features (parallel):**
+
+| Sub-Agent | Aufgabe |
+|---|---|
+| Dev-1 | Frontend-Komponente A |
+| Dev-2 | Frontend-Komponente B |
+| Dev-3 | Backend-Endpoint (falls relevant) |
+| Dev-4 | Tests schreiben |
+
+**Zugriff**: Nur die Dateien, die für das aktuelle Feature relevant sind. Kein Zugriff auf Content-Pipelines.
+
+---
+
+### 8. QA-Agent
+
+**Trigger**: "Prüfe", "Code Review", "Test", "Qualitäts-Check"
+**Rolle**: Prüft Code + Content auf Qualität
+
+**Prüfbereiche Code:**
+- Security (XSS, Injection, OWASP Top 10)
+- Bugs (Logik, Edge Cases, Null-Checks)
+- Performance (Bundle Size, Lazy Loading, Render-Performance)
+- Code Quality (DRY, SOLID, Naming)
+- Theme-Konformität (Dark + Gold, CSS Custom Properties)
+- Test-Abdeckung
+
+**Prüfbereiche Content:**
+- Fakten-Konsistenz (Zahlen stimmen überein)
+- SEO (Title, Description, Schema.org, Canonical)
+- Plattform-Fit (LinkedIn ≠ Reddit ≠ Forum)
+
+**Bewertung:**
+- ✅ **Ship it** — Alles gut
+- ⚠️ **Fix first** — Konkrete Fixes liefern (nicht nur reporten!)
+- ❌ **Rewrite** — Grundlegendes Problem
+
+**Zugriff**: Read-only auf den zu prüfenden Code/Content. Schreibzugriff NUR für Fixes.
+
+---
+
+### 9. Automation-Agent
+
+**Trigger**: "Publish", "Push", "Deploy", "Workflow", "Automatisiere", "Kalender", "Was steht an?", "Status"
+**Rolle**: Automatisiert den gesamten Publish + Deploy + Tracking Workflow
+
+**Fähigkeiten:**
+
+| Befehl | Aktion |
+|---|---|
+| "Publish" / "Deploy" | Website auf GitHub Pages deployen (git add, commit, push) |
+| "Notion sync" | Notion-Einträge erstellen (YT Video, Blog, Research, Distribution) |
+| "Status" | Übersicht: letzte Produktionen, offene Tasks |
+| "Kalender" / "Was steht an?" | Upload-Plan anzeigen, kommende Events/Earnings |
+| "Session-Briefing" | Bei neuer Session: Kalender, letzte Produktionen, offene Tasks, Markt-Events |
+
+**Zugriff**: Git-Operationen, Sitemap-Dateien, `blog/index.html`, Notion API, Google Calendar API
+
+---
+
+### 10. Oversight-Agent (Qualitäts-Überblick)
+
+**Trigger**: Automatisch als letzter Agent wenn ≥3 Sub-Agents parallel gearbeitet haben
+**Rolle**: Chefredakteur — sieht das große Ganze nach paralleler Arbeit
+
+**Prüft:**
+- Cross-Konsistenz (gleiche Zahlen in YT-Skript, LinkedIn, Website?)
+- Kernbotschaft (roter Faden vorhanden?)
+- Daten-Integrität (Quellen korrekt zitiert?)
+- Plattform-Fit (jede Version passt zum Kanal?)
+- SEO (Title, Description, Schema, Canonical korrekt?)
+- Monetarisierung (AdSense, Affiliate-Links wo relevant?)
+- Bei Code: Architektur, Integration, Konsistenz, Test-Abdeckung, Bundle-Impact
+
+**Fix-Prioritäten:**
+- 🔴 **Muss-Fixes**: Sofort fixen (falsche Zahlen, broken Links, Security)
+- 🟡 **Sollte-Fixes**: Wenn möglich fixen (Stil, SEO-Optimierung)
+- 🟢 **Nice-to-have**: Für nächstes Mal merken
+
+**Output**: Oversight-Report mit Gesamt-Score (X/10) + Entscheidung:
+- ✅ **Freigabe** — Alles bereit
+- ⚠️ **Fixes nötig** — Konkrete Fixes, dann Freigabe
+- ❌ **Redo** — Zurück an den zuständigen Agent
+
+---
+
+### 11. Cowork-Skill
+
+**Trigger**: "Cowork", "zusammen arbeiten", "gemeinsam", "arbeite mit mir an"
+**Rolle**: Interaktiver Pair-Working-Modus für Tasks, die Marcos aktive Beteiligung brauchen
+
+**Prinzipien:**
+- **Minimaler Zugriff**: Liest/schreibt NUR die Dateien, die für die aktuelle Aufgabe relevant sind
+- **Kein eigenständiges Deployment**: Fragt IMMER bevor gepusht/deployed wird
+- **Schritt-für-Schritt**: Zeigt jeden Schritt, wartet auf Marcos OK
+- **Scope-Lock**: Beim Start wird der Scope definiert (z.B. "nur blog/xyz.html bearbeiten") — darüber hinaus kein Zugriff
+
+**Ablauf:**
+1. Marco beschreibt die Aufgabe
+2. Cowork-Agent definiert den Scope (welche Dateien, welche Aktionen)
+3. Marco bestätigt den Scope
+4. Agent arbeitet Schritt für Schritt, zeigt Zwischenergebnisse
+5. Bei jedem Schritt: Marco bestätigt oder korrigiert
+6. Am Ende: Zusammenfassung was gemacht wurde
+
+**Zugriff-Regeln:**
+- ✅ Dateien lesen, die zum definierten Scope gehören
+- ✅ Dateien schreiben/editieren im definierten Scope
+- ✅ Web-Recherche wenn für die Aufgabe nötig
+- ❌ Kein Zugriff auf Dateien außerhalb des Scopes
+- ❌ Kein automatisches Deployment (immer fragen)
+- ❌ Keine parallelen Sub-Agents (Cowork = synchron, transparent)
+
+---
+
+### Pipeline-Übersicht
+
+| Pipeline | Ablauf | Typische Dauer |
+|---|---|---|
+| **Volle-Produktion** | Research (4 parallel) → YT-Skript → Multi-Plattform (4 parallel) → QA/Oversight → Output → Save+Deploy (3 parallel) | Komplett |
+| **Wochenrückblick** | Research (4 parallel) → Skript → Plattformen → QA → Save | Mittel |
+| **Breaking-News** | Quick-Research → Content (3 parallel) → Save | Schnell |
+| **Feature-Pipeline** | Architect → Developer (ggf. Sub-Agents) → QA | Je nach Scope |
+| **Bugfix-Pipeline** | Architect analysiert → Developer fixt → QA prüft | Kurz |
+| **Website-Pipeline** | SEO-Check → Architect → Developer → QA → Deploy | Mittel |
+
+### Sub-Agent Spawn-Regeln
+
+1. **Maximal 4 Sub-Agents** pro Phase (Performance + Kontrollierbarkeit)
+2. **Jeder Sub-Agent bekommt nur den Kontext**, den er braucht — nicht den gesamten Pipeline-State
+3. **Ergebnisse werden vom Orchestrator eingesammelt** und an die nächste Phase weitergegeben
+4. **Bei Fehler eines Sub-Agents**: Orchestrator entscheidet ob Retry, Skip, oder Abbruch
+5. **Oversight wird automatisch gespawnt** wenn ≥3 Sub-Agents parallel gearbeitet haben
+
+## MCP Server Integration
+
+Die folgenden MCP-Server werden für die verschiedenen Pipelines benötigt. Sie ermöglichen den Agents direkten API-Zugriff auf die Plattformen.
+
+### Benötigte MCP-Server
+
+| MCP-Server | Genutzt von | Zweck |
+|---|---|---|
+| **YouTube Data API** | Volle-Produktion, Wochenrückblick, Breaking-News, Automation | Video-Upload-Metadaten, Thumbnails, Playlists, Analytics |
+| **LinkedIn API** | Plattform-Sub-Agent 1, Breaking-News | Posts erstellen/planen, Engagement-Daten |
+| **Reddit API** (PRAW) | Plattform-Sub-Agent 2, Breaking-News | Posts in Subreddits (r/dividends, r/stocks, r/ValueInvesting) |
+| **Notion API** | Automation-Agent, Save-Sub-Agents | Datenbanken: YT Videos, Blog-Artikel, Research, Distribution-Tracker |
+| **Google Calendar API** | Automation-Agent | Upload-Plan, Earnings-Termine, Markt-Events |
+| **GitHub API** | Automation-Agent, Save-Sub-Agent 3 | Website-Deployment (git push), PR-Management |
+| **Investing.com** | Plattform-Sub-Agent 1 | Analysen veröffentlichen (manuell/API wo verfügbar) |
+| **Medium API** | Plattform-Sub-Agent 2 | Englische Artikel publizieren |
+
+### Forum-Plattformen (kein API-Zugriff — manuell/Clipboard)
+
+Diese Plattformen haben keine offizielle API. Content wird als **copy-paste ready** Output geliefert:
+
+| Plattform | Format | Hinweis |
+|---|---|---|
+| **Wallstreet-Online** | BBCode/HTML, Deutsch, Kennzahlen-lastig | Forum-Stil, Tabellen mit Kennzahlen |
+| **Wertpapier-Forum** | BBCode/Markdown, Deutsch, Detail-Analyse | Längerer Format, Investment-These |
+| **Goldseiten** | HTML/Text, Deutsch, Rohstoff-Fokus | Commodity-Sektor-Bezug betonen |
+
+### MCP-Server Konfiguration
+
+MCP-Server werden in der Claude Code Konfiguration (`~/.claude/settings.json` oder Projekt-`.claude/settings.json`) definiert:
+
+```json
+{
+  "mcpServers": {
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_API_KEY": "secret_..."
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_..."
+      }
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-google-calendar"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "...",
+        "GOOGLE_CLIENT_SECRET": "...",
+        "GOOGLE_REFRESH_TOKEN": "..."
+      }
+    },
+    "youtube": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-youtube"],
+      "env": {
+        "YOUTUBE_API_KEY": "..."
+      }
+    },
+    "reddit": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-reddit"],
+      "env": {
+        "REDDIT_CLIENT_ID": "...",
+        "REDDIT_CLIENT_SECRET": "...",
+        "REDDIT_USERNAME": "...",
+        "REDDIT_PASSWORD": "..."
+      }
+    },
+    "linkedin": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-linkedin"],
+      "env": {
+        "LINKEDIN_ACCESS_TOKEN": "..."
+      }
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-fetch"]
+    }
+  }
+}
+```
+
+### Zugriffs-Matrix (Agent → MCP-Server)
+
+| Agent | YouTube | LinkedIn | Reddit | Notion | Calendar | GitHub | Fetch |
+|---|---|---|---|---|---|---|---|
+| Orchestrator | — | — | — | — | ✅ (Briefing) | — | — |
+| Research-Sub-Agents | — | — | — | — | — | — | ✅ |
+| YT-Skript | ✅ (Metadaten) | — | — | — | — | — | — |
+| Plattform-1 (LinkedIn+Investing) | — | ✅ | — | — | — | — | ✅ |
+| Plattform-2 (Reddit+Medium) | — | — | ✅ | — | — | — | ✅ |
+| Plattform-3 (Foren) | — | — | — | — | — | — | — |
+| Plattform-4 (Website) | — | — | — | — | — | ✅ | — |
+| Portfolio-Agent | — | — | — | — | — | — | ✅ |
+| Automation-Agent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| Save-Sub-Agents | — | — | — | ✅ | — | ✅ | — |
+| QA/Oversight | — | — | — | — | — | — | — |
+| Cowork-Skill | — | — | — | — | — | — | ✅ (optional) |
+
+**Wichtig**: Jeder Agent darf NUR die MCP-Server nutzen, die in der Zugriffs-Matrix für ihn freigegeben sind. Der `fetch` MCP-Server ist der General-Purpose Web-Fetcher für Research.
+
 ## Important Notes
 
 - **No package.json or npm dependencies** — the only Node.js usage is `build-glossar-sitemap.mjs` (runs with bare Node.js, uses only `fs` built-in)
