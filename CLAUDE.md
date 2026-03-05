@@ -4,7 +4,7 @@
 
 **MB Capital Strategies** (`mbcapitalstrategies.com`) is a German-language static website focused on dividend investing in hard assets (energy, shipping, mining, pipelines). It is authored by Marco Bozem and hosted on **GitHub Pages** with a custom domain via `CNAME`.
 
-This is **not** a JavaScript/Node.js application — it is a **static HTML site** with ~122 hand-authored HTML pages, inline CSS/JS, and a handful of utility scripts for batch operations.
+This is **not** a JavaScript/Node.js application — it is a **static HTML site** with ~149 hand-authored HTML pages, inline CSS/JS, and a handful of utility scripts for batch operations.
 
 ## Tech Stack
 
@@ -24,15 +24,15 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 
 ```
 /                           # Root = GitHub Pages document root
-├── index.html              # Homepage (~1570 lines, self-contained with inline <style>)
+├── index.html              # Homepage (~1654 lines, self-contained with inline <style>)
 ├── CNAME                   # Custom domain: mbcapitalstrategies.com
 ├── robots.txt              # Crawl directives + sitemap references
 ├── ads.txt                 # AdSense publisher verification (pub-7097302643579933)
 ├── site.webmanifest        # PWA manifest (icons, theme #0f1115)
 │
-├── blog/                   # 69 article pages + index (stock analyses, market news, guides)
-│   ├── index.html          # Blog listing page with 8-category filter (Mining, Shipping, Midstream, BDC, Dividenden, Upstream, Rechner)
-│   └── styles.css          # Shared stylesheet for blog + most content pages (1206 lines, 20 CSS custom properties)
+├── blog/                   # 65 article pages + 9 redirect stubs + index (stock analyses, market news, guides)
+│   ├── index.html          # Blog listing page with 7-category filter (Mining, Upstream, Shipping, Midstream, Dividenden, Rechner, BDC)
+│   └── styles.css          # Shared stylesheet for blog + most content pages (1332 lines, 20 CSS custom properties)
 │
 ├── tools/                  # Interactive financial calculators (8 tools)
 │   ├── dividendenrechner.html
@@ -58,18 +58,20 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 │   ├── mining-serie-high-dividend-ressourcen-2025-2028.html
 │   └── pipeline-aktien-analyse-2025.html
 │
-├── glossar/                # Financial glossary system (211 terms → 137 unique anchors)
+├── glossar/                # Financial glossary system (196 terms → 152 unique anchors)
 │   ├── index.html          # Glossary page with search/filter + dynamic SEO via ?begriff= param
 │   ├── terms.json          # Term→slug mapping (used for auto-linking)
 │   ├── glossar.js          # Glossary page logic (search, filter, Schema.org, URL params)
 │   ├── autolink-glossar.js # Client-side glossary term auto-linker
 │   ├── shipping-cluster.html  # Shipping terminology hub
 │   ├── aisc-mining.html    # Mining cost definitions (AISC)
-│   └── tce-rate.html       # Shipping TCE rate glossary
+│   ├── tce-rate.html       # Shipping TCE rate glossary
+│   └── *.html              # 23 specialized glossary pages (baltic-dry-index, bdc, capex, cashflow-cover, dayrate, debt-ebitda, dividend-cut, dividend-yield, ebitda, free-cashflow, hard-assets, midstream, mlp, payout-ratio, special-dividend, superzyklus, time-charter, upstream, yield-on-cost, etc.)
 │
 ├── assets/
 │   └── js/
-│       ├── nav.js          # Shared nav injection + cookie consent + scroll effects + article schema (v3, 484 lines)
+│       ├── nav.js          # Shared nav injection + cookie consent + scroll effects + article schema (v3, 525 lines)
+│       ├── nav.min.js      # Minified version of nav.js for production
 │       └── glossar-linking.js  # Auto-links glossary terms in article content
 │
 ├── shipping/               # Shipping sector hub (index.html)
@@ -102,17 +104,18 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── hard-asset-guide/       # Hard asset investing guide (index.html)
 ├── ueber-marco-bozem/      # About the author (index.html)
 │
-├── sitemap.xml             # Master sitemap index (9 sub-sitemaps)
-├── sitemap-main.xml        # Core pages sitemap (27 URLs)
-├── sitemap-blog.xml        # Blog articles sitemap (84 URLs)
+├── sitemap.xml             # Master sitemap index (8 sub-sitemaps)
+├── sitemap-main.xml        # Core pages sitemap (18 URLs)
+├── sitemap-blog.xml        # Blog articles sitemap (65 URLs)
 ├── sitemap-tools.xml       # Calculator tools sitemap (9 URLs)
-├── sitemap-video.xml       # Video sitemap (23 YouTube embeds)
-├── sitemap-kategorien.xml  # Category pages (5 URLs)
+├── sitemap-video.xml       # Video sitemap (20 YouTube embeds)
+├── sitemap-kategorien.xml  # Category pages (10 URLs)
 ├── sitemap-bestenlisten.xml # Best-of lists (3 URLs)
 ├── sitemap-investing.xml   # Investing.com hub (1 URL)
-├── sitemap-travel.xml      # Travel content (1 URL)
-├── glossar-sitemap.xml     # Auto-generated glossary sitemap (137 URLs)
+├── sitemap-travel.xml      # Travel content (1 URL, listed in robots.txt but not in sitemap index)
+├── glossar-sitemap.xml     # Auto-generated glossary sitemap (23 URLs)
 │
+├── 404.html                # Custom 404 error page (GitHub Pages)
 ├── datenschutz.html        # Privacy policy (DSGVO)
 ├── impressum.html          # Legal notice (German law requirement)
 ├── toolbox.html            # Recommended brokers & tools (with affiliate links)
@@ -124,6 +127,10 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── add_nav.py              # Adds canonical nav to pages missing it (10 target pages)
 ├── fix_nav.py              # Standardizes nav dropdowns across ALL HTML pages
 ├── add_faq_schema.py       # Injects FAQPage JSON-LD into 10 mining/upstream articles
+├── add_faq_to_blog.py      # Adds FAQPage JSON-LD schema to blog articles missing one (context-aware Q&As)
+├── add_breadcrumb_to_blog.py # Adds BreadcrumbList JSON-LD schema to blog articles missing one
+├── add_glossar_blog_links.py # Adds relevant blog article links to glossary pages' related sections
+├── inject_author_sources.py  # Injects author bio box into blog articles
 ├── rename_mining_2026.py   # Renames articles from -2025 to -2026 with redirect stubs
 ├── build-glossar-sitemap.mjs  # Node.js ESM script to generate glossar-sitemap.xml
 │
@@ -141,22 +148,23 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 
 ## Blog Content Inventory
 
-The 69 blog articles break down by sector:
+The 65 blog content pages (+ 9 redirect stubs) break down by sector per `blog/index.html` categories:
 
-| Category | Count | Examples |
-|---|---|---|
-| Mining | 22 analyses + 9 redirect stubs | BHP, Rio Tinto, Vale, Barrick Gold, Glencore, Kazatomprom |
-| Upstream Oil & Gas | 12 analyses | Equinor, Petrobras, Devon Energy, ENI, OMV, Repsol |
-| Shipping & Tanker | 8 articles | Green Shipping 2026, Hidden Champions, LNG/Tanker picks |
-| Midstream / Pipeline | 5 articles | Pembina, TC Energy, Enbridge, ONEOK, Pipeline Finale |
-| BDC & High-Yield | 5 articles | Newtek vs Hercules, Crescent vs Blue Owl, 10% Yield picks |
-| Market News & Macro | 4 articles | Rohstoff-Superzyklus, Container & Kupfer News, Debitum check |
-| Tools & Resources | 2 articles | Toolbox/Broker review, Shipping Cashflow Rechner |
-| Tax Guide | 1 article | Quellensteuer Kanada & Australien |
+| Category | `data-category` | Count | Examples |
+|---|---|---|---|
+| Mining | `mining` | 23 | BHP, Rio Tinto, Vale, Barrick Gold, Glencore, Kazatomprom, AngloGold, Fresnillo, Central Asia Metals, Exxaro, Gerdau, Valterra |
+| Upstream Oil & Gas | `upstream` | 16 | Equinor, Petrobras, Devon Energy, ENI, OMV, Repsol, Aker BP, APA, Cardinal Energy, Coterra, Ecopetrol, Panoro, Woodside |
+| Shipping & Tanker | `shipping` | 9 | Green Shipping 2026, Hidden Champions, LNG/Tanker picks, Konsolidierung, Tanker-Charterraten |
+| Midstream / Pipeline | `midstream` | 5 | Pembina, TC Energy, Enbridge, ONEOK, Pipeline Finale |
+| Dividenden | `dividenden` | 5 | 10%-Yield picks, 5% stabil, Rohstoff-Superzyklus, Quellensteuer |
+| BDC & High-Yield | `bdc` | 2 | Newtek vs Hercules, Crescent vs Blue Owl |
+| Rechner | `rechner` | 2 | Shipping Cashflow Rechner, Alle Finanzrechner |
+
+Additional blog pages not in index filters: Toolbox/Broker review, Wise/Airalo travel, Debitum reality check, market news articles.
 
 **Redirect stubs** (9 files): Mining articles renamed from `-2025.html` to `-2026.html`. Old URLs use `<meta http-equiv="refresh">` + `<meta name="robots" content="noindex, follow">` + canonical pointing to new URL.
 
-**Blog index filters** (`blog/index.html`): 8 category buttons filter articles via `data-category` attributes on `.post` cards using vanilla JS.
+**Blog index filters** (`blog/index.html`): 7 category buttons filter articles via `data-category` attributes on `.post` cards using vanilla JS.
 
 ## Design System
 
@@ -236,7 +244,7 @@ The 69 blog articles break down by sector:
 
 There are **two main CSS sources** — pages use one or the other:
 
-1. **`/blog/styles.css`** — The shared design system stylesheet (1206 lines, 20 CSS custom properties). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=2">`.
+1. **`/blog/styles.css`** — The shared design system stylesheet (1332 lines, 20 CSS custom properties). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=2">`.
 
 2. **Inline `<style>` blocks** — The homepage (`index.html`) and some older pages embed their own styles directly. These share the same design tokens but may have page-specific additions.
 
@@ -253,7 +261,7 @@ All pages should include:
 <script src="/assets/js/nav.js" defer></script>
 ```
 
-This script (484 lines) is the **single source of truth** for navigation across all 100+ pages. It provides:
+This script (525 lines) is the **single source of truth** for navigation across all 100+ pages. It provides:
 
 - **Nav HTML injection** — replaces `<nav class="nav">` or `<header class="nav">` elements with the canonical navigation HTML at runtime. A nav change in `nav.js` propagates to every page automatically.
 - **Hamburger menu** toggle for mobile (< 700px)
@@ -282,7 +290,17 @@ DOMContentLoaded →
 
 ### nav.js Page Detection Logic
 
-Blog article detection (for author bio + schema injection):
+Blog article detection uses two slightly different filters:
+
+**Author bio injection** (`setupAuthorBio`):
+```javascript
+path.startsWith('/blog/') &&
+path !== '/blog/' &&
+!path.endsWith('index.html') &&
+!path.endsWith('alle-finanzrechner.html')
+```
+
+**Article schema injection** (`injectArticleSchema`) — stricter:
 ```javascript
 path.startsWith('/blog/') &&
 path !== '/blog/' &&
@@ -391,19 +409,19 @@ Insertion point (in priority order): `.breadcrumbs` → `.breadcrumb` → `secti
 
 ### Sitemaps
 
-The site uses a **sitemap index** pattern (`sitemap.xml` → 9 sub-sitemaps):
+The site uses a **sitemap index** pattern (`sitemap.xml` → 8 sub-sitemaps):
 
 | Sitemap | URLs | Content |
 |---|---|---|
-| `sitemap-main.xml` | 27 | Core pages (hub pages, legal, about) |
-| `sitemap-blog.xml` | 84 | Blog articles (all sectors) |
+| `sitemap-main.xml` | 18 | Core pages (hub pages, legal, about) |
+| `sitemap-blog.xml` | 65 | Blog articles (all sectors) |
 | `sitemap-tools.xml` | 9 | Calculator tools |
-| `sitemap-video.xml` | 23 | YouTube video embeds with full video schema |
-| `sitemap-kategorien.xml` | 5 | Category hub pages |
+| `sitemap-video.xml` | 20 | YouTube video embeds with full video schema |
+| `sitemap-kategorien.xml` | 10 | Category hub pages |
 | `sitemap-bestenlisten.xml` | 3 | Annual best-of lists (2026 editions only) |
 | `sitemap-investing.xml` | 1 | Investing.com analyses hub |
-| `sitemap-travel.xml` | 1 | Travel content |
-| `glossar-sitemap.xml` | 137 | Glossary terms (auto-generated from `terms.json`) |
+| `sitemap-travel.xml` | 1 | Travel content (listed in `robots.txt` but not in `sitemap.xml` index) |
+| `glossar-sitemap.xml` | 23 | Glossary terms (auto-generated from `terms.json`) |
 
 **When adding new pages**, update the relevant sub-sitemap XML file. Do NOT include redirect stubs (`noindex` pages) in sitemaps.
 
@@ -418,6 +436,10 @@ These scripts are **one-off or maintenance tools** — they modify HTML files in
 | `add_nav.py` | Adds canonical nav to pages missing it or replaces old `<header>` navs | 10 specific pages (shipping, rohstoffe, glossar, kategorien, blog) |
 | `fix_nav.py` | Standardizes nav dropdowns (Themen + Podcast) across ALL pages | Every `.html` file in repo (recursive walk) |
 | `add_faq_schema.py` | Injects FAQPage JSON-LD (5 Q&As each) into mining + upstream articles | 10 blog articles (Thungela, Whitehaven, Yancoal, BHP, Fortescue, Rio Tinto, Vale, Glencore, Kazatomprom) |
+| `add_faq_to_blog.py` | Adds context-aware FAQPage JSON-LD to blog articles missing one | Blog articles without existing FAQPage schema |
+| `add_breadcrumb_to_blog.py` | Adds BreadcrumbList JSON-LD schema to blog articles missing one | Blog articles without existing BreadcrumbList schema |
+| `add_glossar_blog_links.py` | Adds relevant blog article links to glossary pages' related sections | Glossary `*.html` pages (skips pages with 2+ existing blog links) |
+| `inject_author_sources.py` | Injects author bio box HTML into blog articles | Blog article pages |
 | `rename_mining_2026.py` | Renames articles from `-2025` to `-2026` with redirect stubs | 9 mining slugs + updates blog/index.html, sitemap-blog.xml, cross-references |
 
 These scripts use hardcoded `BASE` paths. Current values:
@@ -465,7 +487,7 @@ Run with: `node build-glossar-sitemap.mjs`
 
 The glossary (`/glossar/`) consists of:
 
-1. **`terms.json`** — Maps 211 German/English financial terms to 137 unique URL-safe anchors. Categories:
+1. **`terms.json`** — Maps 196 German/English financial terms to 152 unique URL-safe anchors. Categories:
    - Core financial (15): Dividende, Cashflow, EBITDA, KGV, ROE, NAV, REIT...
    - Valuation & ratios (20+): KBV, KUV, PEG, Forward KGV, EV/EBITDA, Debt-to-Equity...
    - Shipping general (22): VLCC, Panamax, Suezmax, Capesize, Bulk Carrier, Baltic Dry Index...
@@ -480,10 +502,11 @@ The glossary (`/glossar/`) consists of:
 
 3. **`autolink-glossar.js`** / **`assets/js/glossar-linking.js`** — Client-side scripts that auto-link glossary terms found in article text. Fetches `/glossar/terms.json`, protects existing `<a>` tags, then replaces term matches with links to `/glossar/?begriff=anchor` or `/glossar/#anchor`. Uses word boundaries and case-insensitive matching.
 
-4. **Specialized glossary pages**:
+4. **Specialized glossary pages** (23 pages total):
    - `shipping-cluster.html` — Shipping terminology hub
    - `aisc-mining.html` — Mining cost definitions (All-In Sustaining Costs)
    - `tce-rate.html` — Shipping Time Charter Equivalent rates
+   - `baltic-dry-index.html`, `bdc.html`, `capex.html`, `cashflow-cover.html`, `dayrate.html`, `debt-ebitda.html`, `dividend-cut.html`, `dividend-yield.html`, `ebitda.html`, `free-cashflow.html`, `hard-assets.html`, `midstream.html`, `mlp.html`, `payout-ratio.html`, `special-dividend.html`, `superzyklus.html`, `time-charter.html`, `upstream.html`, `yield-on-cost.html` — Additional financial concept deep-dives
 
 When adding new financial terms, add them to `terms.json` and regenerate the sitemap with `node build-glossar-sitemap.mjs`.
 
@@ -640,7 +663,7 @@ Hub pages list articles for a sector with card grids (`.posts` / `.grid`), use t
 
 ### Homepage (`index.html`)
 
-Self-contained (~1570 lines) with ALL styles inline. Features:
+Self-contained (~1654 lines) with ALL styles inline. Features:
 - Hero section with background image
 - Sector cards (Shipping, Mining, Midstream, Upstream, Dividendenstrategie)
 - Featured articles grid
@@ -731,6 +754,7 @@ Self-contained (~1570 lines) with ALL styles inline. Features:
 - **Homepage nav is separate** — `index.html` has its own inline nav that is NOT replaced by `nav.js`. Must be updated manually when nav changes.
 - **Python scripts use hardcoded paths** — update `BASE` variable if running outside the expected environment
 - **AdSense publisher ID** — `ca-pub-7097302643579933` (referenced in `ads.txt` and all page headers)
-- **robots.txt** — Disallows `/admin/`, `/draft/`, `/tmp/`, `/private/`. Allows all CSS/JS for mobile-friendly testing. Lists all 10 sitemaps.
+- **robots.txt** — Disallows `/admin/`, `/draft/`, `/tmp/`, `/private/`. Allows all CSS/JS for mobile-friendly testing. Lists 9 sitemaps (master index + 8 sub-sitemaps; note: `sitemap-video.xml` is referenced in `sitemap.xml` index but not in `robots.txt`).
 - **Redirect stubs** must include `<meta name="robots" content="noindex, follow">` to prevent indexing of old URLs
-- **Blog article exclusions** — `nav.js` explicitly excludes `alle-finanzrechner.html`, `meine-toolbox-broker-tools-plattformen-2025.html`, and `wise-airalo-vietnam-erfahrungen.html` from author bio and schema injection
+- **Blog article exclusions** — `nav.js` excludes `alle-finanzrechner.html` from both author bio and schema injection. Additionally, `meine-toolbox-broker-tools-plattformen-2025.html` and `wise-airalo-vietnam-erfahrungen.html` are excluded from schema injection only (they still get author bio)
+- **Custom 404 page** — `404.html` is served by GitHub Pages for all 404 errors, styled consistently with the site design
