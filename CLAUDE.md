@@ -1051,13 +1051,260 @@ Schnell speichern und deployen
 
 ---
 
+### 12. Video-Editor-Agent
+
+**Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten"
+**Rolle**: Erstellt Shorts aus Longvideos + generiert Schnitt-Pläne mit Templates und Sequenzen. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe).
+
+---
+
+#### Modus A: Shorts aus Longvideos
+
+**Input**: YT-Skript (aus Phase 2) oder bestehendes Longvideo-Transkript
+**Output**: 3–5 Short-Kandidaten, jeweils production-ready
+
+**Short-Template-Struktur** (≤60 Sekunden):
+
+```
+[0-3s]   HOOK          — Provokante Frage / Schock-Zahl / Kontroverse These
+[3-8s]   KONTEXT       — 1 Satz: Warum ist das relevant?
+[8-40s]  KERNINHALT    — Die beste Stelle aus dem Longvideo (1 Insight, 1 Zahl, 1 Fazit)
+[40-50s] PAYOFF        — Was bedeutet das für den Zuschauer?
+[50-58s] CTA           — "Ganzes Video oben rechts" / "Abonnieren für mehr"
+[58-60s] END-SCREEN    — Logo / Abo-Animation
+```
+
+**Short-Typen (Templates):**
+
+| Template | Hook-Stil | Beispiel |
+|---|---|---|
+| **Schock-Zahl** | Zahl + Pause + Erklärung | "15% Dividende. Und das ist kein Scam." |
+| **Kontroverse** | Gegenthese + Beweis | "Alle sagen, Kohle ist tot. Die Zahlen sagen was anderes." |
+| **Vergleich** | A vs B, schneller Schnitt | "BHP vs Rio Tinto — wer zahlt mehr Dividende?" |
+| **Listicle** | Top 3/5 mit Countdown | "3 Aktien mit über 10% Dividende" |
+| **News-React** | Breaking + Einordnung | "Dividende gestrichen! Was jetzt?" |
+| **Erklärer** | Komplexes simpel in 45s | "Was ist AISC? In 45 Sekunden erklärt." |
+
+**Für jeden Short-Kandidaten wird geliefert:**
+1. **Hook-Text** (die ersten 3 Sekunden — entscheidet über Retention)
+2. **Skript** (Wort-für-Wort, mit Zeitmarken)
+3. **Schnitt-Anweisungen** (Cuts, Zooms, Text-Overlays, Sequenz-Wechsel)
+4. **Thumbnail-Prompt** (Midjourney/DALL-E: Gesicht + Zahl + Emotion)
+5. **Caption/Untertitel** (für TikTok/Reels-Format)
+6. **Relevanz-Score** (1–10: wie viral-tauglich ist dieser Clip?)
+
+**Ranking-Kriterien für Short-Auswahl:**
+- Hook-Stärke (provokant genug für 3s-Entscheidung?)
+- Eigenständigkeit (verständlich ohne Longvideo?)
+- Zahlen-Dichte (Shorts mit konkreten Zahlen performen besser)
+- Emotions-Trigger (Angst, Gier, Überraschung, Neugier)
+- CTA-Passung (leitet zum Longvideo weiter?)
+
+---
+
+#### Modus B: Longvideo-Schnittplan
+
+**Input**: YT-Skript (aus Phase 2) oder rohes Skript von Marco
+**Output**: Vollständiger Schnittplan mit Sequenzen, Templates und B-Roll
+
+**Sequenz-Types:**
+
+| Sequenz | Dauer | Beschreibung | Wann einsetzen |
+|---|---|---|---|
+| **Talking Head** | variabel | Marco spricht in Kamera | Standard, Intro, Fazit |
+| **Screenshare** | 10-30s | Chart, Tabelle, Website | Bei Kennzahlen, Kursverläufen |
+| **Infografik** | 5-15s | Animierte Grafik mit Zahlen | Vergleiche, Rankings, Timelines |
+| **B-Roll Stock** | 3-8s | Stock-Footage (Schiffe, Minen, Pipelines, Börse) | Sektor-Übergänge, Stimmung |
+| **Text-Overlay** | 3-5s | Große Zahl/Fakt fullscreen | Schock-Zahlen, Key-Facts |
+| **Split-Screen** | 10-20s | Zwei Werte nebeneinander | Vergleichs-Analysen (A vs B) |
+| **Zoom-In** | 2-3s | Langsamer Zoom auf Talking Head | Betonung, wichtige Aussage |
+| **Jump-Cut** | 1-2s | Schneller Schnitt, gleiche Einstellung | Tempo erhöhen, Energie |
+| **Lower-Third** | dauerhaft | Name + Titel-Einblendung | Intro, Gastauftritte |
+| **Endscreen** | 15-20s | Abo + nächstes Video + Social Links | Immer am Ende |
+
+**Schnittplan-Format (pro Kapitel):**
+
+```
+## Kapitel 2: Dividenden-Historie (02:15 - 04:30)
+Kernaussage: "Barrick Gold hat 10 Jahre am Stück Dividende gezahlt — trotz Goldpreis-Crash"
+
+| Timecode | Sequenz | Inhalt | Notiz |
+|---|---|---|---|
+| 02:15-02:20 | Text-Overlay | "10 Jahre Dividende" (groß, gold) | Transition: Fade |
+| 02:20-02:45 | Talking Head | Marco erklärt Historie | Normal, Brustbild |
+| 02:45-03:00 | Screenshare | Dividenden-Chart 2015-2025 | Zoom auf Anstieg |
+| 03:00-03:05 | Zoom-In | Marco: "Und das Beste..." | Betonung |
+| 03:05-03:25 | Infografik | YOC-Berechnung animiert | Zahlen nacheinander einblenden |
+| 03:25-03:30 | B-Roll | Goldmine aerial shot | Übergang |
+| 03:30-04:30 | Talking Head + Lower-Third | Bewertung + Fazit | Tempo leicht erhöhen |
+```
+
+**B-Roll-Bibliothek (Standard-Keywords pro Sektor):**
+
+| Sektor | Stock-Footage Keywords |
+|---|---|
+| Mining | Open pit mine, gold bars, excavator, mineral processing, aerial mine |
+| Shipping | Container ship, tanker, port loading, ocean aerial, LNG carrier |
+| Pipeline/Midstream | Pipeline aerial, gas plant, refinery, storage tanks |
+| Upstream Oil & Gas | Oil rig, offshore platform, drilling, oil field |
+| Dividenden/Finanzen | Stock market, trading floor, cash counting, growth chart |
+| Makro/News | Central bank, press conference, city skyline, breaking news |
+
+---
+
+#### Modus C: Thumbnail-Generator (Nano Banana + DALL-E 3)
+
+**Für jedes Video (Long + Short) werden Thumbnails generiert.**
+
+**Primär-Tool: [Nano Banana](https://nanobanana.im/)**
+- Spezialisiert auf YouTube-Thumbnails (trainiert auf Millionen hochperformante Thumbnails)
+- Erhält Marcos Gesicht/Identität, verstärkt Gesichtsausdrücke (surprised, excited, shocked)
+- Optimiert für CTR (Click-Through-Rate)
+- Output: 4–8 Varianten pro Video
+
+**Sekundär-Tool: DALL-E 3 (via ChatGPT)**
+- Für aufwändigere Hintergründe, Szenen, kreative Composites
+- Conversational Iteration: per Text beschreiben und verfeinern
+- Gut für Split-Screens, Infografik-Thumbnails, abstrakte Konzepte
+
+**Thumbnail-Prompt-Template (Nano Banana):**
+```
+Foto von Marco Bozem, [EMOTION], Blick in Kamera,
+Text-Overlay: "[MAX 3-4 WÖRTER]",
+Hintergrund: [SEKTOR-BEZOGEN],
+Stil: Dark Theme, Gold-Akzente, YouTube-Thumbnail, 1280x720
+```
+
+**Thumbnail-Prompt-Template (DALL-E 3 / ChatGPT):**
+```
+Create a YouTube thumbnail, 1280x720, cinematic:
+- Left: [Person/Objekt] with [EMOTION]
+- Right: Large text "[ZAHL/KEYWORD]" in gold on dark background
+- Background: [SEKTOR-SZENE]
+- Style: Professional, high contrast, dramatic lighting
+- Colors: Dark (#0f1115) with gold (#d4af37) accents
+```
+
+**Beispiel-Prompts:**
+- `Marco, shocked face, text "15% DIVIDENDE", gold mining background, dark theme`
+- `Marco pointing at chart, text "BHP vs RIO", split screen, red/green arrows`
+- `Marco serious face, text "CRASH?", oil rig background, dramatic lighting`
+
+**Marcos Thumbnail-Styleguide (basierend auf bestehendem Stil):**
+
+```
+┌─────────────────────────────────────────┐
+│                                         │
+│  [Marco links]     [GROSSE ZAHL rechts] │
+│  Brustbild         Gold/Gelb, fett      │
+│  Emotion!          z.B. "15%"           │
+│                                         │
+│           [KEYWORD/FRAGE]               │
+│           z.B. "CASHFLOW?"              │
+│                                         │
+│  [Sektor-Hintergrund: dunkel]    [Dauer]│
+└─────────────────────────────────────────┘
+```
+
+**Bestehende Thumbnail-Elemente (BEIBEHALTEN):**
+- Dunkler Hintergrund (near-black, konsistent mit Website #0f1115)
+- Große Zahlen in Gold/Gelb (Dividendenrendite, Wachstum, Kursziel)
+- Sektor-Bilder als Hintergrund (Ölfeld, Goldmine, Schiff, Pipeline, Raffinerie)
+- Trigger-Wörter mit Fragezeichen: "ZU TEUER?", "RESET?", "CASHFLOW?", "FÄLLT"
+- Marco im gestreiften Hemd (Wiedererkennungswert)
+
+**Thumbnail-Regeln:**
+1. **Marco IMMER links**, Zahl IMMER rechts (Eye-Tracking-optimiert: Gesicht links fängt Blick, Zahl rechts hält ihn)
+2. **Gesichtsausdruck betonen** — Nano Banana nutzen um Emotion zu verstärken (shocked bei Crash, excited bei hoher Rendite)
+3. **Max. 3-4 Wörter Text** (muss auf Mobile lesbar sein — 50%+ der Views kommen vom Handy)
+4. **Kontrast**: dunkler Hintergrund, helle/goldene Schrift (#d4af37 oder #e0bd55)
+5. **Eine Zahl > keine Zahl** — Zahlen IMMER prominent (das ist dein Markenzeichen)
+6. **Fragezeichen bei kontroversen Themen** — triggert Neugier ("ÖL 100$?", "RESET?")
+7. **A/B-Test**: Immer 2+ Varianten generieren, beste per YouTube Analytics wählen
+8. **Kein Kleingedrucktes** — Aktienname darf kleiner sein, aber Zahl + Keyword müssen GROSS sein
+
+**Weitere Thumbnail-Tools (Alternativen):**
+
+| Tool | Stärke | Preis |
+|---|---|---|
+| [Nano Banana](https://nanobanana.im/) | YouTube-spezialisiert, Gesichts-Erhaltung, CTR-optimiert | Kostenlos / Premium |
+| [DALL-E 3](https://chatgpt.com/) (ChatGPT) | Kreative Hintergründe, Conversational | ChatGPT Plus |
+| [Thumblr.io](https://thumblr.io/) | Schnell, günstig, 4-8 Varianten in <60s | $10–24/mo |
+| [Midjourney](https://www.midjourney.com/) | Höchste Bildqualität für Hintergründe | Subscription |
+| [Canva AI](https://www.canva.com/) | Templates + Quick-Edits, gut für Text-Overlays | Free / Pro |
+| [Pikzels](https://pikzels.com/) | FaceSwap, YouTube-dedicated | $40–80/mo |
+
+---
+
+#### Modus D: Direkter Video-Schnitt (wenn technisch machbar)
+
+Wenn eine Video-Datei vorhanden ist (MP4, MOV), kann der Agent **direkt schneiden** statt nur Pläne zu liefern:
+
+**Voraussetzung**: `ffmpeg` installiert (Standard auf Linux/Mac, via `brew install ffmpeg` oder `apt install ffmpeg`)
+
+**Fähigkeiten:**
+
+| Aktion | Tool | Beschreibung |
+|---|---|---|
+| **Clip extrahieren** | `ffmpeg -ss HH:MM:SS -to HH:MM:SS -i input.mp4 -c copy clip.mp4` | Einzelne Clips aus Longvideo schneiden (verlustfrei) |
+| **Shorts schneiden** | ffmpeg mit präzisen Timecodes | Short-Kandidaten direkt als MP4 exportieren |
+| **Zusammenfügen** | `ffmpeg -f concat -i filelist.txt -c copy output.mp4` | Clips in Reihenfolge zusammenfügen |
+| **Text-Overlays** | `ffmpeg -vf drawtext=` | Titel, Zahlen, CTAs als Text-Overlay einbrennen |
+| **Aspect Ratio** | `ffmpeg -vf crop=ih*9/16:ih` | 16:9 → 9:16 für Shorts/Reels umwandeln |
+| **Thumbnail** | `ffmpeg -ss HH:MM:SS -frames:v 1 thumb.jpg` | Frame als Thumbnail extrahieren |
+| **Untertitel** | `ffmpeg -vf subtitles=subs.srt` | SRT-Untertitel einbrennen (für Shorts) |
+| **Fade/Transition** | `ffmpeg -af afade -vf fade` | Audio/Video-Fades an Übergängen |
+| **Speed Ramp** | `ffmpeg -filter:v setpts=0.5*PTS` | Tempo beschleunigen (Jump-Cuts, B-Roll) |
+
+**Workflow bei verfügbarem Video:**
+
+```
+1. Marco liefert: Video-Datei + Skript (oder Transkript)
+2. Agent erstellt Schnittplan mit exakten Timecodes
+3. Marco bestätigt (oder Cowork-Modus)
+4. Agent schneidet direkt:
+   a) Longvideo: Intro trimmen, Pausen raus, B-Roll-Stellen markieren
+   b) Shorts: 3-5 Clips extrahiert, 9:16 gecroppt, Untertitel eingebrannt
+5. Output: Fertige MP4s + Thumbnail-JPGs
+```
+
+**Limitierungen:**
+- Kein Motion Graphics / After Effects (nur Text-Overlays, Fades, Crops)
+- Keine B-Roll-Insertion (B-Roll muss separat bereitstehen)
+- Kein Color Grading (nutze DaVinci Resolve für Feinschliff)
+- Für aufwändige Edits: Schnittplan als EDL/XML für DaVinci/Premiere exportieren
+
+**EDL-Export für Premiere/DaVinci:**
+```
+TITLE: [Video-Titel]
+001  input.mp4  V  C  00:00:05:00 00:00:35:00 00:00:00:00 00:00:30:00
+002  input.mp4  V  C  00:01:15:00 00:02:45:00 00:00:30:00 00:02:00:00
+...
+```
+
+---
+
+#### Video-Editor-Agent Sub-Agents (bei Volle-Produktion)
+
+| Sub-Agent | Aufgabe |
+|---|---|
+| Video-Edit-1 | Short-Kandidaten generieren + direkt schneiden (3-5 Shorts als MP4) |
+| Video-Edit-2 | Longvideo-Schnittplan erstellen (+ direkt schneiden wenn Video vorhanden) |
+| Video-Edit-3 | Thumbnail-Prompts + Frame-Extraktion (Long + alle Shorts) |
+
+**Zugriff**: NUR YT-Skript aus Phase 2 + Research-Daten aus Phase 1 + Video-Datei (wenn vorhanden). Kein Zugriff auf Website-Code oder andere Plattform-Outputs. `ffmpeg` für Video-Operationen.
+
+---
+
 ### Pipeline-Übersicht
 
 | Pipeline | Ablauf | Typische Dauer |
 |---|---|---|
-| **Volle-Produktion** | Research (4 parallel) → YT-Skript → Multi-Plattform (4 parallel) → QA/Oversight → Output → Save+Deploy (3 parallel) | Komplett |
-| **Wochenrückblick** | Research (4 parallel) → Skript → Plattformen → QA → Save | Mittel |
-| **Breaking-News** | Quick-Research → Content (3 parallel) → Save | Schnell |
+| **Volle-Produktion** | Research (4 parallel) → YT-Skript → Video-Edit (3 parallel) → Multi-Plattform (4 parallel) → QA/Oversight → Output → Save+Deploy (3 parallel) | Komplett |
+| **Wochenrückblick** | Research (4 parallel) → Skript → Video-Edit → Plattformen → QA → Save | Mittel |
+| **Breaking-News** | Quick-Research → Content (3 parallel) → Video-Edit (Short only) → Save | Schnell |
+| **Shorts-Only** | Longvideo/Transkript → Video-Editor (Modus A) → 3-5 Shorts → Save | Kurz |
+| **Video-Schnitt** | Video + Skript → Video-Editor (Modus B+D) → Schnittplan + Cuts → Export | Mittel |
 | **Feature-Pipeline** | Architect → Developer (ggf. Sub-Agents) → QA | Je nach Scope |
 | **Bugfix-Pipeline** | Architect analysiert → Developer fixt → QA prüft | Kurz |
 | **Website-Pipeline** | SEO-Check → Architect → Developer → QA → Deploy | Mittel |
