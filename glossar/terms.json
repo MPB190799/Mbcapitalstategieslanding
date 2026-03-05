@@ -98,7 +98,6 @@
   "Yield on Cost": "yield-on-cost",
   "Zinszyklus": "zinszyklus",
 
-  /* --- SHIPPING Erweiterungen --- */
   "LPG": "lpg",
   "RoRo": "roro",
   "Auto-Carrier": "auto-carrier",
@@ -120,7 +119,6 @@
   "Dayrate": "dayrate",
   "Charter-Spezialist": "charter-spezialist",
 
-  /* --- SHIPPING 2026 – Neue Begriffe --- */
   "ETS Maritime": "ets-maritime",
   "EU ETS Maritime": "ets-maritime",
   "FuelEU Maritime": "fueleu-maritime",
@@ -158,7 +156,6 @@
   "Lifecycle Emissions": "lifecycle-emissions",
   "Fleet Renewal": "fleet-renewal",
 
-  /* --- MINING & ROHSTOFFE --- */
   "AISC": "aisc",
   "All-In Sustaining Cost": "aisc",
   "Royalty": "royalty-streaming",
@@ -174,7 +171,6 @@
   "Ore Grade": "ore-grade",
   "Head Grade": "ore-grade",
 
-  /* --- BEWERTUNG & FINANZEN --- */
   "Marktkapitalisierung": "marktkapitalisierung",
   "Market Cap": "marktkapitalisierung",
   "DCF": "dcf",
@@ -186,7 +182,6 @@
   "Working Capital": "working-capital",
   "Umlaufvermögen": "working-capital",
 
-  /* --- DIVIDENDEN --- */
   "DPS": "dps",
   "Dividende je Aktie": "dps",
   "Dividend Per Share": "dps",
@@ -195,13 +190,11 @@
   "Dividend Coverage Ratio": "dividend-coverage",
   "Dividendendeckung": "dividend-coverage",
 
-  /* --- MIDSTREAM & MLPs --- */
   "MLP": "mlp",
   "Master Limited Partnership": "mlp",
   "K-1": "mlp",
   "Distributable Cash Flow": "distributable-cash-flow",
 
-  /* --- MAKRO & ALLGEMEIN --- */
   "Deflation": "deflation",
   "Realrendite": "real-return",
   "Real Return": "real-return",
