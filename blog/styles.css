@@ -1212,3 +1212,121 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
   a { color: #000; }
 }
 
+
+/* ============================================================
+   AUTHOR BOX
+   ============================================================ */
+.author-box {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 40px 0 0;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.author-box .author-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+.author-box .author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.author-box .author-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: Montserrat, sans-serif;
+}
+.author-box .author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: Montserrat, sans-serif;
+}
+.author-box .author-bio {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 4px 0 8px;
+  line-height: 1.55;
+}
+.author-box .author-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.author-box .author-links a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid var(--gold-border);
+  padding: 4px 12px;
+  border-radius: 999px;
+  transition: background var(--transition);
+}
+.author-box .author-links a:hover {
+  background: var(--gold-dim);
+}
+@media (max-width: 480px) {
+  .author-box { flex-direction: column; align-items: center; text-align: center; }
+  .author-box .author-links { justify-content: center; }
+}
+
+/* ============================================================
+   SOURCES BOX
+   ============================================================ */
+.sources-box {
+  background: var(--bg-soft);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 20px auto 0;
+  max-width: 860px;
+}
+.sources-box h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+  font-family: Montserrat, sans-serif;
+}
+.sources-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+.sources-box ul li {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.sources-box ul li a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+.sources-box ul li a:hover { text-decoration: underline; }
+.sources-box .sources-disclaimer {
+  font-size: 0.75rem;
+  color: #5a6480;
+  margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 10px;
+}
