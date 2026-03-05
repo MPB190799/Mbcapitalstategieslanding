@@ -1053,8 +1053,12 @@ Schnell speichern und deployen
 
 ### 12. Video-Editor-Agent
 
-**Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten", "Video", "Longvideo"
-**Rolle**: Vollständiger Video-Produzent für Shorts UND Longvideos. Erstellt spannende, dynamische Videos mit professionellen Sequenzen, Hooks, Tempo-Wechseln und visueller Abwechslung. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe) und nicht nur Shorts kann, sondern auch Longvideos von Anfang bis Ende durchplant und schneidet.
+**Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten", "Video", "Longvideo", "Chart", "Grafik"
+**Rolle**: Marcos Video-Editor & Visual Designer. Marco filmt sich selbst (Talking Head) — der Agent übernimmt ALLES danach: Schnitt, Charts erstellen, Grafiken designen, Sequenzen zusammenbauen, Visuals einbinden, Color Grade, Untertitel, Chapters, Intro/Outro, YouTube SEO. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe).
+
+**Arbeitsteilung:**
+- **Marco**: Filmt Talking Head, liefert Skript/Transkript, nimmt Screenshares auf
+- **Agent**: Schneidet, erstellt Charts + Grafiken + Metric-Cards, baut Sequenzen, fügt Overlays/Wasserzeichen/Untertitel ein, exportiert, optimiert für YouTube
 
 **Kernprinzip**: Kein Zuschauer soll länger als 15 Sekunden das gleiche Bild sehen. Abwechslung, Energie und visuelle Spannung sind Pflicht — bei Shorts UND Longvideos.
 
@@ -1831,15 +1835,417 @@ TITLE: [Video-Titel]
 
 ---
 
+#### Modus E: Whisper-Transkription & Auto-Untertitel
+
+**Input**: Video-Datei (MP4/MOV) von Marco
+**Output**: Exakte Timestamps + gestylte Untertitel (SRT) + YouTube-Chapters
+
+**Whisper AI für Transkription:**
+```bash
+# Transkript mit Timestamps generieren (Deutsch)
+whisper input.mp4 --language de --model medium --output_format srt --output_dir ./subs/
+
+# Höhere Genauigkeit (dauert länger)
+whisper input.mp4 --language de --model large-v3 --output_format all --output_dir ./subs/
+# → Erzeugt: input.srt, input.vtt, input.txt, input.json (mit Wort-Level-Timestamps)
+```
+
+**Untertitel stylen (Gold auf Dark, nicht YouTube-Standard):**
+```bash
+# SRT → Styled ASS (Advanced SubStation Alpha) für gebrandete Untertitel
+# Montserrat Bold, Gold (#d4af37), schwarzer Outline, zentriert unten
+cat > styled-subs.ass << 'ASSEOF'
+[Script Info]
+Title: MB Capital Strategies Subtitles
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: MBCS,Montserrat,52,&H0037AFD4,&H000000FF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,3,1,2,40,40,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+ASSEOF
+
+# SRT → ASS konvertieren mit Branding
+ffmpeg -i input.mp4 -vf "subtitles=subs.ass:force_style='FontName=Montserrat,FontSize=26,PrimaryColour=&H0037AFD4,OutlineColour=&H00000000,Outline=2,Shadow=1'" \
+  -c:a copy output-with-subs.mp4
+```
+
+**Untertitel-Regeln:**
+- **Font**: Montserrat Bold, Größe 48-56px (lesbar auf Mobile)
+- **Farbe**: Gold (#d4af37) mit schwarzem Outline (2px) und leichtem Schatten
+- **Position**: Zentriert unten, 60px Abstand zum Rand
+- **Max. 2 Zeilen**, max. 42 Zeichen pro Zeile
+- **Keyword-Highlighting**: Wichtige Wörter (Zahlen, Aktiennamen) in Bright Gold (#e0bd55) oder Weiß
+- **Shorts**: IMMER Untertitel einbrennen (viele schauen ohne Ton)
+- **Longvideos**: Als separate SRT-Datei hochladen (YouTube generiert Captions)
+
+---
+
+#### Modus F: Branded Intro / Outro / Wasserzeichen
+
+**Kompass-Wasserzeichen (dauerhaft im Video):**
+```bash
+# Kompass-Logo als permanentes Wasserzeichen (unten rechts, 80x80, 30% Opacity)
+ffmpeg -i input.mp4 -i Logo.png \
+  -filter_complex "[1:v]scale=80:80,format=rgba,colorchannelmixer=aa=0.3[watermark];\
+  [0:v][watermark]overlay=x=W-w-30:y=H-h-30[out]" \
+  -map "[out]" -map 0:a -c:v libx264 -c:a copy output-watermarked.mp4
+```
+
+**Branded Intro (3-5s Kompass-Animation):**
+```
+[0.0-0.5s]  Schwarzer Screen, Fade-In
+[0.5-2.0s]  Goldener Kompass dreht sich langsam ein (oder Nadel schwingt ein)
+[2.0-3.0s]  "MB CAPITAL STRATEGIES" Text erscheint rechts neben Kompass (Gold, Montserrat)
+[3.0-3.5s]  Kurzer Gold-Flash/Glow, dann Fade zu Content
+```
+
+```bash
+# Statisches Intro aus Logo (3s mit Fade)
+ffmpeg -loop 1 -i Logo.png -f lavfi -i "color=c=#0f1115:s=1920x1080:d=3.5" \
+  -filter_complex "[1:v][0:v]overlay=x=(W-w)/2:y=(H-h)/2:enable='between(t,0.5,3)',\
+  fade=t=in:st=0:d=0.5,fade=t=out:st=3:d=0.5[out]" \
+  -map "[out]" -c:v libx264 -t 3.5 intro.mp4
+
+# Intro + Hauptvideo + Outro zusammenfügen
+ffmpeg -f concat -safe 0 -i <(echo -e "file 'intro.mp4'\nfile 'main-video.mp4'\nfile 'outro.mp4'") \
+  -c:v libx264 -c:a aac final-video.mp4
+```
+
+**Branded Outro / Endscreen (15-20s):**
+```
+[0-2s]    Fade von letztem Frame zu dunklem Hintergrund
+[2-5s]    Kompass zentriert, "Danke fürs Zuschauen!" in Gold
+[5-15s]   Zwei Video-Empfehlungen (Karten links + rechts), Abo-Button Mitte
+[15-18s]  Social Links: YouTube, LinkedIn, Website
+[18-20s]  Fade-Out, Kompass bleibt als letztes Bild
+```
+
+**Endscreen-Regeln:**
+- YouTube-Endscreen-Elemente (Abo, Video) können erst in den letzten 20s platziert werden
+- Hintergrund: #0f1115 mit Kompass (30% Opacity) als Wasserzeichen
+- Immer 2 Video-Empfehlungen (nächstes Video + bestes Video der Playlist)
+- CTA-Text: "Abonnieren für wöchentliche Dividenden-Analysen"
+
+---
+
+#### Modus G: YouTube Chapters & SEO
+
+**Auto-Chapters aus Schnittplan generieren:**
+
+Der Schnittplan enthält Kapitel mit Timecodes. Daraus werden automatisch YouTube-Chapters:
+
+```python
+# chapters_from_schnittplan.py
+schnittplan = [
+    {"time": "0:00", "title": "Intro"},
+    {"time": "0:15", "title": "Cold Open: 15% Dividende?"},
+    {"time": "1:30", "title": "Unternehmensüberblick"},
+    {"time": "4:15", "title": "Dividenden-Historie"},
+    {"time": "7:30", "title": "Kennzahlen & Bewertung"},
+    {"time": "10:45", "title": "Risiken & Chancen"},
+    {"time": "13:20", "title": "Mein Fazit"},
+    {"time": "15:00", "title": "Outro"},
+]
+
+# Für YouTube-Beschreibung:
+chapters_text = "\n".join([f"{ch['time']} {ch['title']}" for ch in schnittplan])
+print(chapters_text)
+```
+
+**YouTube-Chapters-Regeln:**
+- Erstes Chapter MUSS bei `0:00` starten (YouTube-Pflicht)
+- Mindestens 3 Chapters, idealerweise 5-8
+- Jedes Chapter min. 10 Sekunden lang
+- Titel: kurz, keyword-reich, beschreibend (max. 50 Zeichen)
+- Keine Emojis in Chapter-Titeln (wirkt unseriös für Finanz-Content)
+
+**YouTube SEO-Optimierung (pro Video):**
+
+Der Agent generiert für jedes Video:
+
+| Element | Regeln | Beispiel |
+|---|---|---|
+| **Titel** | Max. 60 Zeichen, Keyword vorne, Zahl wenn möglich, kein Clickbait | "Barrick Gold Aktie: 15% Dividende — Analyse 2026" |
+| **Beschreibung** | Erste 2 Zeilen = Hook (sichtbar vor "Mehr anzeigen"), dann Chapters, dann Links | "Barrick Gold zahlt aktuell 15% Dividende. Ist die Aktie ein Kauf? In diesem Video..." |
+| **Tags** | 15-20 Tags, Mix aus broad + specific, Deutsch + Englisch | barrick gold, barrick gold aktie, dividende, mining aktien, gold aktie 2026 |
+| **Hashtags** | 3 Hashtags unter dem Titel (YouTube zeigt max. 3 über dem Titel) | #Dividende #Mining #Aktienanalyse |
+| **Kategorie** | "Education" oder "People & Blogs" | Education |
+| **Sprache** | Deutsch (de) | — |
+| **Thumbnail** | Siehe Modus C | — |
+
+**SEO-Template für YouTube-Beschreibung:**
+```
+[HOOK — 2 Sätze, Keywords vorne, neugierig machen]
+
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+📊 KAPITEL:
+0:00 Intro
+[CHAPTERS AUS SCHNITTPLAN]
+
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+🔗 LINKS:
+🧮 Dividendenrechner: https://mbcapitalstrategies.com/tools/dividendenrechner.html
+📖 Blog-Artikel: https://mbcapitalstrategies.com/blog/[SLUG].html
+🌐 Website: https://mbcapitalstrategies.com
+
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+📌 MEHR VON MIR:
+💼 LinkedIn: https://www.linkedin.com/in/marco-bozem-182173295
+🎙️ Alle Podcasts: https://mbcapitalstrategies.com/podcast/
+
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+⚠️ DISCLAIMER:
+Keine Anlageberatung. Alle Angaben ohne Gewähr. Investitionen in Wertpapiere bergen Risiken.
+
+#[KEYWORD1] #[KEYWORD2] #[KEYWORD3]
+```
+
+**Analytics-Feedback-Loop:**
+
+Nach Veröffentlichung (7-14 Tage) analysiert der Agent die YouTube-Daten:
+
+| Metrik | Ziel | Aktion bei Verfehlung |
+|---|---|---|
+| **CTR (Thumbnail)** | >5% | Neues Thumbnail testen (A/B), Titel anpassen |
+| **Avg. View Duration** | >50% des Videos | Schnittplan anpassen: mehr Pattern Interrupts, kürzere Kapitel |
+| **Retention Drop-Off** | Kein Drop >15% an einer Stelle | Stelle analysieren: zu lang? Zu monoton? → nächstes Video verbessern |
+| **Impressions** | Wachsend (WoW) | SEO-Titel/Tags optimieren, mehr Keywords |
+| **Subscriber Conversion** | >2% der Viewer | CTA-Platzierung anpassen, End-CTA verstärken |
+| **Comments** | >10 pro Video | Mehr Engagement-Trigger einbauen ("Schreibt in die Kommentare...") |
+
+**Retention-Kurven-Analyse:**
+```
+Retention
+100% ██
+ 90% ██░░
+ 80% ██░░██
+ 70% ██░░██░░░░
+ 60% ██░░██░░░░██████
+ 50% ██░░██░░░░██████████──── ZIEL: >50% am Ende
+ 40% ██░░██░░░░██████████████
+      │  │  │       │      │
+    Intro │ K2     K3    Fazit
+         K1
+         ↑
+    DROP? → Hier war's zu langweilig → Nächstes Mal: Pattern Interrupt!
+```
+
+---
+
+#### Modus H: Multi-Format Export
+
+Jedes Video wird in allen relevanten Formaten exportiert:
+
+| Format | Ratio | Plattform | Besonderheiten |
+|---|---|---|---|
+| **16:9** (1920x1080) | Landscape | YouTube (Long), Desktop | Standard-Export, höchste Qualität |
+| **9:16** (1080x1920) | Portrait | YouTube Shorts, TikTok, Instagram Reels | Untertitel eingebrannt, Musik (wenn Short) |
+| **1:1** (1080x1080) | Quadrat | LinkedIn, X/Twitter, Facebook | Untertitel eingebrannt, kürzere Version |
+| **4:5** (1080x1350) | Portrait | Instagram Feed | Optional, nur wenn Post geplant |
+
+**ffmpeg Format-Konvertierung:**
+```bash
+# 16:9 → 9:16 (Smart Crop: Fokus auf Marcos Gesicht, Mitte)
+ffmpeg -i input-16x9.mp4 \
+  -vf "crop=ih*9/16:ih:iw/2-ih*9/32:0" \
+  -c:a copy output-9x16.mp4
+
+# 16:9 → 1:1 (Quadrat: obere Mitte, Gesicht bleibt drin)
+ffmpeg -i input-16x9.mp4 \
+  -vf "crop=ih:ih:iw/2-ih/2:0" \
+  -c:a copy output-1x1.mp4
+
+# 16:9 → 9:16 mit Blur-Hintergrund (Video oben, Blur unten — TikTok-Style)
+ffmpeg -i input-16x9.mp4 \
+  -filter_complex "[0:v]scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:200:color=#0f1115[fg];\
+  [0:v]scale=1080:1920,boxblur=20:5[bg];\
+  [bg][fg]overlay=(W-w)/2:(H-h)/2[out]" \
+  -map "[out]" -map 0:a output-9x16-blur.mp4
+
+# Batch-Export alle Formate
+for fmt in "16x9:1920:1080" "9x16:1080:1920" "1x1:1080:1080"; do
+  IFS=':' read -r name w h <<< "$fmt"
+  ffmpeg -i final-video.mp4 -vf "scale=${w}:${h}:force_original_aspect_ratio=decrease,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=#0f1115" \
+    -c:a copy "output-${name}.mp4"
+done
+```
+
+**Plattform-spezifische Anpassungen:**
+
+| Plattform | Max. Dauer | Untertitel | Musik | Wasserzeichen |
+|---|---|---|---|---|
+| YouTube (Long) | unbegrenzt | SRT separat hochladen | ❌ Keine | ✅ Kompass klein |
+| YouTube Shorts | 60s | ✅ Eingebrannt (Gold) | ✅ Leise (-20dB) | ✅ Kompass klein |
+| TikTok | 10 Min (aber 60s optimal) | ✅ Eingebrannt (Gold) | ✅ Leise (-20dB) | ✅ Kompass klein |
+| X/Twitter | 2:20 Min | ✅ Eingebrannt (Gold) | Optional | ✅ Kompass |
+| LinkedIn | 10 Min | ✅ Eingebrannt (Weiß) | ❌ Keine | ✅ Kompass |
+| Instagram Reels | 90s | ✅ Eingebrannt (Gold) | ✅ Leise | ✅ Kompass |
+
+---
+
+#### Modus I: Musik (nur Shorts / Reels / TikTok)
+
+**WICHTIG: Musik NUR bei Shorts/Reels/TikTok — NICHT bei Longvideos.** Bei Longvideos ist Musik störend und lenkt von der Analyse ab.
+
+**Musik-Regeln für Shorts:**
+- **Lautstärke**: -18 bis -22dB unter der Stimme (Marco muss IMMER klar verständlich sein)
+- **Stil**: Ambient, Lo-Fi, minimal Electronic — KEIN Beat-Drop, KEINE Vocals
+- **Stimmung**: Passend zum Thema (siehe Tabelle unten)
+- **Lizenz**: NUR royalty-free / copyright-free (YouTube Content ID safe)
+
+**Musik-Mood pro Thema:**
+
+| Thema | Mood | Stil-Keywords |
+|---|---|---|
+| Positive Analyse (hohe Rendite, Wachstum) | Optimistisch, aufsteigend | Light corporate, uplifting ambient, soft piano |
+| Negative News (Crash, Div-Cut) | Dramatisch, ernst | Dark ambient, tension, cinematic drone |
+| Vergleich (A vs B) | Neutral, spannend | Minimal electronic, pulse, ticking |
+| Erklär-Content (Guide, Glossar) | Ruhig, fokussiert | Lo-fi study, soft ambient, gentle pad |
+| Wochenrückblick | Energisch, zusammenfassend | Upbeat corporate, positive news |
+
+**Royalty-Free Musik-Quellen:**
+
+| Quelle | Preis | Qualität | Link |
+|---|---|---|---|
+| YouTube Audio Library | Kostenlos | Gut | In YouTube Studio enthalten |
+| Epidemic Sound | $15/mo | Sehr gut | epidemicsound.com |
+| Artlist | $10/mo | Sehr gut | artlist.io |
+| Pixabay Music | Kostenlos | Mittel | pixabay.com/music |
+| Free Music Archive | Kostenlos | Mittel-Gut | freemusicarchive.org |
+
+**Musik einbinden mit ffmpeg:**
+```bash
+# Musik unter Stimme mischen (-20dB leiser als Stimme)
+ffmpeg -i short-video.mp4 -i background-music.mp3 \
+  -filter_complex "[1:a]volume=0.1[music];[0:a][music]amix=inputs=2:duration=first:dropout_transition=3[out]" \
+  -map 0:v -map "[out]" -c:v copy short-with-music.mp4
+
+# Musik mit Fade-In (2s) und Fade-Out (3s vor Ende)
+ffmpeg -i short-video.mp4 -i background-music.mp3 \
+  -filter_complex "[1:a]volume=0.1,afade=t=in:st=0:d=2,afade=t=out:st=55:d=3[music];\
+  [0:a][music]amix=inputs=2:duration=first[out]" \
+  -map 0:v -map "[out]" -c:v copy short-with-music-faded.mp4
+
+# Ducking: Musik automatisch leiser wenn Marco spricht (Sidechain)
+ffmpeg -i short-video.mp4 -i background-music.mp3 \
+  -filter_complex "[0:a]asplit[voice][sc];[1:a]volume=0.15[music];\
+  [music][sc]sidechaincompress=threshold=0.02:ratio=8:attack=50:release=300[ducked];\
+  [voice][ducked]amix=inputs=2:duration=first[out]" \
+  -map 0:v -map "[out]" -c:v copy short-ducked.mp4
+```
+
+---
+
+#### Modus J: Transitions-Bibliothek (ffmpeg-Befehle)
+
+Konkrete, sofort einsetzbare Transitions zwischen Sequenzen:
+
+**Fade (Standard-Übergang):**
+```bash
+# Cross-Fade zwischen zwei Clips (1s Überblendung)
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v]fade=t=out:st=4:d=1[v0];\
+  [1:v]fade=t=in:st=0:d=1[v1];\
+  [v0][v1]concat=n=2:v=1:a=0[out]" \
+  -map "[out]" crossfade.mp4
+
+# Fade to Black (0.5s)
+ffmpeg -i clip.mp4 -vf "fade=t=out:st=4.5:d=0.5:color=#0f1115" fade-to-black.mp4
+
+# Fade from Black (0.5s)
+ffmpeg -i clip.mp4 -vf "fade=t=in:st=0:d=0.5:color=#0f1115" fade-from-black.mp4
+```
+
+**Zoom-Transition (Punch-In):**
+```bash
+# Zoom-In Punch (schneller Zoom auf Mitte, 0.3s)
+ffmpeg -i clip.mp4 -vf "zoompan=z='if(between(t,4.7,5.0),min(zoom+0.15,1.5),1)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1920x1080" zoom-punch.mp4
+```
+
+**Slide / Push (Schiebeübergang):**
+```bash
+# Slide Links → Rechts (clip2 schiebt clip1 raus)
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=slideleft:duration=0.5:offset=4.5[out]" \
+  -map "[out]" slide-left.mp4
+
+# Slide Rechts → Links
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=slideright:duration=0.5:offset=4.5[out]" \
+  -map "[out]" slide-right.mp4
+
+# Slide von unten (gut für Kapitelwechsel)
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=slideup:duration=0.5:offset=4.5[out]" \
+  -map "[out]" slide-up.mp4
+```
+
+**Wipe (Goldener Vorhang-Effekt):**
+```bash
+# Wipe Links → Rechts
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=wipeleft:duration=0.7:offset=4.3[out]" \
+  -map "[out]" wipe-left.mp4
+
+# Radial Wipe (Kreis-Übergang)
+ffmpeg -i clip1.mp4 -i clip2.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=circleopen:duration=0.8:offset=4.2[out]" \
+  -map "[out]" circle-wipe.mp4
+```
+
+**Glitch / Flash (Pattern Interrupt):**
+```bash
+# Kurzer Weiß-Flash (0.1s, Gold-Tint) — für Schock-Zahlen
+ffmpeg -i clip.mp4 \
+  -vf "geq=r='if(between(t,5.0,5.1),255,r(X,Y))':g='if(between(t,5.0,5.1),200,g(X,Y))':b='if(between(t,5.0,5.1),50,b(X,Y))'" \
+  gold-flash.mp4
+```
+
+**Alle verfügbaren xfade-Transitions:**
+
+| Transition | Effekt | Einsatz |
+|---|---|---|
+| `fade` | Sanfte Überblendung | Standard, ruhige Übergänge |
+| `slideleft` / `slideright` | Schieben horizontal | Kapitelwechsel, Themenwechsel |
+| `slideup` / `slidedown` | Schieben vertikal | Neue Sektion, Überraschung |
+| `wipeleft` / `wiperight` | Wisch-Effekt | Formaler Übergang |
+| `circleopen` / `circleclose` | Kreis öffnet/schließt | Fokus auf neue Info |
+| `dissolve` | Pixel-Auflösung | Traum-Sequenz, Rückblick |
+| `pixelize` | Verpixelung → scharf | Reveal-Effekt |
+| `smoothleft` / `smoothright` | Weicher Schub | Eleganter Kapitelwechsel |
+| `horzopen` / `horzclose` | Horizontaler Vorhang | Dramatisch |
+| `vertopen` / `vertclose` | Vertikaler Vorhang | Dramatisch |
+
+**Transition-Regeln:**
+1. **Standard**: `fade` (0.5s) — für 80% der Übergänge
+2. **Kapitelwechsel**: `slideleft` (0.5s) — klar, sauber
+3. **Pattern Interrupt**: Gold-Flash (0.1s) — bei Schock-Zahlen
+4. **B-Roll → Talking Head**: `fade` (0.3s, kurz) — unsichtbar, smooth
+5. **Talking Head → Screenshare**: `circleopen` (0.5s) — Fokus-Shift
+6. **NIE**: Mehr als 2 verschiedene Transitions pro Kapitel (wirkt unruhig)
+7. **NIE**: Transitions länger als 1s (außer bei bewusstem Stimmungswechsel)
+
+---
+
 #### Video-Editor-Agent Sub-Agents (bei Volle-Produktion)
 
 | Sub-Agent | Aufgabe |
 |---|---|
-| Video-Edit-1 | Short-Kandidaten generieren + direkt schneiden (3-5 Shorts als MP4) |
-| Video-Edit-2 | Longvideo-Schnittplan erstellen (+ direkt schneiden wenn Video vorhanden) |
+| Video-Edit-1 | Short-Kandidaten generieren + direkt schneiden (9:16, Untertitel, Musik, Transitions) |
+| Video-Edit-2 | Longvideo schneiden: Charts/Grafiken erstellen, Sequenzen zusammenbauen, Overlays, Wasserzeichen, Intro/Outro, Transitions, Color Grade |
 | Video-Edit-3 | Thumbnail-Prompts + Frame-Extraktion (Long + alle Shorts) |
+| Video-Edit-4 | YouTube SEO + Multi-Format Export (16:9, 9:16, 1:1) + Chapters |
 
-**Zugriff**: NUR YT-Skript aus Phase 2 + Research-Daten aus Phase 1 + Video-Datei (wenn vorhanden). Kein Zugriff auf Website-Code oder andere Plattform-Outputs. `ffmpeg` für Video-Operationen.
+**Zugriff**: NUR YT-Skript aus Phase 2 + Research-Daten aus Phase 1 + Video-Datei (wenn vorhanden). Kein Zugriff auf Website-Code oder andere Plattform-Outputs. `ffmpeg` + `whisper` + `python` für Video-/Chart-Operationen.
 
 ---
 
