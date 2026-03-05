@@ -32,7 +32,8 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 │
 ├── blog/                   # 65 article pages + 9 redirect stubs + index (stock analyses, market news, guides)
 │   ├── index.html          # Blog listing page with 7-category filter (Mining, Upstream, Shipping, Midstream, Dividenden, Rechner, BDC)
-│   └── styles.css          # Shared stylesheet for blog + most content pages (1332 lines, 20 CSS custom properties)
+│   ├── styles.css          # Shared stylesheet for blog + most content pages (1332 lines, 20 CSS custom properties)
+│   └── styles.min.css      # Minified version of styles.css for production
 │
 ├── tools/                  # Interactive financial calculators (8 tools)
 │   ├── dividendenrechner.html
@@ -750,7 +751,7 @@ Self-contained (~1654 lines) with ALL styles inline. Features:
 - **No test suite** — this is a content site; verify changes by visual inspection in the browser
 - **GitHub Pages deployment** — the repository root IS the site root; every file is publicly accessible
 - **DSGVO compliance** — cookie consent banner is mandatory; do not add tracking without consent flow
-- **Inline styles on homepage** — `index.html` is self-contained (~1570 lines) with all styles inline; changes to the design system in `blog/styles.css` do NOT automatically affect it
+- **Inline styles on homepage** — `index.html` is self-contained (~1654 lines) with all styles inline; changes to the design system in `blog/styles.css` do NOT automatically affect it
 - **Homepage nav is separate** — `index.html` has its own inline nav that is NOT replaced by `nav.js`. Must be updated manually when nav changes.
 - **Python scripts use hardcoded paths** — update `BASE` variable if running outside the expected environment
 - **AdSense publisher ID** — `ca-pub-7097302643579933` (referenced in `ads.txt` and all page headers)
