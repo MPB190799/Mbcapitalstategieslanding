@@ -1053,8 +1053,10 @@ Schnell speichern und deployen
 
 ### 12. Video-Editor-Agent
 
-**Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten"
-**Rolle**: Erstellt Shorts aus Longvideos + generiert Schnitt-Pläne mit Templates und Sequenzen. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe).
+**Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten", "Video", "Longvideo"
+**Rolle**: Vollständiger Video-Produzent für Shorts UND Longvideos. Erstellt spannende, dynamische Videos mit professionellen Sequenzen, Hooks, Tempo-Wechseln und visueller Abwechslung. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe) und nicht nur Shorts kann, sondern auch Longvideos von Anfang bis Ende durchplant und schneidet.
+
+**Kernprinzip**: Kein Zuschauer soll länger als 15 Sekunden das gleiche Bild sehen. Abwechslung, Energie und visuelle Spannung sind Pflicht — bei Shorts UND Longvideos.
 
 ---
 
@@ -1102,53 +1104,323 @@ Schnell speichern und deployen
 
 ---
 
-#### Modus B: Longvideo-Schnittplan
+#### Modus B: Longvideo-Produktion (Schnittplan + Dynamik)
 
 **Input**: YT-Skript (aus Phase 2) oder rohes Skript von Marco
-**Output**: Vollständiger Schnittplan mit Sequenzen, Templates und B-Roll
+**Output**: Vollständiger Schnittplan mit Spannungsbogen, dynamischen Sequenzen, Templates, Hooks und B-Roll — production-ready
 
-**Sequenz-Types:**
+**Ziel**: Jedes Longvideo soll sich anfühlen wie eine Netflix-Doku über Finanzen — nicht wie ein statischer Talking-Head-Monolog.
 
-| Sequenz | Dauer | Beschreibung | Wann einsetzen |
+---
+
+##### Longvideo-Templates (Video-Strukturen)
+
+Jedes Longvideo folgt einem Template, das den Spannungsbogen vorgibt:
+
+| Template | Struktur | Dauer | Wann verwenden |
 |---|---|---|---|
-| **Talking Head** | variabel | Marco spricht in Kamera | Standard, Intro, Fazit |
-| **Screenshare** | 10-30s | Chart, Tabelle, Website | Bei Kennzahlen, Kursverläufen |
-| **Infografik** | 5-15s | Animierte Grafik mit Zahlen | Vergleiche, Rankings, Timelines |
-| **B-Roll Stock** | 3-8s | Stock-Footage (Schiffe, Minen, Pipelines, Börse) | Sektor-Übergänge, Stimmung |
-| **Text-Overlay** | 3-5s | Große Zahl/Fakt fullscreen | Schock-Zahlen, Key-Facts |
-| **Split-Screen** | 10-20s | Zwei Werte nebeneinander | Vergleichs-Analysen (A vs B) |
-| **Zoom-In** | 2-3s | Langsamer Zoom auf Talking Head | Betonung, wichtige Aussage |
-| **Jump-Cut** | 1-2s | Schneller Schnitt, gleiche Einstellung | Tempo erhöhen, Energie |
-| **Lower-Third** | dauerhaft | Name + Titel-Einblendung | Intro, Gastauftritte |
-| **Endscreen** | 15-20s | Abo + nächstes Video + Social Links | Immer am Ende |
+| **Deep-Dive Analyse** | Cold Open → Intro → 4-5 Kapitel → Fazit → CTA | 12-20 Min | Einzelaktien-Analyse (Barrick, BHP, Equinor) |
+| **Vergleich (A vs B)** | Cold Open → Vorstellung A → Vorstellung B → Head-to-Head → Gewinner → CTA | 10-15 Min | BHP vs Rio Tinto, Enbridge vs TC Energy |
+| **Top-Liste** | Cold Open → Countdown (5→1) mit steigender Intensität → Bonus-Pick → CTA | 8-12 Min | Top 5 Dividenden-Aktien, Beste Mining-Aktien |
+| **Sektor-Überblick** | Cold Open → Makro-Kontext → 3-4 Sub-Sektoren → Favoriten → CTA | 15-25 Min | Shipping 2026, Mining-Superzyklus |
+| **News/Reaktion** | Schock-Opener → Was ist passiert → Einordnung → Was tun → CTA | 5-10 Min | Dividenden-Cut, Crash, Übernahme |
+| **Wochenrückblick** | Teaser der Highlights → Makro → Rohstoffe → Shipping → Aktien → Ausblick → CTA | 10-18 Min | Sonntags-Rückblick |
+| **Erklärer/Guide** | Problem → Warum wichtig → Schritt-für-Schritt → Praxis-Beispiel → CTA | 8-15 Min | Was ist AISC?, Dividendenstrategie, YOC erklärt |
 
-**Schnittplan-Format (pro Kapitel):**
+---
+
+##### Spannungsbogen (Retention-Architektur)
+
+Jedes Longvideo hat einen bewussten Spannungsbogen, der die Zuschauer hält:
+
+```
+ENERGIE
+  ▲
+  │   ██                              ██
+  │   ██  ░░░░                    ████████
+  │   ██  ░░░░  ░░░░          ████████████
+  │   ██  ░░░░  ░░░░  ██   ██████████████
+  │   ██  ░░░░  ░░░░  ██  ███████████████  ██
+  │───██──░░░░──░░░░──██──███████████████──██──→
+  │  Cold  Intro  K1   K2    K3    Fazit  CTA
+  │  Open              ↑          ↑
+  │              Mid-Hook    Climax
+  └──────────────────────────────────────────→ ZEIT
+```
+
+**Pflicht-Hooks im Longvideo:**
+
+| Hook-Typ | Platzierung | Zweck | Beispiel |
+|---|---|---|---|
+| **Cold Open** | 0:00-0:15 | Sofort fesseln, beste Stelle vorziehen | "Diese Aktie zahlt 15% Dividende — und niemand redet drüber." |
+| **Pattern Interrupt** | Alle 2-3 Min | Aufmerksamkeit zurückholen | Sequenzwechsel, Soundeffekt, Zoom, Frage an Zuschauer |
+| **Open Loop** | Ende Kapitel 1-2 | Vorwärts-Tease: "Gleich zeig ich euch..." | "Aber das Beste kommt noch — die Dividenden-Prognose." |
+| **Mid-Hook** | ~50% des Videos | Größter Wow-Moment, verhindert Absprung | Schock-Zahl, kontroverses Statement, überraschendes Ergebnis |
+| **Micro-CTAs** | Alle 4-5 Min | Engagement triggern | "Schreibt in die Kommentare: Würdet ihr kaufen?" |
+| **Climax** | ~80% des Videos | Fazit/Ergebnis mit maximaler Energie | Das finale Urteil, die Empfehlung, der Gewinner |
+| **End-CTA** | Letzte 20s | Abo, Like, nächstes Video | "Wenn euch das gefallen hat — Abo da lassen!" |
+
+---
+
+##### Sequenz-Types (Visuelle Bausteine)
+
+| Sequenz | Dauer | Beschreibung | Wann einsetzen | Energie-Level |
+|---|---|---|---|---|
+| **Cold Open** | 5-15s | Bester Moment des Videos vorweggezogen | IMMER am Anfang | 🔴 Hoch |
+| **Talking Head** | 10-30s | Marco spricht in Kamera, Brustbild | Standard-Delivery | 🟡 Mittel |
+| **Talking Head + Gestikulieren** | 10-30s | Marco mit aktiver Körpersprache, näher | Begeisterung, Warnung | 🔴 Hoch |
+| **Screenshare** | 10-30s | Chart, Tabelle, Website, Finanzportal | Kennzahlen, Kursverläufe, Beweise | 🟡 Mittel |
+| **Screenshare + Voice-Over** | 15-45s | Marco erklärt über dem Chart | Detaillierte Daten-Analyse | 🟢 Ruhig |
+| **Infografik** | 5-15s | Animierte Grafik mit Zahlen (Balken, Kreise, Timelines) | Vergleiche, Rankings, Entwicklungen | 🟡 Mittel |
+| **B-Roll Stock** | 3-8s | Stock-Footage (Schiffe, Minen, Pipelines, Börse) | Sektor-Übergänge, Stimmung setzen | 🟢 Ruhig |
+| **B-Roll + Voice-Over** | 8-20s | Stock-Footage mit Marco-Kommentar drüber | Sektor-Einführung, Atmosphäre | 🟢 Ruhig |
+| **Text-Overlay Fullscreen** | 3-5s | Große Zahl/Fakt allein auf Screen | Schock-Zahlen, Key-Facts, Kapitel-Opener | 🔴 Hoch |
+| **Split-Screen** | 10-20s | Zwei Werte/Charts/Aktien nebeneinander | Vergleichs-Analysen (A vs B) | 🟡 Mittel |
+| **Zoom-In (Slow)** | 2-3s | Langsamer Zoom auf Marcos Gesicht | Betonung, wichtige Aussage, "Achtung!" | 🔴 Hoch |
+| **Zoom-Out (Reveal)** | 2-3s | Von Detail auf Gesamtbild | Kontext-Wechsel, big-picture Moment | 🟡 Mittel |
+| **Jump-Cut Montage** | 5-15s | Schnelle Schnitte, 3-5 Aussagen hintereinander | Tempo, Energie, Aufzählungen | 🔴 Hoch |
+| **Whip-Pan / Swipe** | 1-2s | Schneller Schwenk als Übergang | Kapitel-Wechsel, Themenwechsel | 🔴 Hoch |
+| **Picture-in-Picture** | 10-30s | Marco klein in Ecke, Chart/Grafik groß | Daten erklären + Persönlichkeit behalten | 🟡 Mittel |
+| **Bullet-Point Animation** | 10-20s | Punkte erscheinen nacheinander auf Screen | Zusammenfassungen, Pro/Contra-Listen | 🟡 Mittel |
+| **Lower-Third** | dauerhaft | Name + Titel-Einblendung | Intro, nach jedem Kapitelwechsel | — |
+| **Progress-Bar / Kapitel-Marker** | dauerhaft | Visuelle Fortschrittsanzeige | Optional, für Struktur | — |
+| **Sound-Design** | 0.5-2s | Whoosh, Pop, Ding bei Übergängen/Zahlen | Pattern Interrupts, Betonung | 🔴 Hoch |
+| **Endscreen** | 15-20s | Abo + nächstes Video + Social Links + Kompass | IMMER am Ende | 🟡 Mittel |
+
+---
+
+##### Dynamik-Regeln (Tempo & Energie-Management)
+
+**Das Video darf NIE einschlafen.** Diese Regeln stellen sicher, dass die Energie stimmt:
+
+1. **Max. 15 Sekunden gleiche Sequenz** — danach MUSS ein visueller Wechsel kommen (Cut, Overlay, Zoom, B-Roll)
+2. **Sequenz-Sandwich**: Nie zwei gleiche Sequenzen hintereinander. Schema: Talking Head → Screenshare → Talking Head → B-Roll → Talking Head → Infografik
+3. **Energie-Welle**: Abwechselnd 🔴 Hoch → 🟢 Ruhig → 🔴 Hoch. Nie länger als 60s auf gleicher Energie
+4. **Kapitel-Opener immer 🔴**: Jedes neue Kapitel startet mit Text-Overlay oder Zoom-In oder Jump-Cut (nie sanft!)
+5. **Daten = Screenshare/Infografik**: Kennzahlen NIEMALS nur verbal — IMMER visuell unterstützen
+6. **B-Roll bei Sektorwechsel**: Wenn der Sektor wechselt → 3-8s B-Roll als Brücke
+7. **Sound-Design bei Zahlen**: Jede Key-Zahl bekommt einen Sound-Akzent (Pop, Ding, Whoosh)
+8. **Engagement-Trigger alle 4-5 Min**: Frage an Zuschauer, Kommentar-CTA, Umfrage-Verweis, Community-Tab
+
+**Beispiel Dynamik-Flow (5 Minuten Ausschnitt):**
+```
+00:00 🔴 Text-Overlay: "KAPITEL 3: DIVIDENDEN" (3s, Sound: Whoosh)
+00:03 🟡 Talking Head: Marco erklärt Dividenden-Politik (12s)
+00:15 🔴 Zoom-In: "Und jetzt wird's spannend..." (2s)
+00:17 🟡 Screenshare: Dividenden-Chart 2018-2026 (15s, Voice-Over)
+00:32 🔴 Text-Overlay: "15,3% YIELD" (3s, Sound: Ding)
+00:35 🟡 Talking Head: Marco bewertet (10s)
+00:45 🟢 B-Roll: Goldmine aerial + Voice-Over (8s)
+00:53 🔴 Jump-Cut Montage: "Stabil. Wachsend. Sicher." (5s)
+00:58 🟡 PiP: Marco klein, YOC-Rechnung groß (20s)
+01:18 🔴 Split-Screen: YOC heute vs YOC in 5 Jahren (12s)
+01:30 🟢 Talking Head: Risiken besprechen (15s)
+01:45 🔴 Bullet-Points: 3 Risiken nacheinander einblenden (10s)
+01:55 🟡 Screenshare: Payout-Ratio-Tabelle (12s)
+02:07 🔴 Zoom-In: "Aber hier ist der Clou..." (Open Loop!) (3s)
+02:10 🟡 Talking Head: Einordnung (15s)
+02:25 🔴 Text-Overlay: Micro-CTA "Würdet ihr kaufen? → Kommentare!" (5s)
+...
+```
+
+---
+
+##### Longvideo Schnittplan-Format (pro Kapitel)
 
 ```
 ## Kapitel 2: Dividenden-Historie (02:15 - 04:30)
 Kernaussage: "Barrick Gold hat 10 Jahre am Stück Dividende gezahlt — trotz Goldpreis-Crash"
+Energie-Profil: 🔴 Start → 🟡 Mitte → 🔴 Climax → 🟢 Übergang
 
-| Timecode | Sequenz | Inhalt | Notiz |
-|---|---|---|---|
-| 02:15-02:20 | Text-Overlay | "10 Jahre Dividende" (groß, gold) | Transition: Fade |
-| 02:20-02:45 | Talking Head | Marco erklärt Historie | Normal, Brustbild |
-| 02:45-03:00 | Screenshare | Dividenden-Chart 2015-2025 | Zoom auf Anstieg |
-| 03:00-03:05 | Zoom-In | Marco: "Und das Beste..." | Betonung |
-| 03:05-03:25 | Infografik | YOC-Berechnung animiert | Zahlen nacheinander einblenden |
-| 03:25-03:30 | B-Roll | Goldmine aerial shot | Übergang |
-| 03:30-04:30 | Talking Head + Lower-Third | Bewertung + Fazit | Tempo leicht erhöhen |
+| Timecode | Sequenz | Inhalt | Sound | Energie | Notiz |
+|---|---|---|---|---|---|
+| 02:15-02:18 | Text-Overlay | "10 JAHRE DIVIDENDE" (groß, gold) | Whoosh | 🔴 | Kapitel-Opener, Fade-In |
+| 02:18-02:20 | Zoom-In | Marco: Staunen-Gesicht | — | 🔴 | Pattern Interrupt |
+| 02:20-02:35 | Talking Head | Marco erklärt Historie | — | 🟡 | Brustbild, normal |
+| 02:35-02:38 | B-Roll | Goldbarren / Tresor | — | 🟢 | Visueller Wechsel |
+| 02:38-02:55 | Screenshare | Dividenden-Chart 2015-2026 | — | 🟡 | Langsamer Zoom auf Anstieg |
+| 02:55-02:58 | Text-Overlay | "15,3%" (fullscreen, gold) | Ding! | 🔴 | Key-Zahl hervorheben |
+| 02:58-03:05 | Zoom-In | Marco: "Und das Beste..." | — | 🔴 | Open Loop! |
+| 03:05-03:25 | PiP | Marco klein, YOC-Rechnung groß | — | 🟡 | Zahlen nacheinander einblenden |
+| 03:25-03:30 | B-Roll | Goldmine aerial shot | — | 🟢 | Übergang zum nächsten Punkt |
+| 03:30-03:45 | Jump-Cut Montage | "Stabil. Wachsend. Nachhaltig." (3 Cuts) | Pop, Pop, Pop | 🔴 | Tempo-Boost! |
+| 03:45-04:15 | Talking Head + Lower-Third | Bewertung + Fazit Dividenden | — | 🟡 | Ruhig, überzeugend |
+| 04:15-04:25 | Bullet-Points | 3 Key-Takeaways einblenden | — | 🟡 | Zusammenfassung |
+| 04:25-04:30 | Whip-Pan | Transition zum nächsten Kapitel | Swipe-Sound | 🔴 | Sauberer Übergang |
 ```
 
-**B-Roll-Bibliothek (Standard-Keywords pro Sektor):**
+---
+
+##### Longvideo Cold Open Templates
+
+Der Cold Open entscheidet ob der Zuschauer bleibt. 6 Templates:
+
+| Template | Struktur | Beispiel |
+|---|---|---|
+| **Schock-Zahl** | Zahl fullscreen (3s) → Marco reagiert (5s) → "In diesem Video..." (5s) | "15% Dividende." [Beat] Marco: "Und das ist kein Scam." |
+| **Kontroverses Statement** | Marco-Aussage (5s) → Gegenbeweis-Montage (5s) → "Lasst mich erklären." (3s) | "Kohle-Aktien sind die beste Dividenden-Quelle 2026." |
+| **Zukunfts-Tease** | Ergebnis vorwegnehmen (5s) → "Aber erstmal von vorne..." (3s) | "Am Ende dieses Videos wirst du wissen, welche Aktie 20% Rendite bringt." |
+| **Frage** | Frage an Kamera (5s) → Kurze Montage (5s) → "Finden wir's raus." (3s) | "Was passiert, wenn der Ölpreis auf 100$ steigt?" |
+| **News-Hook** | Breaking-Graphic (3s) → Marco reagiert (5s) → Einordnung (5s) | [Ticker-Animation] "BHP kürzt die Dividende — was bedeutet das?" |
+| **Countdown-Tease** | "Heute: 5 Aktien über 10%" (3s) → Quick-Montage aller 5 (7s) → "Los geht's" (3s) | Schnelle Logos/Charts aller Picks, dann deep dive |
+
+---
+
+##### B-Roll-Bibliothek (Standard-Keywords pro Sektor)
 
 | Sektor | Stock-Footage Keywords |
 |---|---|
-| Mining | Open pit mine, gold bars, excavator, mineral processing, aerial mine |
-| Shipping | Container ship, tanker, port loading, ocean aerial, LNG carrier |
-| Pipeline/Midstream | Pipeline aerial, gas plant, refinery, storage tanks |
-| Upstream Oil & Gas | Oil rig, offshore platform, drilling, oil field |
-| Dividenden/Finanzen | Stock market, trading floor, cash counting, growth chart |
-| Makro/News | Central bank, press conference, city skyline, breaking news |
+| Mining | Open pit mine, gold bars, excavator, mineral processing, aerial mine, conveyor belt, smelting, drill core |
+| Shipping | Container ship, tanker, port loading, ocean aerial, LNG carrier, dry dock, crane loading, canal transit |
+| Pipeline/Midstream | Pipeline aerial, gas plant, refinery, storage tanks, compressor station, pipeline welding |
+| Upstream Oil & Gas | Oil rig, offshore platform, drilling, oil field, pumpjack, fracking, flare stack |
+| Dividenden/Finanzen | Stock market, trading floor, cash counting, growth chart, bank vault, coins, calculator |
+| Makro/News | Central bank, press conference, city skyline, breaking news, parliament, inflation chart |
+| Allgemein/Übergänge | Globe spinning, compass, clock, calendar, sunrise, city timelapse, ocean waves |
+
+##### Sound-Design Bibliothek
+
+| Sound | Einsatz | Häufigkeit |
+|---|---|---|
+| **Whoosh** | Kapitel-Opener, Swipe-Transitions | Jeder Kapitelwechsel |
+| **Ding / Pop** | Key-Zahlen erscheinen, Bullet-Points | Bei jeder wichtigen Zahl |
+| **Bass Drop (subtil)** | Schock-Momente, dramatische Aussagen | Max. 2-3x pro Video |
+| **Aufsteigende Tonfolge** | Positive Entwicklung, steigende Charts | Rankings, Countdown |
+| **Ticker-Sound** | Zahlen zählen hoch/runter | Rendite-Berechnungen |
+| **Ambient Pad** | Hintergrund bei Screenshares, B-Roll | Durchgehend leise |
+| **Click / Snap** | Jump-Cuts, schnelle Wechsel | Jump-Cut Montagen |
+
+---
+
+#### Modus B+: Chart-Design & Daten-Visualisierung
+
+**Keine Standard-Charts.** Jeder Chart und jede Grafik im Video muss zum MB Capital Strategies Brand passen: Dark Theme + Gold.
+
+**Chart-Styleguide:**
+
+```
+Hintergrund:     #0f1115 (near-black) oder #151821 (soft dark)
+Primär-Farbe:    #d4af37 (Gold) — Hauptlinie, Balken, Highlights
+Sekundär:        #e0bd55 (Bright Gold) — Vergleichslinie, Hover
+Positiv:         #00c853 (Grün) — Kursanstieg, Dividenden-Wachstum
+Negativ:         #ff5252 (Rot) — Kursverfall, Risiken, Cuts
+Neutral:         #9aa6c0 (Muted Blue) — Durchschnitt, Benchmark
+Grid/Achsen:     rgba(255,255,255,0.08) — Fast unsichtbar, clean
+Text/Labels:     #f5f6fa (Near-White) — Montserrat, sauber
+```
+
+**Chart-Typen und wann sie eingesetzt werden:**
+
+| Chart-Typ | Einsatz | Design-Regel |
+|---|---|---|
+| **Linien-Chart** | Kursverläufe, Dividenden-Historie, Rohstoffpreise | Gold-Linie auf dunklem Grund, Fläche darunter leicht gold-transparent |
+| **Balken-Chart** | Vergleiche (Dividendenrendite, AISC, KGV) | Gold-Balken, dezente Schatten, Werte über den Balken |
+| **Donut/Pie** | Portfolioverteilung, Sektor-Mix, Payout-Ratio | Gold-Gradient, Segmente mit Glow-Effekt |
+| **Split-Vergleich** | A vs B (Aktien, Sektoren, Kennzahlen) | Links Gold, Rechts Silber/Weiß, klare Trennung |
+| **Wasserfall** | FCF-Bridge, Kosten-Aufschlüsselung, AISC-Berechnung | Grün (positiv), Rot (negativ), Gold (Total) |
+| **Gauge/Tacho** | Bewertungs-Score, Risiko-Level, Payout-Ratio | Kompass-inspiriertes Design, Nadel zeigt auf Wert |
+| **Timeline** | Dividenden-Geschichte, Superzyklus-Phasen | Horizontale Linie mit Gold-Dots, animiert |
+| **Heatmap** | Sektor-Performance, Korrelationen | Rot→Gold→Grün Gradient |
+
+**Chart-Erstellung mit Canva / Figma / After Effects:**
+- Templates im MB Capital Strategies Branding vorbereiten
+- Keine Excel-Charts direkt verwenden — IMMER redesignen
+- Animationen: Zahlen zählen hoch, Balken wachsen, Linien zeichnen sich
+
+**Chart-Erstellung mit ffmpeg (für Screenshare-Overlays):**
+```bash
+# Gold-Text-Overlay auf dunklem Hintergrund
+ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=5" \
+  -vf "drawtext=text='15.3%% YIELD':fontcolor=#d4af37:fontsize=120:x=(w-text_w)/2:y=(h-text_h)/2:fontfile=Montserrat-Bold.ttf" \
+  -c:v libx264 chart-overlay.mp4
+
+# Animierter Zähler (0% → 15.3%)
+ffmpeg -f lavfi -i "color=c=#0f1115:s=1920x1080:d=3" \
+  -vf "drawtext=text='%{eif\:15.3*t/3\:d\:0}.%{eif\:mod(153*t/3,10)\:d\:0}%%':fontcolor=#d4af37:fontsize=140:x=(w-text_w)/2:y=(h-text_h)/2" \
+  counter.mp4
+```
+
+**Screenshare-Regeln:**
+1. **Nie den rohen Bildschirm zeigen** — immer mit Rahmen/Overlay (dunkler Rand, Logo unten rechts)
+2. **Zoom auf relevante Daten** — nie den ganzen Screen, sondern auf die Key-Zahl zoomen
+3. **Highlights**: Relevante Zahlen mit Gold-Circle oder Gold-Unterstreichung markieren
+4. **Cursor-Bewegung**: Langsam, bewusst, keine hektischen Mausbewegungen
+5. **Browser-Tabs**: Aufräumen! Nur relevante Tabs sichtbar
+
+---
+
+#### Modus B++: Color Grading & Visual Polish
+
+**Jedes Video wird visuell optimiert** — nicht einfach raw aus der Kamera. MB Capital Strategies hat einen cinematic, premium Look.
+
+**Color-Grading-Profil (Marcos Look):**
+
+```
+Schatten:        Leicht angehoben (nicht crushed-black, sondern #0f1115-Niveau)
+Mitteltöne:      Neutral bis leicht warm (Hautfarbe natürlich, nicht orange)
+Highlights:      Warm-Gold Tint (passend zu Brand-Gold #d4af37)
+Kontrast:        Mittel-Hoch (premium, aber nicht harsh)
+Sättigung:       Leicht reduziert (-10-15%), Gold-Töne selektiv boosten
+Schärfe:         Leicht erhöht für Details (Gesicht, Text, Charts)
+Vignette:        Subtil (-15%), zieht Fokus auf Mitte/Gesicht
+```
+
+**ffmpeg Color Grading (Basic):**
+```bash
+# Cinematic Dark-Gold Look
+ffmpeg -i input.mp4 -vf "
+  eq=contrast=1.1:brightness=-0.02:saturation=0.9:gamma=1.05,
+  curves=r='0/0 0.25/0.22 0.5/0.5 0.75/0.78 1/1':g='0/0 0.5/0.48 1/1':b='0/0 0.5/0.45 1/0.95',
+  unsharp=5:5:0.5:5:5:0.0,
+  vignette=PI/5
+" -c:a copy output-graded.mp4
+
+# Nur Farbtemperatur wärmer (Gold-Tint)
+ffmpeg -i input.mp4 -vf "colortemperature=temperature=6800" -c:a copy output-warm.mp4
+```
+
+**LUT-Empfehlungen (für DaVinci Resolve / Premiere):**
+
+| LUT | Stil | Passt zu |
+|---|---|---|
+| **Cinematic Gold** (custom) | Warme Highlights, dunkle Schatten, Gold-Push | Standard für alle Videos |
+| **Film Noir Light** | Hoher Kontrast, desaturiert, dramatisch | News-Reaktionen, Crash-Videos |
+| **Clean Corporate** | Neutral, scharf, professionell | Screenshare-heavy Videos, Guides |
+
+**Visual-Polish-Checkliste (vor Export):**
+
+| Check | Beschreibung |
+|---|---|
+| ✅ Color Grade | Cinematic Dark-Gold Look angewendet |
+| ✅ Weißabgleich | Konsistent über alle Clips (kein Farbsprung bei Cuts) |
+| ✅ Belichtung | Marcos Gesicht gleichmäßig ausgeleuchtet, keine dunklen Stellen |
+| ✅ Schärfe | Gesicht scharf, Hintergrund leicht weich (Tiefenunschärfe wenn möglich) |
+| ✅ Audio-Level | -14 LUFS (YouTube Standard), keine Peaks über -1dB |
+| ✅ Audio-EQ | Bass leicht boosten (Stimme voller), Höhen klar (Verständlichkeit) |
+| ✅ De-Esser | Zischlaute reduziert |
+| ✅ Noise Reduction | Hintergrundrauschen entfernt (Audio + Video) |
+| ✅ Lower-Thirds | Korrekt platziert, Montserrat Font, Gold auf Dark |
+| ✅ Endscreen | 15-20s, Abo-Button, nächstes Video, Kompass-Logo |
+| ✅ Thumbnail | 2+ Varianten generiert |
+
+**Audio-Optimierung mit ffmpeg:**
+```bash
+# Lautstärke normalisieren auf -14 LUFS (YouTube-Standard)
+ffmpeg -i input.mp4 -af "loudnorm=I=-14:TP=-1:LRA=11" -c:v copy output-normalized.mp4
+
+# Noise Reduction (leichtes Rauschen entfernen)
+ffmpeg -i input.mp4 -af "afftdn=nf=-25" -c:v copy output-denoised.mp4
+
+# De-Esser (Zischlaute reduzieren)
+ffmpeg -i input.mp4 -af "firequalizer=gain_entry='entry(4000,0);entry(6000,-4);entry(8000,-3)'" -c:v copy output-deessed.mp4
+
+# Komplett: Denoise + Normalize + EQ (Bass boost, Clarity)
+ffmpeg -i input.mp4 -af "
+  afftdn=nf=-25,
+  firequalizer=gain_entry='entry(80,2);entry(200,1);entry(3000,1.5);entry(6000,-2);entry(8000,-1)',
+  loudnorm=I=-14:TP=-1:LRA=11
+" -c:v copy output-polished.mp4
+```
 
 ---
 
@@ -1281,11 +1553,17 @@ Wenn eine Video-Datei vorhanden ist (MP4, MOV), kann der Agent **direkt schneide
 5. Output: Fertige MP4s + Thumbnail-JPGs
 ```
 
+**Post-Production Pipeline (automatisch nach jedem Schnitt):**
+```
+1. Schnitt fertig → 2. Color Grade anwenden → 3. Audio normalisieren →
+4. Lower-Thirds + Text-Overlays → 5. Sound-Design → 6. Export (1080p/4K)
+```
+
 **Limitierungen:**
-- Kein Motion Graphics / After Effects (nur Text-Overlays, Fades, Crops)
-- Keine B-Roll-Insertion (B-Roll muss separat bereitstehen)
-- Kein Color Grading (nutze DaVinci Resolve für Feinschliff)
+- Kein Motion Graphics / After Effects (nur Text-Overlays, Fades, Crops, Color Grading)
+- Keine B-Roll-Insertion (B-Roll muss separat bereitstehen, wird dann via concat eingefügt)
 - Für aufwändige Edits: Schnittplan als EDL/XML für DaVinci/Premiere exportieren
+- Complex Color Grading (LUTs, Power Windows): besser in DaVinci Resolve
 
 **EDL-Export für Premiere/DaVinci:**
 ```
