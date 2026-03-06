@@ -3,6 +3,12 @@ Disallow: /admin/
 Disallow: /draft/
 Disallow: /tmp/
 Disallow: /private/
+
+# Bilder-URLs aus GSC-Index ausschließen (werden als Content-Seiten indexiert)
+Disallow: /rohstoffnachfrage.jpeg
+Disallow: /weltweiterölbedarf.jpeg
+Disallow: /globalegasnachfrage.jpeg
+
 Allow: /
 
 # --- Ressourcen freigeben (wichtig für Mobile-Friendly & Ranking)
