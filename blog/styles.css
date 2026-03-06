@@ -1330,3 +1330,33 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
   border-top: 1px solid rgba(255,255,255,0.05);
   padding-top: 10px;
 }
+
+/* ============================================================
+   STICKY MOBILE AD – Google AdSense Policy konform (max 15% Viewport)
+   ============================================================ */
+.sticky-ad-footer {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sticky-ad-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: #0f1115;
+    border-top: 1px solid rgba(212,175,55,0.2);
+    padding: 4px 0;
+    text-align: center;
+    max-height: 15vh;
+    overflow: hidden;
+  }
+  .sticky-ad-footer ins {
+    display: block !important;
+  }
+  /* Body padding damit Content nicht hinter Sticky-Ad verschwindet */
+  body.has-sticky-ad {
+    padding-bottom: 60px;
+  }
+}
