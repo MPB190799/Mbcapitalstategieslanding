@@ -133,6 +133,7 @@ This is **not** a JavaScript/Node.js application — it is a **static HTML site*
 ├── add_glossar_blog_links.py # Adds relevant blog article links to glossary pages' related sections
 ├── inject_author_sources.py  # Injects author bio box into blog articles
 ├── rename_mining_2026.py   # Renames articles from -2025 to -2026 with redirect stubs
+├── .claude/scripts/validate-site.py  # Site validation (used by Daily-Optimize, not deployed)
 ├── build-glossar-sitemap.mjs  # Node.js ESM script to generate glossar-sitemap.xml
 │
 ├── Logo.png                # Brand logo (used in nav, schema, everywhere)
@@ -442,6 +443,7 @@ These scripts are **one-off or maintenance tools** — they modify HTML files in
 | `add_glossar_blog_links.py` | Adds relevant blog article links to glossary pages' related sections | Glossary `*.html` pages (skips pages with 2+ existing blog links) |
 | `inject_author_sources.py` | Injects author bio box HTML into blog articles | Blog article pages |
 | `rename_mining_2026.py` | Renames articles from `-2025` to `-2026` with redirect stubs | 9 mining slugs + updates blog/index.html, sitemap-blog.xml, cross-references |
+| `.claude/scripts/validate-site.py` | Site-weite Validierung (Meta-Tags, JSON-LD, Broken Links, SEO, Disclaimer) | Alle HTML-Dateien — Output als Text oder `--json`. Liegt in `.claude/` damit es nicht auf GitHub Pages deployed wird |
 
 These scripts use hardcoded `BASE` paths. Current values:
 - `add_nav.py`: `BASE = '/home/user/Mbcapitalstategieslanding'`
@@ -786,6 +788,7 @@ Dieses Projekt nutzt ein Multi-Agent-System mit automatischem Triggering. Der **
 | "Baue", "Implementiere", "Code", "Fix", "Bug" | → Developer-Agent (ggf. mit Architect vorher) |
 | "Prüfe", "Code Review", "Test" | → QA-Agent |
 | "Publish", "Push", "Deploy", "Workflow", "Automatisiere", "Kalender", "Was steht an?" | → Automation-Agent |
+| "Optimiere", "Optimize", "Self-Improve", "Skill verbessern", "täglich optimieren" | → Daily-Optimize-Agent (oder `/loop 24h /daily-optimize`) |
 
 ---
 
@@ -1051,7 +1054,56 @@ Schnell speichern und deployen
 
 ---
 
-### 12. Video-Editor-Agent
+### 12. Daily-Optimize-Agent (Selbst-Optimierung)
+
+**Trigger**: Automatisch via `/loop 24h /daily-optimize` — läuft täglich bis Marco manuell stoppt
+**Rolle**: Systematische Selbst-Optimierung aller Skills, Agents, Workflows, CSS, JS, HTML-Templates und Scripts
+
+**Prinzip**: Jeden Tag 2-3 Bereiche durchgehen, Verbesserungen finden und automatisch umsetzen. Nur implementieren wenn das Ergebnis besser ist — sonst reverten.
+
+**Tagesplan (Rotation):**
+
+| Tag | Bereiche |
+|---|---|
+| Montag | CLAUDE.md Agent-Definitionen + CSS Design System |
+| Dienstag | JavaScript (nav.js, glossar-linking.js) + HTML-Templates |
+| Mittwoch | SEO & Sitemaps + Python Utility Scripts |
+| Donnerstag | Glossar-System + Performance & Ladezeiten |
+| Freitag | Content-Konsistenz + Neue Skill-/Agent-Ideen |
+| Samstag | Freier Fokus auf größte Pain-Points der Woche |
+| Sonntag | Review der Woche + Wochenrückblick-Prep |
+
+**10 Optimierungs-Bereiche:**
+1. CLAUDE.md — Agent-Definitionen, Trigger-Routing, Zugriffs-Matrizen
+2. CSS — Custom Properties, tote Regeln, Responsiveness, Accessibility
+3. JavaScript — Performance, Fehlerbehandlung, Schema.org Injection
+4. HTML-Templates — Meta-Tags, JSON-LD, Favicon, AdSense
+5. SEO & Sitemaps — Coverage, lastmod, Canonical URLs, robots.txt
+6. Python Scripts — BASE-Pfade, Idempotenz, Dokumentation
+7. Glossar — terms.json Vollständigkeit, Sitemap, Auto-Linking
+8. Performance — Bilder, Minified CSS/JS, Lazy Loading
+9. Content — Disclaimer, Author-Attribution, Copyright-Jahr, Footer
+10. Neue Skills — Wiederkehrende Aufgaben automatisieren
+
+**Sicherheits-Mechanismen:**
+- Jede Änderung = eigener Git-Commit (einfach revertbar)
+- Branch-Isolation (nie auf main)
+- Validierung vor Commit (`python3 .claude/scripts/validate-site.py`)
+- Kein Deployment ohne Marcos OK
+- Bei Verschlechterung → sofort `git revert`
+
+**Validierungs-Script**: `.claude/scripts/validate-site.py` — Automatische Prüfung auf fehlende Meta-Tags, Broken Links, Schema-Fehler, fehlende Disclaimers, veraltete Copyright-Jahre
+
+**Output**: Daily Optimization Report mit Änderungen, Findings und Vorschlägen
+
+**Starten**: `/loop 24h /daily-optimize`
+**Stoppen**: Marco sagt manuell "aufhören" oder stoppt den Loop
+
+**Zugriff**: Alle Projektdateien lesen + schreiben, Git-Operationen, KEINE externen APIs, KEIN Deployment
+
+---
+
+### 13. Video-Editor-Agent
 
 **Trigger**: "Short", "Shorts", "Clip", "Schnitt", "Video schneiden", "Sequenzen", "Template", "B-Roll", "Opus Clip", "Longvideo bearbeiten", "Video", "Longvideo", "Chart", "Grafik"
 **Rolle**: Marcos Video-Editor & Visual Designer. Marco filmt sich selbst (Talking Head) — der Agent übernimmt ALLES danach: Schnitt, Charts erstellen, Grafiken designen, Sequenzen zusammenbauen, Visuals einbinden, Color Grade, Untertitel, Chapters, Intro/Outro, YouTube SEO. Besser als Opus Clip, weil kontextbewusst (kennt Marcos Stil, Themen, Zielgruppe).
@@ -2261,6 +2313,7 @@ ffmpeg -i clip.mp4 \
 | **Feature-Pipeline** | Architect → Developer (ggf. Sub-Agents) → QA | Je nach Scope |
 | **Bugfix-Pipeline** | Architect analysiert → Developer fixt → QA prüft | Kurz |
 | **Website-Pipeline** | SEO-Check → Architect → Developer → QA → Deploy | Mittel |
+| **Daily-Optimize** | Bereiche auswählen → Analyse → Optimierung → Validierung → Commit+Push → Report | Täglich (Loop) |
 
 ### Sub-Agent Spawn-Regeln
 
