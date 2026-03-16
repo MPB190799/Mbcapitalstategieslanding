@@ -1,0 +1,90 @@
+name: IndexNow – Auto-Indexierung bei Push
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap*.xml'
+      - 'glossar-sitemap.xml'
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Geänderte HTML-Dateien ermitteln
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v '404.html' | grep -v 'googleecd17b151bd5b1c1.html' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "urls=" >> $GITHUB_OUTPUT
+            echo "Keine HTML-Änderungen gefunden."
+          else
+            URLS=""
+            for file in $CHANGED; do
+              # Skip redirect stubs (noindex pages)
+              if grep -q 'noindex' "$file" 2>/dev/null; then
+                echo "Überspringe (noindex): $file"
+                continue
+              fi
+              # Convert file path to URL
+              if [ "$file" = "index.html" ]; then
+                URLS="${URLS}https://mbcapitalstrategies.com/\n"
+              else
+                URL="https://mbcapitalstrategies.com/${file}"
+                URLS="${URLS}${URL}\n"
+              fi
+            done
+            echo "urls<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$URLS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo -e "Geänderte URLs:\n$URLS"
+          fi
+
+      - name: IndexNow an Bing senden
+        if: steps.changed.outputs.urls != ''
+        run: |
+          KEY="1353804911fc41b4802b780e8fca77b5"
+          HOST="mbcapitalstrategies.com"
+
+          # Build URL list as JSON array
+          URL_LIST=$(echo "${{ steps.changed.outputs.urls }}" | sed '/^$/d' | jq -R . | jq -s .)
+
+          PAYLOAD=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --argjson urlList "$URL_LIST" \
+            '{host: $host, key: $key, keyLocation: "https://\($host)/\($key).txt", urlList: $urlList}')
+
+          echo "Sende an IndexNow:"
+          echo "$PAYLOAD" | jq .
+
+          # Submit to Bing IndexNow endpoint
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "HTTP Status: $HTTP_CODE"
+          echo "Response: $BODY"
+
+          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+            echo "IndexNow erfolgreich gesendet!"
+          else
+            echo "::warning::IndexNow Antwort: HTTP $HTTP_CODE"
+          fi
+
+      - name: Sitemap-Ping an Google & Bing
+        if: steps.changed.outputs.urls != ''
+        run: |
+          echo "Pinge Sitemaps..."
+          curl -s "https://www.google.com/ping?sitemap=https://mbcapitalstrategies.com/sitemap.xml" > /dev/null
+          curl -s "https://www.bing.com/ping?sitemap=https://mbcapitalstrategies.com/sitemap.xml" > /dev/null
+          echo "Sitemap-Ping an Google & Bing gesendet."
