@@ -101,6 +101,7 @@
             '<a href="/blog/">Blog</a>' +
             '<a href="/investing-analysen.html">Investing.com</a>' +
             '<a href="/rechner/" class="nav-highlight">Rechner</a>' +
+            '<a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener" class="nav-highlight" style="border-color:rgba(255,255,255,0.25);color:#f5f6fa;">🌐 English</a>' +
           '</div>' +
           '<button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">' +
             '<span></span><span></span><span></span>' +
@@ -128,6 +129,8 @@
           '<a href="/podcast/">🎧 Alle Podcasts</a>' +
           '<a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>' +
           '<a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>' +
+          '<div class="mob-label">International</div>' +
+          '<a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener">🌐 English Website</a>' +
         '</nav>' +
       '</nav>';
 
