@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Tools Übersicht -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/blog/alle-finanzrechner.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
   <!-- Core Rechner -->
   <url>
     <loc>https://mbcapitalstrategies.com/tools/dividendenrechner.html</loc>

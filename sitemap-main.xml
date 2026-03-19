@@ -148,4 +148,56 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Blog Index -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Podcast Pages -->
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/bdc-aktien-erklaert-2025.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/der-finanzfeuer-talk.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/maritime-investments-schifffahrtsaktien-2025.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/mein-weg-zur-dividendenstrategie-2025.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/pipeline-aktien-analyse-2025.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
 </urlset>
