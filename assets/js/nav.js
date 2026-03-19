@@ -7,31 +7,29 @@
 (function () {
   'use strict';
 
-  // ── Google Analytics 4 ──
-  (function() {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE';
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){ window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-J1NWEPPKNE', { anonymize_ip: true });
-  })();
-
-  /* ── Google Consent Mode v2 Defaults (set before AdSense) ── */
+  /* ── Google Consent Mode v2 Defaults (MUST be set before GA4 loads) ── */
   window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = function(){ window.dataLayer.push(arguments); };
 
   var CONSENT_KEY = 'mbcs_consent_v1';
   var existingConsent = localStorage.getItem(CONSENT_KEY);
 
-  gtag('consent', 'default', {
+  window.gtag('consent', 'default', {
     'ad_storage':         existingConsent === 'granted' ? 'granted' : 'denied',
     'analytics_storage':  existingConsent === 'granted' ? 'granted' : 'denied',
     'ad_user_data':       existingConsent === 'granted' ? 'granted' : 'denied',
     'ad_personalization': existingConsent === 'granted' ? 'granted' : 'denied'
   });
+
+  // ── Google Analytics 4 (loaded AFTER consent defaults are set) ──
+  (function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE';
+    document.head.appendChild(s);
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-J1NWEPPKNE', { anonymize_ip: true });
+  })();
 
   /* ── Boot ── */
   document.addEventListener('DOMContentLoaded', function () {
@@ -485,7 +483,7 @@
 
     document.getElementById('cookie-accept').addEventListener('click', function () {
       localStorage.setItem(CONSENT_KEY, 'granted');
-      gtag('consent', 'update', {
+      window.gtag('consent', 'update', {
         'ad_storage':         'granted',
         'analytics_storage':  'granted',
         'ad_user_data':       'granted',

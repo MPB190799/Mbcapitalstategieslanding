@@ -30,4 +30,5 @@ Sitemap: https://mbcapitalstrategies.com/sitemap-travel.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-investing.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-kategorien.xml
 Sitemap: https://mbcapitalstrategies.com/glossar-sitemap.xml
+Sitemap: https://mbcapitalstrategies.com/sitemap-video.xml
 

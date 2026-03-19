@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
+    // Nicht auf Glossar-Seiten selbst ausführen
+    if (window.location.pathname.startsWith('/glossar/')) return;
+
     // 1) JSON laden
     let glossary = {};
     try {
@@ -12,8 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2) Zielbereich suchen
     const selectors = [
-        ".blog-content",
-        ".article-content",
+        ".article-body",
+        ".container",
         "main",
         ".post",
         ".content"
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     html = html.replace(/§§LT§§/g, "<").replace(/§§GT§§/g, ">");
 
     // 4) Ausgabe
+    // NOTE: innerHTML replacement destroys existing event listeners on child elements
     target.innerHTML = html;
 
 });
