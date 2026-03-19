@@ -15,6 +15,9 @@ Allow: /
 Allow: /*.css
 Allow: /*.js
 
+# --- IndexNow API Key (Bing, Yandex, automatische Indexierung)
+# https://mbcapitalstrategies.com/1353804911fc41b4802b780e8fca77b5.txt
+
 # --- MASTER SITEMAP INDEX
 Sitemap: https://mbcapitalstrategies.com/sitemap.xml
 
