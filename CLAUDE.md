@@ -246,7 +246,7 @@ Additional blog pages not in index filters: Toolbox/Broker review, Wise/Airalo t
 
 There are **two main CSS sources** — pages use one or the other:
 
-1. **`/blog/styles.css`** — The shared design system stylesheet (1332 lines, 20 CSS custom properties). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=2">`.
+1. **`/blog/styles.css`** — The shared design system stylesheet (1332 lines, 20 CSS custom properties). Used by blog articles, tools, rechner, podcast pages, and most content pages. Referenced as `<link rel="stylesheet" href="/blog/styles.css?v=3">`.
 
 2. **Inline `<style>` blocks** — The homepage (`index.html`) and some older pages embed their own styles directly. These share the same design tokens but may have page-specific additions.
 
@@ -547,7 +547,7 @@ When adding new financial terms, add them to `terms.json` and regenerate the sit
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="/blog/styles.css?v=2">
+  <link rel="stylesheet" href="/blog/styles.css?v=3">
 
   <!-- JSON-LD: BlogPosting -->
   <script type="application/ld+json">
@@ -701,7 +701,7 @@ Self-contained (~1654 lines) with ALL styles inline. Features:
 ### Adding a New Blog Article
 1. Create `blog/<slug>.html` following the blog article template above
 2. Include favicon links, AdSense script, meta tags (title, description, author, canonical, OG, Twitter)
-3. Add `<link rel="stylesheet" href="/blog/styles.css?v=2">`
+3. Add `<link rel="stylesheet" href="/blog/styles.css?v=3">`
 4. Add JSON-LD `BreadcrumbList` schema (3 items: Startseite → Blog → Article)
 5. Add JSON-LD `BlogPosting` schema (or rely on nav.js auto-injection for legacy articles)
 6. Optionally add `FAQPage` schema (5 relevant Q&As for E-E-A-T)

@@ -63,7 +63,7 @@ def fix_tool(filename):
     if '/blog/styles.css' not in content:
         content = content.replace(
             '</head>',
-            '  <link rel="stylesheet" href="/blog/styles.css?v=2">\n</head>'
+            '  <link rel="stylesheet" href="/blog/styles.css?v=3">\n</head>'
         )
         changed = True
         print(f'  [+] Added blog/styles.css to {filename}')
