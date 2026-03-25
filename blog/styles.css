@@ -106,9 +106,10 @@ header.header {
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 .nav-brand img { height: 34px; width: auto; filter: drop-shadow(0 0 6px rgba(212,175,55,0.5)); }
-.nav-brand span { color: var(--gold); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; }
+.nav-brand span { color: var(--gold); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; white-space: nowrap; }
 
 .nav-links {
   display: flex;
