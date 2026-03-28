@@ -29,29 +29,70 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     if (!target) return;
 
-    let html = target.innerHTML;
+    // 3) Glossar-Begriffe verlinken (nur in TextNodes, nie in <a> Tags)
+    const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            // Skip text inside <a>, <script>, <style>, <code>, <pre> tags
+            let parent = node.parentElement;
+            while (parent && parent !== target) {
+                const tag = parent.tagName.toLowerCase();
+                if (tag === 'a' || tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre' || tag === 'button') {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                parent = parent.parentElement;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
 
-    // Bereits existierende Links schützen
-    html = html.replace(/<a\b[^>]*>.*?<\/a>/gi, m =>
-        m.replace(/</g, "§§LT§§").replace(/>/g, "§§GT§§")
-    );
+    // Collect text nodes first (modifying during walk causes issues)
+    const textNodes = [];
+    let node;
+    while (node = walker.nextNode()) textNodes.push(node);
 
-    // 3) Glossar-Begriffe verlinken
-    for (const [term, anchor] of Object.entries(glossary)) {
-        const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-        const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
+    // Sort terms by length (longest first) to avoid partial matches
+    const sortedTerms = Object.entries(glossary).sort((a, b) => b[0].length - a[0].length);
 
-        html = html.replace(regex,
-            `<a href="/glossar/#${anchor}" class="glossar-link">$1</a>`
-        );
+    // Track linked terms to avoid duplicate links
+    const linked = new Set();
+
+    for (const textNode of textNodes) {
+        let text = textNode.textContent;
+        const parts = [];
+        let lastIndex = 0;
+        let modified = false;
+
+        for (const [term, anchor] of sortedTerms) {
+            if (linked.has(anchor)) continue;
+            const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+            const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
+            let match;
+
+            while ((match = regex.exec(text)) !== null) {
+                if (match.index > lastIndex) {
+                    parts.push(document.createTextNode(text.slice(lastIndex, match.index)));
+                }
+                const link = document.createElement('a');
+                link.href = `/glossar/#${anchor}`;
+                link.className = 'glossar-link';
+                link.textContent = match[1];
+                parts.push(link);
+                lastIndex = match.index + match[0].length;
+                linked.add(anchor);
+                modified = true;
+                break; // Only link first occurrence per term
+            }
+        }
+
+        if (modified && parts.length > 0) {
+            if (lastIndex < text.length) {
+                parts.push(document.createTextNode(text.slice(lastIndex)));
+            }
+            const fragment = document.createDocumentFragment();
+            parts.forEach(p => fragment.appendChild(p));
+            textNode.parentNode.replaceChild(fragment, textNode);
+        }
     }
-
-    // Maskierung zurücksetzen
-    html = html.replace(/§§LT§§/g, "<").replace(/§§GT§§/g, ">");
-
-    // 4) Ausgabe
-    // NOTE: innerHTML replacement destroys existing event listeners on child elements
-    target.innerHTML = html;
 
 });
 
