@@ -53,45 +53,61 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Sort terms by length (longest first) to avoid partial matches
     const sortedTerms = Object.entries(glossary).sort((a, b) => b[0].length - a[0].length);
 
-    // Track linked terms to avoid duplicate links
-    const linked = new Set();
+    // Track linked anchors to avoid duplicate links for same concept
+    const linkedAnchors = new Set();
+    // Track linked term strings to skip substrings of already-linked terms
+    const linkedTerms = [];
 
     for (const textNode of textNodes) {
-        let text = textNode.textContent;
-        const parts = [];
-        let lastIndex = 0;
-        let modified = false;
+        const text = textNode.textContent;
+        if (!text.trim()) continue;
 
+        // Find all matches in this text node, longest terms first
+        const matches = [];
         for (const [term, anchor] of sortedTerms) {
-            if (linked.has(anchor)) continue;
+            if (linkedAnchors.has(anchor)) continue;
             const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
             const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
-            let match;
-
-            while ((match = regex.exec(text)) !== null) {
-                if (match.index > lastIndex) {
-                    parts.push(document.createTextNode(text.slice(lastIndex, match.index)));
+            const match = regex.exec(text);
+            if (match) {
+                // Check if this match overlaps with an already-found longer match
+                const start = match.index;
+                const end = start + match[0].length;
+                const overlaps = matches.some(m => !(end <= m.start || start >= m.end));
+                if (!overlaps) {
+                    matches.push({ start, end, text: match[1], anchor, term });
                 }
-                const link = document.createElement('a');
-                link.href = `/glossar/#${anchor}`;
-                link.className = 'glossar-link';
-                link.textContent = match[1];
-                parts.push(link);
-                lastIndex = match.index + match[0].length;
-                linked.add(anchor);
-                modified = true;
-                break; // Only link first occurrence per term
             }
         }
 
-        if (modified && parts.length > 0) {
-            if (lastIndex < text.length) {
-                parts.push(document.createTextNode(text.slice(lastIndex)));
+        if (matches.length === 0) continue;
+
+        // Sort matches by position in text
+        matches.sort((a, b) => a.start - b.start);
+
+        // Build replacement
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+
+        for (const m of matches) {
+            if (m.start > lastIndex) {
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex, m.start)));
             }
-            const fragment = document.createDocumentFragment();
-            parts.forEach(p => fragment.appendChild(p));
-            textNode.parentNode.replaceChild(fragment, textNode);
+            const link = document.createElement('a');
+            link.href = `/glossar/#${m.anchor}`;
+            link.className = 'glossar-link';
+            link.textContent = m.text;
+            fragment.appendChild(link);
+            lastIndex = m.end;
+            linkedAnchors.add(m.anchor);
+            linkedTerms.push(m.term.toLowerCase());
         }
+
+        if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        textNode.parentNode.replaceChild(fragment, textNode);
     }
 
 });
