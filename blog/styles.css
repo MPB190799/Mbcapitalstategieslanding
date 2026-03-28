@@ -1361,3 +1361,203 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
     padding-bottom: 60px;
   }
 }
+
+/* ============================================================
+   PREMIUM ENHANCEMENTS 2026
+   Gold Accents, Animations, Better Cards
+   ============================================================ */
+
+/* Gold section dividers for h2 */
+.article-body h2::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-strong));
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+/* Enhanced card hover with gold glow */
+.card:hover, .post:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow-hover), 0 0 20px rgba(212,175,55,0.08);
+}
+
+/* Enhanced info-box with icon */
+.info-box {
+  position: relative;
+  padding-left: 28px;
+}
+
+.info-box::before {
+  content: 'ℹ';
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Enhanced risk-box with icon */
+.risk-box {
+  position: relative;
+  padding-left: 28px;
+}
+
+.risk-box::before {
+  content: '⚠';
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  font-size: 1rem;
+}
+
+/* Enhanced key-takeaway */
+.key-takeaway {
+  position: relative;
+  padding-left: 28px;
+  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.03) 100%);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-left: 4px solid var(--gold);
+}
+
+.key-takeaway::before {
+  content: '★';
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+/* Enhanced metric cards */
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.metric-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-strong));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.metric-card:hover::after {
+  opacity: 1;
+}
+
+/* CTA Box improvements */
+.cta-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+}
+
+/* Related articles enhancement */
+.related-articles a {
+  transition: color var(--transition), padding-left var(--transition);
+}
+
+.related-articles a:hover {
+  color: var(--gold-strong);
+  padding-left: 8px;
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+  z-index: 99;
+  backdrop-filter: blur(8px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: rgba(212,175,55,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(212,175,55,0.2);
+}
+
+/* Section separator */
+.section-divider,
+hr.gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.3) 50%, transparent 100%);
+  margin: 48px 0;
+  border: none;
+}
+
+/* Smooth gold underline for article links */
+.article-body a:not(.btn):not(.card) {
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  transition: border-color var(--transition);
+}
+
+.article-body a:not(.btn):not(.card):hover {
+  border-bottom-color: var(--gold);
+  opacity: 1;
+}
+
+/* Premium number styling */
+.gold-number {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 1.1em;
+}
+
+/* Enhanced disclaimer */
+.disclaimer {
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color var(--transition);
+}
+
+.disclaimer:hover {
+  border-color: rgba(255,255,255,0.1);
+}
