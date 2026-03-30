@@ -7,12 +7,18 @@
 (function () {
   'use strict';
 
-  /* ── Non-blocking Font Loading (replaces render-blocking CSS @import) ── */
+  /* ── Non-blocking Font Loading ── */
   if (!document.querySelector('link[href*="Outfit"]')) {
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
     fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
     document.head.appendChild(fontLink);
+  }
+  if (!document.querySelector('link[href*="Montserrat"]')) {
+    var montLink = document.createElement('link');
+    montLink.rel = 'stylesheet';
+    montLink.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap';
+    document.head.appendChild(montLink);
   }
 
   /* ── Google Consent Mode v2 Defaults (MUST be set before GA4 loads) ── */
