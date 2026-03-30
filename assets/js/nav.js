@@ -7,6 +7,14 @@
 (function () {
   'use strict';
 
+  /* ── Non-blocking Font Loading (replaces render-blocking CSS @import) ── */
+  if (!document.querySelector('link[href*="Outfit"]')) {
+    var fontLink = document.createElement('link');
+    fontLink.rel = 'stylesheet';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
+    document.head.appendChild(fontLink);
+  }
+
   /* ── Google Consent Mode v2 Defaults (MUST be set before GA4 loads) ── */
   window.dataLayer = window.dataLayer || [];
   window.gtag = function(){ window.dataLayer.push(arguments); };

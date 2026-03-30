@@ -3,7 +3,8 @@
    mbcapitalstrategies.com
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* Font loaded via <link> in HTML for non-blocking rendering */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap'); */
 
 /* ============================================================
    DESIGN TOKENS
@@ -42,7 +43,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Outfit', sans-serif;
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -942,6 +943,26 @@ blockquote p { margin: 0; color: var(--text-soft); }
   border: 1px solid var(--gold-border);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
+
+/* Mobile table scroll — wraps all tables automatically */
+.article-body table,
+article table,
+.container table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .article-body table,
+  article table,
+  .container table {
+    display: table;
+    overflow-x: visible;
+  }
+}
+
 table, .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -1249,13 +1270,13 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
-  font-family: Montserrat, sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 .author-box .author-name {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
-  font-family: Montserrat, sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 .author-box .author-bio {
   font-size: 0.85rem;
@@ -1304,7 +1325,7 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
   text-transform: uppercase;
   color: var(--text-muted);
   margin: 0 0 10px;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 .sources-box ul {
   list-style: none;
