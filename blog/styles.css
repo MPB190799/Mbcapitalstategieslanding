@@ -1930,6 +1930,108 @@ table tbody tr:hover {
   font-weight: 800;
 }
 
+/* ============================================================
+   ACCESSIBILITY – Focus States
+   ============================================================ */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.filter-btn:focus-visible,
+.nav-links a:focus-visible,
+.dropdown-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content (unsichtbar, nur per Tab) */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   SMOOTH PAGE LOAD ANIMATION
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.article-hero,
+.page-header {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.article-body {
+  animation: fadeInUp 0.6s ease-out 0.15s;
+  animation-fill-mode: both;
+}
+
+/* ============================================================
+   ENHANCED MOBILE EXPERIENCE
+   ============================================================ */
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .metric-card {
+    padding: 12px 10px;
+  }
+  .metric-card .metric-value {
+    font-size: 1.3rem;
+  }
+  .data-strip {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .data-strip .strip-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+    text-align: left;
+  }
+  .verdict-box .verdict-pick {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .gold-line { animation: none; }
+}
+
+/* ============================================================
+   COMPARISON TABLE HIGHLIGHT
+   ============================================================ */
+.table-wrapper tr.winner td {
+  background: rgba(212,175,55,0.08);
+}
+.table-wrapper td.highlight {
+  color: var(--gold);
+  font-weight: 700;
+}
+
 /* Print styles */
 @media print {
   .nav, .nav-mobile, .site-footer, .cookie-banner,
