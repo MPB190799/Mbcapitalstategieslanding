@@ -319,21 +319,49 @@ img{max-width:100%;display:block}
 .sr-d7{transition-delay:.35s}.sr-d8{transition-delay:.4s}
 
 /* ── RESPONSIVE ── */
+
+/* Ensure touch targets are at least 44px */
+.btn-p,.btn-s,.btn-sm,.nav-hamburger,.faq-item summary,.nav-mobile a{min-height:44px;display:inline-flex;align-items:center}
+.nav-mobile a{display:flex;min-height:44px;align-items:center}
+.faq-item summary{min-height:44px}
+
 @media(max-width:900px){
   .bento{grid-template-columns:1fr 1fr}
   .bento .b-card.span-2{grid-column:span 2}
 }
 @media(max-width:640px){
-  .hero{padding:70px 20px 50px}
+  .hero{padding:60px 16px 40px}
   .hero h1{font-size:2rem}
-  .stats{grid-template-columns:repeat(3,1fr)}
+  .hero-sub{font-size:.95rem}
+  .hero-avatar-wrap{width:130px;height:130px;margin-bottom:24px}
+  .hero-img{width:118px;height:118px}
+  .hero-cta{flex-direction:column;align-items:center;gap:10px}
+  .hero-cta .btn-p,.hero-cta .btn-s{width:100%;max-width:300px;justify-content:center;min-height:48px}
+  .stats{grid-template-columns:repeat(3,1fr);border-radius:var(--r)}
+  .stat{padding:18px 8px}
+  .stat-v{font-size:1.3rem}
+  .stat-l{font-size:.6rem}
   .stat:nth-child(4),.stat:nth-child(5){display:none}
   .bento{grid-template-columns:1fr}
   .bento .b-card.span-2{grid-column:span 1}
   .tools-grid{grid-template-columns:1fr 1fr}
+  .t-card{padding:18px}
   .partner-grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
   .nl-box{padding:32px 20px}
+  .sec{padding:clamp(40px,6vw,80px) 16px}
+  .sec-h{font-size:1.6rem}
+  .trust{flex-direction:column;gap:8px;align-items:center}
+  .intro-bento .b-card{padding:24px 20px}
+}
+@media(max-width:400px){
+  .hero h1{font-size:1.7rem}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat{padding:14px 6px}
+  .stat-v{font-size:1.1rem}
+  .tools-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:20px}
+  .nav-brand span{font-size:.85rem}
 }
 </style>
 </head>
@@ -452,26 +480,65 @@ img{max-width:100%;display:block}
 
 <div class="sec-line"></div>
 
-<!-- ═══ INTRO ═══ -->
+<!-- ═══ INTRO FLIESSTEXT ═══ -->
 <section class="sec sr">
-  <div class="intro">
-    <h2>Was ist MB Capital Strategies?</h2>
-    <p>MB Capital Strategies ist eine unabhängige Research-Plattform für Investoren, die auf <strong>Cashflow statt Kursfantasien</strong> setzen. Im Mittelpunkt stehen Hard Assets: Energie, Shipping, Mining und Midstream-Pipelines — Sektoren, die reale wirtschaftliche Aktivität in verlässliche Dividenden umwandeln. Dividendenrenditen von 6–15 % sind hier keine Ausnahme, sondern das Ergebnis konkreter Cashflow-Logik.</p>
-    <p>Hier findest du keine Kursprognosen und keine Empfehlungen. Was du findest: klare Analysen zu <a href="/dividendenstrategie/">Dividendenstrategien</a>, fundierte Einblicke in <a href="/shipping/">Schifffahrtsaktien & Tankeraktien</a> und <a href="/mining-aktien/">Mining-Aktien</a>, ehrliche Cashflow-Bewertungen — und einen Investor, der sein eigenes Geld in diesen Strategien anlegt.</p>
+  <div class="sec-tag">Über die Plattform</div>
+  <h2 class="sec-h">Was ist <em>MB Capital Strategies</em>?</h2>
+  <p class="sec-sub" style="max-width:680px">MB Capital Strategies ist eine unabhängige Research-Plattform für Investoren, die auf <strong>Cashflow statt Kursfantasien</strong> setzen. Im Mittelpunkt stehen Hard Assets: Energie, Shipping, Mining und Midstream-Pipelines — Sektoren, die reale wirtschaftliche Aktivität in verlässliche Dividenden umwandeln. Dividendenrenditen von 6–15 % sind hier keine Ausnahme, sondern das Ergebnis konkreter Cashflow-Logik.</p>
 
-    <h3>Die Hard-Asset-Strategie im Kern</h3>
-    <p>Hard Assets erzeugen Cashflow aus echter wirtschaftlicher Tätigkeit. Ein <a href="/shipping/">Tanker verdient Geld</a>, wenn er Öl transportiert. Eine Pipeline wird bezahlt, wenn Gas durch sie fließt. Eine Mine produziert Umsatz, wenn Kupfer aus der Erde kommt.</p>
+  <!-- Intro highlight cards -->
+  <div class="bento intro-bento" style="margin-bottom:48px">
+    <div class="b-card span-2 sr sr-d1">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>Die Hard-Asset-Strategie im Kern</h3>
+      <p>Hard Assets erzeugen Cashflow aus echter wirtschaftlicher Tätigkeit. Ein <a href="/shipping/" style="color:var(--gold)">Tanker verdient Geld</a>, wenn er Öl transportiert. Eine Pipeline wird bezahlt, wenn Gas durch sie fließt. Eine Mine produziert Umsatz, wenn Kupfer aus der Erde kommt.</p>
+      <p style="margin-top:12px"><strong style="color:var(--text)">Meine Strategie:</strong> <strong style="color:var(--gold)">80 %</strong> in stabile, cashflowstarke Dividendenzahler. Die restlichen <strong style="color:var(--gold)">20 %</strong> bleiben als Liquidität für antizyklische Käufe in Schwächephasen.</p>
+    </div>
+    <div class="b-card sr sr-d2">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4"/><path d="M12 16V8"/></svg></div>
+      <h3>Keine Kursprognosen</h3>
+      <p>Hier findest du keine Empfehlungen — sondern klare Analysen zu <a href="/dividendenstrategie/" style="color:var(--gold)">Dividendenstrategien</a>, fundierte Einblicke in <a href="/shipping/" style="color:var(--gold)">Schifffahrtsaktien</a> und <a href="/mining-aktien/" style="color:var(--gold)">Mining-Aktien</a>, ehrliche Cashflow-Bewertungen — und einen Investor, der sein eigenes Geld anlegt.</p>
+    </div>
+  </div>
+
+  <!-- Hard-Asset-Aktien SEO text -->
+  <div class="intro" style="margin-bottom:48px">
     <p><strong>Hard-Asset-Aktien für deutsche Investoren</strong> sind über gängige Online-Broker zugänglich. MB Capital Strategies zeigt konkret, welche <strong>Hard Asset Aktien Deutschland</strong>-basierte Investoren heute kaufen können — mit Steuerhinweisen, Broker-Empfehlungen und Cashflow-Analyse in der <a href="/toolbox.html">Toolbox</a> und im <a href="/hard-asset-guide/">Hard Asset Guide</a>.</p>
-    <p>Meine Strategie: <strong>80 % des Portfolios</strong> in stabile, cashflowstarke Dividendenzahler. Die restlichen <strong>20 %</strong> bleiben als Liquidität für antizyklische Käufe in Schwächephasen.</p>
+  </div>
 
-    <h3>Was du auf dieser Seite findest</h3>
-    <ul>
-      <li><strong>Aktienanalysen</strong> zu Shipping, Mining, Midstream und Energie mit Fokus auf Free Cashflow, Verschuldung und Dividendenstabilität</li>
-      <li><strong>8 kostenlose Finanzrechner</strong>: vom <a href="/tools/dividendenrechner.html">Dividendenrechner</a> bis zum <a href="/tools/dividend-snowball-yoc-pro.html">Snowball YOC PRO</a> und dem <a href="/tools/shipping-cashflow-rechner.html">Shipping Cashflow Rechner</a></li>
-      <li><strong>Sektor-Hubs</strong> für <a href="/shipping/">Schifffahrtsaktien</a>, <a href="/midstream/">Midstream</a> und <a href="/mining-aktien/">Mining</a></li>
-      <li><strong>Echte Depot-Transparenz</strong>: Das <a href="/depot-strategie/">Depot ist live einsehbar</a> über Parqet</li>
-      <li><strong>Podcast & YouTube-Serien</strong> zu Shipping, Mining und Dividendenstrategien</li>
-    </ul>
+  <!-- Was du findest — visual cards -->
+  <h3 style="color:var(--gold);font-size:1.15rem;font-weight:700;margin-bottom:20px;text-align:center">Was du auf dieser Seite findest</h3>
+  <div class="bento intro-bento">
+    <div class="b-card sr sr-d1">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3>Aktienanalysen</h3>
+      <p>Shipping, Mining, Midstream und Energie mit Fokus auf Free Cashflow, Verschuldung und Dividendenstabilität.</p>
+      <a href="/blog/" class="b-link">Zum Blog <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="b-card sr sr-d2">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+      <h3>8 kostenlose Finanzrechner</h3>
+      <p>Vom <a href="/tools/dividendenrechner.html" style="color:var(--gold)">Dividendenrechner</a> bis zum <a href="/tools/dividend-snowball-yoc-pro.html" style="color:var(--gold)">Snowball YOC PRO</a> und dem <a href="/tools/shipping-cashflow-rechner.html" style="color:var(--gold)">Shipping Cashflow Rechner</a>.</p>
+      <a href="/rechner/" class="b-link">Alle Rechner <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="b-card sr sr-d3">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h3>Sektor-Hubs</h3>
+      <p>Spezialisierte Übersichten für <a href="/shipping/" style="color:var(--gold)">Schifffahrtsaktien</a>, <a href="/midstream/" style="color:var(--gold)">Midstream</a> und <a href="/mining-aktien/" style="color:var(--gold)">Mining</a>.</p>
+      <a href="/shipping/" class="b-link">Shipping-Hub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="b-card sr sr-d4">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <h3>Echte Depot-Transparenz</h3>
+      <p>Das <a href="/depot-strategie/" style="color:var(--gold)">Depot ist live einsehbar</a> über Parqet — Scalable Capital + Trade Republic.</p>
+      <a href="/depot-strategie/" class="b-link">Zum Depot <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="b-card span-2 sr sr-d5">
+      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
+      <h3>Podcast & YouTube-Serien</h3>
+      <p>Video-Analysen, Depot-Updates und Audio-Serien zu Shipping, Mining und Dividendenstrategien — auf YouTube und im Podcast.</p>
+      <a href="/podcast/" class="b-link">Zum Podcast <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 
