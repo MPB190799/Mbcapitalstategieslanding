@@ -15,21 +15,21 @@
   --gold-dim: rgba(212,175,55,0.12);
   --gold-border: rgba(212,175,55,0.22);
 
-  --bg: #0f1115;
-  --bg-soft: #151821;
-  --bg-card: #1a1f2b;
-  --glass: rgba(21,24,33,0.75);
+  --bg: #050508;
+  --bg-soft: #0c0e16;
+  --bg-card: #111420;
+  --glass: rgba(12,14,20,0.85);
 
-  --text: #f5f6fa;
-  --text-soft: #cfd6e6;
-  --text-muted: #b0b8d0;
+  --text: #f0f1f5;
+  --text-soft: #b0b8d0;
+  --text-muted: #8a90a8;
 
   --radius: 16px;
   --radius-sm: 10px;
   --transition: 0.28s cubic-bezier(0.4,0,0.2,1);
 
-  --shadow-card: 0 4px 20px rgba(0,0,0,0.3);
-  --shadow-hover: 0 12px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(212,175,55,0.18);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-hover: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.18);
   --shadow-gold: 0 0 30px rgba(212,175,55,0.15);
 }
 
