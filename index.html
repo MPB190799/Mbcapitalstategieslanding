@@ -142,16 +142,15 @@ body{margin:0;font-family:'Outfit',sans-serif;color:var(--text);background:var(-
 @keyframes float4{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(calc(-50% + 10vw),calc(-50% - 10vh)) scale(1.2)}}
 @keyframes float5{0%,100%{transform:translate(0,0)}50%{transform:translate(-8vw,12vh)}}
 @keyframes float6{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,-8vh) scale(1.15)}}
-/* === STRONG FLOWING GOLD LINES === */
-.bg-lines::before{content:'';position:absolute;top:0;left:-100%;width:300%;height:100%;background:
-  linear-gradient(135deg,transparent 43%,rgba(212,175,55,0.04) 47%,rgba(212,175,55,0.2) 49.5%,rgba(240,208,96,0.35) 50%,rgba(212,175,55,0.2) 50.5%,rgba(212,175,55,0.04) 53%,transparent 57%),
-  linear-gradient(135deg,transparent 39%,rgba(212,175,55,0.03) 44%,rgba(212,175,55,0.12) 46.5%,rgba(212,175,55,0.18) 47%,rgba(212,175,55,0.12) 47.5%,rgba(212,175,55,0.03) 50%,transparent 55%);
-  animation:flowLine 10s linear infinite}
-.bg-lines::after{content:'';position:absolute;top:0;right:-100%;width:300%;height:100%;background:
-  linear-gradient(225deg,transparent 45%,rgba(212,175,55,0.03) 48%,rgba(212,175,55,0.15) 49.5%,rgba(240,208,96,0.25) 50%,rgba(212,175,55,0.15) 50.5%,rgba(212,175,55,0.03) 52%,transparent 55%);
-  animation:flowLine2 14s linear infinite}
-@keyframes flowLine{0%{transform:translateX(0)}100%{transform:translateX(33.33%)}}
-@keyframes flowLine2{0%{transform:translateX(0)}100%{transform:translateX(-33.33%)}}
+/* === THIN GOLD LINE SWEEP === */
+.bg-lines::before{content:'';position:absolute;top:0;left:-200%;width:400%;height:100%;background:
+  linear-gradient(135deg,transparent 49.85%,rgba(212,175,55,0.5) 49.95%,rgba(240,208,96,0.8) 50%,rgba(212,175,55,0.5) 50.05%,transparent 50.15%);
+  animation:lineSweep 8s linear infinite}
+.bg-lines::after{content:'';position:absolute;top:0;right:-200%;width:400%;height:100%;background:
+  linear-gradient(225deg,transparent 49.88%,rgba(212,175,55,0.3) 49.96%,rgba(240,208,96,0.55) 50%,rgba(212,175,55,0.3) 50.04%,transparent 50.12%);
+  animation:lineSweep2 12s linear infinite}
+@keyframes lineSweep{0%{transform:translateX(0)}100%{transform:translateX(25%)}}
+@keyframes lineSweep2{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
 .nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.92);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(212,175,55,0.12);box-shadow:0 4px 30px rgba(0,0,0,0.4),0 1px 0 rgba(212,175,55,0.06)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
