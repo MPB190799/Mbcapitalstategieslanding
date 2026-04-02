@@ -142,15 +142,13 @@ body{margin:0;font-family:'Outfit',sans-serif;color:var(--text);background:var(-
 @keyframes float4{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(calc(-50% + 10vw),calc(-50% - 10vh)) scale(1.2)}}
 @keyframes float5{0%,100%{transform:translate(0,0)}50%{transform:translate(-8vw,12vh)}}
 @keyframes float6{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,-8vh) scale(1.15)}}
-/* === THIN GOLD LINE SWEEP === */
-.bg-lines::before{content:'';position:absolute;top:0;left:-200%;width:400%;height:100%;background:
-  linear-gradient(135deg,transparent 49.85%,rgba(212,175,55,0.5) 49.95%,rgba(240,208,96,0.8) 50%,rgba(212,175,55,0.5) 50.05%,transparent 50.15%);
-  animation:lineSweep 8s linear infinite}
-.bg-lines::after{content:'';position:absolute;top:0;right:-200%;width:400%;height:100%;background:
-  linear-gradient(225deg,transparent 49.88%,rgba(212,175,55,0.3) 49.96%,rgba(240,208,96,0.55) 50%,rgba(212,175,55,0.3) 50.04%,transparent 50.12%);
-  animation:lineSweep2 12s linear infinite}
-@keyframes lineSweep{0%{transform:translateX(0)}100%{transform:translateX(25%)}}
-@keyframes lineSweep2{0%{transform:translateX(0)}100%{transform:translateX(-25%)}}
+/* === GOLD WAVE LINES === */
+.bg-wave{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden}
+.bg-wave svg{position:absolute;width:200%;height:100%;top:0;left:-50%}
+.bg-wave svg:first-child{animation:waveFlow 14s linear infinite}
+.bg-wave svg:last-child{animation:waveFlow2 18s linear infinite;opacity:0.5}
+@keyframes waveFlow{0%{transform:translateX(-25%)}100%{transform:translateX(0%)}}
+@keyframes waveFlow2{0%{transform:translateX(0%)}100%{transform:translateX(-25%)}}
 .nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.92);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid rgba(212,175,55,0.12);box-shadow:0 4px 30px rgba(0,0,0,0.4),0 1px 0 rgba(212,175,55,0.06)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -322,6 +320,17 @@ code,pre,.mono,[data-mono]{font-family:'IBM Plex Mono','Fira Code',monospace}
 <body>
 
 <div class="bg-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="bg-wave">
+  <svg viewBox="0 0 2400 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,600 C200,300 400,900 600,600 C800,300 1000,900 1200,600 C1400,300 1600,900 1800,600 C2000,300 2200,900 2400,600" fill="none" stroke="url(#goldGrad1)" stroke-width="1.5" opacity="0.7"/>
+    <path d="M0,500 C200,250 400,750 600,500 C800,250 1000,750 1200,500 C1400,250 1600,750 1800,500 C2000,250 2200,750 2400,500" fill="none" stroke="url(#goldGrad1)" stroke-width="1" opacity="0.3"/>
+    <defs><linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d4af37" stop-opacity="0"/><stop offset="30%" stop-color="#d4af37" stop-opacity="0.6"/><stop offset="50%" stop-color="#f0d060" stop-opacity="1"/><stop offset="70%" stop-color="#d4af37" stop-opacity="0.6"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs>
+  </svg>
+  <svg viewBox="0 0 2400 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,700 C250,400 500,1000 750,700 C1000,400 1250,1000 1500,700 C1750,400 2000,1000 2250,700 C2400,550 2400,700 2400,700" fill="none" stroke="url(#goldGrad2)" stroke-width="1.2" opacity="0.6"/>
+    <defs><linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e8c95a" stop-opacity="0"/><stop offset="40%" stop-color="#d4af37" stop-opacity="0.8"/><stop offset="60%" stop-color="#f0d060" stop-opacity="0.8"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs>
+  </svg>
+</div>
 
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--gold,#d4af37);color:#0f1115;padding:8px 16px;z-index:9999;text-decoration:none;font-weight:700;transition:top .2s;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Zum Hauptinhalt springen</a>
 
