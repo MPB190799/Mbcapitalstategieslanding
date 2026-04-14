@@ -332,7 +332,10 @@
           '<a href="/ueber-marco-bozem/" style="color:#d4af37;">Über Marco →</a>' +
           '&nbsp;·&nbsp;' +
           '<a href="https://www.youtube.com/@mbcapitalstrategies"' +
-            ' target="_blank" rel="noopener" style="color:#d4af37;">YouTube</a>' +
+            ' target="_blank" rel="noopener" style="color:#d4af37;">YouTube DE</a>' +
+          '&nbsp;·&nbsp;' +
+          '<a href="https://www.youtube.com/@MBCapitalStrategiesGlobal"' +
+            ' target="_blank" rel="noopener" style="color:#d4af37;">YouTube Global</a>' +
           '&nbsp;·&nbsp;' +
           '<a href="https://www.linkedin.com/in/marco-bozem-182173295"' +
             ' target="_blank" rel="noopener" style="color:#d4af37;">LinkedIn</a>' +
@@ -413,6 +416,7 @@
         'url': 'https://mbcapitalstrategies.com/ueber-marco-bozem/',
         'sameAs': [
           'https://www.youtube.com/@mbcapitalstrategies',
+          'https://www.youtube.com/@MBCapitalStrategiesGlobal',
           'https://www.linkedin.com/in/marco-bozem-182173295',
           'https://www.linkedin.com/company/mb-capital-strategies/'
         ]
