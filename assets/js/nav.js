@@ -11,7 +11,7 @@
   if (!document.querySelector('link[href*="Outfit"]')) {
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Serif+Display&display=swap';
     document.head.appendChild(fontLink);
   }
   if (!document.querySelector('link[href*="Montserrat"]')) {

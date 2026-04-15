@@ -306,9 +306,11 @@ header.nav .dropdown-content a:hover {
   border-radius: 2px;
 }
 .page-header h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-family: 'DM Serif Display', 'Outfit', serif;
+  font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   background: linear-gradient(135deg, #f5e07a 0%, #d4af37 40%, #c49b2f 70%, #e8c95a 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -337,11 +339,12 @@ header.nav .dropdown-content a:hover {
 
 /* Section title */
 .section-title {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 800;
+  font-family: 'DM Serif Display', 'Outfit', serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 400;
   color: var(--text);
   margin: 0 0 14px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.15;
 }
 .section-title .gold { color: var(--gold); }
@@ -798,7 +801,9 @@ footer:not(.site-footer) a { color: var(--gold); margin: 0 8px; }
   z-index: 1;
 }
 .article-hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'DM Serif Display', 'Outfit', serif;
+  font-size: clamp(2.1rem, 5.2vw, 3.2rem);
+  font-weight: 400;
   background: linear-gradient(135deg, #f5e07a 0%, #d4af37 40%, #c49b2f 70%, #e8c95a 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -806,7 +811,7 @@ footer:not(.site-footer) a { color: var(--gold); margin: 0 8px; }
   background-clip: text;
   margin-bottom: 18px;
   line-height: 1.12;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   animation: shimmer 6s linear infinite;
 }
 .article-hero .article-meta {
