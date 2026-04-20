@@ -1,19 +1,19 @@
 /* ================= ROOT ================= */
 :root{
-  --bg:#0f1115;
-  --bg-soft:#151821;
-  --bg-card:#1a1f2b;
+  --bg:#050508;
+  --bg-soft:#0c0e16;
+  --bg-card:#111420;
   --gold:#d4af37;
   --gold-strong:#e0bd55;
-  --text:#f5f6fa;
-  --muted:#9aa6c0;
+  --text:#f0f1f5;
+  --muted:#9aa0b8;
 }
 
 /* ================= RESET ================= */
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-family:Outfit,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
