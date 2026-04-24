@@ -144,13 +144,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
-.logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:34px;height:34px;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:18px;letter-spacing:-.03em;position:relative;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{width:36px;height:36px;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:20px;letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
 .logo-mark::before{content:"";position:absolute;inset:3px;border:1px solid var(--accent);opacity:.35}
-.logo-block{display:flex;flex-direction:column;line-height:1.2}
-.logo-name{font-weight:500;letter-spacing:.04em;text-transform:uppercase;font-size:12px;font-family:var(--sans);color:var(--fg)}
-.logo-name strong{font-weight:700;letter-spacing:.06em;color:var(--accent)}
-.logo-domain{font-family:var(--mono);font-size:10px;color:var(--fg-dim);letter-spacing:.12em;margin-top:2px}
+.logo-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.01em;color:var(--fg);line-height:1}
+.logo-name em{font-style:italic;color:var(--accent);font-weight:400}
 .nav{display:flex;align-items:center;gap:28px}
 .nav-link{font-size:13px;color:var(--fg-muted);letter-spacing:.03em;position:relative;padding:6px 0;transition:color var(--t-fast);background:transparent;border:0}
 .nav-link::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right var(--t-fast)}
@@ -186,11 +184,12 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 /* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.55fr 1fr;gap:80px;align-items:center}
 .hero-eyebrow-row{display:flex;align-items:center;gap:24px;margin-bottom:32px}
-.hero-title{font-size:clamp(56px,9vw,140px);margin-bottom:40px}
-.hero-title .w2{display:block;font-style:italic;color:var(--accent);padding-left:.08em}
-.hero-sub{max-width:54ch;margin-bottom:48px}
+.hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
+.hero-title .w1{display:block}
+.hero-title .w2{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
+.hero-sub{max-width:48ch;margin-bottom:48px}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
@@ -198,9 +197,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 .hero-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(5,1fr);gap:8px;padding:80px var(--pad);z-index:0;pointer-events:none;mask-image:radial-gradient(ellipse at 75% 50%,#000 10%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 75% 50%,#000 10%,transparent 75%)}
 .hbar{background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--accent-deep));border-radius:2px;height:100%;width:100%;opacity:0;animation:barIn 1.4s var(--t-med) both,float 6s ease-in-out infinite;transform-origin:center;filter:blur(.2px)}
-.hbar-d1{--o:.08}
-.hbar-d2{--o:.15}
-.hbar-d3{--o:.22;filter:blur(0)}
+.hbar-d1{--o:.04}
+.hbar-d2{--o:.08}
+.hbar-d3{--o:.13;filter:blur(0)}
 @keyframes barIn{from{opacity:0;transform:translateY(30px) scaleY(.4)}to{opacity:var(--o,.15);transform:translateY(0) scaleY(1)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
@@ -373,9 +372,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .perf-grid{grid-template-columns:1fr}
   .ticker{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
-  .logo-domain{display:none}
-  .hero-meta{position:static;margin-top:40px}
+  .hero-meta{display:none}
   .hero-title{font-size:clamp(44px,10vw,72px)}
+  .logo-name{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
@@ -406,10 +405,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <header class="header" id="header">
   <a href="/" class="logo" aria-label="MB Capital Strategies Startseite">
     <span class="logo-mark">M</span>
-    <span class="logo-block">
-      <span class="logo-name"><strong>MB</strong> CAPITAL STRATEGIES</span>
-      <span class="logo-domain">mbcapitalstrategies.com</span>
-    </span>
+    <span class="logo-name">MB <em>Capital Strategies</em></span>
   </a>
   <nav class="nav" aria-label="Hauptnavigation">
     <a href="/depot-strategie/" class="nav-link">Depot</a>
@@ -473,11 +469,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         <span class="eyebrow">Kuratierte Research · Seit 2022</span>
       </div>
       <h1 class="display hero-title">
-        Dividenden aus
+        <span class="w1">Dividenden aus</span>
         <span class="w2">Hard Assets.</span>
       </h1>
       <p class="lede hero-sub">
-        Eine unabhängige Research-Plattform für Cashflow aus Energie, Shipping, Mining und Midstream-Pipelines — von einem Investor, der sein eigenes Geld anlegt.
+        Unabhängige Research für Cashflow aus Energie, Shipping, Mining &amp; Pipelines.
       </p>
       <div class="hero-ctas">
         <a href="/depot-strategie/" class="btn">Mein Depot ansehen →</a>
