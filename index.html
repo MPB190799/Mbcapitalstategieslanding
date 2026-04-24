@@ -144,12 +144,14 @@ img{max-width:100%;display:block}
 /* ── HERO ENTRANCE ANIMATIONS ── */
 @keyframes heroFadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-badge{opacity:0;animation:heroFadeUp .8s var(--ease-out) .1s forwards}
-.hero-avatar-wrap{opacity:0;animation:heroFadeUp .8s var(--ease-out) .25s forwards,heroFloat 5s ease-in-out 1.2s infinite}
-.hero h1{opacity:0;animation:heroFadeUp .8s var(--ease-out) .4s forwards,shimmer 6s linear 1.2s infinite}
-.hero-sub{opacity:0;animation:heroFadeUp .8s var(--ease-out) .55s forwards}
-.hero-cta{opacity:0;animation:heroFadeUp .8s var(--ease-out) .7s forwards}
-.stats{opacity:0;animation:heroFadeUp .8s var(--ease-out) .85s forwards}
+.eyebrow{opacity:0;animation:heroFadeUp .8s var(--ease-out) .05s forwards}
+.hero-avatar-wrap{opacity:0;animation:heroFadeUp .8s var(--ease-out) .15s forwards}
+.hero h1{opacity:0;animation:heroFadeUp .8s var(--ease-out) .25s forwards}
+.hero-sub{opacity:0;animation:heroFadeUp .8s var(--ease-out) .35s forwards}
+.hero-cta{opacity:0;animation:heroFadeUp .8s var(--ease-out) .45s forwards}
+.rule-top{opacity:0;animation:heroFadeUp .8s var(--ease-out) .55s forwards}
+.data-strip{opacity:0;animation:heroFadeUp .8s var(--ease-out) .65s forwards}
+.credentials{opacity:0;animation:heroFadeUp .8s var(--ease-out) .75s forwards}
 
 /* ── NAVIGATION ── */
 .nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
@@ -189,17 +191,18 @@ img{max-width:100%;display:block}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.18);border-radius:999px;padding:6px 18px;font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:40px}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;box-shadow:0 0 8px rgba(212,175,55,.6)}
 
-.hero-avatar-wrap{position:relative;width:180px;height:180px;margin:0 auto 32px}
-.hero-avatar-wrap::before,.hero-avatar-wrap::after{content:'';position:absolute;inset:-6px;border-radius:50%}
-.hero-avatar-wrap::before{background:conic-gradient(from 0deg,#d4af37,#f0d060,#d4af37,#a07820,#d4af37);animation:spin 8s linear infinite;box-shadow:0 0 40px rgba(212,175,55,.2),0 0 80px rgba(212,175,55,.08)}
-.hero-avatar-wrap::after{inset:-3px;background:var(--bg);border-radius:50%}
+.hero-avatar-wrap{position:relative;width:124px;height:124px;margin:0 auto 36px;border-radius:50%}
+.hero-avatar-wrap::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(212,175,55,.45);box-shadow:0 0 0 1px rgba(212,175,55,.10),0 0 40px -10px rgba(212,175,55,.35)}
 .hero-img{position:relative;z-index:1;width:168px;height:168px;border-radius:50%;object-fit:cover;display:block;margin:6px}
 
-.hero h1{font-family:'DM Serif Display','Outfit',serif;font-size:clamp(2.6rem,6vw,4.4rem);font-weight:400;line-height:1.08;margin:0 0 20px;letter-spacing:-.01em;background:linear-gradient(135deg,#f5e07a 0%,#d4af37 35%,#c49b2f 65%,#e8c95a 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1{font-family:'DM Serif Display','Outfit',serif;font-size:clamp(2.8rem,6.5vw,4.6rem);font-weight:400;line-height:1.02;margin:0 0 24px;letter-spacing:-.015em;color:var(--text)}
+.hero h1 em{font-style:italic;background:linear-gradient(135deg,#f5e07a,#d4af37 50%,#a07820);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .hero-sub{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--text-2);max-width:560px;margin:0 auto 24px;line-height:1.7;font-weight:400}
 .hero-sub strong{color:var(--gold);font-weight:600}
 
-.hero-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:48px}
+.hero-cta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:28px;margin-bottom:0}
+.link-ghost{color:var(--text-2);font-size:.92rem;font-weight:500;letter-spacing:.01em;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:2px;transition:all .25s var(--ease)}
+.link-ghost:hover{color:var(--gold);border-bottom-color:var(--gold)}
 .btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:14px;background:linear-gradient(135deg,#e8c95a,#d4af37,#b8941f);color:var(--bg);font-weight:700;font-size:.92rem;border:none;cursor:pointer;transition:all .3s var(--ease);box-shadow:0 4px 24px rgba(212,175,55,.3)}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,175,55,.45)}
 .btn-s{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:14px;background:transparent;color:var(--text);font-weight:600;font-size:.92rem;border:1px solid rgba(255,255,255,.12);transition:all .3s var(--ease)}
@@ -373,6 +376,49 @@ img{max-width:100%;display:block}
   .footer-inner{grid-template-columns:1fr;gap:20px}
   .nav-brand span{font-size:.85rem}
 }
+
+/* ═══ EDITORIAL HERO v2 — 2026-04-24 ═══ */
+.eyebrow{display:inline-flex;align-items:center;gap:16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.68rem;font-weight:500;color:var(--gold);letter-spacing:.28em;text-transform:uppercase;margin-bottom:48px}
+.eyebrow::before,.eyebrow::after{content:'';width:32px;height:1px;background:rgba(212,175,55,.4)}
+.hero-img{width:124px;height:124px;border-radius:50%;object-fit:cover;display:block;filter:grayscale(.1) contrast(1.05)}
+.rule-top{max-width:880px;margin:72px auto 0;border-top:1px solid rgba(212,175,55,.22)}
+.data-strip{max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.data-col{padding:32px 16px;text-align:center;position:relative;border-right:1px solid rgba(212,175,55,.10)}
+.data-col:last-child{border-right:none}
+.data-val{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;font-size:clamp(1.9rem,2.8vw,2.4rem);color:var(--gold);line-height:1;letter-spacing:-.02em;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.data-val .pct{font-size:.55em;color:rgba(212,175,55,.7);margin-left:2px;font-weight:400}
+.data-lbl{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.65rem;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.22em;text-transform:uppercase}
+.credentials{max-width:880px;margin:28px auto 0;text-align:center;font-size:.78rem;color:rgba(255,255,255,.42);font-weight:400;letter-spacing:.03em;line-height:1.7;padding:0 24px}
+.credentials .dot{color:rgba(212,175,55,.45);margin:0 .6em}
+.proof-wrap{max-width:1040px;margin:72px auto 0;padding:0 24px}
+.proof-eyebrow{display:flex;align-items:center;gap:20px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.24em;text-transform:uppercase;margin-bottom:28px}
+.proof-eyebrow::before,.proof-eyebrow::after{content:'';flex:1;height:1px;background:rgba(212,175,55,.15)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15)}
+.proof-item{padding:32px 24px;text-align:left;border-right:1px solid rgba(212,175,55,.08);transition:background .35s var(--ease-out)}
+.proof-item:last-child{border-right:none}
+.proof-item:hover{background:rgba(212,175,55,.02)}
+.proof-channel{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.62rem;color:rgba(212,175,55,.65);letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.proof-name{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--text);line-height:1.2;margin-bottom:8px;font-weight:400}
+.proof-meta{font-size:.82rem;color:var(--text-2);font-weight:400}
+.proof-meta strong{color:var(--gold);font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;letter-spacing:-.02em}
+@media (max-width:720px){
+  .eyebrow{font-size:.6rem;letter-spacing:.22em;gap:12px;margin-bottom:32px}
+  .eyebrow::before,.eyebrow::after{width:20px}
+  .hero-cta{gap:18px;flex-direction:column}
+  .hero-cta .link-ghost{margin-top:4px}
+  .data-strip{grid-template-columns:repeat(2,1fr)}
+  .data-col:nth-child(2){border-right:none}
+  .data-col:nth-child(1),.data-col:nth-child(2){border-bottom:1px solid rgba(212,175,55,.10)}
+  .data-col{padding:22px 12px}
+  .credentials{font-size:.72rem;line-height:2}
+  .proof-grid{grid-template-columns:repeat(2,1fr)}
+  .proof-item:nth-child(2){border-right:none}
+  .proof-item:nth-child(1),.proof-item:nth-child(2){border-bottom:1px solid rgba(212,175,55,.08)}
+  .proof-item{padding:22px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  .eyebrow,.hero-avatar-wrap,.hero h1,.hero-sub,.hero-cta,.rule-top,.data-strip,.credentials{animation:none !important;opacity:1 !important}
+}
 </style>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
@@ -463,38 +509,64 @@ img{max-width:100%;display:block}
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div class="hero-badge">Unabhängige Research-Plattform</div>
+  <div class="eyebrow">Kuratierte Research seit 2022</div>
 
   <div class="hero-avatar-wrap">
     <picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.jpg" alt="Marco Bozem – Dividenden-Investor" class="hero-img" width="168" height="168" fetchpriority="high"></picture>
   </div>
 
-  <h1>Dividenden aus<br>Hard Assets</h1>
+  <h1>Dividenden aus<br><em>Hard Assets</em></h1>
 
   <p class="hero-sub">
-    Ich bin Marco Bozem — unabhängiger Investor mit Fokus auf <strong>Cashflow aus Energie, Shipping, Mining & Pipelines</strong>
+    Ich bin Marco Bozem — unabhängiger Investor mit Fokus auf <strong>Cashflow aus Energie, Shipping, Mining &amp; Pipelines</strong>.
   </p>
 
   <div class="hero-cta">
     <a href="/depot-strategie/" class="btn-p">Mein Depot ansehen</a>
-    <a href="/hard-asset-guide/" class="btn-s">Hard Asset Guide</a>
-    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" class="btn-s">YouTube DE</a>
-    <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-s">YouTube Global</a>
+    <a href="/hard-asset-guide/" class="link-ghost">Hard Asset Guide</a>
   </div>
 
-  <div class="stats">
-    <div class="stat"><span class="stat-v">89</span><span class="stat-l">Analysen</span></div>
-    <div class="stat"><span class="stat-v">8</span><span class="stat-l">Tools</span></div>
-    <div class="stat"><span class="stat-v">5+</span><span class="stat-l">Sektoren</span></div>
-    <div class="stat"><span class="stat-v">6–15%</span><span class="stat-l">Ziel-Yield</span></div>
-    <div class="stat"><span class="stat-v">580+</span><span class="stat-l">YouTube</span></div>
+  <div class="rule-top"></div>
+
+  <div class="data-strip" role="list" aria-label="Kennzahlen der Plattform">
+    <div class="data-col" role="listitem"><span class="data-val">196</span><span class="data-lbl">Glossar</span></div>
+    <div class="data-col" role="listitem"><span class="data-val">89</span><span class="data-lbl">Analysen</span></div>
+    <div class="data-col" role="listitem"><span class="data-val">8</span><span class="data-lbl">Rechner</span></div>
+    <div class="data-col" role="listitem"><span class="data-val">6&ndash;15<span class="pct">%</span></span><span class="data-lbl">Ziel-Yield</span></div>
   </div>
 
-  <div class="trust">
-    <span>Unabhängig & werbefinanziert</span>
-    <span>Echtes Depot einsehbar</span>
-    <span>Investor seit 2022</span>
-    <span>Keine Anlageberatung</span>
+  <p class="credentials">
+    Real-Depot einsehbar <span class="dot">·</span>
+    Unabhängig &amp; werbefinanziert <span class="dot">·</span>
+    Seit 2022 <span class="dot">·</span>
+    Keine Anlageberatung
+  </p>
+</section>
+
+<!-- ═══ SOCIAL PROOF STRIP ═══ -->
+<section class="proof-wrap">
+  <div class="proof-eyebrow">Auf diesen Kanälen</div>
+  <div class="proof-grid">
+    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" class="proof-item">
+      <div class="proof-channel">YouTube DE</div>
+      <div class="proof-name">@mbcapitalstrategies</div>
+      <div class="proof-meta"><strong>580+</strong> Abonnenten</div>
+    </a>
+    <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="proof-item">
+      <div class="proof-channel">YouTube Global</div>
+      <div class="proof-name">@MBCSGlobal</div>
+      <div class="proof-meta">Englischsprachig</div>
+    </a>
+    <a href="#newsletter" class="proof-item">
+      <div class="proof-channel">Newsletter</div>
+      <div class="proof-name">MB Capital Insider</div>
+      <div class="proof-meta">Jeden Sonntag</div>
+    </a>
+    <a href="/investing-analysen.html" class="proof-item">
+      <div class="proof-channel">Analyst bei</div>
+      <div class="proof-name">Investing.com</div>
+      <div class="proof-meta">Deutschland</div>
+    </a>
   </div>
 </section>
 
