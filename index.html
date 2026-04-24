@@ -161,9 +161,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .dropdown-content hr{border:0;border-top:1px solid var(--border);margin:6px 0}
 .dropdown:hover .dropdown-content,.dropdown.open .dropdown-content{display:block}
 .header-actions{display:flex;align-items:center;gap:12px}
-.lang-toggle{display:inline-flex;border:1px solid var(--border-strong);border-radius:999px;padding:3px;font-family:var(--mono);font-size:10px;letter-spacing:.12em}
-.lang-toggle button,.lang-toggle a{padding:6px 12px;border-radius:999px;color:var(--fg-dim);transition:all var(--t-fast);text-transform:uppercase;display:inline-block;text-decoration:none}
-.lang-toggle .active{background:var(--accent);color:var(--bg)}
+.lang-flag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border-strong);border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--fg-muted);text-transform:uppercase;transition:all var(--t-fast)}
+.lang-flag:hover{color:var(--accent);border-color:var(--accent)}
 .theme-btn{width:34px;height:34px;border:1px solid var(--border-strong);border-radius:999px;display:grid;place-items:center;color:var(--fg-muted);transition:all var(--t-fast);flex-shrink:0}
 .theme-btn:hover{color:var(--accent);border-color:var(--accent)}
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
@@ -437,10 +436,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
     <a href="/podcast/" class="nav-link">Podcast</a>
   </nav>
   <div class="header-actions">
-    <div class="lang-toggle" role="group" aria-label="Sprache">
-      <span class="active">DE</span>
-      <a href="https://mbcapitalstrategiesgloabal.com/" rel="alternate" hreflang="en">EN</a>
-    </div>
+    <a href="https://mbcapitalstrategiesgloabal.com/" rel="alternate" hreflang="en" class="lang-flag" title="English version">🇬🇧 EN</a>
     <button class="theme-btn" id="theme-btn" aria-label="Theme wechseln" title="Theme wechseln">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
