@@ -419,6 +419,31 @@ img{max-width:100%;display:block}
 @media (prefers-reduced-motion:reduce){
   .eyebrow,.hero-avatar-wrap,.hero h1,.hero-sub,.hero-cta,.rule-top,.data-strip,.credentials{animation:none !important;opacity:1 !important}
 }
+
+/* ═══ EDITORIAL SECTION SYSTEM — 2026-04-24 ═══ */
+#main{counter-reset:section}
+.sec{counter-increment:section;position:relative}
+.sec > .sec-tag{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.66rem;font-weight:500;letter-spacing:.22em;color:var(--gold);opacity:.92;margin-bottom:18px}
+.sec > .sec-tag::before{content:"§" counter(section, decimal-leading-zero) "  ·  ";color:rgba(212,175,55,.42);font-weight:400}
+.sec-h em{font-style:italic;background:linear-gradient(135deg,#f5e07a,#d4af37 50%,#a07820);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.sec-line{max-width:680px;height:1px;opacity:.55;background:linear-gradient(90deg,transparent 0%,rgba(212,175,55,.55) 15%,rgba(212,175,55,.55) 85%,transparent 100%);position:relative}
+.sec-line::after{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;transform:translate(-50%,-50%) rotate(45deg);background:var(--gold);box-shadow:0 0 8px rgba(212,175,55,.6)}
+/* Drop cap for first lede paragraph */
+.lede::first-letter{
+  font-family:'DM Serif Display','Outfit',serif;
+  font-size:4.4rem;font-weight:400;
+  float:left;line-height:.88;
+  padding:8px 16px 0 0;
+  background:linear-gradient(135deg,#f5e07a 0%,#d4af37 50%,#a07820 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+.lede{font-size:1.05rem;line-height:1.75;color:var(--text-2)}
+.lede strong{color:var(--text)}
+@media (max-width:720px){
+  .lede::first-letter{font-size:3.2rem;padding:4px 12px 0 0}
+  .sec > .sec-tag::before{letter-spacing:.12em}
+}
 </style>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
@@ -576,7 +601,7 @@ img{max-width:100%;display:block}
 <section class="sec sr">
   <div class="sec-tag">Über die Plattform</div>
   <h2 class="sec-h">Was ist <em>MB Capital Strategies</em>?</h2>
-  <p class="sec-sub" style="max-width:680px">MB Capital Strategies ist eine unabhängige Research-Plattform für Investoren, die auf <strong>Cashflow statt Kursfantasien</strong> setzen. Im Mittelpunkt stehen Hard Assets: Energie, Shipping, Mining und Midstream-Pipelines — Sektoren, die reale wirtschaftliche Aktivität in verlässliche Dividenden umwandeln. Dividendenrenditen von 6–15 % sind hier keine Ausnahme, sondern das Ergebnis konkreter Cashflow-Logik.</p>
+  <p class="sec-sub lede" style="max-width:680px">MB Capital Strategies ist eine unabhängige Research-Plattform für Investoren, die auf <strong>Cashflow statt Kursfantasien</strong> setzen. Im Mittelpunkt stehen Hard Assets: Energie, Shipping, Mining und Midstream-Pipelines — Sektoren, die reale wirtschaftliche Aktivität in verlässliche Dividenden umwandeln. Dividendenrenditen von 6–15 % sind hier keine Ausnahme, sondern das Ergebnis konkreter Cashflow-Logik.</p>
 
   <!-- Intro highlight cards -->
   <div class="bento intro-bento" style="margin-bottom:48px">
