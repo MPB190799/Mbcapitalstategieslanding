@@ -40,14 +40,21 @@
   })();
 
   /* ── Boot ── */
+  /* Pages marked with data-luxe-v3="1" on <html> manage their own nav,
+     background, reveals, dropdowns and scroll progress. We still want
+     this script to handle cookie consent on those pages. */
+  var LUXE_V3 = document.documentElement.getAttribute('data-luxe-v3') === '1';
+
   document.addEventListener('DOMContentLoaded', function () {
-    injectBackgroundEffects(); /* gold waves + aurora orbs */
-    injectNav();          /* must run first – creates nav DOM */
-    setupHamburger();
-    setupDropdowns();
-    setupScrollReveal();
-    setupReadingProgress();
-    setupActiveNav();
+    if (!LUXE_V3) {
+      injectBackgroundEffects(); /* gold waves + aurora orbs */
+      injectNav();          /* must run first – creates nav DOM */
+      setupHamburger();
+      setupDropdowns();
+      setupScrollReveal();
+      setupReadingProgress();
+      setupActiveNav();
+    }
     setupAuthorBio();
     injectArticleSchema();
     if (!existingConsent) setupCookieBanner();
